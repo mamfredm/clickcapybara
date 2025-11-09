@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click-Capybara | Calmly Mastering the Click</title>
+    <title data-key="page_title">Click-Capybara | Calmly Mastering the Click</title>
+    
     <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_capybara_outine_bold.ico" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="translations.js"></script>
     
     <script>
       tailwind.config = {
@@ -61,12 +64,18 @@
                     <span class="text-2xl font-bold text-gray-900">Click-Capybara</span>
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#services" class="nav-link text-gray-600 hover:text-brand font-semibold">Services</a>
-                    <a href="#case-studies" class="nav-link text-gray-600 hover:text-brand font-semibold">Case Studies</a>
-                    <a href="#about" class="nav-link text-gray-600 hover:text-brand font-semibold">About</a>
-                    <a href="#contact" class="nav-link text-gray-600 hover:text-brand font-semibold">Contact</a>
+                    <a href="#services" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_services">Services</a>
+                    <a href="#case-studies" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_case_studies">Case Studies</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_about">About</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_contact">Contact</a>
                 </div>
-                <a href="#contact" class="hidden md:inline-block bg-brand text-white font-bold py-2 px-5 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md">
+                
+                <div class="hidden md:flex items-center space-x-4 ml-8">
+                    <button id="lang-en" class="font-semibold text-sm">EN</button>
+                    <button id="lang-de" class="font-semibold text-sm text-gray-400">DE</button>
+                </div>
+                
+                <a href="#contact" class="hidden md:inline-block bg-brand text-white font-bold py-2 px-5 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="nav_audit_button">
                     Free Ad Audit
                 </a>
                 <button id="mobile-menu-button" class="md:hidden text-2xl">
@@ -74,11 +83,11 @@
                 </button>
             </nav>
             <div id="mobile-menu" class="hidden md:hidden mt-4">
-                <a href="#services" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded">Services</a>
-                <a href="#case-studies" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded">Case Studies</a>
-                <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded">About</a>
-                <a href="#contact" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded">Contact</a>
-                <a href="#contact" class="block bg-brand text-white font-bold py-3 px-4 rounded-lg mt-2 text-center transition hover:shadow-md">Free Ad Audit</a>
+                <a href="#services" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded" data-key="nav_services_mobile">Services</a>
+                <a href="#case-studies" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded" data-key="nav_case_studies_mobile">Case Studies</a>
+                <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded" data-key="nav_about_mobile">About</a>
+                <a href="#contact" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded" data-key="nav_contact_mobile">Contact</a>
+                <a href="#contact" class="block bg-brand text-white font-bold py-3 px-4 rounded-lg mt-2 text-center transition hover:shadow-md" data-key="nav_audit_button_mobile">Free Ad Audit</a>
             </div>
         </div>
     </header>
@@ -86,26 +95,26 @@
     <main>
         <section id="home" class="py-20 md:py-32 bg-white">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight" data-key="home_title">
                     Stop Wasting Ad Spend. <br class="hidden md:inline">Start Driving <span class="text-brand">Real Growth.</span>
                 </h1>
-                <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                <p class="mt-6 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto" data-key="home_subtitle">
                     Click-Capybara offers expert PPC management that delivers measurable results.
                     <span class="block font-semibold mt-2">Relax. We've got your ads.</span>
                 </p>
-                <a href="#contact" class="mt-8 inline-block bg-brand text-white font-bold text-lg py-4 px-10 rounded-lg transition hover:-translate-y-0.5 hover:shadow-lg">
+                <a href="#contact" class="mt-8 inline-block bg-brand text-white font-bold text-lg py-4 px-10 rounded-lg transition hover:-translate-y-0.5 hover:shadow-lg" data-key="home_get_audit_button">
                     Get Your Free Ad Audit
                 </a>
                 <div class="mt-16">
-                    <p class="text-gray-500 font-semibold tracking-wider text-sm mb-4">TRUSTED & CERTIFIED PARTNERS</p>
+                    <p class="text-gray-500 font-semibold tracking-wider text-sm mb-4" data-key="home_trusted_partners">TRUSTED & CERTIFIED PARTNERS</p>
                     <div class="flex justify-center items-center space-x-8 md:space-x-12">
                         <div class="flex items-center space-x-2">
                             <i class="fab fa-google text-3xl text-gray-400"></i>
-                            <span class="font-semibold text-gray-600">Google Partner</span>
+                            <span class="font-semibold text-gray-600" data-key="home_google_partner">Google Partner</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fab fa-microsoft text-3xl text-gray-400"></i>
-                            <span class="font-semibold text-gray-600">Microsoft Advertising</span>
+                            <span class="font-semibold text-gray-600" data-key="home_ms_partner">Microsoft Advertising</span>
                         </div>
                     </div>
                 </div>
@@ -115,30 +124,30 @@
         <section class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">Feeling Overwhelmed by Your Ad Accounts?</h2>
-                    <p class="mt-4 text-lg text-gray-600">You're not alone. Many businesses struggle to turn clicks into customers. That's where we come in.</p>
+                    <h2 class="text-3xl font-bold text-gray-900 md:text-4xl" data-key="overwhelmed_title">Feeling Overwhelmed by Your Ad Accounts?</h2>
+                    <p class="mt-4 text-lg text-gray-600" data-key="overwhelmed_subtitle">You're not alone. Many businesses struggle to turn clicks into customers. That's where we come in.</p>
                 </div>
                 <div class="mt-16 grid md:grid-cols-3 gap-8 text-center">
                     <div class="bg-white p-8 rounded-xl shadow-md">
                         <div class="flex justify-center items-center mx-auto mb-4 w-16 h-16 bg-red-100 rounded-full">
                             <i class="fa-solid fa-sack-xmark text-4xl text-red-500"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Wasted Budget</h3>
-                        <p class="text-gray-600">Money spent on irrelevant clicks and poor targeting that never converts.</p>
+                        <h3 class="text-xl font-bold mb-2" data-key="problem_1_title">Wasted Budget</h3>
+                        <p class="text-gray-600" data-key="problem_1_desc">Money spent on irrelevant clicks and poor targeting that never converts.</p>
                     </div>
                     <div class="bg-white p-8 rounded-xl shadow-md">
                         <div class="flex justify-center items-center mx-auto mb-4 w-16 h-16 bg-yellow-100 rounded-full">
                             <i class="fa-solid fa-arrow-trend-down text-4xl text-yellow-500"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Low ROI</h3>
-                        <p class="text-gray-600">Your ad spend is higher than the revenue it generates, making it hard to scale.</p>
+                        <h3 class="text-xl font-bold mb-2" data-key="problem_2_title">Low ROI</h3>
+                        <p class="text-gray-600" data-key="problem_2_desc">Your ad spend is higher than the revenue it generates, making it hard to scale.</p>
                     </div>
                     <div class="bg-white p-8 rounded-xl shadow-md">
                         <div class="flex justify-center items-center mx-auto mb-4 w-16 h-16 bg-indigo-100 rounded-full">
                              <i class="fa-solid fa-circle-question text-4xl text-indigo-500"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2">Confusing Data</h3>
-                        <p class="text-gray-600">You get reports, but you don't really know what's working or why.</p>
+                        <h3 class="text-xl font-bold mb-2" data-key="problem_3_title">Confusing Data</h3>
+                        <p class="text-gray-600" data-key="problem_3_desc">You get reports, but you don't really know what's working or why.</p>
                     </div>
                 </div>
             </div>
@@ -147,33 +156,33 @@
         <section id="services" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">Our PPC Services</h2>
-                    <p class="mt-4 text-lg text-gray-600">We offer a suite of services designed to cover every aspect of a successful paid advertising strategy.</p>
+                    <h2 class="text-3xl font-bold text-gray-900 md:text-4xl" data-key="services_title">Our PPC Services</h2>
+                    <p class="mt-4 text-lg text-gray-600" data-key="services_subtitle">We offer a suite of services designed to cover every aspect of a successful paid advertising strategy.</p>
                 </div>
                 <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
                         <i class="fab fa-google text-3xl text-brand mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Google Ads Management</h3>
-                        <p class="text-gray-600 mb-4">From Search to Shopping, we build and optimize campaigns that drive high-intent traffic and sales.</p>
-                        <a href="#contact" class="font-semibold text-brand hover:underline">Learn More &rarr;</a>
+                        <h3 class="text-xl font-bold mb-2" data-key="service_1_title">Google Ads Management</h3>
+                        <p class="text-gray-600 mb-4" data-key="service_1_desc">From Search to Shopping, we build and optimize campaigns that drive high-intent traffic and sales.</p>
+                        <a href="#contact" class="font-semibold text-brand hover:underline" data-key="service_learn_more">Learn More &rarr;</a>
                     </div>
                     <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
                         <i class="fab fa-youtube text-3xl text-red-600 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Microsoft & YouTube Ads</h3>
-                        <p class="text-gray-600 mb-4">Expand your reach to untapped audiences on powerful platforms beyond Google Search.</p>
-                        <a href="#contact" class="font-semibold text-brand hover:underline">Learn More &rarr;</a>
+                        <h3 class="text-xl font-bold mb-2" data-key="service_2_title">Microsoft & YouTube Ads</h3>
+                        <p class="text-gray-600 mb-4" data-key="service_2_desc">Expand your reach to untapped audiences on powerful platforms beyond Google Search.</p>
+                        <a href="#contact" class="font-semibold text-brand hover:underline" data-key="service_learn_more">Learn More &rarr;</a>
                     </div>
                     <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
                         <i class="fas fa-cogs text-3xl text-green-600 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">Conversion Tracking</h3>
-                        <p class="text-gray-600 mb-4">If you can't track it, you can't improve it. We ensure your data is accurate and actionable.</p>
-                        <a href="#contact" class="font-semibold text-brand hover:underline">Learn More &rarr;</a>
+                        <h3 class="text-xl font-bold mb-2" data-key="service_3_title">Conversion Tracking</h3>
+                        <p class="text-gray-600 mb-4" data-key="service_3_desc">If you can't track it, you can't improve it. We ensure your data is accurate and actionable.</p>
+                        <a href="#contact" class="font-semibold text-brand hover:underline" data-key="service_learn_more">Learn More &rarr;</a>
                     </div>
                     <div class="bg-gray-50 p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow">
                         <i class="fas fa-lightbulb text-3xl text-yellow-500 mb-4"></i>
-                        <h3 class="text-xl font-bold mb-2">PPC Strategy</h3>
-                        <p class="text-gray-600 mb-4">Need a plan? Our free audit and strategy sessions provide a clear roadmap for success.</p>
-                        <a href="#contact" class="font-semibold text-brand hover:underline">Learn More &rarr;</a>
+                        <h3 class="text-xl font-bold mb-2" data-key="service_4_title">PPC Strategy</h3>
+                        <p class="text-gray-600 mb-4" data-key="service_4_desc">Need a plan? Our free audit and strategy sessions provide a clear roadmap for success.</p>
+                        <a href="#contact" class="font-semibold text-brand hover:underline" data-key="service_learn_more">Learn More &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -182,26 +191,26 @@
         <section class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">The Capybara Method</h2>
-                    <p class="mt-4 text-lg text-gray-600">Our process is transparent, collaborative, and designed for one thing: results.</p>
+                    <h2 class="text-3xl font-bold text-gray-900 md:text-4xl" data-key="method_title">The Capybara Method</h2>
+                    <p class="mt-4 text-lg text-gray-600" data-key="method_subtitle">Our process is transparent, collaborative, and designed for one thing: results.</p>
                 </div>
                 <div class="mt-16 relative">
                     <div class="hidden md:block absolute top-8 left-0 w-full h-0.5 border-t-2 border-dashed border-gray-300"></div>
                     <div class="grid md:grid-cols-3 gap-x-8 gap-y-12 relative">
                         <div class="text-center">
                             <div class="mx-auto w-16 h-16 flex items-center justify-center bg-brand text-white text-2xl font-bold rounded-full z-10 relative border-4 border-gray-50">1</div>
-                            <h3 class="text-xl font-bold mb-2 mt-4">Discover & Strategize</h3>
-                            <p class="text-gray-600">We start with a deep dive into your account and business goals to build a data-driven plan.</p>
+                            <h3 class="text-xl font-bold mb-2 mt-4" data-key="method_1_title">Discover & Strategize</h3>
+                            <p class="text-gray-600" data-key="method_1_desc">We start with a deep dive into your account and business goals to build a data-driven plan.</p>
                         </div>
                         <div class="text-center">
                             <div class="mx-auto w-16 h-16 flex items-center justify-center bg-brand text-white text-2xl font-bold rounded-full z-10 relative border-4 border-gray-50">2</div>
-                            <h3 class="text-xl font-bold mb-2 mt-4">Launch & Optimize</h3>
-                            <p class="text-gray-600">We build and manage your campaigns, constantly testing and optimizing for peak performance.</p>
+                            <h3 class="text-xl font-bold mb-2 mt-4" data-key="method_2_title">Launch & Optimize</h3>
+                            <p class="text-gray-600" data-key="method_2_desc">We build and manage your campaigns, constantly testing and optimizing for peak performance.</p>
                         </div>
                         <div class="text-center">
                             <div class="mx-auto w-16 h-16 flex items-center justify-center bg-brand text-white text-2xl font-bold rounded-full z-10 relative border-4 border-gray-50">3</div>
-                            <h3 class="text-xl font-bold mb-2 mt-4">Track & Scale</h3>
-                            <p class="text-gray-600">We provide clear, jargon-free reports and work with you to scale what's working.</p>
+                            <h3 class="text-xl font-bold mb-2 mt-4" data-key="method_3_title">Track & Scale</h3>
+                            <p class="text-gray-600" data-key="method_3_desc">We provide clear, jargon-free reports and work with you to scale what's working.</p>
                         </div>
                     </div>
                 </div>
@@ -211,32 +220,32 @@
         <section id="case-studies" class="py-20 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
-                    <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">Proof is in the Performance</h2>
-                    <p class="mt-4 text-lg text-gray-600">We're proud of the results we achieve for our clients. Here's a look at what we can do.</p>
+                    <h2 class="text-3xl font-bold text-gray-900 md:text-4xl" data-key="case_title">Proof is in the Performance</h2>
+                    <p class="mt-4 text-lg text-gray-600" data-key="case_subtitle">We're proud of the results we achieve for our clients. Here's a look at what we can do.</p>
                 </div>
                 <div class="mt-16 bg-brand-light rounded-2xl p-8 md:p-12 lg:flex items-center gap-12">
                     <div class="lg:w-1/2">
-                        <p class="font-semibold text-brand-dark">E-COMMERCE CASE STUDY</p>
-                        <h3 class="text-3xl font-bold text-gray-900 mt-2">312% Increase in ROI for a Fashion Brand</h3>
-                        <p class="mt-4 text-gray-600">They were struggling with high ad costs and low sales. We restructured their Google Shopping campaigns, refined audience targeting, and implemented a remarketing strategy that re-engaged lost customers.</p>
-                        <blockquote class="mt-6 border-l-4 border-brand pl-4 italic text-gray-700">
+                        <p class="font-semibold text-brand-dark" data-key="case_ecommerce_tag">E-COMMERCE CASE STUDY</p>
+                        <h3 class="text-3xl font-bold text-gray-900 mt-2" data-key="case_ecommerce_title">312% Increase in ROI for a Fashion Brand</h3>
+                        <p class="mt-4 text-gray-600" data-key="case_ecommerce_desc">They were struggling with high ad costs and low sales. We restructured their Google Shopping campaigns, refined audience targeting, and implemented a remarketing strategy that re-engaged lost customers.</p>
+                        <blockquote class="mt-6 border-l-4 border-brand pl-4 italic text-gray-700" data-key="case_ecommerce_quote">
                             "Click-Capybara turned our ad account around in just three months. They're not just experts; they're partners in our growth."
-                            <cite class="block not-italic font-semibold mt-2">- Happy Client, Fashion Retailer</cite>
+                            <cite class="block not-italic font-semibold mt-2" data-key="case_ecommerce_cite">- Happy Client, Fashion Retailer</cite>
                         </blockquote>
                     </div>
                     <div class="lg:w-1/2 mt-8 lg:mt-0 grid grid-cols-2 gap-6 text-center">
                         <div class="bg-white p-6 rounded-xl shadow">
-                            <p class="text-4xl font-extrabold text-brand">+312%</p>
-                            <p class="font-semibold text-gray-600">Return on Ad Spend</p>
+                            <p class="text-4xl font-extrabold text-brand" data-key="case_stat_1_num">+312%</p>
+                            <p class="font-semibold text-gray-600" data-key="case_stat_1_desc">Return on Ad Spend</p>
                         </div>
                         <div class="bg-white p-6 rounded-xl shadow">
-                            <p class="text-4xl font-extrabold text-brand">-45%</p>
-                            <p class="font-semibold text-gray-600">Cost Per Acquisition</p>
+                            <p class="text-4xl font-extrabold text-brand" data-key="case_stat_2_num">-45%</p>
+                            <p class="font-semibold text-gray-600" data-key="case_stat_2_desc">Cost Per Acquisition</p>
                         </div>
                     </div>
                 </div>
                  <div class="text-center mt-12">
-                    <a href="#" class="bg-gray-800 text-white font-bold py-3 px-8 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md">View More Case Studies</a>
+                    <a href="#" class="bg-gray-800 text-white font-bold py-3 px-8 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="case_view_more_button">View More Case Studies</a>
                 </div>
             </div>
         </section>
@@ -247,13 +256,13 @@
                     <img src="assets/capybara_search.png" alt="A calm capybara" class="rounded-2xl shadow-xl w-full">
                 </div>
                 <div class="md:w-1/2 mt-8 md:mt-0">
-                    <h2 class="text-3xl font-bold text-gray-900 md:text-4xl">Why a Capybara? 🧘</h2>
-                    <p class="mt-4 text-lg text-gray-600">In the chaotic world of digital advertising, we believe in a calmer, more intelligent approach. Capybaras are social, unflappable, and surprisingly smart—qualities we bring to every client partnership.</p>
-                    <p class="mt-4 text-lg text-gray-600">Our mission is to demystify PPC. We handle the complex algorithms and bidding wars so you can focus on what you do best: running your business.</p>
+                    <h2 class="text-3xl font-bold text-gray-900 md:text-4xl" data-key="about_title">Why a Capybara? 🧘</h2>
+                    <p class="mt-4 text-lg text-gray-600" data-key="about_p1">In the chaotic world of digital advertising, we believe in a calmer, more intelligent approach. Capybaras are social, unflappable, and surprisingly smart—qualities we bring to every client partnership.</p>
+                    <p class="mt-4 text-lg text-gray-600" data-key="about_p2">Our mission is to demystify PPC. We handle the complex algorithms and bidding wars so you can focus on what you do best: running your business.</p>
                     <div class="mt-6 flex flex-wrap gap-3">
-                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full font-semibold">Transparency</span>
-                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full font-semibold">Data-First</span>
-                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full font-semibold">Partnership</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full font-semibold" data-key="about_tag_1">Transparency</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full font-semibold" data-key="about_tag_2">Data-First</span>
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full font-semibold" data-key="about_tag_3">Partnership</span>
                     </div>
                 </div>
             </div>
@@ -263,47 +272,47 @@
             <div class="container mx-auto px-6">
                 <div class="lg:flex justify-between items-center gap-16">
                     <div class="lg:w-1/2">
-                        <h2 class="text-3xl md:text-4xl font-bold">Ready to See What the Capybara Can Do?</h2>
-                        <p class="mt-4 text-lg text-gray-300">Let's start with a free, no-obligation audit of your ad account. We'll identify key areas for improvement and provide an actionable strategy, completely free.</p>
+                        <h2 class="text-3xl md:text-4xl font-bold" data-key="contact_title">Ready to See What the Capybara Can Do?</h2>
+                        <p class="mt-4 text-lg text-gray-300" data-key="contact_subtitle">Let's start with a free, no-obligation audit of your ad account. We'll identify key areas for improvement and provide an actionable strategy, completely free.</p>
                         <div class="mt-8 space-y-4">
-                            <p><i class="fas fa-envelope mr-3 w-5 text-brand"></i> <a href="mailto:hello@click-capybara.com" class="hover:underline">hello@click-capybara.com</a></p>
-                            <p><i class="fas fa-phone mr-3 w-5 text-brand"></i> (555) 123-4567</p>
+                            <p><i class="fas fa-envelope mr-3 w-5 text-brand"></i> <a href="mailto:hello@click-capybara.com" class="hover:underline" data-key="contact_email">hello@click-capybara.com</a></p>
+                            <p><i class="fas fa-phone mr-3 w-5 text-brand"></i> <span data-key="contact_phone">(555) 123-4567</span></p>
                         </div>
                     </div>
                     <div class="lg:w-1/2 mt-10 lg:mt-0">
                         <form id="contact-form" action="#" method="POST" class="bg-white p-8 rounded-xl shadow-2xl text-gray-800">
-                            <h3 class="text-2xl font-bold mb-6">Get Your Free Audit</h3>
+                            <h3 class="text-2xl font-bold mb-6" data-key="form_title">Get Your Free Audit</h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
-                                    <label for="name" class="font-semibold block mb-1 text-sm">Name</label>
-                                    <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent" placeholder="Your Name" required>
+                                    <label for="name" class="font-semibold block mb-1 text-sm" data-key="form_name_label">Name</label>
+                                    <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent" placeholder="Your Name" data-key-placeholder="form_name_placeholder" required>
                                 </div>
                                 <div>
-                                    <label for="email" class="font-semibold block mb-1 text-sm">Email</label>
-                                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent" placeholder="you@company.com" required>
+                                    <label for="email" class="font-semibold block mb-1 text-sm" data-key="form_email_label">Email</label>
+                                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent" placeholder="you@company.com" data-key-placeholder="form_email_placeholder" required>
                                 </div>
                             </div>
                             <div class="mt-4">
-                                <label for="website" class="font-semibold block mb-1 text-sm">Website</label>
-                                <input type="url" id="website" name="website" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent" placeholder="https://yourwebsite.com" required>
+                                <label for="website" class="font-semibold block mb-1 text-sm" data-key="form_website_label">Website</label>
+                                <input type="url" id="website" name="website" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent" placeholder="https://yourwebsite.com" data-key-placeholder="form_website_placeholder" required>
                             </div>
                             <div class="mt-4">
-                                <label for="service" class="font-semibold block mb-1 text-sm">Service of Interest</label>
+                                <label for="service" class="font-semibold block mb-1 text-sm" data-key="form_service_label">Service of Interest</label>
                                 <select id="service" name="service" class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-brand focus:border-transparent">
-                                    <option>Free Ad Audit</option>
-                                    <option>Google Ads Management</option>
-                                    <option>Microsoft Ads Management </option>
-                                    <option>Conversion Tracking</option>
-                                    <option>PPC Strategy</option>
-                                    <option>General Inquiry</option>
+                                    <option data-key="form_option_1">Free Ad Audit</option>
+                                    <option data-key="form_option_2">Google Ads Management</option>
+                                    <option data-key="form_option_3">Microsoft Ads Management </option>
+                                    <option data-key="form_option_4">Conversion Tracking</option>
+                                    <option data-key="form_option_5">PPC Strategy</option>
+                                    <option data-key="form_option_6">General Inquiry</option>
                                 </select>
                             </div>
                              <div class="mt-6">
-                                <button type="submit" class="w-full bg-brand text-white font-bold text-lg py-3 px-8 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md">
+                                <button type="submit" class="w-full bg-brand text-white font-bold text-lg py-3 px-8 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="form_submit_button">
                                     Submit Request
                                 </button>
                             </div>
-                            <p id="form-status" class="text-xs text-gray-500 mt-4 text-center">We'll get back to you within one business day.</p>
+                            <p id="form-status" class="text-xs text-gray-500 mt-4 text-center" data-key="form_status">We'll get back to you within one business day.</p>
                         </form>
                     </div>
                 </div>
@@ -313,12 +322,74 @@
 
     <footer class="bg-gray-900 text-gray-400 py-8">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2025 Click-Capybara. All Rights Reserved. | Calmly Mastering the Click.</p>
+            <p data-key="footer_copyright">&copy; 2025 Click-Capybara. All Rights Reserved. | Calmly Mastering the Click.</p>
         </div>
     </footer>
 
     <script>
-        // Basic mobile menu toggle
+        // --- 1. NEW TRANSLATION CODE START ---
+
+        // Check if translations loaded (important for debugging)
+        if (typeof translations === 'undefined') {
+            console.error("ERROR: translations.js file not loaded!");
+        } else {
+            const langEnButton = document.getElementById('lang-en');
+            const langDeButton = document.getElementById('lang-de');
+            
+            // The main translation function
+            function setLanguage(lang) {
+                // 1. Set the page's lang attribute
+                document.documentElement.lang = lang;
+
+                // 2. Set the page title
+                if (translations[lang].page_title) {
+                    document.title = translations[lang].page_title;
+                }
+
+                // 3. Update all text elements
+                const textElements = document.querySelectorAll('[data-key]');
+                textElements.forEach(element => {
+                    const key = element.getAttribute('data-key');
+                    if (translations[lang][key]) {
+                        // Use innerHTML to support keys with <b>, <span>, etc.
+                        element.innerHTML = translations[lang][key];
+                    }
+                });
+
+                // 4. Update all placeholder attributes
+                const placeholderElements = document.querySelectorAll('[data-key-placeholder]');
+                placeholderElements.forEach(element => {
+                    const key = element.getAttribute('data-key-placeholder');
+                    if (translations[lang][key]) {
+                        element.placeholder = translations[lang][key];
+                    }
+                });
+
+                // 5. Update button styles
+                if (lang === 'de') {
+                    langDeButton.classList.remove('text-gray-400');
+                    langEnButton.classList.add('text-gray-400');
+                } else {
+                    langEnButton.classList.remove('text-gray-400');
+                    langDeButton.classList.add('text-gray-400');
+                }
+
+                // 6. (Optional) Save the user's choice
+                localStorage.setItem('language', lang);
+            }
+
+            // Add click listeners to the buttons
+            langEnButton.addEventListener('click', () => setLanguage('en'));
+            langDeButton.addEventListener('click', () => setLanguage('de'));
+
+            // Check for a saved language or default to 'en'
+            const savedLang = localStorage.getItem('language') || 'en';
+            setLanguage(savedLang);
+        }
+        // --- NEW TRANSLATION CODE END ---
+
+
+        // --- 2. EXISTING MOBILE MENU CODE ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.querySelectorAll('#mobile-menu a');
@@ -335,7 +406,7 @@
         });
 
         // --- 
-        // *** MODIFICATION 3: Added Google Sheet form submission script ***
+        // --- 3. EXISTING GOOGLE FORM CODE ---
         // ---
 
         // This is the Google Apps Script URL you provided
@@ -349,8 +420,12 @@
             // Prevent the default form submission
             e.preventDefault();
 
+            const currentLang = document.documentElement.lang || 'en';
+
             // Show a "submitting" message and disable the button
-            formStatus.textContent = 'Submitting...';
+            const submittingKey = "form_submitting";
+            formStatus.textContent = (translations && translations[currentLang][submittingKey]) || 'Submitting...';
+            
             formStatus.style.color = '#3b82f6'; // Blue color
             submitButton.disabled = true;
             submitButton.style.opacity = '0.7';
@@ -373,12 +448,11 @@
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data),
-                // Note: 'no-cors' mode means we won't be able to read the response.
-                // We will just assume success if the request doesn't fail.
             })
             .then(() => {
                 // Show success message
-                formStatus.textContent = "Thanks! We'll be in touch soon.";
+                const successKey = "form_success";
+                formStatus.textContent = (translations && translations[currentLang][successKey]) || "Thanks! We'll be in touch soon.";
                 formStatus.style.color = '#16a34a'; // Green color for success
                 
                 // Clear the form
@@ -387,7 +461,8 @@
             .catch(error => {
                 // Show error message
                 console.error('Error:', error);
-                formStatus.textContent = 'Oops! Something went wrong. Please try again.';
+                const errorKey = "form_error";
+                formStatus.textContent = (translations && translations[currentLang][errorKey]) || 'Oops! Something went wrong. Please try again.';
                 formStatus.style.color = '#dc2626'; // Red color for error
             })
             .finally(() => {
@@ -398,7 +473,8 @@
                     
                     // Reset status text after a few more seconds
                     setTimeout(() => {
-                        formStatus.textContent = "We'll get back to you within one business day.";
+                        const defaultStatusKey = "form_status";
+                        formStatus.textContent = (translations && translations[currentLang][defaultStatusKey]) || "We'll get back to you within one business day.";
                         formStatus.style.color = ''; // Reset color
                     }, 4000);
 
