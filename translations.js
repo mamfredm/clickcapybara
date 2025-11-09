@@ -58,7 +58,8 @@ const translations = {
     "case_stat_1_desc": "Return on Ad Spend",
     "case_stat_2_num": "-45%",
     "case_stat_2_desc": "Cost Per Acquisition",
-    "case_view_more_button": "View More Case Studies",
+    "case_start_your_project_button": "Start Your Project",
+    
     "about_title": "Why a Capybara? 🧘",
     "about_p1": "In the chaotic world of digital advertising, we believe in a calmer, more intelligent approach. Capybaras are social, unflappable, and surprisingly smart—qualities we bring to every client partnership.",
     "about_p2": "Our mission is to demystify PPC. We handle the complex algorithms and bidding wars so you can focus on what you do best: running your business.",
