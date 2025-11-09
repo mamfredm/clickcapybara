@@ -106,7 +106,7 @@ const translations = {
     "nav_about_mobile": "Über uns",
     "nav_contact_mobile": "Kontakt",
     "nav_audit_button_mobile": "Kostenloses Ad Audit",
-    "home_title": "Hör auf, Werbebudget zu verbrennen. <br class=\"hidden md:inline\"> Starte <span class=\"text-brand\">echtes Wachstum.</span>",
+    "home_title": "Hör auf Werbebudget zu verbrennen. <br class=\"hidden md:inline\"> Starte <span class=\"text-brand\">echtes Wachstum.</span>",
     "home_subtitle": "Click-Capybara bietet smartes PPC-Management mit echten Ergebnissen. <span class=\"block font-semibold mt-2\">Lehn dich zurück – wir kümmern uns um deine Ads.</span>",
     "home_get_audit_button": "Kostenloses Ad Audit erhalten",
     "home_trusted_partners": "ZERTIFIZIERTER PARTNER",
