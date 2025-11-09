@@ -94,7 +94,7 @@
                     <span class="block font-semibold mt-2">Relax. We've got your ads.</span>
                 </p>
                 <a href="#contact" class="mt-8 inline-block bg-brand text-white font-bold text-lg py-4 px-10 rounded-lg transition hover:-translate-y-0.5 hover:shadow-lg">
-                    Get My Free Ad Audit
+                    Get Your Free Ad Audit
                 </a>
                 <div class="mt-16">
                     <p class="text-gray-500 font-semibold tracking-wider text-sm mb-4">TRUSTED & CERTIFIED PARTNERS</p>
@@ -271,7 +271,7 @@
                         </div>
                     </div>
                     <div class="lg:w-1/2 mt-10 lg:mt-0">
-                        <form action="#" method="POST" class="bg-white p-8 rounded-xl shadow-2xl text-gray-800">
+                        <form id="contact-form" action="#" method="POST" class="bg-white p-8 rounded-xl shadow-2xl text-gray-800">
                             <h3 class="text-2xl font-bold mb-6">Get Your Free Audit</h3>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
@@ -303,7 +303,7 @@
                                     Submit Request
                                 </button>
                             </div>
-                            <p class="text-xs text-gray-500 mt-4 text-center">We'll get back to you within one business day.</p>
+                            <p id="form-status" class="text-xs text-gray-500 mt-4 text-center">We'll get back to you within one business day.</p>
                         </form>
                     </div>
                 </div>
@@ -333,6 +333,79 @@
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // --- 
+        // *** MODIFICATION 3: Added Google Sheet form submission script ***
+        // ---
+
+        // This is the Google Apps Script URL you provided
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4qjIOYidlXNMdB5aaFKRypGHkhc7Ghv7_lSOdd-BLk0plaJZ10E4wO6K0rTAVF17F/exec';
+
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+
+        contactForm.addEventListener('submit', e => {
+            // Prevent the default form submission
+            e.preventDefault();
+
+            // Show a "submitting" message and disable the button
+            formStatus.textContent = 'Submitting...';
+            formStatus.style.color = '#3b82f6'; // Blue color
+            submitButton.disabled = true;
+            submitButton.style.opacity = '0.7';
+
+            // Get the form data as an object
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                website: formData.get('website'),
+                service: formData.get('service')
+            };
+
+            // Send the data to the Google Apps Script
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors', // 'no-cors' is required for simple web app POSTs
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+                // Note: 'no-cors' mode means we won't be able to read the response.
+                // We will just assume success if the request doesn't fail.
+            })
+            .then(() => {
+                // Show success message
+                formStatus.textContent = "Thanks! We'll be in touch soon.";
+                formStatus.style.color = '#16a34a'; // Green color for success
+                
+                // Clear the form
+                contactForm.reset();
+            })
+            .catch(error => {
+                // Show error message
+                console.error('Error:', error);
+                formStatus.textContent = 'Oops! Something went wrong. Please try again.';
+                formStatus.style.color = '#dc2626'; // Red color for error
+            })
+            .finally(() => {
+                // Re-enable the button after a short delay
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.style.opacity = '1';
+                    
+                    // Reset status text after a few more seconds
+                    setTimeout(() => {
+                        formStatus.textContent = "We'll get back to you within one business day.";
+                        formStatus.style.color = ''; // Reset color
+                    }, 4000);
+
+                }, 1000);
+            });
+        });
+
     </script>
 
 </body>
