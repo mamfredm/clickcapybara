@@ -221,12 +221,21 @@ silktideCookieBannerManager.updateCookieBannerConfig({
                     <i class="fas fa-bars"></i>
                 </button>
             </nav>
-            <div id="mobile-menu" class="hidden md:hidden mt-4">
-                <a href="#services" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded" data-key="nav_services_mobile">Services</a>
-                <a href="#case-studies" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded" data-key="nav_case_studies_mobile">Case Studies</a>
-                <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded" data-key="nav_about_mobile">About</a>
-                <a href="#contact" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 rounded" data-key="nav_contact_mobile">Contact</a>
-                <a href="#contact" class="block bg-brand text-white font-bold py-3 px-4 rounded-lg mt-2 text-center transition hover:shadow-md" data-key="nav_audit_button_mobile">Free Ad Audit</a>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 bg-white rounded-lg shadow-lg border border-gray-100 pb-2">
+                 <a href="#services" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_services_mobile">Services</a>
+                 <a href="#case-studies" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_case_studies_mobile">Case Studies</a>
+                 <a href="#about" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_about_mobile">About</a>
+                 <a href="#contact" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50" data-key="nav_contact_mobile">Contact</a>
+    
+                 <div class="flex items-center px-4 py-3 border-t border-gray-100 gap-4">
+                     <i class="fas fa-globe text-gray-400 text-lg"></i>
+                     <button id="mobile-lang-en" class="font-bold text-sm">EN</button>
+                     <button id="mobile-lang-de" class="font-bold text-sm text-gray-400">DE</button>
+              </div>
+
+             <div class="p-4 pt-2">
+                 <a href="#contact" class="block bg-brand text-white font-bold py-3 px-4 rounded-lg text-center transition hover:shadow-md" data-key="nav_audit_button_mobile">Free Ad Audit</a>
+             </div>
             </div>
         </div>
     </header>
@@ -468,12 +477,17 @@ silktideCookieBannerManager.updateCookieBannerConfig({
     <script>
         // --- 1. NEW TRANSLATION CODE START ---
 
-        // Check if translations loaded (important for debugging)
+// Check if translations loaded
         if (typeof translations === 'undefined') {
             console.error("ERROR: translations.js file not loaded!");
         } else {
+            // Desktop Buttons
             const langEnButton = document.getElementById('lang-en');
             const langDeButton = document.getElementById('lang-de');
+            
+            // Mobile Buttons (NEW)
+            const mobileLangEnButton = document.getElementById('mobile-lang-en');
+            const mobileLangDeButton = document.getElementById('mobile-lang-de');
             
             // The main translation function
             function setLanguage(lang) {
@@ -490,7 +504,6 @@ silktideCookieBannerManager.updateCookieBannerConfig({
                 textElements.forEach(element => {
                     const key = element.getAttribute('data-key');
                     if (translations[lang][key]) {
-                        // Use innerHTML to support keys with <b>, <span>, etc.
                         element.innerHTML = translations[lang][key];
                     }
                 });
@@ -504,22 +517,36 @@ silktideCookieBannerManager.updateCookieBannerConfig({
                     }
                 });
 
-                // 5. Update button styles
+                // 5. Update button styles (For both Desktop AND Mobile)
                 if (lang === 'de') {
+                    // Desktop
                     langDeButton.classList.remove('text-gray-400');
                     langEnButton.classList.add('text-gray-400');
+                    
+                    // Mobile
+                    if(mobileLangDeButton) mobileLangDeButton.classList.remove('text-gray-400');
+                    if(mobileLangEnButton) mobileLangEnButton.classList.add('text-gray-400');
                 } else {
+                    // Desktop
                     langEnButton.classList.remove('text-gray-400');
                     langDeButton.classList.add('text-gray-400');
+
+                    // Mobile
+                    if(mobileLangEnButton) mobileLangEnButton.classList.remove('text-gray-400');
+                    if(mobileLangDeButton) mobileLangDeButton.classList.add('text-gray-400');
                 }
 
-                // 6. (Optional) Save the user's choice
+                // 6. Save the user's choice
                 localStorage.setItem('language', lang);
             }
 
-            // Add click listeners to the buttons
-            langEnButton.addEventListener('click', () => setLanguage('en'));
-            langDeButton.addEventListener('click', () => setLanguage('de'));
+            // Add click listeners to Desktop buttons
+            if(langEnButton) langEnButton.addEventListener('click', () => setLanguage('en'));
+            if(langDeButton) langDeButton.addEventListener('click', () => setLanguage('de'));
+
+            // Add click listeners to Mobile buttons (NEW)
+            if(mobileLangEnButton) mobileLangEnButton.addEventListener('click', () => setLanguage('en'));
+            if(mobileLangDeButton) mobileLangDeButton.addEventListener('click', () => setLanguage('de'));
 
             // Check for a saved language or default to 'en'
             const savedLang = localStorage.getItem('language') || 'en';
