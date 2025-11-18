@@ -102,6 +102,7 @@ silktideCookieBannerManager.updateCookieBannerConfig({
         gtag('consent', 'update', {
           analytics_storage: 'granted',
         });
+        window.dataLayer.push({'event': 'consent_analytics_granted'});
       },
       onReject: function() {
         gtag('consent', 'update', {
