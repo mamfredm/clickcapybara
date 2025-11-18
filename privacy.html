@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+    </script>
+
+    <script>
+      (function() {
+        if (localStorage.getItem('silktideCookieChoice_analytics') === 'true') {
+           gtag('consent', 'update', { 'analytics_storage': 'granted' });
+        }
+        if (localStorage.getItem('silktideCookieChoice_advertising') === 'true') {
+           gtag('consent', 'update', {
+             'ad_storage': 'granted',
+             'ad_user_data': 'granted',
+             'ad_personalization': 'granted'
+           });
+        }
+      })();
+    </script>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WK2WCGQH');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title data-key="privacy_page_title">Privacy Policy | Click-Capybara</title>
+    
+    <meta name="description" content="Privacy Policy for Click-Capybara.">
+
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_capybara_outine_bold.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="translations.js"></script>
+
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="cookie-banner/silktide-consent-manager.css">
+    <script src="cookie-banner/silktide-consent-manager.js"></script>
+    <script>
+    silktideCookieBannerManager.updateCookieBannerConfig({
+      background: { showBackground: true },
+      cookieIcon: { position: "bottomLeft" },
+      cookieTypes: [
+        {
+          id: "necessary",
+          name: "Necessary", // Note: You might want to add keys for cookie banner text in translations.js too if you want that translated dynamically, though Silktide usually handles its own config.
+          description: "<p>These cookies are necessary for the website to function properly.</p>",
+          required: true
+        },
+        {
+          id: "analytics",
+          name: "Analytics",
+          description: "<p>These cookies help us improve the site.</p>",
+          required: false,
+          onAccept: function() {
+            gtag('consent', 'update', { analytics_storage: 'granted' });
+            window.dataLayer.push({'event': 'consent_analytics_granted'});
+          },
+          onReject: function() {
+            gtag('consent', 'update', { analytics_storage: 'denied' });
+          }
+        },
+        {
+          id: "advertising",
+          name: "Advertising",
+          description: "<p>These cookies provide extra features and personalization.</p>",
+          required: false,
+          onAccept: function() {
+            gtag('consent', 'update', {
+              ad_storage: 'granted',
+              ad_user_data: 'granted',
+              ad_personalization: 'granted',
+            });
+            window.dataLayer.push({'event': 'consent_ads_granted'});
+          },
+          onReject: function() {
+            gtag('consent', 'update', {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+            });
+          }
+        }
+      ],
+      text: {
+        banner: {
+          description: "<p>We use cookies on our site to enhance your user experience. <a href=\"privacy.html\" target=\"_self\">Privacy Policy.</a></p>",
+        }
+      }
+    });
+    </script>
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: { DEFAULT: '#fcba02', light: '#FFF9E6', dark: '#D4A101' }
+            },
+            fontFamily: { sans: ['Inter', 'sans-serif'] }
+          }
+        }
+      }
+    </script>
+    
+    <style>
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after {
+            content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 50%; transform: translateX(-50%); background-color: #fcba02; transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        
+        /* Typography classes */
+        .prose h1 { @apply text-3xl font-bold text-gray-900 mb-6; }
+        .prose h2 { @apply text-2xl font-bold text-gray-900 mt-8 mb-4; }
+        .prose h3 { @apply text-xl font-semibold text-gray-900 mt-6 mb-3; }
+        .prose p { @apply text-gray-600 mb-4 leading-relaxed; }
+        .prose ul { @apply list-disc pl-5 mb-4 text-gray-600; }
+        .prose li { @apply mb-2; }
+        .prose a { @apply text-brand hover:text-brand-dark underline; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara Logo" class="w-10 h-10">
+                    <span class="text-2xl font-bold text-gray-900">Click-Capybara</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#services" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_services">Services</a>
+                    <a href="index.html#case-studies" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_case_studies">Case Studies</a>
+                    <a href="index.html#about" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_about">About</a>
+                    <a href="index.html#contact" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_contact">Contact</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4 ml-8">
+                    <button id="lang-en" class="font-semibold text-sm">EN</button>
+                    <button id="lang-de" class="font-semibold text-sm text-gray-400">DE</button>
+                </div>
+                
+                <a href="index.html#contact" class="hidden md:inline-block bg-brand text-white font-bold py-2 px-5 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="nav_audit_button">
+                    Free Ad Audit
+                </a>
+                <button id="mobile-menu-button" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 bg-white rounded-lg shadow-lg border border-gray-100 pb-2">
+                 <a href="index.html#services" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_services_mobile">Services</a>
+                 <a href="index.html#case-studies" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_case_studies_mobile">Case Studies</a>
+                 <a href="index.html#about" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_about_mobile">About</a>
+                 <a href="index.html#contact" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50" data-key="nav_contact_mobile">Contact</a>
+    
+                 <div class="flex items-center px-4 py-3 border-t border-gray-100 gap-4">
+                     <i class="fas fa-globe text-gray-400 text-lg"></i>
+                     <button id="mobile-lang-en" class="font-bold text-sm">EN</button>
+                     <button id="mobile-lang-de" class="font-bold text-sm text-gray-400">DE</button>
+              </div>
+
+             <div class="p-4 pt-2">
+                 <a href="index.html#contact" class="block bg-brand text-white font-bold py-3 px-4 rounded-lg text-center transition hover:shadow-md" data-key="nav_audit_button_mobile">Free Ad Audit</a>
+             </div>
+            </div>
+        </div>
+    </header>
+
+   <main class="flex-grow">
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <div class="prose prose-lg prose-gray max-w-none space-y-6 md:space-y-8">
+
+        <h1 data-key="privacy_title"><strong>Privacy Policy</strong></h1>
+        <p class="text-sm text-gray-500" data-key="privacy_date">Last Updated: November 2025</p>
+
+        <p data-key="privacy_intro">
+          At Click-Capybara, we care about your privacy and want to keep things simple and transparent.
+          This Privacy Policy explains what data we collect, how we use it, and what rights you have as a visitor from the EU.
+        </p>
+
+        <h2 data-key="privacy_s1_title">1. Information We Collect</h2>
+        <p data-key="privacy_s1_text">
+          We only collect information that helps us operate and improve our website:
+        </p>
+
+        <ul>
+          <li data-key="privacy_s1_li1">
+            <strong>Personal Data:</strong> Only if you contact us directly (e.g., your email address).
+          </li>
+          <li data-key="privacy_s1_li2">
+            <strong>Usage Data:</strong> Anonymous or pseudonymous analytics data, device information, pages viewed, and general technical logs.
+          </li>
+        </ul>
+
+        <h2 data-key="privacy_s2_title">2. How We Use Your Information</h2>
+        <p data-key="privacy_s2_text">We use your information to:</p>
+
+        <ul>
+          <li data-key="privacy_s2_li1">Provide and maintain the website.</li>
+          <li data-key="privacy_s2_li2">Communicate with you when you contact us.</li>
+          <li data-key="privacy_s2_li3">Understand how visitors use the site (analytics).</li>
+          <li data-key="privacy_s2_li4">Comply with applicable EU laws.</li>
+        </ul>
+
+        <h2 data-key="privacy_s3_title">3. Cookies and Tracking Technologies</h2>
+        <p data-key="privacy_s3_text">
+          We use cookies only with your consent. Our cookie banner (powered by Silktide) allows you to choose
+          whether analytics or advertising cookies may be set.
+        </p>
+
+        <h3 data-key="privacy_s3_sub1">Google Analytics & Google Ads (GA4)</h3>
+        <p data-key="privacy_s3_sub1_text">
+          We use Google Analytics 4 to understand how visitors use our site. GA4 may use cookies or similar technologies.
+          Data may be transferred to servers in the United States. All tracking only activates after your consent.
+        </p>
+
+        <h3 data-key="privacy_s3_sub2">Microsoft Advertising</h3>
+        <p data-key="privacy_s3_sub2_text">
+          We may use Microsoft Advertising to measure campaign performance. Data is processed according to your cookie settings.
+        </p>
+
+        <h3 data-key="privacy_s3_sub3">Hosting: GitHub Pages</h3>
+        <p data-key="privacy_s3_sub3_text">
+          Our website is hosted by GitHub Pages (GitHub Inc.), part of Microsoft. When you visit the site,
+          GitHub automatically processes technical logs (e.g., IP address, browser type) to deliver the website securely.
+          GitHub servers may operate in the United States.
+        </p>
+
+        <h2 data-key="privacy_s4_title">4. Third-Party Disclosure</h2>
+        <p data-key="privacy_s4_text">
+          We do not sell or trade personal information. Data is only shared with trusted service providers
+          (GitHub, Google, Microsoft) as needed to run the site.
+        </p>
+
+        <h2 data-key="privacy_s5_title">5. Your Data Rights (EU/DSGVO)</h2>
+        <p data-key="privacy_s5_text">
+          If you live in the EU or EEA, you have the following rights:
+        </p>
+
+        <ul>
+          <li data-key="privacy_s5_li1">Access your stored personal data.</li>
+          <li data-key="privacy_s5_li2">Request corrections to inaccurate data.</li>
+          <li data-key="privacy_s5_li3">Request deletion of your data.</li>
+          <li data-key="privacy_s5_li4">Withdraw consent at any time.</li>
+        </ul>
+
+        <h2 data-key="privacy_s6_title">6. Contact Us</h2>
+        <p data-key="privacy_s6_text">
+          Have questions or want to exercise your rights? We’re happy to hear from you.
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:hello@click-capybara.com">hello@click-capybara.com</a><br>
+          <strong>Click-Capybara</strong>
+        </p>
+
+        <div class="mt-10">
+          <a href="index.html" class="text-brand font-bold hover:underline" data-key="privacy_back_home">
+            &larr; Back to Home
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p data-key="footer_copyright">&copy; 2025 Click-Capybara. All Rights Reserved. | Calmly Mastering the Click.</p>
+            <div class="mt-4 text-sm">
+                <a href="#" class="hover:text-white mx-2" data-key="privacy_title">Privacy Policy</a> | 
+                <a href="index.html#contact" class="hover:text-white mx-2" data-key="nav_contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- REUSED TRANSLATION LOGIC ---
+        if (typeof translations === 'undefined') {
+            console.error("ERROR: translations.js file not loaded!");
+        } else {
+            const langEnButton = document.getElementById('lang-en');
+            const langDeButton = document.getElementById('lang-de');
+            const mobileLangEnButton = document.getElementById('mobile-lang-en');
+            const mobileLangDeButton = document.getElementById('mobile-lang-de');
+            
+            function setLanguage(lang) {
+                document.documentElement.lang = lang;
+
+                // 1. Update Page Title (Dynamic)
+                if (translations[lang].privacy_page_title) {
+                    document.title = translations[lang].privacy_page_title;
+                }
+
+                // 2. Update all elements with data-key
+                const textElements = document.querySelectorAll('[data-key]');
+                textElements.forEach(element => {
+                    const key = element.getAttribute('data-key');
+                    if (translations[lang][key]) {
+                        element.innerHTML = translations[lang][key];
+                    }
+                });
+
+                // 3. Button Styling
+                if (lang === 'de') {
+                    if(langDeButton) langDeButton.classList.remove('text-gray-400');
+                    if(langEnButton) langEnButton.classList.add('text-gray-400');
+                    if(mobileLangDeButton) mobileLangDeButton.classList.remove('text-gray-400');
+                    if(mobileLangEnButton) mobileLangEnButton.classList.add('text-gray-400');
+                } else {
+                    if(langEnButton) langEnButton.classList.remove('text-gray-400');
+                    if(langDeButton) langDeButton.classList.add('text-gray-400');
+                    if(mobileLangEnButton) mobileLangEnButton.classList.remove('text-gray-400');
+                    if(mobileLangDeButton) mobileLangDeButton.classList.add('text-gray-400');
+                }
+                localStorage.setItem('language', lang);
+            }
+
+            // Listeners
+            if(langEnButton) langEnButton.addEventListener('click', () => setLanguage('en'));
+            if(langDeButton) langDeButton.addEventListener('click', () => setLanguage('de'));
+            if(mobileLangEnButton) mobileLangEnButton.addEventListener('click', () => setLanguage('en'));
+            if(mobileLangDeButton) mobileLangDeButton.addEventListener('click', () => setLanguage('de'));
+
+            // Load saved lang
+            const savedLang = localStorage.getItem('language') || 'en';
+            setLanguage(savedLang);
+        }
+
+        // --- MOBILE MENU LOGIC ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelectorAll('#mobile-menu a');
+
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>

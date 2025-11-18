@@ -59,7 +59,6 @@ const translations = {
     "case_stat_2_num": "-45%",
     "case_stat_2_desc": "Cost Per Acquisition",
     "case_start_your_project_button": "Start Your Project",
-    
     "about_title": "Why a Capybara? 🧘",
     "about_p1": "In the chaotic world of digital advertising, we believe in a calmer, more intelligent approach. Capybaras are social, unflappable, and surprisingly smart—qualities we bring to every client partnership.",
     "about_p2": "Our mission is to demystify PPC. We handle the complex algorithms and bidding wars so you can focus on what you do best: running your business.",
@@ -89,8 +88,60 @@ const translations = {
     "form_submitting": "Submitting...",
     "form_success": "Thanks! We'll be in touch soon.",
     "form_error": "Oops! Something went wrong. Please try again.",
-    "footer_copyright": "&copy; 2025 Click-Capybara. All Rights Reserved. | Calmly Mastering the Click."
+    "footer_copyright": "&copy; 2025 Click-Capybara. All Rights Reserved. | Calmly Mastering the Click.",
+
+    // PRIVACY POLICY TRANSLATIONS
+    // PRIVACY POLICY TRANSLATIONS (UPDATED)
+"privacy_page_title": "Privacy Policy | Click-Capybara",
+"privacy_title": "Privacy Policy",
+"privacy_date": "Last Updated: November 2025",
+
+"privacy_intro": "At Click-Capybara, we care about transparency and your privacy. This Privacy Policy explains what data we collect, how we use it, and what rights you have when visiting our website.",
+
+"privacy_s1_title": "1. Information We Collect",
+"privacy_s1_text": "We only collect information necessary to operate, improve, and secure this website:",
+
+"privacy_s1_li1": "<strong>Personal Data:</strong> Only when you contact us directly (e.g., via email). We use this information solely to respond to your message.",
+"privacy_s1_li2": "<strong>Usage Data:</strong> Technical data such as device type, browser, pages viewed, and anonymous analytics information.",
+
+"privacy_s2_title": "2. How We Use Your Information",
+"privacy_s2_text": "We use your information to:",
+
+"privacy_s2_li1": "Provide and maintain the website.",
+"privacy_s2_li2": "Respond to messages you send us.",
+"privacy_s2_li3": "Understand how visitors use our site (analytics).",
+"privacy_s2_li4": "Comply with applicable legal requirements.",
+
+"privacy_s3_title": "3. Cookies and Tracking Technologies",
+"privacy_s3_text": "We use cookies only with your consent. Our cookie banner (powered by Silktide) allows you to manage your preferences at any time.",
+
+"privacy_s3_sub1": "Google Analytics & Google Ads (GA4)",
+"privacy_s3_sub1_text": "We use Google Analytics 4 to understand visitor behavior. Data may be processed on servers in the USA. Tracking only starts after you give consent through the cookie banner.",
+
+"privacy_s3_sub2": "Microsoft Advertising",
+"privacy_s3_sub2_text": "We may use Microsoft Advertising to measure campaign performance. Tracking is only active if you consent to advertising cookies.",
+
+"privacy_s3_sub3": "Hosting: GitHub Pages",
+"privacy_s3_sub3_text": "Our site is hosted on GitHub Pages (GitHub Inc.). GitHub processes technical logs such as IP addresses to deliver the website securely. Servers may be located in the United States.",
+
+"privacy_s4_title": "4. Third-Party Disclosure",
+"privacy_s4_text": "We do not sell or trade personal information. Data is shared only with trusted service providers (GitHub, Google, Microsoft) as required to operate this website.",
+
+"privacy_s5_title": "5. Your Data Rights",
+"privacy_s5_text": "If you are located in the EU/EEA, you have the following rights under GDPR:",
+
+"privacy_s5_li1": "The right to access your personal data.",
+"privacy_s5_li2": "The right to correct inaccurate data.",
+"privacy_s5_li3": "The right to request deletion of your data.",
+"privacy_s5_li4": "The right to withdraw consent at any time (via the cookie manager).",
+
+"privacy_s6_title": "6. Contact Us",
+"privacy_s6_text": "If you have questions or want to exercise your data rights, you can reach us at:",
+
+"privacy_back_home": "Back to Home"
+
   },
+
   // ==================================
   // GERMAN TRANSLATIONS
   // ==================================
@@ -168,7 +219,6 @@ const translations = {
     "form_email_placeholder": "du@unternehmen.de",
     "form_website_label": "Webseite",
     "form_website_placeholder": "deinewebseite.de",
-
     "form_service_label": "Interessierter Service",
     "form_option_1": "Kostenloses Ad Audit",
     "form_option_2": "Google Ads Management",
@@ -181,6 +231,56 @@ const translations = {
     "form_submitting": "Wird gesendet...",
     "form_success": "Danke! Wir melden uns bald.",
     "form_error": "Ups! Da ging etwas schief. Bitte nochmal versuchen.",
-    "footer_copyright": "&copy; 2025 Click-Capybara. Alle Rechte vorbehalten. | Ganz entspannt zu besseren Klicks."
+    "footer_copyright": "&copy; 2025 Click-Capybara. Alle Rechte vorbehalten. | Ganz entspannt zu besseren Klicks.",
+
+    // PRIVACY POLICY TRANSLATIONS
+    // PRIVACY POLICY TRANSLATIONS (UPDATED)
+"privacy_page_title": "Datenschutzerklärung | Click-Capybara",
+"privacy_title": "Datenschutzerklärung",
+"privacy_date": "Stand: November 2025",
+
+"privacy_intro": "Bei Click-Capybara legen wir großen Wert auf Transparenz und den Schutz deiner Daten. Diese Datenschutzerklärung erklärt, welche Informationen wir verarbeiten und welche Rechte du beim Besuch unserer Website hast.",
+
+"privacy_s1_title": "1. Welche Daten wir erheben",
+"privacy_s1_text": "Wir erheben nur Daten, die für den Betrieb und die Verbesserung unserer Website notwendig sind:",
+
+"privacy_s1_li1": "<strong>Personenbezogene Daten:</strong> Nur wenn du uns direkt kontaktierst (z. B. per E-Mail). Diese Informationen verwenden wir ausschließlich zur Beantwortung deiner Anfrage.",
+"privacy_s1_li2": "<strong>Nutzungsdaten:</strong> Technische Informationen wie Gerätetyp, Browser, aufgerufene Seiten und anonyme Analytics-Daten.",
+
+"privacy_s2_title": "2. Wie wir deine Daten verwenden",
+"privacy_s2_text": "Wir nutzen deine Daten, um:",
+
+"privacy_s2_li1": "die Website bereitzustellen und sicher zu betreiben,",
+"privacy_s2_li2": "auf deine Nachrichten zu antworten,",
+"privacy_s2_li3": "zu verstehen, wie Besucher die Seite nutzen (Analytics),",
+"privacy_s2_li4": "gesetzliche Anforderungen einzuhalten.",
+
+"privacy_s3_title": "3. Cookies & Tracking",
+"privacy_s3_text": "Wir setzen Cookies nur mit deiner Einwilligung ein. Über unser Cookie-Banner (Silktide) kannst du deine Einstellungen jederzeit ändern.",
+
+"privacy_s3_sub1": "Google Analytics & Google Ads (GA4)",
+"privacy_s3_sub1_text": "Wir nutzen Google Analytics 4, um das Besucherverhalten besser zu verstehen. Daten können auf Servern in den USA verarbeitet werden. Tracking erfolgt ausschließlich nach deiner Zustimmung.",
+
+"privacy_s3_sub2": "Microsoft Advertising",
+"privacy_s3_sub2_text": "Wir nutzen Microsoft Advertising zur Messung von Werbekampagnen. Tracking ist nur aktiv, wenn du Werbe-Cookies zustimmst.",
+
+"privacy_s3_sub3": "Hosting: GitHub Pages",
+"privacy_s3_sub3_text": "Unsere Website wird über GitHub Pages (GitHub Inc.) gehostet. GitHub verarbeitet technische Log-Daten wie IP-Adressen, um die Seite bereitzustellen. Server können sich in den USA befinden.",
+
+"privacy_s4_title": "4. Weitergabe von Daten",
+"privacy_s4_text": "Wir verkaufen keine personenbezogenen Daten. Eine Weitergabe erfolgt ausschließlich an vertrauenswürdige Dienstleister (GitHub, Google, Microsoft), die für den Betrieb der Website notwendig sind.",
+
+"privacy_s5_title": "5. Deine Rechte nach DSGVO",
+"privacy_s5_text": "Wenn du im EU-/EWR-Raum lebst, hast du folgende Datenschutzrechte:",
+
+"privacy_s5_li1": "Recht auf Auskunft über deine gespeicherten Daten,",
+"privacy_s5_li2": "Recht auf Berichtigung unrichtiger Daten,",
+"privacy_s5_li3": "Recht auf Löschung deiner Daten,",
+"privacy_s5_li4": "Recht, deine Einwilligung jederzeit zu widerrufen (über den Cookie-Manager).",
+
+"privacy_s6_title": "6. Kontakt",
+"privacy_s6_text": "Wenn du Fragen hast oder deine Datenschutzrechte wahrnehmen möchtest, erreichst du uns unter:",
+
+"privacy_back_home": "Zurück zur Startseite"
   }
 };
