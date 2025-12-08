@@ -7,6 +7,7 @@ const translations = {
     "nav_services": "Services",
     "nav_case_studies": "Case Studies",
     "nav_about": "About",
+    "nav_use_cases": "Use Cases",
     "nav_contact": "Contact",
     "nav_audit_button": "Free Ad Audit",
     "nav_services_mobile": "Services",
@@ -92,53 +93,136 @@ const translations = {
 
     // PRIVACY POLICY TRANSLATIONS
     // PRIVACY POLICY TRANSLATIONS (UPDATED)
-"privacy_page_title": "Privacy Policy | Click-Capybara",
-"privacy_title": "Privacy Policy",
-"privacy_date": "Last Updated: November 2025",
+    "privacy_page_title": "Privacy Policy | Click-Capybara",
+    "privacy_title": "Privacy Policy",
+    "privacy_date": "Last Updated: November 2025",
 
-"privacy_intro": "At Click-Capybara, we care about transparency and your privacy. This Privacy Policy explains what data we collect, how we use it, and what rights you have when visiting our website.",
+    "privacy_intro": "At Click-Capybara, we care about transparency and your privacy. This Privacy Policy explains what data we collect, how we use it, and what rights you have when visiting our website.",
 
-"privacy_s1_title": "1. Information We Collect",
-"privacy_s1_text": "We only collect information necessary to operate, improve, and secure this website:",
+    "privacy_s1_title": "1. Information We Collect",
+    "privacy_s1_text": "We only collect information necessary to operate, improve, and secure this website:",
 
-"privacy_s1_li1": "<strong>Personal Data:</strong> Only when you contact us directly (e.g., via email). We use this information solely to respond to your message.",
-"privacy_s1_li2": "<strong>Usage Data:</strong> Technical data such as device type, browser, pages viewed, and anonymous analytics information.",
+    "privacy_s1_li1": "<strong>Personal Data:</strong> Only when you contact us directly (e.g., via email). We use this information solely to respond to your message.",
+    "privacy_s1_li2": "<strong>Usage Data:</strong> Technical data such as device type, browser, pages viewed, and anonymous analytics information.",
 
-"privacy_s2_title": "2. How We Use Your Information",
-"privacy_s2_text": "We use your information to:",
+    "privacy_s2_title": "2. How We Use Your Information",
+    "privacy_s2_text": "We use your information to:",
 
-"privacy_s2_li1": "Provide and maintain the website.",
-"privacy_s2_li2": "Respond to messages you send us.",
-"privacy_s2_li3": "Understand how visitors use our site (analytics).",
-"privacy_s2_li4": "Comply with applicable legal requirements.",
+    "privacy_s2_li1": "Provide and maintain the website.",
+    "privacy_s2_li2": "Respond to messages you send us.",
+    "privacy_s2_li3": "Understand how visitors use our site (analytics).",
+    "privacy_s2_li4": "Comply with applicable legal requirements.",
 
-"privacy_s3_title": "3. Cookies and Tracking Technologies",
-"privacy_s3_text": "We use cookies only with your consent. Our cookie banner (powered by Silktide) allows you to manage your preferences at any time.",
+    "privacy_s3_title": "3. Cookies and Tracking Technologies",
+    "privacy_s3_text": "We use cookies only with your consent. Our cookie banner (powered by Silktide) allows you to manage your preferences at any time.",
 
-"privacy_s3_sub1": "Google Analytics & Google Ads (GA4)",
-"privacy_s3_sub1_text": "We use Google Analytics 4 to understand visitor behavior. Data may be processed on servers in the USA. Tracking only starts after you give consent through the cookie banner.",
+    "privacy_s3_sub1": "Google Analytics & Google Ads (GA4)",
+    "privacy_s3_sub1_text": "We use Google Analytics 4 to understand visitor behavior. Data may be processed on servers in the USA. Tracking only starts after you give consent through the cookie banner.",
 
-"privacy_s3_sub2": "Microsoft Advertising",
-"privacy_s3_sub2_text": "We may use Microsoft Advertising to measure campaign performance. Tracking is only active if you consent to advertising cookies.",
+    "privacy_s3_sub2": "Microsoft Advertising",
+    "privacy_s3_sub2_text": "We may use Microsoft Advertising to measure campaign performance. Tracking is only active if you consent to advertising cookies.",
 
-"privacy_s3_sub3": "Hosting: GitHub Pages",
-"privacy_s3_sub3_text": "Our site is hosted on GitHub Pages (GitHub Inc.). GitHub processes technical logs such as IP addresses to deliver the website securely. Servers may be located in the United States.",
+    "privacy_s3_sub3": "Hosting: GitHub Pages",
+    "privacy_s3_sub3_text": "Our site is hosted on GitHub Pages (GitHub Inc.). GitHub processes technical logs such as IP addresses to deliver the website securely. Servers may be located in the United States.",
 
-"privacy_s4_title": "4. Third-Party Disclosure",
-"privacy_s4_text": "We do not sell or trade personal information. Data is shared only with trusted service providers (GitHub, Google, Microsoft) as required to operate this website.",
+    "privacy_s4_title": "4. Third-Party Disclosure",
+    "privacy_s4_text": "We do not sell or trade personal information. Data is shared only with trusted service providers (GitHub, Google, Microsoft) as required to operate this website.",
 
-"privacy_s5_title": "5. Your Data Rights",
-"privacy_s5_text": "If you are located in the EU/EEA, you have the following rights under GDPR:",
+    "privacy_s5_title": "5. Your Data Rights",
+    "privacy_s5_text": "If you are located in the EU/EEA, you have the following rights under GDPR:",
 
-"privacy_s5_li1": "The right to access your personal data.",
-"privacy_s5_li2": "The right to correct inaccurate data.",
-"privacy_s5_li3": "The right to request deletion of your data.",
-"privacy_s5_li4": "The right to withdraw consent at any time (via the cookie manager).",
+    "privacy_s5_li1": "The right to access your personal data.",
+    "privacy_s5_li2": "The right to correct inaccurate data.",
+    "privacy_s5_li3": "The right to request deletion of your data.",
+    "privacy_s5_li4": "The right to withdraw consent at any time (via the cookie manager).",
 
-"privacy_s6_title": "6. Contact Us",
-"privacy_s6_text": "If you have questions or want to exercise your data rights, you can reach us at:",
+    "privacy_s6_title": "6. Contact Us",
+    "privacy_s6_text": "If you have questions or want to exercise your data rights, you can reach us at:",
 
-"privacy_back_home": "Back to Home"
+    "privacy_back_home": "Back to Home",
+
+    // NEW PAGES TRANSLATIONS
+    "services_page_title": "Services | Click-Capybara",
+    "services_meta_desc": "Explore our PPC services: Google Ads, YouTube Ads, and Conversion Tracking mastery.",
+    "usecases_page_title": "Use Cases | Click-Capybara",
+    "usecases_meta_desc": "PPC solutions tailored for E-commerce, B2B SaaS, and Local Businesses.",
+    "casestudies_page_title": "Case Studies | Click-Capybara",
+    "casestudies_meta_desc": "Real results: ROI increases, lead volume growth, and CPA reduction.",
+    "faq_page_title": "FAQ | Click-Capybara",
+    "faq_meta_desc": "Frequently asked questions about our PPC management services.",
+
+    // Services Page
+    "services_h1": "Our Expertise, Your Growth",
+    "services_intro": "We don’t just run ads. We build comprehensive acquisition engines.",
+    "service_google_title": "Google Ads Management",
+    "service_google_desc": "The core of our offering. We manage Search, Shopping, and Display campaigns with a focus on profitability.",
+    "service_ms_title": "Microsoft & YouTube Ads",
+    "service_ms_desc": "Reach audiences where your competitors aren't. Lower CPAs and higher engagement.",
+    "service_tracking_title": "Conversion Tracking & Analytics",
+    "service_tracking_desc": "Data you can trust. We set up advanced tracking (GA4, GTM, Server-side) to ensure every dollar is accounted for.",
+
+    // Use Cases Page
+    "usecases_h1": "Strategies Tailored to You",
+    "usecases_intro": "Different business models require different PPC strategies. Here is how we adapt.",
+    "usecase_ecommerce_h2": "E-Commerce",
+    "usecase_ecommerce_desc": "For online stores, it's all about ROAS. We optimize Feed strategy, Shopping Ads, and dynamic remarketing.",
+    "usecase_b2b_h2": "B2B SaaS & Services",
+    "usecase_b2b_desc": "Lead quality over quantity. We target intent-based keywords and use offline conversion tracking to optimize for qualified leads, not just clicks.",
+    "usecase_local_h2": "Local Business",
+    "usecase_local_desc": "Dominate your neighborhood. We ensure you show up when locals are looking for your services.",
+    "usecase_ecommerce_title": "E-Commerce",
+    "usecase_b2b_title": "B2B SaaS",
+    "usecase_local_title": "Local Business",
+
+    // Case Studies Page
+    "casestudies_h1": "Proof is in the Performance",
+    "casestudies_intro": "We don't hide behind vanity metrics. Here are the real business outcomes we've driven for our partners.",
+    "case_b2b_tag": "B2B SAAS CASE STUDY",
+    "case_b2b_title": "Doubling Demo Bookings for a SaaS Platform",
+    "case_b2b_desc": "The client was getting clicks but no demos. We shifted strategy from broad keywords to intent-based search terms and implemented a YouTube remarketing funnel to educate prospects before the call.",
+    "case_b2b_quote": "\"Finally, a PPC agency that understands B2B sales cycles. The quality of leads has skyrocketed.\"",
+    "case_b2b_cite": "- CMO, Tech SaaS Company",
+    "case_b2b_stat_1_num": "+150%",
+    "case_b2b_stat_1_desc": "Lead Volume",
+    "case_b2b_stat_2_num": "85%",
+    "case_b2b_stat_2_desc": "Lead Quality Score",
+
+    // FAQ Page
+    "faq_h1": "Frequently Asked Questions",
+    "faq_intro": "Got questions? We've got answers. If you don't see what you're looking for, feel free to reach out.",
+    "faq_q1": "What makes Click-Capybara different?",
+    "faq_a1": "Unlike agencies that set and forget, we are obsessed with data and transparency. We view ourselves as an extension of your team, providing the calm, steady hand needed to navigate chaotic ad markets.",
+    "faq_q2": "How much do you charge?",
+    "faq_a2": "Our pricing is tailored to your ad spend and the complexity of your account. We believe in fair, flat-fee pricing or percentage-of-spend models depending on what makes sense for your growth stage. Contact us for a quote!",
+    "faq_q3": "Do you work with small businesses?",
+    "faq_a3": "Absolutely. We love helping ambitious small businesses scale. As long as you have a viable product and a budget to test (usually at least $1k/month), we can help.",
+    "faq_q4": "How long does it take to see results?",
+    "faq_a4": "PPC offers immediate traffic, but campaign maturity takes time. Typically, we see efficiency improvements in month 1, with significant scaling occurring by months 3-4.",
+
+    // Index Page Teasers
+    "services_teaser_title": "Our Core Services",
+    "services_teaser_subtitle": "Everything you need to succeed in paid search.",
+    "service_1_short_desc": "Expert campaign management for Search, Shopping, and Display.",
+    "service_2_short_desc": "Reach new audiences on Bing and the world's commercials.",
+    "service_3_short_desc": "Precise analytics setup so you know exactly where your money goes.",
+    "view_all_services": "View All Services",
+
+    "usecases_teaser_title": "Tailored for Your Business",
+    "usecases_teaser_subtitle": "We specialize in strategies that work for your specific industry.",
+    "usecase_ecommerce_subtitle": "Scale Sales & ROAS",
+    "usecase_b2b_subtitle": "Drive Qualified Leads",
+    "usecase_local_subtitle": "Dominante Your Market",
+
+    "case_teaser_title": "Real Results",
+    "case_ecommerce_teaser_desc": "ROI Increase for Fashion Retailer",
+    "view_case_study_btn": "View Case Study",
+    "view_all_cases": "View All Success Stories",
+
+    "faq_teaser_link": "Have questions about how we work? Check our FAQ &rarr;",
+
+    "benefit_1": "No commitment required",
+    "benefit_2": "Detailed video walkthrough",
+    "benefit_3": "Actionable next steps",
 
   },
 
@@ -150,6 +234,7 @@ const translations = {
     "nav_services": "Services",
     "nav_case_studies": "Case Studies",
     "nav_about": "Über uns",
+    "nav_use_cases": "Use Cases",
     "nav_contact": "Kontakt",
     "nav_audit_button": "Kostenloses Ad Audit",
     "nav_services_mobile": "Services",
@@ -235,52 +320,135 @@ const translations = {
 
     // PRIVACY POLICY TRANSLATIONS
     // PRIVACY POLICY TRANSLATIONS (UPDATED)
-"privacy_page_title": "Datenschutzerklärung | Click-Capybara",
-"privacy_title": "Datenschutzerklärung",
-"privacy_date": "Stand: November 2025",
+    "privacy_page_title": "Datenschutzerklärung | Click-Capybara",
+    "privacy_title": "Datenschutzerklärung",
+    "privacy_date": "Stand: November 2025",
 
-"privacy_intro": "Bei Click-Capybara legen wir großen Wert auf Transparenz und den Schutz deiner Daten. Diese Datenschutzerklärung erklärt, welche Informationen wir verarbeiten und welche Rechte du beim Besuch unserer Website hast.",
+    "privacy_intro": "Bei Click-Capybara legen wir großen Wert auf Transparenz und den Schutz deiner Daten. Diese Datenschutzerklärung erklärt, welche Informationen wir verarbeiten und welche Rechte du beim Besuch unserer Website hast.",
 
-"privacy_s1_title": "1. Welche Daten wir erheben",
-"privacy_s1_text": "Wir erheben nur Daten, die für den Betrieb und die Verbesserung unserer Website notwendig sind:",
+    "privacy_s1_title": "1. Welche Daten wir erheben",
+    "privacy_s1_text": "Wir erheben nur Daten, die für den Betrieb und die Verbesserung unserer Website notwendig sind:",
 
-"privacy_s1_li1": "<strong>Personenbezogene Daten:</strong> Nur wenn du uns direkt kontaktierst (z. B. per E-Mail). Diese Informationen verwenden wir ausschließlich zur Beantwortung deiner Anfrage.",
-"privacy_s1_li2": "<strong>Nutzungsdaten:</strong> Technische Informationen wie Gerätetyp, Browser, aufgerufene Seiten und anonyme Analytics-Daten.",
+    "privacy_s1_li1": "<strong>Personenbezogene Daten:</strong> Nur wenn du uns direkt kontaktierst (z. B. per E-Mail). Diese Informationen verwenden wir ausschließlich zur Beantwortung deiner Anfrage.",
+    "privacy_s1_li2": "<strong>Nutzungsdaten:</strong> Technische Informationen wie Gerätetyp, Browser, aufgerufene Seiten und anonyme Analytics-Daten.",
 
-"privacy_s2_title": "2. Wie wir deine Daten verwenden",
-"privacy_s2_text": "Wir nutzen deine Daten, um:",
+    "privacy_s2_title": "2. Wie wir deine Daten verwenden",
+    "privacy_s2_text": "Wir nutzen deine Daten, um:",
 
-"privacy_s2_li1": "die Website bereitzustellen und sicher zu betreiben,",
-"privacy_s2_li2": "auf deine Nachrichten zu antworten,",
-"privacy_s2_li3": "zu verstehen, wie Besucher die Seite nutzen (Analytics),",
-"privacy_s2_li4": "gesetzliche Anforderungen einzuhalten.",
+    "privacy_s2_li1": "die Website bereitzustellen und sicher zu betreiben,",
+    "privacy_s2_li2": "auf deine Nachrichten zu antworten,",
+    "privacy_s2_li3": "zu verstehen, wie Besucher die Seite nutzen (Analytics),",
+    "privacy_s2_li4": "gesetzliche Anforderungen einzuhalten.",
 
-"privacy_s3_title": "3. Cookies & Tracking",
-"privacy_s3_text": "Wir setzen Cookies nur mit deiner Einwilligung ein. Über unser Cookie-Banner (Silktide) kannst du deine Einstellungen jederzeit ändern.",
+    "privacy_s3_title": "3. Cookies & Tracking",
+    "privacy_s3_text": "Wir setzen Cookies nur mit deiner Einwilligung ein. Über unser Cookie-Banner (Silktide) kannst du deine Einstellungen jederzeit ändern.",
 
-"privacy_s3_sub1": "Google Analytics & Google Ads (GA4)",
-"privacy_s3_sub1_text": "Wir nutzen Google Analytics 4, um das Besucherverhalten besser zu verstehen. Daten können auf Servern in den USA verarbeitet werden. Tracking erfolgt ausschließlich nach deiner Zustimmung.",
+    "privacy_s3_sub1": "Google Analytics & Google Ads (GA4)",
+    "privacy_s3_sub1_text": "Wir nutzen Google Analytics 4, um das Besucherverhalten besser zu verstehen. Daten können auf Servern in den USA verarbeitet werden. Tracking erfolgt ausschließlich nach deiner Zustimmung.",
 
-"privacy_s3_sub2": "Microsoft Advertising",
-"privacy_s3_sub2_text": "Wir nutzen Microsoft Advertising zur Messung von Werbekampagnen. Tracking ist nur aktiv, wenn du Werbe-Cookies zustimmst.",
+    "privacy_s3_sub2": "Microsoft Advertising",
+    "privacy_s3_sub2_text": "Wir nutzen Microsoft Advertising zur Messung von Werbekampagnen. Tracking ist nur aktiv, wenn du Werbe-Cookies zustimmst.",
 
-"privacy_s3_sub3": "Hosting: GitHub Pages",
-"privacy_s3_sub3_text": "Unsere Website wird über GitHub Pages (GitHub Inc.) gehostet. GitHub verarbeitet technische Log-Daten wie IP-Adressen, um die Seite bereitzustellen. Server können sich in den USA befinden.",
+    "privacy_s3_sub3": "Hosting: GitHub Pages",
+    "privacy_s3_sub3_text": "Unsere Website wird über GitHub Pages (GitHub Inc.) gehostet. GitHub verarbeitet technische Log-Daten wie IP-Adressen, um die Seite bereitzustellen. Server können sich in den USA befinden.",
 
-"privacy_s4_title": "4. Weitergabe von Daten",
-"privacy_s4_text": "Wir verkaufen keine personenbezogenen Daten. Eine Weitergabe erfolgt ausschließlich an vertrauenswürdige Dienstleister (GitHub, Google, Microsoft), die für den Betrieb der Website notwendig sind.",
+    "privacy_s4_title": "4. Weitergabe von Daten",
+    "privacy_s4_text": "Wir verkaufen keine personenbezogenen Daten. Eine Weitergabe erfolgt ausschließlich an vertrauenswürdige Dienstleister (GitHub, Google, Microsoft), die für den Betrieb der Website notwendig sind.",
 
-"privacy_s5_title": "5. Deine Rechte nach DSGVO",
-"privacy_s5_text": "Wenn du im EU-/EWR-Raum lebst, hast du folgende Datenschutzrechte:",
+    "privacy_s5_title": "5. Deine Rechte nach DSGVO",
+    "privacy_s5_text": "Wenn du im EU-/EWR-Raum lebst, hast du folgende Datenschutzrechte:",
 
-"privacy_s5_li1": "Recht auf Auskunft über deine gespeicherten Daten,",
-"privacy_s5_li2": "Recht auf Berichtigung unrichtiger Daten,",
-"privacy_s5_li3": "Recht auf Löschung deiner Daten,",
-"privacy_s5_li4": "Recht, deine Einwilligung jederzeit zu widerrufen (über den Cookie-Manager).",
+    "privacy_s5_li1": "Recht auf Auskunft über deine gespeicherten Daten,",
+    "privacy_s5_li2": "Recht auf Berichtigung unrichtiger Daten,",
+    "privacy_s5_li3": "Recht auf Löschung deiner Daten,",
+    "privacy_s5_li4": "Recht, deine Einwilligung jederzeit zu widerrufen (über den Cookie-Manager).",
 
-"privacy_s6_title": "6. Kontakt",
-"privacy_s6_text": "Wenn du Fragen hast oder deine Datenschutzrechte wahrnehmen möchtest, erreichst du uns unter:",
+    "privacy_s6_title": "6. Kontakt",
+    "privacy_s6_text": "Wenn du Fragen hast oder deine Datenschutzrechte wahrnehmen möchtest, erreichst du uns unter:",
 
-"privacy_back_home": "Zurück zur Startseite"
+    "privacy_back_home": "Zurück zur Startseite",
+
+    // NEW PAGES TRANSLATIONS (DE - Placeholder mostly English for now)
+    "services_page_title": "Services | Click-Capybara",
+    "services_meta_desc": "Entdecke unsere PPC-Services: Google Ads, YouTube Ads und Conversion-Tracking.",
+    "usecases_page_title": "Use Cases | Click-Capybara",
+    "usecases_meta_desc": "PPC-Lösungen für E-Commerce, B2B SaaS und lokale Unternehmen.",
+    "casestudies_page_title": "Case Studies | Click-Capybara",
+    "casestudies_meta_desc": "Echte Ergebnisse: Mehr ROI, mehr Leads, geringere Kosten.",
+    "faq_page_title": "FAQ | Click-Capybara",
+    "faq_meta_desc": "Häufig gestellte Fragen zu unseren PPC-Dienstleistungen.",
+
+    // Services Page
+    "services_h1": "Unsere Expertise, Dein Wachstum",
+    "services_intro": "Wir schalten nicht einfach nur Anzeigen. Wir bauen komplette Wachstumsmaschinen.",
+    "service_google_title": "Google Ads Management",
+    "service_google_desc": "Unser Kernangebot. Wir managen Search, Shopping und Display mit Fokus auf Profitabilität.",
+    "service_ms_title": "Microsoft & YouTube Ads",
+    "service_ms_desc": "Erreiche deine Zielgruppe dort, wo die Konkurrenz nicht ist. Günstige Klicks, hohes Engagement.",
+    "service_tracking_title": "Conversion Tracking & Analytics",
+    "service_tracking_desc": "Daten, denen du trauen kannst. Wir setzen professionelles Tracking auf (GA4, GTM, Server-side).",
+
+    // Use Cases Page
+    "usecases_h1": "Strategien für dein Business",
+    "usecases_intro": "Jedes Geschäftsmodell braucht eine eigene Strategie. So passen wir uns an:",
+    "usecase_ecommerce_h2": "E-Commerce",
+    "usecase_ecommerce_desc": "Für Online-Shops zählt nur der ROAS. Wir optimieren Feed, Shopping Ads und dynamisches Remarketing.",
+    "usecase_b2b_h2": "B2B SaaS & Services",
+    "usecase_b2b_desc": "Qualität vor Quantität. Wir nutzen Intent-Keywords und Offline-Conversion-Importe für echte Leads.",
+    "usecase_local_h2": "Lokales Business",
+    "usecase_local_desc": "Dominiere deine Nachbarschaft. Wir sorgen dafür, dass du gefunden wirst, wenn es zählt.",
+    "usecase_ecommerce_title": "E-Commerce",
+    "usecase_b2b_title": "B2B SaaS",
+    "usecase_local_title": "Lokales Business",
+
+    // Case Studies Page
+    "casestudies_h1": "Der Beweis: Performance",
+    "casestudies_intro": "Keine Vanity-Metrics. Hier sind echte Business-Ergebnisse.",
+    "case_b2b_tag": "B2B SAAS CASE STUDY",
+    "case_b2b_title": "Doppelte Demo-Buchungen für SaaS-Plattform",
+    "case_b2b_desc": "Viele Klicks, keine Demos? Wir haben die Strategie auf Intent-Search und YouTube-Education umgestellt.",
+    "case_b2b_quote": "\"Endlich eine Agentur, die B2B-Sales-Zyklen versteht. Die Lead-Qualität ist explodiert.\"",
+    "case_b2b_cite": "- CMO, Tech SaaS Company",
+    "case_b2b_stat_1_num": "+150%",
+    "case_b2b_stat_1_desc": "Lead Volumen",
+    "case_b2b_stat_2_num": "85%",
+    "case_b2b_stat_2_desc": "Lead Qualität",
+
+    // FAQ Page
+    "faq_h1": "Häufig gestellte Fragen",
+    "faq_intro": "Du hast Fragen? Wir haben Antworten.",
+    "faq_q1": "Was macht Click-Capybara anders?",
+    "faq_a1": "Wir sind besessen von Daten und Transparenz. Wir sehen uns als Teil deines Teams.",
+    "faq_q2": "Was kostet das?",
+    "faq_a2": "Unser Pricing ist fair und transparent, abhängig von deinem Ad-Spend. Frag uns nach einem Angebot!",
+    "faq_q3": "Arbeitet ihr mit kleinen Unternehmen?",
+    "faq_a3": "Absolut. Solange du ein valides Produkt und Budget zum Testen hast (ab ca. 1k/Monat).",
+    "faq_q4": "Wann sehe ich Ergebnisse?",
+    "faq_a4": "PPC bringt sofort Traffic, aber Kampagnen brauchen Zeit zum Lernen. Nennenswerte Skalierung meist ab Monat 3.",
+
+    // Index Page Teasers
+    "services_teaser_title": "Unsere Kern-Services",
+    "services_teaser_subtitle": "Alles für deinen Erfolg im Paid Search.",
+    "service_1_short_desc": "Experten-Management für Search, Shopping und Display.",
+    "service_2_short_desc": "Erreiche neue Kunden auf Bing und YouTube.",
+    "service_3_short_desc": "Präzises Tracking, damit du weißt, wohin dein Geld fließt.",
+    "view_all_services": "Alle Services ansehen",
+
+    "usecases_teaser_title": "Maßgeschneidert für dich",
+    "usecases_teaser_subtitle": "Wir kennen die Strategien für deine Branche.",
+    "usecase_ecommerce_subtitle": "Skaliere Sales & ROAS",
+    "usecase_b2b_subtitle": "Qualifizierte Leads generieren",
+    "usecase_local_subtitle": "Dominiere deinen Markt",
+
+    "case_teaser_title": "Echte Ergebnisse",
+    "case_ecommerce_teaser_desc": "ROI-Steigerung für Modehändler",
+    "view_case_study_btn": "Case Study ansehen",
+    "view_all_cases": "Alle Erfolgsgeschichten",
+
+    "faq_teaser_link": "Fragen zu unserer Arbeit? Hier geht's zum FAQ &rarr;",
+
+    "benefit_1": "Keine Bindung",
+    "benefit_2": "Detailliertes Video-Audit",
+    "benefit_3": "Konkrete nächste Schritte",
   }
 };

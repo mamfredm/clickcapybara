@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+    </script>
+
+    <script>
+      (function() {
+        // Check if user previously accepted Analytics
+        // Note: Silktide uses 'true' string in LocalStorage
+        if (localStorage.getItem('silktideCookieChoice_analytics') === 'true') {
+           gtag('consent', 'update', {
+             'analytics_storage': 'granted'
+           });
+        }
+        
+        // Check if user previously accepted Advertising
+        if (localStorage.getItem('silktideCookieChoice_advertising') === 'true') {
+           gtag('consent', 'update', {
+             'ad_storage': 'granted',
+             'ad_user_data': 'granted',
+             'ad_personalization': 'granted'
+           });
+        }
+      })();
+    </script>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WK2WCGQH');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title data-key="services_page_title">Services | Click-Capybara</title>
+    
+    <meta name="description" data-key="services_meta_desc" content="Explore our PPC services: Google Ads, YouTube Ads, Conversion Tracking, and Strategy. We drive growth with data-driven paid advertising.">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Click-Capybara",
+      "url": "https://www.click-capybara.com",
+      "logo": "https://www.click-capybara.com/assets/capybara_outine_bold.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@click-capybara.com",
+        "contactType": "customer service",
+        "availableLanguage": ["en", "de"]
+      },
+      "description": "Click-Capybara offers expert PPC management that delivers measurable results."
+    }
+    </script>
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_capybara_outine_bold.ico" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script src="translations.js"></script>
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="cookie-banner/silktide-consent-manager.css">
+    <script src="cookie-banner/silktide-consent-manager.js"></script>
+    <script>
+silktideCookieBannerManager.updateCookieBannerConfig({
+  background: {
+    showBackground: true
+  },
+  cookieIcon: {
+    position: "bottomLeft"
+  },
+  cookieTypes: [
+    {
+      id: "necessary",
+      name: "Necessary",
+      description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+      required: true,
+      onAccept: function() {
+        console.log('Add logic for the required Necessary here');
+      }
+    },
+    {
+      id: "analytics",
+      name: "Analytics",
+      description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+      required: false,
+      onAccept: function() {
+        gtag('consent', 'update', {
+          analytics_storage: 'granted',
+        });
+        window.dataLayer.push({'event': 'consent_analytics_granted'});
+      },
+      onReject: function() {
+        gtag('consent', 'update', {
+          analytics_storage: 'denied',
+        });
+      }
+    },
+    {
+      id: "advertising",
+      name: "Advertising",
+      description: "<p>These cookies provide extra features and personalization to improve your experience. They may be set by us or by partners whose services we use.</p>",
+      required: false,
+      onAccept: function() {
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: 'granted',
+        });
+        window.dataLayer.push({'event': 'consent_ads_granted'});
+      },
+      onReject: function() {
+        gtag('consent', 'update', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+        });
+      }
+    }
+  ],
+  text: {
+    banner: {
+      description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://your-website.com/cookie-policy\" target=\"_blank\">Cookie Policy.</a></p>", // <-- UPDATE THIS LINK!
+      acceptAllButtonText: "Accept all",
+      acceptAllButtonAccessibleLabel: "Accept all cookies",
+      rejectNonEssentialButtonText: "Reject non-essential",
+      rejectNonEssentialButtonAccessibleLabel: "Reject non-essential",
+      preferencesButtonText: "Preferences",
+      preferencesButtonAccessibleLabel: "Toggle preferences"
+    },
+    preferences: {
+      title: "Customize your cookie preferences",
+      description: "<p>We respect your right to privacy. You can choose not to allow some of types of cookies. Your cookie preferences will apply across our website.</p>",
+    }
+  },
+  position: {
+    banner: "center"
+  }
+});
+</script>
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                DEFAULT: '#fcba02', // Main brand color
+                light: '#FFF9E6',   // Lighter shade for backgrounds
+                dark: '#D4A101'     // Darker shade for accents
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <style>
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fcba02; /* Use brand color */
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+    <link rel="canonical" href="https://www.click-capybara.com/services.html">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <nav class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara Logo" class="w-10 h-10">
+                    <span class="text-2xl font-bold text-gray-900">Click-Capybara</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="services.html" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_services">Services</a>
+                    <a href="use-cases.html" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_use_cases">Use Cases</a>
+                    <a href="case-studies.html" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_case_studies">Case Studies</a>
+                    <a href="index.html#about" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_about">About</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_contact">Contact</a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4 ml-8">
+                    <button id="lang-en" class="font-semibold text-sm">EN</button>
+                    <button id="lang-de" class="font-semibold text-sm text-gray-400">DE</button>
+                </div>
+                
+                <a href="#contact" class="hidden md:inline-block bg-brand text-white font-bold py-2 px-5 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="nav_audit_button">
+                    Free Ad Audit
+                </a>
+                <button id="mobile-menu-button" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 bg-white rounded-lg shadow-lg border border-gray-100 pb-2">
+                 <a href="services.html" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_services_mobile">Services</a>
+                <a href="use-cases.html" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_use_cases">Use Cases</a>
+                 <a href="case-studies.html" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_case_studies_mobile">Case Studies</a>
+                 <a href="index.html#about" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_about_mobile">About</a>
+                 <a href="#contact" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50" data-key="nav_contact_mobile">Contact</a>
+    
+                 <div class="flex items-center px-4 py-3 border-t border-gray-100 gap-4">
+                     <i class="fas fa-globe text-gray-400 text-lg"></i>
+                     <button id="mobile-lang-en" class="font-bold text-sm">EN</button>
+                     <button id="mobile-lang-de" class="font-bold text-sm text-gray-400">DE</button>
+              </div>
+
+             <div class="p-4 pt-2">
+                 <a href="#contact" class="block bg-brand text-white font-bold py-3 px-4 rounded-lg text-center transition hover:shadow-md" data-key="nav_audit_button_mobile">Free Ad Audit</a>
+             </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="py-20 md:py-32 bg-gray-50">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6" data-key="services_h1">Our PPC Services</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-key="services_intro">
+                    We don't just "run ads." We build comprehensive revenue engines. From search intent to conversion tracking, every piece of the puzzle is handled with precision.
+                </p>
+            </div>
+        </section>
+
+        <!-- Service 1: Google Ads -->
+        <section id="google-ads" class="py-20 bg-white">
+            <div class="container mx-auto px-6 md:flex items-center gap-12">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="bg-blue-50 p-10 rounded-2xl">
+                         <i class="fab fa-google text-6xl text-brand mb-6"></i>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4" data-key="service_google_title">Google Ads Management</h2>
+                    <p class="text-lg text-gray-600 mb-6" data-key="service_google_detail">
+                        Capture demand right when your customers are looking for you. We manage the entire lifecycle of your Search and Shopping campaigns.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700" data-key="service_google_li1">Keyword Research & Competitor Analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700" data-key="service_google_li2">Ad Copywriting & A/B Testing</span>
+                        </li>
+                         <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700" data-key="service_google_li3">Bid Management & ROAS Optimization</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block bg-brand text-white font-bold py-3 px-6 rounded-lg transition hover:shadow-md" data-key="cta_get_started">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 2: Microsoft & YouTube -->
+        <section id="youtube-ads" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6 md:flex items-center gap-12 flex-row-reverse">
+                 <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="bg-red-50 p-10 rounded-2xl text-center">
+                         <div class="flex justify-center gap-6">
+                            <i class="fab fa-youtube text-6xl text-red-600"></i>
+                            <i class="fab fa-microsoft text-6xl text-blue-600"></i>
+                         </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4" data-key="service_social_title">Microsoft & YouTube Ads</h2>
+                    <p class="text-lg text-gray-600 mb-6" data-key="service_social_detail">
+                        Don't rely on just one channel. We help you scale by tapping into the visual power of YouTube and the professional audience of Microsoft (Bing).
+                    </p>
+                     <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700" data-key="service_social_li1">Video Ad Production Consultations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700" data-key="service_social_li2">Audience Targeting & Retargeting</span>
+                        </li>
+                         <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700" data-key="service_social_li3">Cross-Channel Strategy</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block bg-brand text-white font-bold py-3 px-6 rounded-lg transition hover:shadow-md" data-key="cta_get_started">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service 3: Tracking -->
+        <section id="tracking" class="py-20 bg-white">
+            <div class="container mx-auto px-6 md:flex items-center gap-12">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="bg-green-50 p-10 rounded-2xl">
+                         <i class="fas fa-chart-line text-6xl text-green-600"></i>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4" data-key="service_tracking_title">Conversion Tracking & Analytics</h2>
+                    <p class="text-lg text-gray-600 mb-6" data-key="service_tracking_detail">
+                        Blind optimization is dangerous. We fix your data foundation so you know exactly which dollar is generating which sale.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700" data-key="service_tracking_li1">GA4 Setup & Configuration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700" data-key="service_tracking_li2">Server-Side Tracking Implementation</span>
+                        </li>
+                         <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700" data-key="service_tracking_li3">Custom Reporting Dashboards</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="inline-block bg-brand text-white font-bold py-3 px-6 rounded-lg transition hover:shadow-md" data-key="cta_get_started">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section Reuse -->
+        <section id="contact" class="py-20 bg-gray-800 text-white">
+            <div class="container mx-auto px-6">
+                <div class="lg:flex justify-between items-center gap-16">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold" data-key="contact_title">Ready to See What the Capybara Can Do?</h2>
+                        <p class="mt-4 text-lg text-gray-300" data-key="contact_subtitle">Let's start with a free, no-obligation audit of your ad account. We'll identify key areas for improvement and provide an actionable strategy, completely free.</p>
+                        <div class="mt-8 space-y-4">
+                            <p><i class="fas fa-envelope mr-3 w-5 text-brand"></i> <a href="mailto:hello@click-capybara.com" class="hover:underline" data-key="contact_email">hello@click-capybara.com</a></p>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 mt-10 lg:mt-0">
+                        <form id="contact-form" action="#" method="POST" class="bg-white p-8 rounded-xl shadow-2xl text-gray-800">
+                            <h3 class="text-2xl font-bold mb-6" data-key="form_title">Get Your Free Audit</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="name" class="font-semibold block mb-1 text-sm" data-key="form_name_label">Name</label>
+                                    <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent" placeholder="Your Name" data-key-placeholder="form_name_placeholder" required>
+                                </div>
+                                <div>
+                                    <label for="email" class="font-semibold block mb-1 text-sm" data-key="form_email_label">Email</label>
+                                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent" placeholder="you@company.com" data-key-placeholder="form_email_placeholder" required>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <label for="website" class="font-semibold block mb-1 text-sm" data-key="form_website_label">Website</label>
+                                <input type="url" id="website" name="website" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent" placeholder="https://yourwebsite.com" data-key-placeholder="form_website_placeholder" required>
+                            </div>
+                            <div class="mt-4">
+                                <label for="service" class="font-semibold block mb-1 text-sm" data-key="form_service_label">Service of Interest</label>
+                                <select id="service" name="service" class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-brand focus:border-transparent">
+                                    <option data-key="form_option_1">Free Ad Audit</option>
+                                    <option data-key="form_option_2">Google Ads Management</option>
+                                    <option data-key="form_option_3">Microsoft Ads Management </option>
+                                    <option data-key="form_option_4">Conversion Tracking</option>
+                                    <option data-key="form_option_5">PPC Strategy</option>
+                                    <option data-key="form_option_6">General Inquiry</option>
+                                </select>
+                            </div>
+                             <div class="mt-6">
+                                <button type="submit" class="w-full bg-brand text-white font-bold text-lg py-3 px-8 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="form_submit_button">
+                                    Submit Request
+                                </button>
+                            </div>
+                            <p id="form-status" class="text-xs text-gray-500 mt-4 text-center" data-key="form_status">We'll get back to you within one business day.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p data-key="footer_copyright">&copy; 2025 Click-Capybara. All Rights Reserved. | Calmly Mastering the Click.</p>
+            <div class="mt-4 text-sm">
+                <a href="privacy.html" class="hover:text-white mx-2" data-key="privacy_title">Privacy Policy</a> | 
+                <a href="index.html#contact" class="hover:text-white mx-2" data-key="nav_contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. NEW TRANSLATION CODE START ---
+
+// Check if translations loaded
+        if (typeof translations === 'undefined') {
+            console.error("ERROR: translations.js file not loaded!");
+        } else {
+            // Desktop Buttons
+            const langEnButton = document.getElementById('lang-en');
+            const langDeButton = document.getElementById('lang-de');
+            
+            // Mobile Buttons (NEW)
+            const mobileLangEnButton = document.getElementById('mobile-lang-en');
+            const mobileLangDeButton = document.getElementById('mobile-lang-de');
+            
+            // The main translation function
+            function setLanguage(lang) {
+                // 1. Set the page's lang attribute
+                document.documentElement.lang = lang;
+
+                // 2. Set the page title
+                if (translations[lang].page_title) {
+                    document.title = translations[lang].page_title;
+                }
+
+                // 3. Update all text elements
+                const textElements = document.querySelectorAll('[data-key]');
+                textElements.forEach(element => {
+                    const key = element.getAttribute('data-key');
+                    if (translations[lang][key]) {
+                        element.innerHTML = translations[lang][key];
+                    }
+                });
+
+                // 4. Update all placeholder attributes
+                const placeholderElements = document.querySelectorAll('[data-key-placeholder]');
+                placeholderElements.forEach(element => {
+                    const key = element.getAttribute('data-key-placeholder');
+                    if (translations[lang][key]) {
+                        element.placeholder = translations[lang][key];
+                    }
+                });
+
+                // 5. Update button styles (For both Desktop AND Mobile)
+                if (lang === 'de') {
+                    // Desktop
+                    langDeButton.classList.remove('text-gray-400');
+                    langEnButton.classList.add('text-gray-400');
+                    
+                    // Mobile
+                    if(mobileLangDeButton) mobileLangDeButton.classList.remove('text-gray-400');
+                    if(mobileLangEnButton) mobileLangEnButton.classList.add('text-gray-400');
+                } else {
+                    // Desktop
+                    langEnButton.classList.remove('text-gray-400');
+                    langDeButton.classList.add('text-gray-400');
+
+                    // Mobile
+                    if(mobileLangEnButton) mobileLangEnButton.classList.remove('text-gray-400');
+                    if(mobileLangDeButton) mobileLangDeButton.classList.add('text-gray-400');
+                }
+
+                // 6. Save the user's choice
+                localStorage.setItem('language', lang);
+            }
+
+            // Add click listeners to Desktop buttons
+            if(langEnButton) langEnButton.addEventListener('click', () => setLanguage('en'));
+            if(langDeButton) langDeButton.addEventListener('click', () => setLanguage('de'));
+
+            // Add click listeners to Mobile buttons (NEW)
+            if(mobileLangEnButton) mobileLangEnButton.addEventListener('click', () => setLanguage('en'));
+            if(mobileLangDeButton) mobileLangDeButton.addEventListener('click', () => setLanguage('de'));
+
+            // Check for a saved language or default to 'en'
+            const savedLang = localStorage.getItem('language') || 'en';
+            setLanguage(savedLang);
+        }
+        // --- NEW TRANSLATION CODE END ---
+
+
+        // --- 2. EXISTING MOBILE MENU CODE ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.querySelectorAll('#mobile-menu a');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hide mobile menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- 
+        // --- 3. EXISTING GOOGLE FORM CODE ---
+        // ---
+
+        // Google Apps Script URL
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw23jxJMY19TaY7LM8F3y7kbXsB2U0NDQPfQ3qeNnN524VdCWW_eJktRAv-jxZXgorJug/exec';
+
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+
+        contactForm.addEventListener('submit', e => {
+            // Prevent the default form submission
+            e.preventDefault();
+
+            const currentLang = document.documentElement.lang || 'en';
+
+            // Show a "submitting" message and disable the button
+            const submittingKey = "form_submitting";
+            formStatus.textContent = (translations && translations[currentLang][submittingKey]) || 'Submitting...';
+            
+            formStatus.style.color = '#3b82f6'; // Blue color
+            submitButton.disabled = true;
+            submitButton.style.opacity = '0.7';
+
+            // Get the form data as an object
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                website: formData.get('website'),
+                service: formData.get('service')
+            };
+
+            // Send the data to the Google Apps Script
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors', // 'no-cors' is required for simple web app POSTs
+                cache: 'no-cache',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(() => {
+                // Show success message
+                const successKey = "form_success";
+                formStatus.textContent = (translations && translations[currentLang][successKey]) || "Thanks! We'll be in touch soon.";
+                formStatus.style.color = '#16a34a'; // Green color for success
+                
+                // Clear the form
+                contactForm.reset();
+            })
+            .catch(error => {
+                // Show error message
+                console.error('Error:', error);
+                const errorKey = "form_error";
+                formStatus.textContent = (translations && translations[currentLang][errorKey]) || 'Oops! Something went wrong. Please try again.';
+                formStatus.style.color = '#dc2626'; // Red color for error
+            })
+            .finally(() => {
+                // Re-enable the button after a short delay
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.style.opacity = '1';
+                    
+                    // Reset status text after a few more seconds
+                    setTimeout(() => {
+                        const defaultStatusKey = "form_status";
+                        formStatus.textContent = (translations && translations[currentLang][defaultStatusKey]) || "We'll get back to you within one business day.";
+                        formStatus.style.color = ''; // Reset color
+                    }, 4000);
+
+                }, 1000);
+            });
+        });
+
+    </script>
+
+</body>
+</html>
