@@ -706,7 +706,7 @@
     fadeEls.forEach(el => observer.observe(el));
 
     // ── Contact form → Google Sheets ─────────────────────────
-    const LEADS_URL = 'YOUR_WEBAPP_URL_HERE'; // ← paste your Web App URL here after deploying
+    const LEADS_URL = 'https://docs.google.com/spreadsheets/d/10ifT6abmKtEcex9BvSfi2lR74cmqzUk_i-2HIomR6hM/edit?gid=0#gid=0'; // ← paste your Web App URL here after deploying
 
     function submitToSheet(formEl, statusEl, sourcePage) {
         const lang = localStorage.getItem('preferredLang') || 'en';
