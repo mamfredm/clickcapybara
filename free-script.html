@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script>
+        (function() {
+            if (localStorage.getItem('silktideCookieChoice_analytics') === 'true') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
+            }
+            if (localStorage.getItem('silktideCookieChoice_advertising') === 'true') {
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+            }
+        })();
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WK2WCGQH');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="script_page_title">Capybara NegativeIQ Search — Free Google Ads Script</title>
+    <meta name="description" data-key="script_meta_desc" content="Free AI-powered Google Ads script. Classifies search terms, protects converting keywords, pushes negatives automatically. Built by a specialist.">
+    <link rel="canonical" href="https://www.click-capybara.com/free-script.html">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_capybara_outine_bold.ico" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Capybara NegativeIQ Search",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Google Ads, Google Sheets",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@type": "Person", "name": "Max", "url": "https://www.click-capybara.com" },
+        "description": "AI-powered Google Ads script that classifies search terms, protects converting keywords, and automates negative keyword management."
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="translations.js"></script>
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="cookie-banner/silktide-consent-manager.css">
+    <script src="cookie-banner/silktide-consent-manager.js"></script>
+    <script>
+    silktideCookieBannerManager.updateCookieBannerConfig({
+        background: { showBackground: true },
+        cookieIcon: { position: "bottomLeft" },
+        cookieTypes: [
+            { id: "necessary", name: "Necessary", description: "<p>Required for the site to function.</p>", required: true, onAccept: function(){} },
+            { id: "analytics", name: "Analytics", description: "<p>Help us understand how visitors use the site.</p>", required: false,
+                onAccept: function(){ gtag('consent', 'update', { analytics_storage: 'granted' }); dataLayer.push({ 'event': 'consent_accepted_analytics' }); },
+                onReject: function(){ gtag('consent', 'update', { analytics_storage: 'denied' }); }
+            },
+            { id: "advertising", name: "Advertising", description: "<p>Used to measure ad performance.</p>", required: false,
+                onAccept: function(){ gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' }); dataLayer.push({ 'event': 'consent_accepted_advertising' }); },
+                onReject: function(){ gtag('consent', 'update', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' }); }
+            }
+        ],
+        text: {
+            banner: { description: "<p>We use cookies to enhance your experience. <a href=\"privacy.html\">Cookie Policy.</a></p>", acceptAllButtonText: "Accept all", rejectNonEssentialButtonText: "Reject non-essential", preferencesButtonText: "Preferences" },
+            preferences: { title: "Manage cookie preferences" }
+        },
+        position: { banner: "center" }
+    });
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { DEFAULT: '#fcba02', light: '#FFF9E6', dark: '#D4A101' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Nav */
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 50%; transform: translateX(-50%); background-color: #fcba02; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Hero dark background */
+        .hero-dark {
+            background-color: #0d1117;
+            background-image: radial-gradient(ellipse at 20% 50%, rgba(252,186,2,0.07) 0%, transparent 60%),
+                              radial-gradient(ellipse at 80% 20%, rgba(252,186,2,0.04) 0%, transparent 50%);
+        }
+
+        /* Terminal / code block */
+        .terminal {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+        }
+        .terminal-bar {
+            background: #21262d;
+            border-bottom: 1px solid #30363d;
+            border-radius: 12px 12px 0 0;
+            padding: 10px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+
+        /* Step number */
+        .step-num {
+            width: 32px; height: 32px; min-width: 32px;
+            background: #fcba02;
+            color: #0d1117;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 800; font-size: 0.8rem;
+        }
+
+        /* Component card */
+        .component-card {
+            border-left: 3px solid #fcba02;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .component-card:hover {
+            transform: translateX(4px);
+        }
+
+        /* Fade in */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .stagger > *:nth-child(1) { transition-delay: 0.05s; }
+        .stagger > *:nth-child(2) { transition-delay: 0.15s; }
+        .stagger > *:nth-child(3) { transition-delay: 0.25s; }
+
+        /* GitHub button */
+        .github-btn {
+            background: #fcba02;
+            color: #0d1117;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 10px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+        }
+        .github-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(252,186,2,0.35);
+        }
+
+        /* Language badge */
+        .lang-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(252,186,2,0.12);
+            border: 1px solid rgba(252,186,2,0.3);
+            color: #fcba02;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 999px;
+        }
+
+        /* Confidence colors */
+        .conf-high { color: #3fb950; }
+        .conf-med  { color: #d29922; }
+        .conf-low  { color: #f85149; }
+
+        /* Upsell band */
+        .upsell-band {
+            background: linear-gradient(135deg, #FFF9E6 0%, #fffdf5 100%);
+            border-top: 3px solid #fcba02;
+        }
+
+        /* Sticky nav shadow on scroll */
+        .header-scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.08); }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800 font-sans antialiased">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK2WCGQH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ============================================================
+     NAV
+============================================================ -->
+<header id="site-header" class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-100 transition-shadow">
+    <div class="container mx-auto px-6 py-4">
+        <nav class="flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara Logo" class="w-9 h-9">
+                <span class="text-xl font-bold text-gray-900">Click-Capybara</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-7">
+                <a href="services.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_services">Services</a>
+                <a href="free-script.html" class="nav-link text-brand font-semibold text-sm" data-key="nav_free_script">Free Script</a>
+                <a href="index.html#about" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_about">About</a>
+                <a href="index.html#contact" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_contact">Contact</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4 ml-8">
+                <button id="lang-en" class="text-sm font-bold text-gray-900">EN</button>
+                <span class="text-gray-300">|</span>
+                <button id="lang-de" class="text-sm font-medium text-gray-400 hover:text-gray-700">DE</button>
+                <a href="index.html#contact" class="ml-2 bg-brand text-gray-900 font-bold text-sm py-2 px-5 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="nav_cta">Free Audit</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 text-xl p-1"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden mt-3 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+            <a href="services.html" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_services">Services</a>
+            <a href="free-script.html" class="block py-3 px-5 text-sm text-brand font-semibold hover:bg-gray-50 border-b border-gray-100" data-key="nav_free_script">Free Script</a>
+            <a href="index.html#about" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_about">About</a>
+            <a href="index.html#contact" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_contact">Contact</a>
+            <div class="flex items-center gap-4 px-5 py-3 border-b border-gray-100">
+                <i class="fas fa-globe text-gray-400"></i>
+                <button id="mobile-lang-en" class="text-sm font-bold">EN</button>
+                <button id="mobile-lang-de" class="text-sm font-medium text-gray-400">DE</button>
+            </div>
+            <div class="p-4">
+                <a href="index.html#contact" class="block bg-brand text-gray-900 font-bold py-3 px-4 rounded-lg text-center text-sm" data-key="nav_cta">Free Audit</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+
+<!-- ============================================================
+     1. HERO — dark, terminal feel
+============================================================ -->
+<section class="hero-dark py-24 md:py-32">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+
+        <span class="inline-block bg-brand/10 border border-brand/30 text-brand text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6" data-key="script_eyebrow">Free Google Ads Script</span>
+
+        <h1 class="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight" data-key="script_h1">
+            Capybara NegativeIQ Search
+        </h1>
+
+        <p class="text-xl md:text-2xl text-brand font-semibold mb-6" data-key="script_tagline">
+            Stop guessing which search terms are wasting your budget. Let AI tell you.
+        </p>
+
+        <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10" data-key="script_sub">
+            A free, open-source script that connects your Google Ads account to AI — classifies every search term, protects what's converting, and tells you exactly what to add as a negative. Built by a specialist. Used on real accounts.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <a href="https://github.com/mamfredm/CapybaraNegativeIQ-Search" target="_blank" rel="noopener" class="github-btn" data-key="script_cta_github">
+                <i class="fab fa-github text-lg"></i>
+                View on GitHub
+            </a>
+            <a href="#how-to-install" class="text-gray-400 hover:text-white font-medium text-sm transition flex items-center gap-2" data-key="script_cta_setup">
+                <i class="fas fa-arrow-down text-xs"></i>
+                How to install
+            </a>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 text-xs">
+            <span class="lang-badge" data-key="script_lang_badge">
+                <i class="fas fa-language"></i>
+                Currently German only — English coming soon
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-gray-500">
+                <i class="fas fa-code-branch text-gray-600"></i>
+                <span data-key="script_badge_free">Free &amp; open source</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5 text-gray-500">
+                <i class="fas fa-shield-alt text-gray-600"></i>
+                <span data-key="script_badge_safe">No data leaves your account</span>
+            </span>
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================================================
+     2. WHAT IT DOES
+============================================================ -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-6 max-w-5xl">
+        <div class="md:flex gap-16 items-start">
+
+            <!-- Left: copy -->
+            <div class="md:w-1/2 mb-12 md:mb-0 fade-in">
+                <p class="text-xs font-bold tracking-widest text-brand uppercase mb-4" data-key="what_eyebrow">What it actually does</p>
+                <h2 class="text-3xl font-extrabold text-gray-900 mb-6" data-key="what_title">Your search terms, classified by AI. In minutes.</h2>
+                <div class="space-y-4 text-gray-600 text-sm leading-relaxed">
+                    <p data-key="what_p1">Most Google Ads accounts are hemorrhaging budget on search terms that will never convert — job seekers, competitors, irrelevant queries. Manually reviewing them is slow, error-prone, and boring. This script automates the entire process using AI.</p>
+                    <p data-key="what_p2">Every day, the Fetcher pulls your latest search terms from Google Ads into a Google Sheet. The Analyzer sends them in batches to an AI — which classifies each one based on your industry, your business, and your conversion data. Not generic rules. Actual context.</p>
+                    <p data-key="what_p3">Every term gets a classification, a confidence score, and a one-line explanation of why the AI made that call. You review, correct if needed, and push negatives back into your account in one click. The system learns from your corrections over time.</p>
+                </div>
+
+                <!-- Conversion protection callout -->
+                <div class="mt-8 bg-gray-50 border border-gray-200 rounded-xl p-5 flex gap-4">
+                    <div class="text-brand text-xl mt-0.5">🛡</div>
+                    <div>
+                        <p class="font-bold text-gray-900 text-sm mb-1" data-key="conv_protect_title">Conversion protection — always on</p>
+                        <p class="text-gray-500 text-xs leading-relaxed" data-key="conv_protect_desc">Any search term that has driven a conversion is automatically protected. The script will never flag it as a negative, regardless of how it looks on the surface.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: live Sheet mockup -->
+            <div class="md:w-1/2 fade-in">
+                <div class="terminal">
+                    <div class="terminal-bar">
+                        <div class="dot bg-red-500"></div>
+                        <div class="dot bg-yellow-400"></div>
+                        <div class="dot bg-green-500"></div>
+                        <span class="text-gray-500 text-xs ml-3">SearchTerms — Capybara NegativeIQ</span>
+                    </div>
+                    <div class="p-5 overflow-x-auto">
+                        <table class="text-xs w-full" style="font-family: 'Fira Code', monospace;">
+                            <thead>
+                                <tr class="text-gray-500 border-b border-gray-700">
+                                    <th class="text-left pb-2 pr-4 font-medium">Search Term</th>
+                                    <th class="text-left pb-2 pr-4 font-medium">Classification</th>
+                                    <th class="text-left pb-2 pr-4 font-medium">Confidence</th>
+                                    <th class="text-left pb-2 font-medium">AI Reason</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-300">
+                                <tr class="border-b border-gray-800/50">
+                                    <td class="py-2 pr-4">buy running shoes online</td>
+                                    <td class="py-2 pr-4"><span class="text-green-400">✅ Relevant</span></td>
+                                    <td class="py-2 pr-4 conf-high">0.97</td>
+                                    <td class="py-2 text-gray-500">High purchase intent keyword</td>
+                                </tr>
+                                <tr class="border-b border-gray-800/50">
+                                    <td class="py-2 pr-4">running shoes jobs</td>
+                                    <td class="py-2 pr-4"><span class="text-red-400">❌ Junk</span></td>
+                                    <td class="py-2 pr-4 conf-high">0.99</td>
+                                    <td class="py-2 text-gray-500">Job search, no commercial intent</td>
+                                </tr>
+                                <tr class="border-b border-gray-800/50">
+                                    <td class="py-2 pr-4">nike air max price</td>
+                                    <td class="py-2 pr-4"><span class="text-yellow-400">⚠️ Competitor</span></td>
+                                    <td class="py-2 pr-4 conf-high">0.94</td>
+                                    <td class="py-2 text-gray-500">Brand competitor query</td>
+                                </tr>
+                                <tr class="border-b border-gray-800/50">
+                                    <td class="py-2 pr-4">how to clean sneakers</td>
+                                    <td class="py-2 pr-4"><span class="text-red-400">❌ Informational</span></td>
+                                    <td class="py-2 pr-4 conf-med">0.81</td>
+                                    <td class="py-2 text-gray-500">No purchase intent detected</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 pr-4 text-brand">⚠️ Conv-Schutz</td>
+                                    <td class="py-2 pr-4 text-brand">🛡 Protected</td>
+                                    <td class="py-2 pr-4 text-brand">—</td>
+                                    <td class="py-2 text-brand text-xs">Has conversions — never touched</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-400 text-center mt-3" data-key="mockup_note">Example output. Your real data, your real account.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     3. WHAT'S INSIDE
+============================================================ -->
+<section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-4xl">
+
+        <div class="text-center mb-14 fade-in">
+            <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3" data-key="inside_eyebrow">What you get</p>
+            <h2 class="text-3xl font-extrabold text-gray-900" data-key="inside_title">Three components. One complete system.</h2>
+        </div>
+
+        <div class="space-y-6 stagger">
+
+            <!-- Fetcher -->
+            <div class="fade-in component-card bg-white rounded-xl p-7 shadow-sm">
+                <div class="flex items-start gap-5">
+                    <div class="text-3xl mt-0.5">🔄</div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <h3 class="font-bold text-gray-900 text-base" data-key="comp_1_title">The Fetcher</h3>
+                            <span class="text-xs bg-blue-50 text-blue-700 font-semibold px-2.5 py-0.5 rounded-full" data-key="comp_1_where">Google Ads → Scripts</span>
+                        </div>
+                        <p class="text-gray-500 text-sm leading-relaxed" data-key="comp_1_desc">Runs daily on a schedule. Pulls every search term from your Google Ads account, deduplicates them, and aggregates clicks and conversions over a 30-day window. Writes everything into your Google Sheet automatically — no manual export needed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analyzer -->
+            <div class="fade-in component-card bg-white rounded-xl p-7 shadow-sm">
+                <div class="flex items-start gap-5">
+                    <div class="text-3xl mt-0.5">🤖</div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <h3 class="font-bold text-gray-900 text-base" data-key="comp_2_title">The Analyzer</h3>
+                            <span class="text-xs bg-purple-50 text-purple-700 font-semibold px-2.5 py-0.5 rounded-full" data-key="comp_2_where">Google Sheets → Apps Script</span>
+                        </div>
+                        <p class="text-gray-500 text-sm leading-relaxed" data-key="comp_2_desc">The intelligence layer. Sends your search terms to AI in batches of 15 — so 100 terms take about 30 seconds and cost less than a cent. Each term comes back with a classification, a confidence score between 0 and 1, and a plain-language reason. Config-driven: you define your industry, your categories, and a handful of examples once. The AI does the rest.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sheet Template -->
+            <div class="fade-in component-card bg-white rounded-xl p-7 shadow-sm">
+                <div class="flex items-start gap-5">
+                    <div class="text-3xl mt-0.5">📊</div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <h3 class="font-bold text-gray-900 text-base" data-key="comp_3_title">The Google Sheet Template</h3>
+                            <span class="text-xs bg-green-50 text-green-700 font-semibold px-2.5 py-0.5 rounded-full" data-key="comp_3_where">Your dashboard</span>
+                        </div>
+                        <p class="text-gray-500 text-sm leading-relaxed" data-key="comp_3_desc">Four tabs, all automated. <strong>SearchTerms</strong> is your working surface — color-coded by classification, confidence-scored, with a one-click export. <strong>Config</strong> is the only thing you touch per account — industry, categories, example terms. <strong>Negative_Export</strong> holds validated negatives ready to push. <strong>Expansion_Ideas</strong> captures search terms worth building new campaigns around.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     4. HOW TO INSTALL
+============================================================ -->
+<section id="how-to-install" class="py-20 bg-white">
+    <div class="container mx-auto px-6 max-w-3xl">
+
+        <div class="text-center mb-14 fade-in">
+            <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3" data-key="install_eyebrow">Setup guide</p>
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-3" data-key="install_title">Up and running in under 30 minutes</h2>
+            <p class="text-gray-500 text-sm" data-key="install_sub">You don't need to know how to code. If you can paste text and click a button, you can run this.</p>
+        </div>
+
+        <div class="space-y-6 stagger">
+
+            <div class="fade-in flex gap-5">
+                <div class="step-num flex-shrink-0">1</div>
+                <div class="pt-0.5">
+                    <p class="font-bold text-gray-900 text-sm mb-1" data-key="step1_title">Copy the Google Sheet template</p>
+                    <p class="text-gray-500 text-sm leading-relaxed" data-key="step1_desc">Open the template from GitHub, make your own copy, and fill in the Config tab — your industry, business name, and 5–8 example search term classifications. This is the only customization you'll ever need to do.</p>
+                </div>
+            </div>
+
+            <div class="fade-in flex gap-5">
+                <div class="step-num flex-shrink-0">2</div>
+                <div class="pt-0.5">
+                    <p class="font-bold text-gray-900 text-sm mb-1" data-key="step2_title">Add the Fetcher to Google Ads</p>
+                    <p class="text-gray-500 text-sm leading-relaxed" data-key="step2_desc">In Google Ads: Tools → Scripts → New. Paste the Fetcher code, replace the Sheet URL placeholder with your own Sheet URL, authorize it, and set it to run daily. That's it — it will run automatically every day from here on.</p>
+                </div>
+            </div>
+
+            <div class="fade-in flex gap-5">
+                <div class="step-num flex-shrink-0">3</div>
+                <div class="pt-0.5">
+                    <p class="font-bold text-gray-900 text-sm mb-1" data-key="step3_title">Add the Analyzer to your Sheet</p>
+                    <p class="text-gray-500 text-sm leading-relaxed" data-key="step3_desc">In your Google Sheet: Extensions → Apps Script. Paste the Analyzer code, save, and authorize. A new menu item "Keyword Analyzer" will appear in your Sheet toolbar.</p>
+                </div>
+            </div>
+
+            <div class="fade-in flex gap-5">
+                <div class="step-num flex-shrink-0">4</div>
+                <div class="pt-0.5">
+                    <p class="font-bold text-gray-900 text-sm mb-1" data-key="step4_title">Run the setup menu</p>
+                    <p class="text-gray-500 text-sm leading-relaxed" data-key="step4_desc">Click Keyword Analyzer → Step 1: Layout & Dropdowns. This styles all four tabs, adds color coding, and sets up the dropdowns. Run this once after setup, and again after each classification batch.</p>
+                </div>
+            </div>
+
+            <div class="fade-in flex gap-5">
+                <div class="step-num flex-shrink-0">5</div>
+                <div class="pt-0.5">
+                    <p class="font-bold text-gray-900 text-sm mb-1" data-key="step5_title">Let it run — then review</p>
+                    <p class="text-gray-500 text-sm leading-relaxed" data-key="step5_desc">Next day, open the Sheet. Click Step 2 to classify all new search terms. Review the AI's suggestions, correct anything you disagree with, tick the checkbox to validate, and push negatives to your account in one click.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-10 text-center fade-in">
+            <p class="text-xs text-gray-400" data-key="install_readme">The full setup guide with screenshots is in the README on GitHub.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================================================
+     5. CODE PREVIEW
+============================================================ -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-4xl fade-in">
+
+        <p class="text-xs font-bold tracking-widest text-brand uppercase mb-4 text-center" data-key="code_eyebrow">Under the hood</p>
+        <h2 class="text-2xl font-extrabold text-gray-900 text-center mb-8" data-key="code_title">It's real code. Here's a slice of it.</h2>
+
+        <div class="terminal">
+            <div class="terminal-bar">
+                <div class="dot bg-red-500"></div>
+                <div class="dot bg-yellow-400"></div>
+                <div class="dot bg-green-500"></div>
+                <span class="text-gray-500 text-xs ml-3">fetcher_v1.js — Capybara NegativeIQ Search</span>
+            </div>
+            <div class="p-6 overflow-x-auto text-xs leading-relaxed" style="font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;">
+                <p class="text-gray-500">// Pull search terms from Google Ads → write to Sheet</p>
+                <p class="mt-2"><span class="text-purple-400">function</span> <span class="text-yellow-300">fetchSearchTerms</span><span class="text-white">() {</span></p>
+                <p class="pl-4 text-gray-500 mt-1">// Only pull terms with real traffic — skip noise</p>
+                <p class="pl-4"><span class="text-purple-400">const</span> <span class="text-blue-300">query</span> <span class="text-white">= </span><span class="text-orange-300">`SELECT</span></p>
+                <p class="pl-8 text-orange-300">search_term_view.search_term,</p>
+                <p class="pl-8 text-orange-300">campaign.name,</p>
+                <p class="pl-8 text-orange-300">metrics.clicks,</p>
+                <p class="pl-8 text-orange-300">metrics.conversions</p>
+                <p class="pl-4 text-orange-300">FROM search_term_view</p>
+                <p class="pl-4 text-orange-300">WHERE segments.date DURING LAST_30_DAYS</p>
+                <p class="pl-4 text-orange-300">AND metrics.clicks > 0</p>
+                <p class="pl-4"><span class="text-orange-300">`</span><span class="text-white">;</span></p>
+                <p class="pl-4 mt-3 text-gray-500">// Deduplicate — aggregate clicks across campaigns</p>
+                <p class="pl-4"><span class="text-purple-400">const</span> <span class="text-blue-300">seen</span> <span class="text-white">= {};</span></p>
+                <p class="pl-4"><span class="text-green-400">AdsApp</span><span class="text-white">.</span><span class="text-green-400">search</span><span class="text-white">(query).</span><span class="text-green-400">forEach</span><span class="text-white">(row => {</span></p>
+                <p class="pl-8"><span class="text-purple-400">const</span> <span class="text-blue-300">term</span> <span class="text-white">= row.searchTermView.searchTerm;</span></p>
+                <p class="pl-8"><span class="text-purple-400">if</span> <span class="text-white">(seen[term]) {</span></p>
+                <p class="pl-12 text-white">seen[term].clicks      += row.metrics.clicks;</p>
+                <p class="pl-12 text-white">seen[term].conversions += row.metrics.conversions;</p>
+                <p class="pl-8 text-white">} <span class="text-purple-400">else</span> {</p>
+                <p class="pl-12 text-white">seen[term] = { clicks: row.metrics.clicks,</p>
+                <p class="pl-20 text-white">conversions: row.metrics.conversions };</p>
+                <p class="pl-8 text-white">}</p>
+                <p class="pl-4 text-white">});</p>
+                <p class="pl-4 mt-3 text-gray-500">// Write new terms to Sheet — skip already classified</p>
+                <p class="pl-4"><span class="text-green-400">writeNewTermsToSheet</span><span class="text-white">(seen, sheet);</span></p>
+                <p class="text-white">}</p>
+                <p class="mt-4 text-brand font-bold">// Full source on GitHub ↓</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================================================
+     6. GITHUB CTA BAND
+============================================================ -->
+<section class="py-20" style="background: #0d1117;">
+    <div class="container mx-auto px-6 max-w-3xl text-center fade-in">
+
+        <div class="text-5xl mb-6">🐒</div>
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4" data-key="github_title">Free. Open source. No email required.</h2>
+        <p class="text-gray-400 text-base mb-8 max-w-xl mx-auto" data-key="github_sub">If it saves you money, a GitHub star goes a long way. It helps other Google Ads specialists find the tool.</p>
+
+        <a href="https://github.com/mamfredm/CapybaraNegativeIQ-Search" target="_blank" rel="noopener" class="github-btn text-lg" data-key="github_cta">
+            <i class="fab fa-github text-xl"></i>
+            View Capybara NegativeIQ Search on GitHub
+        </a>
+
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-xs text-gray-600">
+            <span class="flex items-center gap-2"><i class="fas fa-lock text-gray-700"></i> <span data-key="github_trust_1">No data leaves your account</span></span>
+            <span class="flex items-center gap-2"><i class="fas fa-code text-gray-700"></i> <span data-key="github_trust_2">Full source code visible</span></span>
+            <span class="flex items-center gap-2"><i class="fas fa-euro-sign text-gray-700"></i> <span data-key="github_trust_3">Free forever</span></span>
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================================================
+     7. SOFT UPSELL
+============================================================ -->
+<section class="upsell-band py-16">
+    <div class="container mx-auto px-6 max-w-3xl text-center fade-in">
+
+        <p class="text-xs font-bold tracking-widest text-brand-dark uppercase mb-4" data-key="upsell_eyebrow">Want it done for you?</p>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-4" data-key="upsell_title">Want this running on your account today?</h2>
+        <p class="text-gray-600 text-base mb-8 max-w-xl mx-auto" data-key="upsell_desc">I can set this up, customize the Config for your industry, and have it classifying your search terms by tomorrow. That's what I do.</p>
+        <a href="index.html#contact" class="inline-block bg-gray-900 text-white font-bold py-4 px-8 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg" data-key="upsell_cta">
+            Get in touch →
+        </a>
+
+    </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="bg-gray-950 text-gray-500 py-8">
+    <div class="container mx-auto px-6 text-center text-sm">
+        <div class="flex justify-center items-center gap-2 mb-4">
+            <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara" class="w-5 h-5 opacity-40">
+            <p data-key="footer_copy">&copy; 2025 Click-Capybara · The Google Ads specialist in your corner.</p>
+        </div>
+        <div class="flex justify-center gap-6 text-xs">
+            <a href="privacy.html" class="hover:text-white transition" data-key="footer_privacy">Privacy Policy</a>
+            <a href="index.html#contact" class="hover:text-white transition" data-key="footer_contact">Contact</a>
+            <a href="free-script.html" class="hover:text-white transition" data-key="footer_script">Free Script</a>
+        </div>
+    </div>
+</footer>
+
+<!-- ============================================================
+     JS
+============================================================ -->
+<script>
+// ── Mobile menu ──────────────────────────────────────
+document.getElementById('mobile-menu-button').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+
+// ── Sticky header shadow ─────────────────────────────
+window.addEventListener('scroll', () => {
+    document.getElementById('site-header').classList.toggle('header-scrolled', window.scrollY > 10);
+});
+
+// ── Language switcher ────────────────────────────────
+if (typeof translations !== 'undefined') {
+    const langEnBtn  = document.getElementById('lang-en');
+    const langDeBtn  = document.getElementById('lang-de');
+    const mLangEnBtn = document.getElementById('mobile-lang-en');
+    const mLangDeBtn = document.getElementById('mobile-lang-de');
+
+    // New script page keys — EN
+    const scriptTranslations = {
+        en: {
+            script_page_title: "Capybara NegativeIQ Search — Free Google Ads Script",
+            script_meta_desc: "Free AI-powered Google Ads script. Classifies search terms, protects converting keywords, pushes negatives automatically.",
+            script_eyebrow: "Free Google Ads Script",
+            script_h1: "Capybara NegativeIQ Search",
+            script_tagline: "Stop guessing which search terms are wasting your budget. Let AI tell you.",
+            script_sub: "A free, open-source script that connects your Google Ads account to AI — classifies every search term, protects what's converting, and tells you exactly what to add as a negative. Built by a specialist. Used on real accounts.",
+            script_cta_github: '<i class="fab fa-github text-lg"></i> View on GitHub',
+            script_cta_setup: '<i class="fas fa-arrow-down text-xs"></i> How to install',
+            script_lang_badge: '<i class="fas fa-language"></i> Currently German only — English coming soon',
+            script_badge_free: "Free &amp; open source",
+            script_badge_safe: "No data leaves your account",
+            what_eyebrow: "What it actually does",
+            what_title: "Your search terms, classified by AI. In minutes.",
+            what_p1: "Most Google Ads accounts are hemorrhaging budget on search terms that will never convert — job seekers, competitors, irrelevant queries. Manually reviewing them is slow, error-prone, and boring. This script automates the entire process using AI.",
+            what_p2: "Every day, the Fetcher pulls your latest search terms from Google Ads into a Google Sheet. The Analyzer sends them in batches to an AI — which classifies each one based on your industry, your business, and your conversion data. Not generic rules. Actual context.",
+            what_p3: "Every term gets a classification, a confidence score, and a one-line explanation of why the AI made that call. You review, correct if needed, and push negatives back into your account in one click. The system learns from your corrections over time.",
+            conv_protect_title: "Conversion protection — always on",
+            conv_protect_desc: "Any search term that has driven a conversion is automatically protected. The script will never flag it as a negative, regardless of how it looks on the surface.",
+            mockup_note: "Example output. Your real data, your real account.",
+            inside_eyebrow: "What you get",
+            inside_title: "Three components. One complete system.",
+            comp_1_title: "The Fetcher", comp_1_where: "Google Ads → Scripts",
+            comp_1_desc: "Runs daily on a schedule. Pulls every search term from your Google Ads account, deduplicates them, and aggregates clicks and conversions over a 30-day window. Writes everything into your Google Sheet automatically — no manual export needed.",
+            comp_2_title: "The Analyzer", comp_2_where: "Google Sheets → Apps Script",
+            comp_2_desc: "The intelligence layer. Sends your search terms to AI in batches of 15 — so 100 terms take about 30 seconds and cost less than a cent. Each term comes back with a classification, a confidence score between 0 and 1, and a plain-language reason. Config-driven: you define your industry, your categories, and a handful of examples once. The AI does the rest.",
+            comp_3_title: "The Google Sheet Template", comp_3_where: "Your dashboard",
+            comp_3_desc: "Four tabs, all automated. <strong>SearchTerms</strong> is your working surface — color-coded by classification, confidence-scored, with a one-click export. <strong>Config</strong> is the only thing you touch per account. <strong>Negative_Export</strong> holds validated negatives ready to push. <strong>Expansion_Ideas</strong> captures terms worth building new campaigns around.",
+            install_eyebrow: "Setup guide",
+            install_title: "Up and running in under 30 minutes",
+            install_sub: "You don't need to know how to code. If you can paste text and click a button, you can run this.",
+            step1_title: "Copy the Google Sheet template", step1_desc: "Open the template from GitHub, make your own copy, and fill in the Config tab — your industry, business name, and 5–8 example search term classifications. This is the only customization you'll ever need to do.",
+            step2_title: "Add the Fetcher to Google Ads", step2_desc: "In Google Ads: Tools → Scripts → New. Paste the Fetcher code, replace the Sheet URL placeholder with your own Sheet URL, authorize it, and set it to run daily.",
+            step3_title: "Add the Analyzer to your Sheet", step3_desc: "In your Google Sheet: Extensions → Apps Script. Paste the Analyzer code, save, and authorize. A new menu item 'Keyword Analyzer' will appear in your Sheet toolbar.",
+            step4_title: "Run the setup menu", step4_desc: "Click Keyword Analyzer → Step 1: Layout & Dropdowns. This styles all four tabs, adds color coding, and sets up the dropdowns.",
+            step5_title: "Let it run — then review", step5_desc: "Next day, open the Sheet. Click Step 2 to classify all new search terms. Review, correct anything you disagree with, validate, and push negatives in one click.",
+            install_readme: "The full setup guide with screenshots is in the README on GitHub.",
+            code_eyebrow: "Under the hood",
+            code_title: "It's real code. Here's a slice of it.",
+            github_title: "Free. Open source. No email required.",
+            github_sub: "If it saves you money, a GitHub star goes a long way. It helps other Google Ads specialists find the tool.",
+            github_cta: '<i class="fab fa-github text-xl"></i> View Capybara NegativeIQ Search on GitHub',
+            github_trust_1: "No data leaves your account",
+            github_trust_2: "Full source code visible",
+            github_trust_3: "Free forever",
+            upsell_eyebrow: "Want it done for you?",
+            upsell_title: "Want this running on your account today?",
+            upsell_desc: "I can set this up, customize the Config for your industry, and have it classifying your search terms by tomorrow. That's what I do.",
+            upsell_cta: "Get in touch →",
+            footer_copy: "© 2025 Click-Capybara · The Google Ads specialist in your corner.",
+            footer_privacy: "Privacy Policy", footer_contact: "Contact", footer_script: "Free Script",
+            nav_services: "Services", nav_free_script: "Free Script", nav_about: "About", nav_contact: "Contact", nav_cta: "Free Audit"
+        },
+        de: {
+            script_page_title: "Capybara NegativeIQ Search — Kostenloses Google Ads Script",
+            script_meta_desc: "Kostenloses KI-gestütztes Google Ads Script. Klassifiziert Suchbegriffe, schützt konvertierende Keywords, bucht Negative automatisch.",
+            script_eyebrow: "Kostenloses Google Ads Script",
+            script_h1: "Capybara NegativeIQ Search",
+            script_tagline: "Schluss mit dem Rätselraten. Lass die KI dir sagen, welche Suchbegriffe dein Budget verbrennen.",
+            script_sub: "Ein kostenloses Open-Source-Script, das deinen Google Ads Account mit KI verbindet — klassifiziert jeden Suchbegriff, schützt was konvertiert, und sagt dir genau, was als Negativ-Keyword rein muss. Von einem Spezialisten gebaut. Auf echten Accounts getestet.",
+            script_cta_github: '<i class="fab fa-github text-lg"></i> Auf GitHub ansehen',
+            script_cta_setup: '<i class="fas fa-arrow-down text-xs"></i> Zur Installationsanleitung',
+            script_lang_badge: '<i class="fas fa-language"></i> Aktuell nur auf Deutsch — englische Version folgt',
+            script_badge_free: "Kostenlos &amp; Open Source",
+            script_badge_safe: "Keine Daten verlassen deinen Account",
+            what_eyebrow: "Was es wirklich tut",
+            what_title: "Deine Suchbegriffe, von KI klassifiziert. In Minuten.",
+            what_p1: "Die meisten Google Ads Accounts verlieren täglich Budget an Suchbegriffe, die nie konvertieren werden — Jobsucher, Mitbewerber, irrelevante Anfragen. Sie manuell zu prüfen ist langsam, fehleranfällig und mühsam. Dieses Script automatisiert den gesamten Prozess mit KI.",
+            what_p2: "Der Fetcher holt täglich deine aktuellen Suchbegriffe aus Google Ads in ein Google Sheet. Der Analyzer schickt sie in Batches an eine KI — die jeden Begriff anhand deiner Branche, deines Unternehmens und deiner Conversion-Daten klassifiziert. Keine generischen Regeln. Echter Kontext.",
+            what_p3: "Jeder Begriff bekommt eine Klassifizierung, einen Confidence-Score und eine einzeilige KI-Begründung. Du prüfst, korrigierst bei Bedarf — und buchst Negative mit einem Klick zurück ins Konto. Das System lernt aus deinen Korrekturen.",
+            conv_protect_title: "Conversion-Schutz — immer aktiv",
+            conv_protect_desc: "Jeder Suchbegriff, der eine Conversion erzielt hat, wird automatisch geschützt. Das Script markiert ihn nie als Negativ — egal wie er auf den ersten Blick aussieht.",
+            mockup_note: "Beispiel-Output. Deine echten Daten, dein echter Account.",
+            inside_eyebrow: "Was du bekommst",
+            inside_title: "Drei Komponenten. Ein vollständiges System.",
+            comp_1_title: "Der Fetcher", comp_1_where: "Google Ads → Scripts",
+            comp_1_desc: "Läuft täglich automatisch. Holt alle Suchbegriffe aus deinem Google Ads Account, dedupliziert sie und aggregiert Klicks und Conversions über 30 Tage. Schreibt alles automatisch ins Google Sheet — kein manueller Export nötig.",
+            comp_2_title: "Der Analyzer", comp_2_where: "Google Sheets → Apps Script",
+            comp_2_desc: "Die Intelligenzschicht. Schickt deine Suchbegriffe in Batches à 15 an eine KI — 100 Begriffe in ca. 30 Sekunden für weniger als einen Cent. Jeder Begriff kommt zurück mit Klassifizierung, Confidence-Score (0–1) und einer einzeiligen Begründung. Config-driven: du definierst einmal Branche, Kategorien und Beispiele. Den Rest übernimmt die KI.",
+            comp_3_title: "Das Google Sheet Template", comp_3_where: "Dein Dashboard",
+            comp_3_desc: "Vier Reiter, vollautomatisch. <strong>SearchTerms</strong> ist deine Arbeitsfläche — farbkodiert, confidence-bewertet, Ein-Klick-Export. <strong>Config</strong> ist die einzige Anpassung pro Account. <strong>Negative_Export</strong> enthält validierte Negative zum Buchen. <strong>Expansion_Ideen</strong> sammelt Begriffe mit Kampagnenpotenzial.",
+            install_eyebrow: "Setup-Anleitung",
+            install_title: "In unter 30 Minuten einsatzbereit",
+            install_sub: "Du musst nicht coden können. Wenn du Text einfügen und einen Button klicken kannst, kannst du das hier.",
+            step1_title: "Google Sheet Template kopieren", step1_desc: "Template von GitHub öffnen, eigene Kopie erstellen, Config-Tab befüllen — Branche, Unternehmensname und 5–8 Beispiel-Klassifizierungen. Das ist die einzige Anpassung, die du je machen musst.",
+            step2_title: "Fetcher in Google Ads einfügen", step2_desc: "In Google Ads: Tools → Scripts → Neu. Fetcher-Code einfügen, Sheet-URL ersetzen, autorisieren, auf täglich stellen. Fertig — läuft ab jetzt automatisch.",
+            step3_title: "Analyzer ins Sheet einfügen", step3_desc: "Im Google Sheet: Erweiterungen → Apps Script. Analyzer-Code einfügen, speichern, autorisieren. Ein neuer Menüpunkt 'Keyword Analyzer' erscheint in der Toolbar.",
+            step4_title: "Setup-Menü ausführen", step4_desc: "Keyword Analyzer → Schritt 1: Layout & Dropdowns. Stylt alle vier Reiter, fügt Farbkodierung hinzu und richtet Dropdowns ein.",
+            step5_title: "Laufen lassen — dann reviewen", step5_desc: "Am nächsten Tag Sheet öffnen, Schritt 2 klicken, klassifizieren lassen. Ergebnisse prüfen, Korrekturen eintragen, validieren, Negative buchen — ein Klick.",
+            install_readme: "Die vollständige Anleitung mit Screenshots findest du im README auf GitHub.",
+            code_eyebrow: "Unter der Haube",
+            code_title: "Echter Code. Hier ist ein Ausschnitt.",
+            github_title: "Kostenlos. Open Source. Keine E-Mail erforderlich.",
+            github_sub: "Wenn es dir Budget spart, freue ich mich über einen GitHub-Star. Er hilft anderen Google Ads Spezialisten, das Tool zu finden.",
+            github_cta: '<i class="fab fa-github text-xl"></i> Capybara NegativeIQ Search auf GitHub',
+            github_trust_1: "Keine Daten verlassen deinen Account",
+            github_trust_2: "Vollständiger Quellcode einsehbar",
+            github_trust_3: "Für immer kostenlos",
+            upsell_eyebrow: "Soll ich es einrichten?",
+            upsell_title: "Du möchtest es direkt auf deinem Account einrichten lassen?",
+            upsell_desc: "Ich richte das Script ein, passe die Config auf deine Branche an und habe es bis morgen am Laufen. Genau das ist mein Job.",
+            upsell_cta: "Schreib mir →",
+            footer_copy: "© 2025 Click-Capybara · Der Google Ads Spezialist an deiner Seite.",
+            footer_privacy: "Datenschutz", footer_contact: "Kontakt", footer_script: "Kostenloses Script",
+            nav_services: "Services", nav_free_script: "Kostenloses Script", nav_about: "Über mich", nav_contact: "Kontakt", nav_cta: "Kostenloses Audit"
+        }
+    };
+
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        const t = { ...(translations[lang] || {}), ...(scriptTranslations[lang] || {}) };
+        if (t.page_title || t.script_page_title) document.title = t.script_page_title || t.page_title;
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (t[key] !== undefined) el.innerHTML = t[key];
+        });
+        [document.getElementById('lang-en'), document.getElementById('mobile-lang-en')].forEach(btn => {
+            if(btn){ btn.classList.toggle('font-bold', lang==='en'); btn.classList.toggle('text-gray-900', lang==='en'); btn.classList.toggle('text-gray-400', lang!=='en'); }
+        });
+        [document.getElementById('lang-de'), document.getElementById('mobile-lang-de')].forEach(btn => {
+            if(btn){ btn.classList.toggle('font-bold', lang==='de'); btn.classList.toggle('text-gray-900', lang==='de'); btn.classList.toggle('text-gray-400', lang!=='de'); }
+        });
+        localStorage.setItem('preferredLang', lang);
+    }
+
+    if(langEnBtn)  langEnBtn.addEventListener('click',  () => setLanguage('en'));
+    if(langDeBtn)  langDeBtn.addEventListener('click',  () => setLanguage('de'));
+    if(mLangEnBtn) mLangEnBtn.addEventListener('click', () => setLanguage('en'));
+    if(mLangDeBtn) mLangDeBtn.addEventListener('click', () => setLanguage('de'));
+
+    setLanguage(localStorage.getItem('preferredLang') || 'en');
+}
+
+// ── Scroll fade-in ────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

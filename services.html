@@ -2,593 +2,677 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      
-      gtag('consent', 'default', {
-        'analytics_storage': 'denied',
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
-        'ad_personalization': 'denied'
-      });
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
     </script>
-
     <script>
-      (function() {
-        // Check if user previously accepted Analytics
-        // Note: Silktide uses 'true' string in LocalStorage
-        if (localStorage.getItem('silktideCookieChoice_analytics') === 'true') {
-           gtag('consent', 'update', {
-             'analytics_storage': 'granted'
-           });
-        }
-        
-        // Check if user previously accepted Advertising
-        if (localStorage.getItem('silktideCookieChoice_advertising') === 'true') {
-           gtag('consent', 'update', {
-             'ad_storage': 'granted',
-             'ad_user_data': 'granted',
-             'ad_personalization': 'granted'
-           });
-        }
-      })();
+        (function() {
+            if (localStorage.getItem('silktideCookieChoice_analytics') === 'true') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
+            }
+            if (localStorage.getItem('silktideCookieChoice_advertising') === 'true') {
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+            }
+        })();
     </script>
-
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-WK2WCGQH');
-    </script>
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WK2WCGQH');</script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title data-key="services_page_title">Services | Click-Capybara</title>
-    
-    <meta name="description" data-key="services_meta_desc" content="Explore our PPC services: Google Ads, YouTube Ads, Conversion Tracking, and Strategy. We drive growth with data-driven paid advertising.">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Click-Capybara",
-      "url": "https://www.click-capybara.com",
-      "logo": "https://www.click-capybara.com/assets/capybara_outine_bold.svg",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "hello@click-capybara.com",
-        "contactType": "customer service",
-        "availableLanguage": ["en", "de"]
-      },
-      "description": "Click-Capybara offers expert PPC management that delivers measurable results."
-    }
-    </script>
-    
+    <title data-key="svc_page_title">Services | Max — Google Ads Specialist</title>
+    <meta name="description" data-key="svc_meta_desc" content="Freelance Google Ads services: campaign management, scripts & automation, and strategy audits. Direct access to a senior specialist — no agency overhead.">
+    <link rel="canonical" href="https://www.click-capybara.com/services.html">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_capybara_outine_bold.ico" />
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="translations.js"></script>
     <link rel="stylesheet" id="silktide-consent-manager-css" href="cookie-banner/silktide-consent-manager.css">
     <script src="cookie-banner/silktide-consent-manager.js"></script>
     <script>
-silktideCookieBannerManager.updateCookieBannerConfig({
-  background: {
-    showBackground: true
-  },
-  cookieIcon: {
-    position: "bottomLeft"
-  },
-  cookieTypes: [
-    {
-      id: "necessary",
-      name: "Necessary",
-      description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
-      required: true,
-      onAccept: function() {
-        console.log('Add logic for the required Necessary here');
-      }
-    },
-    {
-      id: "analytics",
-      name: "Analytics",
-      description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
-      required: false,
-      onAccept: function() {
-        gtag('consent', 'update', {
-          analytics_storage: 'granted',
-        });
-        window.dataLayer.push({'event': 'consent_analytics_granted'});
-      },
-      onReject: function() {
-        gtag('consent', 'update', {
-          analytics_storage: 'denied',
-        });
-      }
-    },
-    {
-      id: "advertising",
-      name: "Advertising",
-      description: "<p>These cookies provide extra features and personalization to improve your experience. They may be set by us or by partners whose services we use.</p>",
-      required: false,
-      onAccept: function() {
-        gtag('consent', 'update', {
-          ad_storage: 'granted',
-          ad_user_data: 'granted',
-          ad_personalization: 'granted',
-        });
-        window.dataLayer.push({'event': 'consent_ads_granted'});
-      },
-      onReject: function() {
-        gtag('consent', 'update', {
-          ad_storage: 'denied',
-          ad_user_data: 'denied',
-          ad_personalization: 'denied',
-        });
-      }
-    }
-  ],
-  text: {
-    banner: {
-      description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://your-website.com/cookie-policy\" target=\"_blank\">Cookie Policy.</a></p>", // <-- UPDATE THIS LINK!
-      acceptAllButtonText: "Accept all",
-      acceptAllButtonAccessibleLabel: "Accept all cookies",
-      rejectNonEssentialButtonText: "Reject non-essential",
-      rejectNonEssentialButtonAccessibleLabel: "Reject non-essential",
-      preferencesButtonText: "Preferences",
-      preferencesButtonAccessibleLabel: "Toggle preferences"
-    },
-    preferences: {
-      title: "Customize your cookie preferences",
-      description: "<p>We respect your right to privacy. You can choose not to allow some of types of cookies. Your cookie preferences will apply across our website.</p>",
-    }
-  },
-  position: {
-    banner: "center"
-  }
-});
-</script>
-    
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                DEFAULT: '#fcba02', // Main brand color
-                light: '#FFF9E6',   // Lighter shade for backgrounds
-                dark: '#D4A101'     // Darker shade for accents
-              }
+    silktideCookieBannerManager.updateCookieBannerConfig({
+        background: { showBackground: true },
+        cookieIcon: { position: "bottomLeft" },
+        cookieTypes: [
+            { id: "necessary", name: "Necessary", description: "<p>Required for the site to function.</p>", required: true, onAccept: function(){} },
+            { id: "analytics", name: "Analytics", description: "<p>Help us understand how visitors use the site.</p>", required: false,
+                onAccept: function(){ gtag('consent', 'update', { analytics_storage: 'granted' }); dataLayer.push({ 'event': 'consent_accepted_analytics' }); },
+                onReject: function(){ gtag('consent', 'update', { analytics_storage: 'denied' }); }
             },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+            { id: "advertising", name: "Advertising", description: "<p>Used to measure ad performance.</p>", required: false,
+                onAccept: function(){ gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' }); dataLayer.push({ 'event': 'consent_accepted_advertising' }); },
+                onReject: function(){ gtag('consent', 'update', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' }); }
             }
-          }
-        }
-      }
+        ],
+        text: {
+            banner: { description: "<p>We use cookies to enhance your experience. <a href=\"privacy.html\">Cookie Policy.</a></p>", acceptAllButtonText: "Accept all", rejectNonEssentialButtonText: "Reject non-essential", preferencesButtonText: "Preferences" },
+            preferences: { title: "Manage cookie preferences" }
+        },
+        position: { banner: "center" }
+    });
     </script>
-    
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { DEFAULT: '#fcba02', light: '#FFF9E6', dark: '#D4A101' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+
     <style>
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        .nav-link::after {
-            content: '';
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 50%; transform: translateX(-50%); background-color: #fcba02; transition: width 0.3s ease; }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Service section alternating */
+        .svc-section:nth-child(odd) { background: #fff; }
+        .svc-section:nth-child(even) { background: #f9fafb; }
+
+        /* Service number */
+        .svc-number {
+            font-size: 6rem;
+            font-weight: 900;
+            line-height: 1;
+            color: #fcba02;
+            opacity: 0.15;
             position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #fcba02; /* Use brand color */
-            transition: width 0.3s ease;
+            top: -1rem;
+            right: 0;
+            letter-spacing: -0.05em;
+            pointer-events: none;
+            user-select: none;
         }
-        .nav-link:hover::after {
-            width: 100%;
+
+        /* Deliverable list item */
+        .deliverable {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.875rem;
+            color: #374151;
+        }
+        .deliverable:last-child { border-bottom: none; }
+        .deliverable-arrow {
+            color: #fcba02;
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        /* Focus area card */
+        .focus-card {
+            border-top: 3px solid #fcba02;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .focus-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+        }
+
+        /* Fade in */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .stagger > *:nth-child(1) { transition-delay: 0.05s; }
+        .stagger > *:nth-child(2) { transition-delay: 0.15s; }
+        .stagger > *:nth-child(3) { transition-delay: 0.25s; }
+
+        /* Sticky nav shadow */
+        .header-scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.08); }
+
+        /* Who it's for pill */
+        .for-pill {
+            display: inline-block;
+            background: #FFF9E6;
+            border: 1px solid rgba(252,186,2,0.3);
+            color: #92710a;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 999px;
         }
     </style>
-    <link rel="canonical" href="https://www.click-capybara.com/services.html">
 </head>
-<body class="bg-gray-50 text-gray-800">
 
-    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
-        <div class="container mx-auto px-6 py-4">
-            <nav class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center space-x-2">
-                    <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara Logo" class="w-10 h-10">
-                    <span class="text-2xl font-bold text-gray-900">Click-Capybara</span>
-                </a>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="services.html" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_services">Services</a>
-                    <a href="use-cases.html" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_use_cases">Use Cases</a>
-                    <a href="case-studies.html" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_case_studies">Case Studies</a>
-                    <a href="index.html#about" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_about">About</a>
-                    <a href="#contact" class="nav-link text-gray-600 hover:text-brand font-semibold" data-key="nav_contact">Contact</a>
-                </div>
-                
-                <div class="hidden md:flex items-center space-x-4 ml-8">
-                    <button id="lang-en" class="font-semibold text-sm">EN</button>
-                    <button id="lang-de" class="font-semibold text-sm text-gray-400">DE</button>
-                </div>
-                
-                <a href="#contact" class="hidden md:inline-block bg-brand text-white font-bold py-2 px-5 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="nav_audit_button">
-                    Free Ad Audit
-                </a>
-                <button id="mobile-menu-button" class="md:hidden text-2xl">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
-            <div id="mobile-menu" class="hidden md:hidden mt-4 bg-white rounded-lg shadow-lg border border-gray-100 pb-2">
-                 <a href="services.html" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_services_mobile">Services</a>
-                <a href="use-cases.html" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_use_cases">Use Cases</a>
-                 <a href="case-studies.html" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_case_studies_mobile">Case Studies</a>
-                 <a href="index.html#about" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_about_mobile">About</a>
-                 <a href="#contact" class="block py-3 px-4 text-sm text-gray-700 hover:bg-gray-50" data-key="nav_contact_mobile">Contact</a>
-    
-                 <div class="flex items-center px-4 py-3 border-t border-gray-100 gap-4">
-                     <i class="fas fa-globe text-gray-400 text-lg"></i>
-                     <button id="mobile-lang-en" class="font-bold text-sm">EN</button>
-                     <button id="mobile-lang-de" class="font-bold text-sm text-gray-400">DE</button>
-              </div>
+<body class="bg-white text-gray-800 font-sans antialiased">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK2WCGQH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-             <div class="p-4 pt-2">
-                 <a href="#contact" class="block bg-brand text-white font-bold py-3 px-4 rounded-lg text-center transition hover:shadow-md" data-key="nav_audit_button_mobile">Free Ad Audit</a>
-             </div>
+<!-- ============================================================
+     NAV
+============================================================ -->
+<header id="site-header" class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-100 transition-shadow">
+    <div class="container mx-auto px-6 py-4">
+        <nav class="flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara Logo" class="w-9 h-9">
+                <span class="text-xl font-bold text-gray-900">Click-Capybara</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-7">
+                <a href="services.html" class="nav-link text-brand font-semibold text-sm" data-key="nav_services">Services</a>
+                <a href="free-script.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_free_script">Free Script</a>
+                <a href="index.html#about" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_about">About</a>
+                <a href="#contact" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_contact">Contact</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4 ml-8">
+                <button id="lang-en" class="text-sm font-bold text-gray-900">EN</button>
+                <span class="text-gray-300">|</span>
+                <button id="lang-de" class="text-sm font-medium text-gray-400 hover:text-gray-700">DE</button>
+                <a href="#contact" class="ml-2 bg-brand text-gray-900 font-bold text-sm py-2 px-5 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="nav_cta">Free Audit</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 text-xl p-1"><i class="fas fa-bars"></i></button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden mt-3 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+            <a href="services.html" class="block py-3 px-5 text-sm text-brand font-semibold hover:bg-gray-50 border-b border-gray-100" data-key="nav_services">Services</a>
+            <a href="free-script.html" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_free_script">Free Script</a>
+            <a href="index.html#about" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_about">About</a>
+            <a href="#contact" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_contact">Contact</a>
+            <div class="flex items-center gap-4 px-5 py-3 border-b border-gray-100">
+                <i class="fas fa-globe text-gray-400"></i>
+                <button id="mobile-lang-en" class="text-sm font-bold">EN</button>
+                <button id="mobile-lang-de" class="text-sm font-medium text-gray-400">DE</button>
+            </div>
+            <div class="p-4">
+                <a href="#contact" class="block bg-brand text-gray-900 font-bold py-3 px-4 rounded-lg text-center text-sm" data-key="nav_cta">Free Audit</a>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <main>
-        <section class="py-20 md:py-32 bg-gray-50">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6" data-key="services_h1">Our PPC Services</h1>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-key="services_intro">
-                    We don't just "run ads." We build comprehensive revenue engines. From search intent to conversion tracking, every piece of the puzzle is handled with precision.
+<main>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="py-20 md:py-28 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-3xl text-center fade-in">
+        <p class="text-xs font-bold tracking-widest text-brand uppercase mb-5" data-key="svc_eyebrow">What I offer</p>
+        <h1 class="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight" data-key="svc_h1">Three things I do.<br>All of them well.</h1>
+        <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto" data-key="svc_sub">
+            I don't offer twelve services to look impressive. I offer three — and I've spent 8 years getting very good at each of them. Here's exactly what you get when we work together.
+        </p>
+
+        <!-- Service jump links -->
+        <div class="flex flex-wrap justify-center gap-3 mt-10">
+            <a href="#campaign-management" class="text-sm font-semibold text-gray-700 bg-white border border-gray-200 px-5 py-2.5 rounded-lg hover:border-brand hover:text-brand transition" data-key="svc_jump_1">Campaign Management</a>
+            <a href="#scripts-automation" class="text-sm font-semibold text-gray-700 bg-white border border-gray-200 px-5 py-2.5 rounded-lg hover:border-brand hover:text-brand transition" data-key="svc_jump_2">Scripts & Automation</a>
+            <a href="#strategy-audits" class="text-sm font-semibold text-gray-700 bg-white border border-gray-200 px-5 py-2.5 rounded-lg hover:border-brand hover:text-brand transition" data-key="svc_jump_3">Strategy & Audits</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SERVICE 1 — CAMPAIGN MANAGEMENT
+============================================================ -->
+<section id="campaign-management" class="svc-section py-20">
+    <div class="container mx-auto px-6 max-w-5xl">
+        <div class="md:flex gap-16 items-start">
+
+            <!-- Left: copy -->
+            <div class="md:w-3/5 fade-in">
+                <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3" data-key="svc1_eyebrow">Service 01</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight" data-key="svc1_title">Google Ads Campaign Management</h2>
+
+                <div class="space-y-4 text-gray-600 text-sm leading-relaxed mb-8">
+                    <p data-key="svc1_p1">This is the core of what I do. I build, structure, and actively manage Google Ads campaigns across Search, Shopping, Display, and Demand Gen — with one goal: making your budget work harder than it currently does.</p>
+                    <p data-key="svc1_p2">I don't hand your account to a junior after the onboarding call. I'm in it every week — adjusting bids, refining match types, killing underperformers, testing new angles. You'll know exactly what I'm doing and why, because I send you reports in plain language, not dashboards full of numbers that don't tell you anything.</p>
+                </div>
+
+                <span class="for-pill mb-6 inline-block" data-key="svc1_for">For: accounts that aren't performing, or launching from scratch</span>
+            </div>
+
+            <!-- Right: deliverables -->
+            <div class="md:w-2/5 mt-8 md:mt-0 fade-in">
+                <div class="relative bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
+                    <span class="svc-number">01</span>
+                    <p class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-5" data-key="svc1_includes_label">What's included</p>
+                    <div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d1">Campaign build or restructure</span></div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d2">Keyword strategy and match type architecture</span></div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d3">Ad copy writing and A/B testing</span></div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d4">Bid and budget management</span></div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d5">Weekly optimizations</span></div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d6">Monthly reporting in plain English</span></div>
+                    </div>
+                    <a href="#contact" class="mt-6 inline-block bg-brand text-gray-900 font-bold text-sm py-3 px-6 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="svc1_cta">Get started →</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SERVICE 2 — SCRIPTS & AUTOMATION
+============================================================ -->
+<section id="scripts-automation" class="svc-section py-20">
+    <div class="container mx-auto px-6 max-w-5xl">
+        <div class="md:flex gap-16 items-start flex-row-reverse">
+
+            <!-- Right becomes left on desktop: deliverables -->
+            <div class="md:w-2/5 mb-8 md:mb-0 fade-in">
+                <div class="relative bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
+                    <span class="svc-number">02</span>
+                    <p class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-5" data-key="svc2_includes_label">What I build</p>
+                    <div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d1">Search term classification (AI-powered)</span></div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d2">Budget pacing and overspend alerts</span></div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d3">Performance anomaly detection</span></div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d4">Automated reporting to Google Sheets</span></div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d5">Custom scripts for your specific needs</span></div>
+                    </div>
+                    <a href="free-script.html" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-gray-700 border border-gray-200 py-3 px-6 rounded-lg transition hover:border-brand hover:text-brand" data-key="svc2_cta">
+                        <i class="fab fa-github"></i>
+                        See Capybara NegativeIQ Search — free
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copy -->
+            <div class="md:w-3/5 fade-in">
+                <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3" data-key="svc2_eyebrow">Service 02</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight" data-key="svc2_title">Scripts & Automation</h2>
+
+                <div class="space-y-4 text-gray-600 text-sm leading-relaxed mb-8">
+                    <p data-key="svc2_p1">There's a ceiling on what manual Google Ads management can achieve. Scripts break through it.</p>
+                    <p data-key="svc2_p2">I write custom Google Ads scripts that automate the repetitive, error-prone work that eats hours every week — flagging wasted spend, pacing budgets, monitoring performance anomalies, generating reports. Work that takes a human three hours takes a script three seconds.</p>
+                    <p data-key="svc2_p3">My free tool, Capybara NegativeIQ Search, is a good example of what this looks like in practice: it connects your Google Ads account to AI, classifies every search term automatically, protects converting keywords, and tells you exactly what to add as a negative. That's the kind of edge a well-written script gives you.</p>
+                </div>
+
+                <span class="for-pill inline-block" data-key="svc2_for">For: managers and teams who want to work smarter, not longer</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SERVICE 3 — STRATEGY & AUDITS
+============================================================ -->
+<section id="strategy-audits" class="svc-section py-20">
+    <div class="container mx-auto px-6 max-w-5xl">
+        <div class="md:flex gap-16 items-start">
+
+            <!-- Copy -->
+            <div class="md:w-3/5 fade-in">
+                <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3" data-key="svc3_eyebrow">Service 03</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight" data-key="svc3_title">Strategy & Audits</h2>
+
+                <div class="space-y-4 text-gray-600 text-sm leading-relaxed mb-8">
+                    <p data-key="svc3_p1">Sometimes you don't need someone to run your ads. You need someone to tell you honestly what's wrong with them — and what to do about it.</p>
+                    <p data-key="svc3_p2">I audit Google Ads accounts from top to bottom: campaign structure, keyword strategy, match types, bidding logic, ad copy, landing page alignment, and conversion tracking. No diplomatic softening. You'll get a clear picture of what's working, what's wasting money, and a prioritized list of exactly what to fix.</p>
+                    <p data-key="svc3_p3">If you're running ads in-house and want an expert second opinion, this is where we start. If you want me to take over the account after the audit, that's on the table too — but there's no pressure to go further than the audit itself.</p>
+                </div>
+
+                <span class="for-pill inline-block" data-key="svc3_for">For: in-house teams wanting clarity, new clients testing the waters</span>
+            </div>
+
+            <!-- Deliverables -->
+            <div class="md:w-2/5 mt-8 md:mt-0 fade-in">
+                <div class="relative bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
+                    <span class="svc-number">03</span>
+                    <p class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-5" data-key="svc3_includes_label">What's included</p>
+                    <div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc3_d1">Full account audit (structure, keywords, bids, copy, tracking)</span></div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc3_d2">Written or video summary of findings</span></div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc3_d3">Prioritized action plan</span></div>
+                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc3_d4">30-minute follow-up call to walk through it</span></div>
+                    </div>
+                    <a href="#contact" class="mt-6 inline-block bg-brand text-gray-900 font-bold text-sm py-3 px-6 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="svc3_cta">Get a free audit →</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     WHO I WORK WITH — Focus areas
+============================================================ -->
+<section class="py-20 bg-gray-900">
+    <div class="container mx-auto px-6 max-w-5xl">
+
+        <div class="text-center mb-14 fade-in">
+            <p class="text-xs font-bold tracking-widest text-brand uppercase mb-4" data-key="focus_eyebrow">Focus areas</p>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white" data-key="focus_title">I work across verticals — with a few areas I know particularly well.</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 stagger">
+
+            <!-- Lead Gen -->
+            <div class="fade-in focus-card bg-gray-800 rounded-xl p-7">
+                <div class="text-2xl mb-4">🎯</div>
+                <h3 class="font-bold text-white text-base mb-3" data-key="focus_1_title">Lead Generation</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-key="focus_1_desc">If your business lives and dies by qualified leads — forms, calls, demos — I know how to build campaigns that attract the right ones and filter out the noise. Tight keyword architecture, strong negative lists, and tracking that goes beyond the click.</p>
+            </div>
+
+            <!-- E-commerce -->
+            <div class="fade-in focus-card bg-gray-800 rounded-xl p-7">
+                <div class="text-2xl mb-4">🛒</div>
+                <h3 class="font-bold text-white text-base mb-3" data-key="focus_2_title">E-Commerce</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-key="focus_2_desc">For online stores it's all about ROAS. I manage Shopping campaigns, optimize product feeds, and build remarketing structures that recover lost revenue without inflating spend.</p>
+            </div>
+
+            <!-- Branding -->
+            <div class="fade-in focus-card bg-gray-800 rounded-xl p-7">
+                <div class="text-2xl mb-4">📡</div>
+                <h3 class="font-bold text-white text-base mb-3" data-key="focus_3_title">Branding Campaigns</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-key="focus_3_desc">Not everything needs to convert today. I build upper-funnel campaigns — Display, Demand Gen, YouTube — that keep you visible to the right audiences while your bottom-funnel campaigns close the deal.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CONTACT CTA
+============================================================ -->
+<section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto px-6 max-w-5xl">
+        <div class="lg:flex gap-16 items-start">
+
+            <!-- Left -->
+            <div class="lg:w-1/2 mb-12 lg:mb-0 fade-in">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-5" data-key="contact_title">Not sure where to start? Start here.</h2>
+                <p class="text-gray-500 text-base leading-relaxed mb-8" data-key="contact_sub">
+                    Send me a message and I'll take a free look at your Google Ads account. No pitch, no commitment — just an honest assessment of where you stand and what I'd do differently.
                 </p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start gap-3 text-gray-600 text-sm" data-key="contact_li_1">
+                        <span class="text-brand font-bold mt-0.5">→</span>
+                        I'll review your account within 2 business days
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600 text-sm" data-key="contact_li_2">
+                        <span class="text-brand font-bold mt-0.5">→</span>
+                        You'll get a short video or written summary of my findings
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600 text-sm" data-key="contact_li_3">
+                        <span class="text-brand font-bold mt-0.5">→</span>
+                        We decide together if it makes sense to work together
+                    </li>
+                </ul>
+                <p class="text-gray-400 text-xs" data-key="contact_reassurance">No spam. No sales calls unless you want one. Just a reply from me, Max.</p>
             </div>
-        </section>
 
-        <!-- Service 1: Google Ads -->
-        <section id="google-ads" class="py-20 bg-white">
-            <div class="container mx-auto px-6 md:flex items-center gap-12">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <div class="bg-blue-50 p-10 rounded-2xl">
-                         <i class="fab fa-google text-6xl text-brand mb-6"></i>
-                    </div>
-                </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4" data-key="service_google_title">Google Ads Management</h2>
-                    <p class="text-lg text-gray-600 mb-6" data-key="service_google_detail">
-                        Capture demand right when your customers are looking for you. We manage the entire lifecycle of your Search and Shopping campaigns.
-                    </p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span class="text-gray-700" data-key="service_google_li1">Keyword Research & Competitor Analysis</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span class="text-gray-700" data-key="service_google_li2">Ad Copywriting & A/B Testing</span>
-                        </li>
-                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span class="text-gray-700" data-key="service_google_li3">Bid Management & ROAS Optimization</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="inline-block bg-brand text-white font-bold py-3 px-6 rounded-lg transition hover:shadow-md" data-key="cta_get_started">Get Started</a>
-                </div>
-            </div>
-        </section>
+            <!-- Right: form -->
+            <div class="lg:w-1/2 fade-in">
+                <form id="contact-form" class="bg-gray-50 border border-gray-200 rounded-2xl p-8 space-y-5">
 
-        <!-- Service 2: Microsoft & YouTube -->
-        <section id="youtube-ads" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6 md:flex items-center gap-12 flex-row-reverse">
-                 <div class="md:w-1/2 mb-8 md:mb-0">
-                    <div class="bg-red-50 p-10 rounded-2xl text-center">
-                         <div class="flex justify-center gap-6">
-                            <i class="fab fa-youtube text-6xl text-red-600"></i>
-                            <i class="fab fa-microsoft text-6xl text-blue-600"></i>
-                         </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_name">Name</label>
+                        <input type="text" name="name" required placeholder="Your name"
+                            class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition">
                     </div>
-                </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4" data-key="service_social_title">Microsoft & YouTube Ads</h2>
-                    <p class="text-lg text-gray-600 mb-6" data-key="service_social_detail">
-                        Don't rely on just one channel. We help you scale by tapping into the visual power of YouTube and the professional audience of Microsoft (Bing).
-                    </p>
-                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span class="text-gray-700" data-key="service_social_li1">Video Ad Production Consultations</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span class="text-gray-700" data-key="service_social_li2">Audience Targeting & Retargeting</span>
-                        </li>
-                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span class="text-gray-700" data-key="service_social_li3">Cross-Channel Strategy</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="inline-block bg-brand text-white font-bold py-3 px-6 rounded-lg transition hover:shadow-md" data-key="cta_get_started">Get Started</a>
-                </div>
-            </div>
-        </section>
 
-        <!-- Service 3: Tracking -->
-        <section id="tracking" class="py-20 bg-white">
-            <div class="container mx-auto px-6 md:flex items-center gap-12">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <div class="bg-green-50 p-10 rounded-2xl">
-                         <i class="fas fa-chart-line text-6xl text-green-600"></i>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_email">Email</label>
+                        <input type="email" name="email" required placeholder="you@company.com"
+                            class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition">
                     </div>
-                </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4" data-key="service_tracking_title">Conversion Tracking & Analytics</h2>
-                    <p class="text-lg text-gray-600 mb-6" data-key="service_tracking_detail">
-                        Blind optimization is dangerous. We fix your data foundation so you know exactly which dollar is generating which sale.
-                    </p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span class="text-gray-700" data-key="service_tracking_li1">GA4 Setup & Configuration</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span class="text-gray-700" data-key="service_tracking_li2">Server-Side Tracking Implementation</span>
-                        </li>
-                         <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
-                            <span class="text-gray-700" data-key="service_tracking_li3">Custom Reporting Dashboards</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="inline-block bg-brand text-white font-bold py-3 px-6 rounded-lg transition hover:shadow-md" data-key="cta_get_started">Get Started</a>
-                </div>
-            </div>
-        </section>
 
-        <!-- Contact Section Reuse -->
-        <section id="contact" class="py-20 bg-gray-800 text-white">
-            <div class="container mx-auto px-6">
-                <div class="lg:flex justify-between items-center gap-16">
-                    <div class="lg:w-1/2">
-                        <h2 class="text-3xl md:text-4xl font-bold" data-key="contact_title">Ready to See What the Capybara Can Do?</h2>
-                        <p class="mt-4 text-lg text-gray-300" data-key="contact_subtitle">Let's start with a free, no-obligation audit of your ad account. We'll identify key areas for improvement and provide an actionable strategy, completely free.</p>
-                        <div class="mt-8 space-y-4">
-                            <p><i class="fas fa-envelope mr-3 w-5 text-brand"></i> <a href="mailto:hello@click-capybara.com" class="hover:underline" data-key="contact_email">hello@click-capybara.com</a></p>
-                        </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_website">
+                            Website / Google Ads account <span class="font-normal text-gray-400" data-key="form_optional">(optional)</span>
+                        </label>
+                        <input type="text" name="website" placeholder="www.yoursite.com"
+                            class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition">
                     </div>
-                    <div class="lg:w-1/2 mt-10 lg:mt-0">
-                        <form id="contact-form" action="#" method="POST" class="bg-white p-8 rounded-xl shadow-2xl text-gray-800">
-                            <h3 class="text-2xl font-bold mb-6" data-key="form_title">Get Your Free Audit</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="name" class="font-semibold block mb-1 text-sm" data-key="form_name_label">Name</label>
-                                    <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent" placeholder="Your Name" data-key-placeholder="form_name_placeholder" required>
-                                </div>
-                                <div>
-                                    <label for="email" class="font-semibold block mb-1 text-sm" data-key="form_email_label">Email</label>
-                                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent" placeholder="you@company.com" data-key-placeholder="form_email_placeholder" required>
-                                </div>
-                            </div>
-                            <div class="mt-4">
-                                <label for="website" class="font-semibold block mb-1 text-sm" data-key="form_website_label">Website</label>
-                                <input type="url" id="website" name="website" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent" placeholder="https://yourwebsite.com" data-key-placeholder="form_website_placeholder" required>
-                            </div>
-                            <div class="mt-4">
-                                <label for="service" class="font-semibold block mb-1 text-sm" data-key="form_service_label">Service of Interest</label>
-                                <select id="service" name="service" class="w-full p-3 border border-gray-300 rounded-lg bg-white focus:ring-2 focus:ring-brand focus:border-transparent">
-                                    <option data-key="form_option_1">Free Ad Audit</option>
-                                    <option data-key="form_option_2">Google Ads Management</option>
-                                    <option data-key="form_option_3">Microsoft Ads Management </option>
-                                    <option data-key="form_option_4">Conversion Tracking</option>
-                                    <option data-key="form_option_5">PPC Strategy</option>
-                                    <option data-key="form_option_6">General Inquiry</option>
-                                </select>
-                            </div>
-                             <div class="mt-6">
-                                <button type="submit" class="w-full bg-brand text-white font-bold text-lg py-3 px-8 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="form_submit_button">
-                                    Submit Request
-                                </button>
-                            </div>
-                            <p id="form-status" class="text-xs text-gray-500 mt-4 text-center" data-key="form_status">We'll get back to you within one business day.</p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p data-key="footer_copyright">&copy; 2025 Click-Capybara. All Rights Reserved. | Calmly Mastering the Click.</p>
-            <div class="mt-4 text-sm">
-                <a href="privacy.html" class="hover:text-white mx-2" data-key="privacy_title">Privacy Policy</a> | 
-                <a href="index.html#contact" class="hover:text-white mx-2" data-key="nav_contact">Contact</a>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_challenge">
+                            Biggest challenge right now? <span class="font-normal text-gray-400" data-key="form_optional2">(optional)</span>
+                        </label>
+                        <textarea name="challenge" rows="3" placeholder="e.g. High CPA, wasted budget, unclear reporting..."
+                            class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition resize-none"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-brand text-gray-900 font-extrabold text-base py-4 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
+                        data-key="form_submit">
+                        Send — it's free
+                    </button>
+
+                    <p id="form-status" class="text-xs text-gray-400 text-center" data-key="form_status">We'll get back to you within one business day.</p>
+                </form>
             </div>
+
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script>
-        // --- 1. NEW TRANSLATION CODE START ---
+</main>
 
-// Check if translations loaded
-        if (typeof translations === 'undefined') {
-            console.error("ERROR: translations.js file not loaded!");
-        } else {
-            // Desktop Buttons
-            const langEnButton = document.getElementById('lang-en');
-            const langDeButton = document.getElementById('lang-de');
-            
-            // Mobile Buttons (NEW)
-            const mobileLangEnButton = document.getElementById('mobile-lang-en');
-            const mobileLangDeButton = document.getElementById('mobile-lang-de');
-            
-            // The main translation function
-            function setLanguage(lang) {
-                // 1. Set the page's lang attribute
-                document.documentElement.lang = lang;
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="bg-gray-950 text-gray-500 py-8">
+    <div class="container mx-auto px-6 text-center text-sm">
+        <div class="flex justify-center items-center gap-2 mb-4">
+            <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara" class="w-5 h-5 opacity-40">
+            <p data-key="footer_copy">&copy; 2025 Click-Capybara · The Google Ads specialist in your corner.</p>
+        </div>
+        <div class="flex justify-center gap-6 text-xs">
+            <a href="privacy.html" class="hover:text-white transition" data-key="footer_privacy">Privacy Policy</a>
+            <a href="#contact" class="hover:text-white transition" data-key="footer_contact">Contact</a>
+            <a href="free-script.html" class="hover:text-white transition" data-key="footer_script">Free Script</a>
+        </div>
+    </div>
+</footer>
 
-                // 2. Set the page title
-                if (translations[lang].page_title) {
-                    document.title = translations[lang].page_title;
-                }
+<!-- ============================================================
+     JS
+============================================================ -->
+<script>
+// ── Mobile menu ───────────────────────────────────────
+document.getElementById('mobile-menu-button').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+});
 
-                // 3. Update all text elements
-                const textElements = document.querySelectorAll('[data-key]');
-                textElements.forEach(element => {
-                    const key = element.getAttribute('data-key');
-                    if (translations[lang][key]) {
-                        element.innerHTML = translations[lang][key];
-                    }
-                });
+// ── Sticky header shadow ──────────────────────────────
+window.addEventListener('scroll', () => {
+    document.getElementById('site-header').classList.toggle('header-scrolled', window.scrollY > 10);
+});
 
-                // 4. Update all placeholder attributes
-                const placeholderElements = document.querySelectorAll('[data-key-placeholder]');
-                placeholderElements.forEach(element => {
-                    const key = element.getAttribute('data-key-placeholder');
-                    if (translations[lang][key]) {
-                        element.placeholder = translations[lang][key];
-                    }
-                });
+// ── Language switcher ─────────────────────────────────
+if (typeof translations !== 'undefined') {
+    const langEnBtn  = document.getElementById('lang-en');
+    const langDeBtn  = document.getElementById('lang-de');
+    const mLangEnBtn = document.getElementById('mobile-lang-en');
+    const mLangDeBtn = document.getElementById('mobile-lang-de');
 
-                // 5. Update button styles (For both Desktop AND Mobile)
-                if (lang === 'de') {
-                    // Desktop
-                    langDeButton.classList.remove('text-gray-400');
-                    langEnButton.classList.add('text-gray-400');
-                    
-                    // Mobile
-                    if(mobileLangDeButton) mobileLangDeButton.classList.remove('text-gray-400');
-                    if(mobileLangEnButton) mobileLangEnButton.classList.add('text-gray-400');
-                } else {
-                    // Desktop
-                    langEnButton.classList.remove('text-gray-400');
-                    langDeButton.classList.add('text-gray-400');
-
-                    // Mobile
-                    if(mobileLangEnButton) mobileLangEnButton.classList.remove('text-gray-400');
-                    if(mobileLangDeButton) mobileLangDeButton.classList.add('text-gray-400');
-                }
-
-                // 6. Save the user's choice
-                localStorage.setItem('language', lang);
-            }
-
-            // Add click listeners to Desktop buttons
-            if(langEnButton) langEnButton.addEventListener('click', () => setLanguage('en'));
-            if(langDeButton) langDeButton.addEventListener('click', () => setLanguage('de'));
-
-            // Add click listeners to Mobile buttons (NEW)
-            if(mobileLangEnButton) mobileLangEnButton.addEventListener('click', () => setLanguage('en'));
-            if(mobileLangDeButton) mobileLangDeButton.addEventListener('click', () => setLanguage('de'));
-
-            // Check for a saved language or default to 'en'
-            const savedLang = localStorage.getItem('language') || 'en';
-            setLanguage(savedLang);
+    const svcTranslations = {
+        en: {
+            svc_page_title: "Services | Max — Google Ads Specialist",
+            svc_meta_desc: "Freelance Google Ads services: campaign management, scripts & automation, and strategy audits. Direct access to a senior specialist — no agency overhead.",
+            svc_eyebrow: "What I offer",
+            svc_h1: "Three things I do.<br>All of them well.",
+            svc_sub: "I don't offer twelve services to look impressive. I offer three — and I've spent 8 years getting very good at each of them. Here's exactly what you get when we work together.",
+            svc_jump_1: "Campaign Management", svc_jump_2: "Scripts & Automation", svc_jump_3: "Strategy & Audits",
+            svc1_eyebrow: "Service 01", svc1_title: "Google Ads Campaign Management",
+            svc1_p1: "This is the core of what I do. I build, structure, and actively manage Google Ads campaigns across Search, Shopping, Display, and Demand Gen — with one goal: making your budget work harder than it currently does.",
+            svc1_p2: "I don't hand your account to a junior after the onboarding call. I'm in it every week — adjusting bids, refining match types, killing underperformers, testing new angles. You'll know exactly what I'm doing and why, because I send you reports in plain language, not dashboards full of numbers that don't tell you anything.",
+            svc1_for: "For: accounts that aren't performing, or launching from scratch",
+            svc1_includes_label: "What's included",
+            svc1_d1: "Campaign build or restructure", svc1_d2: "Keyword strategy and match type architecture",
+            svc1_d3: "Ad copy writing and A/B testing", svc1_d4: "Bid and budget management",
+            svc1_d5: "Weekly optimizations", svc1_d6: "Monthly reporting in plain English",
+            svc1_cta: "Get started →",
+            svc2_eyebrow: "Service 02", svc2_title: "Scripts & Automation",
+            svc2_p1: "There's a ceiling on what manual Google Ads management can achieve. Scripts break through it.",
+            svc2_p2: "I write custom Google Ads scripts that automate the repetitive, error-prone work that eats hours every week — flagging wasted spend, pacing budgets, monitoring performance anomalies, generating reports. Work that takes a human three hours takes a script three seconds.",
+            svc2_p3: "My free tool, Capybara NegativeIQ Search, is a good example of what this looks like in practice: it connects your Google Ads account to AI, classifies every search term automatically, protects converting keywords, and tells you exactly what to add as a negative. That's the kind of edge a well-written script gives you.",
+            svc2_for: "For: managers and teams who want to work smarter, not longer",
+            svc2_includes_label: "What I build",
+            svc2_d1: "Search term classification (AI-powered)", svc2_d2: "Budget pacing and overspend alerts",
+            svc2_d3: "Performance anomaly detection", svc2_d4: "Automated reporting to Google Sheets",
+            svc2_d5: "Custom scripts for your specific needs",
+            svc2_cta: "See Capybara NegativeIQ Search — free",
+            svc3_eyebrow: "Service 03", svc3_title: "Strategy & Audits",
+            svc3_p1: "Sometimes you don't need someone to run your ads. You need someone to tell you honestly what's wrong with them — and what to do about it.",
+            svc3_p2: "I audit Google Ads accounts from top to bottom: campaign structure, keyword strategy, match types, bidding logic, ad copy, landing page alignment, and conversion tracking. No diplomatic softening. You'll get a clear picture of what's working, what's wasting money, and a prioritized list of exactly what to fix.",
+            svc3_p3: "If you're running ads in-house and want an expert second opinion, this is where we start. If you want me to take over the account after the audit, that's on the table too — but there's no pressure to go further than the audit itself.",
+            svc3_for: "For: in-house teams wanting clarity, new clients testing the waters",
+            svc3_includes_label: "What's included",
+            svc3_d1: "Full account audit (structure, keywords, bids, copy, tracking)",
+            svc3_d2: "Written or video summary of findings",
+            svc3_d3: "Prioritized action plan",
+            svc3_d4: "30-minute follow-up call to walk through it",
+            svc3_cta: "Get a free audit →",
+            focus_eyebrow: "Focus areas",
+            focus_title: "I work across verticals — with a few areas I know particularly well.",
+            focus_1_title: "Lead Generation",
+            focus_1_desc: "If your business lives and dies by qualified leads — forms, calls, demos — I know how to build campaigns that attract the right ones and filter out the noise. Tight keyword architecture, strong negative lists, and tracking that goes beyond the click.",
+            focus_2_title: "E-Commerce",
+            focus_2_desc: "For online stores it's all about ROAS. I manage Shopping campaigns, optimize product feeds, and build remarketing structures that recover lost revenue without inflating spend.",
+            focus_3_title: "Branding Campaigns",
+            focus_3_desc: "Not everything needs to convert today. I build upper-funnel campaigns — Display, Demand Gen, YouTube — that keep you visible to the right audiences while your bottom-funnel campaigns close the deal.",
+            contact_title: "Not sure where to start? Start here.",
+            contact_sub: "Send me a message and I'll take a free look at your Google Ads account. No pitch, no commitment — just an honest assessment of where you stand and what I'd do differently.",
+            contact_li_1: "I'll review your account within 2 business days",
+            contact_li_2: "You'll get a short video or written summary of my findings",
+            contact_li_3: "We decide together if it makes sense to work together",
+            contact_reassurance: "No spam. No sales calls unless you want one. Just a reply from me, Max.",
+            form_label_name: "Name", form_label_email: "Email",
+            form_label_website: "Website / Google Ads account",
+            form_label_challenge: "Biggest challenge right now?",
+            form_optional: "(optional)", form_optional2: "(optional)",
+            form_submit: "Send — it's free",
+            form_status: "We'll get back to you within one business day.",
+            footer_copy: "© 2025 Click-Capybara · The Google Ads specialist in your corner.",
+            footer_privacy: "Privacy Policy", footer_contact: "Contact", footer_script: "Free Script",
+            nav_services: "Services", nav_free_script: "Free Script", nav_about: "About", nav_contact: "Contact", nav_cta: "Free Audit"
+        },
+        de: {
+            svc_page_title: "Services | Max — Google Ads Spezialist",
+            svc_meta_desc: "Freelance Google Ads Services: Kampagnen-Management, Scripts & Automatisierung und Strategie-Audits. Direkt mit dem Spezialisten — kein Agentur-Overhead.",
+            svc_eyebrow: "Was ich anbiete",
+            svc_h1: "Drei Dinge.<br>Alle richtig gemacht.",
+            svc_sub: "Ich biete keine zwölf Services an, um beeindruckend zu wirken. Ich biete drei — und ich arbeite seit 8 Jahren daran, in jedem davon sehr gut zu werden. Hier ist genau, was du bekommst.",
+            svc_jump_1: "Kampagnen-Management", svc_jump_2: "Scripts & Automatisierung", svc_jump_3: "Strategie & Audits",
+            svc1_eyebrow: "Service 01", svc1_title: "Google Ads Kampagnen-Management",
+            svc1_p1: "Das ist der Kern meiner Arbeit. Ich baue, strukturiere und manage Google Ads Kampagnen in Search, Shopping, Display und Demand Gen — mit einem Ziel: dein Budget effizienter einzusetzen, als es aktuell geschieht.",
+            svc1_p2: "Nach dem Onboarding-Call übergebe ich deinen Account nicht an einen Junior. Ich bin jede Woche selbst drin — passe Gebote an, verfeinere Match-Types, streiche Underperformer, teste neue Ansätze. Du weißt immer, was ich tue und warum — weil ich dir Berichte in klarer Sprache schicke, keine Dashboards voller Zahlen, die nichts aussagen.",
+            svc1_for: "Für: Accounts die nicht performen, oder die richtig starten wollen",
+            svc1_includes_label: "Was du bekommst",
+            svc1_d1: "Kampagnen-Aufbau oder Restrukturierung", svc1_d2: "Keyword-Strategie und Match-Type-Architektur",
+            svc1_d3: "Anzeigentexte und A/B-Testing", svc1_d4: "Gebot- und Budget-Management",
+            svc1_d5: "Wöchentliche Optimierungen", svc1_d6: "Monatliches Reporting in klarer Sprache",
+            svc1_cta: "Loslegen →",
+            svc2_eyebrow: "Service 02", svc2_title: "Scripts & Automatisierung",
+            svc2_p1: "Manuelles Google Ads Management hat eine Grenze. Scripts überwinden sie.",
+            svc2_p2: "Ich schreibe individuelle Google Ads Scripts, die repetitive, fehleranfällige Arbeit automatisieren — Budget-Überwachung, Performance-Anomalien erkennen, Berichte generieren. Arbeit, die einen Menschen drei Stunden kostet, erledigt ein Script in drei Sekunden.",
+            svc2_p3: "Mein kostenloses Tool, Capybara NegativeIQ Search, zeigt, wie das in der Praxis aussieht: Es verbindet deinen Google Ads Account mit KI, klassifiziert jeden Suchbegriff automatisch, schützt konvertierende Keywords und sagt dir genau, was als Negativ-Keyword rein muss.",
+            svc2_for: "Für: Manager und Teams, die effizienter arbeiten wollen",
+            svc2_includes_label: "Was ich baue",
+            svc2_d1: "Suchbegriff-Klassifizierung mit KI", svc2_d2: "Budget-Pacing und Overspend-Alerts",
+            svc2_d3: "Performance-Anomalie-Erkennung", svc2_d4: "Automatisiertes Reporting in Google Sheets",
+            svc2_d5: "Individuelle Scripts für deinen Account",
+            svc2_cta: "Capybara NegativeIQ Search — kostenlos ansehen",
+            svc3_eyebrow: "Service 03", svc3_title: "Strategie & Audits",
+            svc3_p1: "Manchmal brauchst du niemanden, der deine Ads schaltet. Du brauchst jemanden, der dir ehrlich sagt, was damit nicht stimmt — und was dagegen zu tun ist.",
+            svc3_p2: "Ich analysiere Google Ads Accounts von Grund auf: Kampagnenstruktur, Keyword-Strategie, Match-Types, Bidding-Logik, Anzeigentexte, Landing-Page-Ausrichtung und Conversion-Tracking. Kein diplomatisches Weichspülen. Du bekommst ein klares Bild: was funktioniert, was Budget verbrennt — und eine priorisierte Liste, was zu tun ist.",
+            svc3_p3: "Wenn du In-House Ads schaltest und eine Expertenmeinung willst, fangen wir hier an. Wenn du willst, dass ich den Account danach übernehme, ist das möglich — aber es gibt keinen Druck, über das Audit hinaus zu gehen.",
+            svc3_for: "Für: In-House Teams, neue Kunden die erst schauen wollen",
+            svc3_includes_label: "Was du bekommst",
+            svc3_d1: "Vollständiges Account-Audit (Struktur, Keywords, Gebote, Texte, Tracking)",
+            svc3_d2: "Schriftliche oder Video-Zusammenfassung der Ergebnisse",
+            svc3_d3: "Priorisierter Aktionsplan",
+            svc3_d4: "30-minütiges Follow-up-Gespräch",
+            svc3_cta: "Kostenloses Audit anfragen →",
+            focus_eyebrow: "Fokus-Bereiche",
+            focus_title: "Ich arbeite branchenübergreifend — mit ein paar Bereichen, die ich besonders gut kenne.",
+            focus_1_title: "Lead-Generierung",
+            focus_1_desc: "Wenn dein Business von qualifizierten Leads lebt — Formulare, Anrufe, Demo-Buchungen — weiß ich, wie man Kampagnen baut, die die richtigen anzieht und den Rest herausfiltert. Enge Keyword-Architektur, starke Negativlisten und Tracking, das über den Klick hinausgeht.",
+            focus_2_title: "E-Commerce",
+            focus_2_desc: "Für Online-Shops zählt ROAS. Ich manage Shopping-Kampagnen, optimiere Product Feeds und baue Remarketing-Strukturen, die verlorenen Umsatz zurückholen — ohne den Spend aufzublasen.",
+            focus_3_title: "Branding-Kampagnen",
+            focus_3_desc: "Nicht alles muss heute konvertieren. Ich baue Upper-Funnel-Kampagnen — Display, Demand Gen, YouTube — die dich bei den richtigen Zielgruppen sichtbar halten, während Bottom-Funnel-Kampagnen den Abschluss machen.",
+            contact_title: "Nicht sicher, womit du anfangen sollst? Fang hier an.",
+            contact_sub: "Schreib mir und ich werfe einen kostenlosen Blick auf deinen Google Ads Account. Kein Sales-Pitch, keine Verpflichtung — nur eine ehrliche Einschätzung, wo du stehst und was ich anders machen würde.",
+            contact_li_1: "Ich schaue mir deinen Account innerhalb von 2 Werktagen an",
+            contact_li_2: "Du bekommst eine kurze Video- oder schriftliche Zusammenfassung",
+            contact_li_3: "Wir entscheiden gemeinsam, ob eine Zusammenarbeit Sinn ergibt",
+            contact_reassurance: "Kein Spam. Keine unerwünschten Anrufe. Nur eine Antwort von mir, Max.",
+            form_label_name: "Name", form_label_email: "E-Mail",
+            form_label_website: "Website / Google Ads Account",
+            form_label_challenge: "Was ist deine größte Herausforderung gerade?",
+            form_optional: "(optional)", form_optional2: "(optional)",
+            form_submit: "Nachricht senden — kostenlos",
+            form_status: "Ich melde mich innerhalb eines Werktages.",
+            footer_copy: "© 2025 Click-Capybara · Der Google Ads Spezialist an deiner Seite.",
+            footer_privacy: "Datenschutz", footer_contact: "Kontakt", footer_script: "Kostenloses Script",
+            nav_services: "Services", nav_free_script: "Kostenloses Script", nav_about: "Über mich", nav_contact: "Kontakt", nav_cta: "Kostenloses Audit"
         }
-        // --- NEW TRANSLATION CODE END ---
+    };
 
-
-        // --- 2. EXISTING MOBILE MENU CODE ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navLinks = document.querySelectorAll('#mobile-menu a');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        const t = { ...(translations[lang] || {}), ...(svcTranslations[lang] || {}) };
+        if (t.svc_page_title) document.title = t.svc_page_title;
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (t[key] !== undefined) el.innerHTML = t[key];
         });
-
-        // Hide mobile menu when a link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+        [langEnBtn, mLangEnBtn].forEach(btn => {
+            if(btn){ btn.classList.toggle('font-bold', lang==='en'); btn.classList.toggle('text-gray-900', lang==='en'); btn.classList.toggle('text-gray-400', lang!=='en'); }
         });
-
-        // --- 
-        // --- 3. EXISTING GOOGLE FORM CODE ---
-        // ---
-
-        // Google Apps Script URL
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw23jxJMY19TaY7LM8F3y7kbXsB2U0NDQPfQ3qeNnN524VdCWW_eJktRAv-jxZXgorJug/exec';
-
-        const contactForm = document.getElementById('contact-form');
-        const formStatus = document.getElementById('form-status');
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-
-        contactForm.addEventListener('submit', e => {
-            // Prevent the default form submission
-            e.preventDefault();
-
-            const currentLang = document.documentElement.lang || 'en';
-
-            // Show a "submitting" message and disable the button
-            const submittingKey = "form_submitting";
-            formStatus.textContent = (translations && translations[currentLang][submittingKey]) || 'Submitting...';
-            
-            formStatus.style.color = '#3b82f6'; // Blue color
-            submitButton.disabled = true;
-            submitButton.style.opacity = '0.7';
-
-            // Get the form data as an object
-            const formData = new FormData(contactForm);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                website: formData.get('website'),
-                service: formData.get('service')
-            };
-
-            // Send the data to the Google Apps Script
-            fetch(GOOGLE_SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors', // 'no-cors' is required for simple web app POSTs
-                cache: 'no-cache',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            })
-            .then(() => {
-                // Show success message
-                const successKey = "form_success";
-                formStatus.textContent = (translations && translations[currentLang][successKey]) || "Thanks! We'll be in touch soon.";
-                formStatus.style.color = '#16a34a'; // Green color for success
-                
-                // Clear the form
-                contactForm.reset();
-            })
-            .catch(error => {
-                // Show error message
-                console.error('Error:', error);
-                const errorKey = "form_error";
-                formStatus.textContent = (translations && translations[currentLang][errorKey]) || 'Oops! Something went wrong. Please try again.';
-                formStatus.style.color = '#dc2626'; // Red color for error
-            })
-            .finally(() => {
-                // Re-enable the button after a short delay
-                setTimeout(() => {
-                    submitButton.disabled = false;
-                    submitButton.style.opacity = '1';
-                    
-                    // Reset status text after a few more seconds
-                    setTimeout(() => {
-                        const defaultStatusKey = "form_status";
-                        formStatus.textContent = (translations && translations[currentLang][defaultStatusKey]) || "We'll get back to you within one business day.";
-                        formStatus.style.color = ''; // Reset color
-                    }, 4000);
-
-                }, 1000);
-            });
+        [langDeBtn, mLangDeBtn].forEach(btn => {
+            if(btn){ btn.classList.toggle('font-bold', lang==='de'); btn.classList.toggle('text-gray-900', lang==='de'); btn.classList.toggle('text-gray-400', lang!=='de'); }
         });
+        localStorage.setItem('preferredLang', lang);
+    }
 
-    </script>
+    if(langEnBtn)  langEnBtn.addEventListener('click',  () => setLanguage('en'));
+    if(langDeBtn)  langDeBtn.addEventListener('click',  () => setLanguage('de'));
+    if(mLangEnBtn) mLangEnBtn.addEventListener('click', () => setLanguage('en'));
+    if(mLangDeBtn) mLangDeBtn.addEventListener('click', () => setLanguage('de'));
+
+    setLanguage(localStorage.getItem('preferredLang') || 'en');
+}
+
+// ── Scroll fade-in ────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── Contact form ──────────────────────────────────────
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        status.textContent = "✓ Sent! I'll be in touch within 2 business days.";
+        status.classList.add('text-brand');
+        form.reset();
+    });
+}
+</script>
 
 </body>
 </html>
