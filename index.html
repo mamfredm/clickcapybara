@@ -277,7 +277,7 @@
                 <!-- Eyebrow -->
                 <p class="inline-flex items-center gap-2 bg-brand-light border border-brand/30 text-brand-dark font-semibold text-sm px-4 py-1.5 rounded-full mb-8" data-key="hero_eyebrow">
                     <i class="fab fa-google text-xs"></i>
-                    Google Ads Specialist · 8+ Years Experience
+                    Google Ads Specialist · 6+ Years Experience
                 </p>
 
                 <!-- Headline -->
@@ -288,7 +288,7 @@
 
                 <!-- Subheadline -->
                 <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-10" data-key="hero_sub">
-                    Most businesses waste 30–40% of their ad budget on clicks that never convert. I fix that — with sharp strategy, smart automation, and no fluff. You get a senior specialist working directly on your account, not a junior at an agency.
+                    Most businesses waste 30–40% of their ad budget on clicks that will never convert. That changes with sharp strategy, smart automation, and someone who actually cares about your results — not a junior at an agency running through a checklist.
                 </p>
 
                 <!-- CTAs -->
@@ -304,7 +304,7 @@
                 <!-- Trust bar -->
                 <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-gray-500 font-medium">
                     <span class="flex items-center gap-2"><i class="fab fa-google text-brand"></i> <span data-key="trust_1">Google Partner</span></span>
-                    <span class="flex items-center gap-2"><i class="ph ph-clock-countdown text-brand text-lg"></i> <span data-key="trust_2">8+ Years Experience</span></span>
+                    <span class="flex items-center gap-2"><i class="ph ph-clock-countdown text-brand text-lg"></i> <span data-key="trust_2">6+ Years Experience</span></span>
                     <span class="flex items-center gap-2"><i class="ph ph-buildings text-brand text-lg"></i> <span data-key="trust_3">SMB to Enterprise</span></span>
                     <span class="flex items-center gap-2"><i class="ph ph-user-circle text-brand text-lg"></i> <span data-key="trust_4">You always talk to me directly</span></span>
                 </div>
@@ -531,9 +531,9 @@
                 <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-8" data-key="about_title">Who's behind Click-Capybara?</h2>
 
                 <div class="space-y-5 text-gray-600 text-base leading-relaxed text-left md:text-center">
-                    <p data-key="about_p1">I'm Max — a freelance Google Ads specialist with 8+ years of hands-on experience managing accounts across industries, from lean SMBs to large enterprise budgets.</p>
-                    <p data-key="about_p2">I started Click-Capybara because I kept seeing the same thing: businesses paying agency fees for junior-level work, receiving reports full of numbers that meant nothing, and never quite knowing if their budget was being spent wisely.</p>
-                    <p data-key="about_p3">My approach is different. I work directly on your account — no handoffs, no account managers in between. I combine sharp campaign strategy with custom automation and scripts to get more out of every euro you spend. And I'll always tell you the truth, even when it's not what you want to hear.</p>
+                    <p data-key="about_p1">Behind Click-Capybara is Max — a freelance Google Ads specialist with 6+ years of hands-on experience across industries, from lean SMBs to large enterprise budgets. That includes two years at Google itself, working as a Subject Matter Expert on the launch of Performance Max campaigns.</p>
+                    <p data-key="about_p2">Click-Capybara came from a simple observation: businesses paying agency fees for junior-level work, receiving reports full of numbers that meant nothing, and never quite knowing if their budget was being spent wisely.</p>
+                    <p data-key="about_p3">The approach here is different. No handoffs, no account managers in between — your account gets worked on directly, start to finish. Sharp strategy, custom automation, and feedback that's honest even when it's not what you want to hear.</p>
                     <p class="text-gray-400 italic" data-key="about_p4">When I'm not in Google Ads, I'm probably building another script.</p>
                 </div>
 
@@ -561,15 +561,15 @@
                         </p>
                         <ul class="space-y-4 mb-10">
                             <li class="flex items-start gap-3 text-gray-300 text-sm" data-key="contact_li_1">
-                                <i class="fas fa-check text-brand mt-0.5 flex-shrink-0"></i>
+                                <i class="ph ph-check text-brand mt-0.5 flex-shrink-0 text-base"></i>
                                 I'll review your account within 2 business days
                             </li>
                             <li class="flex items-start gap-3 text-gray-300 text-sm" data-key="contact_li_2">
-                                <i class="fas fa-check text-brand mt-0.5 flex-shrink-0"></i>
+                                <i class="ph ph-check text-brand mt-0.5 flex-shrink-0 text-base"></i>
                                 You'll get a short video or written summary of my findings
                             </li>
                             <li class="flex items-start gap-3 text-gray-300 text-sm" data-key="contact_li_3">
-                                <i class="fas fa-check text-brand mt-0.5 flex-shrink-0"></i>
+                                <i class="ph ph-check text-brand mt-0.5 flex-shrink-0 text-base"></i>
                                 We decide together if it makes sense to work together
                             </li>
                         </ul>
@@ -706,7 +706,7 @@
     fadeEls.forEach(el => observer.observe(el));
 
     // ── Contact form → Google Sheets ─────────────────────────
-    const LEADS_URL = 'https://docs.google.com/spreadsheets/d/10ifT6abmKtEcex9BvSfi2lR74cmqzUk_i-2HIomR6hM/edit?gid=0#gid=0'; // ← paste your Web App URL here after deploying
+    const LEADS_URL = 'YOUR_WEBAPP_URL_HERE'; // ← paste your Web App URL here after deploying
 
     function submitToSheet(formEl, statusEl, sourcePage) {
         const lang = localStorage.getItem('preferredLang') || 'en';

@@ -7,7 +7,7 @@ const translations = {
 
     // ── Meta / Page Titles ────────────────────────────────────
     "page_title": "Max | Google Ads Specialist — Click-Capybara",
-    "meta_desc": "Freelance Google Ads specialist with 8+ years experience. Strategy, scripts, and straight talk — no agency markup.",
+    "meta_desc": "Freelance Google Ads specialist with 6+ years experience. Strategy, scripts, and straight talk — no agency markup.",
     "services_page_title": "Services | Max — Google Ads Specialist",
     "services_meta_desc": "Freelance Google Ads services: campaign management, scripts & automation, and strategy audits. Direct access to a senior specialist — no agency overhead.",
     "script_page_title": "Capybara NegativeIQ Search — Free Google Ads Script",
@@ -37,15 +37,15 @@ const translations = {
     "nav_use_cases": "Use Cases",
 
     // ── Homepage Hero ─────────────────────────────────────────
-    "hero_eyebrow": "Google Ads Specialist · 8+ Years Experience",
+    "hero_eyebrow": "Google Ads Specialist · 6+ Years Experience",
     "hero_h1": "Hi, I'm Max.<br><span class=\"highlight\">I make your Google Ads<br class=\"hidden md:block\"> actually work.</span>",
-    "hero_sub": "Most businesses waste 30–40% of their ad budget on clicks that never convert. I fix that — with sharp strategy, smart automation, and no fluff. You get a senior specialist working directly on your account, not a junior at an agency.",
+    "hero_sub": "Most businesses waste 30–40% of their ad budget on clicks that will never convert. That changes with sharp strategy, smart automation, and someone who actually cares about your results — not a junior at an agency running through a checklist.",
     "hero_cta_primary": "Get a Free Audit",
     "hero_cta_secondary": "↓ Grab my free AI Keyword Analyzer",
 
     // ── Homepage Trust Bar ────────────────────────────────────
     "trust_1": "Google Partner",
-    "trust_2": "8+ Years Experience",
+    "trust_2": "6+ Years Experience",
     "trust_3": "SMB to Enterprise",
     "trust_4": "You always talk to me directly",
 
@@ -107,9 +107,9 @@ const translations = {
 
     // ── Homepage About ────────────────────────────────────────
     "about_title": "Who's behind Click-Capybara?",
-    "about_p1": "I'm Max — a freelance Google Ads specialist with 8+ years of hands-on experience managing accounts across industries, from lean SMBs to large enterprise budgets.",
-    "about_p2": "I started Click-Capybara because I kept seeing the same thing: businesses paying agency fees for junior-level work, receiving reports full of numbers that meant nothing, and never quite knowing if their budget was being spent wisely.",
-    "about_p3": "My approach is different. I work directly on your account — no handoffs, no account managers in between. I combine sharp campaign strategy with custom automation and scripts to get more out of every euro you spend. And I'll always tell you the truth, even when it's not what you want to hear.",
+    "about_p1": "Behind Click-Capybara is Max — a freelance Google Ads specialist with 6+ years of hands-on experience across industries, from lean SMBs to large enterprise budgets. That includes two years at Google itself, working as a Subject Matter Expert on the launch of Performance Max campaigns.",
+    "about_p2": "Click-Capybara came from a simple observation: businesses paying agency fees for junior-level work, receiving reports full of numbers that meant nothing, and never quite knowing if their budget was being spent wisely.",
+    "about_p3": "The approach here is different. No handoffs, no account managers in between — your account gets worked on directly, start to finish. Sharp strategy, custom automation, and feedback that's honest even when it's not what you want to hear.",
     "about_p4": "When I'm not in Google Ads, I'm probably building another script.",
     "about_close_1": "Transparency",
     "about_close_2": "Accountability",
@@ -162,14 +162,14 @@ const translations = {
     "svc_meta_desc": "Freelance Google Ads services: campaign management, scripts & automation, and strategy audits. Direct access to a senior specialist — no agency overhead.",
     "svc_eyebrow": "What I offer",
     "svc_h1": "Three things I do.<br>All of them well.",
-    "svc_sub": "I don't offer twelve services to look impressive. I offer three — and I've spent 8 years getting very good at each of them. Here's exactly what you get when we work together.",
+    "svc_sub": "I don't offer twelve services to look impressive. I offer three — and I've spent 6 years getting very good at each of them. Here's exactly what you get when we work together.",
     "svc_jump_1": "Campaign Management",
     "svc_jump_2": "Scripts & Automation",
     "svc_jump_3": "Strategy & Audits",
     "svc1_eyebrow": "Service 01",
     "svc1_title": "Google Ads Campaign Management",
-    "svc1_p1": "This is the core of what I do. I build, structure, and actively manage Google Ads campaigns across Search, Shopping, Display, and Demand Gen — with one goal: making your budget work harder than it currently does.",
-    "svc1_p2": "I don't hand your account to a junior after the onboarding call. I'm in it every week — adjusting bids, refining match types, killing underperformers, testing new angles. You'll know exactly what I'm doing and why, because I send you reports in plain language, not dashboards full of numbers that don't tell you anything.",
+    "svc1_p1": "Campaign management is the core of this work — building and running Google Ads across Search, Shopping, Display, and Demand Gen with one goal in mind: making your budget work harder than it currently does.",
+    "svc1_p2": "Your account doesn't get handed off after the onboarding call. It gets worked on every week — bids adjusted, match types refined, underperformers cut, new angles tested. And the reports you receive are in plain language, not dashboards full of numbers that don't tell you anything.",
     "svc1_for": "For: accounts that aren't performing, or launching from scratch",
     "svc1_includes_label": "What's included",
     "svc1_d1": "Campaign build or restructure",
@@ -183,7 +183,7 @@ const translations = {
     "svc2_title": "Scripts & Automation",
     "svc2_p1": "There's a ceiling on what manual Google Ads management can achieve. Scripts break through it.",
     "svc2_p2": "I write custom Google Ads scripts that automate the repetitive, error-prone work that eats hours every week — flagging wasted spend, pacing budgets, monitoring performance anomalies, generating reports. Work that takes a human three hours takes a script three seconds.",
-    "svc2_p3": "My free tool, Capybara NegativeIQ Search, is a good example of what this looks like in practice: it connects your Google Ads account to AI, classifies every search term automatically, protects converting keywords, and tells you exactly what to add as a negative. That's the kind of edge a well-written script gives you.",
+    "svc2_p3": "A concrete example is Capybara NegativeIQ Search — a free tool that classifies search terms using AI, protects converting keywords, and tells you exactly what to add as a negative.",
     "svc2_for": "For: managers and teams who want to work smarter, not longer",
     "svc2_includes_label": "What I build",
     "svc2_d1": "Search term classification (AI-powered)",
@@ -196,7 +196,7 @@ const translations = {
     "svc3_title": "Strategy & Audits",
     "svc3_p1": "Sometimes you don't need someone to run your ads. You need someone to tell you honestly what's wrong with them — and what to do about it.",
     "svc3_p2": "I audit Google Ads accounts from top to bottom: campaign structure, keyword strategy, match types, bidding logic, ad copy, landing page alignment, and conversion tracking. No diplomatic softening. You'll get a clear picture of what's working, what's wasting money, and a prioritized list of exactly what to fix.",
-    "svc3_p3": "If you're running ads in-house and want an expert second opinion, this is where we start. If you want me to take over the account after the audit, that's on the table too — but there's no pressure to go further than the audit itself.",
+    "svc3_p3": "A good starting point for anyone running ads in-house who wants an honest second opinion. And if it makes sense to hand over the account afterwards — that conversation is always available. But the audit stands on its own.",
     "svc3_for": "For: in-house teams wanting clarity, new clients testing the waters",
     "svc3_includes_label": "What's included",
     "svc3_d1": "Full account audit (structure, keywords, bids, copy, tracking)",
@@ -266,7 +266,7 @@ const translations = {
     "github_trust_3": "Free forever",
     "upsell_eyebrow": "Want it done for you?",
     "upsell_title": "Want this running on your account today?",
-    "upsell_desc": "I can set this up, customize the Config for your industry, and have it classifying your search terms by tomorrow. That's what I do.",
+    "upsell_desc": "Setup, config, done — running on your account within a day. If you'd rather have it in good hands than figure it out yourself, that's exactly what this is for.",
     "upsell_cta": "Get in touch →",
 
     // ── Use Cases Page ────────────────────────────────────────
@@ -369,7 +369,7 @@ const translations = {
 
     // ── Meta / Page Titles ────────────────────────────────────
     "page_title": "Max | Google Ads Spezialist — Click-Capybara",
-    "meta_desc": "Freiberuflicher Google Ads Spezialist mit 8+ Jahren Erfahrung. Strategie, Scripts und klare Worte — ohne Agentur-Stress.",
+    "meta_desc": "Freiberuflicher Google Ads Spezialist mit 6+ Jahren Erfahrung. Strategie, Scripts und klare Worte — ohne Agentur-Stress.",
     "services_page_title": "Services | Max — Google Ads Spezialist",
     "services_meta_desc": "Freelance Google Ads Services: Kampagnen-Management, Scripts & Automatisierung und Strategie-Audits. Direkt mit dem Spezialisten — kein Agentur-Overhead.",
     "script_page_title": "Capybara NegativeIQ Search — Kostenloses Google Ads Script",
@@ -399,15 +399,15 @@ const translations = {
     "nav_use_cases": "Use Cases",
 
     // ── Homepage Hero ─────────────────────────────────────────
-    "hero_eyebrow": "Google Ads Spezialist · 8+ Jahre Erfahrung",
+    "hero_eyebrow": "Google Ads Spezialist · 6+ Jahre Erfahrung",
     "hero_h1": "Hi, ich bin Max.<br><span class=\"highlight\">Ich mache deine Google Ads<br class=\"hidden md:block\"> wirklich profitabel.</span>",
-    "hero_sub": "Die meisten Unternehmen verschwenden 30–40% ihres Werbebudgets für Klicks, die nie konvertieren. Ich ändere das — mit klarer Strategie, smarter Automatisierung und ohne Agentur-Stress. Du arbeitest direkt mit mir, dem Spezialisten — nicht mit einem Junior-Betreuer.",
+    "hero_sub": "30–40% des Werbebudgets verschwinden bei den meisten Unternehmen für Klicks, die nie konvertieren. Das lässt sich ändern — mit klarer Strategie, smarter Automatisierung und einem Spezialisten, der direkt an deinem Account arbeitet. Kein Agentur-Stress, kein Junior-Betreuer.",
     "hero_cta_primary": "Kostenloses Audit anfragen",
     "hero_cta_secondary": "↓ Hol dir meinen kostenlosen KI-Keyword-Analyzer",
 
     // ── Homepage Trust Bar ────────────────────────────────────
     "trust_1": "Google Partner",
-    "trust_2": "8+ Jahre Erfahrung",
+    "trust_2": "6+ Jahre Erfahrung",
     "trust_3": "KMU bis Enterprise",
     "trust_4": "Du sprichst immer direkt mit mir",
 
@@ -469,9 +469,9 @@ const translations = {
 
     // ── Homepage About ────────────────────────────────────────
     "about_title": "Wer steckt hinter Click-Capybara?",
-    "about_p1": "Ich bin Max — freiberuflicher Google Ads Spezialist mit über 8 Jahren praktischer Erfahrung in der Betreuung von Accounts aus den unterschiedlichsten Branchen, von kleinen KMUs bis hin zu großen Enterprise-Budgets.",
-    "about_p2": "Click-Capybara habe ich gegründet, weil ich immer wieder dasselbe gesehen habe: Unternehmen, die Agentur-Honorare für Junior-Arbeit bezahlen, Berichte voller Zahlen bekommen, die nichts bedeuten — und nie wirklich wissen, ob ihr Budget sinnvoll eingesetzt wird.",
-    "about_p3": "Mein Ansatz ist anders. Ich arbeite direkt an deinem Account — keine Übergaben, keine Zwischenstellen. Ich verbinde klare Kampagnenstrategie mit individueller Automatisierung und Scripts, um mehr aus jedem Euro herauszuholen. Und ich sage dir immer die Wahrheit — auch wenn sie unbequem ist.",
+    "about_p1": "Hinter Click-Capybara steckt Max — freiberuflicher Google Ads Spezialist mit über 6 Jahren praktischer Erfahrung, quer durch alle Branchen. Darunter zwei Jahre bei Google selbst, als Subject Matter Expert beim Launch von Performance Max Kampagnen.",
+    "about_p2": "Click-Capybara entstand aus einer einfachen Beobachtung: Unternehmen zahlen Agentur-Honorare für Junior-Arbeit, bekommen Berichte voller Zahlen die nichts bedeuten — und wissen nie wirklich, ob ihr Budget sinnvoll eingesetzt wird.",
+    "about_p3": "Der Ansatz hier ist ein anderer. Kein Übergeben, keine Zwischenstellen — der Account wird direkt betreut, von Anfang bis Ende. Klare Kampagnenstrategie, individuelle Automatisierung, und eine Einschätzung die auch mal unbequem ausfallen darf.",
     "about_p4": "Wenn ich nicht gerade in Google Ads bin, baue ich wahrscheinlich ein neues Script.",
     "about_close_1": "Transparenz",
     "about_close_2": "Verantwortung",
@@ -524,14 +524,14 @@ const translations = {
     "svc_meta_desc": "Freelance Google Ads Services: Kampagnen-Management, Scripts & Automatisierung und Strategie-Audits. Direkt mit dem Spezialisten — kein Agentur-Overhead.",
     "svc_eyebrow": "Was ich anbiete",
     "svc_h1": "Drei Dinge.<br>Alle richtig gemacht.",
-    "svc_sub": "Ich biete keine zwölf Services an, um beeindruckend zu wirken. Ich biete drei — und ich arbeite seit 8 Jahren daran, in jedem davon sehr gut zu werden. Hier ist genau, was du bekommst.",
+    "svc_sub": "Ich biete keine zwölf Services an, um beeindruckend zu wirken. Ich biete drei — und ich arbeite seit 6 Jahren daran, in jedem davon sehr gut zu werden. Hier ist genau, was du bekommst.",
     "svc_jump_1": "Kampagnen-Management",
     "svc_jump_2": "Scripts & Automatisierung",
     "svc_jump_3": "Strategie & Audits",
     "svc1_eyebrow": "Service 01",
     "svc1_title": "Google Ads Kampagnen-Management",
-    "svc1_p1": "Das ist der Kern meiner Arbeit. Ich baue, strukturiere und manage Google Ads Kampagnen in Search, Shopping, Display und Demand Gen — mit einem Ziel: dein Budget effizienter einzusetzen, als es aktuell geschieht.",
-    "svc1_p2": "Nach dem Onboarding-Call übergebe ich deinen Account nicht an einen Junior. Ich bin jede Woche selbst drin — passe Gebote an, verfeinere Match-Types, streiche Underperformer, teste neue Ansätze. Du weißt immer, was ich tue und warum — weil ich dir Berichte in klarer Sprache schicke, keine Dashboards voller Zahlen, die nichts aussagen.",
+    "svc1_p1": "Kampagnen-Management ist der Kern dieser Arbeit — Search, Shopping, Display und Demand Gen, strukturiert auf Performance ausgelegt. Mit einem klaren Ziel: dein Budget effizienter einsetzen, als es aktuell geschieht.",
+    "svc1_p2": "Nach dem Onboarding-Call wird der Account nicht übergeben — er wird bearbeitet. Gebote, Budgets und Targeting werden aktiv gemanagt, Woche für Woche. Dein Account steht nie still. Das heißt konkret: du bekommst Berichte in klarer Sprache, keine Dashboards voller Zahlen die nichts aussagen.",
     "svc1_for": "Für: Accounts die nicht performen, oder die richtig starten wollen",
     "svc1_includes_label": "Was du bekommst",
     "svc1_d1": "Kampagnen-Aufbau oder Restrukturierung",
@@ -544,8 +544,8 @@ const translations = {
     "svc2_eyebrow": "Service 02",
     "svc2_title": "Scripts & Automatisierung",
     "svc2_p1": "Manuelles Google Ads Management hat eine Grenze. Scripts überwinden sie.",
-    "svc2_p2": "Ich schreibe individuelle Google Ads Scripts, die repetitive, fehleranfällige Arbeit automatisieren — Budget-Überwachung, Performance-Anomalien erkennen, Berichte generieren. Arbeit, die einen Menschen drei Stunden kostet, erledigt ein Script in drei Sekunden.",
-    "svc2_p3": "Mein kostenloses Tool, Capybara NegativeIQ Search, zeigt, wie das in der Praxis aussieht: Es verbindet deinen Google Ads Account mit KI, klassifiziert jeden Suchbegriff automatisch, schützt konvertierende Keywords und sagt dir genau, was als Negativ-Keyword rein muss.",
+    "svc2_p2": "Repetitive, fehleranfällige Arbeit — Budget-Überwachung, Anomalien erkennen, Berichte generieren — lässt sich automatisieren. Was einen Menschen drei Stunden kostet, erledigt ein gut geschriebenes Script in drei Sekunden.",
+    "svc2_p3": "Ein konkretes Beispiel dafür ist Capybara NegativeIQ Search — ein kostenloses Tool, das Suchbegriffe mit KI klassifiziert, konvertierende Keywords schützt und genau sagt, was als Negativ-Keyword rein muss.",
     "svc2_for": "Für: Manager und Teams, die effizienter arbeiten wollen",
     "svc2_includes_label": "Was ich baue",
     "svc2_d1": "Suchbegriff-Klassifizierung mit KI",
@@ -558,7 +558,7 @@ const translations = {
     "svc3_title": "Strategie & Audits",
     "svc3_p1": "Manchmal brauchst du niemanden, der deine Ads schaltet. Du brauchst jemanden, der dir ehrlich sagt, was damit nicht stimmt — und was dagegen zu tun ist.",
     "svc3_p2": "Ich analysiere Google Ads Accounts von Grund auf: Kampagnenstruktur, Keyword-Strategie, Match-Types, Bidding-Logik, Anzeigentexte, Landing-Page-Ausrichtung und Conversion-Tracking. Kein diplomatisches Weichspülen. Du bekommst ein klares Bild: was funktioniert, was Budget verbrennt — und eine priorisierte Liste, was zu tun ist.",
-    "svc3_p3": "Wenn du In-House Ads schaltest und eine Expertenmeinung willst, fangen wir hier an. Wenn du willst, dass ich den Account danach übernehme, ist das möglich — aber es gibt keinen Druck, über das Audit hinaus zu gehen.",
+    "svc3_p3": "Ein guter Einstieg für alle, die In-House Ads schalten und eine ehrliche Einschätzung suchen. Falls danach eine Übergabe des Accounts Sinn ergibt — das Gespräch ist immer möglich. Aber das Audit steht für sich.",
     "svc3_for": "Für: In-House Teams, neue Kunden die erst schauen wollen",
     "svc3_includes_label": "Was du bekommst",
     "svc3_d1": "Vollständiges Account-Audit (Struktur, Keywords, Gebote, Texte, Tracking)",
@@ -628,7 +628,7 @@ const translations = {
     "github_trust_3": "Für immer kostenlos",
     "upsell_eyebrow": "Soll ich es einrichten?",
     "upsell_title": "Du möchtest es direkt auf deinem Account einrichten lassen?",
-    "upsell_desc": "Ich richte das Script ein, passe die Config auf deine Branche an und habe es bis morgen am Laufen. Genau das ist mein Job.",
+    "upsell_desc": "Setup, Config, fertig — das Script läuft innerhalb eines Tages auf deinem Account. Wer das lieber in guten Händen weiß als selbst einzurichten, ist hier richtig.",
     "upsell_cta": "Schreib mir →",
 
     // ── Use Cases Page ────────────────────────────────────────
