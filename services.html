@@ -419,44 +419,69 @@
 
             <!-- Right: form -->
             <div class="lg:w-1/2 fade-in">
-                <form id="contact-form" class="bg-gray-50 border border-gray-200 rounded-2xl p-8 space-y-5">
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 relative overflow-hidden" style="min-height: 420px;">
 
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_name">Name</label>
-                        <input type="text" name="name" required placeholder="Your name"
-                            class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition">
+                    <form id="contact-form" class="space-y-5">
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_name">Name</label>
+                            <input type="text" name="name" required placeholder="Your name"
+                                class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_email">Email</label>
+                            <input type="email" name="email" required placeholder="you@company.com"
+                                class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_service">What can I help with?</label>
+                            <select name="service"
+                                class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition appearance-none">
+                                <option value="Free Audit" data-key="form_opt_audit">Free Audit</option>
+                                <option value="Campaign Management" data-key="form_opt_mgmt">Campaign Management</option>
+                                <option value="Scripts & Automation" data-key="form_opt_scripts">Scripts & Automation</option>
+                                <option value="General Question" data-key="form_opt_general">General Question</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_website">
+                                Website / Google Ads account <span class="font-normal text-gray-400" data-key="form_optional">(optional)</span>
+                            </label>
+                            <input type="text" name="website" placeholder="www.yoursite.com"
+                                class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_challenge">
+                                Anything else? <span class="font-normal text-gray-400" data-key="form_optional2">(optional)</span>
+                            </label>
+                            <textarea name="challenge" rows="2" placeholder="e.g. High CPA, wasted budget, unclear reporting..."
+                                class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition resize-none"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-brand text-gray-900 font-extrabold text-base py-4 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
+                            data-key="form_submit">
+                            Send — it's free
+                        </button>
+
+                    </form>
+
+                    <!-- Success state -->
+                    <div id="form-success" class="absolute inset-0 bg-gray-50 rounded-2xl flex flex-col items-center justify-center text-center px-8 opacity-0 pointer-events-none transition-opacity duration-500">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background: rgba(59,180,82,0.1); border: 2px solid #3fb950;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3fb950" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="text-gray-900 font-bold text-xl mb-3" data-key="success_title">Message received.</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed" data-key="success_sub">You'll hear back within 2 business days — directly from Max, not an assistant.</p>
                     </div>
 
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_email">Email</label>
-                        <input type="email" name="email" required placeholder="you@company.com"
-                            class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_website">
-                            Website / Google Ads account <span class="font-normal text-gray-400" data-key="form_optional">(optional)</span>
-                        </label>
-                        <input type="text" name="website" placeholder="www.yoursite.com"
-                            class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_challenge">
-                            Biggest challenge right now? <span class="font-normal text-gray-400" data-key="form_optional2">(optional)</span>
-                        </label>
-                        <textarea name="challenge" rows="3" placeholder="e.g. High CPA, wasted budget, unclear reporting..."
-                            class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition resize-none"></textarea>
-                    </div>
-
-                    <button type="submit"
-                        class="w-full bg-brand text-gray-900 font-extrabold text-base py-4 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
-                        data-key="form_submit">
-                        Send — it's free
-                    </button>
-
-                    <p id="form-status" class="text-xs text-gray-400 text-center" data-key="form_status">We'll get back to you within one business day.</p>
-                </form>
+                </div>
             </div>
 
         </div>
@@ -662,46 +687,44 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
 // ── Contact form → Google Sheets ─────────────────────
-const LEADS_URL = 'https://script.google.com/macros/s/AKfycbzVxK0LIU2rf6zGAvGIsh90vYlHIYVbko8Czf4EN_kC0-W80PuWKWapQv6uO5WzAk72/exec'; // ← paste your Web App URL here
+const LEADS_URL = 'https://script.google.com/macros/s/AKfycbw4qjIOYidlXNMdB5aaFKRypGHkhc7Ghv7_lSOdd-BLk0plaJZ10E4wO6K0rTAVF17F/exec';
 
-function submitToSheet(formEl, statusEl, sourcePage) {
+function submitToSheet(formEl, sourcePage) {
     const lang = localStorage.getItem('preferredLang') || 'en';
     const data = {
         name:      formEl.querySelector('[name="name"]')?.value      || '',
         email:     formEl.querySelector('[name="email"]')?.value     || '',
         website:   formEl.querySelector('[name="website"]')?.value   || '',
         challenge: formEl.querySelector('[name="challenge"]')?.value || '',
+        service:   formEl.querySelector('[name="service"]')?.value   || '',
         source:    sourcePage,
         lang:      lang
     };
     const btn = formEl.querySelector('button[type="submit"]');
     if (btn) { btn.disabled = true; btn.textContent = '...'; }
 
-    fetch(LEADS_URL, { method: 'POST', body: JSON.stringify(data) })
+    fetch(LEADS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(data)
+    })
     .then(() => {
-        statusEl.textContent = lang === 'de'
-            ? '✓ Gesendet! Ich melde mich innerhalb von 2 Werktagen.'
-            : "✓ Sent! I'll be in touch within 2 business days.";
-        statusEl.classList.add('text-brand');
-        formEl.reset();
+        formEl.style.opacity = '0';
+        formEl.style.pointerEvents = 'none';
+        const success = document.getElementById('form-success');
+        if (success) { success.style.opacity = '1'; success.style.pointerEvents = 'all'; }
     })
     .catch(() => {
-        statusEl.textContent = lang === 'de'
-            ? 'Fehler beim Senden — bitte schreib direkt an hello@click-capybara.com'
-            : 'Something went wrong — please email hello@click-capybara.com directly.';
-        statusEl.classList.add('text-red-400');
-    })
-    .finally(() => {
         if (btn) { btn.disabled = false; btn.textContent = lang === 'de' ? 'Nachricht senden — kostenlos' : "Send — it's free"; }
+        alert(lang === 'de' ? 'Fehler — bitte schreib direkt an hello@click-capybara.com' : 'Something went wrong — please email hello@click-capybara.com');
     });
 }
 
 const form = document.getElementById('contact-form');
-const status = document.getElementById('form-status');
 if (form) {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        submitToSheet(form, status, 'Services');
+        submitToSheet(form, 'Services');
     });
 }
 </script>
