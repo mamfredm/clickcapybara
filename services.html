@@ -40,6 +40,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -173,7 +174,7 @@
             </a>
             <div class="hidden md:flex items-center space-x-7">
                 <a href="services.html" class="nav-link text-brand font-semibold text-sm" data-key="nav_services">Services</a>
-                <a href="free-script.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_free_script">Free Script</a>
+                <a href="free-script.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_free_script">Tools & Scripts</a>
                 <a href="index.html#about" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_about">About</a>
                 <a href="#contact" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_contact">Contact</a>
             </div>
@@ -187,7 +188,7 @@
         </nav>
         <div id="mobile-menu" class="hidden md:hidden mt-3 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
             <a href="services.html" class="block py-3 px-5 text-sm text-brand font-semibold hover:bg-gray-50 border-b border-gray-100" data-key="nav_services">Services</a>
-            <a href="free-script.html" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_free_script">Free Script</a>
+            <a href="free-script.html" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_free_script">Tools & Scripts</a>
             <a href="index.html#about" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_about">About</a>
             <a href="#contact" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_contact">Contact</a>
             <div class="flex items-center gap-4 px-5 py-3 border-b border-gray-100">
@@ -364,21 +365,27 @@
 
             <!-- Lead Gen -->
             <div class="fade-in focus-card bg-gray-800 rounded-xl p-7">
-                <div class="text-2xl mb-4">🎯</div>
+                <div class="w-11 h-11 bg-brand-light rounded-xl flex items-center justify-center mb-5">
+                    <i class="ph ph-funnel text-brand-dark text-2xl"></i>
+                </div>
                 <h3 class="font-bold text-white text-base mb-3" data-key="focus_1_title">Lead Generation</h3>
                 <p class="text-gray-400 text-sm leading-relaxed" data-key="focus_1_desc">If your business lives and dies by qualified leads — forms, calls, demos — I know how to build campaigns that attract the right ones and filter out the noise. Tight keyword architecture, strong negative lists, and tracking that goes beyond the click.</p>
             </div>
 
             <!-- E-commerce -->
             <div class="fade-in focus-card bg-gray-800 rounded-xl p-7">
-                <div class="text-2xl mb-4">🛒</div>
+                <div class="w-11 h-11 bg-brand-light rounded-xl flex items-center justify-center mb-5">
+                    <i class="ph ph-storefront text-brand-dark text-2xl"></i>
+                </div>
                 <h3 class="font-bold text-white text-base mb-3" data-key="focus_2_title">E-Commerce</h3>
                 <p class="text-gray-400 text-sm leading-relaxed" data-key="focus_2_desc">For online stores it's all about ROAS. I manage Shopping campaigns, optimize product feeds, and build remarketing structures that recover lost revenue without inflating spend.</p>
             </div>
 
             <!-- Branding -->
             <div class="fade-in focus-card bg-gray-800 rounded-xl p-7">
-                <div class="text-2xl mb-4">📡</div>
+                <div class="w-11 h-11 bg-brand-light rounded-xl flex items-center justify-center mb-5">
+                    <i class="ph ph-megaphone text-brand-dark text-2xl"></i>
+                </div>
                 <h3 class="font-bold text-white text-base mb-3" data-key="focus_3_title">Branding Campaigns</h3>
                 <p class="text-gray-400 text-sm leading-relaxed" data-key="focus_3_desc">Not everything needs to convert today. I build upper-funnel campaigns — Display, Demand Gen, YouTube — that keep you visible to the right audiences while your bottom-funnel campaigns close the deal.</p>
             </div>
@@ -502,7 +509,7 @@
         <div class="flex justify-center gap-6 text-xs">
             <a href="privacy.html" class="hover:text-white transition" data-key="footer_privacy">Privacy Policy</a>
             <a href="#contact" class="hover:text-white transition" data-key="footer_contact">Contact</a>
-            <a href="free-script.html" class="hover:text-white transition" data-key="footer_script">Free Script</a>
+            <a href="free-script.html" class="hover:text-white transition" data-key="footer_script">Tools & Scripts</a>
         </div>
     </div>
 </footer>
@@ -537,8 +544,8 @@ if (typeof translations !== 'undefined') {
             svc_sub: "I don't offer twelve services to look impressive. I offer three — and I've spent 8 years getting very good at each of them. Here's exactly what you get when we work together.",
             svc_jump_1: "Campaign Management", svc_jump_2: "Scripts & Automation", svc_jump_3: "Strategy & Audits",
             svc1_eyebrow: "Service 01", svc1_title: "Google Ads Campaign Management",
-            svc1_p1: "This is the core of what I do. I build, structure, and actively manage Google Ads campaigns across Search, Shopping, Display, and Demand Gen — with one goal: making your budget work harder than it currently does.",
-            svc1_p2: "I don't hand your account to a junior after the onboarding call. I'm in it every week — adjusting bids, refining match types, killing underperformers, testing new angles. You'll know exactly what I'm doing and why, because I send you reports in plain language, not dashboards full of numbers that don't tell you anything.",
+            svc1_p1: "Campaign management is the core of this work — building and running Google Ads across Search, Shopping, Display, and Demand Gen with one goal in mind: making your budget work harder than it currently does.",
+            svc1_p2: "Your account doesn't get handed off after the onboarding call. It gets worked on every week — bids adjusted, match types refined, underperformers cut, new angles tested. And the reports you receive are in plain language, not dashboards full of numbers that don't tell you anything.",
             svc1_for: "For: accounts that aren't performing, or launching from scratch",
             svc1_includes_label: "What's included",
             svc1_d1: "Campaign build or restructure", svc1_d2: "Keyword strategy and match type architecture",
@@ -547,8 +554,8 @@ if (typeof translations !== 'undefined') {
             svc1_cta: "Get started →",
             svc2_eyebrow: "Service 02", svc2_title: "Scripts & Automation",
             svc2_p1: "There's a ceiling on what manual Google Ads management can achieve. Scripts break through it.",
-            svc2_p2: "I write custom Google Ads scripts that automate the repetitive, error-prone work that eats hours every week — flagging wasted spend, pacing budgets, monitoring performance anomalies, generating reports. Work that takes a human three hours takes a script three seconds.",
-            svc2_p3: "My free tool, Capybara NegativeIQ Search, is a good example of what this looks like in practice: it connects your Google Ads account to AI, classifies every search term automatically, protects converting keywords, and tells you exactly what to add as a negative. That's the kind of edge a well-written script gives you.",
+            svc2_p2: "Repetitive, error-prone work — budget monitoring, anomaly detection, report generation — can be automated. Work that takes a human three hours takes a well-written script three seconds.",
+            svc2_p3: "A concrete example is Capybara NegativeIQ Search — a free tool that classifies search terms using AI, protects converting keywords, and tells you exactly what to add as a negative.",
             svc2_for: "For: managers and teams who want to work smarter, not longer",
             svc2_includes_label: "What I build",
             svc2_d1: "Search term classification (AI-powered)", svc2_d2: "Budget pacing and overspend alerts",
@@ -558,7 +565,7 @@ if (typeof translations !== 'undefined') {
             svc3_eyebrow: "Service 03", svc3_title: "Strategy & Audits",
             svc3_p1: "Sometimes you don't need someone to run your ads. You need someone to tell you honestly what's wrong with them — and what to do about it.",
             svc3_p2: "I audit Google Ads accounts from top to bottom: campaign structure, keyword strategy, match types, bidding logic, ad copy, landing page alignment, and conversion tracking. No diplomatic softening. You'll get a clear picture of what's working, what's wasting money, and a prioritized list of exactly what to fix.",
-            svc3_p3: "If you're running ads in-house and want an expert second opinion, this is where we start. If you want me to take over the account after the audit, that's on the table too — but there's no pressure to go further than the audit itself.",
+            svc3_p3: "A good starting point for anyone running ads in-house who wants an honest second opinion. And if it makes sense to hand over the account afterwards — that conversation is always available. But the audit stands on its own.",
             svc3_for: "For: in-house teams wanting clarity, new clients testing the waters",
             svc3_includes_label: "What's included",
             svc3_d1: "Full account audit (structure, keywords, bids, copy, tracking)",
@@ -587,7 +594,7 @@ if (typeof translations !== 'undefined') {
             form_submit: "Send — it's free",
             form_status: "We'll get back to you within one business day.",
             footer_copy: "© 2025 Click-Capybara · The Google Ads specialist in your corner.",
-            footer_privacy: "Privacy Policy", footer_contact: "Contact", footer_script: "Free Script",
+            footer_privacy: "Privacy Policy", footer_contact: "Contact", footer_script: "Tools & Scripts",
             nav_services: "Services", nav_free_script: "Free Script", nav_about: "About", nav_contact: "Contact", nav_cta: "Free Audit"
         },
         de: {
@@ -598,8 +605,8 @@ if (typeof translations !== 'undefined') {
             svc_sub: "Ich biete keine zwölf Services an, um beeindruckend zu wirken. Ich biete drei — und ich arbeite seit 8 Jahren daran, in jedem davon sehr gut zu werden. Hier ist genau, was du bekommst.",
             svc_jump_1: "Kampagnen-Management", svc_jump_2: "Scripts & Automatisierung", svc_jump_3: "Strategie & Audits",
             svc1_eyebrow: "Service 01", svc1_title: "Google Ads Kampagnen-Management",
-            svc1_p1: "Das ist der Kern meiner Arbeit. Ich baue, strukturiere und manage Google Ads Kampagnen in Search, Shopping, Display und Demand Gen — mit einem Ziel: dein Budget effizienter einzusetzen, als es aktuell geschieht.",
-            svc1_p2: "Nach dem Onboarding-Call übergebe ich deinen Account nicht an einen Junior. Ich bin jede Woche selbst drin — passe Gebote an, verfeinere Match-Types, streiche Underperformer, teste neue Ansätze. Du weißt immer, was ich tue und warum — weil ich dir Berichte in klarer Sprache schicke, keine Dashboards voller Zahlen, die nichts aussagen.",
+            svc1_p1: "Kampagnen-Management ist der Kern dieser Arbeit — Search, Shopping, Display und Demand Gen, strukturiert auf Performance ausgelegt. Mit einem klaren Ziel: dein Budget effizienter einsetzen, als es aktuell geschieht.",
+            svc1_p2: "Nach dem Onboarding-Call wird der Account nicht übergeben — er wird bearbeitet. Gebote, Budgets und Targeting werden aktiv gemanagt, Woche für Woche. Dein Account steht nie still. Das heißt konkret: du bekommst Berichte in klarer Sprache, keine Dashboards voller Zahlen die nichts aussagen.",
             svc1_for: "Für: Accounts die nicht performen, oder die richtig starten wollen",
             svc1_includes_label: "Was du bekommst",
             svc1_d1: "Kampagnen-Aufbau oder Restrukturierung", svc1_d2: "Keyword-Strategie und Match-Type-Architektur",
@@ -608,8 +615,8 @@ if (typeof translations !== 'undefined') {
             svc1_cta: "Loslegen →",
             svc2_eyebrow: "Service 02", svc2_title: "Scripts & Automatisierung",
             svc2_p1: "Manuelles Google Ads Management hat eine Grenze. Scripts überwinden sie.",
-            svc2_p2: "Ich schreibe individuelle Google Ads Scripts, die repetitive, fehleranfällige Arbeit automatisieren — Budget-Überwachung, Performance-Anomalien erkennen, Berichte generieren. Arbeit, die einen Menschen drei Stunden kostet, erledigt ein Script in drei Sekunden.",
-            svc2_p3: "Mein kostenloses Tool, Capybara NegativeIQ Search, zeigt, wie das in der Praxis aussieht: Es verbindet deinen Google Ads Account mit KI, klassifiziert jeden Suchbegriff automatisch, schützt konvertierende Keywords und sagt dir genau, was als Negativ-Keyword rein muss.",
+            svc2_p2: "Repetitive, fehleranfällige Arbeit — Budget-Überwachung, Anomalien erkennen, Berichte generieren — lässt sich automatisieren. Was einen Menschen drei Stunden kostet, erledigt ein gut geschriebenes Script in drei Sekunden.",
+            svc2_p3: "Ein konkretes Beispiel dafür ist Capybara NegativeIQ Search — ein kostenloses Tool, das Suchbegriffe mit KI klassifiziert, konvertierende Keywords schützt und genau sagt, was als Negativ-Keyword rein muss.",
             svc2_for: "Für: Manager und Teams, die effizienter arbeiten wollen",
             svc2_includes_label: "Was ich baue",
             svc2_d1: "Suchbegriff-Klassifizierung mit KI", svc2_d2: "Budget-Pacing und Overspend-Alerts",
@@ -619,7 +626,7 @@ if (typeof translations !== 'undefined') {
             svc3_eyebrow: "Service 03", svc3_title: "Strategie & Audits",
             svc3_p1: "Manchmal brauchst du niemanden, der deine Ads schaltet. Du brauchst jemanden, der dir ehrlich sagt, was damit nicht stimmt — und was dagegen zu tun ist.",
             svc3_p2: "Ich analysiere Google Ads Accounts von Grund auf: Kampagnenstruktur, Keyword-Strategie, Match-Types, Bidding-Logik, Anzeigentexte, Landing-Page-Ausrichtung und Conversion-Tracking. Kein diplomatisches Weichspülen. Du bekommst ein klares Bild: was funktioniert, was Budget verbrennt — und eine priorisierte Liste, was zu tun ist.",
-            svc3_p3: "Wenn du In-House Ads schaltest und eine Expertenmeinung willst, fangen wir hier an. Wenn du willst, dass ich den Account danach übernehme, ist das möglich — aber es gibt keinen Druck, über das Audit hinaus zu gehen.",
+            svc3_p3: "Ein guter Einstieg für alle, die In-House Ads schalten und eine ehrliche Einschätzung suchen. Falls danach eine Übergabe des Accounts Sinn ergibt — das Gespräch ist immer möglich. Aber das Audit steht für sich.",
             svc3_for: "Für: In-House Teams, neue Kunden die erst schauen wollen",
             svc3_includes_label: "Was du bekommst",
             svc3_d1: "Vollständiges Account-Audit (Struktur, Keywords, Gebote, Texte, Tracking)",
@@ -687,7 +694,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
 // ── Contact form → Google Sheets ─────────────────────
-const LEADS_URL = 'https://script.google.com/macros/library/d/1ZOIeRqVYuSQ6zj1Eyl1lbuOIwaqmCgJpzWT8kZ1HLBBfSfoFTHelUDj2/3';
+const LEADS_URL = 'https://script.google.com/macros/s/AKfycbw4qjIOYidlXNMdB5aaFKRypGHkhc7Ghv7_lSOdd-BLk0plaJZ10E4wO6K0rTAVF17F/exec';
 
 function submitToSheet(formEl, sourcePage) {
     const lang = localStorage.getItem('preferredLang') || 'en';

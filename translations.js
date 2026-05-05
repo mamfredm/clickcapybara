@@ -7,11 +7,11 @@ const translations = {
 
     // ── Meta / Page Titles ────────────────────────────────────
     "page_title": "Max | Google Ads Specialist — Click-Capybara",
-    "meta_desc": "Freelance Google Ads specialist with 6+ years experience. Strategy, scripts, and straight talk — no agency markup.",
+    "meta_desc": "Freelance Google Ads specialist with 8+ years experience. Strategy, scripts, and straight talk — no agency markup.",
     "services_page_title": "Services | Max — Google Ads Specialist",
     "services_meta_desc": "Freelance Google Ads services: campaign management, scripts & automation, and strategy audits. Direct access to a senior specialist — no agency overhead.",
-    "script_page_title": "Capybara NegativeIQ Search — Free Google Ads Script",
-    "script_meta_desc": "Free AI-powered Google Ads script. Classifies search terms, protects converting keywords, pushes negatives automatically. Built by a specialist.",
+    "script_page_title": "Capybara NegativeIQ Search — Free Google Ads Tool",
+    "script_meta_desc": "Free AI-powered Google Ads tool. Classifies search terms, protects converting keywords, pushes negatives automatically. Built by a specialist.",
     "usecases_page_title": "Use Cases | Click-Capybara",
     "usecases_meta_desc": "PPC solutions tailored for E-commerce, B2B SaaS, and Local Businesses.",
     "casestudies_page_title": "Case Studies | Click-Capybara",
@@ -23,7 +23,7 @@ const translations = {
 
     // ── Nav ───────────────────────────────────────────────────
     "nav_services": "Services",
-    "nav_free_script": "Free Script",
+    "nav_free_script": "Tools & Scripts",
     "nav_about": "About",
     "nav_contact": "Contact",
     "nav_cta": "Free Audit",
@@ -37,15 +37,15 @@ const translations = {
     "nav_use_cases": "Use Cases",
 
     // ── Homepage Hero ─────────────────────────────────────────
-    "hero_eyebrow": "Google Ads Specialist · 6+ Years Experience",
+    "hero_eyebrow": "Google Ads Specialist · 8+ Years Experience",
     "hero_h1": "Hi, I'm Max.<br><span class=\"highlight\">I make your Google Ads<br class=\"hidden md:block\"> actually work.</span>",
-    "hero_sub": "Most businesses waste 30–40% of their ad budget on clicks that will never convert. That changes with sharp strategy, smart automation, and someone who actually cares about your results — not a junior at an agency running through a checklist.",
+    "hero_sub": "Most businesses don't really know where their ad budget goes. That changes with sharp strategy, smart automation, and someone who actually cares about your results — not a junior at an agency running through a checklist.",
     "hero_cta_primary": "Get a Free Audit",
     "hero_cta_secondary": "↓ Grab my free AI Keyword Analyzer",
 
     // ── Homepage Trust Bar ────────────────────────────────────
     "trust_1": "Google Partner",
-    "trust_2": "6+ Years Experience",
+    "trust_2": "8+ Years Experience",
     "trust_3": "SMB to Enterprise",
     "trust_4": "You always talk to me directly",
 
@@ -98,7 +98,7 @@ const translations = {
     // ── Homepage Script Band ──────────────────────────────────
     "script_eyebrow": "Free tool — no strings attached",
     "script_title": "Not sure which keywords are worth your budget?",
-    "script_desc": "I built an AI-powered Google Ads script that analyzes your keyword performance and flags what's draining your budget without delivering results. It runs inside your Google Ads account — no data leaves, no login required.",
+    "script_desc": "I built an AI-powered Google Ads tool that analyzes your keyword performance and flags what's draining your budget without delivering results. It runs inside your Google Ads account — no data leaves, no login required.",
     "script_li_1": "Instant keyword-level performance breakdown",
     "script_li_2": "Clear flags for underperformers and budget wasters",
     "script_li_3": "Ready to run in your account in under 5 minutes",
@@ -107,7 +107,7 @@ const translations = {
 
     // ── Homepage About ────────────────────────────────────────
     "about_title": "Who's behind Click-Capybara?",
-    "about_p1": "Behind Click-Capybara is Max — a freelance Google Ads specialist with 6+ years of hands-on experience across industries, from lean SMBs to large enterprise budgets. That includes two years at Google itself, working as a Subject Matter Expert on the launch of Performance Max campaigns.",
+    "about_p1": "Behind Click-Capybara is Max — a freelance Google Ads specialist with 8+ years of hands-on experience across industries, from lean SMBs to large enterprise budgets. That includes two years at Google itself, working as a Subject Matter Expert on the launch of Performance Max campaigns.",
     "about_p2": "Click-Capybara came from a simple observation: businesses paying agency fees for junior-level work, receiving reports full of numbers that meant nothing, and never quite knowing if their budget was being spent wisely.",
     "about_p3": "The approach here is different. No handoffs, no account managers in between — your account gets worked on directly, start to finish. Sharp strategy, custom automation, and feedback that's honest even when it's not what you want to hear.",
     "about_p4": "When I'm not in Google Ads, I'm probably building another script.",
@@ -162,14 +162,14 @@ const translations = {
     "footer_copyright": "© 2025 Click-Capybara · The Google Ads specialist in your corner.",
     "footer_privacy": "Privacy Policy",
     "footer_contact": "Contact",
-    "footer_script": "Free Script",
+    "footer_script": "Tools & Scripts",
 
     // ── Services Page ─────────────────────────────────────────
     "svc_page_title": "Services | Max — Google Ads Specialist",
     "svc_meta_desc": "Freelance Google Ads services: campaign management, scripts & automation, and strategy audits. Direct access to a senior specialist — no agency overhead.",
     "svc_eyebrow": "What I offer",
     "svc_h1": "Three things I do.<br>All of them well.",
-    "svc_sub": "I don't offer twelve services to look impressive. I offer three — and I've spent 6 years getting very good at each of them. Here's exactly what you get when we work together.",
+    "svc_sub": "I don't offer twelve services to look impressive. I offer three — and I've spent 8 years getting very good at each of them. Here's exactly what you get when we work together.",
     "svc_jump_1": "Campaign Management",
     "svc_jump_2": "Scripts & Automation",
     "svc_jump_3": "Strategy & Audits",
@@ -221,10 +221,10 @@ const translations = {
     "focus_3_desc": "Not everything needs to convert today. I build upper-funnel campaigns — Display, Demand Gen, YouTube — that keep you visible to the right audiences while your bottom-funnel campaigns close the deal.",
 
     // ── Free Script Page ──────────────────────────────────────
-    "script_page_eyebrow": "Free Google Ads Script",
+    "script_page_eyebrow": "Free Google Ads Tool",
     "script_h1": "Capybara NegativeIQ Search",
     "script_tagline": "Stop guessing which search terms are wasting your budget. Let AI tell you.",
-    "script_sub": "A free, open-source script that connects your Google Ads account to AI — classifies every search term, protects what's converting, and tells you exactly what to add as a negative. Built by a specialist. Used on real accounts.",
+    "script_sub": "A free, open-source tool that connects your Google Ads account to AI — classifies every search term, protects what's converting, and tells you exactly what to add as a negative. Built by a specialist. Used on real accounts.",
     "script_cta_github": "View on GitHub",
     "script_cta_setup": "How to install",
     "script_lang_badge": "Currently German only — English coming soon",
@@ -376,11 +376,11 @@ const translations = {
 
     // ── Meta / Page Titles ────────────────────────────────────
     "page_title": "Max | Google Ads Spezialist — Click-Capybara",
-    "meta_desc": "Freiberuflicher Google Ads Spezialist mit 6+ Jahren Erfahrung. Strategie, Scripts und klare Worte — ohne Agentur-Stress.",
+    "meta_desc": "Freiberuflicher Google Ads Spezialist mit 8+ Jahren Erfahrung. Strategie, Scripts und klare Worte — ohne Agentur-Stress.",
     "services_page_title": "Services | Max — Google Ads Spezialist",
     "services_meta_desc": "Freelance Google Ads Services: Kampagnen-Management, Scripts & Automatisierung und Strategie-Audits. Direkt mit dem Spezialisten — kein Agentur-Overhead.",
-    "script_page_title": "Capybara NegativeIQ Search — Kostenloses Google Ads Script",
-    "script_meta_desc": "Kostenloses KI-gestütztes Google Ads Script. Klassifiziert Suchbegriffe, schützt konvertierende Keywords, bucht Negative automatisch.",
+    "script_page_title": "Capybara NegativeIQ Search — Kostenloses Google Ads Tool",
+    "script_meta_desc": "Kostenloses KI-gestütztes Google Ads Tool. Klassifiziert Suchbegriffe, schützt konvertierende Keywords, bucht Negative automatisch.",
     "usecases_page_title": "Use Cases | Click-Capybara",
     "usecases_meta_desc": "PPC-Lösungen für E-Commerce, B2B SaaS und lokale Unternehmen.",
     "casestudies_page_title": "Case Studies | Click-Capybara",
@@ -392,7 +392,7 @@ const translations = {
 
     // ── Nav ───────────────────────────────────────────────────
     "nav_services": "Services",
-    "nav_free_script": "Kostenloses Script",
+    "nav_free_script": "Tools & Scripts",
     "nav_about": "Über mich",
     "nav_contact": "Kontakt",
     "nav_cta": "Kostenloses Audit",
@@ -406,15 +406,15 @@ const translations = {
     "nav_use_cases": "Use Cases",
 
     // ── Homepage Hero ─────────────────────────────────────────
-    "hero_eyebrow": "Google Ads Spezialist · 6+ Jahre Erfahrung",
-    "hero_h1": "Hi, ich bin Max.<br><span class=\"highlight\">Ich mache deine Google Ads<br class=\"hidden md:block\"> wirklich profitabel.</span>",
-    "hero_sub": "30–40% des Werbebudgets verschwinden bei den meisten Unternehmen für Klicks, die nie konvertieren. Das lässt sich ändern — mit klarer Strategie, smarter Automatisierung und einem Spezialisten, der direkt an deinem Account arbeitet. Kein Agentur-Stress, kein Junior-Betreuer.",
+    "hero_eyebrow": "Google Ads Spezialist · 8+ Jahre Erfahrung",
+    "hero_h1": "Hi, ich bin Max.<br><span class=\"highlight\">Deine Google Ads<br class=\"hidden md:block\"> in guten Händen.</span>",
+    "hero_sub": "Die meisten Unternehmen wissen nicht wirklich, wo ihr Werbebudget landet. Das lässt sich ändern — mit klarer Strategie, smarter Automatisierung und einem Spezialisten, der direkt an deinem Account arbeitet. Nicht irgendein Junior, der eine Checkliste abarbeitet.",
     "hero_cta_primary": "Kostenloses Audit anfragen",
     "hero_cta_secondary": "↓ Hol dir meinen kostenlosen KI-Keyword-Analyzer",
 
     // ── Homepage Trust Bar ────────────────────────────────────
     "trust_1": "Google Partner",
-    "trust_2": "6+ Jahre Erfahrung",
+    "trust_2": "8+ Jahre Erfahrung",
     "trust_3": "KMU bis Enterprise",
     "trust_4": "Du sprichst immer direkt mit mir",
 
@@ -467,7 +467,7 @@ const translations = {
     // ── Homepage Script Band ──────────────────────────────────
     "script_eyebrow": "Kostenloses Tool — völlig unverbindlich",
     "script_title": "Nicht sicher, welche Keywords dein Budget wirklich rechtfertigen?",
-    "script_desc": "Ich habe ein KI-gestütztes Google Ads Script entwickelt, das deine Keyword-Performance analysiert und automatisch markiert, was Budget kostet — ohne Ergebnisse zu liefern. Es läuft direkt in deinem Google Ads Account — keine Daten verlassen deinen Account, keine separate Anmeldung nötig.",
+    "script_desc": "Ein KI-gestütztes Google Ads Tool, das deine Keyword-Performance analysiert und automatisch markiert, was Budget kostet — ohne Ergebnisse zu liefern. Es läuft direkt in deinem Google Ads Account — keine Daten verlassen deinen Account, keine separate Anmeldung nötig.",
     "script_li_1": "Sofortige Keyword-Analyse auf Account-Ebene",
     "script_li_2": "Klare Markierung von Underperformern und Budget-Fressern",
     "script_li_3": "In weniger als 5 Minuten einsatzbereit",
@@ -476,7 +476,7 @@ const translations = {
 
     // ── Homepage About ────────────────────────────────────────
     "about_title": "Wer steckt hinter Click-Capybara?",
-    "about_p1": "Hinter Click-Capybara steckt Max — freiberuflicher Google Ads Spezialist mit über 6 Jahren praktischer Erfahrung, quer durch alle Branchen. Darunter zwei Jahre bei Google selbst, als Subject Matter Expert beim Launch von Performance Max Kampagnen.",
+    "about_p1": "Hinter Click-Capybara steckt Max — freiberuflicher Google Ads Spezialist mit über 8 Jahren praktischer Erfahrung, quer durch alle Branchen. Darunter zwei Jahre bei Google selbst, als Subject Matter Expert beim Launch von Performance Max Kampagnen.",
     "about_p2": "Click-Capybara entstand aus einer einfachen Beobachtung: Unternehmen zahlen Agentur-Honorare für Junior-Arbeit, bekommen Berichte voller Zahlen die nichts bedeuten — und wissen nie wirklich, ob ihr Budget sinnvoll eingesetzt wird.",
     "about_p3": "Der Ansatz hier ist ein anderer. Kein Übergeben, keine Zwischenstellen — der Account wird direkt betreut, von Anfang bis Ende. Klare Kampagnenstrategie, individuelle Automatisierung, und eine Einschätzung die auch mal unbequem ausfallen darf.",
     "about_p4": "Wenn ich nicht gerade in Google Ads bin, baue ich wahrscheinlich ein neues Script.",
@@ -531,14 +531,14 @@ const translations = {
     "footer_copyright": "© 2025 Click-Capybara · Der Google Ads Spezialist an deiner Seite.",
     "footer_privacy": "Datenschutz",
     "footer_contact": "Kontakt",
-    "footer_script": "Kostenloses Script",
+    "footer_script": "Tools & Scripts",
 
     // ── Services Page ─────────────────────────────────────────
     "svc_page_title": "Services | Max — Google Ads Spezialist",
     "svc_meta_desc": "Freelance Google Ads Services: Kampagnen-Management, Scripts & Automatisierung und Strategie-Audits. Direkt mit dem Spezialisten — kein Agentur-Overhead.",
     "svc_eyebrow": "Was ich anbiete",
     "svc_h1": "Drei Dinge.<br>Alle richtig gemacht.",
-    "svc_sub": "Ich biete keine zwölf Services an, um beeindruckend zu wirken. Ich biete drei — und ich arbeite seit 6 Jahren daran, in jedem davon sehr gut zu werden. Hier ist genau, was du bekommst.",
+    "svc_sub": "Ich biete keine zwölf Services an, um beeindruckend zu wirken. Ich biete drei — und ich arbeite seit 8 Jahren daran, in jedem davon sehr gut zu werden. Hier ist genau, was du bekommst.",
     "svc_jump_1": "Kampagnen-Management",
     "svc_jump_2": "Scripts & Automatisierung",
     "svc_jump_3": "Strategie & Audits",
@@ -590,10 +590,10 @@ const translations = {
     "focus_3_desc": "Nicht alles muss heute konvertieren. Ich baue Upper-Funnel-Kampagnen — Display, Demand Gen, YouTube — die dich bei den richtigen Zielgruppen sichtbar halten, während Bottom-Funnel-Kampagnen den Abschluss machen.",
 
     // ── Free Script Page ──────────────────────────────────────
-    "script_page_eyebrow": "Kostenloses Google Ads Script",
+    "script_page_eyebrow": "Kostenloses Google Ads Tool",
     "script_h1": "Capybara NegativeIQ Search",
     "script_tagline": "Schluss mit dem Rätselraten. Lass die KI dir sagen, welche Suchbegriffe dein Budget verbrennen.",
-    "script_sub": "Ein kostenloses Open-Source-Script, das deinen Google Ads Account mit KI verbindet — klassifiziert jeden Suchbegriff, schützt was konvertiert, und sagt dir genau, was als Negativ-Keyword rein muss. Von einem Spezialisten gebaut. Auf echten Accounts getestet.",
+    "script_sub": "Ein kostenloses Open-Source-Tool, das deinen Google Ads Account mit KI verbindet — klassifiziert jeden Suchbegriff, schützt was konvertiert, und sagt dir genau, was als Negativ-Keyword rein muss. Von einem Spezialisten gebaut. Auf echten Accounts getestet.",
     "script_cta_github": "Auf GitHub ansehen",
     "script_cta_setup": "Zur Installationsanleitung",
     "script_lang_badge": "Aktuell nur auf Deutsch — englische Version folgt",
