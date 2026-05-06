@@ -63,7 +63,7 @@
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome (brand icons only: google, github) -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
@@ -83,14 +83,38 @@
         background: { showBackground: true },
         cookieIcon: { position: "bottomLeft" },
         cookieTypes: [
-            { id: "necessary", name: "Necessary", description: "<p>These cookies are necessary for the website to function and cannot be switched off.</p>", required: true, onAccept: function(){} },
-            { id: "analytics", name: "Analytics", description: "<p>These cookies help us understand how visitors use our site.</p>", required: false,
-                onAccept: function(){ gtag('consent', 'update', { analytics_storage: 'granted' }); dataLayer.push({ 'event': 'consent_accepted_analytics' }); },
-                onReject: function(){ gtag('consent', 'update', { analytics_storage: 'denied' }); }
+            {
+                id: "necessary",
+                name: "Necessary",
+                description: "<p>These cookies are necessary for the website to function and cannot be switched off.</p>",
+                required: true,
+                onAccept: function() {}
             },
-            { id: "advertising", name: "Advertising", description: "<p>These cookies are used to measure and improve ad performance.</p>", required: false,
-                onAccept: function(){ gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' }); dataLayer.push({ 'event': 'consent_accepted_advertising' }); },
-                onReject: function(){ gtag('consent', 'update', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' }); }
+            {
+                id: "analytics",
+                name: "Analytics",
+                description: "<p>These cookies help us understand how visitors use our site.</p>",
+                required: false,
+                onAccept: function() {
+                    gtag('consent', 'update', { analytics_storage: 'granted' });
+                    dataLayer.push({ 'event': 'consent_accepted_analytics' });
+                },
+                onReject: function() {
+                    gtag('consent', 'update', { analytics_storage: 'denied' });
+                }
+            },
+            {
+                id: "advertising",
+                name: "Advertising",
+                description: "<p>These cookies are used to measure and improve ad performance.</p>",
+                required: false,
+                onAccept: function() {
+                    gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' });
+                    dataLayer.push({ 'event': 'consent_accepted_advertising' });
+                },
+                onReject: function() {
+                    gtag('consent', 'update', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+                }
             }
         ],
         text: {
@@ -166,20 +190,6 @@
         .stagger > *:nth-child(2) { transition-delay: 0.15s; }
         .stagger > *:nth-child(3) { transition-delay: 0.25s; }
 
-        /* Process connector line */
-        .process-line {
-            position: relative;
-        }
-        .process-line::after {
-            content: '';
-            position: absolute;
-            top: 28px;
-            left: calc(50% + 28px);
-            width: calc(100% - 56px);
-            height: 2px;
-            background: linear-gradient(90deg, #fcba02, transparent);
-        }
-
         /* Brand highlight */
         .highlight { color: #fcba02; }
 
@@ -221,13 +231,11 @@
     <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-100">
         <div class="container mx-auto px-6 py-4">
             <nav class="flex justify-between items-center">
-                <!-- Logo -->
                 <a href="index.html" class="flex items-center space-x-2">
                     <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara Logo" class="w-9 h-9">
                     <span class="text-xl font-bold text-gray-900">Click-Capybara</span>
                 </a>
 
-                <!-- Desktop nav -->
                 <div class="hidden md:flex items-center space-x-7">
                     <a href="services.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_services">Services</a>
                     <a href="free-script.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_free_script">Tools & Scripts</a>
@@ -242,13 +250,11 @@
                     <a href="#contact" class="ml-2 bg-brand text-gray-900 font-bold text-sm py-2 px-5 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="nav_cta">Free Audit</a>
                 </div>
 
-                <!-- Mobile menu button -->
                 <button id="mobile-menu-button" class="md:hidden text-gray-700 text-xl p-1">
                     <i class="fas fa-bars"></i>
                 </button>
             </nav>
 
-            <!-- Mobile menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-3 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
                 <a href="services.html" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_services">Services</a>
                 <a href="free-script.html" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_free_script">Tools & Scripts</a>
@@ -274,24 +280,20 @@
         <section class="hero-bg py-24 md:py-36">
             <div class="container mx-auto px-6 text-center max-w-4xl">
 
-                <!-- Eyebrow -->
                 <p class="inline-flex items-center gap-2 bg-brand-light border border-brand/30 text-brand-dark font-semibold text-sm px-4 py-1.5 rounded-full mb-8" data-key="hero_eyebrow">
                     <i class="fab fa-google text-xs"></i>
                     Google Ads Specialist · 8+ Years Experience
                 </p>
 
-                <!-- Headline -->
                 <h1 class="text-5xl md:text-6xl font-black text-gray-900 leading-tight tracking-tight mb-6" data-key="hero_h1">
                     Hi, I'm Max.<br>
                     <span class="highlight">I make your Google Ads<br class="hidden md:block"> actually work.</span>
                 </h1>
 
-                <!-- Subheadline -->
                 <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-10" data-key="hero_sub">
                     Most businesses don't really know where their ad budget goes. That changes with sharp strategy, smart automation, and someone who actually cares about your results — not a junior at an agency running through a checklist.
                 </p>
 
-                <!-- CTAs -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-14">
                     <a href="#contact" class="bg-brand text-gray-900 font-bold text-base py-4 px-8 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg w-full sm:w-auto" data-key="hero_cta_primary">
                         Get a Free Audit
@@ -301,7 +303,6 @@
                     </a>
                 </div>
 
-                <!-- Trust bar -->
                 <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-gray-500 font-medium">
                     <span class="flex items-center gap-2"><i class="fab fa-google text-brand"></i> <span data-key="trust_1">Google Partner</span></span>
                     <span class="flex items-center gap-2"><i class="ph ph-clock-countdown text-brand text-lg"></i> <span data-key="trust_2">8+ Years Experience</span></span>
@@ -321,21 +322,18 @@
 
                 <div class="grid md:grid-cols-3 gap-8 stagger">
 
-                    <!-- Pain 1 -->
                     <div class="fade-in bg-gray-50 rounded-2xl p-8 border border-gray-100 border-l-4 border-l-brand">
                         <p class="text-xs font-bold tracking-widest text-brand uppercase mb-4" data-key="pain_1_label">Ad spend</p>
                         <p class="font-bold text-gray-900 mb-3" data-key="pain_1_title">Your budget disappears, but results don't show up.</p>
                         <p class="text-gray-500 text-sm leading-relaxed" data-key="pain_1_fix">I audit every euro — and cut what doesn't earn its place.</p>
                     </div>
 
-                    <!-- Pain 2 -->
                     <div class="fade-in bg-gray-50 rounded-2xl p-8 border border-gray-100 border-l-4 border-l-brand">
                         <p class="text-xs font-bold tracking-widest text-brand uppercase mb-4" data-key="pain_2_label">Reporting</p>
                         <p class="font-bold text-gray-900 mb-3" data-key="pain_2_title">You get reports, but no real answers.</p>
                         <p class="text-gray-500 text-sm leading-relaxed" data-key="pain_2_fix">I give you clarity: what's working, what isn't, and what's next.</p>
                     </div>
 
-                    <!-- Pain 3 -->
                     <div class="fade-in bg-gray-50 rounded-2xl p-8 border border-gray-100 border-l-4 border-l-brand">
                         <p class="text-xs font-bold tracking-widest text-brand uppercase mb-4" data-key="pain_3_label">Support</p>
                         <p class="font-bold text-gray-900 mb-3" data-key="pain_3_title">Your agency is unreachable — or you talk to someone new every month.</p>
@@ -359,7 +357,6 @@
 
                 <div class="grid md:grid-cols-3 gap-6 stagger">
 
-                    <!-- Card 1: Campaign Management -->
                     <div class="fade-in service-card bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
                         <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center mb-6">
                             <i class="ph ph-cursor-click text-brand text-2xl"></i>
@@ -368,7 +365,6 @@
                         <p class="text-gray-500 text-sm leading-relaxed" data-key="service_1_desc">I build and run Google Ads campaigns structured to perform — Search, Shopping, Display, and Demand Gen. No set-and-forget. I actively manage bids, budgets, and targeting so your account keeps improving.</p>
                     </div>
 
-                    <!-- Card 2: Scripts & Automation -->
                     <div class="fade-in service-card bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
                         <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center mb-6">
                             <i class="ph ph-terminal-window text-brand text-2xl"></i>
@@ -377,7 +373,6 @@
                         <p class="text-gray-500 text-sm leading-relaxed" data-key="service_2_desc">I write custom Google Ads scripts that do the work no human can do at scale — automated alerts, budget pacing, keyword analysis, and performance reporting. This is where strategy meets technical edge.</p>
                     </div>
 
-                    <!-- Card 3: Strategy & Audits -->
                     <div class="fade-in service-card bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
                         <div class="w-12 h-12 bg-brand-light rounded-xl flex items-center justify-center mb-6">
                             <i class="ph ph-magnifying-glass text-brand text-2xl"></i>
@@ -409,7 +404,6 @@
 
                 <div class="grid md:grid-cols-3 gap-8 stagger">
 
-                    <!-- Step 1 -->
                     <div class="fade-in text-center md:text-left">
                         <div class="w-14 h-14 bg-brand rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 shadow-md shadow-brand/30">
                             <i class="ph ph-magnifying-glass text-gray-900 text-2xl"></i>
@@ -419,7 +413,6 @@
                         <p class="text-gray-500 text-sm leading-relaxed" data-key="step_1_desc">We start with a free audit of your account and a conversation about your business goals. I want to understand where you are and where you want to go — before I recommend anything.</p>
                     </div>
 
-                    <!-- Step 2 -->
                     <div class="fade-in text-center md:text-left">
                         <div class="w-14 h-14 bg-brand rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 shadow-md shadow-brand/30">
                             <i class="ph ph-wrench text-gray-900 text-2xl"></i>
@@ -429,7 +422,6 @@
                         <p class="text-gray-500 text-sm leading-relaxed" data-key="step_2_desc">I set up or restructure your campaigns with a clear rationale behind every decision — keywords, match types, bidding strategy, ad copy, tracking. You know what I'm doing and why.</p>
                     </div>
 
-                    <!-- Step 3 -->
                     <div class="fade-in text-center md:text-left">
                         <div class="w-14 h-14 bg-brand rounded-2xl flex items-center justify-center mb-6 mx-auto md:mx-0 shadow-md shadow-brand/30">
                             <i class="ph ph-trend-up text-gray-900 text-2xl"></i>
@@ -441,7 +433,6 @@
 
                 </div>
 
-                <!-- No lock-in note -->
                 <div class="mt-12 text-center fade-in">
                     <p class="inline-block text-sm text-gray-500 bg-gray-50 border border-gray-200 rounded-full px-6 py-2.5" data-key="process_note">
                         No long-term lock-in. No opaque retainers. Just honest work, month by month.
@@ -458,7 +449,6 @@
             <div class="container mx-auto px-6 max-w-5xl">
                 <div class="md:flex items-center gap-16">
 
-                    <!-- Left: copy -->
                     <div class="md:w-3/5 mb-10 md:mb-0">
                         <p class="text-xs font-bold tracking-widest text-brand uppercase mb-4" data-key="script_eyebrow">Free tool — no strings attached</p>
                         <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-5 leading-snug" data-key="script_title">
@@ -487,7 +477,6 @@
                         <p class="text-gray-600 text-xs mt-4" data-key="script_reassurance">No email required. Just download and use it.</p>
                     </div>
 
-                    <!-- Right: decorative code card -->
                     <div class="md:w-2/5">
                         <div class="bg-gray-900 rounded-2xl p-6 border border-gray-700 font-mono text-sm shadow-2xl">
                             <div class="flex items-center gap-2 mb-5">
@@ -523,7 +512,6 @@
         <section id="about" class="py-20 bg-white">
             <div class="container mx-auto px-6 max-w-3xl text-center fade-in">
 
-                <!-- Avatar placeholder -->
                 <div class="w-20 h-20 bg-brand-light rounded-full flex items-center justify-center mx-auto mb-8 border-4 border-brand/20">
                     <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara" class="w-10 h-10 opacity-60">
                 </div>
@@ -553,7 +541,6 @@
             <div class="container mx-auto px-6 max-w-5xl">
                 <div class="lg:flex gap-16 items-start">
 
-                    <!-- Left: pitch -->
                     <div class="lg:w-1/2 mb-12 lg:mb-0">
                         <h2 class="text-3xl md:text-4xl font-extrabold mb-5" data-key="contact_title">Let's see if I can help.</h2>
                         <p class="text-gray-400 text-base leading-relaxed mb-8" data-key="contact_sub">
@@ -576,11 +563,9 @@
                         <p class="text-gray-600 text-xs" data-key="contact_reassurance">No spam. No sales calls unless you want one. Just a reply from me, Max.</p>
                     </div>
 
-                    <!-- Right: form -->
                     <div class="lg:w-1/2">
                         <div class="bg-white/5 border border-white/10 rounded-2xl p-8 relative overflow-hidden" style="min-height: 420px;">
 
-                            <!-- Form -->
                             <form id="contact-form" class="space-y-5">
 
                                 <div>
@@ -668,9 +653,8 @@
         </div>
     </footer>
 
-
     <!-- ============================================================
-         JS — Mobile menu + Language switcher + Scroll animations
+         JS
     ============================================================ -->
     <script>
     // ── Mobile menu ──────────────────────────────────────────────
@@ -681,7 +665,6 @@
     });
 
     // ── Language switcher ────────────────────────────────────────
-    // Migrate old 'language' key → 'preferredLang'
     if (localStorage.getItem('language') && !localStorage.getItem('preferredLang')) {
         localStorage.setItem('preferredLang', localStorage.getItem('language'));
         localStorage.removeItem('language');
@@ -704,17 +687,28 @@
                 }
             });
 
-            // Active state styling
-            [langEnBtn, mLangEnBtn].forEach(btn => { if(btn){ btn.classList.toggle('text-gray-900', lang==='en'); btn.classList.toggle('font-bold', lang==='en'); btn.classList.toggle('text-gray-400', lang!=='en'); } });
-            [langDeBtn, mLangDeBtn].forEach(btn => { if(btn){ btn.classList.toggle('text-gray-900', lang==='de'); btn.classList.toggle('font-bold', lang==='de'); btn.classList.toggle('text-gray-400', lang!=='de'); } });
+            [langEnBtn, mLangEnBtn].forEach(btn => {
+                if (btn) {
+                    btn.classList.toggle('text-gray-900', lang === 'en');
+                    btn.classList.toggle('font-bold', lang === 'en');
+                    btn.classList.toggle('text-gray-400', lang !== 'en');
+                }
+            });
+            [langDeBtn, mLangDeBtn].forEach(btn => {
+                if (btn) {
+                    btn.classList.toggle('text-gray-900', lang === 'de');
+                    btn.classList.toggle('font-bold', lang === 'de');
+                    btn.classList.toggle('text-gray-400', lang !== 'de');
+                }
+            });
 
             localStorage.setItem('preferredLang', lang);
         }
 
-        if(langEnBtn)  langEnBtn.addEventListener('click',  () => setLanguage('en'));
-        if(langDeBtn)  langDeBtn.addEventListener('click',  () => setLanguage('de'));
-        if(mLangEnBtn) mLangEnBtn.addEventListener('click', () => setLanguage('en'));
-        if(mLangDeBtn) mLangDeBtn.addEventListener('click', () => setLanguage('de'));
+        if (langEnBtn)  langEnBtn.addEventListener('click',  () => setLanguage('en'));
+        if (langDeBtn)  langDeBtn.addEventListener('click',  () => setLanguage('de'));
+        if (mLangEnBtn) mLangEnBtn.addEventListener('click', () => setLanguage('en'));
+        if (mLangDeBtn) mLangDeBtn.addEventListener('click', () => setLanguage('de'));
 
         const savedLang = localStorage.getItem('preferredLang') || 'en';
         setLanguage(savedLang);
@@ -732,7 +726,7 @@
     }, { threshold: 0.12 });
     fadeEls.forEach(el => observer.observe(el));
 
-    // ── Contact form → Google Sheets ─────────────────────────
+    // ── Contact form → Google Sheets + GA4 ──────────────────────
     const LEADS_URL = 'https://script.google.com/macros/s/AKfycbw4qjIOYidlXNMdB5aaFKRypGHkhc7Ghv7_lSOdd-BLk0plaJZ10E4wO6K0rTAVF17F/exec';
 
     function submitToSheet(formEl, sourcePage) {
@@ -756,6 +750,14 @@
             body: JSON.stringify(data)
         })
         .then(() => {
+            // GA4 conversion event
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'generate_lead',
+                form_location: sourcePage,
+                service_selected: data.service
+            });
+
             formEl.style.opacity = '0';
             formEl.style.pointerEvents = 'none';
             const success = document.getElementById('form-success');
