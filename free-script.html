@@ -353,7 +353,7 @@
         <p class="text-xl md:text-2xl text-brand font-semibold mb-6" data-key="script_tagline">Stop guessing which search terms are wasting your budget. Let AI tell you.</p>
         <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10" data-key="script_sub">A free, open-source tool that connects your Google Ads account to AI — classifies every search term, protects what's converting, and tells you exactly what to add as a negative. Built for Search campaigns. Support for more is on the roadmap — v2 is in development.</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-            <a href="https://github.com/mamfredm/AI-Max-NegativeIQ" target="_blank" rel="noopener" class="github-btn" data-key="script_cta_github">
+            <a id="github-cta-hero" href="https://github.com/mamfredm/AI-Max-NegativeIQ" target="_blank" rel="noopener" class="github-btn" data-key="script_cta_github">
                 <i class="fab fa-github text-lg"></i>
                 View on GitHub
             </a>
@@ -700,7 +700,7 @@
         <div class="text-5xl mb-6">🐒</div>
         <h2 class="text-3xl md:text-4xl font-black text-white mb-4" data-key="github_title">Free. Open source. No email required.</h2>
         <p class="text-gray-400 text-base mb-8 max-w-xl mx-auto" data-key="github_sub">If it saves you money, a GitHub star goes a long way. It helps other Google Ads specialists find the tool.</p>
-        <a href="https://github.com/mamfredm/AI-Max-NegativeIQ" target="_blank" rel="noopener" class="github-btn text-lg" data-key="github_cta">
+        <a id="github-cta-bottom" href="https://github.com/mamfredm/AI-Max-NegativeIQ" target="_blank" rel="noopener" class="github-btn text-lg" data-key="github_cta">
             <i class="fab fa-github text-xl"></i>
             View AI Max NegativeIQ on GitHub
         </a>
@@ -746,6 +746,20 @@
 // ── Mobile menu ──────────────────────────────────────
 document.getElementById('mobile-menu-button').addEventListener('click', () => {
     document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+
+// ── GitHub CTA click tracking ─────────────────────────
+['github-cta-hero', 'github-cta-bottom'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) {
+        el.addEventListener('click', function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'github_cta_click',
+                cta_position: id === 'github-cta-hero' ? 'hero' : 'bottom'
+            });
+        });
+    }
 });
 
 // ── Sticky header shadow ─────────────────────────────
