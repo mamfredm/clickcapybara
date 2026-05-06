@@ -716,6 +716,14 @@ function submitToSheet(formEl, sourcePage) {
         body: JSON.stringify(data)
     })
     .then(() => {
+        // GA4 conversion event
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'generate_lead',
+            form_location: sourcePage,
+            service_selected: data.service
+        });
+
         formEl.style.opacity = '0';
         formEl.style.pointerEvents = 'none';
         const success = document.getElementById('form-success');
