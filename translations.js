@@ -275,7 +275,12 @@ const translations = {
     "upsell_title": "Want this running on your account today?",
     "upsell_desc": "Setup, config, done — running on your account within a day. If you'd rather have it in good hands than figure it out yourself, that's exactly what this is for.",
     "upsell_cta": "Get in touch →",
-
+    // ── Buy Me a Coffee ───────────────────────────────────
+    "bmc_eyebrow": "If it saved you budget",
+    "bmc_title": "Buy me a coffee ☕",
+    "bmc_desc": "The tool is free and always will be. But if it saved you some wasted spend, a coffee goes a long way — and makes the next script happen faster.",
+    "bmc_qr_label": "Scan to buy a coffee",
+    "bmc_cta": "Buy me a coffee",
     // ── Use Cases Page ────────────────────────────────────────
     "usecases_h1": "Strategies Tailored to You",
     "usecases_intro": "Different business models require different PPC strategies. Here is how I adapt.",
@@ -645,6 +650,12 @@ const translations = {
     "upsell_title": "Du möchtest es direkt auf deinem Account einrichten lassen?",
     "upsell_desc": "Setup, Config, fertig — das Script läuft innerhalb eines Tages auf deinem Account. Wer das lieber in guten Händen weiß als selbst einzurichten, ist hier richtig.",
     "upsell_cta": "Schreib mir →",
+    // ── Buy Me a Coffee ───────────────────────────────────
+    "bmc_eyebrow": "Wenn es dir Budget gespart hat",
+    "bmc_title": "Kauf mir einen Kaffee ☕",
+    "bmc_desc": "Das Tool ist kostenlos und bleibt es auch. Aber wenn es dir etwas Werbebudget gerettet hat, freue ich mich über einen Kaffee damit das nächste Script schneller kommt.",
+    "bmc_qr_label": "QR-Code scannen",
+    "bmc_cta": "Kaffee kaufen",
 
     // ── Use Cases Page ────────────────────────────────────────
     "usecases_h1": "Strategien für dein Business",
