@@ -37,30 +37,30 @@ const translations = {
     "nav_use_cases": "Use Cases",
 
     // ── Homepage Hero ─────────────────────────────────────────
-    "hero_eyebrow": "Google Ads Specialist · 8+ Years Experience",
-    "hero_h1": "Hi, I'm Max.<br><span class=\"highlight\">I make your Google Ads<br class=\"hidden md:block\"> actually work.</span>",
-    "hero_sub": "Most businesses don't really know where their ad budget goes. That changes with sharp strategy, smart automation, and someone who actually cares about your results — not a junior at an agency running through a checklist.",
-    "hero_cta_primary": "Get a Free Audit",
+    "hero_eyebrow": "Google Ads · Scripts & Automation",
+    "hero_h1": "Hi, I'm Max.<br><span class=\"highlight\">I build Google Ads<br class=\"hidden md:block\"> setups that run lean.</span>",
+    "hero_sub": "8 years in, I mostly work on accounts where the structure is messy or the automation doesn't exist yet. I fix that — with custom scripts, clean campaign architecture, and no wasted spend.",
+    "hero_cta_primary": "Get a free second opinion",
     "hero_cta_secondary": "↓ Grab my free AI Keyword Analyzer",
 
     // ── Homepage Trust Bar ────────────────────────────────────
-    "trust_1": "Google Partner",
+    "trust_1": "Google Automations",
     "trust_2": "8+ Years Experience",
-    "trust_3": "SMB to Enterprise",
-    "trust_4": "You always talk to me directly",
+    "trust_3": "Scripts in production",
+    "trust_4": "One person, full focus",
 
     // ── Homepage Pain Points ──────────────────────────────────
-    "problems_eyebrow": "Sound familiar?",
-    "pain_1_label": "Ad spend",
-    "pain_1_title": "Your budget disappears, but results don't show up.",
-    "pain_1_fix": "I audit every euro — and cut what doesn't earn its place.",
-    "pain_2_label": "Reporting",
-    "pain_2_title": "You get reports, but no real answers.",
-    "pain_2_fix": "I give you clarity: what's working, what isn't, and what's next.",
-    "pain_3_label": "Support",
-    "pain_3_title": "Your agency is unreachable — or you talk to someone new every month.",
-    "pain_3_fix": "With me, you always know who's working on your account. It's always me.",
-
+    "problems_eyebrow": "Things I'm actually good at",
+    "pain_1_label": "Ad Automation",
+    "pain_1_title": "Less manual work, fewer mistakes, more consistent results. That's what good automation does.",
+    "pain_1_fix": "Automated, AI-assisted, and tuned to your account. Not a generic ruleset.",
+    "pain_2_label": "Custom Reporting",
+    "pain_2_title": "Scheduled alerts and scripts that surface what matters, not what looks good on a slide.",
+    "pain_2_fix": "You see the numbers that drive decisions. Everything else stays out of your inbox.",
+    "pain_3_label": "Direct & Async-Friendly",
+    "pain_3_title": "I work best with clients who want clear communication — not weekly check-in calls.",
+    "pain_3_fix": "Loom updates, shared sheets, plain-language summaries. You're always in the loop.", 
+    
     // ── Homepage Services ─────────────────────────────────────
     "services_title": "What I do",
     "services_sub": "End-to-end Google Ads management — from strategy to automation.",
@@ -406,29 +406,30 @@ const translations = {
     "nav_use_cases": "Use Cases",
 
     // ── Homepage Hero ─────────────────────────────────────────
-    "hero_eyebrow": "Google Ads Spezialist · 8+ Jahre Erfahrung",
-    "hero_h1": "Hi, ich bin Max.<br><span class=\"highlight\">Deine Google Ads<br class=\"hidden md:block\"> in guten Händen.</span>",
-    "hero_sub": "Die meisten Unternehmen wissen nicht wirklich, wo ihr Werbebudget landet. Das lässt sich ändern — mit klarer Strategie, smarter Automatisierung und einem Spezialisten, der direkt an deinem Account arbeitet. Nicht irgendein Junior, der eine Checkliste abarbeitet.",
-    "hero_cta_primary": "Kostenloses Audit anfragen",
+    "hero_eyebrow": "Google Ads · Scripts & Automatisierung",
+    "hero_h1": "Hi, ich bin Max.<br><span class=\"highlight\">Google Ads, das<br class=\"hidden md:block\"> wirklich funktioniert.</span>",
+    "hero_sub": "Nach 8 Jahren arbeite ich meist an Accounts, bei denen die Struktur nicht stimmt oder die Automatisierung fehlt. Genau das ändere ich — mit eigenen Scripts, sauberer Kampagnenarchitektur und ohne verschwendetes Budget.",
+    "hero_cta_primary": "Kostenlose zweite Meinung",
     "hero_cta_secondary": "↓ Hol dir meinen kostenlosen KI-Keyword-Analyzer",
 
+
     // ── Homepage Trust Bar ────────────────────────────────────
-    "trust_1": "Google Partner",
+    "trust_1": "Google Automatisierungen",
     "trust_2": "8+ Jahre Erfahrung",
-    "trust_3": "KMU bis Enterprise",
-    "trust_4": "Du sprichst immer direkt mit mir",
+    "trust_3": "Scripts im Einsatz",
+    "trust_4": "Eine Person, voller Fokus",
 
     // ── Homepage Pain Points ──────────────────────────────────
-    "problems_eyebrow": "Kommt dir das bekannt vor?",
-    "pain_1_label": "Ad-Budget",
-    "pain_1_title": "Dein Budget verschwindet — ohne sichtbare Ergebnisse.",
-    "pain_1_fix": "Ich analysiere jeden Euro und streiche, was nichts bringt.",
-    "pain_2_label": "Reporting",
-    "pain_2_title": "Du bekommst Berichte, aber keine echten Antworten.",
-    "pain_2_fix": "Ich liefere Klarheit: was funktioniert, was nicht — und was als nächstes kommt.",
-    "pain_3_label": "Support",
-    "pain_3_title": "Deine Agentur ist schwer erreichbar — oder du sprichst jedes Mal mit jemand anderem.",
-    "pain_3_fix": "Bei mir weißt du immer, wer an deinem Account arbeitet. Das bin ich.",
+    "problems_eyebrow": "Was ich gut kann?",
+    "pain_1_label": "Ad-Automatisierung",
+    "pain_1_title": "Weniger manuelle Arbeit, weniger Fehler, konstantere Ergebnisse. Das ist gute Automatisierung.",
+    "pain_1_fix": "KI-gestützt, automatisiert und auf deinen Account abgestimmt. Keine generischen Regeln.",
+    "pain_2_label": "Custom Reporting",
+    "pain_2_title": "Automatische Alerts und Scripts, die zeigen was zählt. Nicht was auf Folien gut aussieht.",
+    "pain_2_fix": "Du siehst die Zahlen, die Entscheidungen treiben. Der Rest bleibt aus deinem Postfach.",
+    "pain_3_label": "Direkt & Async-freundlich",
+    "pain_3_title": "Ich arbeite am besten mit Kunden, die klare Kommunikation wollen. Keine wöchentlichen Calls.",
+    "pain_3_fix": "Loom-Updates, geteilte Sheets, klare Zusammenfassungen. Du bist immer im Bild.",
 
     // ── Homepage Services ─────────────────────────────────────
     "services_title": "Was ich tue",
