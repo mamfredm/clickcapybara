@@ -281,6 +281,10 @@ const translations = {
     "bmc_desc": "The tool is free and always will be. But if it saved you some wasted spend, a coffee goes a long way — and makes the next script happen faster.",
     "bmc_qr_label": "Scan to buy a coffee",
     "bmc_cta": "Buy me a coffee",
+    "pmax_eyebrow": "What's next",
+    "pmax_title": "Running Performance Max? v2 is on its way.",
+    "pmax_desc": "The current version covers Search campaigns. A variant that handles PMax search terms is in development — if you want to know when it's ready, just drop me a message.",
+    "pmax_cta": "Let me know you're interested →",
     // ── Use Cases Page ────────────────────────────────────────
     "usecases_h1": "Strategies Tailored to You",
     "usecases_intro": "Different business models require different PPC strategies. Here is how I adapt.",
@@ -656,6 +660,10 @@ const translations = {
     "bmc_desc": "Das Tool ist kostenlos und bleibt es auch. Aber wenn es dir etwas Werbebudget gerettet hat, freue ich mich über einen Kaffee damit das nächste Script schneller kommt.",
     "bmc_qr_label": "QR-Code scannen",
     "bmc_cta": "Kaffee kaufen",
+    "pmax_eyebrow": "Was kommt als Nächstes",
+    "pmax_title": "Läuft bei dir Performance Max? v2 ist in Entwicklung.",
+    "pmax_desc": "Die aktuelle Version deckt Search-Kampagnen ab. Eine Variante für PMax-Suchbegriffe ist in Entwicklung — wenn du wissen möchtest, wann sie fertig ist, schreib mir einfach.",
+    "pmax_cta": "Ich bin dabei — schreib mir →",
 
     // ── Use Cases Page ────────────────────────────────────────
     "usecases_h1": "Strategien für dein Business",
