@@ -712,6 +712,43 @@
     </div>
 </section>
 
+<!-- 6.5 BUY ME A COFFEE -->
+<section class="py-16 bg-gray-950 border-t border-white/5">
+    <div class="container mx-auto px-6 max-w-2xl text-center fade-in">
+        <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3">If it saved you budget</p>
+        <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-3">Buy me a coffee ☕</h2>
+        <p class="text-gray-400 text-sm mb-8 max-w-md mx-auto">The tool is free and always will be. But if it saved you some wasted spend, a coffee goes a long way — and makes the next script happen faster.</p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+
+            <!-- QR Code -->
+            <div class="flex flex-col items-center gap-3">
+                <div class="bg-white rounded-2xl p-3 w-36 h-36 flex items-center justify-center">
+                    <!-- Replace src with your QR image file -->
+                    <img src="assets/bmc-qr.png" alt="Buy Me a Coffee QR Code" class="w-full h-full object-contain">
+                </div>
+                <p class="text-xs text-gray-600">Scan to buy a coffee</p>
+            </div>
+
+            <!-- Divider -->
+            <div class="hidden sm:flex flex-col items-center gap-2">
+                <div class="w-px h-10 bg-white/10"></div>
+                <span class="text-xs text-gray-600">or</span>
+                <div class="w-px h-10 bg-white/10"></div>
+            </div>
+            <span class="sm:hidden text-xs text-gray-600">or</span>
+
+            <!-- Link button -->
+            <a href="https://www.buymeacoffee.com/clickcapybara" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-3 bg-[#fcba02] text-gray-900 font-bold py-4 px-7 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand/30">
+                <span class="text-xl">☕</span>
+                Buy me a coffee
+            </a>
+
+        </div>
+    </div>
+</section>
+
 <!-- 7. SOFT UPSELL -->
 <section class="upsell-band py-16">
     <div class="container mx-auto px-6 max-w-3xl text-center fade-in">
@@ -1131,6 +1168,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
-
+<!-- Buy Me a Coffee floating widget -->
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="clickcapybara" data-description="Support me on Buy me a coffee!" data-message="If this saved you some budget, I'd love a coffee ☕" data-color="#fcba02" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 </body>
 </html>
