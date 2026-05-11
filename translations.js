@@ -107,9 +107,9 @@ const translations = {
 
     // ── Homepage About ────────────────────────────────────────
     "about_title": "Who's behind Click-Capybara?",
-    "about_p1": "Behind Click-Capybara is Max, a freelance Google Ads specialist with 8+ years of hands-on experience across industries, from lean SMBs to large enterprise budgets. That includes two years at Google itself, working as a Subject Matter Expert on the launch of Performance Max campaigns.",
-    "about_p2": "Click-Capybara came from a simple observation: businesses paying agency fees for junior-level work, receiving reports full of numbers that meant nothing, and never quite knowing if their budget was being spent wisely.",
-    "about_p3": "The approach here is different. No handoffs, no account managers in between: your account gets worked on directly, start to finish. Sharp strategy, custom automation, and feedback that's honest even when it's not what you want to hear.",
+    "about_p1": "Behind Click-Capybara is Max. By day I work as a Google Ads specialist at a full-service digital agency, freelance I take on projects where direct and straightforward help is what's needed. Over 8 years of Google Ads experience, including two years at Google itself as a Subject Matter Expert for the Performance Max launch, and nearly four years agency-side, across all verticals.",
+    "about_p2": "Click-Capybara stands for a simple idea: direct access to a specialist who works in the account themselves. No handoffs, no black box, clear strategy, honest feedback, and custom automation.",
+    "about_p3": "Good Google Ads work isn't magic, it takes structure, honesty, and someone who genuinely gets into the details.",
     "about_p4": "When I'm not in Google Ads, I'm probably building another script.",
     "about_close_1": "Transparency",
     "about_close_2": "Accountability",
@@ -417,7 +417,7 @@ const translations = {
     // ── Homepage Hero ─────────────────────────────────────────
     "hero_eyebrow": "Google Ads · Scripts & Automatisierung",
     "hero_h1": "Hi, ich bin Max.<br><span class=\"highlight\">Google Ads, das<br class=\"hidden md:block\"> wirklich funktioniert.</span>",
-    "hero_sub": "Nach 8 Jahren arbeite ich meist an Accounts, bei denen die Struktur nicht stimmt oder die Automatisierung fehlt. Genau das ändere ich mit eigenen Scripts, sauberer Kampagnenarchitektur und ohne verschwendetes Budget.",
+    "hero_sub": "Nach 8 Jahren Google Ads bringe ich vor allem drei Dinge mit: ein Gefühl für Kampagnenstruktur, eigene Scripts die wirklich etwas bewegen und einen klaren Blick dafür, wo Budget wirklich hingeht.",
     "hero_cta_primary": "Kostenlose zweite Meinung",
     "hero_cta_secondary": "↓ Hol dir meinen kostenlosen KI-Keyword-Analyzer",
 
@@ -486,9 +486,9 @@ const translations = {
 
     // ── Homepage About ────────────────────────────────────────
     "about_title": "Wer steckt hinter Click-Capybara?",
-    "about_p1": "Hinter Click-Capybara steckt Max, freiberuflicher Google Ads Spezialist mit über 8 Jahren praktischer Erfahrung, quer durch alle Branchen. Darunter zwei Jahre bei Google selbst, als Subject Matter Expert beim Launch von Performance Max Kampagnen.",
-    "about_p2": "Click-Capybara entstand aus einer einfachen Beobachtung: Unternehmen zahlen Agentur-Honorare für Junior-Arbeit, bekommen Berichte voller Zahlen, die nichts bedeuten, und wissen nie wirklich, ob ihr Budget sinnvoll eingesetzt wird.",
-    "about_p3": "Der Ansatz hier ist ein anderer. Kein Übergeben, keine Zwischenstellen: der Account wird direkt betreut, von Anfang bis Ende. Klare Kampagnenstrategie, individuelle Automatisierung, und eine Einschätzung die auch mal unbequem ausfallen darf.",
+    "about_p1": "Hinter Click-Capybara steckt Max. Hauptberuflich arbeite ich als Google Ads Spezialist in einer Full-Service Internetagentur, freiberuflich nehme ich Projekte an, bei denen ich direkt und ohne Umwege helfen kann. Über 8 Jahre Google Ads Erfahrung, darunter zwei Jahre bei Google als Subject Matter Expert für Performance Max, knapp vier in der Agentur, quer durch alle Branchen.",
+    "about_p2": "Click-Capybara steht für eine einfache Idee: direkter Zugang zu einem Spezialisten, der selbst im Account arbeitet. Keine Zwischenstellen, keine Blackbox, klare Strategie, ehrliches Feedback, individuelle Automatisierung.",
+    "about_p3": "Ich glaube daran, dass gute Google Ads Arbeit keine Magie ist, sie braucht Struktur, Ehrlichkeit und jemanden, der sich wirklich reinkniet.",
     "about_p4": "Wenn ich nicht gerade in Google Ads bin, baue ich wahrscheinlich ein neues Script.",
     "about_close_1": "Transparenz",
     "about_close_2": "Verantwortung",
