@@ -116,11 +116,11 @@ const translations = {
     "about_close_3": "Results",
 
     // ── Homepage / Shared Contact Form ────────────────────────
-    "contact_title": "Let's see if I can help.",
-    "contact_sub": "Send me a message and I'll take a free look at your Google Ads account. No pitch, no commitment, just an honest assessment of where you stand and what I'd do differently.",
-    "contact_li_1": "I'll review your account within 2 business days",
-    "contact_li_2": "You'll get a short video or written summary of my findings",
-    "contact_li_3": "We decide together if it makes sense to work together",
+    "contact_title": "Not sure where to start? Start here.",
+    "contact_sub": "Not every account needs a big overhaul, but most have at least one thing worth fixing. Send me a quick message and I'll tell you honestly what I see. No agenda, just a straight answer.",
+    "contact_li_1": "I write back myself, no templates, no team inbox",
+    "contact_li_2": "You get a real opinion, not a polished pitch deck",
+    "contact_li_3": "No strings attached, what comes next is your call",
     "contact_reassurance": "No spam. No sales calls unless you want one. Just a reply from me, Max.",
     "form_label_name": "Name",
     "form_label_email": "Email",
@@ -495,11 +495,11 @@ const translations = {
     "about_close_3": "Ergebnisse",
 
     // ── Homepage / Shared Contact Form ────────────────────────
-    "contact_title": "Lass uns schauen, ob ich helfen kann.",
-    "contact_sub": "Schreib mir eine Nachricht und ich werfe einen kostenlosen Blick auf deinen Google Ads Account. Kein Sales-Pitch, keine Verpflichtung, nur eine ehrliche Einschätzung, wo du stehst und was ich anders machen würde.",
-    "contact_li_1": "Ich schaue mir deinen Account innerhalb von 2 Werktagen an",
-    "contact_li_2": "Du bekommst eine kurze Video- oder schriftliche Zusammenfassung meiner Erkenntnisse",
-    "contact_li_3": "Wir entscheiden gemeinsam, ob eine Zusammenarbeit Sinn ergibt",
+    "contact_title": "Nicht sicher, womit du anfangen sollst? Fang hier an.",
+    "contact_sub": "Manchmal reicht schon ein zweites Paar Augen. Schreib mir kurz, was dein Setup ist, ich schau mir an, was du machst, und sag dir ehrlich, was ich davon halte. Kein Pitch, kein Vertrag, kein Druck.",
+    "contact_li_1": "Ich antworte persoenlich, keine automatisierten Mails",
+    "contact_li_2": "Du kriegst eine ehrliche Einschaetzung, keine Verkaufspraesentation",
+    "contact_li_3": "Was danach passiert, entscheiden wir gemeinsam",
     "contact_reassurance": "Kein Spam. Keine unerwünschten Anrufe. Nur eine Antwort von mir, Max.",
     "form_label_name": "Name",
     "form_label_email": "E-Mail",
