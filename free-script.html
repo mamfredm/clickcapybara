@@ -5,24 +5,14 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('consent', 'default', {
-            'analytics_storage': 'denied',
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied'
+            'analytics_storage': 'denied','ad_storage': 'denied',
+            'ad_user_data': 'denied','ad_personalization': 'denied'
         });
     </script>
     <script>
         (function() {
-            if (localStorage.getItem('silktideCookieChoice_analytics') === 'true') {
-                gtag('consent', 'update', { 'analytics_storage': 'granted' });
-            }
-            if (localStorage.getItem('silktideCookieChoice_advertising') === 'true') {
-                gtag('consent', 'update', {
-                    'ad_storage': 'granted',
-                    'ad_user_data': 'granted',
-                    'ad_personalization': 'granted'
-                });
-            }
+            if (localStorage.getItem('silktideCookieChoice_analytics') === 'true') gtag('consent', 'update', { analytics_storage: 'granted' });
+            if (localStorage.getItem('silktideCookieChoice_advertising') === 'true') gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' });
         })();
     </script>
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -39,16 +29,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_capybara_outine_bold.ico" />
 
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "AI Max NegativeIQ",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Google Ads, Google Sheets",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-        "author": { "@type": "Person", "name": "Max", "url": "https://www.click-capybara.com" },
-        "description": "AI-powered Google Ads script that classifies search terms, protects converting keywords, and automates negative keyword management."
-    }
+    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Max NegativeIQ","applicationCategory":"BusinessApplication","operatingSystem":"Google Ads, Google Sheets","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"author":{"@type":"Person","name":"Max","url":"https://www.click-capybara.com"},"description":"AI-powered Google Ads script that classifies search terms, protects converting keywords, and automates negative keyword management."}
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -57,1126 +38,989 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="translations.js"></script>
     <link rel="stylesheet" id="silktide-consent-manager-css" href="cookie-banner/silktide-consent-manager.css">
     <script src="cookie-banner/silktide-consent-manager.js"></script>
     <script>
     silktideCookieBannerManager.updateCookieBannerConfig({
-        background: { showBackground: true },
-        cookieIcon: { position: "bottomLeft" },
+        background: { showBackground: true }, cookieIcon: { position: "bottomLeft" },
         cookieTypes: [
             { id: "necessary", name: "Necessary", description: "<p>Required for the site to function.</p>", required: true, onAccept: function(){} },
             { id: "analytics", name: "Analytics", description: "<p>Help us understand how visitors use the site.</p>", required: false,
-                onAccept: function(){ gtag('consent', 'update', { analytics_storage: 'granted' }); dataLayer.push({ 'event': 'consent_accepted_analytics' }); },
-                onReject: function(){ gtag('consent', 'update', { analytics_storage: 'denied' }); }
-            },
+              onAccept: function(){ gtag('consent', 'update', { analytics_storage: 'granted' }); dataLayer.push({ event: 'consent_accepted_analytics' }); },
+              onReject: function(){ gtag('consent', 'update', { analytics_storage: 'denied' }); } },
             { id: "advertising", name: "Advertising", description: "<p>Used to measure ad performance.</p>", required: false,
-                onAccept: function(){ gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' }); dataLayer.push({ 'event': 'consent_accepted_advertising' }); },
-                onReject: function(){ gtag('consent', 'update', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' }); }
-            }
+              onAccept: function(){ gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' }); dataLayer.push({ event: 'consent_accepted_advertising' }); },
+              onReject: function(){ gtag('consent', 'update', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' }); } }
         ],
-        text: {
-            banner: { description: "<p>We use cookies to enhance your experience. <a href=\"privacy.html\">Cookie Policy.</a></p>", acceptAllButtonText: "Accept all", rejectNonEssentialButtonText: "Reject non-essential", preferencesButtonText: "Preferences" },
-            preferences: { title: "Manage cookie preferences" }
-        },
+        text: { banner: { description: "<p>We use cookies to enhance your experience. <a href=\"privacy.html\">Cookie Policy.</a></p>", acceptAllButtonText: "Accept all", rejectNonEssentialButtonText: "Reject non-essential", preferencesButtonText: "Preferences" }, preferences: { title: "Manage cookie preferences" } },
         position: { banner: "center" }
     });
     </script>
 
     <script>
         tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: { DEFAULT: '#fcba02', light: '#FFF9E6', dark: '#D4A101' }
-                    },
-                    fontFamily: { sans: ['Inter', 'sans-serif'] }
-                }
-            }
+            theme: { extend: {
+                colors: {
+                    brand: { DEFAULT: '#fcba02', light: '#FFF6D6', dark: '#D4A101' },
+                    ink: { 900: '#0E0E10', 800: '#17171B', 700: '#222227', 500: '#6B6B73' },
+                    cream: '#F6F3EC'
+                },
+                fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+            } }
         }
     </script>
 
     <style>
+        body { background: #EFECE3; }
+
+        /* ── Bento tiles ────────────────── */
+        .tile {
+            border-radius: 22px; padding: 22px;
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column;
+            justify-content: space-between; gap: 18px;
+            min-height: 0;
+        }
+        @media (min-width: 768px) { .tile { padding: 32px; border-radius: 28px; gap: 24px; } }
+        .tile-light  { background: #FFFFFF; color: #0E0E10; }
+        .tile-cream  { background: #F6F3EC; color: #0E0E10; border: 1px solid rgba(14,14,16,0.06); }
+        .tile-dark   { background: #0E0E10; color: #FFFFFF; }
+        .tile-ink    { background: #17171B; color: #FFFFFF; }
+        .tile-brand  { background: #fcba02; color: #0E0E10; }
+        .tile-brand-soft { background: #FFF6D6; color: #0E0E10; border: 1px solid rgba(252,186,2,0.35); }
+        .tile-outline{ background: #FFFFFF; color: #0E0E10; border: 1px solid rgba(14,14,16,0.08); }
+
+        .bento {
+            display: grid; grid-template-columns: repeat(12, minmax(0,1fr));
+            gap: 14px;
+        }
+        @media (min-width: 768px) { .bento { gap: 16px; } }
+
+        .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+        .display { font-weight: 800; line-height: 0.98; letter-spacing: -0.025em; }
+        .hl { color: #fcba02; }
+
+        .tile-hover { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+        .tile-hover:hover { transform: translateY(-3px); box-shadow: 0 14px 40px -18px rgba(14,14,16,0.25); }
+
         .nav-link { position: relative; transition: color 0.3s ease; }
         .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 50%; transform: translateX(-50%); background-color: #fcba02; transition: width 0.3s ease; }
-        .nav-link:hover::after { width: 100%; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
-        .hero-dark {
-            background-color: #0d1117;
-            background-image: radial-gradient(ellipse at 20% 50%, rgba(252,186,2,0.07) 0%, transparent 60%),
-                              radial-gradient(ellipse at 80% 20%, rgba(252,186,2,0.04) 0%, transparent 50%);
-        }
+        .grid-pattern { background-image: linear-gradient(rgba(14,14,16,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(14,14,16,0.06) 1px, transparent 1px); background-size: 36px 36px; background-position: -1px -1px; }
+        .grid-pattern-dark { background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 36px 36px; }
 
-        .terminal {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
-        }
-        .terminal-bar {
-            background: #21262d;
-            border-bottom: 1px solid #30363d;
-            border-radius: 12px 12px 0 0;
-            padding: 10px 16px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .chip { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px; }
+        .chip-on-dark { background: rgba(252,186,2,0.14); color: #fcba02; border: 1px solid rgba(252,186,2,0.3); }
+        .chip-on-light{ background: #0E0E10; color: #fcba02; }
+        .chip-soft { background: rgba(14,14,16,0.06); color: #0E0E10; }
 
-        .step-num {
-            width: 32px; height: 32px; min-width: 32px;
-            background: #fcba02;
-            color: #0d1117;
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 800; font-size: 0.8rem;
-        }
-
-        .component-card {
-            border-left: 3px solid #fcba02;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .component-card:hover { transform: translateX(4px); }
-
-        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-        .stagger > *:nth-child(1) { transition-delay: 0.05s; }
-        .stagger > *:nth-child(2) { transition-delay: 0.15s; }
-        .stagger > *:nth-child(3) { transition-delay: 0.25s; }
-
-        .github-btn {
-            background: #fcba02;
-            color: #0d1117;
-            font-weight: 800;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 14px 28px;
-            border-radius: 10px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-decoration: none;
-        }
-        .github-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(252,186,2,0.35);
-        }
-
-        .lang-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(252,186,2,0.12);
-            border: 1px solid rgba(252,186,2,0.3);
-            color: #fcba02;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 999px;
-        }
+        /* Terminal — used inline inside tiles */
+        .term { background: #0a0d12; border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; font-family: 'JetBrains Mono', monospace; overflow: hidden; }
+        .term-bar { background: #161b22; border-bottom: 1px solid #21262d; padding: 10px 14px; display: flex; align-items: center; gap: 6px; }
+        .dot { width: 11px; height: 11px; border-radius: 50%; }
 
         .conf-high { color: #3fb950; }
         .conf-med  { color: #d29922; }
         .conf-low  { color: #f85149; }
 
-        .upsell-band {
-            background: linear-gradient(135deg, #FFF9E6 0%, #fffdf5 100%);
-            border-top: 3px solid #fcba02;
-        }
+        .step-num { width: 36px; height: 36px; min-width: 36px; background: #fcba02; color: #0E0E10; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; }
 
-        .header-scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.08); }
+        .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        /* ── Calculator styles ── */
-        .calc-wrap {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 14px;
-            padding: 28px;
-            font-family: 'Inter', sans-serif;
-            color: #f0f6fc;
-        }
-        .calc-eyebrow {
-            font-size: 11px; font-weight: 700; letter-spacing: .1em;
-            text-transform: uppercase; color: #fcba02; margin: 0 0 6px;
-        }
-        .calc-section-title {
-            font-size: 17px; font-weight: 700; color: #f0f6fc; margin: 0 0 20px;
-        }
-        .calc-sub-label {
-            font-size: 11px; font-weight: 700; letter-spacing: .08em;
-            text-transform: uppercase; color: #6e7681;
-            margin: 20px 0 10px; padding-bottom: 6px;
-            border-bottom: 0.5px solid #30363d;
-        }
+        .logo-fallback { background:#0E0E10; color:#fcba02; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-weight:900; letter-spacing:-0.05em; }
+
+        /* CTA */
+        .btn-brand { display:inline-flex; align-items:center; gap:10px; background:#fcba02; color:#0E0E10; font-weight:800; padding:14px 22px; border-radius:14px; transition:transform .2s, box-shadow .2s; }
+        .btn-brand:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(252,186,2,.55); }
+        .btn-dark { display:inline-flex; align-items:center; gap:10px; background:#0E0E10; color:#fcba02; font-weight:800; padding:14px 22px; border-radius:14px; transition:transform .2s, box-shadow .2s; }
+        .btn-dark:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(14,14,16,.5); }
+
+        /* ── Calculator (mostly preserved, just retuned to bento) ── */
+        .calc-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #fcba02; margin: 0 0 6px; }
+        .calc-sub-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #6e7681; margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
         .calc-slider-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
-        .calc-slider-lbl { font-size: 13px; color: #8b949e; min-width: 200px; }
-        .calc-slider-row input[type=range] {
-            flex: 1; -webkit-appearance: none; appearance: none;
-            height: 4px; border-radius: 2px; background: #30363d;
-            outline: none; cursor: pointer;
-        }
-        .calc-slider-row input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none; width: 16px; height: 16px;
-            border-radius: 50%; background: #fcba02;
-            cursor: pointer; border: 2px solid #161b22;
-        }
-        .calc-slider-row input[type=range]::-moz-range-thumb {
-            width: 16px; height: 16px; border-radius: 50%;
-            background: #fcba02; cursor: pointer; border: 2px solid #161b22;
-        }
-        .calc-slider-val {
-            font-size: 13px; font-weight: 600; min-width: 48px;
-            text-align: right; color: #fcba02;
-        }
-        .calc-metrics {
-            display: grid; grid-template-columns: repeat(4, minmax(0,1fr));
-            gap: 10px; margin: 12px 0 18px;
-        }
-        .calc-metric {
-            background: #21262d; border: 0.5px solid #30363d;
-            border-radius: 10px; padding: 12px 14px;
-        }
-        .calc-metric-lbl { font-size: 11px; color: #6e7681; margin: 0 0 4px; }
-        .calc-metric-val { font-size: 20px; font-weight: 700; margin: 0; line-height: 1.2; }
+        .calc-slider-lbl { font-size: 13px; color: #b9bdc4; min-width: 200px; }
+        .calc-slider-row input[type=range] { flex: 1; -webkit-appearance: none; appearance: none; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.1); outline: none; cursor: pointer; }
+        .calc-slider-row input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: #fcba02; cursor: pointer; border: 2px solid #0E0E10; }
+        .calc-slider-row input[type=range]::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: #fcba02; cursor: pointer; border: 2px solid #0E0E10; }
+        .calc-slider-val { font-size: 13px; font-weight: 700; min-width: 48px; text-align: right; color: #fcba02; }
+        .calc-metrics { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin: 12px 0 18px; }
+        .calc-metric { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 14px; }
+        .calc-metric-lbl { font-size: 11px; color: #8b949e; margin: 0 0 4px; letter-spacing: 0.05em; text-transform: uppercase; }
+        .calc-metric-val { font-size: 22px; font-weight: 800; margin: 0; line-height: 1.2; color: #fff; letter-spacing: -0.02em; }
         .calc-metric-sub { font-size: 10px; color: #6e7681; margin: 3px 0 0; }
-        .calc-ok   { color: #3fb950; }
-        .calc-warn { color: #d29922; }
-        .calc-err  { color: #e8824a; }
-        .calc-runs-box {
-            background: #21262d; border: 0.5px solid #30363d;
-            border-radius: 10px; padding: 14px 16px;
-            font-size: 13px; color: #8b949e; line-height: 1.65; margin-bottom: 18px;
-        }
-        .calc-runs-box strong { color: #f0f6fc; font-weight: 600; }
-        .calc-metrics-cost {
-            display: grid; grid-template-columns: repeat(3, minmax(0,1fr));
-            gap: 10px; margin: 12px 0 18px;
-        }
-        .calc-legend-row {
-            display: flex; gap: 16px; flex-wrap: wrap;
-            font-size: 11px; color: #8b949e; margin-bottom: 10px;
-        }
+        .calc-ok   { color: #3fb950 !important; }
+        .calc-warn { color: #d29922 !important; }
+        .calc-err  { color: #e8824a !important; }
+        .calc-runs-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; padding: 14px 16px; font-size: 13px; color: #b9bdc4; line-height: 1.65; margin-bottom: 18px; }
+        .calc-runs-box strong { color: #fff; font-weight: 700; }
+        .calc-metrics-cost { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin: 12px 0 18px; }
+        .calc-legend-row { display: flex; gap: 16px; flex-wrap: wrap; font-size: 11px; color: #b9bdc4; margin-bottom: 10px; }
         .calc-legend-row span { display: flex; align-items: center; gap: 6px; }
-        .calc-ldot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
-        .calc-ldot-active {
-            width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0;
-            background: #fcba02;
-            outline: 2px solid rgba(255,255,255,0.55);
-            outline-offset: 1px;
+        .calc-ldot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+        .calc-ldot-active { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; background: #fcba02; outline: 2px solid rgba(255,255,255,0.55); outline-offset: 1px; }
+
+        @media (max-width: 640px) {
+            .calc-slider-row { flex-wrap: wrap; gap: 6px; }
+            .calc-slider-lbl { min-width: 0; width: 100%; font-size: 12px; }
+            .calc-slider-val { min-width: 36px; }
+            .calc-metrics { grid-template-columns: repeat(2, minmax(0,1fr)); }
+            .calc-metrics-cost { grid-template-columns: repeat(2, minmax(0,1fr)); }
+            .calc-metrics-cost .calc-metric:last-child { grid-column: 1 / -1; }
+            .calc-metric-val { font-size: 18px; }
         }
 
-        /* ── Calculator mobile overrides ── */
-        @media (max-width: 640px) {
-            .calc-wrap {
-                padding: 16px;
-            }
-            .calc-slider-row {
-                flex-wrap: wrap;
-                gap: 6px;
-            }
-            .calc-slider-lbl {
-                min-width: 0;
-                width: 100%;
-                font-size: 12px;
-            }
-            .calc-slider-row input[type=range] {
-                flex: 1;
-            }
-            .calc-slider-val {
-                min-width: 36px;
-            }
-            .calc-metrics {
-                grid-template-columns: repeat(2, minmax(0,1fr));
-            }
-            .calc-metrics-cost {
-                grid-template-columns: repeat(2, minmax(0,1fr));
-            }
-            .calc-metrics-cost .calc-metric:last-child {
-                grid-column: 1 / -1;
-            }
-            .calc-metric-val {
-                font-size: 17px;
-            }
-        }
+        .badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.06); color: #b9bdc4; border: 1px solid rgba(255,255,255,0.08); }
+        .badge-brand { background: rgba(252,186,2,0.12); color: #fcba02; border-color: rgba(252,186,2,0.3); }
+
+        /* divider in BMC */
+        .bmc-divider { width: 1px; height: 40px; background: rgba(14,14,16,0.12); }
     </style>
 </head>
 
-<body class="bg-white text-gray-800 font-sans antialiased">
+<body class="text-ink-900 font-sans antialiased">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK2WCGQH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- NAV -->
-<header id="site-header" class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-100 transition-shadow">
-    <div class="container mx-auto px-6 py-4">
-        <nav class="flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-2">
-                <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara Logo" class="w-9 h-9">
-                <span class="text-xl font-bold text-gray-900">Click-Capybara</span>
-            </a>
-            <div class="hidden md:flex items-center space-x-7">
-                <a href="services.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_services">Services</a>
-                <a href="free-script.html" class="nav-link text-brand font-semibold text-sm" data-key="nav_free_script">Tools & Scripts</a>
-                <a href="index.html#about" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_about">About</a>
-                <a href="index.html#contact" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_contact">Contact</a>
-            </div>
-            <div class="hidden md:flex items-center space-x-4 ml-8">
-                <button id="lang-en" class="text-sm font-bold text-gray-900">EN</button>
-                <span class="text-gray-300">|</span>
-                <button id="lang-de" class="text-sm font-medium text-gray-400 hover:text-gray-700">DE</button>
-                <a href="index.html#contact" class="ml-2 bg-brand text-gray-900 font-bold text-sm py-2 px-5 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="nav_cta">Free Audit</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 text-xl p-1"><i class="fas fa-bars"></i></button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden mt-3 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
-            <a href="services.html" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_services">Services</a>
-            <a href="free-script.html" class="block py-3 px-5 text-sm text-brand font-semibold hover:bg-gray-50 border-b border-gray-100" data-key="nav_free_script">Tools & Scripts</a>
-            <a href="index.html#about" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_about">About</a>
-            <a href="index.html#contact" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_contact">Contact</a>
-            <div class="flex items-center gap-4 px-5 py-3 border-b border-gray-100">
-                <i class="fas fa-globe text-gray-400"></i>
-                <button id="mobile-lang-en" class="text-sm font-bold">EN</button>
-                <button id="mobile-lang-de" class="text-sm font-medium text-gray-400">DE</button>
-            </div>
-            <div class="p-4">
-                <a href="index.html#contact" class="block bg-brand text-gray-900 font-bold py-3 px-4 rounded-lg text-center text-sm" data-key="nav_cta">Free Audit</a>
+<header id="site-header" class="sticky top-0 z-50">
+    <div class="container mx-auto px-4 md:px-6 pt-4">
+        <div class="bg-white/80 backdrop-blur-xl border border-black/5 rounded-2xl shadow-sm">
+            <nav class="flex justify-between items-center px-5 py-3">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara Logo" class="w-8 h-8" onerror="this.outerHTML='<span class=&quot;logo-fallback w-8 h-8 text-[14px]&quot;>CC</span>'">
+                    <span class="text-base font-extrabold tracking-tight">Click-Capybara</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="services.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_services">Services</a>
+                    <a href="free-script.html" class="nav-link active text-ink-900 font-bold text-sm" data-key="nav_free_script">Tools &amp; Scripts</a>
+                    <a href="index.html#about" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_about">About</a>
+                    <a href="index.html#contact" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_contact">Contact</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-3 ml-6">
+                    <button id="lang-en" class="text-xs font-bold text-ink-900">EN</button>
+                    <span class="text-gray-300">|</span>
+                    <button id="lang-de" class="text-xs font-medium text-gray-400 hover:text-ink-900">DE</button>
+                    <a href="index.html#contact" class="ml-2 bg-ink-900 text-brand font-bold text-sm py-2 px-4 rounded-xl transition hover:-translate-y-0.5" data-key="nav_cta">Free Audit</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-ink-900 text-xl p-1"><i class="fas fa-bars"></i></button>
+            </nav>
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-black/5 rounded-b-2xl overflow-hidden">
+                <a href="services.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_services">Services</a>
+                <a href="free-script.html" class="block py-3 px-5 text-sm text-ink-900 font-bold bg-cream/60 border-b border-black/5" data-key="nav_free_script">Tools &amp; Scripts</a>
+                <a href="index.html#about" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_about">About</a>
+                <a href="index.html#contact" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_contact">Contact</a>
+                <div class="flex items-center gap-4 px-5 py-3 border-b border-black/5">
+                    <i class="fas fa-globe text-gray-400"></i>
+                    <button id="mobile-lang-en" class="text-sm font-bold">EN</button>
+                    <button id="mobile-lang-de" class="text-sm font-medium text-gray-400">DE</button>
+                </div>
+                <div class="p-4"><a href="index.html#contact" class="block bg-ink-900 text-brand font-bold py-3 px-4 rounded-xl text-center text-sm" data-key="nav_cta">Free Audit</a></div>
             </div>
         </div>
     </div>
 </header>
 
-<main>
+<main class="container mx-auto px-4 md:px-6 py-6 md:py-8 space-y-6 md:space-y-8">
 
-<!-- 1. HERO -->
-<section class="hero-dark py-24 md:py-32">
-    <div class="container mx-auto px-6 max-w-4xl text-center">
-        <span class="inline-block bg-brand/10 border border-brand/30 text-brand text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6" data-key="script_eyebrow">Free Google Ads Tool</span>
-        <h1 class="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight" data-key="script_h1">AI Max NegativeIQ</h1>
-        <p class="text-xl md:text-2xl text-brand font-semibold mb-6" data-key="script_tagline">Stop guessing which search terms are wasting your budget. Let AI tell you.</p>
-        <p class="text-gray-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10" data-key="script_sub">A free, open-source tool that connects your Google Ads account to AI, classifies every search term, protects what's converting, and tells you exactly what to add as a negative. Built for Search campaigns. Support for more is on the roadmap V2 is in development.</p>
-        <div class="flex flex-col gap-3 justify-center items-center mb-6">
-             <a id="github-cta-hero" href="https://github.com/mamfredm/AI-Max-NegativeIQ" target="_blank" rel="noopener" class="github-btn" data-key="script_cta_github">
-               <i class="fab fa-github text-lg"></i>
-               View on GitHub
-            </a> 
-            <a href="#how-to-install" class="text-gray-400 hover:text-white font-medium text-sm transition flex items-center gap-2" data-key="script_cta_setup">
-                <i class="ph ph-arrow-down text-xs"></i>
-                How to install
-            </a>
-        </div>
-        <div class="flex flex-wrap justify-center gap-3 text-xs">
-            <span class="inline-flex items-center gap-1.5 text-gray-500"><i class="ph ph-git-branch text-gray-600"></i> <span data-key="script_badge_free">Free &amp; open source</span></span>
-            <span class="lang-badge" data-key="script_lang_badge"><i class="ph ph-translate"></i> Available in English and German</span>
-            <span class="inline-flex items-center gap-1.5 text-gray-500"><i class="ph ph-shield-check text-gray-600"></i> <span data-key="script_badge_safe">No external servers</span></span>
-        </div>
-    </div>
-</section>
-
-<!-- 2. WHAT IT DOES -->
-<section class="py-20 bg-white">
-    <div class="container mx-auto px-6 max-w-5xl">
-        <div class="md:flex gap-16 items-start">
-            <div class="md:w-1/2 mb-12 md:mb-0 fade-in">
-                <p class="text-xs font-bold tracking-widest text-brand uppercase mb-4" data-key="what_eyebrow">What it actually does</p>
-                <h2 class="text-3xl font-extrabold text-gray-900 mb-6" data-key="what_title">Your search terms, intelligently classified by AI.</h2>
-                <div class="space-y-4 text-gray-600 text-sm leading-relaxed">
-                    <p data-key="what_p1">Most Google Ads accounts are leaking budget on search terms that will never convert — job seekers, competitors, irrelevant queries. Manually reviewing them is slow, error-prone, and doesn't scale. AI Max NegativeIQ automates the entire process.</p>
-                    <p data-key="what_p2">Every day, the Fetcher pulls your latest search terms from Search campaigns into a Google Sheet. The Analyzer sends them in batches to an AI — which classifies each one based on your industry, your business, and your conversion data. Not generic rules. Actual context.</p>
-                    <p data-key="what_p3">Every term gets a classification, a confidence score, and a one-line explanation of why the AI made that call. You review, correct if needed, and push negatives back into your account in one click. The system learns from your corrections over time.</p>
+    <!-- 1. HERO BENTO -->
+    <section class="bento">
+        <!-- Main hero tile -->
+        <div class="tile tile-dark col-span-12 md:col-span-8 md:row-span-2 min-h-[440px] md:min-h-[560px] relative">
+            <div class="absolute inset-0 grid-pattern-dark opacity-50"></div>
+            <div class="relative z-10">
+                <span class="chip chip-on-dark" data-key="script_eyebrow">Free Google Ads Tool</span>
+            </div>
+            <div class="relative z-10">
+                <h1 class="display text-[36px] sm:text-[52px] md:text-[76px] lg:text-[92px] mb-3 md:mb-5" data-key="script_h1">
+                    AI Max <span class="hl">NegativeIQ</span>
+                </h1>
+                <p class="text-base md:text-2xl text-brand font-bold mb-4 md:mb-5 leading-tight" data-key="script_tagline">Stop guessing which search terms are wasting your budget. Let AI tell you.</p>
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl mb-7" data-key="script_sub">
+                    A free, open-source tool that connects your Google Ads account to AI, classifies every search term, protects what's converting, and tells you exactly what to add as a negative. Built for Search campaigns. V2 is in development.
+                </p>
+                <div class="flex flex-wrap items-center gap-4 mb-6">
+                    <a id="github-cta-hero" href="https://github.com/mamfredm/AI-Max-NegativeIQ" target="_blank" rel="noopener" class="btn-brand text-sm md:text-base" data-key="script_cta_github">
+                        <i class="fab fa-github text-lg"></i> View on GitHub
+                    </a>
+                    <a href="#how-to-install" class="text-gray-300 hover:text-white text-sm font-semibold transition flex items-center gap-2" data-key="script_cta_setup">
+                        <i class="ph ph-arrow-down"></i> How to install
+                    </a>
                 </div>
-                <div class="mt-8 bg-gray-50 border border-gray-200 rounded-xl p-5 flex gap-4">
-                    <div class="w-9 h-9 rounded-lg bg-brand-light flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <i class="ph ph-shield-check text-brand-dark text-lg"></i>
-                    </div>
-                    <div>
-                        <p class="font-bold text-gray-900 text-sm mb-1" data-key="conv_protect_title">Conversion protection — always on</p>
-                        <p class="text-gray-500 text-xs leading-relaxed" data-key="conv_protect_desc">Any search term that has driven a conversion is automatically protected. The tool will never flag it as a negative, regardless of how it looks on the surface.</p>
-                    </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="badge" data-key="script_badge_free"><i class="ph ph-git-branch"></i> Free &amp; open source</span>
+                    <span class="badge badge-brand" data-key="script_lang_badge"><i class="ph ph-translate"></i> EN &amp; DE</span>
+                    <span class="badge" data-key="script_badge_safe"><i class="ph ph-shield-check"></i> No external servers</span>
                 </div>
             </div>
-            <div class="md:w-1/2 fade-in">
-                <div class="terminal">
-                    <div class="terminal-bar">
+        </div>
+
+        <!-- Side stat -->
+        <div class="tile tile-brand col-span-12 sm:col-span-6 md:col-span-4 min-h-[160px]">
+            <div class="flex items-start justify-between">
+                <span class="eyebrow text-ink-900/70">Cost</span>
+                <i class="ph ph-currency-eur text-ink-900 text-xl"></i>
+            </div>
+            <div>
+                <p class="display text-5xl md:text-6xl">€0</p>
+                <p class="text-ink-900/70 text-xs md:text-sm mt-2">Free, forever. No upsell, no email gate.</p>
+            </div>
+        </div>
+
+        <!-- Side stat -->
+        <div class="tile tile-cream col-span-12 sm:col-span-6 md:col-span-4 min-h-[160px]">
+            <div class="flex items-start justify-between">
+                <span class="eyebrow text-brand-dark">Tech</span>
+                <i class="ph ph-cpu text-brand-dark text-xl"></i>
+            </div>
+            <div>
+                <p class="font-extrabold text-xl md:text-2xl leading-tight">Google Ads<br>+ Sheets + AI</p>
+                <p class="text-ink-500 text-xs md:text-sm mt-2">Runs entirely inside your accounts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. WHAT IT DOES BENTO -->
+    <section class="bento">
+        <!-- Copy tile -->
+        <div class="tile tile-cream col-span-12 md:col-span-5 min-h-[360px] md:min-h-[520px]">
+            <div>
+                <span class="chip chip-on-light mb-4" data-key="what_eyebrow">What it actually does</span>
+                <h2 class="display text-2xl md:text-4xl mb-4 md:mb-5" data-key="what_title">Your search terms, intelligently classified by AI.</h2>
+            </div>
+            <div class="space-y-3 md:space-y-4 text-ink-700 text-sm md:text-[15px] leading-relaxed">
+                <p data-key="what_p1">Most Google Ads accounts are leaking budget on search terms that will never convert — job seekers, competitors, irrelevant queries. Manually reviewing them is slow, error-prone, and doesn't scale. AI Max NegativeIQ automates the entire process.</p>
+                <p data-key="what_p2">Every day, the Fetcher pulls your latest search terms into a Google Sheet. The Analyzer sends them to an AI — which classifies each one based on your industry, your business, and your conversion data. Not generic rules. Actual context.</p>
+                <p data-key="what_p3">Every term gets a classification, a confidence score, and a one-line explanation. You review, correct if needed, and push negatives back into your account in one click.</p>
+            </div>
+            <div class="bg-white/70 border border-black/5 rounded-2xl p-4 flex gap-3 mt-auto">
+                <div class="w-10 h-10 rounded-xl bg-brand flex items-center justify-center flex-shrink-0">
+                    <i class="ph ph-shield-check text-ink-900 text-lg"></i>
+                </div>
+                <div>
+                    <p class="font-bold text-sm" data-key="conv_protect_title">Conversion protection — always on</p>
+                    <p class="text-ink-500 text-xs leading-relaxed mt-0.5" data-key="conv_protect_desc">Any term that has driven a conversion is automatically protected — never flagged.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terminal tile -->
+        <div class="tile tile-dark col-span-12 md:col-span-7 min-h-[360px] md:min-h-[520px] relative !p-0">
+            <div class="absolute inset-0 grid-pattern-dark opacity-30 rounded-[28px]"></div>
+            <div class="relative z-10 p-5 md:p-8 flex flex-col gap-4 h-full">
+                <div class="flex items-center justify-between">
+                    <span class="chip chip-on-dark">Output preview</span>
+                    <span class="text-xs text-gray-500 font-mono">SearchTerms.csv</span>
+                </div>
+
+                <div class="term flex-1">
+                    <div class="term-bar">
                         <div class="dot bg-red-500"></div>
                         <div class="dot bg-yellow-400"></div>
                         <div class="dot bg-green-500"></div>
-                        <span class="text-gray-500 text-xs ml-3">SearchTerms — AI Max NegativeIQ</span>
+                        <span class="text-gray-500 text-xs ml-3 font-mono">SearchTerms — AI Max NegativeIQ</span>
                     </div>
-                    <div class="p-5 overflow-x-auto">
-                        <table class="text-xs w-full" style="font-family: 'Fira Code', monospace;">
+                    <div class="p-3 md:p-5 overflow-x-auto">
+                        <table class="text-xs md:text-[13px] w-full font-mono" style="border-collapse:collapse">
                             <thead>
-                                <tr class="text-gray-500 border-b border-gray-700">
-                                    <th class="text-left pb-2 pr-4 font-medium">Search Term</th>
-                                    <th class="text-left pb-2 pr-4 font-medium">Classification</th>
-                                    <th class="text-left pb-2 pr-4 font-medium">Confidence</th>
-                                    <th class="text-left pb-2 font-medium">AI Reason</th>
+                                <tr class="text-gray-500 border-b border-white/10">
+                                    <th class="text-left pb-2 pr-3 font-medium">Search Term</th>
+                                    <th class="text-left pb-2 pr-3 font-medium">Class</th>
+                                    <th class="text-left pb-2 pr-3 font-medium">Conf</th>
+                                    <th class="text-left pb-2 font-medium hidden md:table-cell">AI Reason</th>
                                 </tr>
                             </thead>
                             <tbody class="text-gray-300">
-                                <tr class="border-b border-gray-800/50">
-                                    <td class="py-2 pr-4">buy running shoes online</td>
-                                    <td class="py-2 pr-4"><span class="text-green-400">✅ Relevant</span></td>
-                                    <td class="py-2 pr-4 conf-high">0.97</td>
-                                    <td class="py-2 text-gray-500">High purchase intent keyword</td>
+                                <tr class="border-b border-white/5">
+                                    <td class="py-2 pr-3">buy running shoes online</td>
+                                    <td class="py-2 pr-3"><span class="text-green-400">✓ Relevant</span></td>
+                                    <td class="py-2 pr-3 conf-high">0.97</td>
+                                    <td class="py-2 text-gray-500 hidden md:table-cell">High purchase intent</td>
                                 </tr>
-                                <tr class="border-b border-gray-800/50">
-                                    <td class="py-2 pr-4">running shoes jobs</td>
-                                    <td class="py-2 pr-4"><span class="text-red-400">❌ Junk</span></td>
-                                    <td class="py-2 pr-4 conf-high">0.99</td>
-                                    <td class="py-2 text-gray-500">Job search, no commercial intent</td>
+                                <tr class="border-b border-white/5">
+                                    <td class="py-2 pr-3">running shoes jobs</td>
+                                    <td class="py-2 pr-3"><span class="text-red-400">✗ Junk</span></td>
+                                    <td class="py-2 pr-3 conf-high">0.99</td>
+                                    <td class="py-2 text-gray-500 hidden md:table-cell">Job search, no intent</td>
                                 </tr>
-                                <tr class="border-b border-gray-800/50">
-                                    <td class="py-2 pr-4">nike air max price</td>
-                                    <td class="py-2 pr-4"><span class="text-yellow-400">⚠️ Competitor</span></td>
-                                    <td class="py-2 pr-4 conf-high">0.94</td>
-                                    <td class="py-2 text-gray-500">Brand competitor query</td>
+                                <tr class="border-b border-white/5">
+                                    <td class="py-2 pr-3">nike air max price</td>
+                                    <td class="py-2 pr-3"><span class="text-yellow-400">⚑ Competitor</span></td>
+                                    <td class="py-2 pr-3 conf-high">0.94</td>
+                                    <td class="py-2 text-gray-500 hidden md:table-cell">Brand competitor query</td>
                                 </tr>
-                                <tr class="border-b border-gray-800/50">
-                                    <td class="py-2 pr-4">how to clean sneakers</td>
-                                    <td class="py-2 pr-4"><span class="text-red-400">❌ Informational</span></td>
-                                    <td class="py-2 pr-4 conf-med">0.81</td>
-                                    <td class="py-2 text-gray-500">No purchase intent detected</td>
+                                <tr class="border-b border-white/5">
+                                    <td class="py-2 pr-3">how to clean sneakers</td>
+                                    <td class="py-2 pr-3"><span class="text-red-400">✗ Info</span></td>
+                                    <td class="py-2 pr-3 conf-med">0.81</td>
+                                    <td class="py-2 text-gray-500 hidden md:table-cell">No purchase intent</td>
                                 </tr>
                                 <tr>
-                                    <td class="py-2 pr-4 text-brand">⚠️ Conv-Schutz</td>
-                                    <td class="py-2 pr-4 text-brand">🛡 Protected</td>
-                                    <td class="py-2 pr-4 text-brand">—</td>
-                                    <td class="py-2 text-brand text-xs">Has conversions — never touched</td>
+                                    <td class="py-2 pr-3 text-brand font-semibold">red sneakers size 9</td>
+                                    <td class="py-2 pr-3 text-brand">🛡 Protected</td>
+                                    <td class="py-2 pr-3 text-brand">—</td>
+                                    <td class="py-2 text-brand text-[11px] hidden md:table-cell">Has conversions</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <p class="text-xs text-gray-400 text-center mt-3" data-key="mockup_note">Example output. Your real data, your real account.</p>
+                <p class="text-xs text-gray-500" data-key="mockup_note">Example output. Your real data, your real account.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- 3. WHAT'S INSIDE -->
-<section class="py-20 bg-gray-50">
-    <div class="container mx-auto px-6 max-w-4xl">
-        <div class="text-center mb-14 fade-in">
-            <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3" data-key="inside_eyebrow">What you get</p>
-            <h2 class="text-3xl font-extrabold text-gray-900" data-key="inside_title">Three components. One complete system.</h2>
+    <!-- 3. THREE COMPONENTS BENTO -->
+    <section class="bento">
+        <!-- Header tile -->
+        <div class="tile tile-brand-soft col-span-12 md:col-span-4 min-h-[200px] md:min-h-[280px]">
+            <div>
+                <span class="eyebrow text-brand-dark" data-key="inside_eyebrow">What you get</span>
+                <h2 class="display text-2xl md:text-3xl mt-3 mb-3" data-key="inside_title">Three components. One complete system.</h2>
+            </div>
+            <div class="flex items-center gap-1">
+                <span class="numeral display text-5xl md:text-6xl hl">3</span>
+                <i class="ph ph-puzzle-piece text-ink-900/40 text-3xl ml-2"></i>
+            </div>
         </div>
-        <div class="space-y-6 stagger">
-            <div class="fade-in component-card bg-white rounded-xl p-7 shadow-sm">
-                <div class="flex items-start gap-5">
-                    <div class="w-11 h-11 bg-brand-light rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <i class="ph ph-arrows-clockwise text-brand-dark text-2xl"></i>
+
+        <!-- Fetcher -->
+        <div class="tile tile-light col-span-12 md:col-span-4 min-h-[200px] md:min-h-[280px] tile-hover">
+            <div class="flex items-start justify-between">
+                <div class="w-12 h-12 bg-brand rounded-2xl flex items-center justify-center">
+                    <i class="ph ph-arrows-clockwise text-ink-900 text-xl md:text-2xl"></i>
+                </div>
+                <span class="chip chip-soft">01 · Fetcher</span>
+            </div>
+            <div>
+                <h3 class="font-extrabold text-lg md:text-xl mb-1" data-key="comp_1_title">The Fetcher</h3>
+                <p class="text-xs text-brand-dark font-bold mb-2" data-key="comp_1_where">Google Ads → Scripts</p>
+                <p class="text-ink-500 text-sm leading-relaxed" data-key="comp_1_desc">Runs daily. Pulls every search term from your Search campaigns, deduplicates them, and aggregates clicks and conversions over a 30-day window. Writes everything to your Google Sheet automatically.</p>
+            </div>
+        </div>
+
+        <!-- Analyzer -->
+        <div class="tile tile-dark col-span-12 md:col-span-4 min-h-[200px] md:min-h-[280px] tile-hover relative">
+            <div class="absolute inset-0 grid-pattern-dark opacity-40"></div>
+            <div class="relative z-10 flex items-start justify-between">
+                <div class="w-12 h-12 bg-brand rounded-2xl flex items-center justify-center">
+                    <i class="ph ph-brain text-ink-900 text-xl md:text-2xl"></i>
+                </div>
+                <span class="chip chip-on-dark">02 · Analyzer</span>
+            </div>
+            <div class="relative z-10">
+                <h3 class="font-extrabold text-lg md:text-xl text-white mb-1" data-key="comp_2_title">The Analyzer</h3>
+                <p class="text-xs text-brand font-bold mb-2" data-key="comp_2_where">Google Sheets → Apps Script</p>
+                <p class="text-gray-400 text-sm leading-relaxed" data-key="comp_2_desc">The intelligence layer. Sends search terms to AI in scalable batches. Each term returns with a classification, a 0–1 confidence score, and a plain-language explanation. Config-driven: define your industry once.</p>
+            </div>
+        </div>
+
+        <!-- Sheet template -->
+        <div class="tile tile-cream col-span-12 min-h-[180px] md:min-h-[220px] tile-hover">
+            <div class="md:flex md:items-center md:gap-6 h-full">
+                <div class="flex items-center gap-4 md:flex-shrink-0">
+                    <div class="w-12 h-12 bg-brand rounded-2xl flex items-center justify-center">
+                        <i class="ph ph-table text-ink-900 text-xl md:text-2xl"></i>
                     </div>
                     <div>
-                        <div class="flex items-center gap-3 mb-2">
-                            <h3 class="font-bold text-gray-900 text-base" data-key="comp_1_title">The Fetcher</h3>
-                            <span class="text-xs bg-blue-50 text-blue-700 font-semibold px-2.5 py-0.5 rounded-full" data-key="comp_1_where">Google Ads → Scripts</span>
-                        </div>
-                        <p class="text-gray-500 text-sm leading-relaxed" data-key="comp_1_desc">Runs daily on a schedule. Pulls every search term from your Search campaigns, deduplicates them, and aggregates clicks and conversions over a 30-day window. Writes everything into your Google Sheet automatically — no manual export needed.</p>
+                        <span class="chip chip-soft">03 · Sheet</span>
+                        <h3 class="font-extrabold text-lg md:text-xl mt-1" data-key="comp_3_title">The Google Sheet Template</h3>
+                        <p class="text-xs text-brand-dark font-bold" data-key="comp_3_where">Your dashboard</p>
                     </div>
                 </div>
+                <p class="text-ink-700 text-sm md:text-[15px] leading-relaxed mt-4 md:mt-0 md:ml-4" data-key="comp_3_desc">
+                    Four tabs, all automated. <strong>SearchTerms</strong> is your working surface — color-coded by classification, confidence-scored, with a one-click export. <strong>Config</strong> is the only thing you touch per account. <strong>Negative_Export</strong> holds validated negatives ready to push. <strong>Expansion_Ideas</strong> captures search terms worth building new campaigns around.
+                </p>
             </div>
-            <div class="fade-in component-card bg-white rounded-xl p-7 shadow-sm">
-                <div class="flex items-start gap-5">
-                    <div class="w-11 h-11 bg-brand-light rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <i class="ph ph-brain text-brand-dark text-2xl"></i>
-                    </div>
+        </div>
+    </section>
+
+    <!-- 4. CALCULATOR BENTO -->
+    <section class="bento">
+        <div class="tile tile-dark col-span-12 min-h-[600px] relative">
+            <div class="absolute inset-0 grid-pattern-dark opacity-40"></div>
+            <div class="relative z-10">
+                <div class="flex items-start justify-between flex-wrap gap-3 mb-5 md:mb-6">
                     <div>
-                        <div class="flex items-center gap-3 mb-2">
-                            <h3 class="font-bold text-gray-900 text-base" data-key="comp_2_title">The Analyzer</h3>
-                            <span class="text-xs bg-purple-50 text-purple-700 font-semibold px-2.5 py-0.5 rounded-full" data-key="comp_2_where">Google Sheets → Apps Script</span>
-                        </div>
-                        <p class="text-gray-500 text-sm leading-relaxed" data-key="comp_2_desc">The intelligence layer. Sends your search terms to AI in scalable batches for fast, cost-efficient classification. Each term returns with a classification, a confidence score between 0 and 1, and a plain-language explanation. Fully config-driven: define your industry, categories, and a few examples once — the AI handles the rest.</p>
+                        <span class="chip chip-on-dark mb-3" data-key="calc_eyebrow">Runtime &amp; cost estimator</span>
+                        <h2 class="display text-2xl md:text-4xl text-white mt-2 mb-2 md:mb-3" data-key="calc_title">How long will AI-Classify take on your account?</h2>
+                        <p class="text-gray-400 text-sm max-w-2xl leading-relaxed" data-key="calc_sub">Google Apps Script has a 6-minute execution limit. Drag the sliders to see how your keyword count and batch size affect runtime — and whether you'll need more than one run.</p>
+                    </div>
+                    <div class="w-12 h-12 bg-brand rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <i class="ph ph-stopwatch text-ink-900 text-xl md:text-2xl"></i>
                     </div>
                 </div>
-            </div>
-            <div class="fade-in component-card bg-white rounded-xl p-7 shadow-sm">
-                <div class="flex items-start gap-5">
-                    <div class="w-11 h-11 bg-brand-light rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <i class="ph ph-table text-brand-dark text-2xl"></i>
+
+                <h3 class="sr-only" data-key="calc_sr_title">Interactive runtime and cost calculator</h3>
+
+                <p class="calc-sub-label" data-key="calc_label_inputs">Inputs</p>
+                <div class="calc-slider-row">
+                    <span class="calc-slider-lbl" data-key="calc_slider_kw">Keywords to classify</span>
+                    <input type="range" min="10" max="2000" step="10" value="300" id="kwCount">
+                    <span class="calc-slider-val" id="kwOut">300</span>
+                </div>
+                <div class="calc-slider-row">
+                    <span class="calc-slider-lbl" data-key="calc_slider_bs">Batch size (Config)</span>
+                    <input type="range" min="5" max="20" step="1" value="15" id="bsCount">
+                    <span class="calc-slider-val" id="bsOut">15</span>
+                </div>
+                <div class="calc-slider-row">
+                    <span class="calc-slider-lbl" data-key="calc_slider_api">Avg API time / batch (s)</span>
+                    <input type="range" min="4" max="20" step="0.5" value="8" id="apiTime">
+                    <span class="calc-slider-val" id="apiOut">8.0s</span>
+                </div>
+
+                <p class="calc-sub-label" data-key="calc_label_runtime">Runtime estimate</p>
+                <div class="calc-metrics">
+                    <div class="calc-metric">
+                        <p class="calc-metric-lbl" data-key="calc_m_batches_lbl">Batches</p>
+                        <p class="calc-metric-val" id="mBatches">20</p>
+                        <p class="calc-metric-sub"><span data-key="calc_m_batches_of">of</span> <span id="mBs2">15</span> <span data-key="calc_m_batches_terms">terms</span></p>
                     </div>
+                    <div class="calc-metric">
+                        <p class="calc-metric-lbl" data-key="calc_m_dur_lbl">Duration</p>
+                        <p class="calc-metric-val" id="mDur">50s</p>
+                        <p class="calc-metric-sub" data-key="calc_m_dur_sub">6 min GAS limit</p>
+                    </div>
+                    <div class="calc-metric">
+                        <p class="calc-metric-lbl" data-key="calc_m_runs_lbl">Runs needed</p>
+                        <p class="calc-metric-val" id="mRuns">1</p>
+                        <p class="calc-metric-sub"><span data-key="calc_m_runs_press">press AI-Classify</span> <span id="mRunsX">1x</span></p>
+                    </div>
+                    <div class="calc-metric">
+                        <p class="calc-metric-lbl" data-key="calc_m_status_lbl">Status</p>
+                        <p class="calc-metric-val calc-ok" id="mStatus">Safe</p>
+                        <p class="calc-metric-sub" id="mStatusSub">fits in one run</p>
+                    </div>
+                </div>
+
+                <div class="calc-runs-box" id="runsBox"></div>
+
+                <p class="calc-sub-label" data-key="calc_label_cost">Cost estimate · gpt-4o-mini</p>
+                <div class="calc-metrics-cost">
+                    <div class="calc-metric">
+                        <p class="calc-metric-lbl" data-key="calc_m_tokin_lbl">Input tokens (est.)</p>
+                        <p class="calc-metric-val" id="mTokIn">—</p>
+                        <p class="calc-metric-sub" data-key="calc_m_tokin_sub">~400 per batch</p>
+                    </div>
+                    <div class="calc-metric">
+                        <p class="calc-metric-lbl" data-key="calc_m_tokout_lbl">Output tokens (est.)</p>
+                        <p class="calc-metric-val" id="mTokOut">—</p>
+                        <p class="calc-metric-sub" data-key="calc_m_tokout_sub">~120 per batch</p>
+                    </div>
+                    <div class="calc-metric">
+                        <p class="calc-metric-lbl" data-key="calc_m_cost_lbl">Total cost</p>
+                        <p class="calc-metric-val calc-ok" id="mCost">—</p>
+                        <p class="calc-metric-sub" data-key="calc_m_cost_sub">gpt-4o-mini rates</p>
+                    </div>
+                </div>
+
+                <p class="calc-sub-label" data-key="calc_label_chart">Batch size vs runtime (your keyword count)</p>
+                <div class="calc-legend-row">
+                    <span><span class="calc-ldot" style="background:#3fb950;"></span><span data-key="calc_legend_safe">Safe (&lt; 5 min)</span></span>
+                    <span><span class="calc-ldot" style="background:#d29922;"></span><span data-key="calc_legend_tight">Tight (5–6 min)</span></span>
+                    <span><span class="calc-ldot" style="background:#e8824a;"></span><span data-key="calc_legend_split">Split needed</span></span>
+                    <span><span class="calc-ldot-active"></span><span data-key="calc_legend_active">Your setting</span></span>
+                </div>
+                <div style="position:relative; width:100%; height:200px;">
+                    <canvas id="rtChart" role="img" aria-label="Runtime by batch size chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. INSTALL BENTO -->
+    <section id="how-to-install" class="bento" style="scroll-margin-top: 100px;">
+        <!-- Header tile -->
+        <div class="tile tile-cream col-span-12 md:col-span-4 min-h-[200px] md:min-h-[240px]">
+            <div>
+                <span class="chip chip-on-light" data-key="install_eyebrow">Setup guide</span>
+                <h2 class="display text-2xl md:text-3xl mt-3 mb-3" data-key="install_title">Up and running in minutes.</h2>
+            </div>
+            <p class="text-ink-500 text-sm" data-key="install_sub">The Config and API key are a one-time effort. If you can paste text and click a button, you can run this.</p>
+        </div>
+
+        <!-- 5 steps -->
+        <div class="tile tile-light col-span-12 md:col-span-4 min-h-[200px] md:min-h-[240px] tile-hover">
+            <div class="flex items-start gap-4">
+                <span class="step-num">1</span>
+                <span class="chip chip-soft mt-1">Sheet</span>
+            </div>
+            <div>
+                <p class="font-extrabold text-base mb-1.5" data-key="step1_title">Copy the Google Sheet template</p>
+                <p class="text-ink-500 text-sm leading-relaxed" data-key="step1_desc">Open the template from GitHub, make a copy, and fill in the Config tab — your industry, business name, and 5–8 example classifications.</p>
+            </div>
+        </div>
+
+        <div class="tile tile-light col-span-12 md:col-span-4 min-h-[200px] md:min-h-[240px] tile-hover">
+            <div class="flex items-start gap-4">
+                <span class="step-num">2</span>
+                <span class="chip chip-soft mt-1">Google Ads</span>
+            </div>
+            <div>
+                <p class="font-extrabold text-base mb-1.5" data-key="step2_title">Add the Fetcher to Google Ads</p>
+                <p class="text-ink-500 text-sm leading-relaxed" data-key="step2_desc">Tools → Scripts → New. Paste the Fetcher code, replace the Sheet URL, authorize it, and set it to run daily.</p>
+            </div>
+        </div>
+
+        <div class="tile tile-light col-span-12 md:col-span-4 min-h-[200px] md:min-h-[240px] tile-hover">
+            <div class="flex items-start gap-4">
+                <span class="step-num">3</span>
+                <span class="chip chip-soft mt-1">Apps Script</span>
+            </div>
+            <div>
+                <p class="font-extrabold text-base mb-1.5" data-key="step3_title">Add the Analyzer to your Sheet</p>
+                <p class="text-ink-500 text-sm leading-relaxed" data-key="step3_desc">Extensions → Apps Script. Paste the Analyzer code, save, and authorize. A new menu item appears in your Sheet.</p>
+            </div>
+        </div>
+
+        <div class="tile tile-light col-span-12 md:col-span-4 min-h-[200px] md:min-h-[240px] tile-hover">
+            <div class="flex items-start gap-4">
+                <span class="step-num">4</span>
+                <span class="chip chip-soft mt-1">Layout</span>
+            </div>
+            <div>
+                <p class="font-extrabold text-base mb-1.5" data-key="step4_title">Run the setup menu</p>
+                <p class="text-ink-500 text-sm leading-relaxed" data-key="step4_desc">Click AI Max NegativeIQ → Prepare Layout. Styles all four tabs, adds color coding, and sets up dropdowns.</p>
+            </div>
+        </div>
+
+        <div class="tile tile-dark col-span-12 md:col-span-4 min-h-[200px] md:min-h-[240px] tile-hover relative">
+            <div class="absolute inset-0 grid-pattern-dark opacity-40"></div>
+            <div class="relative z-10 flex items-start gap-4">
+                <span class="step-num">5</span>
+                <span class="chip chip-on-dark mt-1">Review</span>
+            </div>
+            <div class="relative z-10">
+                <p class="font-extrabold text-base text-white mb-1.5" data-key="step5_title">Let it run — then review</p>
+                <p class="text-gray-400 text-sm leading-relaxed" data-key="step5_desc">Next day, classify all new terms, review the AI's suggestions, validate, and push negatives to your account in one click.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CODE PREVIEW + GITHUB CTA combined bento -->
+    <section class="bento">
+        <!-- Code preview -->
+        <div class="tile tile-dark col-span-12 md:col-span-7 min-h-[420px] md:min-h-[480px] !p-0 relative overflow-hidden">
+            <div class="relative z-10 p-5 md:p-8 flex flex-col gap-4 h-full">
+                <div class="flex items-center justify-between">
                     <div>
-                        <div class="flex items-center gap-3 mb-2">
-                            <h3 class="font-bold text-gray-900 text-base" data-key="comp_3_title">The Google Sheet Template</h3>
-                            <span class="text-xs bg-green-50 text-green-700 font-semibold px-2.5 py-0.5 rounded-full" data-key="comp_3_where">Your dashboard</span>
-                        </div>
-                        <p class="text-gray-500 text-sm leading-relaxed" data-key="comp_3_desc">Four tabs, all automated. <strong>SearchTerms</strong> is your working surface — color-coded by classification, confidence-scored, with a one-click export. <strong>Config</strong> is the only thing you touch per account — industry, categories, example terms. <strong>Negative_Export</strong> holds validated negatives ready to push. <strong>Expansion_Ideas</strong> captures search terms worth building new campaigns around.</p>
+                        <span class="chip chip-on-dark" data-key="code_eyebrow">Under the hood</span>
+                        <h2 class="display text-xl md:text-2xl text-white mt-3" data-key="code_title">It's real code. Here's a slice.</h2>
+                    </div>
+                    <i class="ph ph-code text-brand text-2xl"></i>
+                </div>
+                <div class="term flex-1 overflow-auto">
+                    <div class="term-bar">
+                        <div class="dot bg-red-500"></div>
+                        <div class="dot bg-yellow-400"></div>
+                        <div class="dot bg-green-500"></div>
+                        <span class="text-gray-500 text-xs ml-3 font-mono">fetcher_v1.js — AI Max NegativeIQ</span>
+                    </div>
+                    <div class="p-4 md:p-5 text-[11px] md:text-xs leading-relaxed font-mono">
+                        <p class="text-gray-500">// Pull search terms from Google Ads → Sheet</p>
+                        <p class="mt-2"><span class="text-purple-400">function</span> <span class="text-yellow-300">fetchSearchTerms</span><span class="text-white">() {</span></p>
+                        <p class="pl-4 text-gray-500 mt-1">// Only pull terms with real traffic</p>
+                        <p class="pl-4"><span class="text-purple-400">const</span> <span class="text-blue-300">query</span> <span class="text-white">= </span><span class="text-orange-300">`SELECT</span></p>
+                        <p class="pl-8 text-orange-300">search_term_view.search_term,</p>
+                        <p class="pl-8 text-orange-300">metrics.clicks,</p>
+                        <p class="pl-8 text-orange-300">metrics.conversions</p>
+                        <p class="pl-4 text-orange-300">FROM search_term_view</p>
+                        <p class="pl-4 text-orange-300">WHERE segments.date DURING LAST_30_DAYS</p>
+                        <p class="pl-4 text-orange-300">AND metrics.clicks > 0</p>
+                        <p class="pl-4"><span class="text-orange-300">`</span><span class="text-white">;</span></p>
+                        <p class="pl-4 mt-3 text-gray-500">// Deduplicate — aggregate across campaigns</p>
+                        <p class="pl-4"><span class="text-green-400">AdsApp</span><span class="text-white">.</span><span class="text-green-400">search</span><span class="text-white">(query).</span><span class="text-green-400">forEach</span><span class="text-white">(row => {</span></p>
+                        <p class="pl-8"><span class="text-white">// ... aggregate logic</span></p>
+                        <p class="pl-4 text-white">});</p>
+                        <p class="pl-4 mt-2 text-gray-500">// Write new terms to Sheet</p>
+                        <p class="pl-4"><span class="text-green-400">writeNewTermsToSheet</span><span class="text-white">(seen, sheet);</span></p>
+                        <p class="text-white">}</p>
+                        <p class="mt-3 text-brand">// Full source on GitHub ↓</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
 
-<!-- ============================================================
-     3.5. RUNTIME & COST CALCULATOR
-============================================================ -->
-<section class="py-20" style="background: #0d1117;">
-    <div class="container mx-auto px-6 max-w-4xl">
-
-        <div class="text-center mb-10 fade-in">
-            <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3" data-key="calc_eyebrow">Runtime &amp; cost estimator</p>
-            <h2 class="text-3xl font-extrabold text-white mb-3" data-key="calc_title">How long will AI-Classify take on your account?</h2>
-            <p class="text-gray-400 text-sm max-w-xl mx-auto" data-key="calc_sub">Google Apps Script has a 6-minute execution limit. Drag the sliders to see how your keyword count and batch size affect runtime — and whether you'll need more than one run.</p>
-        </div>
-
-        <div class="fade-in calc-wrap">
-            <h3 class="sr-only" data-key="calc_sr_title">Interactive runtime and cost calculator for AI-Classify batch processing</h3>
-
-            <p class="calc-sub-label" data-key="calc_label_inputs">Inputs</p>
-            <div class="calc-slider-row">
-                <span class="calc-slider-lbl" data-key="calc_slider_kw">Keywords to classify</span>
-                <input type="range" min="10" max="2000" step="10" value="300" id="kwCount">
-                <span class="calc-slider-val" id="kwOut">300</span>
+        <!-- GitHub CTA tile -->
+        <div class="tile tile-brand col-span-12 md:col-span-5 min-h-[420px] md:min-h-[480px] text-center">
+            <div class="flex items-start justify-between">
+                <span class="chip chip-on-light">Open source</span>
+                <i class="fab fa-github text-3xl text-ink-900"></i>
             </div>
-            <div class="calc-slider-row">
-                <span class="calc-slider-lbl" data-key="calc_slider_bs">Batch size (Config)</span>
-                <input type="range" min="5" max="20" step="1" value="15" id="bsCount">
-                <span class="calc-slider-val" id="bsOut">15</span>
+            <div class="text-center">
+                <p class="text-6xl md:text-7xl mb-3">🐒</p>
+                <h2 class="display text-2xl md:text-3xl mb-3" data-key="github_title">Free. Open source.<br>No email required.</h2>
+                <p class="text-ink-900/70 text-sm leading-relaxed max-w-sm mx-auto" data-key="github_sub">If it saves you money, a GitHub star goes a long way. It helps other Google Ads specialists find the tool.</p>
             </div>
-            <div class="calc-slider-row">
-                <span class="calc-slider-lbl" data-key="calc_slider_api">Avg API time / batch (s)</span>
-                <input type="range" min="4" max="20" step="0.5" value="8" id="apiTime">
-                <span class="calc-slider-val" id="apiOut">8.0s</span>
-            </div>
-
-            <p class="calc-sub-label" data-key="calc_label_runtime">Runtime estimate</p>
-            <div class="calc-metrics">
-                <div class="calc-metric">
-                    <p class="calc-metric-lbl" data-key="calc_m_batches_lbl">Batches</p>
-                    <p class="calc-metric-val" id="mBatches">20</p>
-                    <p class="calc-metric-sub"><span data-key="calc_m_batches_of">of</span> <span id="mBs2">15</span> <span data-key="calc_m_batches_terms">terms</span></p>
-                </div>
-                <div class="calc-metric">
-                    <p class="calc-metric-lbl" data-key="calc_m_dur_lbl">Duration</p>
-                    <p class="calc-metric-val" id="mDur">50s</p>
-                    <p class="calc-metric-sub" data-key="calc_m_dur_sub">6 min GAS limit</p>
-                </div>
-                <div class="calc-metric">
-                    <p class="calc-metric-lbl" data-key="calc_m_runs_lbl">Runs needed</p>
-                    <p class="calc-metric-val" id="mRuns">1</p>
-                    <p class="calc-metric-sub"><span data-key="calc_m_runs_press">press AI-Classify</span> <span id="mRunsX">1x</span></p>
-                </div>
-                <div class="calc-metric">
-                    <p class="calc-metric-lbl" data-key="calc_m_status_lbl">Status</p>
-                    <p class="calc-metric-val calc-ok" id="mStatus">Safe</p>
-                    <p class="calc-metric-sub" id="mStatusSub">fits in one run</p>
-                </div>
-            </div>
-
-            <div class="calc-runs-box" id="runsBox"></div>
-
-            <p class="calc-sub-label" data-key="calc_label_cost">Cost estimate · gpt-4o-mini</p>
-            <div class="calc-metrics-cost">
-                <div class="calc-metric">
-                    <p class="calc-metric-lbl" data-key="calc_m_tokin_lbl">Input tokens (est.)</p>
-                    <p class="calc-metric-val" id="mTokIn">—</p>
-                    <p class="calc-metric-sub" data-key="calc_m_tokin_sub">~400 per batch</p>
-                </div>
-                <div class="calc-metric">
-                    <p class="calc-metric-lbl" data-key="calc_m_tokout_lbl">Output tokens (est.)</p>
-                    <p class="calc-metric-val" id="mTokOut">—</p>
-                    <p class="calc-metric-sub" data-key="calc_m_tokout_sub">~120 per batch</p>
-                </div>
-                <div class="calc-metric">
-                    <p class="calc-metric-lbl" data-key="calc_m_cost_lbl">Total cost</p>
-                    <p class="calc-metric-val calc-ok" id="mCost">—</p>
-                    <p class="calc-metric-sub" data-key="calc_m_cost_sub">gpt-4o-mini rates</p>
-                </div>
-            </div>
-
-            <p class="calc-sub-label" data-key="calc_label_chart">Batch size vs runtime (your keyword count)</p>
-            <div class="calc-legend-row">
-                <span><span class="calc-ldot" style="background:#3fb950;"></span><span data-key="calc_legend_safe">Safe (&lt; 5 min)</span></span>
-                <span><span class="calc-ldot" style="background:#d29922;"></span><span data-key="calc_legend_tight">Tight (5–6 min)</span></span>
-                <span><span class="calc-ldot" style="background:#e8824a;"></span><span data-key="calc_legend_split">Split needed</span></span>
-                <span><span class="calc-ldot-active"></span><span data-key="calc_legend_active">Your setting</span></span>
-            </div>
-            <div style="position:relative; width:100%; height:200px;">
-                <canvas id="rtChart" role="img" aria-label="Bar chart showing estimated runtime per batch size from 5 to 20. Green bars are safe, amber bars are tight, orange bars exceed the 6-minute limit. The current setting is highlighted in yellow with a white border.">Runtime by batch size.</canvas>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- 4. HOW TO INSTALL -->
-<section id="how-to-install" class="py-20 bg-white">
-    <div class="container mx-auto px-6 max-w-3xl">
-        <div class="text-center mb-14 fade-in">
-            <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3" data-key="install_eyebrow">Setup guide</p>
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-3" data-key="install_title">Up and running in minutes.</h2>
-            <p class="text-gray-500 text-sm" data-key="install_sub">The Config and API key are a one-time effort. If you can paste text and click a button, you can run this.</p>
-        </div>
-        <div class="space-y-6 stagger">
-            <div class="fade-in flex gap-5">
-                <div class="step-num flex-shrink-0">1</div>
-                <div class="pt-0.5">
-                    <p class="font-bold text-gray-900 text-sm mb-1" data-key="step1_title">Copy the Google Sheet template</p>
-                    <p class="text-gray-500 text-sm leading-relaxed" data-key="step1_desc">Open the template from GitHub, make your own copy, and fill in the Config tab — your industry, business name, and 5–8 example search term classifications. This is the only customization you'll ever need to do.</p>
-                </div>
-            </div>
-            <div class="fade-in flex gap-5">
-                <div class="step-num flex-shrink-0">2</div>
-                <div class="pt-0.5">
-                    <p class="font-bold text-gray-900 text-sm mb-1" data-key="step2_title">Add the Fetcher to Google Ads</p>
-                    <p class="text-gray-500 text-sm leading-relaxed" data-key="step2_desc">In Google Ads: Tools → Scripts → New. Paste the Fetcher code, replace the Sheet URL placeholder with your own Sheet URL, authorize it, and set it to run daily. That's it — it will run automatically every day from here on.</p>
-                </div>
-            </div>
-            <div class="fade-in flex gap-5">
-                <div class="step-num flex-shrink-0">3</div>
-                <div class="pt-0.5">
-                    <p class="font-bold text-gray-900 text-sm mb-1" data-key="step3_title">Add the Analyzer to your Sheet</p>
-                    <p class="text-gray-500 text-sm leading-relaxed" data-key="step3_desc">In your Google Sheet: Extensions → Apps Script. Paste the Analyzer code, save, and authorize. A new menu item "AI Max NegativeIQ" will appear in your Sheet toolbar.</p>
-                </div>
-            </div>
-            <div class="fade-in flex gap-5">
-                <div class="step-num flex-shrink-0">4</div>
-                <div class="pt-0.5">
-                    <p class="font-bold text-gray-900 text-sm mb-1" data-key="step4_title">Run the setup menu</p>
-                    <p class="text-gray-500 text-sm leading-relaxed" data-key="step4_desc">Click AI Max NegativeIQ → Prepare Layout. This styles all four tabs, adds color coding, and sets up the dropdowns. Run this once after setup, and again after each classification batch.</p>
-                </div>
-            </div>
-            <div class="fade-in flex gap-5">
-                <div class="step-num flex-shrink-0">5</div>
-                <div class="pt-0.5">
-                    <p class="font-bold text-gray-900 text-sm mb-1" data-key="step5_title">Let it run — then review</p>
-                    <p class="text-gray-500 text-sm leading-relaxed" data-key="step5_desc">Next day, open the Sheet. Click Step 2 to classify all new search terms. Review the AI's suggestions, correct anything you disagree with, tick the checkbox to validate, and push negatives to your account in one click.</p>
+            <div class="flex flex-col items-center gap-4">
+                <a id="github-cta-bottom" href="https://github.com/mamfredm/AI-Max-NegativeIQ" target="_blank" rel="noopener" class="btn-dark text-sm md:text-base" data-key="github_cta">
+                    <i class="fab fa-github text-lg"></i> View on GitHub
+                </a>
+                <div class="flex flex-wrap justify-center gap-3 text-xs text-ink-900/70">
+                    <span class="flex items-center gap-1.5"><i class="fas fa-lock"></i> <span data-key="github_trust_1">No data leaves your account</span></span>
                 </div>
             </div>
         </div>
-        <div class="mt-10 text-center fade-in">
-            <p class="text-xs text-gray-400" data-key="install_readme">The full setup guide with screenshots is in the README on GitHub.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- 5. CODE PREVIEW -->
-<section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6 max-w-4xl fade-in">
-        <p class="text-xs font-bold tracking-widest text-brand uppercase mb-4 text-center" data-key="code_eyebrow">Under the hood</p>
-        <h2 class="text-2xl font-extrabold text-gray-900 text-center mb-8" data-key="code_title">It's real code. Here's a slice of it.</h2>
-        <div class="terminal">
-            <div class="terminal-bar">
-                <div class="dot bg-red-500"></div>
-                <div class="dot bg-yellow-400"></div>
-                <div class="dot bg-green-500"></div>
-                <span class="text-gray-500 text-xs ml-3">fetcher_v1.js — AI Max NegativeIQ</span>
+    <!-- 7. BMC + UPSELL bento -->
+    <section class="bento">
+        <!-- BMC -->
+        <div class="tile tile-cream col-span-12 md:col-span-6 min-h-[300px] md:min-h-[340px]">
+            <div>
+                <span class="chip chip-soft" data-key="bmc_eyebrow">If it saved you budget</span>
+                <h2 class="display text-2xl md:text-3xl mt-3 mb-2" data-key="bmc_title">Buy me a coffee ☕</h2>
+                <p class="text-ink-500 text-sm leading-relaxed max-w-md" data-key="bmc_desc">The tool is free and always will be. But if it saved you wasted spend, a coffee goes a long way — and makes the next script happen faster.</p>
             </div>
-            <div class="p-6 overflow-x-auto text-xs leading-relaxed" style="font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;">
-                <p class="text-gray-500">// Pull search terms from Google Ads → write to Sheet</p>
-                <p class="mt-2"><span class="text-purple-400">function</span> <span class="text-yellow-300">fetchSearchTerms</span><span class="text-white">() {</span></p>
-                <p class="pl-4 text-gray-500 mt-1">// Only pull terms with real traffic — skip noise</p>
-                <p class="pl-4"><span class="text-purple-400">const</span> <span class="text-blue-300">query</span> <span class="text-white">= </span><span class="text-orange-300">`SELECT</span></p>
-                <p class="pl-8 text-orange-300">search_term_view.search_term,</p>
-                <p class="pl-8 text-orange-300">campaign.name,</p>
-                <p class="pl-8 text-orange-300">metrics.clicks,</p>
-                <p class="pl-8 text-orange-300">metrics.conversions</p>
-                <p class="pl-4 text-orange-300">FROM search_term_view</p>
-                <p class="pl-4 text-orange-300">WHERE segments.date DURING LAST_30_DAYS</p>
-                <p class="pl-4 text-orange-300">AND metrics.clicks > 0</p>
-                <p class="pl-4"><span class="text-orange-300">`</span><span class="text-white">;</span></p>
-                <p class="pl-4 mt-3 text-gray-500">// Deduplicate — aggregate clicks across campaigns</p>
-                <p class="pl-4"><span class="text-purple-400">const</span> <span class="text-blue-300">seen</span> <span class="text-white">= {};</span></p>
-                <p class="pl-4"><span class="text-green-400">AdsApp</span><span class="text-white">.</span><span class="text-green-400">search</span><span class="text-white">(query).</span><span class="text-green-400">forEach</span><span class="text-white">(row => {</span></p>
-                <p class="pl-8"><span class="text-purple-400">const</span> <span class="text-blue-300">term</span> <span class="text-white">= row.searchTermView.searchTerm;</span></p>
-                <p class="pl-8"><span class="text-purple-400">if</span> <span class="text-white">(seen[term]) {</span></p>
-                <p class="pl-12 text-white">seen[term].clicks      += row.metrics.clicks;</p>
-                <p class="pl-12 text-white">seen[term].conversions += row.metrics.conversions;</p>
-                <p class="pl-8 text-white">} <span class="text-purple-400">else</span> {</p>
-                <p class="pl-12 text-white">seen[term] = { clicks: row.metrics.clicks,</p>
-                <p class="pl-20 text-white">conversions: row.metrics.conversions };</p>
-                <p class="pl-8 text-white">}</p>
-                <p class="pl-4 text-white">});</p>
-                <p class="pl-4 mt-3 text-gray-500">// Write new terms to Sheet — skip already classified</p>
-                <p class="pl-4"><span class="text-green-400">writeNewTermsToSheet</span><span class="text-white">(seen, sheet);</span></p>
-                <p class="text-white">}</p>
-                <p class="mt-4 text-brand font-bold">// Full source on GitHub ↓</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 6. GITHUB CTA BAND -->
-<section class="py-20" style="background: #0d1117;">
-    <div class="container mx-auto px-6 max-w-3xl text-center fade-in">
-        <div class="text-5xl mb-6">🐒</div>
-        <h2 class="text-3xl md:text-4xl font-black text-white mb-4" data-key="github_title">Free. Open source. No email required.</h2>
-        <p class="text-gray-400 text-base mb-8 max-w-xl mx-auto" data-key="github_sub">If it saves you money, a GitHub star goes a long way. It helps other Google Ads specialists find the tool.</p>
-        <a id="github-cta-bottom" href="https://github.com/mamfredm/AI-Max-NegativeIQ" target="_blank" rel="noopener" class="github-btn text-lg" data-key="github_cta">
-            <i class="fab fa-github text-xl"></i>
-            View AI Max NegativeIQ on GitHub
-        </a>
-        <div class="mt-8 flex flex-wrap justify-center gap-6 text-xs text-gray-600">
-            <span class="flex items-center gap-2"><i class="fas fa-lock text-gray-700"></i> <span data-key="github_trust_1">No data leaves your account</span></span>
-            <span class="flex items-center gap-2"><i class="fas fa-code text-gray-700"></i> <span data-key="github_trust_2">Full source code visible</span></span>
-            <span class="flex items-center gap-2"><i class="fas fa-euro-sign text-gray-700"></i> <span data-key="github_trust_3">Free forever</span></span>
-        </div>
-    </div>
-</section>
-
-<!-- 6.5 BUY ME A COFFEE -->
-<section class="py-16 bg-gray-950 border-t border-white/5">
-    <div class="container mx-auto px-6 max-w-2xl text-center fade-in">
-        <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3" data-key="bmc_eyebrow">If it saved you budget</p>
-        <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-3" data-key="bmc_title">Buy me a coffee ☕</h2>
-        <p class="text-gray-400 text-sm mb-8 max-w-md mx-auto" data-key="bmc_desc">The tool is free and always will be. But if it saved you some wasted spend, a coffee goes a long way — and makes the next script happen faster.</p>
-
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
-
-            <!-- QR Code -->
-            <div class="flex flex-col items-center gap-3">
-                <div class="bg-white rounded-2xl p-3 w-36 h-36 flex items-center justify-center">
-                    <img src="assets/bmc-qr.png" alt="Buy Me a Coffee QR Code" class="w-full h-full object-contain">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="bg-white rounded-2xl p-2 w-24 h-24 flex items-center justify-center border border-black/5">
+                        <img src="assets/bmc-qr.png" alt="Buy Me a Coffee QR Code" class="w-full h-full object-contain"
+                             onerror="this.outerHTML='<div class=&quot;w-full h-full flex items-center justify-center text-ink-500 text-[10px] text-center&quot;>QR<br>placeholder</div>'">
+                    </div>
+                    <p class="text-xs text-ink-500" data-key="bmc_qr_label">Scan to buy<br>a coffee</p>
                 </div>
-                <p class="text-xs text-gray-600" data-key="bmc_qr_label">Scan to buy a coffee</p>
+                <a href="https://www.buymeacoffee.com/clickcapybara" target="_blank" rel="noopener" class="btn-brand text-sm">
+                    <span class="text-lg">☕</span> <span data-key="bmc_cta">Buy me a coffee</span>
+                </a>
             </div>
+        </div>
 
-            <!-- Divider -->
-            <div class="hidden sm:flex flex-col items-center gap-2">
-                <div class="w-px h-10 bg-white/10"></div>
-                <span class="text-xs text-gray-600">or</span>
-                <div class="w-px h-10 bg-white/10"></div>
+        <!-- Upsell -->
+        <div class="tile tile-dark col-span-12 md:col-span-6 min-h-[300px] md:min-h-[340px] relative">
+            <div class="absolute inset-0 grid-pattern-dark opacity-40"></div>
+            <div class="relative z-10">
+                <div class="flex items-start justify-between">
+                    <span class="chip chip-on-dark" data-key="upsell_eyebrow">Want it done for you?</span>
+                    <i class="ph ph-rocket-launch text-brand text-2xl"></i>
+                </div>
+                <h2 class="display text-2xl md:text-3xl text-white mt-4 md:mt-5 mb-3" data-key="upsell_title">Want this running on your account today?</h2>
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed max-w-md" data-key="upsell_desc">I can set this up, customize the Config for your industry, and have it classifying your search terms by tomorrow. That's what I do.</p>
             </div>
-            <span class="sm:hidden text-xs text-gray-600">or</span>
-
-            <!-- Link button -->
-            <a href="https://www.buymeacoffee.com/clickcapybara" target="_blank" rel="noopener"
-               class="inline-flex items-center gap-3 bg-[#fcba02] text-gray-900 font-bold py-4 px-7 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg hover:shadow-brand/30">
-                <span class="text-xl">☕</span>
-                <span data-key="bmc_cta">Buy me a coffee</span>
+            <a href="index.html#contact" class="relative z-10 btn-brand text-sm md:text-base self-start" data-key="upsell_cta">
+                <i class="ph ph-arrow-right"></i> Get in touch
             </a>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- 7. SOFT UPSELL -->
-<section class="upsell-band py-16">
-    <div class="container mx-auto px-6 max-w-3xl text-center fade-in">
-        <p class="text-xs font-bold tracking-widest text-brand-dark uppercase mb-4" data-key="upsell_eyebrow">Want it done for you?</p>
-        <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-4" data-key="upsell_title">Want this running on your account today?</h2>
-        <p class="text-gray-600 text-base mb-8 max-w-xl mx-auto" data-key="upsell_desc">I can set this up, customize the Config for your industry, and have it classifying your search terms by tomorrow. That's what I do.</p>
-        <a href="index.html#contact" class="inline-block bg-gray-900 text-white font-bold py-4 px-8 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg" data-key="upsell_cta">Get in touch →</a>
-    </div>
-</section>
-<!-- 8. PMAX TEASER -->
-<section class="py-10 bg-gray-950 border-t border-white/5">
-    <div class="container mx-auto px-6 max-w-3xl text-center fade-in">
-        <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3" data-key="pmax_eyebrow">What's next</p>
-        <p class="text-white font-bold text-lg mb-1" data-key="pmax_title">Running Performance Max? v2 is on its way.</p>
-        <p class="text-gray-500 text-sm mb-3 max-w-xl mx-auto" data-key="pmax_desc">The current version covers Search campaigns. A variant that handles PMax search terms is in development — if you want to know when it's ready, just drop me a message.</p>
-        <a href="index.html#contact" class="text-brand text-sm font-semibold hover:underline" data-key="pmax_cta">Let me know you're interested →</a>
-    </div>
-</section>
+    <!-- 8. PMAX TEASER -->
+    <section class="bento">
+        <div class="tile tile-brand-soft col-span-12 min-h-[140px] md:min-h-[160px] !flex-row items-center justify-between flex-wrap gap-4">
+            <div class="flex items-start md:items-center gap-4 flex-1 min-w-0">
+                <div class="w-12 h-12 bg-ink-900 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <i class="ph ph-flag text-brand text-xl md:text-2xl"></i>
+                </div>
+                <div class="min-w-0">
+                    <span class="eyebrow text-brand-dark" data-key="pmax_eyebrow">What's next</span>
+                    <p class="font-extrabold text-base md:text-xl mt-1" data-key="pmax_title">Running Performance Max? v2 is on its way.</p>
+                    <p class="text-ink-500 text-xs md:text-sm mt-1 leading-relaxed" data-key="pmax_desc">The current version covers Search campaigns. A PMax variant is in development — drop me a message to be notified.</p>
+                </div>
+            </div>
+            <a href="index.html#contact" class="text-ink-900 text-sm font-bold hover:underline flex items-center gap-2 flex-shrink-0" data-key="pmax_cta">
+                Let me know <i class="ph ph-arrow-right"></i>
+            </a>
+        </div>
+    </section>
 
 </main>
 
 <!-- FOOTER -->
-<footer class="bg-gray-950 text-gray-500 py-8">
-    <div class="container mx-auto px-6 text-center text-sm">
-        <div class="flex justify-center items-center gap-2 mb-4">
-            <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara" class="w-5 h-5 opacity-40">
-            <p data-key="footer_copy">&copy; 2025 Click-Capybara · The Google Ads specialist in your corner.</p>
+<footer class="container mx-auto px-4 md:px-6 pb-8">
+    <div class="tile tile-dark min-h-[100px]" style="flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div class="flex items-center gap-3">
+            <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara" class="w-6 h-6 opacity-70" onerror="this.outerHTML='<span class=&quot;logo-fallback w-6 h-6 text-[10px]&quot;>CC</span>'">
+            <p class="text-gray-400 text-xs" data-key="footer_copy">&copy; 2025 Click-Capybara · The Google Ads specialist in your corner.</p>
         </div>
-        <div class="flex justify-center gap-6 text-xs">
-            <a href="privacy.html" class="hover:text-white transition" data-key="footer_privacy">Privacy Policy</a>
-            <a href="index.html#contact" class="hover:text-white transition" data-key="footer_contact">Contact</a>
-            <a href="free-script.html" class="hover:text-white transition" data-key="footer_script">Tools & Scripts</a>
+        <div class="flex items-center gap-4 md:gap-5 text-xs">
+            <a href="privacy.html" class="text-gray-400 hover:text-brand transition" data-key="footer_privacy">Privacy Policy</a>
+            <a href="index.html#contact" class="text-gray-400 hover:text-brand transition" data-key="footer_contact">Contact</a>
+            <a href="free-script.html" class="text-gray-400 hover:text-brand transition" data-key="footer_script">Tools &amp; Scripts</a>
         </div>
     </div>
 </footer>
 
-<!-- Chart.js for the calculator -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 
 <script>
-// ── Mobile menu ──────────────────────────────────────
+// ── Mobile menu ───────────────────────────
 document.getElementById('mobile-menu-button').addEventListener('click', () => {
     document.getElementById('mobile-menu').classList.toggle('hidden');
 });
 
-// ── GitHub CTA click tracking ─────────────────────────
-['github-cta-hero', 'github-cta-bottom'].forEach(function(id) {
+['github-cta-hero','github-cta-bottom'].forEach(function(id){
     var el = document.getElementById(id);
-    if (el) {
-        el.addEventListener('click', function() {
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                event: 'github_cta_click',
-                cta_position: id === 'github-cta-hero' ? 'hero' : 'bottom'
-            });
-        });
-    }
+    if(el) el.addEventListener('click', function(){
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event:'github_cta_click', cta_location:id });
+    });
 });
 
-// ── Sticky header shadow ─────────────────────────────
-window.addEventListener('scroll', () => {
-    document.getElementById('site-header').classList.toggle('header-scrolled', window.scrollY > 10);
-});
+// ── Calculator ───────────────────────────
+(function(){
+    const GAS = 350, WPT = 0.08, SLEEP = 0.5;
+    const TIN = 400, TOUT = 120;
+    const PIN = 0.00000015, POUT = 0.0000006;
+    let chart = null;
 
-// ── Calculator ───────────────────────────────────────
-(function() {
-    const GAS=360, SLEEP=2, WPT=0.15, PIN=0.15/1e6, POUT=0.60/1e6, TIN=400, TOUT=120;
-    let chart;
+    const fmt = s => s < 60 ? s+'s' : Math.floor(s/60)+'m '+(s%60)+'s';
+    const getLang = () => localStorage.getItem('preferredLang') || 'en';
 
-    // Dynamic strings that can't be handled via data-key (generated in JS)
     const calcStrings = {
         en: {
-            status_safe:      'Safe',
-            status_safe_sub:  'fits in one run',
-            status_tight:     'Tight',
-            status_tight_sub: 'close to limit',
-            status_err_sub:   'split needed',
-            runs_single: (kw, dur) => `All <strong>${kw} keywords</strong> fit in a <strong>single run</strong> (~${dur}). Press AI-Classify once and you're done.`,
-            runs_multi:  (kw, bs, perRun, runs) => `With <strong>${kw} keywords</strong> at batch size <strong>${bs}</strong>, each run handles ~<strong>${perRun} keywords</strong>. Press AI-Classify <strong>${runs} times</strong> — it resumes from <em>AI Queue</em> rows automatically.`,
+            status_safe: 'Safe', status_safe_sub: 'fits in one run',
+            status_tight: 'Tight', status_tight_sub: 'one run, close to limit',
+            status_err_sub: 'split into multiple runs',
+            runs_single: (kw,t) => `Press <strong>AI-Classify</strong> once. All <strong>${kw}</strong> terms will be classified in <strong>${t}</strong>.`,
+            runs_multi: (kw,bs,perRun,runs) => `With batch size <strong>${bs}</strong>, you'll process ~<strong>${perRun}</strong> terms per run. Press <strong>AI-Classify ${runs}x</strong> to cover all <strong>${kw}</strong> terms.`
         },
         de: {
-            status_safe:      'Sicher',
-            status_safe_sub:  'passt in einen Lauf',
-            status_tight:     'Knapp',
-            status_tight_sub: 'nah am Limit',
-            status_err_sub:   'Aufteilung nötig',
-            runs_single: (kw, dur) => `Alle <strong>${kw} Keywords</strong> passen in <strong>einen Lauf</strong> (~${dur}). AI-Classify einmal drücken — fertig.`,
-            runs_multi:  (kw, bs, perRun, runs) => `Bei <strong>${kw} Keywords</strong> und Batch-Größe <strong>${bs}</strong> verarbeitet jeder Lauf ~<strong>${perRun} Keywords</strong>. AI-Classify <strong>${runs} Mal</strong> drücken — es setzt bei <em>AI Queue</em>-Zeilen automatisch fort.`,
+            status_safe: 'Sicher', status_safe_sub: 'in einem Lauf',
+            status_tight: 'Knapp', status_tight_sub: 'ein Lauf, knapp am Limit',
+            status_err_sub: 'in mehrere Läufe aufteilen',
+            runs_single: (kw,t) => `<strong>AI-Classify</strong> einmal drücken. Alle <strong>${kw}</strong> Begriffe werden in <strong>${t}</strong> klassifiziert.`,
+            runs_multi: (kw,bs,perRun,runs) => `Mit Batch-Größe <strong>${bs}</strong> verarbeitest du ~<strong>${perRun}</strong> Begriffe pro Lauf. <strong>AI-Classify ${runs}x</strong> drücken für alle <strong>${kw}</strong> Begriffe.`
         }
     };
 
-    function getLang() {
-        return localStorage.getItem('preferredLang') === 'de' ? 'de' : 'en';
-    }
-
-    function fmt(s) {
-        const m = Math.floor(s/60), sec = s%60;
-        return m > 0 ? m+'m '+sec+'s' : sec+'s';
-    }
-
-    function calc() {
-        const kw   = parseInt(document.getElementById('kwCount').value);
-        const bs   = parseInt(document.getElementById('bsCount').value);
+    function calc(){
+        const kw = parseInt(document.getElementById('kwCount').value);
+        const bs = parseInt(document.getElementById('bsCount').value);
         const apiT = parseFloat(document.getElementById('apiTime').value);
-        const s    = calcStrings[getLang()];
-
-        document.getElementById('kwOut').textContent  = kw;
-        document.getElementById('bsOut').textContent  = bs;
+        const s = calcStrings[getLang()];
+        document.getElementById('kwOut').textContent = kw;
+        document.getElementById('bsOut').textContent = bs;
         document.getElementById('apiOut').textContent = apiT.toFixed(1)+'s';
-
-        const batches  = Math.ceil(kw/bs);
+        const batches = Math.ceil(kw/bs);
         const perBatch = apiT + bs*WPT + SLEEP;
         const totalSec = Math.round(batches*perBatch);
-        const runs     = Math.ceil(totalSec/GAS);
-
+        const runs = Math.ceil(totalSec/GAS);
         document.getElementById('mBatches').textContent = batches;
-        document.getElementById('mBs2').textContent     = bs;
-        document.getElementById('mRuns').textContent    = runs;
-        document.getElementById('mRunsX').textContent   = runs+'x';
-        document.getElementById('mDur').textContent     = fmt(totalSec);
-
-        const statusEl  = document.getElementById('mStatus');
+        document.getElementById('mBs2').textContent = bs;
+        document.getElementById('mRuns').textContent = runs;
+        document.getElementById('mRunsX').textContent = runs+'x';
+        document.getElementById('mDur').textContent = fmt(totalSec);
+        const statusEl = document.getElementById('mStatus');
         const statusSub = document.getElementById('mStatusSub');
-        if (totalSec <= 300) {
-            statusEl.className   = 'calc-metric-val calc-ok';
-            statusEl.textContent = s.status_safe;
-            statusSub.textContent = s.status_safe_sub;
-        } else if (totalSec <= GAS) {
-            statusEl.className   = 'calc-metric-val calc-warn';
-            statusEl.textContent = s.status_tight;
-            statusSub.textContent = s.status_tight_sub;
-        } else {
-            statusEl.className   = 'calc-metric-val calc-err';
-            statusEl.textContent = runs+' '+( getLang()==='de' ? 'Läufe nötig' : 'runs needed' );
-            statusSub.textContent = s.status_err_sub;
-        }
-
-        const box    = document.getElementById('runsBox');
+        if(totalSec <= 300){ statusEl.className='calc-metric-val calc-ok'; statusEl.textContent=s.status_safe; statusSub.textContent=s.status_safe_sub; }
+        else if(totalSec <= GAS){ statusEl.className='calc-metric-val calc-warn'; statusEl.textContent=s.status_tight; statusSub.textContent=s.status_tight_sub; }
+        else { statusEl.className='calc-metric-val calc-err'; statusEl.textContent=runs+' '+(getLang()==='de'?'Läufe nötig':'runs needed'); statusSub.textContent=s.status_err_sub; }
+        const box = document.getElementById('runsBox');
         const perRun = Math.floor(GAS/perBatch)*bs;
-        box.innerHTML = runs === 1 ? s.runs_single(kw, fmt(totalSec)) : s.runs_multi(kw, bs, perRun, runs);
-
+        box.innerHTML = runs===1 ? s.runs_single(kw,fmt(totalSec)) : s.runs_multi(kw,bs,perRun,runs);
         const tokIn = batches*TIN, tokOut = batches*TOUT;
-        const cost  = tokIn*PIN + tokOut*POUT;
-        document.getElementById('mTokIn').textContent  = tokIn.toLocaleString();
+        const cost = tokIn*PIN + tokOut*POUT;
+        document.getElementById('mTokIn').textContent = tokIn.toLocaleString();
         document.getElementById('mTokOut').textContent = tokOut.toLocaleString();
         const costEl = document.getElementById('mCost');
         costEl.textContent = cost < 0.01 ? '< $0.01' : '$'+cost.toFixed(4);
-        costEl.className   = cost < 0.05 ? 'calc-metric-val calc-ok' : cost < 0.20 ? 'calc-metric-val calc-warn' : 'calc-metric-val calc-err';
-
+        costEl.className = cost < 0.05 ? 'calc-metric-val calc-ok' : cost < 0.20 ? 'calc-metric-val calc-warn' : 'calc-metric-val calc-err';
         updateChart(kw, apiT, bs);
     }
 
-    function updateChart(kw, apiT, activeBs) {
+    function updateChart(kw, apiT, activeBs){
         const sizes = [5,8,10,12,15,18,20];
         const durations = sizes.map(bs => Math.round(Math.ceil(kw/bs)*(apiT+bs*WPT+SLEEP)));
-        const colors      = sizes.map((bs,i) => bs===activeBs ? '#fcba02' : durations[i]<=300 ? '#3fb950' : durations[i]<=GAS ? '#d29922' : '#e8824a');
-        const borders     = sizes.map(bs => bs===activeBs ? 'rgba(255,255,255,0.75)' : 'transparent');
-        const borderWidths= sizes.map(bs => bs===activeBs ? 2 : 0);
-
-        if (chart) chart.destroy();
+        const colors = sizes.map((bs,i) => bs===activeBs ? '#fcba02' : durations[i]<=300 ? '#3fb950' : durations[i]<=GAS ? '#d29922' : '#e8824a');
+        const borders = sizes.map(bs => bs===activeBs ? 'rgba(255,255,255,0.75)' : 'transparent');
+        const bw = sizes.map(bs => bs===activeBs ? 2 : 0);
+        if(chart) chart.destroy();
         chart = new Chart(document.getElementById('rtChart'), {
-            type: 'bar',
-            data: {
-                labels: sizes.map(b => 'batch '+b),
-                datasets: [{
-                    data: durations,
-                    backgroundColor: colors,
-                    borderColor: borders,
-                    borderWidth: borderWidths,
-                    borderRadius: 4,
-                    borderSkipped: false
-                }]
+            type:'bar',
+            data:{ labels:sizes.map(b => 'batch '+b), datasets:[{ data:durations, backgroundColor:colors, borderColor:borders, borderWidth:bw, borderRadius:6, borderSkipped:false }] },
+            options:{ responsive:true, maintainAspectRatio:false,
+                plugins:{ legend:{display:false},
+                    tooltip:{ callbacks:{label:ctx=>{const s=ctx.raw,r=Math.ceil(s/GAS);return fmt(s)+(r>1?' — '+r+' runs':' — 1 run');}},
+                        backgroundColor:'#161b22', borderColor:'#30363d', borderWidth:1, titleColor:'#f0f6fc', bodyColor:'#8b949e', padding:10 } },
+                scales:{ y:{ beginAtZero:true, grid:{color:'rgba(255,255,255,0.05)'}, border:{display:false}, ticks:{callback:v=>v+'s', color:'#6e7681', font:{size:11}} },
+                    x:{ grid:{display:false}, border:{display:false}, ticks:{color:'#6e7681', font:{size:11}, autoSkip:false} } },
+                animation:{duration:150}
             },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        callbacks: { label: ctx => { const s=ctx.raw, r=Math.ceil(s/GAS); return fmt(s)+(r>1?' — '+r+' runs':' — 1 run'); } },
-                        backgroundColor: '#21262d', borderColor: '#30363d', borderWidth: 1,
-                        titleColor: '#f0f6fc', bodyColor: '#8b949e', padding: 10
-                    }
-                },
-                scales: {
-                    y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' }, border: { display: false }, ticks: { callback: v => v+'s', color: '#6e7681', font: { size: 11 } } },
-                    x: { grid: { display: false }, border: { display: false }, ticks: { color: '#6e7681', font: { size: 11 }, autoSkip: false } }
-                },
-                animation: { duration: 150 }
-            },
-            plugins: [{
-                id: 'limitLine',
-                afterDraw(ch) {
-                    const { ctx, chartArea: { left, right }, scales: { y } } = ch;
-                    const yp = y.getPixelForValue(GAS);
-                    ctx.save();
-                    ctx.strokeStyle = '#e8824a'; ctx.lineWidth = 1; ctx.setLineDash([4,3]);
-                    ctx.beginPath(); ctx.moveTo(left,yp); ctx.lineTo(right,yp); ctx.stroke();
-                    ctx.fillStyle = '#e8824a'; ctx.font = '10px Inter, sans-serif';
-                    ctx.fillText('6 min GAS limit', right-96, yp-5);
-                    ctx.restore();
-                }
-            }]
+            plugins:[{ id:'limitLine', afterDraw(ch){const{ctx,chartArea:{left,right},scales:{y}}=ch;const yp=y.getPixelForValue(GAS);ctx.save();ctx.strokeStyle='#e8824a';ctx.lineWidth=1;ctx.setLineDash([4,3]);ctx.beginPath();ctx.moveTo(left,yp);ctx.lineTo(right,yp);ctx.stroke();ctx.fillStyle='#e8824a';ctx.font='10px Inter, sans-serif';ctx.fillText('6 min GAS limit',right-96,yp-5);ctx.restore();} }]
         });
     }
 
-    ['kwCount','bsCount','apiTime'].forEach(id =>
-        document.getElementById(id).addEventListener('input', calc)
-    );
+    ['kwCount','bsCount','apiTime'].forEach(id => document.getElementById(id).addEventListener('input', calc));
     calc();
-
-    // Re-run when language switches so dynamic strings update immediately
     window.addEventListener('calcLangChange', calc);
 })();
 
-// ── Language switcher ────────────────────────────────
-if (typeof translations !== 'undefined') {
-    const langEnBtn  = document.getElementById('lang-en');
-    const langDeBtn  = document.getElementById('lang-de');
+// ── Language switcher ───────────────────────────
+if(typeof translations !== 'undefined'){
+    const langEnBtn = document.getElementById('lang-en');
+    const langDeBtn = document.getElementById('lang-de');
     const mLangEnBtn = document.getElementById('mobile-lang-en');
     const mLangDeBtn = document.getElementById('mobile-lang-de');
 
     const scriptTranslations = {
         en: {
             script_page_title: "AI Max NegativeIQ — Free Google Ads Tool",
-            script_meta_desc: "Free AI-powered Google Ads tool. Classifies search terms from Search campaigns, protects converting keywords, pushes negatives automatically.",
             script_eyebrow: "Free Google Ads Tool",
-            script_h1: "AI Max NegativeIQ",
+            script_h1: "AI Max <span class=\"hl\">NegativeIQ</span>",
             script_tagline: "Stop guessing which search terms are wasting your budget. Let AI tell you.",
-            script_sub: "A free, open-source tool that connects your Google Ads account to AI, classifies every search term, protects what's converting, and tells you exactly what to add as a negative. Built for Search campaigns. Support for more is on the roadmap, V2 is in development.",
+            script_sub: "A free, open-source tool that connects your Google Ads account to AI, classifies every search term, protects what's converting, and tells you exactly what to add as a negative. Built for Search campaigns. V2 is in development.",
             script_cta_github: '<i class="fab fa-github text-lg"></i> View on GitHub',
-            script_cta_setup: '<i class="ph ph-arrow-down text-xs"></i> How to install',
-            script_lang_badge: '<i class="ph ph-translate"></i> Available in English and German',
-            script_badge_free: "Free &amp; open source",
-            script_badge_safe: "No external servers",
+            script_cta_setup: '<i class="ph ph-arrow-down"></i> How to install',
+            script_lang_badge: '<i class="ph ph-translate"></i> EN & DE',
+            script_badge_free: '<i class="ph ph-git-branch"></i> Free & open source',
+            script_badge_safe: '<i class="ph ph-shield-check"></i> No external servers',
             what_eyebrow: "What it actually does",
             what_title: "Your search terms, intelligently classified by AI.",
-            what_p1: "Most Google Ads accounts are leaking budget on search terms that will never convert. Job seekers, competitors, irrelevant queries. Manually reviewing them is slow, error-prone, and doesn't scale. AI Max NegativeIQ automates the entire process.",
-            what_p2: "Every day, the Fetcher pulls your latest search terms from Search campaigns into a Google Sheet. The Analyzer sends them in batches to an AI, which classifies each one based on your industry, your business, and your conversion data. Not generic rules. Actual context.",
-            what_p3: "Every term gets a classification, a confidence score, and a one-line explanation of why the AI made that call. You review, correct if needed, and push negatives back into your account in one click. The system learns from your corrections over time.",
+            what_p1: "Most Google Ads accounts are leaking budget on search terms that will never convert — job seekers, competitors, irrelevant queries. Manually reviewing them is slow, error-prone, and doesn't scale. AI Max NegativeIQ automates the entire process.",
+            what_p2: "Every day, the Fetcher pulls your latest search terms into a Google Sheet. The Analyzer sends them to an AI — which classifies each one based on your industry, your business, and your conversion data. Not generic rules. Actual context.",
+            what_p3: "Every term gets a classification, a confidence score, and a one-line explanation. You review, correct if needed, and push negatives back into your account in one click.",
             conv_protect_title: "Conversion protection — always on",
-            conv_protect_desc: "Any search term that has driven a conversion is automatically protected. The tool will never flag it as a negative, regardless of how it looks on the surface.",
+            conv_protect_desc: "Any term that has driven a conversion is automatically protected — never flagged.",
             mockup_note: "Example output. Your real data, your real account.",
-            inside_eyebrow: "What you get",
-            inside_title: "Three components. One complete system.",
+            inside_eyebrow: "What you get", inside_title: "Three components. One complete system.",
             comp_1_title: "The Fetcher", comp_1_where: "Google Ads → Scripts",
-            comp_1_desc: "Runs daily on a schedule. Pulls every search term from your Search campaigns, deduplicates them, and aggregates clicks and conversions over a 30-day window. Writes everything into your Google Sheet automatically, no manual export needed.",
+            comp_1_desc: "Runs daily. Pulls every search term from your Search campaigns, deduplicates them, and aggregates clicks and conversions over a 30-day window. Writes everything to your Google Sheet automatically.",
             comp_2_title: "The Analyzer", comp_2_where: "Google Sheets → Apps Script",
-            comp_2_desc: "The intelligence layer. Sends your search terms to AI in scalable batches for fast, cost-efficient classification. Each term returns with a classification, a confidence score between 0 and 1, and a plain-language explanation. Fully config-driven: define your industry, categories, and a few examples once. The AI handles the rest.",
+            comp_2_desc: "The intelligence layer. Sends search terms to AI in scalable batches. Each term returns with a classification, a 0–1 confidence score, and a plain-language explanation. Config-driven: define your industry once.",
             comp_3_title: "The Google Sheet Template", comp_3_where: "Your dashboard",
-            comp_3_desc: "Four tabs, all automated. <strong>SearchTerms</strong> is your working surface — color-coded by classification, confidence-scored, with a one-click export. <strong>Config</strong> is the only thing you touch per account. <strong>Negative_Export</strong> holds validated negatives ready to push. <strong>Expansion_Ideas</strong> captures terms worth building new campaigns around.",
-            install_eyebrow: "Setup guide",
-            install_title: "Up and running in minutes.",
+            comp_3_desc: "Four tabs, all automated. <strong>SearchTerms</strong> is your working surface — color-coded by classification, confidence-scored, with a one-click export. <strong>Config</strong> is the only thing you touch per account. <strong>Negative_Export</strong> holds validated negatives ready to push. <strong>Expansion_Ideas</strong> captures search terms worth building new campaigns around.",
+            install_eyebrow: "Setup guide", install_title: "Up and running in minutes.",
             install_sub: "The Config and API key are a one-time effort. If you can paste text and click a button, you can run this.",
-            step1_title: "Copy the Google Sheet template", step1_desc: "Open the template from GitHub, make your own copy, and fill in the Config tab — your industry, business name, and 5–8 example search term classifications. This is the only customization you'll ever need to do.",
-            step2_title: "Add the Fetcher to Google Ads", step2_desc: "In Google Ads: Tools → Scripts → New. Paste the Fetcher code, replace the Sheet URL placeholder with your own Sheet URL, authorize it, and set it to run daily.",
-            step3_title: "Add the Analyzer to your Sheet", step3_desc: "In your Google Sheet: Extensions → Apps Script. Paste the Analyzer code, save, and authorize. A new menu item 'AI Max NegativeIQ' will appear in your Sheet toolbar.",
-            step4_title: "Run the setup menu", step4_desc: "Click AI Max NegativeIQ → Prepare Layout. This styles all four tabs, adds color coding, and sets up the dropdowns.",
-            step5_title: "Let it run — then review", step5_desc: "Next day, open the Sheet. Click Step 2 to classify all new search terms. Review, correct anything you disagree with, validate, and push negatives in one click.",
-            install_readme: "The full setup guide with screenshots is in the README on GitHub.",
-            code_eyebrow: "Under the hood",
-            code_title: "It's real code. Here's a slice of it.",
-            github_title: "Free. Open source. No email required.",
+            step1_title: "Copy the Google Sheet template", step1_desc: "Open the template from GitHub, make a copy, and fill in the Config tab — your industry, business name, and 5–8 example classifications.",
+            step2_title: "Add the Fetcher to Google Ads", step2_desc: "Tools → Scripts → New. Paste the Fetcher code, replace the Sheet URL, authorize it, and set it to run daily.",
+            step3_title: "Add the Analyzer to your Sheet", step3_desc: "Extensions → Apps Script. Paste the Analyzer code, save, and authorize. A new menu item appears in your Sheet.",
+            step4_title: "Run the setup menu", step4_desc: "Click AI Max NegativeIQ → Prepare Layout. Styles all four tabs, adds color coding, and sets up dropdowns.",
+            step5_title: "Let it run — then review", step5_desc: "Next day, classify all new terms, review the AI's suggestions, validate, and push negatives to your account in one click.",
+            code_eyebrow: "Under the hood", code_title: "It's real code. Here's a slice.",
+            github_title: "Free. Open source.<br>No email required.",
             github_sub: "If it saves you money, a GitHub star goes a long way. It helps other Google Ads specialists find the tool.",
-            github_cta: '<i class="fab fa-github text-xl"></i> View AI Max NegativeIQ on GitHub',
+            github_cta: '<i class="fab fa-github text-lg"></i> View on GitHub',
             github_trust_1: "No data leaves your account",
-            github_trust_2: "Full source code visible",
-            github_trust_3: "Free forever",
-            upsell_eyebrow: "Want it done for you?",
-            upsell_title: "Want this running on your account today?",
+            bmc_eyebrow: "If it saved you budget", bmc_title: "Buy me a coffee ☕",
+            bmc_desc: "The tool is free and always will be. But if it saved you wasted spend, a coffee goes a long way — and makes the next script happen faster.",
+            bmc_qr_label: "Scan to buy<br>a coffee", bmc_cta: "Buy me a coffee",
+            upsell_eyebrow: "Want it done for you?", upsell_title: "Want this running on your account today?",
             upsell_desc: "I can set this up, customize the Config for your industry, and have it classifying your search terms by tomorrow. That's what I do.",
-            upsell_cta: "Get in touch →",
+            upsell_cta: '<i class="ph ph-arrow-right"></i> Get in touch',
+            pmax_eyebrow: "What's next", pmax_title: "Running Performance Max? v2 is on its way.",
+            pmax_desc: "The current version covers Search campaigns. A PMax variant is in development — drop me a message to be notified.",
+            pmax_cta: 'Let me know <i class="ph ph-arrow-right"></i>',
             footer_copy: "© 2025 Click-Capybara · The Google Ads specialist in your corner.",
             footer_privacy: "Privacy Policy", footer_contact: "Contact", footer_script: "Tools & Scripts",
             nav_services: "Services", nav_free_script: "Tools & Scripts", nav_about: "About", nav_contact: "Contact", nav_cta: "Free Audit",
-            // Calculator
-            calc_eyebrow: "Runtime &amp; cost estimator",
+            calc_eyebrow: "Runtime & cost estimator",
             calc_title: "How long will AI-Classify take on your account?",
             calc_sub: "Google Apps Script has a 6-minute execution limit. Drag the sliders to see how your keyword count and batch size affect runtime — and whether you'll need more than one run.",
-            calc_sr_title: "Interactive runtime and cost calculator for AI-Classify batch processing",
-            calc_label_inputs: "Inputs",
-            calc_slider_kw: "Keywords to classify",
-            calc_slider_bs: "Batch size (Config)",
-            calc_slider_api: "Avg API time / batch (s)",
+            calc_label_inputs: "Inputs", calc_slider_kw: "Keywords to classify",
+            calc_slider_bs: "Batch size (Config)", calc_slider_api: "Avg API time / batch (s)",
             calc_label_runtime: "Runtime estimate",
-            calc_m_batches_lbl: "Batches",
-            calc_m_batches_of: "of",
-            calc_m_batches_terms: "terms",
-            calc_m_dur_lbl: "Duration",
-            calc_m_dur_sub: "6 min GAS limit",
-            calc_m_runs_lbl: "Runs needed",
-            calc_m_runs_press: "press AI-Classify",
+            calc_m_batches_lbl: "Batches", calc_m_batches_of: "of", calc_m_batches_terms: "terms",
+            calc_m_dur_lbl: "Duration", calc_m_dur_sub: "6 min GAS limit",
+            calc_m_runs_lbl: "Runs needed", calc_m_runs_press: "press AI-Classify",
             calc_m_status_lbl: "Status",
             calc_label_cost: "Cost estimate · gpt-4o-mini",
-            calc_m_tokin_lbl: "Input tokens (est.)",
-            calc_m_tokin_sub: "~400 per batch",
-            calc_m_tokout_lbl: "Output tokens (est.)",
-            calc_m_tokout_sub: "~120 per batch",
-            calc_m_cost_lbl: "Total cost",
-            calc_m_cost_sub: "gpt-4o-mini rates",
+            calc_m_tokin_lbl: "Input tokens (est.)", calc_m_tokin_sub: "~400 per batch",
+            calc_m_tokout_lbl: "Output tokens (est.)", calc_m_tokout_sub: "~120 per batch",
+            calc_m_cost_lbl: "Total cost", calc_m_cost_sub: "gpt-4o-mini rates",
             calc_label_chart: "Batch size vs runtime (your keyword count)",
-            calc_legend_safe: "Safe (&lt; 5 min)",
-            calc_legend_tight: "Tight (5–6 min)",
-            calc_legend_split: "Split needed",
-            calc_legend_active: "Your setting"
+            calc_legend_safe: "Safe (< 5 min)", calc_legend_tight: "Tight (5–6 min)",
+            calc_legend_split: "Split needed", calc_legend_active: "Your setting"
         },
         de: {
             script_page_title: "AI Max NegativeIQ — Kostenloses Google Ads Tool",
-            script_meta_desc: "Kostenloses KI-gestütztes Google Ads Tool. Klassifiziert Suchbegriffe aus Search-Kampagnen, schützt konvertierende Keywords, bucht Negative automatisch.",
             script_eyebrow: "Kostenloses Google Ads Tool",
-            script_h1: "AI Max NegativeIQ",
+            script_h1: "AI Max <span class=\"hl\">NegativeIQ</span>",
             script_tagline: "Schluss mit dem Rätselraten. Lass die KI dir sagen, welche Suchbegriffe dein Budget verbrennen.",
-            script_sub: "Ein kostenloses Open-Source-Tool, das deinen Google Ads Account mit KI verbindet, klassifiziert jeden Suchbegriff, schützt was konvertiert, und sagt dir genau, was als Negativ-Keyword rein muss. Gebaut für Search-Kampagnen. Weitere Kampagnentypen folgen in V2.",
+            script_sub: "Ein kostenloses Open-Source-Tool, das deinen Google Ads Account mit KI verbindet, jeden Suchbegriff klassifiziert, schützt was konvertiert, und sagt dir genau, was als Negativ-Keyword rein muss. Gebaut für Search-Kampagnen. V2 ist in Entwicklung.",
             script_cta_github: '<i class="fab fa-github text-lg"></i> Auf GitHub ansehen',
-            script_cta_setup: '<i class="ph ph-arrow-down text-xs"></i> Zur Installationsanleitung',
-            script_lang_badge: '<i class="ph ph-translate"></i> Verfügbar auf Englisch und Deutsch',
-            script_badge_free: "Kostenlos &amp; Open Source",
-            script_badge_safe: "Keine externen Server",
+            script_cta_setup: '<i class="ph ph-arrow-down"></i> Zur Installation',
+            script_lang_badge: '<i class="ph ph-translate"></i> EN & DE',
+            script_badge_free: '<i class="ph ph-git-branch"></i> Kostenlos & Open Source',
+            script_badge_safe: '<i class="ph ph-shield-check"></i> Keine externen Server',
             what_eyebrow: "Was es wirklich tut",
             what_title: "Suchbegriffe, intelligent durch KI klassifiziert.",
             what_p1: "Die meisten Google Ads Accounts verlieren täglich Budget an Suchbegriffe, die nie konvertieren werden. Jobsucher, Mitbewerber, irrelevante Anfragen. Sie manuell zu prüfen skaliert nicht. AI Max NegativeIQ automatisiert den gesamten Prozess.",
-            what_p2: "Der Fetcher holt täglich deine aktuellen Suchbegriffe aus Search-Kampagnen in ein Google Sheet. Der Analyzer schickt sie in Batches an eine KI, die jeden Begriff anhand deiner Branche, deines Unternehmens und deiner Conversion-Daten klassifiziert. Keine generischen Regeln. Echter Kontext.",
-            what_p3: "Jeder Begriff bekommt eine Klassifizierung, einen Confidence-Score und eine einzeilige KI-Begründung. Du prüfst, korrigierst bei Bedarf, und buchst Negative mit einem Klick zurück ins Konto. Das System lernt aus deinen Korrekturen.",
+            what_p2: "Der Fetcher holt täglich deine aktuellen Suchbegriffe in ein Google Sheet. Der Analyzer schickt sie an eine KI, die jeden Begriff anhand deiner Branche, deines Unternehmens und deiner Conversion-Daten klassifiziert. Keine generischen Regeln. Echter Kontext.",
+            what_p3: "Jeder Begriff bekommt eine Klassifizierung, einen Confidence-Score und eine einzeilige KI-Begründung. Du prüfst, korrigierst bei Bedarf, und buchst Negative mit einem Klick zurück ins Konto.",
             conv_protect_title: "Conversion-Schutz — immer aktiv",
-            conv_protect_desc: "Jeder Suchbegriff, der eine Conversion erzielt hat, wird automatisch geschützt. Das Tool markiert ihn nie als Negativ — egal wie er auf den ersten Blick aussieht.",
+            conv_protect_desc: "Jeder Suchbegriff, der konvertiert hat, wird automatisch geschützt — nie als Negativ markiert.",
             mockup_note: "Beispiel-Output. Deine echten Daten, dein echter Account.",
-            inside_eyebrow: "Was du bekommst",
-            inside_title: "Drei Komponenten. Ein vollständiges System.",
+            inside_eyebrow: "Was du bekommst", inside_title: "Drei Komponenten. Ein vollständiges System.",
             comp_1_title: "Der Fetcher", comp_1_where: "Google Ads → Scripts",
-            comp_1_desc: "Läuft täglich automatisch. Holt alle Suchbegriffe aus deinen Search-Kampagnen, dedupliziert sie und aggregiert Klicks und Conversions über 30 Tage. Schreibt alles automatisch ins Google Sheet, kein manueller Export nötig.",
+            comp_1_desc: "Läuft täglich automatisch. Holt alle Suchbegriffe aus deinen Search-Kampagnen, dedupliziert sie und aggregiert Klicks und Conversions über 30 Tage. Schreibt alles automatisch ins Sheet.",
             comp_2_title: "Der Analyzer", comp_2_where: "Google Sheets → Apps Script",
-            comp_2_desc: "Die KI-Intelligence-Schicht verarbeitet Ihre Suchbegriffe in skalierbaren Batches und klassifiziert sie schnell und kosteneffizient. Für jeden Begriff erhalten Sie eine Kategorie, einen Confidence Score von 0 bis 1 sowie eine verständliche Begründung. Vollständig konfigurierbar: Branche, Kategorien und Beispielbegriffe werden einmal definiert. Den Rest übernimmt die KI.",
+            comp_2_desc: "Die Intelligenzschicht. Schickt Suchbegriffe in skalierbaren Batches an KI. Jeder Begriff bekommt eine Klassifizierung, einen Confidence-Score und eine verständliche Begründung. Konfigurierbar: Branche einmal definieren.",
             comp_3_title: "Das Google Sheet Template", comp_3_where: "Dein Dashboard",
-            comp_3_desc: "Vier Reiter, vollautomatisch. <strong>SearchTerms</strong> ist deine Arbeitsfläche — farbkodiert, confidence-bewertet, Ein-Klick-Export. <strong>Config</strong> ist die einzige Anpassung pro Account. <strong>Negative_Export</strong> enthält validierte Negative zum Buchen. <strong>Expansion_Ideen</strong> sammelt Begriffe mit Kampagnenpotenzial.",
-            install_eyebrow: "Setup-Anleitung",
-            install_title: "In wenigen Minuten einsatzbereit.",
+            comp_3_desc: "Vier Reiter, vollautomatisch. <strong>SearchTerms</strong> ist deine Arbeitsfläche — farbkodiert, confidence-bewertet, Ein-Klick-Export. <strong>Config</strong> ist die einzige Anpassung pro Account. <strong>Negative_Export</strong> enthält validierte Negative. <strong>Expansion_Ideen</strong> sammelt Begriffe mit Kampagnenpotenzial.",
+            install_eyebrow: "Setup-Anleitung", install_title: "In wenigen Minuten einsatzbereit.",
             install_sub: "Config und API-Key sind einmalig — danach läuft alles automatisch. Coden musst du nicht können.",
-            step1_title: "Google Sheet Template kopieren", step1_desc: "Template von GitHub öffnen, eigene Kopie erstellen, Config-Tab befüllen — Branche, Unternehmensname und 5–8 Beispiel-Klassifizierungen. Das ist die einzige Anpassung, die du je machen musst.",
-            step2_title: "Fetcher in Google Ads einfügen", step2_desc: "In Google Ads: Tools → Scripts → Neu. Fetcher-Code einfügen, Sheet-URL ersetzen, autorisieren, auf täglich stellen. Fertig — läuft ab jetzt automatisch.",
-            step3_title: "Analyzer ins Sheet einfügen", step3_desc: "Im Google Sheet: Erweiterungen → Apps Script. Analyzer-Code einfügen, speichern, autorisieren. Ein neuer Menüpunkt 'AI Max NegativeIQ' erscheint in der Toolbar.",
-            step4_title: "Setup-Menü ausführen", step4_desc: "AI Max NegativeIQ → Prepare Layout. Stylt alle vier Reiter, fügt Farbkodierung hinzu und richtet Dropdowns ein.",
-            step5_title: "Laufen lassen — dann reviewen", step5_desc: "Am nächsten Tag Sheet öffnen, Schritt 2 klicken, klassifizieren lassen. Ergebnisse prüfen, Korrekturen eintragen, validieren, Negative buchen — ein Klick.",
-            install_readme: "Die vollständige Anleitung mit Screenshots findest du im README auf GitHub.",
-            code_eyebrow: "Unter der Haube",
-            code_title: "Echter Code. Hier ist ein Ausschnitt.",
-            github_title: "Kostenlos. Open Source. Keine E-Mail erforderlich.",
-            github_sub: "Wenn es dir Budget spart, freue ich mich über einen GitHub-Star. Er hilft anderen Google Ads Spezialisten, das Tool zu finden.",
-            github_cta: '<i class="fab fa-github text-xl"></i> AI Max NegativeIQ auf GitHub',
+            step1_title: "Google Sheet Template kopieren", step1_desc: "Template von GitHub öffnen, Kopie erstellen, Config-Tab befüllen — Branche, Unternehmensname und 5–8 Beispiel-Klassifizierungen.",
+            step2_title: "Fetcher in Google Ads einfügen", step2_desc: "Tools → Scripts → Neu. Fetcher-Code einfügen, Sheet-URL ersetzen, autorisieren, auf täglich stellen.",
+            step3_title: "Analyzer ins Sheet einfügen", step3_desc: "Erweiterungen → Apps Script. Analyzer-Code einfügen, speichern, autorisieren. Ein neuer Menüpunkt erscheint im Sheet.",
+            step4_title: "Setup-Menü ausführen", step4_desc: "AI Max NegativeIQ → Prepare Layout. Stylt alle Reiter, fügt Farbkodierung hinzu und richtet Dropdowns ein.",
+            step5_title: "Laufen lassen — dann reviewen", step5_desc: "Am nächsten Tag klassifizieren, Ergebnisse prüfen, validieren, Negative mit einem Klick buchen.",
+            code_eyebrow: "Unter der Haube", code_title: "Echter Code. Hier ist ein Ausschnitt.",
+            github_title: "Kostenlos. Open Source.<br>Keine E-Mail nötig.",
+            github_sub: "Wenn es dir Budget spart, freue ich mich über einen GitHub-Star. Er hilft anderen Spezialisten, das Tool zu finden.",
+            github_cta: '<i class="fab fa-github text-lg"></i> Auf GitHub',
             github_trust_1: "Keine Daten verlassen deinen Account",
-            github_trust_2: "Vollständiger Quellcode einsehbar",
-            github_trust_3: "Für immer kostenlos",
-            upsell_eyebrow: "Soll ich es einrichten?",
-            upsell_title: "Du möchtest es direkt auf deinem Account einrichten lassen?",
-            upsell_desc: "Setup, Config, fertig — das Tool läuft innerhalb eines Tages auf deinem Account. Wer das lieber in guten Händen weiß als selbst einzurichten, ist hier richtig.",
-            upsell_cta: "Schreib mir →",
-            footer_copy: "© 2024 Click-Capybara · Der Google Ads Spezialist an deiner Seite.",
+            bmc_eyebrow: "Wenn es Budget gespart hat", bmc_title: "Spendier mir einen Kaffee ☕",
+            bmc_desc: "Das Tool ist kostenlos und bleibt es. Aber wenn es dir Spend gespart hat — ein Kaffee hilft, dass das nächste Script schneller fertig wird.",
+            bmc_qr_label: "Scannen für<br>Kaffee", bmc_cta: "Kaffee spendieren",
+            upsell_eyebrow: "Soll ich es einrichten?", upsell_title: "Du möchtest es direkt auf deinem Account einrichten lassen?",
+            upsell_desc: "Setup, Config, fertig — das Tool läuft innerhalb eines Tages auf deinem Account. Wer das lieber in guten Händen weiß, ist hier richtig.",
+            upsell_cta: '<i class="ph ph-arrow-right"></i> Schreib mir',
+            pmax_eyebrow: "Was kommt als nächstes", pmax_title: "Du nutzt Performance Max? V2 ist in Arbeit.",
+            pmax_desc: "Aktuelle Version deckt Search ab. Eine PMax-Variante ist in Entwicklung — schreib mir, ich gebe Bescheid wenn sie fertig ist.",
+            pmax_cta: 'Gib mir Bescheid <i class="ph ph-arrow-right"></i>',
+            footer_copy: "© 2025 Click-Capybara · Der Google Ads Spezialist an deiner Seite.",
             footer_privacy: "Datenschutz", footer_contact: "Kontakt", footer_script: "Tools & Scripts",
             nav_services: "Services", nav_free_script: "Tools & Scripts", nav_about: "Über mich", nav_contact: "Kontakt", nav_cta: "Kostenloses Audit",
-            // Calculator
-            calc_eyebrow: "Laufzeit &amp; Kosten-Schätzer",
+            calc_eyebrow: "Laufzeit & Kosten-Schätzer",
             calc_title: "Wie lange braucht AI-Classify auf deinem Account?",
-            calc_sub: "Google Apps Script hat ein 6-Minuten-Limit. Schiebe die Regler, um zu sehen, wie Keyword-Anzahl und Batch-Größe die Laufzeit beeinflussen — und ob du mehr als einen Lauf brauchst.",
-            calc_sr_title: "Interaktiver Laufzeit- und Kosten-Rechner für AI-Classify Batch-Verarbeitung",
-            calc_label_inputs: "Eingaben",
-            calc_slider_kw: "Keywords zum Klassifizieren",
-            calc_slider_bs: "Batch-Größe (Config)",
-            calc_slider_api: "Ø API-Zeit / Batch (s)",
+            calc_sub: "Google Apps Script hat ein 6-Minuten-Limit. Schiebe die Regler, um zu sehen, wie Keyword-Anzahl und Batch-Größe die Laufzeit beeinflussen.",
+            calc_label_inputs: "Eingaben", calc_slider_kw: "Keywords zum Klassifizieren",
+            calc_slider_bs: "Batch-Größe (Config)", calc_slider_api: "Ø API-Zeit / Batch (s)",
             calc_label_runtime: "Laufzeit-Schätzung",
-            calc_m_batches_lbl: "Batches",
-            calc_m_batches_of: "à",
-            calc_m_batches_terms: "Begriffe",
-            calc_m_dur_lbl: "Dauer",
-            calc_m_dur_sub: "6 min GAS-Limit",
-            calc_m_runs_lbl: "Läufe nötig",
-            calc_m_runs_press: "AI-Classify drücken",
+            calc_m_batches_lbl: "Batches", calc_m_batches_of: "à", calc_m_batches_terms: "Begriffe",
+            calc_m_dur_lbl: "Dauer", calc_m_dur_sub: "6 min GAS-Limit",
+            calc_m_runs_lbl: "Läufe nötig", calc_m_runs_press: "AI-Classify drücken",
             calc_m_status_lbl: "Status",
             calc_label_cost: "Kosten-Schätzung · gpt-4o-mini",
-            calc_m_tokin_lbl: "Input-Token (geschätzt)",
-            calc_m_tokin_sub: "~400 pro Batch",
-            calc_m_tokout_lbl: "Output-Token (geschätzt)",
-            calc_m_tokout_sub: "~120 pro Batch",
-            calc_m_cost_lbl: "Gesamtkosten",
-            calc_m_cost_sub: "gpt-4o-mini Preise",
+            calc_m_tokin_lbl: "Input-Token (geschätzt)", calc_m_tokin_sub: "~400 pro Batch",
+            calc_m_tokout_lbl: "Output-Token (geschätzt)", calc_m_tokout_sub: "~120 pro Batch",
+            calc_m_cost_lbl: "Gesamtkosten", calc_m_cost_sub: "gpt-4o-mini Preise",
             calc_label_chart: "Batch-Größe vs. Laufzeit (deine Keyword-Anzahl)",
-            calc_legend_safe: "Sicher (&lt; 5 min)",
-            calc_legend_tight: "Knapp (5–6 min)",
-            calc_legend_split: "Aufteilung nötig",
-            calc_legend_active: "Deine Einstellung"
+            calc_legend_safe: "Sicher (< 5 min)", calc_legend_tight: "Knapp (5–6 min)",
+            calc_legend_split: "Aufteilung nötig", calc_legend_active: "Deine Einstellung"
         }
     };
 
-    function setLanguage(lang) {
+    function setLanguage(lang){
         document.documentElement.lang = lang;
         const t = { ...(translations[lang] || {}), ...(scriptTranslations[lang] || {}) };
-        if (t.script_page_title) document.title = t.script_page_title;
+        if(t.script_page_title) document.title = t.script_page_title;
         document.querySelectorAll('[data-key]').forEach(el => {
             const key = el.getAttribute('data-key');
-            if (t[key] !== undefined) el.innerHTML = t[key];
+            if(t[key] !== undefined) el.innerHTML = t[key];
         });
-        [document.getElementById('lang-en'), document.getElementById('mobile-lang-en')].forEach(btn => {
-            if(btn){ btn.classList.toggle('font-bold', lang==='en'); btn.classList.toggle('text-gray-900', lang==='en'); btn.classList.toggle('text-gray-400', lang!=='en'); }
-        });
-        [document.getElementById('lang-de'), document.getElementById('mobile-lang-de')].forEach(btn => {
-            if(btn){ btn.classList.toggle('font-bold', lang==='de'); btn.classList.toggle('text-gray-900', lang==='de'); btn.classList.toggle('text-gray-400', lang!=='de'); }
-        });
+        [langEnBtn, mLangEnBtn].forEach(btn => { if(btn){ btn.classList.toggle('font-bold', lang==='en'); btn.classList.toggle('text-ink-900', lang==='en'); btn.classList.toggle('text-gray-400', lang!=='en'); } });
+        [langDeBtn, mLangDeBtn].forEach(btn => { if(btn){ btn.classList.toggle('font-bold', lang==='de'); btn.classList.toggle('text-ink-900', lang==='de'); btn.classList.toggle('text-gray-400', lang!=='de'); } });
         localStorage.setItem('preferredLang', lang);
         window.dispatchEvent(new Event('calcLangChange'));
     }
 
-    if(langEnBtn)  langEnBtn.addEventListener('click',  () => setLanguage('en'));
-    if(langDeBtn)  langDeBtn.addEventListener('click',  () => setLanguage('de'));
+    if(langEnBtn) langEnBtn.addEventListener('click', () => setLanguage('en'));
+    if(langDeBtn) langDeBtn.addEventListener('click', () => setLanguage('de'));
     if(mLangEnBtn) mLangEnBtn.addEventListener('click', () => setLanguage('en'));
     if(mLangDeBtn) mLangDeBtn.addEventListener('click', () => setLanguage('de'));
-
     setLanguage(localStorage.getItem('preferredLang') || 'en');
 }
 
-// ── Scroll fade-in ────────────────────────────────────
+// ── Fade-in ───────────────────────────
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-    });
+    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
-<!-- Buy Me a Coffee floating widget -->
 <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="clickcapybara" data-description="It runs on coffee and API tokens 🐾" data-message="Saved some budget? Feed the capybara 🐾" data-color="#fcba02" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 </body>
 </html>

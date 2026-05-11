@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <!-- Consent default (before GTM) -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -17,11 +18,7 @@
                 gtag('consent', 'update', { 'analytics_storage': 'granted' });
             }
             if (localStorage.getItem('silktideCookieChoice_advertising') === 'true') {
-                gtag('consent', 'update', {
-                    'ad_storage': 'granted',
-                    'ad_user_data': 'granted',
-                    'ad_personalization': 'granted'
-                });
+                gtag('consent', 'update', { 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' });
             }
         })();
     </script>
@@ -54,13 +51,11 @@
         cookieTypes: [
             { id: "necessary", name: "Necessary", description: "<p>Required for the site to function.</p>", required: true, onAccept: function(){} },
             { id: "analytics", name: "Analytics", description: "<p>Help us understand how visitors use the site.</p>", required: false,
-                onAccept: function(){ gtag('consent', 'update', { analytics_storage: 'granted' }); dataLayer.push({ 'event': 'consent_accepted_analytics' }); },
-                onReject: function(){ gtag('consent', 'update', { analytics_storage: 'denied' }); }
-            },
+                onAccept: function(){ gtag('consent', 'update', { analytics_storage: 'granted' }); dataLayer.push({ event: 'consent_accepted_analytics' }); },
+                onReject: function(){ gtag('consent', 'update', { analytics_storage: 'denied' }); } },
             { id: "advertising", name: "Advertising", description: "<p>Used to measure ad performance.</p>", required: false,
-                onAccept: function(){ gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' }); dataLayer.push({ 'event': 'consent_accepted_advertising' }); },
-                onReject: function(){ gtag('consent', 'update', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' }); }
-            }
+                onAccept: function(){ gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' }); dataLayer.push({ event: 'consent_accepted_advertising' }); },
+                onReject: function(){ gtag('consent', 'update', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' }); } }
         ],
         text: {
             banner: { description: "<p>We use cookies to enhance your experience. <a href=\"privacy.html\">Cookie Policy.</a></p>", acceptAllButtonText: "Accept all", rejectNonEssentialButtonText: "Reject non-essential", preferencesButtonText: "Preferences" },
@@ -75,7 +70,9 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: { DEFAULT: '#fcba02', light: '#FFF9E6', dark: '#D4A101' }
+                        brand: { DEFAULT: '#fcba02', light: '#FFF6D6', dark: '#D4A101' },
+                        ink: { 900: '#0E0E10', 800: '#17171B', 700: '#222227', 500: '#6B6B73' },
+                        cream: '#F6F3EC'
                     },
                     fontFamily: { sans: ['Inter', 'sans-serif'] }
                 }
@@ -84,432 +81,599 @@
     </script>
 
     <style>
-        .nav-link { position: relative; transition: color 0.3s ease; }
-        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 50%; transform: translateX(-50%); background-color: #fcba02; transition: width 0.3s ease; }
-        .nav-link:hover::after { width: 100%; }
+        body { background: #EFECE3; }
 
-        /* Service section alternating */
-        .svc-section:nth-child(odd) { background: #fff; }
-        .svc-section:nth-child(even) { background: #f9fafb; }
+        /* ── Bento tile base (mirrors index.html) ──────────────── */
+        .tile {
+            border-radius: 22px;
+            padding: 22px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 18px;
+            min-height: 0;
+        }
+        @media (min-width: 768px) { .tile { padding: 32px; border-radius: 28px; gap: 24px; } }
+        .tile-light  { background: #FFFFFF; color: #0E0E10; }
+        .tile-cream  { background: #F6F3EC; color: #0E0E10; border: 1px solid rgba(14,14,16,0.06); }
+        .tile-dark   { background: #0E0E10; color: #FFFFFF; }
+        .tile-ink    { background: #17171B; color: #FFFFFF; }
+        .tile-brand  { background: #fcba02; color: #0E0E10; }
+        .tile-brand-soft { background: #FFF6D6; color: #0E0E10; border: 1px solid rgba(252,186,2,0.35); }
+        .tile-outline{ background: #FFFFFF; color: #0E0E10; border: 1px solid rgba(14,14,16,0.08); }
 
-        /* Service number */
-        .svc-number {
-            font-size: 6rem;
-            font-weight: 900;
-            line-height: 1;
-            color: #fcba02;
-            opacity: 0.15;
-            position: absolute;
-            top: -1rem;
-            right: 0;
-            letter-spacing: -0.05em;
-            pointer-events: none;
-            user-select: none;
+        .bento {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0,1fr));
+            gap: 14px;
+        }
+        @media (min-width: 768px) { .bento { gap: 16px; } }
+
+        .eyebrow {
+            font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+        }
+        .display {
+            font-weight: 800; line-height: 0.98; letter-spacing: -0.025em;
         }
 
-        /* Deliverable list item */
+        .tile-hover { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+        .tile-hover:hover { transform: translateY(-3px); box-shadow: 0 14px 40px -18px rgba(14,14,16,0.25); }
+
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -4px; left: 50%; transform: translateX(-50%);
+            background-color: #fcba02; transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(14,14,16,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(14,14,16,0.06) 1px, transparent 1px);
+            background-size: 36px 36px;
+            background-position: -1px -1px;
+        }
+        .grid-pattern-dark {
+            background-image:
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 36px 36px;
+        }
+
+        /* Chips */
+        .chip {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 6px 10px; border-radius: 999px;
+        }
+        .chip-on-dark { background: rgba(252,186,2,0.14); color: #fcba02; border: 1px solid rgba(252,186,2,0.3); }
+        .chip-on-light{ background: #0E0E10; color: #fcba02; }
+
+        /* Big numeral watermark */
+        .numeral {
+            font-weight: 800; font-size: 44px; line-height: 1; letter-spacing: -0.04em;
+        }
+        @media (min-width: 768px) { .numeral { font-size: 88px; } }
+        .numeral-xl {
+            font-weight: 900; font-size: 120px; line-height: 0.9; letter-spacing: -0.06em;
+        }
+        @media (min-width: 768px) { .numeral-xl { font-size: 220px; } }
+
+        /* Deliverable row */
         .deliverable {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            padding: 10px 0;
-            border-bottom: 1px solid #f3f4f6;
-            font-size: 0.875rem;
-            color: #374151;
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 11px 0;
+            font-size: 13px;
+            border-bottom: 1px dashed rgba(14,14,16,0.1);
         }
         .deliverable:last-child { border-bottom: none; }
         .deliverable-arrow {
-            color: #fcba02;
-            font-weight: 800;
-            flex-shrink: 0;
-            margin-top: 1px;
+            color: #fcba02; font-weight: 800; flex-shrink: 0; margin-top: 1px; line-height: 1.2;
         }
+        .tile-dark .deliverable { border-bottom-color: rgba(255,255,255,0.1); color: #d1d5db; }
+        .tile-brand .deliverable { border-bottom-color: rgba(14,14,16,0.15); color: #1F1F23; }
+        .tile-brand .deliverable-arrow { color: #0E0E10; }
 
-        /* Focus area card */
-        .focus-card {
-            border-top: 3px solid #fcba02;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .focus-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.07);
-        }
-
-        /* Fade in */
-        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-        .stagger > *:nth-child(1) { transition-delay: 0.05s; }
-        .stagger > *:nth-child(2) { transition-delay: 0.15s; }
-        .stagger > *:nth-child(3) { transition-delay: 0.25s; }
-
-        /* Sticky nav shadow */
-        .header-scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.08); }
-
-        /* Who it's for pill */
+        /* For pill */
         .for-pill {
-            display: inline-block;
-            background: #FFF9E6;
-            border: 1px solid rgba(252,186,2,0.3);
-            color: #92710a;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 4px 12px;
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 12px; font-weight: 600;
+            padding: 6px 12px;
             border-radius: 999px;
+            background: rgba(252,186,2,0.15);
+            border: 1px solid rgba(252,186,2,0.4);
+            color: #92710a;
+        }
+        .tile-dark .for-pill {
+            background: rgba(252,186,2,0.1);
+            border-color: rgba(252,186,2,0.3);
+            color: #fcba02;
+        }
+        .tile-brand .for-pill {
+            background: rgba(14,14,16,0.1);
+            border-color: rgba(14,14,16,0.2);
+            color: #0E0E10;
+        }
+
+        /* Highlight */
+        .hl { color: #fcba02; }
+
+        /* Fade-in */
+        .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Logo fallback */
+        .logo-fallback {
+            background:#0E0E10; color:#fcba02; border-radius:50%;
+            display:inline-flex; align-items:center; justify-content:center;
+            font-weight:900; letter-spacing:-0.05em;
+        }
+
+        /* Star (CSS shape) */
+        .star {
+            display: inline-block; width: 18px; height: 18px;
+            background: #fcba02;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
         }
     </style>
 </head>
 
-<body class="bg-white text-gray-800 font-sans antialiased">
+<body class="text-ink-900 font-sans antialiased">
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK2WCGQH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ============================================================
      NAV
 ============================================================ -->
-<header id="site-header" class="bg-white/90 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-100 transition-shadow">
-    <div class="container mx-auto px-6 py-4">
-        <nav class="flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-2">
-                <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara Logo" class="w-9 h-9">
-                <span class="text-xl font-bold text-gray-900">Click-Capybara</span>
-            </a>
-            <div class="hidden md:flex items-center space-x-7">
-                <a href="services.html" class="nav-link text-brand font-semibold text-sm" data-key="nav_services">Services</a>
-                <a href="free-script.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_free_script">Tools & Scripts</a>
-                <a href="index.html#about" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_about">About</a>
-                <a href="#contact" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_contact">Contact</a>
-            </div>
-            <div class="hidden md:flex items-center space-x-4 ml-8">
-                <button id="lang-en" class="text-sm font-bold text-gray-900">EN</button>
-                <span class="text-gray-300">|</span>
-                <button id="lang-de" class="text-sm font-medium text-gray-400 hover:text-gray-700">DE</button>
-                <a href="#contact" class="ml-2 bg-brand text-gray-900 font-bold text-sm py-2 px-5 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="nav_cta">Free Audit</a>
-            </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 text-xl p-1"><i class="fas fa-bars"></i></button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden mt-3 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
-            <a href="services.html" class="block py-3 px-5 text-sm text-brand font-semibold hover:bg-gray-50 border-b border-gray-100" data-key="nav_services">Services</a>
-            <a href="free-script.html" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_free_script">Tools & Scripts</a>
-            <a href="index.html#about" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_about">About</a>
-            <a href="#contact" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_contact">Contact</a>
-            <div class="flex items-center gap-4 px-5 py-3 border-b border-gray-100">
-                <i class="fas fa-globe text-gray-400"></i>
-                <button id="mobile-lang-en" class="text-sm font-bold">EN</button>
-                <button id="mobile-lang-de" class="text-sm font-medium text-gray-400">DE</button>
-            </div>
-            <div class="p-4">
-                <a href="#contact" class="block bg-brand text-gray-900 font-bold py-3 px-4 rounded-lg text-center text-sm" data-key="nav_cta">Free Audit</a>
+<header id="site-header" class="sticky top-0 z-50">
+    <div class="container mx-auto px-4 md:px-6 pt-4">
+        <div class="bg-white/80 backdrop-blur-xl border border-black/5 rounded-2xl shadow-sm">
+            <nav class="flex justify-between items-center px-5 py-3">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara Logo" class="w-8 h-8" onerror="this.outerHTML='<span class=&quot;logo-fallback w-8 h-8 text-[14px]&quot;>CC</span>'">
+                    <span class="text-base font-extrabold tracking-tight">Click-Capybara</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="services.html" class="nav-link active text-ink-900 font-bold text-sm" data-key="nav_services">Services</a>
+                    <a href="free-script.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_free_script">Tools &amp; Scripts</a>
+                    <a href="index.html#about" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_about">About</a>
+                    <a href="#contact" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_contact">Contact</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-3 ml-6">
+                    <button id="lang-en" class="text-xs font-bold text-ink-900">EN</button>
+                    <span class="text-gray-300">|</span>
+                    <button id="lang-de" class="text-xs font-medium text-gray-400 hover:text-ink-900">DE</button>
+                    <a href="#contact" class="ml-2 bg-ink-900 text-brand font-bold text-sm py-2 px-4 rounded-xl transition hover:-translate-y-0.5" data-key="nav_cta">Free Audit</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-ink-900 text-xl p-1">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-black/5 rounded-b-2xl overflow-hidden">
+                <a href="services.html" class="block py-3 px-5 text-sm text-ink-900 font-bold bg-cream/60 border-b border-black/5" data-key="nav_services">Services</a>
+                <a href="free-script.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_free_script">Tools &amp; Scripts</a>
+                <a href="index.html#about" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_about">About</a>
+                <a href="#contact" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_contact">Contact</a>
+                <div class="flex items-center gap-4 px-5 py-3 border-b border-black/5">
+                    <i class="fas fa-globe text-gray-400"></i>
+                    <button id="mobile-lang-en" class="text-sm font-bold">EN</button>
+                    <button id="mobile-lang-de" class="text-sm font-medium text-gray-400">DE</button>
+                </div>
+                <div class="p-4">
+                    <a href="#contact" class="block bg-ink-900 text-brand font-bold py-3 px-4 rounded-xl text-center text-sm" data-key="nav_cta">Free Audit</a>
+                </div>
             </div>
         </div>
     </div>
 </header>
 
-<main>
+<main class="container mx-auto px-4 md:px-6 py-6 md:py-8 space-y-6 md:space-y-8">
 
-<!-- ============================================================
-     HERO
-============================================================ -->
-<section class="py-20 md:py-28 bg-gray-50">
-    <div class="container mx-auto px-6 max-w-3xl text-center fade-in">
-        <p class="text-xs font-bold tracking-widest text-brand uppercase mb-5" data-key="svc_eyebrow">What I offer</p>
-        <h1 class="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight" data-key="svc_h1">Three things I do.<br>All of them well.</h1>
-        <p class="text-lg text-gray-500 leading-relaxed max-w-2xl mx-auto" data-key="svc_sub">
-            I don't offer twelve services to look impressive. I offer three — and I've spent 8 years getting very good at each of them. Here's exactly what you get when we work together.
-        </p>
+    <!-- ============================================================
+         1. HERO BENTO
+    ============================================================ -->
+    <section class="bento" style="grid-auto-rows: minmax(120px, auto);">
 
-        <!-- Service jump links -->
-        <div class="flex flex-wrap justify-center gap-3 mt-10">
-            <a href="#campaign-management" class="text-sm font-semibold text-gray-700 bg-white border border-gray-200 px-5 py-2.5 rounded-lg hover:border-brand hover:text-brand transition" data-key="svc_jump_1">Campaign Management</a>
-            <a href="#scripts-automation" class="text-sm font-semibold text-gray-700 bg-white border border-gray-200 px-5 py-2.5 rounded-lg hover:border-brand hover:text-brand transition" data-key="svc_jump_2">Scripts & Automation</a>
-            <a href="#strategy-audits" class="text-sm font-semibold text-gray-700 bg-white border border-gray-200 px-5 py-2.5 rounded-lg hover:border-brand hover:text-brand transition" data-key="svc_jump_3">Strategy & Audits</a>
+        <!-- Main hero -->
+        <div class="tile tile-cream grid-pattern col-span-12 md:col-span-8 md:row-span-2 min-h-[320px] md:min-h-[420px]">
+            <div class="relative z-10">
+                <span class="chip chip-on-light mb-4 md:mb-6" data-key="svc_eyebrow">What I offer</span>
+            </div>
+            <div class="relative z-10">
+                <h1 class="display text-[32px] sm:text-[44px] md:text-[64px] lg:text-[76px] mb-4 md:mb-6" data-key="svc_h1">
+                    Three things I do.<br>
+                    <span class="hl">All of them well.</span>
+                </h1>
+                <p class="text-sm md:text-lg text-ink-500 max-w-xl leading-relaxed" data-key="svc_sub">
+                    I don't offer twelve services to look impressive. I offer three — and I've spent 8 years getting very good at each of them. Here's exactly what you get when we work together.
+                </p>
+            </div>
         </div>
-    </div>
-</section>
 
-<!-- ============================================================
-     SERVICE 1 — CAMPAIGN MANAGEMENT
-============================================================ -->
-<section id="campaign-management" class="svc-section py-20">
-    <div class="container mx-auto px-6 max-w-5xl">
-        <div class="md:flex gap-16 items-start">
+        <!-- Side stat -->
+        <div class="tile tile-dark col-span-12 sm:col-span-6 md:col-span-4 min-h-[160px] md:min-h-auto">
+            <div class="flex items-start justify-between">
+                <span class="eyebrow text-brand">Focus</span>
+                <i class="ph ph-target text-brand text-xl"></i>
+            </div>
+            <div>
+                <p class="numeral hl">03</p>
+                <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">Services. Not twelve. Each one done by me, end to end.</p>
+            </div>
+        </div>
 
-            <!-- Left: copy -->
-            <div class="md:w-3/5 fade-in">
-                <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3" data-key="svc1_eyebrow">Service 01</p>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight" data-key="svc1_title">Google Ads Campaign Management</h2>
+        <!-- Side stat -->
+        <div class="tile tile-brand col-span-12 sm:col-span-6 md:col-span-4 min-h-[160px] md:min-h-auto">
+            <div class="flex items-start justify-between">
+                <span class="eyebrow text-ink-900/70">No middlemen</span>
+                <i class="ph ph-user-circle text-ink-900 text-xl"></i>
+            </div>
+            <div>
+                <p class="font-extrabold text-2xl md:text-3xl leading-tight">Direct access<br>to Max.</p>
+                <p class="text-ink-900/70 text-xs md:text-sm mt-2">No account manager in between.</p>
+            </div>
+        </div>
 
-                <div class="space-y-4 text-gray-600 text-sm leading-relaxed mb-8">
+    </section>
+
+    <!-- Jump-link strip -->
+    <section class="bento">
+        <a href="#campaign-management" class="tile tile-outline col-span-12 md:col-span-4 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:8px">
+            <div class="flex items-center justify-between">
+                <span class="eyebrow text-ink-500">Service 01</span>
+                <i class="ph ph-arrow-down-right text-brand text-lg"></i>
+            </div>
+            <p class="font-bold text-sm md:text-base" data-key="svc_jump_1">Campaign Management</p>
+        </a>
+        <a href="#scripts-automation" class="tile tile-outline col-span-12 md:col-span-4 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:8px">
+            <div class="flex items-center justify-between">
+                <span class="eyebrow text-ink-500">Service 02</span>
+                <i class="ph ph-arrow-down-right text-brand text-lg"></i>
+            </div>
+            <p class="font-bold text-sm md:text-base" data-key="svc_jump_2">Scripts &amp; Automation</p>
+        </a>
+        <a href="#strategy-audits" class="tile tile-outline col-span-12 md:col-span-4 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:8px">
+            <div class="flex items-center justify-between">
+                <span class="eyebrow text-ink-500">Service 03</span>
+                <i class="ph ph-arrow-down-right text-brand text-lg"></i>
+            </div>
+            <p class="font-bold text-sm md:text-base" data-key="svc_jump_3">Strategy &amp; Audits</p>
+        </a>
+    </section>
+
+    <!-- ============================================================
+         2. SERVICE 01 — CAMPAIGN MANAGEMENT
+    ============================================================ -->
+    <section id="campaign-management" class="bento" style="grid-auto-rows: minmax(120px, auto); scroll-margin-top: 100px;">
+
+        <!-- Big dark display tile -->
+        <div class="tile tile-dark col-span-12 md:col-span-7 min-h-[320px] md:min-h-[460px] relative overflow-hidden">
+            <div class="absolute inset-0 grid-pattern-dark opacity-50"></div>
+            <div class="absolute -right-4 -top-8 md:-right-8 md:-top-16 numeral-xl text-white/[0.05] select-none pointer-events-none">01</div>
+            <div class="relative z-10">
+                <div class="flex items-start justify-between">
+                    <span class="chip chip-on-dark" data-key="svc1_eyebrow">Service 01</span>
+                    <div class="w-12 h-12 bg-brand rounded-2xl flex items-center justify-center">
+                        <i class="ph ph-cursor-click text-ink-900 text-xl md:text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="relative z-10">
+                <h2 class="display text-2xl md:text-4xl text-white mb-4 md:mb-6" data-key="svc1_title">Google Ads Campaign Management</h2>
+                <div class="space-y-3 md:space-y-4 text-gray-300 text-sm md:text-base leading-relaxed max-w-xl">
                     <p data-key="svc1_p1">This is the core of what I do. I build, structure, and actively manage Google Ads campaigns across Search, Shopping, Display, and Demand Gen — with one goal: making your budget work harder than it currently does.</p>
                     <p data-key="svc1_p2">I don't hand your account to a junior after the onboarding call. I'm in it every week — adjusting bids, refining match types, killing underperformers, testing new angles. You'll know exactly what I'm doing and why, because I send you reports in plain language, not dashboards full of numbers that don't tell you anything.</p>
                 </div>
-
-                <span class="for-pill mb-6 inline-block" data-key="svc1_for">For: accounts that aren't performing, or launching from scratch</span>
+                <span class="for-pill mt-5 md:mt-6" data-key="svc1_for">For: accounts that aren't performing, or launching from scratch</span>
             </div>
-
-            <!-- Right: deliverables -->
-            <div class="md:w-2/5 mt-8 md:mt-0 fade-in">
-                <div class="relative bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
-                    <span class="svc-number">01</span>
-                    <p class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-5" data-key="svc1_includes_label">What's included</p>
-                    <div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d1">Campaign build or restructure</span></div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d2">Keyword strategy and match type architecture</span></div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d3">Ad copy writing and A/B testing</span></div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d4">Bid and budget management</span></div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d5">Weekly optimizations</span></div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d6">Monthly reporting in plain English</span></div>
-                    </div>
-                    <a href="#contact" class="mt-6 inline-block bg-brand text-gray-900 font-bold text-sm py-3 px-6 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="svc1_cta">Get started →</a>
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>
 
-<!-- ============================================================
-     SERVICE 2 — SCRIPTS & AUTOMATION
-============================================================ -->
-<section id="scripts-automation" class="svc-section py-20">
-    <div class="container mx-auto px-6 max-w-5xl">
-        <div class="md:flex gap-16 items-start flex-row-reverse">
-
-            <!-- Right becomes left on desktop: deliverables -->
-            <div class="md:w-2/5 mb-8 md:mb-0 fade-in">
-                <div class="relative bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
-                    <span class="svc-number">02</span>
-                    <p class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-5" data-key="svc2_includes_label">What I build</p>
-                    <div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d1">Search term classification (AI-powered)</span></div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d2">Budget pacing and overspend alerts</span></div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d3">Performance anomaly detection</span></div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d4">Automated reporting to Google Sheets</span></div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d5">Custom scripts for your specific needs</span></div>
-                    </div>
-                    <a href="free-script.html" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-gray-700 border border-gray-200 py-3 px-6 rounded-lg transition hover:border-brand hover:text-brand" data-key="svc2_cta">
-                        <i class="fab fa-github"></i>
-                        See Capybara NegativeIQ Search — free
-                    </a>
+        <!-- Deliverables sidecar -->
+        <div class="tile tile-cream col-span-12 md:col-span-5 min-h-[320px] md:min-h-[460px]">
+            <div>
+                <div class="flex items-start justify-between mb-1">
+                    <span class="eyebrow text-brand-dark" data-key="svc1_includes_label">What's included</span>
+                    <span class="numeral text-ink-900/8 leading-none" style="opacity:.08">01</span>
                 </div>
             </div>
+            <div class="flex-1 flex flex-col justify-center">
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d1">Campaign build or restructure</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d2">Keyword strategy and match type architecture</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d3">Ad copy writing and A/B testing</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d4">Bid and budget management</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d5">Weekly optimizations</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc1_d6">Monthly reporting in plain English</span></div>
+            </div>
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-ink-900 text-brand font-bold text-sm py-3.5 px-6 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg" data-key="svc1_cta">
+                Get started →
+            </a>
+        </div>
 
-            <!-- Copy -->
-            <div class="md:w-3/5 fade-in">
-                <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3" data-key="svc2_eyebrow">Service 02</p>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight" data-key="svc2_title">Scripts & Automation</h2>
+    </section>
 
-                <div class="space-y-4 text-gray-600 text-sm leading-relaxed mb-8">
+    <!-- ============================================================
+         3. SERVICE 02 — SCRIPTS & AUTOMATION
+    ============================================================ -->
+    <section id="scripts-automation" class="bento" style="grid-auto-rows: minmax(120px, auto); scroll-margin-top: 100px;">
+
+        <!-- Deliverables sidecar (LEFT this time for visual rhythm) -->
+        <div class="tile tile-light col-span-12 md:col-span-5 md:order-1 order-2 min-h-[320px] md:min-h-[460px]">
+            <div>
+                <div class="flex items-start justify-between mb-1">
+                    <span class="eyebrow text-brand-dark" data-key="svc2_includes_label">What I build</span>
+                    <span class="numeral text-ink-900/8 leading-none" style="opacity:.08">02</span>
+                </div>
+            </div>
+            <div class="flex-1 flex flex-col justify-center">
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d1">Search term classification (AI-powered)</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d2">Budget pacing and overspend alerts</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d3">Performance anomaly detection</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d4">Automated reporting to Google Sheets</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc2_d5">Custom scripts for your specific needs</span></div>
+            </div>
+            <a href="free-script.html" class="inline-flex items-center justify-center gap-2 bg-cream text-ink-900 font-bold text-sm py-3.5 px-6 rounded-xl border border-ink-900/10 transition hover:border-ink-900 hover:-translate-y-0.5" data-key="svc2_cta">
+                <i class="fab fa-github"></i>
+                See Capybara NegativeIQ Search — free
+            </a>
+        </div>
+
+        <!-- Big cream display tile with terminal accent -->
+        <div class="tile tile-cream col-span-12 md:col-span-7 md:order-2 order-1 min-h-[320px] md:min-h-[460px] relative overflow-hidden">
+            <div class="absolute inset-0 grid-pattern opacity-50"></div>
+            <div class="absolute -right-4 -top-8 md:-right-8 md:-top-16 numeral-xl text-ink-900/[0.05] select-none pointer-events-none">02</div>
+            <div class="relative z-10">
+                <div class="flex items-start justify-between">
+                    <span class="chip chip-on-light" data-key="svc2_eyebrow">Service 02</span>
+                    <div class="w-12 h-12 bg-ink-900 rounded-2xl flex items-center justify-center">
+                        <i class="ph ph-terminal-window text-brand text-xl md:text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="relative z-10">
+                <h2 class="display text-2xl md:text-4xl mb-4 md:mb-6" data-key="svc2_title">Scripts &amp; Automation</h2>
+                <div class="space-y-3 md:space-y-4 text-ink-700 text-sm md:text-base leading-relaxed max-w-xl">
                     <p data-key="svc2_p1">There's a ceiling on what manual Google Ads management can achieve. Scripts break through it.</p>
                     <p data-key="svc2_p2">I write custom Google Ads scripts that automate the repetitive, error-prone work that eats hours every week — flagging wasted spend, pacing budgets, monitoring performance anomalies, generating reports. Work that takes a human three hours takes a script three seconds.</p>
                     <p data-key="svc2_p3">My free tool, Capybara NegativeIQ Search, is a good example of what this looks like in practice: it connects your Google Ads account to AI, classifies every search term automatically, protects converting keywords, and tells you exactly what to add as a negative. That's the kind of edge a well-written script gives you.</p>
                 </div>
-
-                <span class="for-pill inline-block" data-key="svc2_for">For: managers and teams who want to work smarter, not longer</span>
+                <span class="for-pill mt-5 md:mt-6" data-key="svc2_for">For: managers and teams who want to work smarter, not longer</span>
             </div>
-
         </div>
-    </div>
-</section>
 
-<!-- ============================================================
-     SERVICE 3 — STRATEGY & AUDITS
-============================================================ -->
-<section id="strategy-audits" class="svc-section py-20">
-    <div class="container mx-auto px-6 max-w-5xl">
-        <div class="md:flex gap-16 items-start">
+    </section>
 
-            <!-- Copy -->
-            <div class="md:w-3/5 fade-in">
-                <p class="text-xs font-bold tracking-widest text-brand uppercase mb-3" data-key="svc3_eyebrow">Service 03</p>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6 leading-tight" data-key="svc3_title">Strategy & Audits</h2>
+    <!-- ============================================================
+         4. SERVICE 03 — STRATEGY & AUDITS
+    ============================================================ -->
+    <section id="strategy-audits" class="bento" style="grid-auto-rows: minmax(120px, auto); scroll-margin-top: 100px;">
 
-                <div class="space-y-4 text-gray-600 text-sm leading-relaxed mb-8">
+        <!-- Big brand display tile -->
+        <div class="tile tile-brand col-span-12 md:col-span-7 min-h-[320px] md:min-h-[460px] relative overflow-hidden">
+            <div class="absolute -right-4 -top-8 md:-right-8 md:-top-16 numeral-xl text-ink-900/[0.07] select-none pointer-events-none">03</div>
+            <div class="relative z-10">
+                <div class="flex items-start justify-between">
+                    <span class="eyebrow text-ink-900/70" data-key="svc3_eyebrow">Service 03</span>
+                    <div class="w-12 h-12 bg-ink-900 rounded-2xl flex items-center justify-center">
+                        <i class="ph ph-magnifying-glass text-brand text-xl md:text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="relative z-10">
+                <h2 class="display text-2xl md:text-4xl mb-4 md:mb-6" data-key="svc3_title">Strategy &amp; Audits</h2>
+                <div class="space-y-3 md:space-y-4 text-ink-900/85 text-sm md:text-base leading-relaxed max-w-xl">
                     <p data-key="svc3_p1">Sometimes you don't need someone to run your ads. You need someone to tell you honestly what's wrong with them — and what to do about it.</p>
                     <p data-key="svc3_p2">I audit Google Ads accounts from top to bottom: campaign structure, keyword strategy, match types, bidding logic, ad copy, landing page alignment, and conversion tracking. No diplomatic softening. You'll get a clear picture of what's working, what's wasting money, and a prioritized list of exactly what to fix.</p>
                     <p data-key="svc3_p3">If you're running ads in-house and want an expert second opinion, this is where we start. If you want me to take over the account after the audit, that's on the table too — but there's no pressure to go further than the audit itself.</p>
                 </div>
-
-                <span class="for-pill inline-block" data-key="svc3_for">For: in-house teams wanting clarity, new clients testing the waters</span>
+                <span class="for-pill mt-5 md:mt-6" data-key="svc3_for">For: in-house teams wanting clarity, new clients testing the waters</span>
             </div>
-
-            <!-- Deliverables -->
-            <div class="md:w-2/5 mt-8 md:mt-0 fade-in">
-                <div class="relative bg-white rounded-2xl border border-gray-100 shadow-sm p-7">
-                    <span class="svc-number">03</span>
-                    <p class="text-xs font-bold tracking-widest text-gray-400 uppercase mb-5" data-key="svc3_includes_label">What's included</p>
-                    <div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc3_d1">Full account audit (structure, keywords, bids, copy, tracking)</span></div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc3_d2">Written or video summary of findings</span></div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc3_d3">Prioritized action plan</span></div>
-                        <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc3_d4">30-minute follow-up call to walk through it</span></div>
-                    </div>
-                    <a href="#contact" class="mt-6 inline-block bg-brand text-gray-900 font-bold text-sm py-3 px-6 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="svc3_cta">Get a free audit →</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ============================================================
-     WHO I WORK WITH — Focus areas
-============================================================ -->
-<section class="py-20 bg-gray-900">
-    <div class="container mx-auto px-6 max-w-5xl">
-
-        <div class="text-center mb-14 fade-in">
-            <p class="text-xs font-bold tracking-widest text-brand uppercase mb-4" data-key="focus_eyebrow">Focus areas</p>
-            <h2 class="text-3xl md:text-4xl font-extrabold text-white" data-key="focus_title">I work across verticals — with a few areas I know particularly well.</h2>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6 stagger">
-
-            <!-- Lead Gen -->
-            <div class="fade-in focus-card bg-gray-800 rounded-xl p-7">
-                <div class="w-11 h-11 bg-brand-light rounded-xl flex items-center justify-center mb-5">
-                    <i class="ph ph-funnel text-brand-dark text-2xl"></i>
+        <!-- Deliverables sidecar — dark -->
+        <div class="tile tile-dark col-span-12 md:col-span-5 min-h-[320px] md:min-h-[460px] relative overflow-hidden">
+            <div class="absolute inset-0 grid-pattern-dark opacity-50"></div>
+            <div class="relative z-10">
+                <div class="flex items-start justify-between mb-1">
+                    <span class="eyebrow text-brand" data-key="svc3_includes_label">What's included</span>
+                    <span class="numeral text-white/[0.06] leading-none">03</span>
                 </div>
-                <h3 class="font-bold text-white text-base mb-3" data-key="focus_1_title">Lead Generation</h3>
-                <p class="text-gray-400 text-sm leading-relaxed" data-key="focus_1_desc">If your business lives and dies by qualified leads — forms, calls, demos — I know how to build campaigns that attract the right ones and filter out the noise. Tight keyword architecture, strong negative lists, and tracking that goes beyond the click.</p>
             </div>
-
-            <!-- E-commerce -->
-            <div class="fade-in focus-card bg-gray-800 rounded-xl p-7">
-                <div class="w-11 h-11 bg-brand-light rounded-xl flex items-center justify-center mb-5">
-                    <i class="ph ph-storefront text-brand-dark text-2xl"></i>
-                </div>
-                <h3 class="font-bold text-white text-base mb-3" data-key="focus_2_title">E-Commerce</h3>
-                <p class="text-gray-400 text-sm leading-relaxed" data-key="focus_2_desc">For online stores it's all about ROAS. I manage Shopping campaigns, optimize product feeds, and build remarketing structures that recover lost revenue without inflating spend.</p>
+            <div class="relative z-10 flex-1 flex flex-col justify-center">
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc3_d1">Full account audit (structure, keywords, bids, copy, tracking)</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc3_d2">Written or video summary of findings</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc3_d3">Prioritized action plan</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="svc3_d4">30-minute follow-up call to walk through it</span></div>
             </div>
-
-            <!-- Branding -->
-            <div class="fade-in focus-card bg-gray-800 rounded-xl p-7">
-                <div class="w-11 h-11 bg-brand-light rounded-xl flex items-center justify-center mb-5">
-                    <i class="ph ph-megaphone text-brand-dark text-2xl"></i>
-                </div>
-                <h3 class="font-bold text-white text-base mb-3" data-key="focus_3_title">Branding Campaigns</h3>
-                <p class="text-gray-400 text-sm leading-relaxed" data-key="focus_3_desc">Not everything needs to convert today. I build upper-funnel campaigns — Display, Demand Gen, YouTube — that keep you visible to the right audiences while your bottom-funnel campaigns close the deal.</p>
-            </div>
-
+            <a href="#contact" class="relative z-10 inline-flex items-center justify-center gap-2 bg-brand text-ink-900 font-bold text-sm py-3.5 px-6 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg" data-key="svc3_cta">
+                Get a free audit →
+            </a>
         </div>
-    </div>
-</section>
 
-<!-- ============================================================
-     CONTACT CTA
-============================================================ -->
-<section id="contact" class="py-20 bg-white">
-    <div class="container mx-auto px-6 max-w-5xl">
-        <div class="lg:flex gap-16 items-start">
+    </section>
 
-            <!-- Left -->
-            <div class="lg:w-1/2 mb-12 lg:mb-0 fade-in">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-5" data-key="contact_title">Not sure where to start? Start here.</h2>
-                <p class="text-gray-500 text-base leading-relaxed mb-8" data-key="contact_sub">
+    <!-- ============================================================
+         5. FOCUS AREAS BENTO
+    ============================================================ -->
+    <section class="bento" style="grid-auto-rows: minmax(120px, auto);">
+
+        <!-- Header tile -->
+        <div class="tile tile-cream col-span-12 md:col-span-5 min-h-[200px] md:min-h-[260px]">
+            <div>
+                <span class="eyebrow text-brand-dark" data-key="focus_eyebrow">Focus areas</span>
+                <h2 class="display text-2xl md:text-4xl mt-3 mb-4" data-key="focus_title">I work across verticals — with a few areas I know particularly well.</h2>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="star"></span><span class="star"></span><span class="star"></span>
+            </div>
+        </div>
+
+        <!-- Lead Gen -->
+        <div class="tile tile-light col-span-12 md:col-span-7 min-h-[200px] md:min-h-[260px] tile-hover">
+            <div class="flex items-start justify-between">
+                <div class="w-11 h-11 md:w-12 md:h-12 bg-brand-light rounded-2xl flex items-center justify-center">
+                    <i class="ph ph-funnel text-brand-dark text-xl md:text-2xl"></i>
+                </div>
+                <span class="chip chip-on-light">Area 01</span>
+            </div>
+            <div>
+                <h3 class="font-extrabold text-xl md:text-2xl mb-2 md:mb-3" data-key="focus_1_title">Lead Generation</h3>
+                <p class="text-ink-500 text-sm md:text-base leading-relaxed" data-key="focus_1_desc">If your business lives and dies by qualified leads — forms, calls, demos — I know how to build campaigns that attract the right ones and filter out the noise. Tight keyword architecture, strong negative lists, and tracking that goes beyond the click.</p>
+            </div>
+        </div>
+
+        <!-- E-commerce -->
+        <div class="tile tile-dark col-span-12 md:col-span-7 min-h-[200px] md:min-h-[260px] tile-hover relative overflow-hidden">
+            <div class="absolute inset-0 grid-pattern-dark opacity-50"></div>
+            <div class="relative z-10 flex items-start justify-between">
+                <div class="w-11 h-11 md:w-12 md:h-12 bg-brand rounded-2xl flex items-center justify-center">
+                    <i class="ph ph-storefront text-ink-900 text-xl md:text-2xl"></i>
+                </div>
+                <span class="chip chip-on-dark">Area 02</span>
+            </div>
+            <div class="relative z-10">
+                <h3 class="font-extrabold text-xl md:text-2xl mb-2 md:mb-3" data-key="focus_2_title">E-Commerce</h3>
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed" data-key="focus_2_desc">For online stores it's all about ROAS. I manage Shopping campaigns, optimize product feeds, and build remarketing structures that recover lost revenue without inflating spend.</p>
+            </div>
+        </div>
+
+        <!-- Branding -->
+        <div class="tile tile-brand-soft col-span-12 md:col-span-5 min-h-[200px] md:min-h-[260px] tile-hover">
+            <div class="flex items-start justify-between">
+                <div class="w-11 h-11 md:w-12 md:h-12 bg-brand rounded-2xl flex items-center justify-center">
+                    <i class="ph ph-megaphone text-ink-900 text-xl md:text-2xl"></i>
+                </div>
+                <span class="chip chip-on-light">Area 03</span>
+            </div>
+            <div>
+                <h3 class="font-extrabold text-xl md:text-2xl mb-2 md:mb-3" data-key="focus_3_title">Branding Campaigns</h3>
+                <p class="text-ink-700 text-sm md:text-base leading-relaxed" data-key="focus_3_desc">Not everything needs to convert today. I build upper-funnel campaigns — Display, Demand Gen, YouTube — that keep you visible to the right audiences while your bottom-funnel campaigns close the deal.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ============================================================
+         6. CONTACT BENTO
+    ============================================================ -->
+    <section id="contact" class="bento" style="grid-auto-rows: minmax(140px, auto); scroll-margin-top: 100px;">
+
+        <!-- Pitch tile -->
+        <div class="tile tile-dark col-span-12 md:col-span-5 min-h-[440px] md:min-h-[600px] relative overflow-hidden">
+            <div class="absolute inset-0 grid-pattern-dark opacity-50"></div>
+            <div class="relative z-10">
+                <span class="chip chip-on-dark mb-4 md:mb-5">Contact</span>
+                <h2 class="display text-2xl md:text-4xl text-white mb-3 md:mb-5" data-key="contact_title">Not sure where to start? Start here.</h2>
+                <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-5 md:mb-6" data-key="contact_sub">
                     Send me a message and I'll take a free look at your Google Ads account. No pitch, no commitment — just an honest assessment of where you stand and what I'd do differently.
                 </p>
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-start gap-3 text-gray-600 text-sm" data-key="contact_li_1">
-                        <span class="text-brand font-bold mt-0.5">→</span>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start gap-3 text-gray-300 text-sm" data-key="contact_li_1">
+                        <i class="ph ph-check text-brand mt-0.5 flex-shrink-0 text-base"></i>
                         I write back myself, no templates, no team inbox
                     </li>
-                    <li class="flex items-start gap-3 text-gray-600 text-sm" data-key="contact_li_2">
-                        <span class="text-brand font-bold mt-0.5">→</span>
+                    <li class="flex items-start gap-3 text-gray-300 text-sm" data-key="contact_li_2">
+                        <i class="ph ph-check text-brand mt-0.5 flex-shrink-0 text-base"></i>
                         You get a real opinion, not a polished pitch deck
                     </li>
-                    <li class="flex items-start gap-3 text-gray-600 text-sm" data-key="contact_li_3">
-                        <span class="text-brand font-bold mt-0.5">→</span>
+                    <li class="flex items-start gap-3 text-gray-300 text-sm" data-key="contact_li_3">
+                        <i class="ph ph-check text-brand mt-0.5 flex-shrink-0 text-base"></i>
                         No strings attached, what comes next is your call
                     </li>
                 </ul>
-                <p class="text-gray-400 text-xs" data-key="contact_reassurance">No spam. No sales calls unless you want one. Just a reply from me, Max.</p>
             </div>
-
-            <!-- Right: form -->
-            <div class="lg:w-1/2 fade-in">
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 relative overflow-hidden" style="min-height: 420px;">
-
-                    <form id="contact-form" class="space-y-5">
-
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_name">Name</label>
-                            <input type="text" name="name" required placeholder="Your name"
-                                class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition">
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_email">Email</label>
-                            <input type="email" name="email" required placeholder="you@company.com"
-                                class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition">
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_service">What can I help with?</label>
-                            <select name="service"
-                                class="w-full bg-white border border-gray-200 text-gray-900 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition appearance-none">
-                                <option value="Free Audit" data-key="form_opt_audit">Free Audit</option>
-                                <option value="Campaign Management" data-key="form_opt_mgmt">Campaign Management</option>
-                                <option value="Scripts & Automation" data-key="form_opt_scripts">Scripts & Automation</option>
-                                <option value="General Question" data-key="form_opt_general">General Question</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_website">
-                                Website / Google Ads account <span class="font-normal text-gray-400" data-key="form_optional">(optional)</span>
-                            </label>
-                            <input type="text" name="website" placeholder="www.yoursite.com"
-                                class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition">
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-key="form_label_challenge">
-                                Anything else? <span class="font-normal text-gray-400" data-key="form_optional2">(optional)</span>
-                            </label>
-                            <textarea name="challenge" rows="2" placeholder="e.g. High CPA, wasted budget, unclear reporting..."
-                                class="w-full bg-white border border-gray-200 text-gray-900 placeholder-gray-400 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand transition resize-none"></textarea>
-                        </div>
-
-                        <button type="submit"
-                            class="w-full bg-brand text-gray-900 font-extrabold text-base py-4 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
-                            data-key="form_submit">
-                            Send — it's free
-                        </button>
-
-                    </form>
-
-                    <!-- Success state -->
-                    <div id="form-success" class="absolute inset-0 bg-gray-50 rounded-2xl flex flex-col items-center justify-center text-center px-8 opacity-0 pointer-events-none transition-opacity duration-500">
-                        <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background: rgba(59,180,82,0.1); border: 2px solid #3fb950;">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3fb950" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="text-gray-900 font-bold text-xl mb-3" data-key="success_title">Message received.</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed" data-key="success_sub">You'll hear back within 2 business days — directly from Max, not an assistant.</p>
-                    </div>
-
+            <div class="relative z-10">
+                <div class="border-t border-white/10 pt-5">
+                    <p class="text-gray-500 text-xs mb-2">Or write directly:</p>
+                    <a href="/cdn-cgi/l/email-protection#cba3aea7a7a48ba8a7a2a8a0e6a8aabbb2a9aab9aae5a8a4a6" class="text-brand font-bold text-sm md:text-base hover:underline"><span class="__cf_email__" data-cfemail="95fdf0f9f9fad5f6f9fcf6feb8f6f4e5ecf7f4e7f4bbf6faf8">[email&#160;protected]</span></a>
+                    <p class="text-gray-600 text-xs mt-3" data-key="contact_reassurance">No spam. No sales calls unless you want one. Just a reply from me, Max.</p>
                 </div>
             </div>
-
         </div>
-    </div>
-</section>
+
+        <!-- Form tile -->
+        <div class="tile tile-light col-span-12 md:col-span-7 min-h-[560px] md:min-h-[600px] relative overflow-hidden">
+
+            <form id="contact-form" class="space-y-4">
+
+                <div>
+                    <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="form_label_name">Name</label>
+                    <input type="text" name="name" required placeholder="Your name"
+                        class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="form_label_email">Email</label>
+                    <input type="email" name="email" required placeholder="you@company.com"
+                        class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="form_label_service">What can I help with?</label>
+                    <select name="service"
+                        class="w-full bg-cream border border-black/5 text-ink-900 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition appearance-none">
+                        <option value="Free Audit" data-key="form_opt_audit">Free Audit</option>
+                        <option value="Campaign Management" data-key="form_opt_mgmt">Campaign Management</option>
+                        <option value="Scripts &amp; Automation" data-key="form_opt_scripts">Scripts &amp; Automation</option>
+                        <option value="General Question" data-key="form_opt_general">General Question</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="form_label_website">
+                        Website / Google Ads account <span class="font-normal normal-case tracking-normal text-ink-500/70" data-key="form_optional">(optional)</span>
+                    </label>
+                    <input type="text" name="website" placeholder="www.yoursite.com"
+                        class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="form_label_challenge">
+                        Anything else? <span class="font-normal normal-case tracking-normal text-ink-500/70" data-key="form_optional2">(optional)</span>
+                    </label>
+                    <textarea name="challenge" rows="3" placeholder="e.g. High CPA, wasted budget, unclear reporting..."
+                        class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition resize-none"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-ink-900 text-brand font-extrabold text-base py-4 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98]"
+                    data-key="form_submit">
+                    Send — it's free
+                </button>
+
+            </form>
+
+            <!-- Success state -->
+            <div id="form-success" class="absolute inset-0 bg-white rounded-[28px] flex flex-col items-center justify-center text-center px-8 opacity-0 pointer-events-none transition-opacity duration-500">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background: rgba(59,180,82,0.12); border: 2px solid #3fb950;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3fb950" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <h3 class="font-extrabold text-xl mb-3" data-key="success_title">Message received.</h3>
+                <p class="text-ink-500 text-sm leading-relaxed max-w-sm" data-key="success_sub">You'll hear back within 2 business days — directly from Max, not an assistant.</p>
+            </div>
+        </div>
+
+    </section>
 
 </main>
 
 <!-- ============================================================
      FOOTER
 ============================================================ -->
-<footer class="bg-gray-950 text-gray-500 py-8">
-    <div class="container mx-auto px-6 text-center text-sm">
-        <div class="flex justify-center items-center gap-2 mb-4">
-            <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara" class="w-5 h-5 opacity-40">
-            <p data-key="footer_copy">&copy; 2024 Click-Capybara · The Google Ads specialist in your corner.</p>
+<footer class="container mx-auto px-4 md:px-6 pb-8">
+    <div class="tile tile-dark min-h-[100px]" style="flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div class="flex items-center gap-3">
+            <img src="assets/capybara_outine_bold.svg" alt="Click-Capybara" class="w-6 h-6 opacity-70" onerror="this.outerHTML='<span class=&quot;logo-fallback w-6 h-6 text-[10px]&quot;>CC</span>'">
+            <p class="text-gray-400 text-xs" data-key="footer_copy">&copy; 2024 Click-Capybara · The Google Ads specialist in your corner.</p>
         </div>
-        <div class="flex justify-center gap-6 text-xs">
-            <a href="privacy.html" class="hover:text-white transition" data-key="footer_privacy">Privacy Policy</a>
-            <a href="#contact" class="hover:text-white transition" data-key="footer_contact">Contact</a>
-            <a href="free-script.html" class="hover:text-white transition" data-key="footer_script">Tools & Scripts</a>
+        <div class="flex items-center gap-4 md:gap-5 text-xs">
+            <a href="privacy.html" class="text-gray-400 hover:text-brand transition" data-key="footer_privacy">Privacy Policy</a>
+            <a href="#contact" class="text-gray-400 hover:text-brand transition" data-key="footer_contact">Contact</a>
+            <a href="free-script.html" class="text-gray-400 hover:text-brand transition" data-key="footer_script">Tools &amp; Scripts</a>
         </div>
     </div>
 </footer>
@@ -517,18 +681,13 @@
 <!-- ============================================================
      JS
 ============================================================ -->
-<script>
-// ── Mobile menu ───────────────────────────────────────
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── Mobile menu ──────────────────────────────────────
 document.getElementById('mobile-menu-button').addEventListener('click', () => {
     document.getElementById('mobile-menu').classList.toggle('hidden');
 });
 
-// ── Sticky header shadow ──────────────────────────────
-window.addEventListener('scroll', () => {
-    document.getElementById('site-header').classList.toggle('header-scrolled', window.scrollY > 10);
-});
-
-// ── Language switcher ─────────────────────────────────
+// ── Language switcher (services-page specific overrides merged with translations.js) ──
 if (typeof translations !== 'undefined') {
     const langEnBtn  = document.getElementById('lang-en');
     const langDeBtn  = document.getElementById('lang-de');
@@ -540,12 +699,12 @@ if (typeof translations !== 'undefined') {
             svc_page_title: "Services | Max — Google Ads Specialist",
             svc_meta_desc: "Freelance Google Ads services: campaign management, scripts & automation, and strategy audits. Direct access to a senior specialist — no agency overhead.",
             svc_eyebrow: "What I offer",
-            svc_h1: "Three things I do.<br>All of them well.",
+            svc_h1: "Three things I do.<br><span class=\"hl\">All of them well.</span>",
             svc_sub: "I don't offer twelve services to look impressive. I offer three — and I've spent 8 years getting very good at each of them. Here's exactly what you get when we work together.",
             svc_jump_1: "Campaign Management", svc_jump_2: "Scripts & Automation", svc_jump_3: "Strategy & Audits",
             svc1_eyebrow: "Service 01", svc1_title: "Google Ads Campaign Management",
-            svc1_p1: "Campaign management is the core of this work — building and running Google Ads across Search, Shopping, Display, and Demand Gen with one goal in mind: making your budget work harder than it currently does.",
-            svc1_p2: "Your account doesn't get handed off after the onboarding call. It gets worked on every week — bids adjusted, match types refined, underperformers cut, new angles tested. And the reports you receive are in plain language, not dashboards full of numbers that don't tell you anything.",
+            svc1_p1: "This is the core of what I do. I build, structure, and actively manage Google Ads campaigns across Search, Shopping, Display, and Demand Gen — with one goal: making your budget work harder than it currently does.",
+            svc1_p2: "I don't hand your account to a junior after the onboarding call. I'm in it every week — adjusting bids, refining match types, killing underperformers, testing new angles. You'll know exactly what I'm doing and why, because I send you reports in plain language, not dashboards full of numbers that don't tell you anything.",
             svc1_for: "For: accounts that aren't performing, or launching from scratch",
             svc1_includes_label: "What's included",
             svc1_d1: "Campaign build or restructure", svc1_d2: "Keyword strategy and match type architecture",
@@ -554,8 +713,8 @@ if (typeof translations !== 'undefined') {
             svc1_cta: "Get started →",
             svc2_eyebrow: "Service 02", svc2_title: "Scripts & Automation",
             svc2_p1: "There's a ceiling on what manual Google Ads management can achieve. Scripts break through it.",
-            svc2_p2: "Repetitive, error-prone work — budget monitoring, anomaly detection, report generation — can be automated. Work that takes a human three hours takes a well-written script three seconds.",
-            svc2_p3: "A concrete example is Capybara NegativeIQ Search — a free tool that classifies search terms using AI, protects converting keywords, and tells you exactly what to add as a negative.",
+            svc2_p2: "I write custom Google Ads scripts that automate the repetitive, error-prone work that eats hours every week — flagging wasted spend, pacing budgets, monitoring performance anomalies, generating reports. Work that takes a human three hours takes a script three seconds.",
+            svc2_p3: "My free tool, Capybara NegativeIQ Search, is a good example of what this looks like in practice: it connects your Google Ads account to AI, classifies every search term automatically, protects converting keywords, and tells you exactly what to add as a negative. That's the kind of edge a well-written script gives you.",
             svc2_for: "For: managers and teams who want to work smarter, not longer",
             svc2_includes_label: "What I build",
             svc2_d1: "Search term classification (AI-powered)", svc2_d2: "Budget pacing and overspend alerts",
@@ -565,7 +724,7 @@ if (typeof translations !== 'undefined') {
             svc3_eyebrow: "Service 03", svc3_title: "Strategy & Audits",
             svc3_p1: "Sometimes you don't need someone to run your ads. You need someone to tell you honestly what's wrong with them — and what to do about it.",
             svc3_p2: "I audit Google Ads accounts from top to bottom: campaign structure, keyword strategy, match types, bidding logic, ad copy, landing page alignment, and conversion tracking. No diplomatic softening. You'll get a clear picture of what's working, what's wasting money, and a prioritized list of exactly what to fix.",
-            svc3_p3: "A good starting point for anyone running ads in-house who wants an honest second opinion. And if it makes sense to hand over the account afterwards — that conversation is always available. But the audit stands on its own.",
+            svc3_p3: "If you're running ads in-house and want an expert second opinion, this is where we start. If you want me to take over the account after the audit, that's on the table too — but there's no pressure to go further than the audit itself.",
             svc3_for: "For: in-house teams wanting clarity, new clients testing the waters",
             svc3_includes_label: "What's included",
             svc3_d1: "Full account audit (structure, keywords, bids, copy, tracking)",
@@ -582,24 +741,17 @@ if (typeof translations !== 'undefined') {
             focus_3_title: "Branding Campaigns",
             focus_3_desc: "Not everything needs to convert today. I build upper-funnel campaigns — Display, Demand Gen, YouTube — that keep you visible to the right audiences while your bottom-funnel campaigns close the deal.",
             contact_title: "Not sure where to start? Start here.",
-            contact_sub: "Not every account needs a big overhaul, but most have at least one thing worth fixing. Send me a quick message and I'll tell you honestly what I see. No agenda, just a straight answer.",
+            contact_sub: "Send me a message and I'll take a free look at your Google Ads account. No pitch, no commitment — just an honest assessment of where you stand and what I'd do differently.",
             contact_li_1: "I write back myself, no templates, no team inbox",
             contact_li_2: "You get a real opinion, not a polished pitch deck",
             contact_li_3: "No strings attached, what comes next is your call",
-            contact_reassurance: "No spam. No sales calls unless you want one. Just a reply from me, Max.",
-            form_label_name: "Name", form_label_email: "Email",
-            form_label_website: "Website / Google Ads account",
-            form_label_challenge: "Biggest challenge right now?",
-            form_optional: "(optional)", form_optional2: "(optional)",
-            form_submit: "Send — it's free",
-            form_status: "We'll get back to you within one business day.",
-            footer_copy: "© 2024 Click-Capybara · The Google Ads specialist in your corner.",
-            footer_privacy: "Privacy Policy", footer_contact: "Contact", footer_script: "Tools & Scripts",
-            nav_services: "Services", nav_free_script: "Tools & Scripts", nav_about: "About", nav_contact: "Contact", nav_cta: "Fresh Eyes",
+            contact_reassurance: "No spam. No sales calls unless you want one. Just a reply from me, Max."
+        },
+        de: {
             svc_page_title: "Services | Max — Google Ads Spezialist",
             svc_meta_desc: "Freelance Google Ads Services: Kampagnen-Management, Scripts & Automatisierung und Strategie-Audits. Direkt mit dem Spezialisten — kein Agentur-Overhead.",
             svc_eyebrow: "Was ich anbiete",
-            svc_h1: "Drei Dinge.<br>Alle richtig gemacht.",
+            svc_h1: "Drei Dinge.<br><span class=\"hl\">Alle richtig gemacht.</span>",
             svc_sub: "Ich biete keine zwölf Services an, um beeindruckend zu wirken. Ich biete drei — und ich arbeite seit 8 Jahren daran, in jedem davon sehr gut zu werden. Hier ist genau, was du bekommst.",
             svc_jump_1: "Kampagnen-Management", svc_jump_2: "Scripts & Automatisierung", svc_jump_3: "Strategie & Audits",
             svc1_eyebrow: "Service 01", svc1_title: "Google Ads Kampagnen-Management",
@@ -645,16 +797,7 @@ if (typeof translations !== 'undefined') {
             contact_li_1: "Ich antworte persönlich, keine automatisierten Mails",
             contact_li_2: "Du kriegst eine ehrliche Einschätzung, keine Verkaufspräsentation",
             contact_li_3: "Was danach passiert, entscheiden wir gemeinsam",
-            contact_reassurance: "Kein Spam. Keine unerwünschten Anrufe. Nur eine Antwort von mir, Max.",
-            form_label_name: "Name", form_label_email: "E-Mail",
-            form_label_website: "Website / Google Ads Account",
-            form_label_challenge: "Was ist deine größte Herausforderung gerade?",
-            form_optional: "(optional)", form_optional2: "(optional)",
-            form_submit: "Nachricht senden — kostenlos",
-            form_status: "Ich melde mich innerhalb eines Werktages.",
-            footer_copy: "© 2024 Click-Capybara · Der Google Ads Spezialist an deiner Seite.",
-            footer_privacy: "Datenschutz", footer_contact: "Kontakt", footer_script: "Kostenloses Script",
-            nav_services: "Services", nav_free_script: "Tools & Scripts", nav_about: "Über mich", nav_contact: "Kontakt", nav_cta: "Kostenloses Audit"
+            contact_reassurance: "Kein Spam. Keine unerwünschten Anrufe. Nur eine Antwort von mir, Max."
         }
     };
 
@@ -667,10 +810,10 @@ if (typeof translations !== 'undefined') {
             if (t[key] !== undefined) el.innerHTML = t[key];
         });
         [langEnBtn, mLangEnBtn].forEach(btn => {
-            if(btn){ btn.classList.toggle('font-bold', lang==='en'); btn.classList.toggle('text-gray-900', lang==='en'); btn.classList.toggle('text-gray-400', lang!=='en'); }
+            if(btn){ btn.classList.toggle('font-bold', lang==='en'); btn.classList.toggle('text-ink-900', lang==='en'); btn.classList.toggle('text-gray-400', lang!=='en'); }
         });
         [langDeBtn, mLangDeBtn].forEach(btn => {
-            if(btn){ btn.classList.toggle('font-bold', lang==='de'); btn.classList.toggle('text-gray-900', lang==='de'); btn.classList.toggle('text-gray-400', lang!=='de'); }
+            if(btn){ btn.classList.toggle('font-bold', lang==='de'); btn.classList.toggle('text-ink-900', lang==='de'); btn.classList.toggle('text-gray-400', lang!=='de'); }
         });
         localStorage.setItem('preferredLang', lang);
     }
@@ -683,7 +826,7 @@ if (typeof translations !== 'undefined') {
     setLanguage(localStorage.getItem('preferredLang') || 'en');
 }
 
-// ── Scroll fade-in ────────────────────────────────────
+// ── Scroll fade-in ───────────────────────────────────
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
@@ -714,14 +857,12 @@ function submitToSheet(formEl, sourcePage) {
         body: JSON.stringify(data)
     })
     .then(() => {
-        // GA4 conversion event
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             event: 'generate_lead',
             form_location: sourcePage,
             service_selected: data.service
         });
-
         formEl.style.opacity = '0';
         formEl.style.pointerEvents = 'none';
         const success = document.getElementById('form-success');
