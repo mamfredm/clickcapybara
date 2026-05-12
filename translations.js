@@ -158,8 +158,8 @@ const translations = {
     "usecase_local_subtitle": "Stay Top of Mind",
 
     // ── Footer ────────────────────────────────────────────────
-    "footer_copy": "© 2025 Click-Capybara · The Google Ads specialist in your corner.",
-    "footer_copyright": "© 2025 Click-Capybara · The Google Ads specialist in your corner.",
+    "footer_copy": "© 2024 Click-Capybara · The Google Ads specialist in your corner.",
+    "footer_copyright": "© 2024 Click-Capybara · The Google Ads specialist in your corner.",
     "footer_privacy": "Privacy Policy",
     "footer_contact": "Contact",
     "footer_script": "Tools & Scripts",
@@ -537,8 +537,8 @@ const translations = {
     "usecase_local_subtitle": "Sichtbarkeit aufbauen",
 
     // ── Footer ────────────────────────────────────────────────
-    "footer_copy": "© 2025 Click-Capybara · Der Google Ads Spezialist an deiner Seite.",
-    "footer_copyright": "© 2025 Click-Capybara · Der Google Ads Spezialist an deiner Seite.",
+    "footer_copy": "© 2024 Click-Capybara · Der Google Ads Spezialist an deiner Seite.",
+    "footer_copyright": "© 2024 Click-Capybara · Der Google Ads Spezialist an deiner Seite.",
     "footer_privacy": "Datenschutz",
     "footer_contact": "Kontakt",
     "footer_script": "Tools & Scripts",
