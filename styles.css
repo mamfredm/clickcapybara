@@ -11,7 +11,12 @@ html { line-height: 1.5; -webkit-text-size-adjust: 100%; scroll-behavior: smooth
 body { margin: 0; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; background: #EFECE3; }
 img, svg, video { display: block; max-width: 100%; }
 button, input, select, textarea { font-family: inherit; font-size: 100%; }
-button { background: none; border: none; padding: 0; cursor: pointer; }
+/* Reset only bare buttons — not ones with explicit classes like .btn-brand */
+button:not([class]) { background: none; border: none; padding: 0; cursor: pointer; }
+/* Lang switcher and mobile menu buttons */
+#lang-en, #lang-de, #mobile-lang-en, #mobile-lang-de, #mobile-menu-button {
+  background: none; border: none; padding: 0; cursor: pointer;
+}
 a { color: inherit; text-decoration: inherit; }
 h1,h2,h3,h4,h5,h6 { margin: 0; font-size: inherit; font-weight: inherit; }
 p { margin: 0; }
@@ -98,6 +103,8 @@ pre, code { font-family: 'JetBrains Mono', monospace; }
 /* Responsive grid columns — sm (≥640px) */
 @media (min-width: 640px) {
   .sm\:col-span-6  { grid-column: span 6 / span 6; }
+  .sm\:flex-row    { flex-direction: row; }
+  .sm\:text-\[48px\] { font-size: 48px; line-height: 1; }
 }
 
 /* Responsive grid columns — md (≥768px) */
@@ -136,6 +143,7 @@ pre, code { font-family: 'JetBrains Mono', monospace; }
 .py-1\.5 { padding-top: 6px; padding-bottom: 6px; }
 .py-2   { padding-top: 8px;  padding-bottom: 8px; }
 .py-3   { padding-top: 12px; padding-bottom: 12px; }
+.py-3\.5 { padding-top: 14px; padding-bottom: 14px; }
 .py-4   { padding-top: 16px; padding-bottom: 16px; }
 .py-5   { padding-top: 20px; padding-bottom: 20px; }
 .py-6   { padding-top: 24px; padding-bottom: 24px; }
@@ -170,6 +178,7 @@ pre, code { font-family: 'JetBrains Mono', monospace; }
 .mb-4   { margin-bottom: 16px; }
 .mb-5   { margin-bottom: 20px; }
 .mb-6   { margin-bottom: 24px; }
+.mb-7   { margin-bottom: 28px; }
 .mb-8   { margin-bottom: 32px; }
 .ml-2   { margin-left: 8px; }
 .ml-6   { margin-left: 24px; }
@@ -479,10 +488,15 @@ pre, code { font-family: 'JetBrains Mono', monospace; }
 .border-black\/8   { border-color: rgba(0,0,0,0.08); }
 .border-white\/10  { border-color: rgba(255,255,255,0.10); }
 .border-white\/20  { border-color: rgba(255,255,255,0.20); }
+.border-ink-900\/15 { border-color: rgba(14,14,16,0.15); }
+.border-ink-900\/30 { border-color: rgba(14,14,16,0.30); }
 .border-brand      { border-color: #fcba02; }
 .border-gray-200   { border-color: #e5e7eb; }
 .border-gray-300   { border-color: #d1d5db; }
 .border-gray-700   { border-color: #374151; }
+.hover\:border-ink-900:hover { border-color: #0E0E10; }
+.hover\:shadow-lg:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1); }
+.hover\:shadow-md:hover { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
 
 /* Rounded */
 .rounded     { border-radius: 4px; }
