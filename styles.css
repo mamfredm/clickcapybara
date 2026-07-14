@@ -674,6 +674,14 @@ pre, code { font-family: 'JetBrains Mono', monospace; }
 
 /* ── Highlight span ─────────────────────────── */
 .hl { color: #fcba02; }
+/* Solid gold pill — for emphasis on light backgrounds where solid gold text fails contrast */
+.hl-chip {
+  display: inline-block;
+  color: #0E0E10;
+  background: #fcba02;
+  padding: 0.02em 0.28em 0.09em;
+  border-radius: 0.22em;
+}
 
 /* ── Grid pattern overlays ──────────────────── */
 .grid-pattern {
@@ -976,3 +984,73 @@ pre, code { font-family: 'JetBrains Mono', monospace; }
 
 /* Transition shadow */
 .transition-shadow { transition: box-shadow 0.2s ease; }
+
+/* ══════════════════════════════════════════════════════════════
+   Page-specific arbitrary-value classes
+   Added: these utility classes were used when building local-hero-kit.html
+   and later edits, but were missing from the original class-audit generation
+   of this file — meaning they silently had NO effect (relying on
+   Tailwind CDN's live JIT compiler, which this static file replaced).
+   Confirmed via computed-style testing that headings were rendering at
+   16px instead of their intended sizes, watermark numerals were rendering
+   fully opaque instead of 5% opacity, and responsive card reordering
+   was not applying.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Base (no breakpoint) */
+.text-\[32px\]  { font-size: 32px; }
+.text-\[34px\]  { font-size: 34px; }
+.text-\[36px\]  { font-size: 36px; }
+.max-w-\[180px\] { max-width: 180px; }
+.min-h-\[280px\] { min-height: 280px; }
+.min-h-\[360px\] { min-height: 360px; }
+.min-h-\[440px\] { min-height: 440px; }
+.rounded-\[28px\] { border-radius: 28px; }
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+.active\:scale-\[0\.98\]:active { transform: scale(0.98); }
+
+.bg-cream\/60   { background-color: rgba(246,243,236,0.6); }
+.bg-white\/10   { background-color: rgba(255,255,255,0.1); }
+.bg-white\/70   { background-color: rgba(255,255,255,0.7); }
+.border-ink-900\/10 { border-color: rgba(14,14,16,0.1); }
+.border-white\/5    { border-color: rgba(255,255,255,0.05); }
+.placeholder-ink-500\/60::placeholder { color: rgba(107,107,115,0.6); }
+
+.text-ink-500\/70 { color: rgba(107,107,115,0.7); }
+.text-ink-900\/15 { color: rgba(14,14,16,0.15); }
+.text-ink-900\/40 { color: rgba(14,14,16,0.4); }
+.text-ink-900\/80 { color: rgba(14,14,16,0.8); }
+.text-ink-900\/\[0\.05\] { color: rgba(14,14,16,0.05); }
+.text-ink-900\/\[0\.07\] { color: rgba(14,14,16,0.07); }
+.text-white\/\[0\.05\]  { color: rgba(255,255,255,0.05); }
+.text-white\/\[0\.06\]  { color: rgba(255,255,255,0.06); }
+
+/* sm: (≥640px) */
+@media (min-width: 640px) {
+  .sm\:text-\[44px\] { font-size: 44px; }
+  .sm\:text-\[52px\] { font-size: 52px; }
+}
+
+/* md: (≥768px) */
+@media (min-width: 768px) {
+  .md\:text-\[13px\] { font-size: 13px; }
+  .md\:text-\[15px\] { font-size: 15px; }
+  .md\:text-\[60px\] { font-size: 60px; }
+  .md\:text-\[64px\] { font-size: 64px; }
+  .md\:text-\[76px\] { font-size: 76px; }
+  .md\:min-h-\[252px\] { min-height: 252px; }
+  .md\:min-h-\[280px\] { min-height: 280px; }
+  .md\:min-h-\[440px\] { min-height: 440px; }
+  .md\:order-1 { order: 1; }
+  .md\:order-2 { order: 2; }
+}
+
+/* lg: (≥1024px) */
+@media (min-width: 1024px) {
+  .lg\:text-\[68px\] { font-size: 68px; }
+  .lg\:text-\[76px\] { font-size: 76px; }
+  .lg\:text-\[80px\] { font-size: 80px; }
+  .lg\:text-\[84px\] { font-size: 84px; }
+  .lg\:text-\[92px\] { font-size: 92px; }
+}

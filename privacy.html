@@ -39,11 +39,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_capybara_outine_bold.ico" />
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <link rel="preload" as="style" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
     <script src="translations.js"></script>
     <link rel="stylesheet" id="silktide-consent-manager-css" href="cookie-banner/silktide-consent-manager.css">
     <script src="cookie-banner/silktide-consent-manager.js"></script>
@@ -111,10 +112,11 @@
                 <span class="text-xl font-bold text-gray-900">Click-Capybara</span>
             </a>
             <div class="hidden md:flex items-center space-x-7">
-                <a href="services.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_services">Services</a>
-                <a href="free-script.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_free_script">Tools & Scripts</a>
+                <a href="services.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_services">Google Ads</a>
+                <a href="local-hero-kit.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_starter">Local Hero Kit</a>
                 <a href="index.html#about" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_about">About</a>
                 <a href="index.html#contact" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_contact">Contact</a>
+                <a href="free-script.html" class="nav-link text-gray-600 hover:text-gray-900 font-medium text-sm" data-key="nav_free_script">Tools & Scripts</a>
             </div>
             <div class="hidden md:flex items-center space-x-4 ml-8">
                 <button id="lang-en" class="text-sm font-bold text-gray-900">EN</button>
@@ -122,15 +124,16 @@
                 <button id="lang-de" class="text-sm font-medium text-gray-400 hover:text-gray-700">DE</button>
                 <a href="index.html#contact" class="ml-2 bg-brand text-gray-900 font-bold text-sm py-2 px-5 rounded-lg transition hover:-translate-y-0.5 hover:shadow-md" data-key="nav_cta">Free Audit</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-gray-700 text-xl p-1"><i class="fas fa-bars"></i></button>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700 text-xl p-1"><i class="ph ph-list"></i></button>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden mt-3 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
-            <a href="services.html" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_services">Services</a>
-            <a href="free-script.html" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_free_script">Tools & Scripts</a>
+            <a href="services.html" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_services">Google Ads</a>
+            <a href="local-hero-kit.html" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_starter">Local Hero Kit</a>
             <a href="index.html#about" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_about">About</a>
             <a href="index.html#contact" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_contact">Contact</a>
+            <a href="free-script.html" class="block py-3 px-5 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-100" data-key="nav_free_script">Tools & Scripts</a>
             <div class="flex items-center gap-4 px-5 py-3 border-b border-gray-100">
-                <i class="fas fa-globe text-gray-400"></i>
+                <i class="ph ph-globe text-gray-400"></i>
                 <button id="mobile-lang-en" class="text-sm font-bold">EN</button>
                 <button id="mobile-lang-de" class="text-sm font-medium text-gray-400">DE</button>
             </div>

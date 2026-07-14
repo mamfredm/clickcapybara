@@ -38,8 +38,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-key="page_title">Max | Google Ads Specialist — Click-Capybara</title>
-    <meta name="description" data-key="meta_desc" content="Freelance Google Ads specialist with 8+ years experience. Strategy, scripts, and straight talk — no agency markup.">
+    <title data-key="page_title">Max | Digital Marketing Specialist — Click-Capybara</title>
+    <meta name="description" data-key="meta_desc" content="Freelance digital marketing specialist with 8+ years experience — Google Ads, websites, and local visibility. Direct access, no agency overhead.">
     <link rel="canonical" href="https://www.click-capybara.com/">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_capybara_outine_bold.ico" />
 
@@ -49,7 +49,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Max",
-        "jobTitle": "Google Ads & PPC Specialist",
+        "jobTitle": "Digital Marketing Specialist",
         "url": "https://www.click-capybara.com",
         "brand": { "@type": "Brand", "name": "Click-Capybara" },
         "contactPoint": {
@@ -64,14 +64,14 @@
     <!-- Tailwind -->
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <link rel="preload" as="style" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"></noscript>
 
     <!-- Translations -->
     <script src="translations.js"></script>
@@ -264,10 +264,11 @@
                     </a>
 
                     <div class="hidden md:flex items-center space-x-7">
-                        <a href="services.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_services">Services</a>
-                        <a href="free-script.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_free_script">Tools &amp; Scripts</a>
+                        <a href="services.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_services">Google Ads</a>
+                        <a href="local-hero-kit.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_starter">Local Hero Kit</a>
                         <a href="#about" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_about">About</a>
                         <a href="#contact" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_contact">Contact</a>
+                        <a href="free-script.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_free_script">Tools &amp; Scripts</a>
                     </div>
 
                     <div class="hidden md:flex items-center space-x-3 ml-6">
@@ -278,17 +279,18 @@
                     </div>
 
                     <button id="mobile-menu-button" class="md:hidden text-ink-900 text-xl p-1">
-                        <i class="fas fa-bars"></i>
+                        <i class="ph ph-list"></i>
                     </button>
                 </nav>
 
                 <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-black/5 rounded-b-2xl overflow-hidden">
-                    <a href="services.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_services">Services</a>
-                    <a href="free-script.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_free_script">Tools &amp; Scripts</a>
+                    <a href="services.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_services">Google Ads</a>
+                    <a href="local-hero-kit.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_starter">Local Hero Kit</a>
                     <a href="#about" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_about">About</a>
                     <a href="#contact" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_contact">Contact</a>
+                    <a href="free-script.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_free_script">Tools &amp; Scripts</a>
                     <div class="flex items-center gap-4 px-5 py-3 border-b border-black/5">
-                        <i class="fas fa-globe text-gray-400"></i>
+                        <i class="ph ph-globe text-gray-400"></i>
                         <button id="mobile-lang-en" class="text-sm font-bold">EN</button>
                         <button id="mobile-lang-de" class="text-sm font-medium text-gray-400">DE</button>
                     </div>
@@ -303,32 +305,32 @@
     <main class="container mx-auto px-4 md:px-6 py-6 md:py-8 space-y-6 md:space-y-8">
 
         <!-- ============================================================
-             1. HERO BENTO
+             1. HUB HERO BENTO
         ============================================================ -->
         <section class="bento" style="grid-auto-rows: minmax(120px, auto);">
 
             <!-- A · Main hero -->
             <div class="tile tile-cream grid-pattern col-span-12 md:col-span-8 md:row-span-2 min-h-[360px] md:min-h-[520px]">
                 <div class="relative z-10">
-                    <span class="chip chip-on-light mb-4 md:mb-6" data-key="hero_eyebrow">
-                        <i class="fab fa-google text-[10px]"></i>
-                        Google Ads · Scripts &amp; Automation
+                    <span class="chip chip-on-light mb-4 md:mb-6" data-key="hub_eyebrow">
+                        <i class="ph ph-compass"></i>
+                        Digital Marketing · Google Ads · Web
                     </span>
                 </div>
                 <div class="relative z-10">
-                    <h1 class="display text-[34px] sm:text-[48px] md:text-[64px] lg:text-[84px] mb-4 md:mb-6" data-key="hero_h1">
+                    <h1 class="display text-[34px] sm:text-[48px] md:text-[64px] lg:text-[80px] mb-4 md:mb-6" data-key="hub_h1">
                         Hi, I'm Max.<br>
-                        <span class="hl">I build Google Ads setups that run lean.</span>
+                        I help businesses <span class="hl-chip">show up</span> online, and actually <span class="hl-chip">perform</span> once they do.
                     </h1>
-                    <p class="text-sm md:text-lg text-ink-500 max-w-xl leading-relaxed mb-6 md:mb-8" data-key="hero_sub">
-                        8 years in, I mostly work on accounts where the structure is messy or the automation doesn't exist yet. I fix that with custom scripts, clean campaign architecture, and no wasted spend.
+                    <p class="text-sm md:text-lg text-ink-500 max-w-xl leading-relaxed mb-6 md:mb-8" data-key="hub_sub">
+                        I work across the whole picture: websites, visibility, tracking, and Google Ads.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-3">
-                        <a href="#contact" class="bg-ink-900 text-brand font-bold text-sm py-3.5 px-6 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg text-center" data-key="hero_cta_primary">
-                            Get a free second opinion
+                        <a href="#contact" class="bg-ink-900 text-brand font-bold text-sm py-3.5 px-6 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg text-center" data-key="hub_cta_primary">
+                            Get in touch
                         </a>
-                        <a href="free-script.html" class="text-ink-900 font-semibold text-sm py-3.5 px-6 rounded-xl border border-ink-900/15 bg-white hover:border-ink-900 transition text-center" data-key="hero_cta_secondary">
-                            ↓ Grab my free AI Keyword Analyzer
+                        <a href="#paths" class="text-ink-900 font-semibold text-sm py-3.5 px-6 rounded-xl border border-ink-900/15 bg-white hover:border-ink-900 transition text-center" data-key="hub_cta_secondary">
+                            ↓ See how I can help
                         </a>
                     </div>
                 </div>
@@ -359,323 +361,28 @@
                 </div>
                 <div>
                     <p class="numeral hl">8+</p>
-                    <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">Years inside Google Ads, including 2 years at Google as a Performance Max SME.</p>
+                    <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">Years in digital marketing, including 2 years at Google as a Performance Max SME.</p>
                 </div>
             </div>
 
         </section>
 
-        <!-- ============================================================
-             2. TRUST STRIP (bento sub-band)
-        ============================================================ -->
+        <!-- Lightweight wayfinding strip -->
         <section class="bento">
-            <div class="tile tile-outline col-span-6 md:col-span-3 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:10px">
-                <div class="flex items-center gap-2">
-                    <i class="fab fa-google text-brand text-lg"></i>
-                    <span class="eyebrow text-ink-500">Certified</span>
+            <a href="services.html" class="tile tile-outline col-span-12 md:col-span-6 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:8px">
+                <div class="flex items-center justify-between">
+                    <span class="eyebrow text-ink-500" data-key="hub_way_1_label">Already know you need Ads help?</span>
+                    <i class="ph ph-arrow-down-right text-brand text-lg"></i>
                 </div>
-                <p class="font-bold text-sm md:text-base" data-key="trust_1">Google Automations</p>
-            </div>
-            <div class="tile tile-outline col-span-6 md:col-span-3 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:10px">
-                <div class="flex items-center gap-2">
-                    <i class="ph ph-buildings text-brand text-lg"></i>
-                    <span class="eyebrow text-ink-500">Scale</span>
+                <p class="font-bold text-sm md:text-base" data-key="hub_way_1">→ Google Ads</p>
+            </a>
+            <a href="local-hero-kit.html" class="tile tile-outline col-span-12 md:col-span-6 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:8px">
+                <div class="flex items-center justify-between">
+                    <span class="eyebrow text-ink-500" data-key="hub_way_2_label">Running a local business?</span>
+                    <i class="ph ph-arrow-down-right text-brand text-lg"></i>
                 </div>
-                <p class="font-bold text-sm md:text-base" data-key="trust_3">Scripts in production</p>
-            </div>
-            <div class="tile tile-outline col-span-6 md:col-span-3 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:10px">
-                <div class="flex items-center gap-2">
-                    <i class="ph ph-globe text-brand text-lg"></i>
-                    <span class="eyebrow text-ink-500">Languages</span>
-                </div>
-                <p class="font-bold text-sm md:text-base">EN · DE</p>
-            </div>
-            <div class="tile tile-outline col-span-6 md:col-span-3 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:10px">
-                <div class="flex items-center gap-2">
-                    <i class="ph ph-handshake text-brand text-lg"></i>
-                    <span class="eyebrow text-ink-500">Terms</span>
-                </div>
-                <p class="font-bold text-sm md:text-base">No long-term lock-in</p>
-            </div>
-        </section>
-
-        <!-- ============================================================
-             3. PROBLEMS BENTO ("Sound familiar?")
-        ============================================================ -->
-        <section class="bento" style="grid-auto-rows: minmax(140px, auto);">
-
-            <!-- Section header tile -->
-            <div class="tile tile-dark col-span-12 md:col-span-4 md:row-span-2 min-h-[180px] md:min-h-auto relative overflow-hidden">
-                <div class="absolute inset-0 grid-pattern-dark opacity-60"></div>
-                <div class="relative z-10">
-                    <span class="chip chip-on-dark mb-4 md:mb-6" data-key="problems_eyebrow">Things I'm actually good at</span>
-                    <h2 class="display text-2xl md:text-4xl text-white mb-3 md:mb-4">
-                        Three things <span class="hl">every account owner</span> says before we talk.
-                    </h2>
-                </div>
-                <div class="relative z-10">
-                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed">If one of these is you, you're not alone, and they're all fixable.</p>
-                    <div class="flex items-center gap-2 mt-4 md:mt-5">
-                        <span class="star"></span><span class="star"></span><span class="star"></span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pain 1 · Ad Automation (large) -->
-            <div class="tile tile-light col-span-12 md:col-span-8 min-h-[180px] tile-hover">
-                <div class="flex items-start justify-between">
-                    <span class="chip chip-on-light" data-key="pain_1_label">Ad Automation</span>
-                    <span class="numeral text-ink-900/10 leading-none">01</span>
-                </div>
-                <div>
-                    <p class="font-extrabold text-xl md:text-3xl leading-tight mb-2 md:mb-3 max-w-xl" data-key="pain_1_title">Less manual work, fewer mistakes, more consistent results. That's what good automation does.</p>
-                    <p class="text-ink-500 text-sm md:text-base leading-relaxed max-w-xl" data-key="pain_1_fix">Automated, AI-assisted, and tuned to your account. Not a generic ruleset.</p>
-                </div>
-            </div>
-
-            <!-- Pain 2 · Custom Reporting -->
-            <div class="tile tile-light col-span-12 md:col-span-4 min-h-[180px] tile-hover">
-                <div class="flex items-start justify-between">
-                    <span class="chip chip-on-light" data-key="pain_2_label">Custom Reporting</span>
-                    <span class="numeral text-ink-900/10 leading-none">02</span>
-                </div>
-                <div>
-                    <p class="font-extrabold text-lg md:text-xl leading-snug mb-2" data-key="pain_2_title">Scheduled alerts and scripts that surface what matters, not what looks good on a slide.</p>
-                    <p class="text-ink-500 text-sm leading-relaxed" data-key="pain_2_fix">You see the numbers that drive decisions. Everything else stays out of your inbox.</p>
-                </div>
-            </div>
-
-            <!-- Pain 3 · Direct & Async-Friendly -->
-            <div class="tile tile-brand col-span-12 md:col-span-4 min-h-[180px] tile-hover">
-                <div class="flex items-start justify-between">
-                    <span class="eyebrow" data-key="pain_3_label">Direct &amp; Async-Friendly</span>
-                    <span class="numeral text-ink-900/15 leading-none">03</span>
-                </div>
-                <div>
-                    <p class="font-extrabold text-lg md:text-xl leading-snug mb-2" data-key="pain_3_title">I work best with clients who want clear communication, not weekly check-in calls.</p>
-                    <p class="text-ink-900/80 text-sm leading-relaxed" data-key="pain_3_fix">Loom updates, shared sheets, plain-language summaries. You're always in the loop.</p>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- ============================================================
-             4. SERVICES BENTO ("What I do")
-        ============================================================ -->
-        <section class="bento" style="grid-auto-rows: minmax(140px, auto);">
-
-            <!-- Header tile -->
-            <div class="tile tile-cream col-span-12 md:col-span-5 md:row-span-2 min-h-[200px] md:min-h-[260px]">
-                <div>
-                    <span class="eyebrow text-brand-dark">What I do</span>
-                    <h2 class="display text-3xl md:text-5xl mt-3 md:mt-4 mb-3 md:mb-5" data-key="services_title">
-                        What I do
-                    </h2>
-                    <p class="text-ink-500 leading-relaxed text-sm md:text-base max-w-sm" data-key="services_sub">
-                        End-to-end Google Ads management, from strategy to automation.
-                    </p>
-                </div>
-                <div class="mt-4 md:mt-8">
-                    <p class="text-sm text-ink-500">
-                        <span data-key="services_cta_text">Not sure which one you need?</span>
-                        <a href="#contact" class="text-ink-900 font-bold underline decoration-brand decoration-2 underline-offset-4 ml-1" data-key="services_cta_link">Let's talk →</a>
-                    </p>
-                </div>
-            </div>
-
-            <!-- Service 1 — Campaign Management (largest) -->
-            <div class="tile tile-dark col-span-12 md:col-span-7 min-h-[220px] md:min-h-[260px] tile-hover relative overflow-hidden">
-                <div class="absolute inset-0 grid-pattern-dark opacity-50"></div>
-                <div class="relative z-10 flex items-start justify-between">
-                    <div class="w-11 h-11 md:w-12 md:h-12 bg-brand rounded-2xl flex items-center justify-center">
-                        <i class="ph ph-cursor-click text-ink-900 text-xl md:text-2xl"></i>
-                    </div>
-                    <span class="chip chip-on-dark">01 / 03</span>
-                </div>
-                <div class="relative z-10">
-                    <h3 class="text-xl md:text-3xl font-extrabold mb-2 md:mb-3 leading-tight" data-key="service_1_title">Campaign Management</h3>
-                    <p class="text-gray-400 text-sm md:text-base leading-relaxed max-w-xl" data-key="service_1_desc">I build and run Google Ads campaigns structured to perform: Search, Shopping, Display, and Demand Gen. No set-and-forget. I actively manage bids, budgets, and targeting so your account keeps improving.</p>
-                    <div class="flex flex-wrap gap-2 mt-4 md:mt-5">
-                        <span class="text-xs font-bold px-3 py-1.5 rounded-full bg-white/10 text-gray-200">Search</span>
-                        <span class="text-xs font-bold px-3 py-1.5 rounded-full bg-white/10 text-gray-200">Shopping</span>
-                        <span class="text-xs font-bold px-3 py-1.5 rounded-full bg-white/10 text-gray-200">Display</span>
-                        <span class="text-xs font-bold px-3 py-1.5 rounded-full bg-white/10 text-gray-200">Demand Gen</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Service 2 — Scripts -->
-            <div class="tile tile-light col-span-12 md:col-span-4 min-h-[200px] md:min-h-[220px] tile-hover">
-                <div class="flex items-start justify-between">
-                    <div class="w-11 h-11 md:w-12 md:h-12 bg-brand-light rounded-2xl flex items-center justify-center">
-                        <i class="ph ph-terminal-window text-brand-dark text-xl md:text-2xl"></i>
-                    </div>
-                    <span class="chip chip-on-light">02 / 03</span>
-                </div>
-                <div>
-                    <h3 class="text-lg md:text-xl font-extrabold mb-2 leading-tight" data-key="service_2_title">Scripts &amp; Automation</h3>
-                    <p class="text-ink-500 text-sm leading-relaxed" data-key="service_2_desc">I write custom Google Ads scripts that do the work no human can do at scale: automated alerts, budget pacing, keyword analysis, and performance reporting. This is where strategy meets technical edge.</p>
-                </div>
-            </div>
-
-            <!-- Service 3 — Strategy -->
-            <div class="tile tile-brand-soft col-span-12 md:col-span-3 min-h-[200px] md:min-h-[220px] tile-hover">
-                <div class="flex items-start justify-between">
-                    <div class="w-11 h-11 md:w-12 md:h-12 bg-brand rounded-2xl flex items-center justify-center">
-                        <i class="ph ph-magnifying-glass text-ink-900 text-xl md:text-2xl"></i>
-                    </div>
-                    <span class="chip chip-on-light">03 / 03</span>
-                </div>
-                <div>
-                    <h3 class="text-lg md:text-xl font-extrabold mb-2 leading-tight" data-key="service_3_title">Strategy &amp; Audits</h3>
-                    <p class="text-ink-700 text-sm leading-relaxed" data-key="service_3_desc">Not sure where your budget is leaking? I audit Google Ads accounts top to bottom (structure, bidding, keywords, tracking) and give you a clear picture of what to fix and in what order.</p>
-                </div>
-            </div>
-
-        </section>
-
-        <!-- ============================================================
-             5. HOW I WORK BENTO
-        ============================================================ -->
-        <section class="bento" style="grid-auto-rows: minmax(120px, auto);">
-
-            <!-- Header -->
-            <div class="tile tile-light col-span-12 md:col-span-12 min-h-[100px] md:min-h-[120px]" style="flex-direction: row; align-items: flex-end; justify-content: space-between;">
-                <div>
-                    <span class="eyebrow text-brand-dark">Process</span>
-                    <h2 class="display text-2xl md:text-4xl mt-2 md:mt-3" data-key="process_title">How I work.</h2>
-                    <p class="text-ink-500 text-sm md:text-base mt-1 md:mt-2" data-key="process_sub">Simple, transparent, no surprises.</p>
-                </div>
-                <div class="hidden md:flex items-center gap-1 text-ink-900/30 text-3xl font-black tracking-tighter">
-                    01 → 02 → 03
-                </div>
-            </div>
-
-            <!-- Step 01 -->
-            <div class="tile tile-cream col-span-12 md:col-span-4 min-h-[220px] md:min-h-[260px] tile-hover">
-                <div class="flex items-start justify-between">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-brand rounded-2xl flex items-center justify-center shadow-md shadow-brand/30">
-                        <i class="ph ph-magnifying-glass text-ink-900 text-xl md:text-2xl"></i>
-                    </div>
-                    <span class="numeral text-ink-900/10 leading-none">01</span>
-                </div>
-                <div>
-                    <span class="eyebrow text-brand-dark" data-key="step_1_num">Step 01</span>
-                    <h3 class="font-extrabold text-lg md:text-xl mt-2 mb-2 md:mb-3" data-key="step_1_title">Audit &amp; Understand</h3>
-                    <p class="text-ink-500 text-sm leading-relaxed" data-key="step_1_desc">We start with a free audit of your account and a conversation about your business goals. I want to understand where you are and where you want to go before I recommend anything.</p>
-                </div>
-            </div>
-
-            <!-- Step 02 -->
-            <div class="tile tile-cream col-span-12 md:col-span-4 min-h-[220px] md:min-h-[260px] tile-hover">
-                <div class="flex items-start justify-between">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-brand rounded-2xl flex items-center justify-center shadow-md shadow-brand/30">
-                        <i class="ph ph-wrench text-ink-900 text-xl md:text-2xl"></i>
-                    </div>
-                    <span class="numeral text-ink-900/10 leading-none">02</span>
-                </div>
-                <div>
-                    <span class="eyebrow text-brand-dark" data-key="step_2_num">Step 02</span>
-                    <h3 class="font-extrabold text-lg md:text-xl mt-2 mb-2 md:mb-3" data-key="step_2_title">Build &amp; Launch</h3>
-                    <p class="text-ink-500 text-sm leading-relaxed" data-key="step_2_desc">I set up or restructure your campaigns with a clear rationale behind every decision: keywords, match types, bidding strategy, ad copy, tracking. You know what I'm doing and why.</p>
-                </div>
-            </div>
-
-            <!-- Step 03 -->
-            <div class="tile tile-cream col-span-12 md:col-span-4 min-h-[220px] md:min-h-[260px] tile-hover">
-                <div class="flex items-start justify-between">
-                    <div class="w-12 h-12 md:w-14 md:h-14 bg-brand rounded-2xl flex items-center justify-center shadow-md shadow-brand/30">
-                        <i class="ph ph-trend-up text-ink-900 text-xl md:text-2xl"></i>
-                    </div>
-                    <span class="numeral text-ink-900/10 leading-none">03</span>
-                </div>
-                <div>
-                    <span class="eyebrow text-brand-dark" data-key="step_3_num">Step 03</span>
-                    <h3 class="font-extrabold text-lg md:text-xl mt-2 mb-2 md:mb-3" data-key="step_3_title">Optimize &amp; Report</h3>
-                    <p class="text-ink-500 text-sm leading-relaxed" data-key="step_3_desc">Google Ads isn't a one-time setup. I monitor performance continuously, run tests, and send you regular reports in plain language: no jargon, no vanity metrics. Just what matters.</p>
-                </div>
-            </div>
-
-            <!-- Note -->
-            <div class="tile tile-brand col-span-12 min-h-[70px] md:min-h-[80px]" style="flex-direction: row; align-items: center; justify-content: space-between;">
-                <p class="font-bold text-xs md:text-base pr-3" data-key="process_note">
-                    No long-term lock-in. No opaque retainers. Just honest work, month by month.
-                </p>
-                <i class="ph ph-arrow-right text-ink-900 text-lg md:text-xl flex-shrink-0"></i>
-            </div>
-
-        </section>
-
-        <!-- ============================================================
-             6. FREE SCRIPT BENTO
-        ============================================================ -->
-        <section class="bento" style="grid-auto-rows: minmax(140px, auto);">
-
-            <!-- Pitch tile -->
-            <div class="tile tile-dark col-span-12 md:col-span-7 min-h-[380px] md:min-h-[420px] relative overflow-hidden">
-                <div class="absolute inset-0 grid-pattern-dark opacity-50"></div>
-                <div class="relative z-10">
-                    <span class="chip chip-on-dark mb-4 md:mb-6" data-key="script_eyebrow">Free tool, no strings attached</span>
-                    <h2 class="display text-2xl md:text-4xl lg:text-5xl text-white mb-3 md:mb-5" data-key="script_title">
-                        Not sure which keywords are <span class="hl">worth your budget?</span>
-                    </h2>
-                    <p class="text-gray-400 text-sm md:text-base leading-relaxed max-w-lg" data-key="script_desc">
-                        I built an AI-powered Google Ads tool that analyzes your keyword performance and flags what's draining your budget without delivering results. It runs inside your Google Ads account; no data leaves, no login required.
-                    </p>
-                </div>
-                <div class="relative z-10">
-                    <ul class="space-y-2.5 mb-6">
-                        <li class="flex items-center gap-3 text-gray-300 text-sm" data-key="script_li_1">
-                            <i class="ph ph-check text-brand flex-shrink-0 text-base"></i>
-                            Instant keyword-level performance breakdown
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-300 text-sm" data-key="script_li_2">
-                            <i class="ph ph-check text-brand flex-shrink-0 text-base"></i>
-                            Clear flags for underperformers and budget wasters
-                        </li>
-                        <li class="flex items-center gap-3 text-gray-300 text-sm" data-key="script_li_3">
-                            <i class="ph ph-check text-brand flex-shrink-0 text-base"></i>
-                            Ready to run in your account in under 5 minutes
-                        </li>
-                    </ul>
-                    <a href="free-script.html" class="inline-block bg-brand text-ink-900 font-bold text-sm py-3.5 px-6 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg" data-key="script_cta">
-                        Check out AI Max NegativeIQ →
-                    </a>
-                    <p class="text-gray-600 text-xs mt-3" data-key="script_reassurance">No email required. Just download and use it.</p>
-                </div>
-            </div>
-
-            <!-- Code preview tile -->
-            <div class="tile tile-ink col-span-12 md:col-span-5 min-h-[360px] md:min-h-[420px] overflow-hidden" style="padding: 0; gap: 0;">
-                <div class="px-5 md:px-6 pt-4 md:pt-5 pb-3 flex items-center gap-2 border-b border-white/10">
-                    <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                    <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                    <span class="text-gray-500 text-xs ml-2 font-mono">ai-keyword-analyzer.js</span>
-                </div>
-                <div class="p-5 md:p-6 font-mono text-[11px] md:text-xs leading-relaxed space-y-1.5 flex-1 overflow-hidden">
-                    <p class="text-gray-500">// Analyze all keywords in account</p>
-                    <p><span class="text-purple-400">const</span> <span class="text-blue-300">keywords</span> <span class="text-white">=</span> <span class="text-green-400">getKeywords</span><span class="text-white">();</span></p>
-                    <p class="pt-3 text-gray-500">// Flag budget wasters</p>
-                    <p><span class="text-purple-400">keywords</span><span class="text-white">.</span><span class="text-green-400">forEach</span><span class="text-white">(kw =&gt; {</span></p>
-                    <p class="pl-4"><span class="text-purple-400">if</span> <span class="text-white">(kw.cost &gt; threshold</span></p>
-                    <p class="pl-6 text-white">&amp;&amp; kw.conversions === <span class="text-yellow-300">0</span>) {</p>
-                    <p class="pl-6"><span class="text-green-400">flagKeyword</span><span class="text-white">(kw,</span> <span class="text-orange-300">'⚠ Wasting budget'</span><span class="text-white">);</span></p>
-                    <p class="pl-4 text-white">}</p>
-                    <p class="text-white">});</p>
-                    <p class="pt-3 text-gray-500">// Send results to Sheets</p>
-                    <p><span class="text-green-400">exportReport</span><span class="text-white">(results);</span></p>
-                    <p class="pt-4 text-brand font-bold">// ✓ Done. Check your Sheets.</p>
-                </div>
-                <div class="px-5 md:px-6 py-4 border-t border-white/10 flex items-center justify-between">
-                    <span class="text-gray-500 text-xs font-mono">ready to run</span>
-                    <span class="flex items-center gap-2 text-brand text-xs font-mono">
-                        <span class="w-2 h-2 rounded-full bg-brand animate-pulse"></span>
-                        live
-                    </span>
-                </div>
-            </div>
-
+                <p class="font-bold text-sm md:text-base" data-key="hub_way_2">→ Local Hero Kit</p>
+            </a>
         </section>
 
         <!-- ============================================================
@@ -690,10 +397,10 @@
                     <h2 class="display text-2xl md:text-4xl mt-2 md:mt-3 mb-4 md:mb-6" data-key="about_title">Who's behind Click-Capybara?</h2>
                 </div>
                 <div class="space-y-3 md:space-y-4 text-ink-700 text-sm md:text-base leading-relaxed">
-                    <p data-key="about_p1">Behind Click-Capybara is Max. By day I work as a Google Ads specialist at a full-service digital agency, freelance I take on projects where direct and straightforward help is what's needed. Over 8 years of Google Ads experience, including two years at Google itself as a Subject Matter Expert for the Performance Max launch, and nearly four years agency-side, across all verticals.</p>
-                    <p data-key="about_p2">Click-Capybara stands for a simple idea: direct access to a specialist who works in the account themselves. No handoffs, no black box, clear strategy, honest feedback, and custom automation.</p>
-                    <p data-key="about_p3">Good Google Ads work isn't magic, it takes structure, honesty, and someone who genuinely gets into the details.</p>
-                    <p class="text-ink-500 italic" data-key="about_p4">Found something useful? <a href='https://buymeacoffee.com/clickcapybara' target='_blank' rel='noopener' class='text-brand font-semibold hover:underline'>Feed the capybara.</a> It runs on coffee and API tokens.</p>
+                    <p data-key="about_p1">Behind Click-Capybara is Max, a digital marketing specialist with 8+ years of hands-on experience, including two years at Google itself as a Subject Matter Expert for the Performance Max launch. By day I work at a full-service digital agency; freelance, I take on projects where direct, no-nonsense help is what's needed most.</p>
+                    <p data-key="about_p2">Click-Capybara stands for a simple idea: direct access to someone who actually does the work themselves, whether that's a Google Ads account, a small business website, or the visibility strategy behind it. No handoffs, no black box, clear strategy, honest feedback.</p>
+                    <p data-key="about_p3">Good marketing work isn't magic. It starts with a solid foundation, the site, the tracking, the basics done right, and builds from there. That takes structure, honesty, and someone who genuinely gets into the details.</p>
+                    <p class="text-ink-500 italic" data-key="about_p4">Not the flashiest animal, not trying to be. Just steady, and good at working alongside almost anyone.</p>
                 </div>
             </div>
 
@@ -708,7 +415,7 @@
                         <img src="assets/clickcapybara_outline_bold.svg" alt="Max" class="w-12 h-12 md:w-14 md:h-14" style="filter: invert(74%) sepia(98%) saturate(800%) hue-rotate(2deg) brightness(102%) contrast(102%);" onerror="this.outerHTML='<span class=&quot;font-black text-brand text-4xl&quot;>M</span>'">
                     </div>
                     <p class="font-extrabold text-xl md:text-2xl leading-none">Max</p>
-                    <p class="text-ink-900/70 text-xs md:text-sm font-medium mt-1">Google Ads & PPC Spezialist</p>
+                    <p class="text-ink-900/70 text-xs md:text-sm font-medium mt-1" data-key="about_role">Digital Marketing Specialist</p>
                 </div>
             </div>
 
@@ -725,7 +432,52 @@
 
         </section>
 
-        <!-- ============================================================
+                <!-- ============================================================
+             FORK — TWO WAYS I CAN HELP
+        ============================================================ -->
+        <section id="paths" class="bento" style="grid-auto-rows: minmax(140px, auto); scroll-margin-top: 100px;">
+
+            <div class="tile tile-light col-span-12 min-h-[90px] md:min-h-[110px]" style="flex-direction: row; align-items: flex-end; justify-content: space-between;">
+                <div>
+                    <span class="eyebrow text-brand-dark" data-key="fork_eyebrow">Where should we start?</span>
+                    <h2 class="display text-2xl md:text-4xl mt-2" data-key="fork_title">Two ways I can help.</h2>
+                </div>
+            </div>
+
+            <!-- Fork card 1: Google Ads -->
+            <a href="services.html" class="tile tile-dark col-span-12 md:col-span-6 min-h-[300px] tile-hover relative overflow-hidden">
+                <div class="absolute inset-0 grid-pattern-dark opacity-50"></div>
+                <div class="relative z-10 flex items-start justify-between">
+                    <div class="w-12 h-12 bg-brand rounded-2xl flex items-center justify-center">
+                        <i class="ph ph-cursor-click text-ink-900 text-xl md:text-2xl"></i>
+                    </div>
+                    <span class="chip chip-on-dark" data-key="fork_1_pill">8+ years, ex-Google</span>
+                </div>
+                <div class="relative z-10">
+                    <h3 class="font-extrabold text-xl md:text-2xl mb-2" data-key="fork_1_title">Google Ads</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-key="fork_1_desc">Deep, hands-on management for accounts that need to perform, not just run. Campaign management, custom scripts, and honest audits — all done by me, directly.</p>
+                    <span class="inline-flex items-center gap-1 mt-4 font-bold text-sm text-brand" data-key="fork_1_cta">See Google Ads services →</span>
+                </div>
+            </a>
+
+            <!-- Fork card 2: Local Hero Kit -->
+            <a href="local-hero-kit.html" class="tile tile-brand col-span-12 md:col-span-6 min-h-[300px] tile-hover">
+                <div class="flex items-start justify-between">
+                    <div class="w-12 h-12 bg-ink-900 rounded-2xl flex items-center justify-center">
+                        <i class="ph ph-storefront text-brand text-xl md:text-2xl"></i>
+                    </div>
+                    <span class="chip chip-soft" style="background:rgba(14,14,16,0.1); color:#0E0E10;" data-key="fork_2_pill">Almost zero cost</span>
+                </div>
+                <div>
+                    <h3 class="font-extrabold text-xl md:text-2xl mb-2" data-key="fork_2_title">Local Hero Kit</h3>
+                    <p class="text-ink-900/80 text-sm leading-relaxed" data-key="fork_2_desc">A website, a working Google Business Profile, and visibility in AI search, for local businesses that want it done right, without agency overhead or monthly bloat.</p>
+                    <span class="inline-flex items-center gap-1 mt-4 font-bold text-sm text-ink-900" data-key="fork_2_cta">See the Local Hero Kit →</span>
+                </div>
+            </a>
+
+        </section>
+
+<!-- ============================================================
              8. CONTACT BENTO
         ============================================================ -->
         <section id="contact" class="bento" style="grid-auto-rows: minmax(140px, auto);">
@@ -737,7 +489,7 @@
                     <span class="chip chip-on-dark mb-4 md:mb-5">Contact</span>
                     <h2 class="display text-2xl md:text-4xl text-white mb-3 md:mb-5" data-key="contact_title">Not sure where to start? Start here.</h2>
                     <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-5 md:mb-6" data-key="contact_sub">
-                        Not every account needs a big overhaul, but most have at least one thing worth fixing. Send me a quick message and I'll tell you honestly what I see. No agenda, just a straight answer.
+                        Whether it's your Google Ads account, your website, or you're just not sure where to start, send me a quick message and I'll tell you honestly what I see. No agenda, just a straight answer.
                     </p>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start gap-3 text-gray-300 text-sm" data-key="contact_li_1">
@@ -757,7 +509,7 @@
                 <div class="relative z-10">
                     <div class="border-t border-white/10 pt-5">
                         <p class="text-gray-500 text-xs mb-2">Or write directly:</p>
-                        <a href="/cdn-cgi/l/email-protection#81e9e4ededeec1e2ede8e2eaace2e0f1f8e3e0f3e0afe2eeec" class="text-brand font-bold text-sm md:text-base hover:underline"><span class="__cf_email__" data-cfemail="d4bcb1b8b8bb94b7b8bdb7bff9b7b5a4adb6b5a6b5fab7bbb9">[email&#160;protected]</span></a>
+                        <a href="mailto:hello@click-capybara.com" class="text-brand font-bold text-sm md:text-base hover:underline">hello@click-capybara.com</a>
                         <p class="text-gray-600 text-xs mt-3" data-key="contact_reassurance">No spam. No sales calls unless you want one. Just a reply from me, Max.</p>
                     </div>
                 </div>
@@ -838,7 +590,7 @@
         <div class="tile tile-dark min-h-[100px]" style="flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
             <div class="flex items-center gap-3">
                 <img src="assets/clickcapybara_outline_bold.svg" alt="Click-Capybara" class="w-6 h-6 opacity-70" onerror="this.outerHTML='<span class=&quot;logo-fallback w-6 h-6 text-[10px]&quot;>CC</span>'">
-                <p class="text-gray-400 text-xs" data-key="footer_copy">&copy; 2024 Click-Capybara · The Google Ads specialist in your corner.</p>
+                <p class="text-gray-400 text-xs" data-key="footer_copy">&copy; 2024 Click-Capybara · The straight-talking partner for Google Ads, conversion tracking, and the sites that make them convert.</p>
             </div>
             <div class="flex items-center gap-4 md:gap-5 text-xs">
                 <a href="privacy.html" class="text-gray-400 hover:text-brand transition" data-key="footer_privacy">Privacy Policy</a>
@@ -851,7 +603,7 @@
     <!-- ============================================================
          JS
     ============================================================ -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
     // ── Mobile menu ──────────────────────────────────────────────
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');

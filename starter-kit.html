@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- Consent default (before GTM) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+    <script>
+        (function() {
+            if (localStorage.getItem('silktideCookieChoice_analytics') === 'true') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
+            }
+            if (localStorage.getItem('silktideCookieChoice_advertising') === 'true') {
+                gtag('consent', 'update', { 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted' });
+            }
+        })();
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WK2WCGQH');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="sk_page_title">Starter Kit | Click-Capybara — Online Presence for Small Business</title>
+    <meta name="description" data-key="sk_meta_desc" content="A clean website, a working Google Business Profile, and visibility in AI search — built by one person, without agency overhead. For cafés, studios, and local shops.">
+    <link rel="canonical" href="https://www.click-capybara.com/starter-kit.html">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_capybara_outine_bold.ico" />
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="translations.js"></script>
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="cookie-banner/silktide-consent-manager.css">
+    <script src="cookie-banner/silktide-consent-manager.js"></script>
+    <script>
+    silktideCookieBannerManager.updateCookieBannerConfig({
+        background: { showBackground: true },
+        cookieIcon: { position: "bottomLeft" },
+        cookieTypes: [
+            { id: "necessary", name: "Necessary", description: "<p>Required for the site to function.</p>", required: true, onAccept: function(){} },
+            { id: "analytics", name: "Analytics", description: "<p>Help us understand how visitors use the site.</p>", required: false,
+                onAccept: function(){ gtag('consent', 'update', { analytics_storage: 'granted' }); dataLayer.push({ event: 'consent_accepted_analytics' }); },
+                onReject: function(){ gtag('consent', 'update', { analytics_storage: 'denied' }); } },
+            { id: "advertising", name: "Advertising", description: "<p>Used to measure ad performance.</p>", required: false,
+                onAccept: function(){ gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' }); dataLayer.push({ event: 'consent_accepted_advertising' }); },
+                onReject: function(){ gtag('consent', 'update', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' }); } }
+        ],
+        text: {
+            banner: { description: "<p>We use cookies to enhance your experience. <a href=\"privacy.html\">Cookie Policy.</a></p>", acceptAllButtonText: "Accept all", rejectNonEssentialButtonText: "Reject non-essential", preferencesButtonText: "Preferences" },
+            preferences: { title: "Manage cookie preferences" }
+        },
+        position: { banner: "center" }
+    });
+    </script>
+
+
+
+    <style>
+        body { background: #EFECE3; }
+
+        /* ── Bento tile base (mirrors index.html) ──────────────── */
+        .tile {
+            border-radius: 22px;
+            padding: 22px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 18px;
+            min-height: 0;
+        }
+        @media (min-width: 768px) { .tile { padding: 32px; border-radius: 28px; gap: 24px; } }
+        .tile-light  { background: #FFFFFF; color: #0E0E10; }
+        .tile-cream  { background: #F6F3EC; color: #0E0E10; border: 1px solid rgba(14,14,16,0.06); }
+        .tile-dark   { background: #0E0E10; color: #FFFFFF; }
+        .tile-ink    { background: #17171B; color: #FFFFFF; }
+        .tile-brand  { background: #fcba02; color: #0E0E10; }
+        .tile-brand-soft { background: #FFF6D6; color: #0E0E10; border: 1px solid rgba(252,186,2,0.35); }
+        .tile-outline{ background: #FFFFFF; color: #0E0E10; border: 1px solid rgba(14,14,16,0.08); }
+
+        .bento {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0,1fr));
+            gap: 14px;
+        }
+        @media (min-width: 768px) { .bento { gap: 16px; } }
+
+        .eyebrow {
+            font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+        }
+        .display {
+            font-weight: 800; line-height: 0.98; letter-spacing: -0.025em;
+        }
+
+        .tile-hover { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+        .tile-hover:hover { transform: translateY(-3px); box-shadow: 0 14px 40px -18px rgba(14,14,16,0.25); }
+
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -4px; left: 50%; transform: translateX(-50%);
+            background-color: #fcba02; transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(14,14,16,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(14,14,16,0.06) 1px, transparent 1px);
+            background-size: 36px 36px;
+            background-position: -1px -1px;
+        }
+        .grid-pattern-dark {
+            background-image:
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 36px 36px;
+        }
+
+        /* Chips */
+        .chip {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 6px 10px; border-radius: 999px;
+        }
+        .chip-on-dark { background: rgba(252,186,2,0.14); color: #fcba02; border: 1px solid rgba(252,186,2,0.3); }
+        .chip-on-light{ background: #0E0E10; color: #fcba02; }
+
+        /* Big numeral watermark */
+        .numeral {
+            font-weight: 800; font-size: 44px; line-height: 1; letter-spacing: -0.04em;
+        }
+        @media (min-width: 768px) { .numeral { font-size: 88px; } }
+        .numeral-xl {
+            font-weight: 900; font-size: 120px; line-height: 0.9; letter-spacing: -0.06em;
+        }
+        @media (min-width: 768px) { .numeral-xl { font-size: 220px; } }
+
+        /* Deliverable row */
+        .deliverable {
+            display: flex; align-items: flex-start; gap: 12px;
+            padding: 11px 0;
+            font-size: 13px;
+            border-bottom: 1px dashed rgba(14,14,16,0.1);
+        }
+        .deliverable:last-child { border-bottom: none; }
+        .deliverable-arrow {
+            color: #fcba02; font-weight: 800; flex-shrink: 0; margin-top: 1px; line-height: 1.2;
+        }
+        .tile-dark .deliverable { border-bottom-color: rgba(255,255,255,0.1); color: #d1d5db; }
+        .tile-brand .deliverable { border-bottom-color: rgba(14,14,16,0.15); color: #1F1F23; }
+        .tile-brand .deliverable-arrow { color: #0E0E10; }
+
+        /* For pill */
+        .for-pill {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 12px; font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(252,186,2,0.15);
+            border: 1px solid rgba(252,186,2,0.4);
+            color: #92710a;
+        }
+        .tile-dark .for-pill {
+            background: rgba(252,186,2,0.1);
+            border-color: rgba(252,186,2,0.3);
+            color: #fcba02;
+        }
+        .tile-brand .for-pill {
+            background: rgba(14,14,16,0.1);
+            border-color: rgba(14,14,16,0.2);
+            color: #0E0E10;
+        }
+
+        /* Highlight */
+        .hl { color: #fcba02; }
+
+        /* Fade-in */
+        .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Logo fallback */
+        .logo-fallback {
+            background:#0E0E10; color:#fcba02; border-radius:50%;
+            display:inline-flex; align-items:center; justify-content:center;
+            font-weight:900; letter-spacing:-0.05em;
+        }
+
+        /* Star (CSS shape) */
+        .star {
+            display: inline-block; width: 18px; height: 18px;
+            background: #fcba02;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+    </style>
+</head>
+
+<body class="text-ink-900 font-sans antialiased">
+
+<!-- ============================================================
+     NAV
+============================================================ -->
+<header id="site-header" class="sticky top-0 z-50">
+    <div class="container mx-auto px-4 md:px-6 pt-4">
+        <div class="bg-white/80 backdrop-blur-xl border border-black/5 rounded-2xl shadow-sm">
+            <nav class="flex justify-between items-center px-5 py-3">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <img src="assets/clickcapybara_outline_bold.svg" alt="Click-Capybara Logo" class="w-8 h-8" onerror="this.outerHTML='<span class=&quot;logo-fallback w-8 h-8 text-[14px]&quot;>CC</span>'">
+                    <span class="text-base font-extrabold tracking-tight">Click-Capybara</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="services.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_services">Services</a>
+                    <a href="free-script.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_free_script">Tools &amp; Scripts</a>
+                    <a href="starter-kit.html" class="nav-link active text-ink-900 font-bold text-sm" data-key="nav_starter">Starter Kit</a>
+                    <a href="index.html#about" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_about">About</a>
+                    <a href="#contact" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_contact">Contact</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-3 ml-6">
+                    <button id="lang-en" class="text-xs font-bold text-ink-900">EN</button>
+                    <span class="text-gray-300">|</span>
+                    <button id="lang-de" class="text-xs font-medium text-gray-400 hover:text-ink-900">DE</button>
+                    <a href="#contact" class="ml-2 bg-ink-900 text-brand font-bold text-sm py-2 px-4 rounded-xl transition hover:-translate-y-0.5" data-key="nav_cta">Fresh Eyes</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-ink-900 text-xl p-1">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-black/5 rounded-b-2xl overflow-hidden">
+                <a href="services.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_services">Services</a>
+                <a href="free-script.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_free_script">Tools &amp; Scripts</a>
+                <a href="starter-kit.html" class="block py-3 px-5 text-sm text-ink-900 font-bold bg-cream/60 border-b border-black/5" data-key="nav_starter">Starter Kit</a>
+                <a href="index.html#about" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_about">About</a>
+                <a href="#contact" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_contact">Contact</a>
+                <div class="flex items-center gap-4 px-5 py-3 border-b border-black/5">
+                    <i class="fas fa-globe text-gray-400"></i>
+                    <button id="mobile-lang-en" class="text-sm font-bold">EN</button>
+                    <button id="mobile-lang-de" class="text-sm font-medium text-gray-400">DE</button>
+                </div>
+                <div class="p-4">
+                    <a href="#contact" class="block bg-ink-900 text-brand font-bold py-3 px-4 rounded-xl text-center text-sm" data-key="nav_cta">Fresh Eyes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="container mx-auto px-4 md:px-6 py-6 md:py-8 space-y-6 md:space-y-8">
+
+    <!-- ============================================================
+         1. HERO BENTO
+    ============================================================ -->
+    <section class="bento" style="grid-auto-rows: minmax(120px, auto);">
+
+        <div class="tile tile-cream grid-pattern col-span-12 md:col-span-8 md:row-span-2 min-h-[320px] md:min-h-[440px]">
+            <div class="relative z-10">
+                <span class="chip chip-on-light mb-4 md:mb-6" data-key="sk_eyebrow">For small businesses</span>
+            </div>
+            <div class="relative z-10">
+                <h1 class="display text-[32px] sm:text-[44px] md:text-[60px] lg:text-[68px] mb-4 md:mb-6" data-key="sk_h1">
+                    Your foot in the door.<br><span class="hl">Online.</span>
+                </h1>
+                <p class="text-sm md:text-lg text-ink-500 max-w-xl leading-relaxed" data-key="sk_sub">
+                    A clean website, a Google profile that actually works, and visibility in the tools people search with now — AI included. Built by one person. Priced like it.
+                </p>
+            </div>
+        </div>
+
+        <div class="tile tile-dark col-span-12 sm:col-span-6 md:col-span-4 min-h-[160px] md:min-h-auto">
+            <div class="flex items-start justify-between">
+                <span class="eyebrow text-brand" data-key="sk_stat1_eyebrow">The package</span>
+                <i class="ph ph-stack text-brand text-xl"></i>
+            </div>
+            <div>
+                <p class="numeral hl">03</p>
+                <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed" data-key="sk_stat1_desc">Website, Google Business Profile, and AI-visibility SEO. One connected setup, not three separate vendors.</p>
+            </div>
+        </div>
+
+        <div class="tile tile-brand col-span-12 sm:col-span-6 md:col-span-4 min-h-[160px] md:min-h-auto">
+            <div class="flex items-start justify-between">
+                <span class="eyebrow text-ink-900/70" data-key="sk_stat2_eyebrow">No CMS bills</span>
+                <i class="ph ph-piggy-bank text-ink-900 text-xl"></i>
+            </div>
+            <div>
+                <p class="font-extrabold text-2xl md:text-3xl leading-tight" data-key="sk_stat2_title">Static, fast,<br>yours to keep.</p>
+                <p class="text-ink-900/70 text-xs md:text-sm mt-2" data-key="sk_stat2_desc">No WordPress, no monthly plugin fees, no lock-in.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Jump-link strip -->
+    <section class="bento">
+        <a href="#website" class="tile tile-outline col-span-12 md:col-span-4 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:8px">
+            <div class="flex items-center justify-between">
+                <span class="eyebrow text-ink-500">01</span>
+                <i class="ph ph-arrow-down-right text-brand text-lg"></i>
+            </div>
+            <p class="font-bold text-sm md:text-base" data-key="sk_jump_1">Website</p>
+        </a>
+        <a href="#google-business" class="tile tile-outline col-span-12 md:col-span-4 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:8px">
+            <div class="flex items-center justify-between">
+                <span class="eyebrow text-ink-500">02</span>
+                <i class="ph ph-arrow-down-right text-brand text-lg"></i>
+            </div>
+            <p class="font-bold text-sm md:text-base" data-key="sk_jump_2">Google Business Profile</p>
+        </a>
+        <a href="#ai-visibility" class="tile tile-outline col-span-12 md:col-span-4 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:8px">
+            <div class="flex items-center justify-between">
+                <span class="eyebrow text-ink-500">03</span>
+                <i class="ph ph-arrow-down-right text-brand text-lg"></i>
+            </div>
+            <p class="font-bold text-sm md:text-base" data-key="sk_jump_3">AI Visibility SEO</p>
+        </a>
+    </section>
+
+    <!-- ============================================================
+         2. PILLAR 01 — WEBSITE
+    ============================================================ -->
+    <section id="website" class="bento" style="grid-auto-rows: minmax(120px, auto); scroll-margin-top: 100px;">
+
+        <div class="tile tile-dark col-span-12 md:col-span-7 min-h-[320px] md:min-h-[460px] relative overflow-hidden">
+            <div class="absolute inset-0 grid-pattern-dark opacity-50"></div>
+            <div class="absolute -right-4 -top-8 md:-right-8 md:-top-16 numeral-xl text-white/[0.05] select-none pointer-events-none">01</div>
+            <div class="relative z-10">
+                <div class="flex items-start justify-between">
+                    <span class="chip chip-on-dark" data-key="sk1_eyebrow">Piece 01</span>
+                    <div class="w-12 h-12 bg-brand rounded-2xl flex items-center justify-center">
+                        <i class="ph ph-browser text-ink-900 text-xl md:text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="relative z-10">
+                <h2 class="display text-2xl md:text-4xl text-white mb-4 md:mb-6" data-key="sk1_title">A website that works, not a subscription</h2>
+                <div class="space-y-3 md:space-y-4 text-gray-300 text-sm md:text-base leading-relaxed max-w-xl">
+                    <p data-key="sk1_p1">Most small business sites are either outdated WordPress installs that cost money every month, or drag-and-drop builders that load slowly and look like everyone else's. I build static sites: fast, mobile-first, and designed specifically for your business — not a template with your logo dropped in.</p>
+                    <p data-key="sk1_p2">Need a contact form, opening hours, or an online booking calendar? That gets built in from day one, no third-party plugin subscriptions required.</p>
+                </div>
+                <span class="for-pill mt-5 md:mt-6" data-key="sk1_for">For: businesses without a site, or ones bleeding money on a CMS they don't need</span>
+            </div>
+        </div>
+
+        <div class="tile tile-cream col-span-12 md:col-span-5 min-h-[320px] md:min-h-[460px]">
+            <div>
+                <div class="flex items-start justify-between mb-1">
+                    <span class="eyebrow text-brand-dark" data-key="sk1_includes_label">What's included</span>
+                    <span class="numeral text-ink-900/8 leading-none" style="opacity:.08">01</span>
+                </div>
+            </div>
+            <div class="flex-1 flex flex-col justify-center">
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="sk1_d1">Custom-designed static site, not a template</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="sk1_d2">Mobile-first, built for actual load speed</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="sk1_d3">Contact form, booking calendar, or hours — as needed</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="sk1_d4">Free or near-free hosting, no CMS fees</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="sk1_d5">You own the code — no lock-in, ever</span></div>
+            </div>
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-ink-900 text-brand font-bold text-sm py-3.5 px-6 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg" data-key="sk1_cta">
+                Get started →
+            </a>
+        </div>
+
+    </section>
+
+    <!-- ============================================================
+         3. PILLAR 02 — GOOGLE BUSINESS PROFILE
+    ============================================================ -->
+    <section id="google-business" class="bento" style="grid-auto-rows: minmax(120px, auto); scroll-margin-top: 100px;">
+
+        <div class="tile tile-light col-span-12 md:col-span-5 md:order-1 order-2 min-h-[320px] md:min-h-[460px]">
+            <div>
+                <div class="flex items-start justify-between mb-1">
+                    <span class="eyebrow text-brand-dark" data-key="sk2_includes_label">What I keep current</span>
+                    <span class="numeral text-ink-900/8 leading-none" style="opacity:.08">02</span>
+                </div>
+            </div>
+            <div class="flex-1 flex flex-col justify-center">
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="sk2_d1">Profile setup or full cleanup: categories, hours, services</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="sk2_d2">Photos, posts, and Q&amp;A managed on a schedule</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="sk2_d3">A simple review strategy: how to ask, how to respond</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="sk2_d4">Local signals tied back to your actual website</span></div>
+            </div>
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-cream text-ink-900 font-bold text-sm py-3.5 px-6 rounded-xl border border-ink-900/10 transition hover:border-ink-900 hover:-translate-y-0.5" data-key="sk2_cta">
+                Get my profile fixed →
+            </a>
+        </div>
+
+        <div class="tile tile-cream col-span-12 md:col-span-7 md:order-2 order-1 min-h-[320px] md:min-h-[460px] relative overflow-hidden">
+            <div class="absolute inset-0 grid-pattern opacity-50"></div>
+            <div class="absolute -right-4 -top-8 md:-right-8 md:-top-16 numeral-xl text-ink-900/[0.05] select-none pointer-events-none">02</div>
+            <div class="relative z-10">
+                <div class="flex items-start justify-between">
+                    <span class="chip chip-on-light" data-key="sk2_eyebrow">Piece 02</span>
+                    <div class="w-12 h-12 bg-ink-900 rounded-2xl flex items-center justify-center">
+                        <i class="ph ph-map-pin text-brand text-xl md:text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="relative z-10">
+                <h2 class="display text-2xl md:text-4xl mb-4 md:mb-6" data-key="sk2_title">Your Google Business Profile, actually maintained</h2>
+                <div class="space-y-3 md:space-y-4 text-ink-700 text-sm md:text-base leading-relaxed max-w-xl">
+                    <p data-key="sk2_p1">Most small businesses set up their profile once and never touch it again. That's the exact profile that shows up in Maps, in "near me" searches, and increasingly gets quoted directly in Google's AI Overviews.</p>
+                    <p data-key="sk2_p2">I set it up correctly and keep it accurate — treating it as a working part of your marketing, not a listing you filed once and forgot.</p>
+                </div>
+                <span class="for-pill mt-5 md:mt-6" data-key="sk2_for">For: businesses on Google Maps, but nowhere else</span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ============================================================
+         4. PILLAR 03 — AI VISIBILITY SEO
+    ============================================================ -->
+    <section id="ai-visibility" class="bento" style="grid-auto-rows: minmax(120px, auto); scroll-margin-top: 100px;">
+
+        <div class="tile tile-dark col-span-12 md:col-span-7 min-h-[320px] md:min-h-[460px] relative overflow-hidden">
+            <div class="absolute inset-0 grid-pattern-dark opacity-50"></div>
+            <div class="absolute -right-4 -top-8 md:-right-8 md:-top-16 numeral-xl text-white/[0.05] select-none pointer-events-none">03</div>
+            <div class="relative z-10">
+                <div class="flex items-start justify-between">
+                    <span class="chip chip-on-dark" data-key="sk3_eyebrow">Piece 03 · The difference</span>
+                    <div class="w-12 h-12 bg-brand rounded-2xl flex items-center justify-center">
+                        <i class="ph ph-sparkle text-ink-900 text-xl md:text-2xl"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="relative z-10">
+                <h2 class="display text-2xl md:text-4xl text-white mb-4 md:mb-6" data-key="sk3_title">Findable by Google. And by what's replacing it.</h2>
+                <div class="space-y-3 md:space-y-4 text-gray-300 text-sm md:text-base leading-relaxed max-w-xl">
+                    <p data-key="sk3_p1">Search isn't just ten blue links anymore. People ask ChatGPT, Perplexity, and Google's AI Overviews things like "best thai massage in Düsseldorf" and get a direct answer — no click required. If your business isn't structured for that, you don't exist in that answer.</p>
+                    <p data-key="sk3_p2">This is the part most web agencies skip entirely, because most of them were set up before it mattered. I build the technical groundwork — structured data, clear factual content, proper indexing — that gives AI engines a reason to cite you instead of skip you.</p>
+                </div>
+                <span class="for-pill mt-5 md:mt-6" data-key="sk3_for">For: any business that wants to be found beyond the classic search results</span>
+            </div>
+        </div>
+
+        <div class="tile tile-cream col-span-12 md:col-span-5 min-h-[320px] md:min-h-[460px]">
+            <div>
+                <div class="flex items-start justify-between mb-1">
+                    <span class="eyebrow text-brand-dark" data-key="sk3_includes_label">What this covers</span>
+                    <span class="numeral text-ink-900/8 leading-none" style="opacity:.08">03</span>
+                </div>
+            </div>
+            <div class="flex-1 flex flex-col justify-center">
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="sk3_d1">Structured data (schema.org), so machines understand your business</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="sk3_d2">Content written to be quoted, not just ranked</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="sk3_d3">Technical SEO basics done right: speed, mobile, indexing</span></div>
+                <div class="deliverable"><span class="deliverable-arrow">→</span><span data-key="sk3_d4">Ongoing check-ins as AI search keeps changing</span></div>
+            </div>
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 bg-ink-900 text-brand font-bold text-sm py-3.5 px-6 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg" data-key="sk3_cta">
+                Get set up →
+            </a>
+        </div>
+
+    </section>
+
+    <!-- ============================================================
+         5. ADD-ONS — GOOGLE ADS & META ADS
+    ============================================================ -->
+    <section class="bento" style="grid-auto-rows: minmax(120px, auto);">
+
+        <div class="tile tile-light col-span-12 min-h-[90px] md:min-h-[110px]" style="flex-direction: row; align-items: flex-end; justify-content: space-between;">
+            <div>
+                <span class="eyebrow text-brand-dark" data-key="sk_addon_eyebrow">Want to go further?</span>
+                <h2 class="display text-xl md:text-3xl mt-2" data-key="sk_addon_title">Add paid traffic, when you're ready.</h2>
+            </div>
+        </div>
+
+        <div class="tile tile-brand col-span-12 md:col-span-6 min-h-[240px] tile-hover">
+            <div class="flex items-start justify-between">
+                <div class="w-12 h-12 bg-ink-900 rounded-2xl flex items-center justify-center">
+                    <i class="ph ph-cursor-click text-brand text-xl md:text-2xl"></i>
+                </div>
+                <span class="chip chip-soft" style="background:rgba(14,14,16,0.1); color:#0E0E10;" data-key="sk_addon1_pill">By me, directly</span>
+            </div>
+            <div>
+                <h3 class="font-extrabold text-lg md:text-xl mb-2" data-key="sk_addon1_title">Google Ads</h3>
+                <p class="text-ink-900/80 text-sm leading-relaxed" data-key="sk_addon1_desc">Once your site and profile are solid, I can run Google Ads myself — it's literally what I do for a living: 8+ years in, two of them at Google. Same honest, hands-on approach as everything else here.</p>
+                <a href="services.html" class="inline-flex items-center gap-1 mt-4 font-bold text-sm text-ink-900 hover:underline" data-key="sk_addon1_cta">See Google Ads services →</a>
+            </div>
+        </div>
+
+        <div class="tile tile-outline col-span-12 md:col-span-6 min-h-[240px] tile-hover">
+            <div class="flex items-start justify-between">
+                <div class="w-12 h-12 bg-cream rounded-2xl flex items-center justify-center border border-ink-900/10">
+                    <i class="ph ph-instagram-logo text-ink-900 text-xl md:text-2xl"></i>
+                </div>
+                <span class="for-pill" data-key="sk_addon2_pill">Via a trusted partner, not me</span>
+            </div>
+            <div>
+                <h3 class="font-extrabold text-lg md:text-xl mb-2" data-key="sk_addon2_title">Meta Ads (Instagram &amp; Facebook)</h3>
+                <p class="text-ink-500 text-sm leading-relaxed" data-key="sk_addon2_desc">I don't run Meta Ads myself — but I work with freelance Meta specialists I know and vet personally. If it fits your business, I'll make the introduction directly. No commission, no markup added on top.</p>
+                <a href="#contact" class="inline-flex items-center gap-1 mt-4 font-bold text-sm text-ink-900 hover:underline" data-key="sk_addon2_cta">Ask about Meta Ads →</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ============================================================
+         6. HOW IT WORKS
+    ============================================================ -->
+    <section class="bento" style="grid-auto-rows: minmax(120px, auto);">
+
+        <div class="tile tile-light col-span-12 min-h-[100px] md:min-h-[120px]" style="flex-direction: row; align-items: flex-end; justify-content: space-between;">
+            <div>
+                <span class="eyebrow text-brand-dark">Process</span>
+                <h2 class="display text-2xl md:text-4xl mt-2 md:mt-3" data-key="sk_process_title">How it works.</h2>
+                <p class="text-ink-500 text-sm md:text-base mt-1 md:mt-2" data-key="sk_process_sub">Simple, transparent, no surprises — same as everything else on this site.</p>
+            </div>
+            <div class="hidden md:flex items-center gap-1 text-ink-900/30 text-3xl font-black tracking-tighter">
+                01 → 02 → 03
+            </div>
+        </div>
+
+        <div class="tile tile-cream col-span-12 md:col-span-4 min-h-[220px] md:min-h-[260px] tile-hover">
+            <div class="flex items-start justify-between">
+                <div class="w-12 h-12 md:w-14 md:h-14 bg-brand rounded-2xl flex items-center justify-center shadow-md shadow-brand/30">
+                    <i class="ph ph-chat-circle-text text-ink-900 text-xl md:text-2xl"></i>
+                </div>
+                <span class="numeral text-ink-900/10 leading-none">01</span>
+            </div>
+            <div>
+                <span class="eyebrow text-brand-dark" data-key="sk_step1_num">Step 01</span>
+                <h3 class="font-extrabold text-lg md:text-xl mt-2 mb-2 md:mb-3" data-key="sk_step1_title">A short, honest chat</h3>
+                <p class="text-ink-500 text-sm leading-relaxed" data-key="sk_step1_desc">We talk about your business and what's actually missing: a site, a working profile, visibility, or all three. No pitch deck, just a plan.</p>
+            </div>
+        </div>
+
+        <div class="tile tile-cream col-span-12 md:col-span-4 min-h-[220px] md:min-h-[260px] tile-hover">
+            <div class="flex items-start justify-between">
+                <div class="w-12 h-12 md:w-14 md:h-14 bg-brand rounded-2xl flex items-center justify-center shadow-md shadow-brand/30">
+                    <i class="ph ph-hammer text-ink-900 text-xl md:text-2xl"></i>
+                </div>
+                <span class="numeral text-ink-900/10 leading-none">02</span>
+            </div>
+            <div>
+                <span class="eyebrow text-brand-dark" data-key="sk_step2_num">Step 02</span>
+                <h3 class="font-extrabold text-lg md:text-xl mt-2 mb-2 md:mb-3" data-key="sk_step2_title">I build it</h3>
+                <p class="text-ink-500 text-sm leading-relaxed" data-key="sk_step2_desc">Site, profile, and structured content get built out on a clear timeline. You see progress, not a black box.</p>
+            </div>
+        </div>
+
+        <div class="tile tile-cream col-span-12 md:col-span-4 min-h-[220px] md:min-h-[260px] tile-hover">
+            <div class="flex items-start justify-between">
+                <div class="w-12 h-12 md:w-14 md:h-14 bg-brand rounded-2xl flex items-center justify-center shadow-md shadow-brand/30">
+                    <i class="ph ph-eye text-ink-900 text-xl md:text-2xl"></i>
+                </div>
+                <span class="numeral text-ink-900/10 leading-none">03</span>
+            </div>
+            <div>
+                <span class="eyebrow text-brand-dark" data-key="sk_step3_num">Step 03</span>
+                <h3 class="font-extrabold text-lg md:text-xl mt-2 mb-2 md:mb-3" data-key="sk_step3_title">You stay visible</h3>
+                <p class="text-ink-500 text-sm leading-relaxed" data-key="sk_step3_desc">Light ongoing care keeps your profile and content current. Ads get layered in later, only if and when it makes sense.</p>
+            </div>
+        </div>
+
+        <div class="tile tile-brand col-span-12 min-h-[70px] md:min-h-[80px]" style="flex-direction: row; align-items: center; justify-content: space-between;">
+            <p class="font-bold text-xs md:text-base pr-3" data-key="sk_process_note">
+                No agency contracts. No 12-month commitments. Just useful things you can actually afford.
+            </p>
+            <i class="ph ph-arrow-right text-ink-900 text-lg md:text-xl flex-shrink-0"></i>
+        </div>
+
+    </section>
+
+    <!-- ============================================================
+         7. CONTACT
+    ============================================================ -->
+    <section id="contact" class="bento" style="grid-auto-rows: minmax(120px, auto); scroll-margin-top: 100px;">
+
+        <div class="tile tile-dark col-span-12 md:col-span-5 min-h-[560px] md:min-h-[600px] relative overflow-hidden">
+            <div class="absolute inset-0 grid-pattern-dark opacity-40"></div>
+            <div class="relative z-10">
+                <span class="eyebrow text-brand" data-key="sk_contact_eyebrow">Contact</span>
+                <h2 class="display text-2xl md:text-4xl text-white mt-3 mb-4" data-key="sk_contact_title">Not sure where to start? Start here.</h2>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed mb-6" data-key="sk_contact_sub">Tell me what your business has right now — nothing, an old site, a neglected Google profile — and I'll tell you honestly what I'd fix first.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3 text-gray-300 text-sm" data-key="sk_contact_li_1">
+                        <i class="ph ph-check text-brand mt-0.5 flex-shrink-0 text-base"></i>
+                        I write back myself, no templates, no team inbox
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-300 text-sm" data-key="sk_contact_li_2">
+                        <i class="ph ph-check text-brand mt-0.5 flex-shrink-0 text-base"></i>
+                        Straight pricing on request, no sales call required
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-300 text-sm" data-key="sk_contact_li_3">
+                        <i class="ph ph-check text-brand mt-0.5 flex-shrink-0 text-base"></i>
+                        No strings attached, what comes next is your call
+                    </li>
+                </ul>
+            </div>
+            <div class="relative z-10">
+                <div class="border-t border-white/10 pt-5">
+                    <p class="text-gray-500 text-xs mb-2" data-key="sk_contact_direct">Or write directly:</p>
+                    <a href="mailto:hello@click-capybara.com" class="text-brand font-bold text-sm md:text-base hover:underline">hello@click-capybara.com</a>
+                    <p class="text-gray-600 text-xs mt-3" data-key="sk_contact_reassurance">No spam. No sales calls unless you want one. Just a reply from me, Max.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tile tile-light col-span-12 md:col-span-7 min-h-[560px] md:min-h-[600px] relative overflow-hidden">
+
+            <form id="contact-form" class="space-y-4">
+
+                <div>
+                    <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="form_label_name">Name</label>
+                    <input type="text" name="name" required placeholder="Your name"
+                        class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="form_label_email">Email</label>
+                    <input type="email" name="email" required placeholder="you@company.com"
+                        class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="sk_form_label_help">What do you need?</label>
+                    <select name="service"
+                        class="w-full bg-cream border border-black/5 text-ink-900 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition appearance-none">
+                        <option value="Website" data-key="sk_form_opt_website">A website</option>
+                        <option value="Google Business Profile" data-key="sk_form_opt_gbp">Google Business Profile</option>
+                        <option value="AI Visibility SEO" data-key="sk_form_opt_seo">AI Visibility / SEO</option>
+                        <option value="The Full Package" data-key="sk_form_opt_full">The full package</option>
+                        <option value="Google Ads" data-key="sk_form_opt_ads">Google Ads</option>
+                        <option value="General Question" data-key="form_opt_general">General question</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="sk_form_label_website">
+                        Current website <span class="font-normal normal-case tracking-normal text-ink-500/70" data-key="form_optional">(optional)</span>
+                    </label>
+                    <input type="text" name="website" placeholder="www.yourbusiness.com"
+                        class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="sk_form_label_more">
+                        Anything else? <span class="font-normal normal-case tracking-normal text-ink-500/70" data-key="form_optional2">(optional)</span>
+                    </label>
+                    <textarea name="challenge" rows="3" placeholder="e.g. no site yet, old WordPress, nobody finds us on Google..."
+                        class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition resize-none"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-ink-900 text-brand font-extrabold text-base py-4 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98]"
+                    data-key="form_submit">
+                    Send - it's free
+                </button>
+
+            </form>
+
+            <div id="form-success" class="absolute inset-0 bg-white rounded-[28px] flex flex-col items-center justify-center text-center px-8 opacity-0 pointer-events-none transition-opacity duration-500">
+                <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background: rgba(59,180,82,0.12); border: 2px solid #3fb950;">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3fb950" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <h3 class="font-extrabold text-xl mb-3" data-key="success_title">Message received.</h3>
+                <p class="text-ink-500 text-sm leading-relaxed max-w-sm" data-key="success_sub">You'll hear back within 2 business days, directly from Max, not an assistant.</p>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="container mx-auto px-4 md:px-6 pb-8">
+    <div class="tile tile-dark min-h-[100px]" style="flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div class="flex items-center gap-3">
+            <img src="assets/clickcapybara_outline_bold.svg" alt="Click-Capybara" class="w-6 h-6 opacity-70" onerror="this.outerHTML='<span class=&quot;logo-fallback w-6 h-6 text-[10px]&quot;>CC</span>'">
+            <p class="text-gray-400 text-xs" data-key="footer_copy">&copy; 2026 Click-Capybara · The Google Ads specialist in your corner.</p>
+        </div>
+        <div class="flex items-center gap-4 md:gap-5 text-xs">
+            <a href="privacy.html" class="text-gray-400 hover:text-brand transition" data-key="footer_privacy">Privacy Policy</a>
+            <a href="#contact" class="text-gray-400 hover:text-brand transition" data-key="footer_contact">Contact</a>
+            <a href="free-script.html" class="text-gray-400 hover:text-brand transition" data-key="footer_script">Tools &amp; Scripts</a>
+        </div>
+    </div>
+</footer>
+
+<!-- ============================================================
+     JS
+============================================================ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── Mobile menu ──────────────────────────────────────
+document.getElementById('mobile-menu-button').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+});
+
+// ── Language switcher (starter-kit page-specific overrides merged with translations.js) ──
+if (typeof translations !== 'undefined') {
+    const langEnBtn  = document.getElementById('lang-en');
+    const langDeBtn  = document.getElementById('lang-de');
+    const mLangEnBtn = document.getElementById('mobile-lang-en');
+    const mLangDeBtn = document.getElementById('mobile-lang-de');
+
+    const skTranslations = {
+        en: {
+            sk_page_title: "Starter Kit | Click-Capybara — Online Presence for Small Business",
+            sk_meta_desc: "A clean website, a working Google Business Profile, and visibility in AI search — built by one person, without agency overhead. For cafés, studios, and local shops.",
+            sk_eyebrow: "For small businesses",
+            sk_h1: "Your foot in the door.<br><span class=\"hl\">Online.</span>",
+            sk_sub: "A clean website, a Google profile that actually works, and visibility in the tools people search with now — AI included. Built by one person. Priced like it.",
+            sk_jump_1: "Website", sk_jump_2: "Google Business Profile", sk_jump_3: "AI Visibility SEO",
+            sk_stat1_eyebrow: "The package",
+            sk_stat1_desc: "Website, Google Business Profile, and AI-visibility SEO. One connected setup, not three separate vendors.",
+            sk_stat2_eyebrow: "No CMS bills",
+            sk_stat2_title: "Static, fast,<br>yours to keep.",
+            sk_stat2_desc: "No WordPress, no monthly plugin fees, no lock-in.",
+            sk1_eyebrow: "Piece 01", sk1_title: "A website that works, not a subscription",
+            sk1_p1: "Most small business sites are either outdated WordPress installs that cost money every month, or drag-and-drop builders that load slowly and look like everyone else's. I build static sites: fast, mobile-first, and designed specifically for your business — not a template with your logo dropped in.",
+            sk1_p2: "Need a contact form, opening hours, or an online booking calendar? That gets built in from day one, no third-party plugin subscriptions required.",
+            sk1_for: "For: businesses without a site, or ones bleeding money on a CMS they don't need",
+            sk1_includes_label: "What's included",
+            sk1_d1: "Custom-designed static site, not a template",
+            sk1_d2: "Mobile-first, built for actual load speed",
+            sk1_d3: "Contact form, booking calendar, or hours — as needed",
+            sk1_d4: "Free or near-free hosting, no CMS fees",
+            sk1_d5: "You own the code — no lock-in, ever",
+            sk1_cta: "Get started →",
+            sk2_eyebrow: "Piece 02", sk2_title: "Your Google Business Profile, actually maintained",
+            sk2_p1: "Most small businesses set up their profile once and never touch it again. That's the exact profile that shows up in Maps, in \"near me\" searches, and increasingly gets quoted directly in Google's AI Overviews.",
+            sk2_p2: "I set it up correctly and keep it accurate — treating it as a working part of your marketing, not a listing you filed once and forgot.",
+            sk2_for: "For: businesses on Google Maps, but nowhere else",
+            sk2_includes_label: "What I keep current",
+            sk2_d1: "Profile setup or full cleanup: categories, hours, services",
+            sk2_d2: "Photos, posts, and Q&A managed on a schedule",
+            sk2_d3: "A simple review strategy: how to ask, how to respond",
+            sk2_d4: "Local signals tied back to your actual website",
+            sk2_cta: "Get my profile fixed →",
+            sk3_eyebrow: "Piece 03 · The difference", sk3_title: "Findable by Google. And by what's replacing it.",
+            sk3_p1: "Search isn't just ten blue links anymore. People ask ChatGPT, Perplexity, and Google's AI Overviews things like \"best thai massage in Düsseldorf\" and get a direct answer — no click required. If your business isn't structured for that, you don't exist in that answer.",
+            sk3_p2: "This is the part most web agencies skip entirely, because most of them were set up before it mattered. I build the technical groundwork — structured data, clear factual content, proper indexing — that gives AI engines a reason to cite you instead of skip you.",
+            sk3_for: "For: any business that wants to be found beyond the classic search results",
+            sk3_includes_label: "What this covers",
+            sk3_d1: "Structured data (schema.org), so machines understand your business",
+            sk3_d2: "Content written to be quoted, not just ranked",
+            sk3_d3: "Technical SEO basics done right: speed, mobile, indexing",
+            sk3_d4: "Ongoing check-ins as AI search keeps changing",
+            sk3_cta: "Get set up →",
+            sk_addon_eyebrow: "Want to go further?",
+            sk_addon_title: "Add paid traffic, when you're ready.",
+            sk_addon1_pill: "By me, directly",
+            sk_addon1_title: "Google Ads",
+            sk_addon1_desc: "Once your site and profile are solid, I can run Google Ads myself — it's literally what I do for a living: 8+ years in, two of them at Google. Same honest, hands-on approach as everything else here.",
+            sk_addon1_cta: "See Google Ads services →",
+            sk_addon2_pill: "Via a trusted partner, not me",
+            sk_addon2_title: "Meta Ads (Instagram & Facebook)",
+            sk_addon2_desc: "I don't run Meta Ads myself — but I work with freelance Meta specialists I know and vet personally. If it fits your business, I'll make the introduction directly. No commission, no markup added on top.",
+            sk_addon2_cta: "Ask about Meta Ads →",
+            sk_process_title: "How it works.",
+            sk_process_sub: "Simple, transparent, no surprises — same as everything else on this site.",
+            sk_step1_num: "Step 01", sk_step1_title: "A short, honest chat",
+            sk_step1_desc: "We talk about your business and what's actually missing: a site, a working profile, visibility, or all three. No pitch deck, just a plan.",
+            sk_step2_num: "Step 02", sk_step2_title: "I build it",
+            sk_step2_desc: "Site, profile, and structured content get built out on a clear timeline. You see progress, not a black box.",
+            sk_step3_num: "Step 03", sk_step3_title: "You stay visible",
+            sk_step3_desc: "Light ongoing care keeps your profile and content current. Ads get layered in later, only if and when it makes sense.",
+            sk_process_note: "No agency contracts. No 12-month commitments. Just useful things you can actually afford.",
+            sk_contact_eyebrow: "Contact",
+            sk_contact_title: "Not sure where to start? Start here.",
+            sk_contact_sub: "Tell me what your business has right now — nothing, an old site, a neglected Google profile — and I'll tell you honestly what I'd fix first.",
+            sk_contact_li_1: "I write back myself, no templates, no team inbox",
+            sk_contact_li_2: "Straight pricing on request, no sales call required",
+            sk_contact_li_3: "No strings attached, what comes next is your call",
+            sk_contact_direct: "Or write directly:",
+            sk_contact_reassurance: "No spam. No sales calls unless you want one. Just a reply from me, Max.",
+            sk_form_label_help: "What do you need?",
+            sk_form_opt_website: "A website",
+            sk_form_opt_gbp: "Google Business Profile",
+            sk_form_opt_seo: "AI Visibility / SEO",
+            sk_form_opt_full: "The full package",
+            sk_form_opt_ads: "Google Ads",
+            sk_form_label_website: "Current website",
+            sk_form_label_more: "Anything else?"
+        },
+        de: {
+            sk_page_title: "Starter Kit | Click-Capybara — Online-Präsenz für kleine Unternehmen",
+            sk_meta_desc: "Eine saubere Website, ein Google-Unternehmensprofil, das wirklich funktioniert, und Sichtbarkeit in KI-Suchen — von einer Person umgesetzt, ohne Agentur-Overhead.",
+            sk_eyebrow: "Für kleine Unternehmen",
+            sk_h1: "Dein Fuß in der Tür.<br><span class=\"hl\">Online.</span>",
+            sk_sub: "Eine saubere Website, ein Google-Profil, das wirklich funktioniert, und Sichtbarkeit in den Tools, mit denen heute gesucht wird — KI inklusive. Von einer Person gebaut. Auch so bepreist.",
+            sk_jump_1: "Website", sk_jump_2: "Google-Unternehmensprofil", sk_jump_3: "KI-Sichtbarkeit / SEO",
+            sk_stat1_eyebrow: "Das Paket",
+            sk_stat1_desc: "Website, Google-Unternehmensprofil und KI-Sichtbarkeits-SEO. Ein zusammenhängendes Setup, nicht drei separate Anbieter.",
+            sk_stat2_eyebrow: "Keine CMS-Kosten",
+            sk_stat2_title: "Statisch, schnell,<br>gehört dir.",
+            sk_stat2_desc: "Kein WordPress, keine monatlichen Plugin-Gebühren, kein Lock-in.",
+            sk1_eyebrow: "Baustein 01", sk1_title: "Eine Website, die funktioniert, kein Abo",
+            sk1_p1: "Die meisten Websites kleiner Unternehmen sind entweder veraltete WordPress-Installationen mit monatlichen Kosten, oder Baukasten-Seiten, die langsam laden und aussehen wie jede andere auch. Ich baue statische Seiten: schnell, mobil-first, speziell für dein Unternehmen gestaltet — kein Template mit deinem Logo drauf.",
+            sk1_p2: "Kontaktformular, Öffnungszeiten oder ein Online-Buchungskalender gewünscht? Das wird von Anfang an eingebaut, ohne Plugin-Abos von Drittanbietern.",
+            sk1_for: "Für: Unternehmen ohne Website, oder solche, die für ein CMS zahlen, das sie nicht brauchen",
+            sk1_includes_label: "Was enthalten ist",
+            sk1_d1: "Individuell gestaltete statische Website, kein Template",
+            sk1_d2: "Mobil-first, für echte Ladegeschwindigkeit gebaut",
+            sk1_d3: "Kontaktformular, Buchungskalender oder Öffnungszeiten — nach Bedarf",
+            sk1_d4: "Kostenloses oder günstiges Hosting, keine CMS-Gebühren",
+            sk1_d5: "Der Code gehört dir — kein Lock-in, nie",
+            sk1_cta: "Jetzt starten →",
+            sk2_eyebrow: "Baustein 02", sk2_title: "Dein Google-Unternehmensprofil, wirklich gepflegt",
+            sk2_p1: "Die meisten kleinen Unternehmen richten ihr Profil einmal ein und fassen es nie wieder an. Genau dieses Profil taucht in Maps auf, bei \"in meiner Nähe\"-Suchen, und wird zunehmend direkt in Googles KI-Übersichten zitiert.",
+            sk2_p2: "Ich richte es korrekt ein und halte es aktuell — als funktionierenden Teil deines Marketings, nicht als einmal angelegten und vergessenen Eintrag.",
+            sk2_for: "Für: Unternehmen, die bei Google Maps sind, aber sonst nirgends",
+            sk2_includes_label: "Was ich aktuell halte",
+            sk2_d1: "Profil-Einrichtung oder komplette Bereinigung: Kategorien, Öffnungszeiten, Leistungen",
+            sk2_d2: "Fotos, Beiträge und Q&A regelmäßig gepflegt",
+            sk2_d3: "Eine einfache Bewertungsstrategie: wie man fragt, wie man antwortet",
+            sk2_d4: "Lokale Signale, verknüpft mit deiner echten Website",
+            sk2_cta: "Mein Profil fixen lassen →",
+            sk3_eyebrow: "Baustein 03 · Der Unterschied", sk3_title: "Auffindbar bei Google. Und bei dem, was es gerade ablöst.",
+            sk3_p1: "Suche ist nicht mehr nur zehn blaue Links. Menschen fragen ChatGPT, Perplexity und Googles KI-Übersichten Dinge wie \"beste Thaimassage in Düsseldorf\" und bekommen eine direkte Antwort — ohne Klick. Ist dein Unternehmen dafür nicht strukturiert, kommst du in dieser Antwort nicht vor.",
+            sk3_p2: "Genau das überspringen die meisten Web-Agenturen komplett, weil sie entstanden sind, bevor es relevant war. Ich baue das technische Fundament — strukturierte Daten, klare, faktenbasierte Inhalte, saubere Indexierung — das KI-Systemen einen Grund gibt, dich zu zitieren statt zu überspringen.",
+            sk3_for: "Für: jedes Unternehmen, das über die klassischen Suchergebnisse hinaus gefunden werden will",
+            sk3_includes_label: "Was das umfasst",
+            sk3_d1: "Strukturierte Daten (schema.org), damit Maschinen dein Unternehmen verstehen",
+            sk3_d2: "Inhalte, die zum Zitieren geschrieben sind, nicht nur zum Ranken",
+            sk3_d3: "Technische SEO-Grundlagen richtig gemacht: Geschwindigkeit, Mobile, Indexierung",
+            sk3_d4: "Laufende Anpassungen, während sich KI-Suche weiterentwickelt",
+            sk3_cta: "Jetzt einrichten →",
+            sk_addon_eyebrow: "Willst du mehr?",
+            sk_addon_title: "Bezahlte Reichweite dazu buchen, wenn du bereit bist.",
+            sk_addon1_pill: "Von mir, direkt",
+            sk_addon1_title: "Google Ads",
+            sk_addon1_desc: "Sobald Website und Profil stehen, kann ich Google Ads selbst übernehmen — genau das mache ich seit über 8 Jahren, zwei davon bei Google. Gleiche ehrliche, direkte Arbeitsweise wie alles andere hier.",
+            sk_addon1_cta: "Google Ads Services ansehen →",
+            sk_addon2_pill: "Über einen vertrauten Partner, nicht mich",
+            sk_addon2_title: "Meta Ads (Instagram & Facebook)",
+            sk_addon2_desc: "Meta Ads schalte ich nicht selbst — aber ich arbeite mit freiberuflichen Meta-Spezialist:innen, die ich persönlich kenne und geprüft habe. Wenn es passt, stelle ich den Kontakt direkt her. Keine Provision, kein Aufschlag.",
+            sk_addon2_cta: "Nach Meta Ads fragen →",
+            sk_process_title: "So läuft's ab.",
+            sk_process_sub: "Einfach, transparent, keine Überraschungen — wie überall auf dieser Seite.",
+            sk_step1_num: "Schritt 01", sk_step1_title: "Ein kurzes, ehrliches Gespräch",
+            sk_step1_desc: "Wir besprechen dein Unternehmen und was wirklich fehlt: eine Website, ein funktionierendes Profil, Sichtbarkeit — oder alles drei. Kein Pitch-Deck, nur ein Plan.",
+            sk_step2_num: "Schritt 02", sk_step2_title: "Ich baue es",
+            sk_step2_desc: "Website, Profil und strukturierte Inhalte werden nach klarem Zeitplan aufgebaut. Du siehst Fortschritt, keine Blackbox.",
+            sk_step3_num: "Schritt 03", sk_step3_title: "Du bleibst sichtbar",
+            sk_step3_desc: "Laufende, leichte Pflege hält Profil und Inhalte aktuell. Ads kommen später dazu, nur wenn es wirklich Sinn ergibt.",
+            sk_process_note: "Keine Agenturverträge. Keine 12-Monats-Bindung. Nur nützliche Dinge, die du dir auch leisten kannst.",
+            sk_contact_eyebrow: "Kontakt",
+            sk_contact_title: "Nicht sicher, wo du anfangen sollst? Fang hier an.",
+            sk_contact_sub: "Erzähl mir, was dein Unternehmen aktuell hat — nichts, eine alte Website, ein vernachlässigtes Google-Profil — und ich sage dir ehrlich, was ich zuerst angehen würde.",
+            sk_contact_li_1: "Ich antworte persönlich, keine automatisierten Mails",
+            sk_contact_li_2: "Klare Preise auf Anfrage, kein Verkaufsgespräch nötig",
+            sk_contact_li_3: "Was danach passiert, entscheidest du",
+            sk_contact_direct: "Oder schreib direkt:",
+            sk_contact_reassurance: "Kein Spam. Keine unerwünschten Anrufe. Nur eine Antwort von mir, Max.",
+            sk_form_label_help: "Was brauchst du?",
+            sk_form_opt_website: "Eine Website",
+            sk_form_opt_gbp: "Google-Unternehmensprofil",
+            sk_form_opt_seo: "KI-Sichtbarkeit / SEO",
+            sk_form_opt_full: "Das komplette Paket",
+            sk_form_opt_ads: "Google Ads",
+            sk_form_label_website: "Aktuelle Website",
+            sk_form_label_more: "Sonst noch etwas?"
+        }
+    };
+
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        const t = { ...(translations[lang] || {}), ...(skTranslations[lang] || {}) };
+        if (t.sk_page_title) document.title = t.sk_page_title;
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (t[key] !== undefined) el.innerHTML = t[key];
+        });
+        [langEnBtn, mLangEnBtn].forEach(btn => {
+            if(btn){ btn.classList.toggle('font-bold', lang==='en'); btn.classList.toggle('text-ink-900', lang==='en'); btn.classList.toggle('text-gray-400', lang!=='en'); }
+        });
+        [langDeBtn, mLangDeBtn].forEach(btn => {
+            if(btn){ btn.classList.toggle('font-bold', lang==='de'); btn.classList.toggle('text-ink-900', lang==='de'); btn.classList.toggle('text-gray-400', lang!=='de'); }
+        });
+        localStorage.setItem('preferredLang', lang);
+    }
+
+    if(langEnBtn)  langEnBtn.addEventListener('click',  () => setLanguage('en'));
+    if(langDeBtn)  langDeBtn.addEventListener('click',  () => setLanguage('de'));
+    if(mLangEnBtn) mLangEnBtn.addEventListener('click', () => setLanguage('en'));
+    if(mLangDeBtn) mLangDeBtn.addEventListener('click', () => setLanguage('de'));
+
+    setLanguage(localStorage.getItem('preferredLang') || 'en');
+}
+
+// ── Scroll fade-in ───────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── Contact form → Google Sheets ─────────────────────
+const LEADS_URL = 'https://script.google.com/macros/s/AKfycbw4qjIOYidlXNMdB5aaFKRypGHkhc7Ghv7_lSOdd-BLk0plaJZ10E4wO6K0rTAVF17F/exec';
+
+function submitToSheet(formEl, sourcePage) {
+    const lang = localStorage.getItem('preferredLang') || 'en';
+    const data = {
+        name:      formEl.querySelector('[name="name"]')?.value      || '',
+        email:     formEl.querySelector('[name="email"]')?.value     || '',
+        website:   formEl.querySelector('[name="website"]')?.value   || '',
+        challenge: formEl.querySelector('[name="challenge"]')?.value || '',
+        service:   formEl.querySelector('[name="service"]')?.value   || '',
+        source:    sourcePage,
+        lang:      lang
+    };
+    const btn = formEl.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = '...'; }
+
+    fetch(LEADS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(data)
+    })
+    .then(() => {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'generate_lead',
+            form_location: sourcePage,
+            service_selected: data.service
+        });
+        formEl.style.opacity = '0';
+        formEl.style.pointerEvents = 'none';
+        const success = document.getElementById('form-success');
+        if (success) { success.style.opacity = '1'; success.style.pointerEvents = 'all'; }
+    })
+    .catch(() => {
+        if (btn) { btn.disabled = false; btn.textContent = lang === 'de' ? 'Nachricht senden - kostenlos' : "Send - it's free"; }
+        alert(lang === 'de' ? 'Fehler - bitte schreib direkt an hello@click-capybara.com' : 'Something went wrong - please email hello@click-capybara.com');
+    });
+}
+
+const form = document.getElementById('contact-form');
+if (form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitToSheet(form, 'Starter Kit');
+    });
+}
+</script>
+
+</body>
+</html>

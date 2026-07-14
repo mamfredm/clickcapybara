@@ -33,12 +33,14 @@
     </script>
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+    <link rel="preload" as="style" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap"></noscript>
     <script src="translations.js"></script>
     <link rel="stylesheet" id="silktide-consent-manager-css" href="cookie-banner/silktide-consent-manager.css">
     <script src="cookie-banner/silktide-consent-manager.js"></script>
@@ -184,10 +186,11 @@
                     <span class="text-base font-extrabold tracking-tight">Click-Capybara</span>
                 </a>
                 <div class="hidden md:flex items-center space-x-7">
-                    <a href="services.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_services">Services</a>
-                    <a href="free-script.html" class="nav-link active text-ink-900 font-bold text-sm" data-key="nav_free_script">Tools &amp; Scripts</a>
+                    <a href="services.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_services">Google Ads</a>
+                    <a href="local-hero-kit.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_starter">Local Hero Kit</a>
                     <a href="index.html#about" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_about">About</a>
                     <a href="index.html#contact" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_contact">Contact</a>
+                    <a href="free-script.html" class="nav-link active text-ink-900 font-bold text-sm" data-key="nav_free_script">Tools &amp; Scripts</a>
                 </div>
                 <div class="hidden md:flex items-center space-x-3 ml-6">
                     <button id="lang-en" class="text-xs font-bold text-ink-900">EN</button>
@@ -195,15 +198,16 @@
                     <button id="lang-de" class="text-xs font-medium text-gray-400 hover:text-ink-900">DE</button>
                     <a href="index.html#contact" class="ml-2 bg-ink-900 text-brand font-bold text-sm py-2 px-4 rounded-xl transition hover:-translate-y-0.5" data-key="nav_cta">Free Audit</a>
                 </div>
-                <button id="mobile-menu-button" class="md:hidden text-ink-900 text-xl p-1"><i class="fas fa-bars"></i></button>
+                <button id="mobile-menu-button" class="md:hidden text-ink-900 text-xl p-1"><i class="ph ph-list"></i></button>
             </nav>
             <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-black/5 rounded-b-2xl overflow-hidden">
-                <a href="services.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_services">Services</a>
-                <a href="free-script.html" class="block py-3 px-5 text-sm text-ink-900 font-bold bg-cream/60 border-b border-black/5" data-key="nav_free_script">Tools &amp; Scripts</a>
+                <a href="services.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_services">Google Ads</a>
+                <a href="local-hero-kit.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_starter">Local Hero Kit</a>
                 <a href="index.html#about" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_about">About</a>
                 <a href="index.html#contact" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_contact">Contact</a>
+                <a href="free-script.html" class="block py-3 px-5 text-sm text-ink-900 font-bold bg-cream/60 border-b border-black/5" data-key="nav_free_script">Tools &amp; Scripts</a>
                 <div class="flex items-center gap-4 px-5 py-3 border-b border-black/5">
-                    <i class="fas fa-globe text-gray-400"></i>
+                    <i class="ph ph-globe text-gray-400"></i>
                     <button id="mobile-lang-en" class="text-sm font-bold">EN</button>
                     <button id="mobile-lang-de" class="text-sm font-medium text-gray-400">DE</button>
                 </div>
@@ -233,7 +237,7 @@
                 </p>
                 <div class="flex flex-wrap items-center gap-4 mb-6">
                     <a id="github-cta-hero" href="https://github.com/mamfredm/AI-Max-NegativeIQ" target="_blank" rel="noopener" class="btn-brand text-sm md:text-base" data-key="script_cta_github">
-                        <i class="fab fa-github text-lg"></i> View on GitHub
+                        <i class="ph ph-github-logo text-lg"></i> View on GitHub
                     </a>
                     <a href="#how-to-install" class="text-gray-300 hover:text-white text-sm font-semibold transition flex items-center gap-2" data-key="script_cta_setup">
                         <i class="ph ph-arrow-down"></i> How to install
@@ -638,7 +642,7 @@
         <div class="tile tile-brand col-span-12 md:col-span-5 min-h-[420px] md:min-h-[480px] text-center">
             <div class="flex items-start justify-between">
                 <span class="chip chip-on-light">Open source</span>
-                <i class="fab fa-github text-3xl text-ink-900"></i>
+                <i class="ph ph-github-logo text-3xl text-ink-900"></i>
             </div>
             <div class="text-center">
                 <p class="text-6xl md:text-7xl mb-3">🐒</p>
@@ -647,10 +651,10 @@
             </div>
             <div class="flex flex-col items-center gap-4">
                 <a id="github-cta-bottom" href="https://github.com/mamfredm/AI-Max-NegativeIQ" target="_blank" rel="noopener" class="btn-dark text-sm md:text-base" data-key="github_cta">
-                    <i class="fab fa-github text-lg"></i> View on GitHub
+                    <i class="ph ph-github-logo text-lg"></i> View on GitHub
                 </a>
                 <div class="flex flex-wrap justify-center gap-3 text-xs text-ink-900/70">
-                    <span class="flex items-center gap-1.5"><i class="fas fa-lock"></i> <span data-key="github_trust_1">No data leaves your account</span></span>
+                    <span class="flex items-center gap-1.5"><i class="ph ph-lock"></i> <span data-key="github_trust_1">No data leaves your account</span></span>
                 </div>
             </div>
         </div>
@@ -851,7 +855,7 @@ if(typeof translations !== 'undefined'){
             script_h1: "AI Max <span class=\"hl\">NegativeIQ</span>",
             script_tagline: "Stop guessing which search terms are wasting your budget. Let AI tell you.",
             script_sub: "A free, open-source tool that connects your Google Ads account to AI, classifies every search term, protects what's converting, and tells you exactly what to add as a negative. Built for Search campaigns. V2 is in development.",
-            script_cta_github: '<i class="fab fa-github text-lg"></i> View on GitHub',
+            script_cta_github: '<i class="ph ph-github-logo text-lg"></i> View on GitHub',
             script_cta_setup: '<i class="ph ph-arrow-down"></i> How to install',
             script_lang_badge: '<i class="ph ph-translate"></i> EN & DE',
             script_badge_free: '<i class="ph ph-git-branch"></i> Free & open source',
@@ -881,7 +885,7 @@ if(typeof translations !== 'undefined'){
             code_eyebrow: "Under the hood", code_title: "It's real code. Here's a slice.",
             github_title: "Free. Open source.<br>No email required.",
             github_sub: "If it saves you money, a GitHub star goes a long way. It helps other Google Ads specialists find the tool.",
-            github_cta: '<i class="fab fa-github text-lg"></i> View on GitHub',
+            github_cta: '<i class="ph ph-github-logo text-lg"></i> View on GitHub',
             github_trust_1: "No data leaves your account",
             bmc_eyebrow: "If it saved you budget", bmc_title: "Buy me a coffee ☕",
             bmc_desc: "The tool is free and always will be. But if it saved you wasted spend, a coffee goes a long way — and makes the next script happen faster.",
@@ -919,7 +923,7 @@ if(typeof translations !== 'undefined'){
             script_h1: "AI Max <span class=\"hl\">NegativeIQ</span>",
             script_tagline: "Schluss mit dem Rätselraten. Lass die KI dir sagen, welche Suchbegriffe dein Budget verbrennen.",
             script_sub: "Ein kostenloses Open-Source-Tool, das deinen Google Ads Account mit KI verbindet, jeden Suchbegriff klassifiziert, schützt was konvertiert, und sagt dir genau, was als Negativ-Keyword rein muss. Gebaut für Search-Kampagnen. V2 ist in Entwicklung.",
-            script_cta_github: '<i class="fab fa-github text-lg"></i> Auf GitHub ansehen',
+            script_cta_github: '<i class="ph ph-github-logo text-lg"></i> Auf GitHub ansehen',
             script_cta_setup: '<i class="ph ph-arrow-down"></i> Zur Installation',
             script_lang_badge: '<i class="ph ph-translate"></i> EN & DE',
             script_badge_free: '<i class="ph ph-git-branch"></i> Kostenlos & Open Source',
@@ -949,7 +953,7 @@ if(typeof translations !== 'undefined'){
             code_eyebrow: "Unter der Haube", code_title: "Echter Code. Hier ist ein Ausschnitt.",
             github_title: "Kostenlos. Open Source.<br>Keine E-Mail nötig.",
             github_sub: "Wenn es dir Budget spart, freue ich mich über einen GitHub-Star. Er hilft anderen Spezialisten, das Tool zu finden.",
-            github_cta: '<i class="fab fa-github text-lg"></i> Auf GitHub',
+            github_cta: '<i class="ph ph-github-logo text-lg"></i> Auf GitHub',
             github_trust_1: "Keine Daten verlassen deinen Account",
             bmc_eyebrow: "Wenn es Budget gespart hat", bmc_title: "Spendier mir einen Kaffee ☕",
             bmc_desc: "Das Tool ist kostenlos und bleibt es. Aber wenn es dir Spend gespart hat — ein Kaffee hilft, dass das nächste Script schneller fertig wird.",
