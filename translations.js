@@ -803,3 +803,21 @@ const translations = {
     "privacy_back_home": "Zurück zur Startseite",
   }
 };
+
+// ── Language detection ──────────────────────────────────────────
+// Priority: explicit ?lang= URL param (used by printed cards / NFC tags)
+//        → saved preference from a previous visit
+//        → the visitor's browser/device language
+//        → English fallback
+function detectLanguage() {
+  const urlLang = new URLSearchParams(window.location.search).get('lang');
+  if (urlLang === 'de' || urlLang === 'en') return urlLang;
+
+  const saved = localStorage.getItem('preferredLang');
+  if (saved === 'de' || saved === 'en') return saved;
+
+  const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+  if (browserLang.startsWith('de')) return 'de';
+
+  return 'en';
+}

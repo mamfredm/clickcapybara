@@ -657,7 +657,7 @@
         if (mLangEnBtn) mLangEnBtn.addEventListener('click', () => setLanguage('en'));
         if (mLangDeBtn) mLangDeBtn.addEventListener('click', () => setLanguage('de'));
 
-        const savedLang = localStorage.getItem('preferredLang') || 'en';
+        const savedLang = detectLanguage();
         setLanguage(savedLang);
     }
 

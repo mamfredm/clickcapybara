@@ -1005,7 +1005,7 @@ if(typeof translations !== 'undefined'){
     if(langDeBtn) langDeBtn.addEventListener('click', () => setLanguage('de'));
     if(mLangEnBtn) mLangEnBtn.addEventListener('click', () => setLanguage('en'));
     if(mLangDeBtn) mLangDeBtn.addEventListener('click', () => setLanguage('de'));
-    setLanguage(localStorage.getItem('preferredLang') || 'en');
+    setLanguage(detectLanguage());
 }
 
 // ── Fade-in ───────────────────────────

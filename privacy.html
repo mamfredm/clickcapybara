@@ -310,7 +310,7 @@ if (typeof translations !== 'undefined') {
     if(mLangEnBtn) mLangEnBtn.addEventListener('click', () => setLanguage('en'));
     if(mLangDeBtn) mLangDeBtn.addEventListener('click', () => setLanguage('de'));
 
-    setLanguage(localStorage.getItem('preferredLang') || 'en');
+    setLanguage(detectLanguage());
 }
 </script>
 
