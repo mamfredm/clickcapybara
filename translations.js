@@ -60,7 +60,7 @@ const translations = {
     // ── Homepage Hero ─────────────────────────────────────────
     "hero_eyebrow": "Google Ads · Scripts & Automation",
     "hero_h1": "<span class=\"hl-chip\">Google Ads</span> setups that run lean.",
-    "hero_sub": "8 years in, I work on accounts where the structure is messy, the tracking is broken, or the automation doesn't exist yet. That includes the website and conversion setup behind the ads, not just the campaigns themselves.",
+    "hero_sub": "8 years in, I still encounter accounts where the structure is messy, the tracking is broken, or the automation doesn't exist yet. That includes the website and conversion setup behind the ads, not just the campaigns themselves.",
     "hero_cta_primary": "Get a free second opinion",
     "hero_cta_secondary": "↓ Grab my free AI Keyword Analyzer",
 

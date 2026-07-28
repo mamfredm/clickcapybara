@@ -657,6 +657,10 @@ pre, code { font-family: 'JetBrains Mono', monospace; }
 .tile-hover { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
 .tile-hover:hover { transform: translateY(-3px); box-shadow: 0 14px 40px -18px rgba(14,14,16,0.25); }
 
+/* Top-align tile content instead of pushing it to the bottom — keeps
+   labels like "Step 01" lined up across cards regardless of paragraph length */
+.tile-top { justify-content: flex-start; }
+
 /* ── Eyebrow label ──────────────────────────── */
 .eyebrow {
   font-size: 11px;
@@ -731,6 +735,46 @@ pre, code { font-family: 'JetBrains Mono', monospace; }
   line-height: 0.9; letter-spacing: -0.06em;
 }
 @media (min-width: 768px) { .numeral-xl { font-size: 220px; } }
+
+/* ── Local Hero Kit: before/after visibility comparison ─── */
+.compare-grid { display: flex; flex-direction: column; gap: 16px; }
+.compare-col { flex: 1 1 0%; min-width: 0; }
+@media (min-width: 640px) {
+  .compare-grid { flex-direction: row; gap: 20px; }
+}
+.compare-after {
+  background: #FFF6D6;
+  border: 1px solid rgba(252,186,2,0.35);
+  border-radius: 16px;
+  padding: 16px;
+}
+.compare-search {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(14,14,16,0.05); border-radius: 10px;
+  padding: 8px 12px; margin-bottom: 12px;
+}
+.compare-after .compare-search { background: rgba(255,255,255,0.7); }
+.compare-row { display: flex; align-items: flex-start; gap: 8px; }
+.compare-row + .compare-row { margin-top: 6px; }
+.compare-web-row {
+  display: flex; align-items: flex-start; gap: 8px;
+  padding-bottom: 12px; margin-bottom: 12px;
+  border-bottom: 1px solid rgba(14,14,16,0.08);
+}
+.compare-after .compare-web-row { border-bottom-color: rgba(14,14,16,0.12); }
+.compare-profile-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.compare-avatar {
+  width: 32px; height: 32px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── Standalone intro line before the pillar detail sections ── */
+.detail-intro { text-align: center; padding: 24px 0 8px; }
+.detail-intro p { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; font-size: 22px; color: #0E0E10; }
+@media (min-width: 768px) {
+  .detail-intro { padding: 40px 0 16px; }
+  .detail-intro p { font-size: 34px; }
+}
 
 /* ── Fade-in animation ──────────────────────── */
 .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
