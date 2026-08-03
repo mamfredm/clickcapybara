@@ -56,7 +56,7 @@ const PAGES = [
        desc: 'Freelance Google Ads specialist based in Düsseldorf, 8+ years experience including 2 years at Google. Campaign management, scripts & automation, and strategy audits.',
       },
     },
-    
+
     jsonld: (lang) => ({
       '@context': 'https://schema.org',
       '@type': 'Service',
@@ -213,6 +213,57 @@ function render(page, lang) {
   // 6. contact form source tag
   if (page.formSource) $('#contact-form').attr('data-source', page.formSource + (lang === 'en' ? ' (EN)' : ' (DE)'));
 
+  // 7. defer Silktide consent manager (render-blocking fix)
+  const silktideCss = $('#silktide-consent-manager-css');
+  if (silktideCss.length) {
+    const href = silktideCss.attr('href');
+    silktideCss.attr('media', 'print').attr('onload', "this.media='all'");
+    silktideCss.after(`\n    <noscript><link rel="stylesheet" href="${href}"></noscript>`);
+  }
+  $('script[src*="silktide-consent-manager.js"]').attr('defer', '');
+
+  // config-Snippet erst ausführen, wenn die Library geladen ist
+  $('script').each((_, el) => {
+    const node = $(el);
+    const txt = node.html() || '';
+    if (txt.includes('silktideCookieBannerManager.updateCookieBannerConfig')) {
+      node.html(`window.addEventListener('load', function () {\n${txt}\n});`);
+    }
+  });
+  // 8. inline critical CSS (eliminates render-blocking request)
+  const cssContent = fs.readFileSync(path.join(DIST, 'css', 'styles.css'), 'utf8');
+  $('link[href="/css/styles.css"]').replaceWith(`<style>${cssContent}</style>`);
+  
+  // 9. lazy-load contact form JS once #contact is near viewport
+  const cfScript = $('script[src="/js/contact-form.js"]');
+  if (cfScript.length) {
+    cfScript.remove();
+    $('body').append(`
+    <script>
+    (function () {
+      var target = document.querySelector('#contact');
+      if (!target) return;
+      var loaded = false;
+      function loadForm() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.src = '/js/contact-form.js';
+        document.body.appendChild(s);
+      }
+      new IntersectionObserver(function (entries, obs) {
+        if (entries[0].isIntersecting) { loadForm(); obs.disconnect(); }
+      }, { rootMargin: '400px' }).observe(target);
+    })();
+    </script>`);
+  }
+
+  // 10. point at self-hosted Phosphor font instead of unpkg
+  $('link[href*="unpkg.com/@phosphor-icons"]').each((_, el) => {
+    $(el).attr('href', '/vendor/phosphor/style.css').removeAttr('crossorigin');
+  });
+  $('noscript link[href*="unpkg.com/@phosphor-icons"]').attr('href', '/vendor/phosphor/style.css');
+  
   return $.html();
 }
 
