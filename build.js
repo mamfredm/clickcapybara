@@ -48,14 +48,15 @@ const PAGES = [
     tpl: 'google-ads.html', slug: 'google-ads.html', formSource: 'Google Ads',
     seo: {
       de: {
-        title: 'Google Ads Freelancer — Kampagnen, Scripts & Audits | Click-Capybara',
-        desc: 'Google Ads Freelancer mit 8+ Jahren Erfahrung, davon 2 bei Google. Kampagnenmanagement, Scripts & Automatisierung, Strategie-Audits. Direkter Kontakt, kein Agentur-Aufschlag.',
+       title: 'Google Ads Freelancer Düsseldorf | Ex-Google SEA-Experte — Click-Capybara',
+      desc: 'Google Ads Freelancer aus Düsseldorf, 8+ Jahre Erfahrung, davon 2 bei Google. Kampagnenmanagement, Scripts & Automatisierung, Strategie-Audits. Direkter Kontakt, kein Agentur-Aufschlag.',
       },
       en: {
-        title: 'Google Ads Freelancer — Campaigns, Scripts & Audits | Click-Capybara',
-        desc: 'Freelance Google Ads specialist with 8+ years experience, including 2 years at Google. Campaign management, scripts & automation, and strategy audits.',
+       title: 'Google Ads Freelancer Düsseldorf | Ex-Google SEA Specialist — Click-Capybara',
+       desc: 'Freelance Google Ads specialist based in Düsseldorf, 8+ years experience including 2 years at Google. Campaign management, scripts & automation, and strategy audits.',
       },
     },
+    
     jsonld: (lang) => ({
       '@context': 'https://schema.org',
       '@type': 'Service',

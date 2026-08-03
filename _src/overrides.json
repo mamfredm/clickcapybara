@@ -1,6 +1,7 @@
 {
   "google-ads.html": {
     "en": {
+      "hero_eyebrow": "Freelance SEA Specialist for Google Ads Campaigns",
       "svc_page_title": "Services | Max — Google Ads Specialist",
       "svc_meta_desc": "Freelance Google Ads services: campaign management, scripts & automation, and strategy audits. Direct access to a senior specialist, no agency overhead.",
       "svc_eyebrow": "What I offer",
@@ -68,6 +69,7 @@
       "contact_reassurance": "No spam. No sales calls unless you want one. Just a reply from me, Max."
     },
     "de": {
+      "hero_eyebrow": "SEA Freelancer für Google Ads Kampagnen",
       "svc_page_title": "Services | Max — Google Ads Spezialist",
       "svc_meta_desc": "Freelance Google Ads Services: Kampagnen-Management, Scripts & Automatisierung und Strategie-Audits. Direkt mit dem Spezialisten, kein Agentur-Overhead.",
       "svc_eyebrow": "Was ich anbiete",
