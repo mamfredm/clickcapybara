@@ -1163,7 +1163,18 @@ pre, code { font-family: 'JetBrains Mono', monospace; }
   .lg\:text-\[84px\] { font-size: 84px; }
   .lg\:text-\[92px\] { font-size: 92px; }
 }
-</style>
+
+/* Silktide: Wrapper-Positionierung vorziehen, damit das späte
+   Nachladen der Vendor-CSS keinen Layout Shift auslöst */
+#silktide-wrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  pointer-events: none;
+}</style>
     <link rel="preload" as="style" href="/vendor/phosphor/style.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
     
