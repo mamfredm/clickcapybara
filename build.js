@@ -297,6 +297,8 @@ function render(page, lang) {
     menuBtn.find('i').attr('aria-hidden', 'true');
   }
 
+  // 14. defer main.js (render-blocking)
+  $('script[src="/js/main.js"]').attr('defer', '');
   return $.html();
 }
 
