@@ -1,4 +1,6 @@
 <!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
+    <link rel="preload" as="font" type="font/woff2" href="/vendor/inter/inter-latin.woff2" crossorigin="">
+    <link rel="stylesheet" href="/vendor/inter/inter.css">
     <!-- Consent default (before GTM) -->
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -1166,9 +1168,9 @@ pre, code { font-family: 'JetBrains Mono', monospace; }
     <link rel="preload" as="style" href="/vendor/phosphor/style.css" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
     <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    
+    
+    
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"></noscript>
 
     <!-- Translations -->
@@ -1602,18 +1604,18 @@ pre, code { font-family: 'JetBrains Mono', monospace; }
                 <form id="contact-form" class="space-y-4" data-source="Homepage (EN)">
 
                     <div>
-                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2">Name</label>
-                        <input type="text" name="name" required="" placeholder="Your name" class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition">
+                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" for="cf-name">Name</label>
+                        <input type="text" name="name" required="" placeholder="Your name" class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition" id="cf-name">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2">Email</label>
-                        <input type="email" name="email" required="" placeholder="you@company.com" class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition">
+                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" for="cf-email">Email</label>
+                        <input type="email" name="email" required="" placeholder="you@company.com" class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition" id="cf-email">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2">What can I help with?</label>
-                        <select name="service" class="w-full bg-cream border border-black/5 text-ink-900 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition appearance-none">
+                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" for="cf-service">What can I help with?</label>
+                        <select name="service" class="w-full bg-cream border border-black/5 text-ink-900 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition appearance-none" id="cf-service">
                             <option value="Free Audit">Account Checkup</option>
                             <option value="Campaign Management">Campaign Management</option>
                             <option value="Scripts &amp; Automation">Scripts &amp; Automation</option>
@@ -1622,13 +1624,13 @@ pre, code { font-family: 'JetBrains Mono', monospace; }
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2">Website / Google Ads account</label>
-                        <input type="text" name="website" placeholder="www.yoursite.com" class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition">
+                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" for="cf-website">Website / Google Ads account</label>
+                        <input type="text" name="website" placeholder="www.yoursite.com" class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition" id="cf-website">
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2">Anything else?</label>
-                        <textarea name="challenge" rows="3" placeholder="e.g. High CPA, wasted budget, unclear reporting..." class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition resize-none"></textarea>
+                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" for="cf-challenge">Anything else?</label>
+                        <textarea name="challenge" rows="3" placeholder="e.g. High CPA, wasted budget, unclear reporting..." class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition resize-none" id="cf-challenge"></textarea>
                     </div>
 
                     <button type="submit" class="w-full bg-ink-900 text-brand font-extrabold text-base py-4 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98]">Send - it's free</button>

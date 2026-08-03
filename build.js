@@ -264,8 +264,32 @@ function render(page, lang) {
   });
   $('noscript link[href*="unpkg.com/@phosphor-icons"]').attr('href', '/vendor/phosphor/style.css');
   
+  // 11. self-hosted Inter, preloaded to avoid font-swap CLS
+  $('link[href*="fonts.googleapis.com"], link[href*="fonts.gstatic.com"]').each((_, el) => {
+    const parent = $(el).parent();
+    if (parent.is('noscript')) parent.remove();
+    else $(el).remove();
+  });
+  $('head').prepend(`
+    <link rel="preload" as="font" type="font/woff2" href="/vendor/inter/inter-latin.woff2" crossorigin>
+    <link rel="stylesheet" href="/vendor/inter/inter.css">`);
+
+  // 12. associate every form label with its control (accessible names)
+  $('#contact-form div').each((i, div) => {
+    const wrap = $(div);
+    const label = wrap.children('label').first();
+    const field = wrap.children('input, select, textarea').first();
+    if (!label.length || !field.length) return;
+    let id = field.attr('id');
+    if (!id) {
+      id = 'cf-' + (field.attr('name') || i);
+      field.attr('id', id);
+    }
+    label.attr('for', id);
+  });
   return $.html();
 }
+
 
 // ─── build ──────────────────────────────────────────────────────────────────
 fs.mkdirSync(path.join(DIST, 'en'), { recursive: true });
