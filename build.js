@@ -264,15 +264,16 @@ function render(page, lang) {
   });
   $('noscript link[href*="unpkg.com/@phosphor-icons"]').attr('href', '/vendor/phosphor/style.css');
   
-  // 11. self-hosted Inter, preloaded to avoid font-swap CLS
+  // 11. self-hosted Inter: preload font, inline the tiny stylesheet
   $('link[href*="fonts.googleapis.com"], link[href*="fonts.gstatic.com"]').each((_, el) => {
     const parent = $(el).parent();
     if (parent.is('noscript')) parent.remove();
     else $(el).remove();
   });
+  const interCss = fs.readFileSync(path.join(DIST, 'vendor', 'inter', 'inter.css'), 'utf8');
   $('head').prepend(`
     <link rel="preload" as="font" type="font/woff2" href="/vendor/inter/inter-latin.woff2" crossorigin>
-    <link rel="stylesheet" href="/vendor/inter/inter.css">`);
+    <style>${interCss}</style>`);
 
   // 12. associate every form label with its control (accessible names)
   $('#contact-form div').each((i, div) => {
