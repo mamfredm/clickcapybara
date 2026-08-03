@@ -288,6 +288,15 @@ function render(page, lang) {
     }
     label.attr('for', id);
   });
+
+  // 13. accessible name for the icon-only mobile menu button
+  const menuBtn = $('#mobile-menu-button');
+  if (menuBtn.length) {
+    menuBtn.attr('aria-label', lang === 'de' ? 'Menü öffnen' : 'Open menu');
+    menuBtn.attr('aria-expanded', 'false');
+    menuBtn.find('i').attr('aria-hidden', 'true');
+  }
+
   return $.html();
 }
 
