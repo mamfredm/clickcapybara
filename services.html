@@ -850,6 +850,12 @@
         <div class="tile tile-light col-span-12 md:col-span-7 min-h-[560px] md:min-h-[600px] relative overflow-hidden">
 
             <form id="contact-form" class="space-y-4">
+                    <!-- spam trap: real visitors never see or fill this field -->
+                    <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+                        <label for="cf-contact_url">Leave this field empty</label>
+                        <input type="text" name="contact_url" id="cf-contact_url" tabindex="-1" autocomplete="off">
+                    </div>
+
 
                 <div>
                     <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="form_label_name">Name</label>
@@ -1100,7 +1106,25 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 // ── Contact form → Google Sheets ─────────────────────
 const LEADS_URL = 'https://script.google.com/macros/s/AKfycbzRDSEtJSwNLDQnVPTfOcN08K2_BF9wRNQZ5OO4GEcPduuABNkl5GOLKqmB3UjUUDCX/exec';
 
+const formLoadedAt = Date.now();
+
+function showSuccess(formEl) {
+    formEl.style.opacity = '0';
+    formEl.style.pointerEvents = 'none';
+    const success = document.getElementById('form-success');
+    if (success) { success.style.opacity = '1'; success.style.pointerEvents = 'all'; }
+}
+
+// Spam protection: filled honeypot or an impossibly fast submit = bot.
+// Bots get the normal success screen, but nothing is sent and no GA4 lead is counted.
+function looksLikeBot(formEl) {
+    const trap = formEl.querySelector('[name="contact_url"]');
+    if (trap && trap.value.trim() !== '') return true;
+    return Date.now() - formLoadedAt < 1500;
+}
+
 function submitToSheet(formEl, sourcePage) {
+    if (looksLikeBot(formEl)) { showSuccess(formEl); return; }
     const lang = localStorage.getItem('preferredLang') || 'en';
     const data = {
         name:      formEl.querySelector('[name="name"]')?.value      || '',
@@ -1126,10 +1150,7 @@ function submitToSheet(formEl, sourcePage) {
             form_location: sourcePage,
             service_selected: data.service
         });
-        formEl.style.opacity = '0';
-        formEl.style.pointerEvents = 'none';
-        const success = document.getElementById('form-success');
-        if (success) { success.style.opacity = '1'; success.style.pointerEvents = 'all'; }
+        showSuccess(formEl);
     })
     .catch(() => {
         if (btn) { btn.disabled = false; btn.textContent = lang === 'de' ? 'Nachricht senden - kostenlos' : "Send - it's free"; }
