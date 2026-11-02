@@ -320,6 +320,7 @@ noscript{display:block;padding:24px;text-align:center}
 .tip-btn:hover{filter:brightness(.95)}
 .tip-x{padding:6px}
 .main.land .tip-note{position:static;margin-top:2px;padding:8px 6px 8px 10px;flex-wrap:wrap}
+.main.land .tip-note span{flex:1 1 calc(100% - 30px)}.main.land .tip-x{margin-left:auto}
 .help{gap:0}
 .hsec{padding:2px 0 16px;margin-bottom:14px;border-bottom:1px solid var(--grid-line)}
 .hsec:last-child{border-bottom:0;margin-bottom:0;padding-bottom:4px}
@@ -1069,7 +1070,7 @@ function mainHTML(){
     h+='<div class="titlebar"><div class="tl"><span class="ptitle">'+(S.solved?esc(pn(p.name)):T('Mystery ','Rätsel ')+p.size+'×'+p.size)+'</span>'+(p.author?'<span class="dim sm">'+T('by ','von ')+esc(p.author)+'</span>':'')+'</div>'+
       '<div class="sizes">'+[5,10,15,20].map(s=>'<button data-a="size" data-v="'+s+'" class="'+(p.size===s&&S.mode==='free'?'on':'')+'">'+s+'×'+s+'</button>').join('')+'</div></div>';
   }
-  if(S.helpTip&&!S.hintReason&&!S.solved)h+='<div class="tip-note">'+ic('help','i14 amber')+'<span>'+T('New to nonograms?','Neu bei Nonogrammen?')+'</span><button data-a="open" data-v="help" class="tip-btn">'+T('How to play','Spielanleitung')+'</button><button data-a="tipclose" class="icon-btn tip-x" aria-label="'+T('Dismiss','Schließen')+'">'+ic('x','i14')+'</button></div>';
+  if(S.helpTip&&!S.hintReason&&!S.solved)h+='<div class="tip-note">'+ic('help','i14 amber')+'<span>'+T('New to nonograms?','Neu hier?')+'</span><button data-a="open" data-v="help" class="tip-btn">'+T('How to play','Anleitung')+'</button><button data-a="tipclose" class="icon-btn tip-x" aria-label="'+T('Dismiss','Schließen')+'">'+ic('x','i14')+'</button></div>';
   if(S.hintReason)h+='<div class="hint-note">'+ic('help','i14 amber')+'<span>'+esc(S.hintReason)+'</span></div>';
   h+='</div>'+controlsHTML()+'</div></main>';
   return h;
