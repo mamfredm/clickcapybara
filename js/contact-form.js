@@ -2,7 +2,25 @@
 // ── Contact form → Google Sheets + GA4 ──────────────────────
     const LEADS_URL = 'https://script.google.com/macros/s/AKfycbzRDSEtJSwNLDQnVPTfOcN08K2_BF9wRNQZ5OO4GEcPduuABNkl5GOLKqmB3UjUUDCX/exec';
 
+    const formLoadedAt = Date.now();
+
+    function showSuccess(formEl) {
+        formEl.style.opacity = '0';
+        formEl.style.pointerEvents = 'none';
+        const success = document.getElementById('form-success');
+        if (success) { success.style.opacity = '1'; success.style.pointerEvents = 'all'; }
+    }
+
+    // Spam protection: filled honeypot or an impossibly fast submit = bot.
+    // Bots get the normal success screen, but nothing is sent and no GA4 lead is counted.
+    function looksLikeBot(formEl) {
+        const trap = formEl.querySelector('[name="contact_url"]');
+        if (trap && trap.value.trim() !== '') return true;
+        return Date.now() - formLoadedAt < 1500;
+    }
+
     function submitToSheet(formEl, sourcePage) {
+        if (looksLikeBot(formEl)) { showSuccess(formEl); return; }
         const lang = document.documentElement.lang || 'en';
         const data = {
             name:      formEl.querySelector('[name="name"]')?.value      || '',
@@ -30,10 +48,7 @@
                 service_selected: data.service
             });
 
-            formEl.style.opacity = '0';
-            formEl.style.pointerEvents = 'none';
-            const success = document.getElementById('form-success');
-            if (success) { success.style.opacity = '1'; success.style.pointerEvents = 'all'; }
+            showSuccess(formEl);
         })
         .catch(() => {
             if (btn) { btn.disabled = false; btn.textContent = lang === 'de' ? 'Nachricht senden - kostenlos' : "Send - it's free"; }
