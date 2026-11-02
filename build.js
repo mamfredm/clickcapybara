@@ -11,6 +11,12 @@ const cheerio = require('cheerio');
 const translations = require('./_src/translations.js');
 const overrides = require('./_src/overrides.json');
 
+// Legal data (Impressum + Datenschutz) lives in _src/legal.json.
+// Templates use {{legal.name}} etc.; empty values show as [[name]] and trigger a warning.
+const legal = fs.existsSync(path.join(__dirname, '_src', 'legal.json'))
+  ? require('./_src/legal.json') : {};
+const missingLegal = new Set();
+
 const BASE = 'https://www.click-capybara.com';
 const DIST = __dirname; // build in place — GitHub Pages serves the repo root
 const OG_IMAGE = BASE + '/assets/og-image.png';
@@ -112,6 +118,14 @@ const PAGES = [
     },
     jsonld: null,
   },
+  {
+    tpl: 'impressum.html', slug: 'impressum.html', formSource: null,
+    seo: {
+      de: { title: 'Impressum — Click-Capybara', desc: 'Impressum und Anbieterkennzeichnung von Click-Capybara.' },
+      en: { title: 'Legal Notice (Impressum) — Click-Capybara', desc: 'Legal notice and provider information for Click-Capybara.' },
+    },
+    jsonld: null,
+  },
 ];
 
 // ─── helpers ────────────────────────────────────────────────────────────────
@@ -128,6 +142,19 @@ function render(page, lang) {
   const $ = cheerio.load(html, { decodeEntities: false });
   const dict = mergedDict(page, lang);
   const seo = page.seo[lang];
+
+  // 0. language blocks (legal pages): keep only <… data-lang="xx"> matching this build
+  $('[data-lang]').each((_, el) => {
+    const node = $(el);
+    if (node.attr('data-lang') === lang) node.removeAttr('data-lang');
+    else node.remove();
+  });
+  // 0b. optional blocks: <… data-if="key"> only if legal.key is set
+  $('[data-if]').each((_, el) => {
+    const node = $(el);
+    if (legal[node.attr('data-if')]) node.removeAttr('data-if');
+    else node.remove();
+  });
   const selfUrl = urlFor(page.slug, lang);
   const otherUrl = urlFor(page.slug, lang === 'de' ? 'en' : 'de');
 
@@ -205,7 +232,7 @@ function render(page, lang) {
     $('a[href]').each((_, a) => {
       const el = $(a);
       const href = el.attr('href');
-      const m = href && href.match(/^\/((?:google-ads|local-hero-kit|free-script|privacy)\.html)?(#.*)?$/);
+      const m = href && href.match(/^\/((?:google-ads|local-hero-kit|free-script|privacy|impressum)\.html)?(#.*)?$/);
       if (m) el.attr('href', '/en/' + (m[1] || '') + (m[2] || ''));
     });
   }
@@ -299,7 +326,14 @@ function render(page, lang) {
 
   // 14. defer main.js (render-blocking)
   $('script[src="/js/main.js"]').attr('defer', '');
-  return $.html();
+
+  // 15. fill {{legal.xxx}} tokens (only those left after language/optional blocks were pruned)
+  return $.html().replace(/\{\{legal\.(\w+)\}\}/g, (m, key) => {
+    const v = legal[key];
+    if (v) return String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    missingLegal.add(key);
+    return '[[' + key + ']]';
+  });
 }
 
 
@@ -334,3 +368,7 @@ ${urls.join('\n')}
 </urlset>\n`);
 
 console.log('sitemap.xml written — build complete');
+if (missingLegal.size) {
+  console.warn('\n⚠  _src/legal.json is missing: ' + [...missingLegal].join(', ') +
+    '\n   These show as [[…]] on /impressum.html and /privacy.html — do NOT publish like this.');
+}
