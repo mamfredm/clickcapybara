@@ -84,4 +84,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.click-capybara.com/en/impressum.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.click-capybara.com/impressum.html"/>
   </url>
+  <url>
+    <loc>https://www.click-capybara.com/nonogrid.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.click-capybara.com/nonogrid.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.click-capybara.com/en/nonogrid.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.click-capybara.com/nonogrid.html"/>
+  </url>
+  <url>
+    <loc>https://www.click-capybara.com/en/nonogrid.html</loc>
+    <lastmod>2026-11-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.click-capybara.com/nonogrid.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.click-capybara.com/en/nonogrid.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.click-capybara.com/nonogrid.html"/>
+  </url>
 </urlset>
