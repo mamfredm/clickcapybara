@@ -1,0 +1,614 @@
+<!DOCTYPE html><html lang="en" class="scroll-smooth"><head>
+    <!-- Consent default (before GTM) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+
+    <!-- Restore prior consent choices -->
+    <script>
+        (function() {
+            if (localStorage.getItem('silktideCookieChoice_analytics') === 'true') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
+            }
+            if (localStorage.getItem('silktideCookieChoice_advertising') === 'true') {
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+            }
+        })();
+    </script>
+
+    <!-- GTM -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WK2WCGQH');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="page_title">Max | Digital Marketing Specialist — Click-Capybara</title>
+    <meta name="description" data-key="meta_desc" content="Freelance digital marketing specialist with 8+ years experience — Google Ads, websites, and local visibility. Direct access, no agency overhead.">
+    <link rel="canonical" href="https://www.click-capybara.com/">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_capybara_outine_bold.ico">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Max",
+        "jobTitle": "Digital Marketing Specialist",
+        "url": "https://www.click-capybara.com",
+        "brand": { "@type": "Brand", "name": "Click-Capybara" },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hello@click-capybara.com",
+            "contactType": "customer service",
+            "availableLanguage": ["en", "de"]
+        }
+    }
+    </script>
+
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Phosphor Icons -->
+    <link rel="preload" as="style" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"></noscript>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"></noscript>
+
+    <!-- Translations -->
+
+    <!-- Cookie banner -->
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="/vendor/silktide/silktide-consent-manager.css">
+    <script src="/vendor/silktide/silktide-consent-manager.js"></script>
+    <script>
+    silktideCookieBannerManager.updateCookieBannerConfig({
+        background: { showBackground: true },
+        cookieIcon: { position: "bottomLeft" },
+        cookieTypes: [
+            { id: "necessary", name: "Necessary",
+              description: "<p>These cookies are necessary for the website to function and cannot be switched off.</p>",
+              required: true, onAccept: function() {} },
+            { id: "analytics", name: "Analytics",
+              description: "<p>These cookies help us understand how visitors use our site.</p>",
+              required: false,
+              onAccept: function() { gtag('consent','update',{analytics_storage:'granted'}); dataLayer.push({event:'consent_accepted_analytics'}); },
+              onReject: function() { gtag('consent','update',{analytics_storage:'denied'}); } },
+            { id: "advertising", name: "Advertising",
+              description: "<p>These cookies are used to measure and improve ad performance.</p>",
+              required: false,
+              onAccept: function() { gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'}); dataLayer.push({event:'consent_accepted_advertising'}); },
+              onReject: function() { gtag('consent','update',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'}); } }
+        ],
+        text: {
+            banner: {
+                description: "<p>We use cookies to enhance your experience and analyse traffic. <a href=\"privacy.html\">Cookie Policy.</a></p>",
+                acceptAllButtonText: "Accept all",
+                rejectNonEssentialButtonText: "Reject non-essential",
+                preferencesButtonText: "Preferences"
+            },
+            preferences: { title: "Manage cookie preferences" }
+        },
+        position: { banner: "center" }
+    });
+    </script>
+
+    <!-- Tailwind config -->
+
+
+    <style>
+        body { background: #EFECE3; }
+
+        /* ── Bento tile base ───────────────────────────────────── */
+        .tile {
+            border-radius: 22px;
+            padding: 22px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 18px;
+            min-height: 0;
+        }
+        @media (min-width: 768px) { .tile { padding: 32px; border-radius: 28px; gap: 24px; } }
+        .tile-light  { background: #FFFFFF; color: #0E0E10; }
+        .tile-cream  { background: #F6F3EC; color: #0E0E10; border: 1px solid rgba(14,14,16,0.06); }
+        .tile-dark   { background: #0E0E10; color: #FFFFFF; }
+        .tile-ink    { background: #17171B; color: #FFFFFF; }
+        .tile-brand  { background: #fcba02; color: #0E0E10; }
+        .tile-brand-soft { background: #FFF6D6; color: #0E0E10; border: 1px solid rgba(252,186,2,0.35); }
+        .tile-outline{ background: #FFFFFF; color: #0E0E10; border: 1px solid rgba(14,14,16,0.08); }
+
+        /* ── Bento grid ───────────────────────────────────────── */
+        .bento {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0,1fr));
+            gap: 14px;
+        }
+        @media (min-width: 768px) { .bento { gap: 16px; } }
+
+        /* Section header text */
+        .eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        /* Display headline used inside main tiles */
+        .display {
+            font-weight: 800;
+            line-height: 0.98;
+            letter-spacing: -0.025em;
+        }
+
+        /* Subtle hover lift on interactive tiles */
+        .tile-hover { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+        .tile-hover:hover { transform: translateY(-3px); box-shadow: 0 14px 40px -18px rgba(14,14,16,0.25); }
+
+        /* Nav underline animation */
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -4px; left: 50%; transform: translateX(-50%);
+            background-color: #fcba02; transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* Grid pattern overlay used in hero tile */
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(14,14,16,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(14,14,16,0.06) 1px, transparent 1px);
+            background-size: 36px 36px;
+            background-position: -1px -1px;
+        }
+        .grid-pattern-dark {
+            background-image:
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 36px 36px;
+        }
+
+        /* Stripe placeholder (no real image) */
+        .stripe-placeholder {
+            background-image: repeating-linear-gradient(135deg, rgba(14,14,16,0.06) 0 8px, transparent 8px 16px);
+        }
+
+        /* Tag chip */
+        .chip {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 6px 10px; border-radius: 999px;
+        }
+        .chip-on-dark { background: rgba(252,186,2,0.14); color: #fcba02; border: 1px solid rgba(252,186,2,0.3); }
+        .chip-on-light{ background: #0E0E10; color: #fcba02; }
+        .chip-brand { background: #0E0E10; color: #fcba02; }
+
+        /* Big numeral */
+        .numeral {
+            font-weight: 800; font-size: 44px; line-height: 1; letter-spacing: -0.04em;
+        }
+        @media (min-width: 768px) { .numeral { font-size: 88px; } }
+
+        /* Fade-in on scroll */
+        .fade-in { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Highlight */
+        .hl { color: #fcba02; }
+
+        /* Closing words */
+        .closing-words span {
+            display: inline-block; font-weight: 800; font-size: 1rem;
+            letter-spacing: 0.12em; text-transform: uppercase; color: #0E0E10;
+        }
+        .closing-words span + span::before {
+            content: '·'; margin: 0 0.75rem; color: #fcba02; font-weight: 400;
+        }
+
+        /* Inline code-band lines */
+        .code-line { white-space: pre; }
+
+        /* Decorative star (CSS only — allowed as simple shape) */
+        .star {
+            display: inline-block; width: 18px; height: 18px;
+            background: #fcba02;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+
+        /* Logo fallback */
+        .logo-fallback {
+            background:#0E0E10; color:#fcba02; border-radius:50%;
+            display:inline-flex; align-items:center; justify-content:center;
+            font-weight:900; letter-spacing:-0.05em;
+        }
+    </style>
+</head>
+
+<body class="text-ink-900 font-sans antialiased">
+
+    <!-- GTM noscript -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK2WCGQH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- ============================================================
+         NAV
+    ============================================================ -->
+    <header class="sticky top-0 z-50">
+        <div class="container mx-auto px-4 md:px-6 pt-4">
+            <div class="bg-white/80 backdrop-blur-xl border border-black/5 rounded-2xl shadow-sm">
+                <nav class="flex justify-between items-center px-5 py-3">
+                    <a href="/" class="flex items-center space-x-2">
+                        <img src="/assets/clickcapybara_outline_bold.svg" alt="Click-Capybara Logo" class="w-8 h-8" onerror="this.outerHTML='<span class=&quot;logo-fallback w-8 h-8 text-[14px]&quot;>CC</span>'">
+                        <span class="text-base font-extrabold tracking-tight">Click-Capybara</span>
+                    </a>
+
+                    <div class="hidden md:flex items-center space-x-7">
+                        <a href="/google-ads.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_services">Google Ads</a>
+                        <a href="/local-hero-kit.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_starter">Local Hero Kit</a>
+                        <a href="#about" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_about">About</a>
+                        <a href="#contact" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_contact">Contact</a>
+                        <a href="/free-script.html" class="nav-link text-ink-500 hover:text-ink-900 font-medium text-sm" data-key="nav_free_script">Tools &amp; Scripts</a>
+                    </div>
+
+                    <div class="hidden md:flex items-center space-x-3 ml-6">
+                        <a id="lang-en" href="#" class="text-xs font-bold text-ink-900">EN</a>
+                        <span class="text-gray-300">|</span>
+                        <a id="lang-de" href="#" class="text-xs font-medium text-gray-400 hover:text-ink-900">DE</a>
+                        <a href="#contact" class="ml-2 bg-ink-900 text-brand font-bold text-sm py-2 px-4 rounded-xl transition hover:-translate-y-0.5" data-key="nav_cta">Fresh Eyes</a>
+                    </div>
+
+                    <button id="mobile-menu-button" class="md:hidden text-ink-900 text-xl p-1">
+                        <i class="ph ph-list"></i>
+                    </button>
+                </nav>
+
+                <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-black/5 rounded-b-2xl overflow-hidden">
+                    <a href="/google-ads.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_services">Google Ads</a>
+                    <a href="/local-hero-kit.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_starter">Local Hero Kit</a>
+                    <a href="#about" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_about">About</a>
+                    <a href="#contact" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_contact">Contact</a>
+                    <a href="/free-script.html" class="block py-3 px-5 text-sm text-ink-700 hover:bg-cream border-b border-black/5" data-key="nav_free_script">Tools &amp; Scripts</a>
+                    <div class="flex items-center gap-4 px-5 py-3 border-b border-black/5">
+                        <i class="ph ph-globe text-gray-400"></i>
+                        <a id="mobile-lang-en" href="#" class="text-sm font-bold">EN</a>
+                        <a id="mobile-lang-de" href="#" class="text-sm font-medium text-gray-400">DE</a>
+                    </div>
+                    <div class="p-4">
+                        <a href="#contact" class="block bg-ink-900 text-brand font-bold py-3 px-4 rounded-xl text-center text-sm" data-key="nav_cta">Fresh Eyes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 md:px-6 py-6 md:py-8 space-y-6 md:space-y-8">
+
+        <!-- ============================================================
+             1. HUB HERO BENTO
+        ============================================================ -->
+        <section class="bento" style="grid-auto-rows: minmax(120px, auto);">
+
+            <!-- A · Main hero -->
+            <div class="tile tile-cream grid-pattern col-span-12 md:col-span-8 md:row-span-2 min-h-[360px] md:min-h-[520px]">
+                <div class="relative z-10">
+                    <span class="chip chip-on-light mb-4 md:mb-6" data-key="hub_eyebrow">
+                        <i class="ph ph-compass"></i>
+                        Digital Marketing · Google Ads · Web
+                    </span>
+                </div>
+                <div class="relative z-10">
+                    <h1 class="display text-[34px] sm:text-[48px] md:text-[64px] lg:text-[80px] mb-4 md:mb-6" data-key="hub_h1">
+                        Hi, I'm Max.<br>
+                        I help businesses <span class="hl-chip">show up</span> online, and actually <span class="hl-chip">perform</span> once they do.
+                    </h1>
+                    <p class="text-sm md:text-lg text-ink-500 max-w-xl leading-relaxed mb-6 md:mb-8" data-key="hub_sub">
+                        I work across the whole picture: websites, visibility, tracking, and Google Ads.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <a href="#contact" class="bg-ink-900 text-brand font-bold text-sm py-3.5 px-6 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg text-center" data-key="hub_cta_primary">
+                            Get in touch
+                        </a>
+                        <a href="#paths" class="text-ink-900 font-semibold text-sm py-3.5 px-6 rounded-xl border border-ink-900/15 bg-white hover:border-ink-900 transition text-center" data-key="hub_cta_secondary">
+                            ↓ See how I can help
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- B · Avatar / brand tile -->
+            <div class="tile tile-brand col-span-12 sm:col-span-6 md:col-span-4 min-h-[160px] md:min-h-[252px]">
+                <div class="flex items-start justify-between">
+                    <span class="eyebrow text-ink-900/70 leading-snug max-w-[180px]" data-key="trust_4">One person, full focus</span>
+                    <i class="ph ph-arrow-up-right text-ink-900 text-xl"></i>
+                </div>
+                <div class="flex items-end gap-3">
+                    <div class="w-14 h-14 md:w-20 md:h-20 rounded-2xl bg-ink-900 flex items-center justify-center flex-shrink-0">
+                        <img src="/assets/clickcapybara_outline_bold.svg" alt="Click-Capybara" class="w-9 h-9 md:w-12 md:h-12" style="filter: invert(74%) sepia(98%) saturate(800%) hue-rotate(2deg) brightness(102%) contrast(102%);" onerror="this.outerHTML='<span class=&quot;font-black text-brand text-2xl&quot;>CC</span>'">
+                    </div>
+                    <div>
+                        <p class="font-extrabold text-xl md:text-3xl leading-none">Max</p>
+                        <p class="text-ink-900/70 text-xs md:text-sm font-medium mt-1">Click-Capybara</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- C · 8+ years stat -->
+            <div class="tile tile-dark col-span-12 sm:col-span-6 md:col-span-4 min-h-[160px] md:min-h-[252px]">
+                <div class="flex items-start justify-between">
+                    <span class="eyebrow text-brand" data-key="trust_2">8+ Years Experience</span>
+                    <i class="ph ph-clock-countdown text-brand text-xl"></i>
+                </div>
+                <div>
+                    <p class="numeral hl">8+</p>
+                    <p class="text-gray-400 text-xs md:text-sm mt-2 leading-relaxed">Years in digital marketing, including 2 years at Google as a Performance Max SME.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Lightweight wayfinding strip -->
+        <section class="bento">
+            <a href="/google-ads.html" class="tile tile-outline col-span-12 md:col-span-6 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:8px">
+                <div class="flex items-center justify-between">
+                    <span class="eyebrow text-ink-500" data-key="hub_way_1_label">Already know you need Ads help?</span>
+                    <i class="ph ph-arrow-down-right text-brand text-lg"></i>
+                </div>
+                <p class="font-bold text-sm md:text-base" data-key="hub_way_1">→ Google Ads</p>
+            </a>
+            <a href="/local-hero-kit.html" class="tile tile-outline col-span-12 md:col-span-6 min-h-[90px] md:min-h-[110px] tile-hover" style="gap:8px">
+                <div class="flex items-center justify-between">
+                    <span class="eyebrow text-ink-500" data-key="hub_way_2_label">Running a local business?</span>
+                    <i class="ph ph-arrow-down-right text-brand text-lg"></i>
+                </div>
+                <p class="font-bold text-sm md:text-base" data-key="hub_way_2">→ Local Hero Kit</p>
+            </a>
+        </section>
+
+        <!-- ============================================================
+             7. ABOUT BENTO
+        ============================================================ -->
+        <section id="about" class="bento" style="grid-auto-rows: minmax(140px, auto);">
+
+            <!-- Big about copy -->
+            <div class="tile tile-light col-span-12 md:col-span-8 md:row-span-2 min-h-[400px] md:min-h-[460px]">
+                <div>
+                    <span class="eyebrow text-brand-dark">About</span>
+                    <h2 class="display text-2xl md:text-4xl mt-2 md:mt-3 mb-4 md:mb-6" data-key="about_title">Who's behind Click-Capybara?</h2>
+                </div>
+                <div class="space-y-3 md:space-y-4 text-ink-700 text-sm md:text-base leading-relaxed">
+                    <p data-key="about_p1">Behind Click-Capybara is Max, a digital marketing specialist with 8+ years of hands-on experience, including two years at Google itself as a Subject Matter Expert for the Performance Max launch. By day I work at a full-service digital agency; freelance, I take on projects where direct, no-nonsense help is what's needed most.</p>
+                    <p data-key="about_p2">Click-Capybara stands for a simple idea: direct access to someone who actually does the work themselves, whether that's a Google Ads account, a small business website, or the visibility strategy behind it. No handoffs, no black box, clear strategy, honest feedback.</p>
+                    <p data-key="about_p3">Good marketing work isn't magic. It starts with a solid foundation, the site, the tracking, the basics done right, and builds from there. That takes structure, honesty, and someone who genuinely gets into the details.</p>
+                    <p class="text-ink-500 italic" data-key="about_p4">Not the flashiest animal, not trying to be. Just steady, and good at working alongside almost anyone.</p>
+                </div>
+            </div>
+
+            <!-- Avatar tile -->
+            <div class="tile tile-brand col-span-12 sm:col-span-6 md:col-span-4 min-h-[180px] md:min-h-[220px]">
+                <div class="flex items-start justify-between">
+                    <span class="eyebrow text-ink-900/70">Oi 🐾</span>
+                    <i class="ph ph-quotes text-ink-900 text-2xl"></i>
+                </div>
+                <div>
+                    <div class="w-20 h-20 md:w-24 md:h-24 rounded-3xl bg-ink-900 flex items-center justify-center mb-3 md:mb-4">
+                        <img src="/assets/clickcapybara_outline_bold.svg" alt="Max" class="w-12 h-12 md:w-14 md:h-14" style="filter: invert(74%) sepia(98%) saturate(800%) hue-rotate(2deg) brightness(102%) contrast(102%);" onerror="this.outerHTML='<span class=&quot;font-black text-brand text-4xl&quot;>M</span>'">
+                    </div>
+                    <p class="font-extrabold text-xl md:text-2xl leading-none">Max</p>
+                    <p class="text-ink-900/70 text-xs md:text-sm font-medium mt-1" data-key="about_role">Digital Marketing Specialist</p>
+                </div>
+            </div>
+
+            <!-- Values tile -->
+            <div class="tile tile-dark col-span-12 sm:col-span-6 md:col-span-4 min-h-[180px] md:min-h-[220px]">
+                <span class="eyebrow text-brand">What you'll feel</span>
+                <div class="closing-words mt-3 md:mt-4 leading-loose">
+                    <span data-key="about_close_1" style="color:#ffffff">Transparency</span>
+                    <span data-key="about_close_2" style="color:#ffffff">Accountability</span>
+                    <span data-key="about_close_3" style="color:#ffffff">Results</span>
+                </div>
+                <p class="text-gray-400 text-xs mt-3 md:mt-4">Three things every conversation comes back to.</p>
+            </div>
+
+        </section>
+
+                <!-- ============================================================
+             FORK — TWO WAYS I CAN HELP
+        ============================================================ -->
+        <section id="paths" class="bento" style="grid-auto-rows: minmax(140px, auto); scroll-margin-top: 100px;">
+
+            <div class="tile tile-light col-span-12 min-h-[90px] md:min-h-[110px]" style="flex-direction: row; align-items: flex-end; justify-content: space-between;">
+                <div>
+                    <span class="eyebrow text-brand-dark" data-key="fork_eyebrow">Where should we start?</span>
+                    <h2 class="display text-2xl md:text-4xl mt-2" data-key="fork_title">Two ways I can help.</h2>
+                </div>
+            </div>
+
+            <!-- Fork card 1: Google Ads -->
+            <a href="/google-ads.html" class="tile tile-dark col-span-12 md:col-span-6 min-h-[300px] tile-hover relative overflow-hidden">
+                <div class="absolute inset-0 grid-pattern-dark opacity-50"></div>
+                <div class="relative z-10 flex items-start justify-between">
+                    <div class="w-12 h-12 bg-brand rounded-2xl flex items-center justify-center">
+                        <i class="ph ph-cursor-click text-ink-900 text-xl md:text-2xl"></i>
+                    </div>
+                    <span class="chip chip-on-dark" data-key="fork_1_pill">8+ years, ex-Google</span>
+                </div>
+                <div class="relative z-10">
+                    <h3 class="font-extrabold text-xl md:text-2xl mb-2" data-key="fork_1_title">Google Ads</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed" data-key="fork_1_desc">Deep, hands-on management for accounts that need to perform, not just run. Campaign management, custom scripts, and honest audits — all done by me, directly.</p>
+                    <span class="inline-flex items-center gap-1 mt-4 font-bold text-sm text-brand" data-key="fork_1_cta">See Google Ads services →</span>
+                </div>
+            </a>
+
+            <!-- Fork card 2: Local Hero Kit -->
+            <a href="/local-hero-kit.html" class="tile tile-brand col-span-12 md:col-span-6 min-h-[300px] tile-hover">
+                <div class="flex items-start justify-between">
+                    <div class="w-12 h-12 bg-ink-900 rounded-2xl flex items-center justify-center">
+                        <i class="ph ph-storefront text-brand text-xl md:text-2xl"></i>
+                    </div>
+                    <span class="chip chip-soft" style="background:rgba(14,14,16,0.1); color:#0E0E10;" data-key="fork_2_pill">Almost zero cost</span>
+                </div>
+                <div>
+                    <h3 class="font-extrabold text-xl md:text-2xl mb-2" data-key="fork_2_title">Local Hero Kit</h3>
+                    <p class="text-ink-900/80 text-sm leading-relaxed" data-key="fork_2_desc">A website, a working Google Business Profile, and visibility in AI search, for local businesses that want it done right, without agency overhead or monthly bloat.</p>
+                    <span class="inline-flex items-center gap-1 mt-4 font-bold text-sm text-ink-900" data-key="fork_2_cta">See the Local Hero Kit →</span>
+                </div>
+            </a>
+
+        </section>
+
+<!-- ============================================================
+             8. CONTACT BENTO
+        ============================================================ -->
+        <section id="contact" class="bento" style="grid-auto-rows: minmax(140px, auto);">
+
+            <!-- Left pitch tile -->
+            <div class="tile tile-dark col-span-12 md:col-span-5 min-h-[440px] md:min-h-[600px] relative overflow-hidden">
+                <div class="absolute inset-0 grid-pattern-dark opacity-50"></div>
+                <div class="relative z-10">
+                    <span class="chip chip-on-dark mb-4 md:mb-5">Contact</span>
+                    <h2 class="display text-2xl md:text-4xl text-white mb-3 md:mb-5" data-key="contact_title">Not sure where to start? Start here.</h2>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-5 md:mb-6" data-key="contact_sub">
+                        Whether it's your Google Ads account, your website, or you're just not sure where to start, send me a quick message and I'll tell you honestly what I see. No agenda, just a straight answer.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3 text-gray-300 text-sm" data-key="contact_li_1">
+                            <i class="ph ph-check text-brand mt-0.5 flex-shrink-0 text-base"></i>
+                            I write back myself, no templates, no team inbox
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300 text-sm" data-key="contact_li_2">
+                            <i class="ph ph-check text-brand mt-0.5 flex-shrink-0 text-base"></i>
+                            You get a real opinion, not a polished pitch deck
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-300 text-sm" data-key="contact_li_3">
+                            <i class="ph ph-check text-brand mt-0.5 flex-shrink-0 text-base"></i>
+                            No strings attached, what comes next is your call
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative z-10">
+                    <div class="border-t border-white/10 pt-5">
+                        <p class="text-gray-500 text-xs mb-2">Or write directly:</p>
+                        <a href="mailto:hello@click-capybara.com" class="text-brand font-bold text-sm md:text-base hover:underline">hello@click-capybara.com</a>
+                        <p class="text-gray-600 text-xs mt-3" data-key="contact_reassurance">No spam. No sales calls unless you want one. Just a reply from me, Max.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form tile -->
+            <div class="tile tile-light col-span-12 md:col-span-7 min-h-[560px] md:min-h-[600px] relative overflow-hidden">
+
+                <form id="contact-form" class="space-y-4">
+                    <!-- spam trap: real visitors never see or fill this field -->
+                    <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+                        <label for="cf-contact_url">Leave this field empty</label>
+                        <input type="text" name="contact_url" id="cf-contact_url" tabindex="-1" autocomplete="off">
+                    </div>
+
+
+                    <div>
+                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="form_label_name">Name</label>
+                        <input type="text" name="name" required="" placeholder="Your name" class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="form_label_email">Email</label>
+                        <input type="email" name="email" required="" placeholder="you@company.com" class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="form_label_service">What can I help with?</label>
+                        <select name="service" class="w-full bg-cream border border-black/5 text-ink-900 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition appearance-none">
+                            <option value="Free Audit" data-key="form_opt_audit">Account Checkup</option>
+                            <option value="Campaign Management" data-key="form_opt_mgmt">Campaign Management</option>
+                            <option value="Scripts &amp; Automation" data-key="form_opt_scripts">Scripts &amp; Automation</option>
+                            <option value="General Question" data-key="form_opt_general">General Question</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="form_label_website">
+                            Website / Google Ads account <span class="font-normal normal-case tracking-normal text-ink-500/70" data-key="form_optional">(optional)</span>
+                        </label>
+                        <input type="text" name="website" placeholder="www.yoursite.com" class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold tracking-widest uppercase text-ink-500 mb-2" data-key="form_label_challenge">
+                            Anything else? <span class="font-normal normal-case tracking-normal text-ink-500/70" data-key="form_optional2">(optional)</span>
+                        </label>
+                        <textarea name="challenge" rows="3" placeholder="e.g. High CPA, wasted budget, unclear reporting..." class="w-full bg-cream border border-black/5 text-ink-900 placeholder-ink-500/60 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:border-brand focus:bg-white transition resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-ink-900 text-brand font-extrabold text-base py-4 rounded-xl transition hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98]" data-key="form_submit">
+                        Send - it's free
+                    </button>
+
+                </form>
+
+                <!-- Success state -->
+                <div id="form-success" class="absolute inset-0 bg-white rounded-[28px] flex flex-col items-center justify-center text-center px-8 opacity-0 pointer-events-none transition-opacity duration-500">
+                    <div class="w-16 h-16 rounded-full flex items-center justify-center mb-6" style="background: rgba(59,180,82,0.12); border: 2px solid #3fb950;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3fb950" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="font-extrabold text-xl mb-3" data-key="success_title">Message received.</h3>
+                    <p class="text-ink-500 text-sm leading-relaxed max-w-sm" data-key="success_sub">You'll hear back within 2 business days, directly from Max, not an assistant.</p>
+                    <div class="w-full max-w-sm" style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(0,0,0,.08)">
+                        <p class="text-ink-500 text-xs mb-3" data-key="success_game">Waiting for my reply? Play a quick round of Nonogrid.</p>
+                        <a href="/nonogrid.html" class="btn-brand text-sm" id="success-game-link"><i class="ph ph-puzzle-piece"></i> <span data-key="success_game_cta">Play Nonogrid</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+    <footer class="container mx-auto px-4 md:px-6 pb-8">
+        <div class="tile tile-dark min-h-[100px]" style="flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+            <div class="flex items-center gap-3">
+                <img src="/assets/clickcapybara_outline_bold.svg" alt="Click-Capybara" class="w-6 h-6 opacity-70" onerror="this.outerHTML='<span class=&quot;logo-fallback w-6 h-6 text-[10px]&quot;>CC</span>'">
+                <p class="text-gray-400 text-xs" data-key="footer_copy">© 2024 Click-Capybara · The straight-talking partner for Google Ads, conversion tracking, and the sites that make them convert.</p>
+            </div>
+            <div class="flex items-center gap-4 md:gap-5 text-xs">
+                <a href="/privacy.html" class="text-gray-400 hover:text-brand transition" data-key="footer_privacy">Privacy Policy</a>
+            <a href="/impressum.html" class="text-gray-400 hover:text-brand transition" data-key="footer_imprint">Legal Notice</a>
+                <a href="#contact" class="text-gray-400 hover:text-brand transition" data-key="footer_contact">Contact</a>
+                <a href="/free-script.html" class="text-gray-400 hover:text-brand transition" data-key="footer_script">Tools &amp; Scripts</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         JS
+    ============================================================ -->
+    
+
+
+
+
+<script src="/js/main.js"></script>
+<script src="/js/contact-form.js"></script>
+</body></html>
