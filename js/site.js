@@ -72,15 +72,24 @@
     // Prices: offer until 01.03.2027 (79 €/h), regular afterwards (99 €/h). Change them here and in preise.html.
     var calc = $('#ads-calc');
     if (calc) {
+        var EN = document.documentElement.lang === 'en';
+        var AB = EN ? 'from ' : 'ab ';
         var TIERS = {
-            S: { name: 'Paket S', hours: '5 Stunden', fee: 395, regular: 500, ab: '' },
-            M: { name: 'Paket M', hours: '10 Stunden', fee: 790, regular: 990, ab: '' },
-            L: { name: 'Paket L', hours: 'ab 12 Stunden', fee: 950, regular: 1190, ab: 'ab ' }
+            S: { name: EN ? 'Package S' : 'Paket S', hours: EN ? '5 hours' : '5 Stunden', fee: 395, regular: 500, ab: '' },
+            M: { name: EN ? 'Package M' : 'Paket M', hours: EN ? '10 hours' : '10 Stunden', fee: 790, regular: 990, ab: '' },
+            L: { name: EN ? 'Package L' : 'Paket L', hours: EN ? 'from 12 hours' : 'ab 12 Stunden', fee: 950, regular: 1190, ab: AB }
         };
+        var NOTES = EN
+            ? ['From €2,000 in ad budget Package L applies. We agree the exact scope together.',
+               'Between €1,000 and €2,000 in ad budget Package M applies.',
+               'Up to €1,000 in ad budget you choose between S and M yourself.']
+            : ['Ab 2.000 € Werbebudget gilt Paket L. Den genauen Umfang legen wir gemeinsam fest.',
+               'Zwischen 1.000 und 2.000 € Werbebudget gilt Paket M.',
+               'Bis 1.000 € Werbebudget wählst du selbst zwischen S und M.'];
         var AUDIT = 390;
         var range = $('#ads-budget', calc), auditBox = $('#ads-audit', calc), pkBtns = $$('[data-pk]', calc);
         var choice = 'S';
-        var eur = function (n) { return n.toLocaleString('de-DE') + ' €'; };
+        var eur = function (n) { return EN ? '€' + n.toLocaleString('en-GB') : n.toLocaleString('de-DE') + ' €'; };
         var set = function (name, text) { $$('[data-calc="' + name + '"]', calc).forEach(function (el) { el.textContent = text; }); };
         var render = function () {
             var budget = Number(range.value), audit = auditBox.checked;
@@ -92,13 +101,12 @@
                 b.disabled = big ? k !== 'L' : (k === 'L' || (mid && k === 'S'));
                 b.setAttribute('aria-pressed', k === key ? 'true' : 'false');
             });
-            set('pkNote', big ? 'Ab 2.000 € Werbebudget gilt Paket L. Den genauen Umfang legen wir gemeinsam fest.'
-                : (mid ? 'Zwischen 1.000 und 2.000 € Werbebudget gilt Paket M.' : 'Bis 1.000 € Werbebudget wählst du selbst zwischen S und M.'));
+            set('pkNote', NOTES[big ? 0 : (mid ? 1 : 2)]);
             set('budgetFmt', eur(budget));
             set('tierFmt', t.name + ', ' + t.hours);
             set('feeFmt', t.ab + eur(t.fee));
-            set('auditFmt', audit ? 'ab ' + eur(AUDIT) : eur(0));
-            set('firstFmt', (t.ab || audit ? 'ab ' : '') + eur(t.fee + budget + auditCost));
+            set('auditFmt', audit ? AB + eur(AUDIT) : eur(0));
+            set('firstFmt', (t.ab || audit ? AB : '') + eur(t.fee + budget + auditCost));
             set('nextFmt', t.ab + eur(t.fee + budget));
             set('regularFmt', t.ab + eur(t.regular));
         };
@@ -117,7 +125,8 @@
                 video.muted = !video.muted;
                 if (!video.muted) { video.currentTime = 0; video.play(); }
                 soundBtn.setAttribute('aria-pressed', video.muted ? 'false' : 'true');
-                soundBtn.textContent = video.muted ? 'Ton an' : 'Ton aus';
+                var en = document.documentElement.lang === 'en';
+                soundBtn.textContent = video.muted ? (en ? 'Sound on' : 'Ton an') : (en ? 'Sound off' : 'Ton aus');
             });
         }
     }
