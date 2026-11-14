@@ -1,0 +1,48 @@
+<section id="contact" class="contact">
+    <div class="contact-inner">
+        <div class="contact-copy">
+            <h2>%%title%%</h2>
+            <p class="contact-lead">%%text%%</p>
+            <ul class="contact-checks">
+                <li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Antwort von Max persönlich</span></li>
+                <li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Einschätzung statt Verkaufspräsentation</span></li>
+                <li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12.5l5 5L20 6.5"/></svg><span>Antwort innerhalb von 2 Werktagen</span></li>
+            </ul>
+            <div class="contact-direct">
+                <span>Oder direkt schreiben:</span>
+                <a href="mailto:hello@click-capybara.com">hello@click-capybara.com</a>
+                <span class="contact-note">Kein Spam. Keine unerwünschten Anrufe. Nur eine Antwort von mir, Max.</span>
+            </div>
+        </div>
+        <div class="contact-card">
+            <form id="contact-form">
+                <!-- spam trap: real visitors never see or fill this field -->
+                <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+                    <label for="cf-contact_url">Dieses Feld bitte leer lassen</label>
+                    <input type="text" name="contact_url" id="cf-contact_url" tabindex="-1" autocomplete="off">
+                </div>
+                <div class="field"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" required placeholder="Dein Name" autocomplete="name"></div>
+                <div class="field"><label for="cf-email">E-Mail</label><input id="cf-email" name="email" type="email" required placeholder="du@firma.de" autocomplete="email"></div>
+                <div class="field"><label for="cf-service">Wobei kann ich helfen?</label>
+                    <select id="cf-service" name="service">
+                        <option>Google Ads</option>
+                        <option>Local Hero Kit</option>
+                        <option>Automatisierung</option>
+                        <option>Ehrliche zweite Meinung</option>
+                        <option>Allgemeine Frage</option>
+                    </select>
+                </div>
+                <div class="field"><label for="cf-website">Website / Google Ads Account (optional)</label><input id="cf-website" name="website" type="text" placeholder="www.deineseite.de"></div>
+                <div class="field"><label for="cf-challenge">Sonst noch etwas? (optional)</label><textarea id="cf-challenge" name="challenge" rows="3" placeholder="z. B. zu hohe Kosten pro Anfrage, unklare Reports"></textarea></div>
+                <button type="submit" class="btn-cta btn-block">Nachricht senden</button>
+                <p class="form-note">Kostenlos und unverbindlich. Deine Angaben nutze ich nur, um dir zu antworten. <a href="/privacy.html">Datenschutz</a></p>
+            </form>
+            <div id="form-success" role="status">
+                <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7ddc9f" stroke-width="2.5"><path d="M4 12.5l5 5L20 6.5"/></svg>
+                <h3>Nachricht erhalten.</h3>
+                <p>Du hörst innerhalb von 2 Werktagen von mir, direkt von Max.</p>
+                <a href="/nonogrid.html">Bis ich antworte: eine Runde Nonogrid spielen →</a>
+            </div>
+        </div>
+    </div>
+</section>

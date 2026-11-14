@@ -1,0 +1,83 @@
+    <!-- Consent default (before GTM) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+
+    <!-- Restore prior consent choices -->
+    <script>
+        (function() {
+            if (localStorage.getItem('silktideCookieChoice_analytics') === 'true') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
+            }
+            if (localStorage.getItem('silktideCookieChoice_advertising') === 'true') {
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+            }
+        })();
+    </script>
+
+    <!-- GTM -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WK2WCGQH');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click-Capybara</title>
+    <meta name="description" content="">
+    <meta name="theme-color" content="#12110d">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_capybara_outine_bold.ico">
+
+    <!-- Self-hosted fonts (no request to Google) -->
+    <link rel="preload" as="font" type="font/woff" href="/vendor/fonts/space-grotesk-latin.woff" crossorigin>
+    <link rel="preload" as="font" type="font/woff" href="/vendor/fonts/jetbrains-mono-latin.woff" crossorigin>
+
+    <!-- Site styles (inlined by build.js) -->
+    <link rel="stylesheet" href="/css/site.css">
+
+    <!-- Cookie banner -->
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="/vendor/silktide/silktide-consent-manager.css">
+    <script src="/vendor/silktide/silktide-consent-manager.js"></script>
+    <script>
+    silktideCookieBannerManager.updateCookieBannerConfig({
+        background: { showBackground: true },
+        cookieIcon: { position: "bottomLeft" },
+        cookieTypes: [
+            { id: "necessary", name: "Notwendig",
+              description: "<p>Diese Cookies sind für die Funktion der Website nötig und lassen sich nicht abschalten.</p>",
+              required: true, onAccept: function() {} },
+            { id: "analytics", name: "Statistik",
+              description: "<p>Diese Cookies helfen mir zu verstehen, wie Besucher die Website nutzen.</p>",
+              required: false,
+              onAccept: function() { gtag('consent','update',{analytics_storage:'granted'}); dataLayer.push({event:'consent_accepted_analytics'}); },
+              onReject: function() { gtag('consent','update',{analytics_storage:'denied'}); } },
+            { id: "advertising", name: "Werbung",
+              description: "<p>Diese Cookies werden genutzt, um Anzeigen zu messen und zu verbessern.</p>",
+              required: false,
+              onAccept: function() { gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'}); dataLayer.push({event:'consent_accepted_advertising'}); },
+              onReject: function() { gtag('consent','update',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'}); } }
+        ],
+        text: {
+            banner: {
+                description: "<p>Ich nutze Cookies, um die Website zu verbessern und Zugriffe auszuwerten. <a href=\"/privacy.html\">Datenschutz.</a></p>",
+                acceptAllButtonText: "Alle akzeptieren",
+                rejectNonEssentialButtonText: "Nur notwendige",
+                preferencesButtonText: "Einstellungen"
+            },
+            preferences: { title: "Cookie-Einstellungen" }
+        },
+        position: { banner: "center" }
+    });
+    </script>

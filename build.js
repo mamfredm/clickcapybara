@@ -4,6 +4,11 @@
 // Writes German pages to dist root and English pages to dist/en/,
 // plus sitemap.xml. Copy of static folders (css/js/vendor/assets)
 // is done here too, so dist/ is the complete deployable site.
+//
+// Redesign ("Bühne"): pages marked v2 use _templates/_partials/*.html, css/site.css and js/site.js.
+// They are German-only for now: their English counterparts in /en/ are NOT rebuilt (the last
+// build of the old design stays online) until the English templates exist. The old templates
+// live in _templates/_legacy/ for that work.
 const fs = require('fs');
 const path = require('path');
 const cheerio = require('cheerio');
@@ -24,11 +29,11 @@ const OG_IMAGE = BASE + '/assets/og-image.png';
 // ─── Page config ────────────────────────────────────────────────────────────
 const PAGES = [
   {
-    tpl: 'index.html', slug: '', formSource: 'Homepage',
+    tpl: 'index.html', slug: '', formSource: 'Homepage', v2: true,
     seo: {
       de: {
-        title: 'Max | Digital Marketing Freelancer Düsseldorf — Click-Capybara',
-        desc: 'Freiberuflicher Digital-Marketing-Spezialist mit 8+ Jahren Erfahrung: Google Ads, Websites und lokale Sichtbarkeit. Direkter Draht statt Agentur-Overhead.',
+        title: 'Freelancer für Google Ads, Websites & Automatisierung | Click-Capybara',
+        desc: 'Online sichtbar werden bei Google, auf Maps und in der KI-Suche. Google Ads, Websites und Automatisierung von Max, 8+ Jahre Erfahrung. Kostenlose zweite Meinung.',
       },
       en: {
         title: 'Max | Digital Marketing Specialist — Click-Capybara',
@@ -46,12 +51,12 @@ const PAGES = [
       areaServed: ['DE', 'EU'],
       knowsLanguage: ['de', 'en'],
       description: lang === 'de'
-        ? 'Google Ads, Websites und lokale Sichtbarkeit für kleine Unternehmen. Freelancer statt Agentur.'
+        ? 'Google Ads, Websites und Automatisierung. Freelancer statt Agentur.'
         : 'Google Ads, websites, and local visibility for small businesses. Freelancer, not agency.',
     }),
   },
   {
-    tpl: 'google-ads.html', slug: 'google-ads.html', formSource: 'Google Ads',
+    tpl: 'google-ads.html', slug: 'google-ads.html', formSource: 'Google Ads', v2: true,
     seo: {
       de: {
        title: 'Google Ads Freelancer Düsseldorf | Ex-Google SEA-Experte — Click-Capybara',
@@ -73,11 +78,11 @@ const PAGES = [
     }),
   },
   {
-    tpl: 'local-hero-kit.html', slug: 'local-hero-kit.html', formSource: 'Local Hero Kit',
+    tpl: 'local-hero-kit.html', slug: 'local-hero-kit.html', formSource: 'Local Hero Kit', v2: true,
     seo: {
       de: {
-        title: 'Local Hero Kit — Website & Google-Profil für lokale Unternehmen',
-        desc: 'Neue Website, gepflegtes Google Unternehmensprofil und Sichtbarkeit in der KI-Suche. Von einer Person gebaut, fair bepreist. Für Cafés, Studios und lokale Läden.',
+        title: 'Website erstellen lassen Düsseldorf | Local Hero Kit — Click-Capybara',
+        desc: 'Website, Google-Unternehmensprofil und Sichtbarkeit in der KI-Suche. Einmal gebaut, kein Abo. Ein Ansprechpartner vom ersten Gespräch bis zur fertigen Seite.',
       },
       en: {
         title: 'Local Hero Kit — Website & Google Profile for Local Businesses',
@@ -97,6 +102,33 @@ const PAGES = [
     }),
   },
   {
+    tpl: 'automatisierung.html', slug: 'automatisierung.html', formSource: 'Automatisierung', v2: true, langs: ['de'],
+    seo: {
+      de: {
+        title: 'Marketing-Automatisierung mit n8n, Shopify & lokaler KI | Click-Capybara',
+        desc: 'Wiederkehrende Aufgaben, die von selbst laufen: n8n-Workflows, Shopify-Integrationen und lokale KI. Ein Ablauf ab 490 €, alles Größere nach Aufwand.',
+      },
+    },
+    jsonld: () => ({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType: 'Marketing-Automatisierung',
+      provider: { '@type': 'ProfessionalService', name: 'Click-Capybara', url: BASE + '/' },
+      areaServed: ['DE', 'EU'],
+      availableLanguage: ['de', 'en'],
+    }),
+  },
+  {
+    tpl: 'preise.html', slug: 'preise.html', formSource: 'Preise', v2: true, langs: ['de'],
+    seo: {
+      de: {
+        title: 'Preise für Google Ads, Websites & Automatisierung | Click-Capybara',
+        desc: 'Alle Preise auf einen Blick: Google-Ads-Betreuung ab 395 € im Monat, Local Hero Kit 1.150 € einmalig, Automatisierung ab 490 €. Angebotspreise bis 01.03.2027.',
+      },
+    },
+    jsonld: null,
+  },
+  {
     tpl: 'free-script.html', slug: 'free-script.html', formSource: null,
     seo: {
       de: {
@@ -111,7 +143,7 @@ const PAGES = [
     jsonld: null, // page ships its own SoftwareApplication schema
   },
   {
-    tpl: 'privacy.html', slug: 'privacy.html', formSource: null, noindexAlt: false,
+    tpl: 'privacy.html', slug: 'privacy.html', formSource: null, noindexAlt: false, v2: true,
     seo: {
       de: { title: 'Datenschutzerklärung — Click-Capybara', desc: 'Datenschutzerklärung von Click-Capybara.' },
       en: { title: 'Privacy Policy — Click-Capybara', desc: 'Privacy Policy for Click-Capybara.' },
@@ -119,7 +151,7 @@ const PAGES = [
     jsonld: null,
   },
   {
-    tpl: 'impressum.html', slug: 'impressum.html', formSource: null,
+    tpl: 'impressum.html', slug: 'impressum.html', formSource: null, v2: true,
     seo: {
       de: { title: 'Impressum — Click-Capybara', desc: 'Impressum und Anbieterkennzeichnung von Click-Capybara.' },
       en: { title: 'Legal Notice (Impressum) — Click-Capybara', desc: 'Legal notice and provider information for Click-Capybara.' },
@@ -145,8 +177,24 @@ function mergedDict(page, lang) {
   return { ...base, ...ov };
 }
 
+// {{> name key="value"}} pulls in _templates/_partials/name.html; %%key%% inside the partial is replaced.
+// The contact partial also takes service="…" to preselect the matching option.
+function expandPartials(html) {
+  return html.replace(/\{\{>\s*([\w-]+)((?:\s+\w+="[^"]*")*)\s*\}\}/g, (m, name, attrs) => {
+    let out = fs.readFileSync(path.join(__dirname, '_templates', '_partials', name + '.html'), 'utf8');
+    const params = {};
+    (attrs.match(/\w+="[^"]*"/g) || []).forEach((a) => { const i = a.indexOf('='); params[a.slice(0, i)] = a.slice(i + 2, -1); });
+    out = out.replace(/%%(\w+)%%/g, (mm, k) => (params[k] !== undefined ? params[k] : ''));
+    if (params.service) out = out.replace('<option>' + params.service + '</option>', '<option selected>' + params.service + '</option>');
+    return out;
+  });
+}
+
+const outNameOf = (page) => (page.tpl === 'index.html' ? 'index.html' : page.slug);
+const enFileExists = (page) => fs.existsSync(path.join(DIST, 'en', outNameOf(page)));
+
 function render(page, lang) {
-  const html = fs.readFileSync(path.join(__dirname, '_templates', page.tpl), 'utf8');
+  const html = expandPartials(fs.readFileSync(path.join(__dirname, '_templates', page.tpl), 'utf8'));
   const $ = cheerio.load(html, { decodeEntities: false });
   const dict = mergedDict(page, lang);
   const seo = page.seo[lang];
@@ -194,7 +242,7 @@ function render(page, lang) {
   const headExtra = [
     `<link rel="canonical" href="${selfUrl}">`,
     `<link rel="alternate" hreflang="de" href="${urlFor(page.slug, 'de')}">`,
-    `<link rel="alternate" hreflang="en" href="${urlFor(page.slug, 'en')}">`,
+    ...(enFileExists(page) ? [`<link rel="alternate" hreflang="en" href="${urlFor(page.slug, 'en')}">`] : []),
     `<link rel="alternate" hreflang="x-default" href="${urlFor(page.slug, 'de')}">`,
     `<meta property="og:type" content="website">`,
     `<meta property="og:site_name" content="Click-Capybara">`,
@@ -221,7 +269,7 @@ function render(page, lang) {
 
   // 4. language toggle links + active state
   const deUrl = urlFor(page.slug, 'de');
-  const enUrl = urlFor(page.slug, 'en');
+  const enUrl = enFileExists(page) ? urlFor(page.slug, 'en') : BASE + '/en/';
   for (const [id, l] of [['lang-en', 'en'], ['lang-de', 'de'], ['mobile-lang-en', 'en'], ['mobile-lang-de', 'de']]) {
     const el = $('#' + id);
     if (!el.length) continue;
@@ -269,6 +317,16 @@ function render(page, lang) {
       node.html(`window.addEventListener('load', function () {\n${txt}\n});`);
     }
   });
+  // 7b. redesigned pages: inline site.css, mark the current nav entry, fix the contact link on pages without a form
+  if (page.v2) {
+    const siteCss = fs.readFileSync(path.join(DIST, 'css', 'site.css'), 'utf8');
+    $('link[href="/css/site.css"]').replaceWith(`<style>${siteCss}</style>`);
+    $('#site-nav a.nl').each((_, a) => {
+      if ($(a).attr('href') === '/' + page.slug) $(a).attr('aria-current', 'page');
+    });
+    if (!$('#contact').length) $('a[href="#contact"]').attr('href', '/#contact');
+  }
+
   // 8. inline critical CSS (eliminates render-blocking request)
   const cssContent = fs.readFileSync(path.join(DIST, 'css', 'styles.css'), 'utf8');
   $('link[href="/css/styles.css"]').replaceWith(`<style>${cssContent}</style>`);
@@ -309,10 +367,12 @@ function render(page, lang) {
     if (parent.is('noscript')) parent.remove();
     else $(el).remove();
   });
-  const interCss = fs.readFileSync(path.join(DIST, 'vendor', 'inter', 'inter.css'), 'utf8');
-  $('head').prepend(`
+  if (!page.v2) {
+    const interCss = fs.readFileSync(path.join(DIST, 'vendor', 'inter', 'inter.css'), 'utf8');
+    $('head').prepend(`
     <link rel="preload" as="font" type="font/woff2" href="/vendor/inter/inter-latin.woff2" crossorigin>
     <style>${interCss}</style>`);
+  }
 
   // 12. associate every form label with its control (accessible names)
   $('#contact-form div').each((i, div) => {
@@ -357,8 +417,13 @@ function fillLegal(out) {
 fs.mkdirSync(path.join(DIST, 'en'), { recursive: true });
 
 for (const page of PAGES) {
-  const outName = page.tpl === 'index.html' ? 'index.html' : page.slug;
+  const outName = outNameOf(page);
   fs.writeFileSync(path.join(DIST, outName), render(page, 'de'));
+  if (page.v2) {
+    // German only for now; an existing /en/ page of the old design is left untouched.
+    console.log(`built /${outName}` + (enFileExists(page) ? ` (kept existing /en/${outName})` : ''));
+    continue;
+  }
   fs.writeFileSync(path.join(DIST, 'en', outName), render(page, 'en'));
   console.log(`built /${outName} + /en/${outName}`);
 }
@@ -367,12 +432,13 @@ for (const page of PAGES) {
 const today = new Date().toISOString().slice(0, 10);
 const urls = [];
 for (const page of PAGES) {
-  for (const lang of ['de', 'en']) {
+  const hasEn = enFileExists(page);
+  for (const lang of hasEn ? ['de', 'en'] : ['de']) {
     urls.push(`  <url>
     <loc>${urlFor(page.slug, lang)}</loc>
     <lastmod>${today}</lastmod>
-    <xhtml:link rel="alternate" hreflang="de" href="${urlFor(page.slug, 'de')}"/>
-    <xhtml:link rel="alternate" hreflang="en" href="${urlFor(page.slug, 'en')}"/>
+    <xhtml:link rel="alternate" hreflang="de" href="${urlFor(page.slug, 'de')}"/>${hasEn ? `
+    <xhtml:link rel="alternate" hreflang="en" href="${urlFor(page.slug, 'en')}"/>` : ''}
     <xhtml:link rel="alternate" hreflang="x-default" href="${urlFor(page.slug, 'de')}"/>
   </url>`);
   }
