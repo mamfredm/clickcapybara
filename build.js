@@ -15,6 +15,8 @@ const cheerio = require('cheerio');
 
 const translations = require('./_src/translations.js');
 const overrides = require('./_src/overrides.json');
+const enV2 = require('./_src/en-v2.json'); // English texts for the redesigned (v2) pages
+const missingEn = new Map();
 
 // Legal data (Impressum + Datenschutz) lives in _src/legal.json.
 // Templates use {{legal.name}} etc.; empty values show as [[name]] and trigger a warning.
@@ -36,8 +38,8 @@ const PAGES = [
         desc: 'Online sichtbar werden bei Google, auf Maps und in der KI-Suche. Google Ads, Websites und Automatisierung von Max, 8+ Jahre Erfahrung. Kostenlose zweite Meinung.',
       },
       en: {
-        title: 'Max | Digital Marketing Specialist — Click-Capybara',
-        desc: 'Freelance digital marketing specialist with 8+ years experience: Google Ads, websites, and local visibility. Direct access, no agency overhead.',
+        title: 'Freelancer for Google Ads, Websites & Automation | Click-Capybara',
+        desc: 'Get found on Google, on Maps and in AI search. Google Ads, websites and automation from Max, 8+ years of experience. Free second opinion.',
       },
     },
     jsonld: (lang) => ({
@@ -102,28 +104,36 @@ const PAGES = [
     }),
   },
   {
-    tpl: 'automatisierung.html', slug: 'automatisierung.html', formSource: 'Automatisierung', v2: true, langs: ['de'],
+    tpl: 'automatisierung.html', slug: 'automatisierung.html', formSource: 'Automatisierung', v2: true,
     seo: {
       de: {
         title: 'Marketing-Automatisierung mit n8n, Shopify & lokaler KI | Click-Capybara',
         desc: 'Wiederkehrende Aufgaben, die von selbst laufen: n8n-Workflows, Shopify-Integrationen und lokale KI. Ein Ablauf ab 490 €, alles Größere nach Aufwand.',
       },
+      en: {
+        title: 'Marketing Automation with n8n, Shopify & Local AI | Click-Capybara',
+        desc: 'Recurring tasks that run on their own: n8n workflows, Shopify integrations and local AI. One workflow from €490, anything bigger by the hour.',
+      },
     },
-    jsonld: () => ({
+    jsonld: (lang) => ({
       '@context': 'https://schema.org',
       '@type': 'Service',
-      serviceType: 'Marketing-Automatisierung',
+      serviceType: lang === 'de' ? 'Marketing-Automatisierung' : 'Marketing automation',
       provider: { '@type': 'ProfessionalService', name: 'Click-Capybara', url: BASE + '/' },
       areaServed: ['DE', 'EU'],
       availableLanguage: ['de', 'en'],
     }),
   },
   {
-    tpl: 'preise.html', slug: 'preise.html', formSource: 'Preise', v2: true, langs: ['de'],
+    tpl: 'preise.html', slug: 'preise.html', formSource: 'Preise', v2: true,
     seo: {
       de: {
         title: 'Preise für Google Ads, Websites & Automatisierung | Click-Capybara',
         desc: 'Alle Preise auf einen Blick: Google-Ads-Betreuung ab 395 € im Monat, Local Hero Kit 1.150 € einmalig, Automatisierung ab 490 €. Angebotspreise bis 01.03.2027.',
+      },
+      en: {
+        title: 'Pricing for Google Ads, Websites & Automation | Click-Capybara',
+        desc: 'Clear prices: Google Ads management from €395 a month, Local Hero Kit €1,150 one-off, one automation workflow from €490. Offer prices until 1 March 2027.',
       },
     },
     jsonld: null,
@@ -191,7 +201,42 @@ function expandPartials(html) {
 }
 
 const outNameOf = (page) => (page.tpl === 'index.html' ? 'index.html' : page.slug);
-const enFileExists = (page) => fs.existsSync(path.join(DIST, 'en', outNameOf(page)));
+const enFileExists = (page) => !!page.seo.en; // every page with English SEO texts gets an /en/ version
+
+// English for redesigned pages: every text node and a few attributes are looked up in _src/en-v2.json.
+// Blocks that are already English (data-lang="en") are skipped. Missing entries are reported after the build.
+function translateV2($, page) {
+  const dict = enV2.text, keep = new Set(enV2.keep);
+  const norm = (s) => s.replace(/\s+/g, ' ').trim();
+  const lookup = (raw) => {
+    const s = norm(raw);
+    if (/^(\+ )?[\d.]+ €$/.test(s)) return s.replace(/([\d.]+) €/, (m, n) => '€' + n.replace(/\./g, ','));
+    if (!s || !/[A-Za-zÄÖÜäöüß]/.test(s) || keep.has(s) || /^\{\{legal\.\w+\}\}$/.test(s)) return null;
+    if (dict[s] !== undefined) return dict[s];
+    if (!missingEn.has(s)) missingEn.set(s, page.tpl);
+    return null;
+  };
+  (function walk(node) {
+    $(node).contents().each((_, c) => {
+      if (c.type === 'text') {
+        const en = lookup(c.data);
+        if (en !== null) c.data = c.data.match(/^\s*/)[0] + en + c.data.match(/\s*$/)[0];
+      } else if (c.type === 'tag' && !['script', 'style', 'noscript'].includes(c.name)) {
+        if (c.attribs['data-notr'] !== undefined) { delete c.attribs['data-notr']; return; }
+        for (const a of ['placeholder', 'aria-label', 'alt', 'title']) {
+          if (c.attribs[a]) { const en = lookup(c.attribs[a]); if (en !== null) c.attribs[a] = en; }
+        }
+        walk(c);
+      }
+    });
+  })($('body')[0]);
+  $('script').each((_, s) => {
+    let txt = $(s).html() || '';
+    let changed = false;
+    for (const [de, en] of Object.entries(enV2.script)) if (txt.includes(de)) { txt = txt.split(de).join(en); changed = true; }
+    if (changed) $(s).html(txt);
+  });
+}
 
 function render(page, lang) {
   const html = expandPartials(fs.readFileSync(path.join(__dirname, '_templates', page.tpl), 'utf8'));
@@ -202,7 +247,7 @@ function render(page, lang) {
   // 0. language blocks (legal pages): keep only <… data-lang="xx"> matching this build
   $('[data-lang]').each((_, el) => {
     const node = $(el);
-    if (node.attr('data-lang') === lang) node.removeAttr('data-lang');
+    if (node.attr('data-lang') === lang) { node.removeAttr('data-lang'); if (page.v2 && lang === 'en') node.attr('data-notr', ''); }
     else node.remove();
   });
   // 0b. optional blocks: <… data-if="key"> only if legal.key is set
@@ -225,6 +270,11 @@ function render(page, lang) {
     }
     node.removeAttr('data-key');
   });
+
+  // 1b. redesigned pages: English texts
+  if (page.v2 && lang === 'en') translateV2($, page);
+  // English hero video and poster
+  if (lang === 'en') $('#hero-video').attr('src', '/assets/hero-en.mp4').attr('poster', '/assets/hero-poster-en.jpg');
 
   // 2. html lang + head SEO
   $('html').attr('lang', lang);
@@ -288,7 +338,7 @@ function render(page, lang) {
     $('a[href]').each((_, a) => {
       const el = $(a);
       const href = el.attr('href');
-      const m = href && href.match(/^\/((?:google-ads|local-hero-kit|free-script|privacy|impressum|nonogrid)\.html)?(#.*)?$/);
+      const m = href && href.match(/^\/((?:google-ads|local-hero-kit|automatisierung|preise|free-script|privacy|impressum|nonogrid)\.html)?(#.*)?$/);
       if (m) el.attr('href', '/en/' + (m[1] || '') + (m[2] || ''));
     });
   }
@@ -322,9 +372,9 @@ function render(page, lang) {
     const siteCss = fs.readFileSync(path.join(DIST, 'css', 'site.css'), 'utf8');
     $('link[href="/css/site.css"]').replaceWith(`<style>${siteCss}</style>`);
     $('#site-nav a.nl').each((_, a) => {
-      if ($(a).attr('href') === '/' + page.slug) $(a).attr('aria-current', 'page');
+      if ($(a).attr('href') === (lang === 'en' ? '/en/' : '/') + page.slug) $(a).attr('aria-current', 'page');
     });
-    if (!$('#contact').length) $('a[href="#contact"]').attr('href', '/#contact');
+    if (!$('#contact').length) $('a[href="#contact"]').attr('href', (lang === 'en' ? '/en/' : '/') + '#contact');
   }
 
   // 8. inline critical CSS (eliminates render-blocking request)
@@ -419,11 +469,6 @@ fs.mkdirSync(path.join(DIST, 'en'), { recursive: true });
 for (const page of PAGES) {
   const outName = outNameOf(page);
   fs.writeFileSync(path.join(DIST, outName), render(page, 'de'));
-  if (page.v2) {
-    // German only for now; an existing /en/ page of the old design is left untouched.
-    console.log(`built /${outName}` + (enFileExists(page) ? ` (kept existing /en/${outName})` : ''));
-    continue;
-  }
   fs.writeFileSync(path.join(DIST, 'en', outName), render(page, 'en'));
   console.log(`built /${outName} + /en/${outName}`);
 }
@@ -450,6 +495,10 @@ ${urls.join('\n')}
 </urlset>\n`);
 
 console.log('sitemap.xml written — build complete');
+if (missingEn.size) {
+  console.warn('\n⚠  ' + missingEn.size + ' German text(s) have no English version in _src/en-v2.json and stay German on /en/:');
+  for (const [s, tpl] of missingEn) console.warn('   [' + tpl + '] ' + s);
+}
 if (missingLegal.size) {
   console.warn('\n⚠  _src/legal.json is missing: ' + [...missingLegal].join(', ') +
     '\n   These show as [[…]] on /impressum.html and /privacy.html — do NOT publish like this.');
