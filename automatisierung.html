@@ -100,13 +100,20 @@ a.c-dark:hover{color:#12110d}
 .x-burger{display:none;background:none;border:2px solid #f4f0e6;border-radius:12px;width:48px;height:48px;align-items:center;justify-content:center;cursor:pointer;color:#f4f0e6;padding:0}
 @media (max-width:900px){
 .x-burger{display:flex}
-.x-nav{display:none;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:8px 0 16px;font-size:20px}
-.x-nav.open{display:flex}
-.x-nav a{padding-top:12px !important;padding-bottom:12px !important}
+.site-header .x-nav{display:none;flex-direction:column;align-items:stretch;gap:0;width:100%;order:3;margin-left:0;padding:4px 0 20px;font-size:20px}
+.site-header .x-nav.open{display:flex}
+.site-header .x-nav a.nl{padding:16px 0 !important;border-bottom:1px solid #3a352b}
+.site-header .x-nav a.nl[aria-current="page"]{border-bottom-color:#3a352b;color:#fcba01}
+.x-nav .btn-cta{margin-top:24px;text-align:center;padding:16px 20px;font-size:17px}
+.site-header .hdr-tools{order:2;margin-left:auto;gap:10px}
+.lang{font-size:14px}
+.lang a{padding:12px 6px}
 }
 @media (max-width:600px){
 section,header,footer{padding-left:20px !important;padding-right:20px !important}
+main > section:first-of-type{padding-top:20px !important}
 }
+
 .c-load{visibility:hidden}
 .c-type{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;width:30ch}
 @media (prefers-reduced-motion: no-preference){
@@ -166,14 +173,18 @@ a.p-dark:hover{color:#12110d}
 @media (prefers-reduced-motion: no-preference){ .pr-panel{animation:pUp .35s cubic-bezier(.2,.8,.2,1)} }
 
 /* ---------- header / navigation ---------- */
-.site-header{max-width:1200px;margin:0 auto;padding:18px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.site-header{max-width:1200px;margin:0 auto;padding:18px 32px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
+.x-nav{order:2;margin-left:auto}
+.hdr-tools{order:3;display:flex;align-items:center}
 .site-logo{display:flex;align-items:center;gap:10px;font:700 20px 'Space Grotesk',system-ui,sans-serif;text-decoration:none;min-height:44px;color:#f4f0e6}
 .site-logo:hover{color:#f4f0e6}
 .site-logo img{display:block}
-.caret{display:inline-block;width:10px;height:20px;background:#fcba01}
+.caret{display:inline-block;width:10px;height:20px;background:#fcba01;flex:none}
+@keyframes caretBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@media (prefers-reduced-motion: no-preference){.caret{animation:caretBlink 1s steps(1) infinite}}
 .x-nav a.nl{text-decoration:none;padding:12px 0 8px;border-bottom:2px solid transparent}
 .x-nav a.nl[aria-current="page"]{border-bottom-color:#fcba01}
-.lang{font:400 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.lang{display:inline-flex;align-items:center;font:400 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293;white-space:nowrap}
 .lang a{color:#a8a293;text-decoration:none;padding:12px 2px}
 .lang a.font-bold{color:#f4f0e6;font-weight:500}
 .btn-cta{display:inline-block;background:#fcba01;color:#12110d;padding:12px 20px;border-radius:999px;font:700 15px 'Space Grotesk',system-ui,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .15s}
@@ -259,6 +270,57 @@ a.p-dark:hover{color:#12110d}
 .legal strong{color:#f4f0e6}
 .legal table{border-collapse:collapse;width:100%;margin:0 0 14px}
 .legal th,.legal td{border-bottom:1px solid #4a4538;padding:10px 12px 10px 0;text-align:left;vertical-align:top}
+
+/* ---------- tools & scripts page ---------- */
+.ts-k{font:500 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.ts-s{font:400 12px/1.4 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.ts-card{display:flex;flex-direction:column;gap:16px;background:#1a1812;border:1px solid #4a4538;border-radius:20px;padding:24px;min-width:0}
+.ts-scroll{overflow-x:auto}
+.ts-table{width:100%;border-collapse:collapse;font:400 13px 'JetBrains Mono',ui-monospace,monospace;white-space:nowrap}
+.ts-table th{text-align:left;color:#a8a293;font-weight:500;padding:8px 12px 8px 0;border-bottom:1px solid #4a4538}
+.ts-table td{padding:10px 12px 10px 0;border-bottom:1px solid #2e2a21}
+.ts-table .ok{color:#7ddc9f}.ts-table .warn{color:#fcba01}.ts-table .err{color:#e8824a}
+.ts-calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:32px 48px;border:2px solid #fcba01;border-radius:24px;padding:clamp(20px,3vw,36px)}
+.ts-calc-col{display:flex;flex-direction:column;gap:18px;min-width:0}
+.ts-calc-wide{grid-column:1/-1;display:flex;flex-direction:column;gap:14px;border-top:1px solid #4a4538;padding-top:24px;min-width:0}
+.ts-slider{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:baseline}
+.ts-slider input{grid-column:1/-1;width:100%;accent-color:#fcba01;height:28px;margin:0}
+.ts-out{font:700 22px 'Space Grotesk',system-ui,sans-serif}
+.ts-note{margin:4px 0 0;font-size:15px;line-height:1.55;color:#d6d1c4}
+.ts-note strong{color:#f4f0e6}
+.ts-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ts-metrics-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ts-metric{display:flex;flex-direction:column;gap:6px;background:#1a1812;border-radius:14px;padding:14px 16px;min-width:0}
+.calc-metric-val{margin:0;font:700 24px/1.1 'Space Grotesk',system-ui,sans-serif;overflow-wrap:anywhere}
+.calc-ok{color:#7ddc9f}.calc-warn{color:#fcba01}.calc-err{color:#e8824a}
+.ts-legend{display:flex;flex-wrap:wrap;gap:8px 18px;font:400 12px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.ts-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
+.ts-code{margin:0;padding:20px;overflow-x:auto;font:400 13px/1.7 'JetBrains Mono',ui-monospace,monospace;color:#d6d1c4}
+.ts-code .c{color:#8a8473}.ts-code .k{color:#fcba01}.ts-code .f{color:#7ddc9f}.ts-code .s{color:#e8c98a}
+@media (max-width:480px){.ts-metrics-3{grid-template-columns:1fr}.calc-metric-val{font-size:21px}}
+
+/* ---------- small screens: header (kept last so it wins over the base rules) ---------- */
+@media (max-width:900px){
+.site-header{gap:8px 12px}
+.site-header .lang{font-size:14px}
+.site-header .lang a{padding:12px 6px}
+}
+@media (max-width:600px){
+.site-header{padding-top:12px;padding-bottom:12px}
+.site-logo{font-size:clamp(16px,4.7vw,20px);gap:8px}
+.site-logo img{width:32px;height:32px}
+.x-burger{width:44px;height:44px}
+}
+@media (max-width:400px){
+.site-header{padding-left:16px !important;padding-right:16px !important}
+.site-header .hdr-tools{gap:6px}
+.site-header .lang a{padding:12px 3px}
+.site-logo .caret{width:8px}
+}
+@media (max-width:340px){
+.site-logo{font-size:15px}
+.site-logo .caret{display:none}
+}
 </style>
 
     <!-- Cookie banner -->
@@ -313,16 +375,18 @@ a.p-dark:hover{color:#12110d}
         <img src="/assets/clickcapybara_outline_bold.svg" width="36" height="36" alt="">
         <span>Click-Capybara</span><span class="caret" aria-hidden="true"></span>
     </a>
-    <button class="x-burger" id="nav-toggle" type="button" aria-label="Menü öffnen oder schließen" aria-expanded="false" aria-controls="site-nav">
-        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
-    </button>
+    <div class="hdr-tools">
+        <span class="lang"><a id="lang-de" href="https://www.click-capybara.com/automatisierung.html" hreflang="de" class="font-bold text-ink-900">DE</a><span aria-hidden="true">/</span><a id="lang-en" href="https://www.click-capybara.com/en/automatisierung.html" hreflang="en" class="font-medium text-gray-400">EN</a></span>
+        <button class="x-burger" id="nav-toggle" type="button" aria-label="Menü öffnen oder schließen" aria-expanded="false" aria-controls="site-nav">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+        </button>
+    </div>
     <nav id="site-nav" class="x-nav" aria-label="Hauptnavigation">
         <a class="nl" href="/google-ads.html">Google Ads</a>
         <a class="nl" href="/local-hero-kit.html">Local Hero Kit</a>
         <a class="nl" href="/automatisierung.html" aria-current="page">Automatisierung</a>
         <a class="nl" href="/free-script.html">Tools &amp; Scripts</a>
         <a class="nl" href="/preise.html">Preise</a>
-        <span class="lang"><a id="lang-de" href="https://www.click-capybara.com/automatisierung.html" hreflang="de" class="font-bold text-ink-900">DE</a> / <a id="lang-en" href="https://www.click-capybara.com/en/automatisierung.html" hreflang="en" class="font-medium text-gray-400">EN</a></span>
         <a class="btn-cta" href="#contact">Kostenlos einschätzen lassen</a>
     </nav>
 </header>
@@ -337,7 +401,7 @@ a.p-dark:hover{color:#12110d}
 <p class="p-up" style="animation-delay: .15s; margin: 0; max-width: 540px; font-size: 19px; line-height: 1.55; color: #d6d1c4">Ich verbinde deine Tools so, dass wiederkehrende Aufgaben ohne dich laufen. Ohne neues Abo für jede Kleinigkeit, und deine Daten bleiben bei dir.</p>
 <div class="p-up" style="animation-delay: .3s; display: flex; flex-wrap: wrap; align-items: center; gap: 28px">
 <a class="p-cta" href="#contact" style="display: inline-block; background: #fcba01; color: #12110d; padding: 17px 28px; border-radius: 999px; font-weight: 700; font-size: 17px; text-decoration: none">Kostenlos einschätzen lassen</a>
-<a href="#inhalt" style="font-weight: 500; font-size: 16px; padding: 12px 0">Was ich automatisiere</a>
+<a href="#inhalt" style="font-weight: 500; font-size: 16px; padding: 12px 0">Was ich automatisiere <span aria-hidden="true">↓</span></a>
 </div>
 </div>
 <div class="p-up" style="animation-delay: .25s; display: flex; flex-direction: column; border-bottom: 1px solid #4a4538">
