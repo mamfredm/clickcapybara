@@ -151,7 +151,7 @@
         };
         var num = function (n, d) { return n.toLocaleString(loc, { minimumFractionDigits: d, maximumFractionDigits: d }); };
         var val = function (id) { var v = parseFloat(String($('#' + id).value).replace(',', '.')); return isFinite(v) && v > 0 ? v : 0; };
-        var EXAMPLES = { shop: { price: 120, 'var': 70, cr: 2, close: 30, cpc: 0.8, budget: 1000 }, lead: { price: 1500, 'var': 600, cr: 4, close: 30, cpc: 2.5, budget: 1000 } };
+        var EXAMPLES = { shop: { price: 120, 'var': 70, cr: 2, close: 30, cpc: 0.7, budget: 1000 }, lead: { price: 1500, 'var': 600, cr: 4, close: 30, cpc: 2.5, budget: 1000 } };
         var FEES = [{ max: 1000, name: EN2 ? 'Package S' : 'Paket S', fee: 395, from: false }, { max: 2000, name: EN2 ? 'Package M' : 'Paket M', fee: 790, from: false }, { max: Infinity, name: EN2 ? 'Package L' : 'Paket L', fee: 950, from: true }];
         var TXT = EN2 ? {
             noMargin: 'Your contribution margin is zero or negative. Advertising will not fix that.',

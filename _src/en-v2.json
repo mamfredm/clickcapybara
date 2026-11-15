@@ -562,6 +562,7 @@
   "acceptAllButtonText: \"Alle akzeptieren\"": "acceptAllButtonText: \"Accept all\"",
   "rejectNonEssentialButtonText: \"Nur notwendige\"": "rejectNonEssentialButtonText: \"Necessary only\"",
   "preferencesButtonText: \"Einstellungen\"": "preferencesButtonText: \"Settings\"",
-  "title: \"Cookie-Einstellungen\"": "title: \"Cookie settings\""
+  "title: \"Cookie-Einstellungen\"": "title: \"Cookie settings\"",
+  "description: \"<p>Du entscheidest, welche Cookies du zulässt. Deine Auswahl gilt für die ganze Website und lässt sich jederzeit ändern.</p>\"": "description: \"<p>You decide which cookies you allow. Your choice applies to the whole website and can be changed at any time.</p>\""
  }
 }

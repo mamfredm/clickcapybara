@@ -298,3 +298,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 .db-faq summary::after{content:'+';font:400 28px 'JetBrains Mono',ui-monospace,monospace;color:#fcba01;flex:none}
 .db-faq[open] summary::after{content:'−'}
 .db-faq p{margin:0 0 24px;max-width:720px;font-size:17px;line-height:1.6;color:#d6d1c4}
+
+/* cookie banner without the provider's logo and credit link (MIT-licensed; the notice in the vendored file stays) */
+#silktide-banner a.silktide-logo{display:none !important}
+#silktide-modal footer a[href*="silktide.com"]{display:none !important}
