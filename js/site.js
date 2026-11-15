@@ -37,6 +37,15 @@
             tabs.forEach(function (t) { t.setAttribute('aria-pressed', t.dataset.tab === key ? 'true' : 'false'); });
             panels.forEach(function (p) { p.hidden = p.dataset.panel !== key; });
             if (fromUser && group.hasAttribute('data-tabs-hash') && history.replaceState) history.replaceState(null, '', '#' + key);
+            // After a tap, bring the chosen panel into view when the list is stacked above it (phones) and it sits mostly below the fold
+            if (fromUser) {
+                var panel = panels.filter(function (p) { return p.dataset.panel === key; })[0];
+                var stacked = panel && panel.getBoundingClientRect().top >= tabs[tabs.length - 1].getBoundingClientRect().bottom - 1;
+                if (stacked && panel.getBoundingClientRect().top > window.innerHeight * 0.55) {
+                    var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                    panel.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' });
+                }
+            }
         }
         tabs.forEach(function (t) { t.addEventListener('click', function () { select(t.dataset.tab, true); }); });
         if (group.hasAttribute('data-tabs-hash')) {
