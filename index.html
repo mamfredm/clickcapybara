@@ -327,6 +327,9 @@ a.p-dark:hover{color:#12110d}
 
 /* tab panels: leave room above when scrolled to after a tap */
 [data-panel]{scroll-margin-top:16px}
+
+/* cookie banner waits until the start animation has finished (class set by the inline script on the home page) */
+html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !important}
 </style>
 
     <!-- Cookie banner -->
@@ -374,7 +377,7 @@ a.p-dark:hover{color:#12110d}
 </head>
 <body>
 <div id="cc-c" style="position: relative; overflow: hidden; background: #12110d; color: #f4f0e6; font-family: 'Space Grotesk', system-ui, sans-serif">
-<script>try{if(!sessionStorage.getItem('ccIntro')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.getElementById('cc-c').classList.add('play');sessionStorage.setItem('ccIntro','1')}}catch(e){}</script>
+<script>try{if(!sessionStorage.getItem('ccIntro')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.getElementById('cc-c').classList.add('play');sessionStorage.setItem('ccIntro','1');var h=document.documentElement;h.classList.add('cc-intro');setTimeout(function(){h.classList.remove('cc-intro')},5600)}}catch(e){}</script>
 
 <div class="c-load" aria-hidden="true" style="position: absolute; inset: 0; z-index: 5; background: #12110d; display: flex; flex-direction: column; align-items: center; gap: 24px; padding: 280px 24px 0">
 <div style="display: flex; align-items: center; gap: 10px; border: 2px solid #f4f0e6; border-radius: 999px; padding: clamp(12px, 2vw, 18px) clamp(16px, 3vw, 28px); max-width: 100%; box-sizing: border-box; font: 500 clamp(11px, 3.3vw, 20px) 'JetBrains Mono', ui-monospace, monospace">
