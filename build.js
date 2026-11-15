@@ -139,6 +139,20 @@ const PAGES = [
     jsonld: null,
   },
   {
+    tpl: 'google-ads-kosten.html', slug: 'google-ads-kosten.html', formSource: 'Google Ads Kosten', v2: true,
+    seo: {
+      de: {
+        title: 'Google Ads Kosten berechnen: Was darf ein Klick kosten? | Click-Capybara',
+        desc: 'Was kostet Google Ads? Deckungsbeitragsrechner: maximaler Klickpreis, Break-even-ROAS und was bei deinem Budget übrig bleibt. Kostenlos, ohne Anmeldung.',
+      },
+      en: {
+        title: 'Google Ads Cost Calculator: What Can a Click Cost? | Click-Capybara',
+        desc: 'How much does Google Ads cost? Contribution-margin calculator: maximum click price, break-even ROAS and what is left at your budget. Free, no sign-up.',
+      },
+    },
+    jsonld: null, // FAQ schema is generated from the page's own questions
+  },
+  {
     tpl: 'free-script.html', slug: 'free-script.html', formSource: 'Tools & Scripts', v2: true,
     seo: {
       de: {
@@ -318,6 +332,14 @@ function render(page, lang) {
     $('head').append(`\n    <script type="application/ld+json">\n    ${JSON.stringify(page.jsonld(lang))}\n    </script>\n`);
   }
 
+  // 3b. FAQ schema from the questions on the page (already in the page's language)
+  const faqs = $('details.db-faq').map((_, d) => ({
+    '@type': 'Question',
+    name: $(d).find('summary').text().trim(),
+    acceptedAnswer: { '@type': 'Answer', text: $(d).find('p').text().trim() },
+  })).get();
+  if (faqs.length) $('head').append(`\n    <script type="application/ld+json">\n    ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs })}\n    </script>\n`);
+
   // 4. language toggle links + active state
   const deUrl = urlFor(page.slug, 'de');
   const enUrl = enFileExists(page) ? urlFor(page.slug, 'en') : BASE + '/en/';
@@ -339,7 +361,7 @@ function render(page, lang) {
     $('a[href]').each((_, a) => {
       const el = $(a);
       const href = el.attr('href');
-      const m = href && href.match(/^\/((?:google-ads|local-hero-kit|automatisierung|preise|free-script|privacy|impressum|nonogrid)\.html)?(#.*)?$/);
+      const m = href && href.match(/^\/((?:google-ads-kosten|google-ads|local-hero-kit|automatisierung|preise|free-script|privacy|impressum|nonogrid)\.html)?(#.*)?$/);
       if (m) el.attr('href', '/en/' + (m[1] || '') + (m[2] || ''));
     });
   }

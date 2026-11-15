@@ -1,0 +1,635 @@
+<!DOCTYPE html><html lang="de"><head>
+    <!-- Consent default (before GTM) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+
+    <!-- Restore prior consent choices -->
+    <script>
+        (function() {
+            if (localStorage.getItem('silktideCookieChoice_analytics') === 'true') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
+            }
+            if (localStorage.getItem('silktideCookieChoice_advertising') === 'true') {
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+            }
+        })();
+    </script>
+
+    <!-- GTM -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WK2WCGQH');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ads Kosten berechnen: Was darf ein Klick kosten? | Click-Capybara</title>
+    <meta name="description" content="Was kostet Google Ads? Deckungsbeitragsrechner: maximaler Klickpreis, Break-even-ROAS und was bei deinem Budget übrig bleibt. Kostenlos, ohne Anmeldung.">
+    <link rel="canonical" href="https://www.click-capybara.com/google-ads-kosten.html">
+    <link rel="alternate" hreflang="de" href="https://www.click-capybara.com/google-ads-kosten.html">
+    <link rel="alternate" hreflang="en" href="https://www.click-capybara.com/en/google-ads-kosten.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.click-capybara.com/google-ads-kosten.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Click-Capybara">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:title" content="Google Ads Kosten berechnen: Was darf ein Klick kosten? | Click-Capybara">
+    <meta property="og:description" content="Was kostet Google Ads? Deckungsbeitragsrechner: maximaler Klickpreis, Break-even-ROAS und was bei deinem Budget übrig bleibt. Kostenlos, ohne Anmeldung.">
+    <meta property="og:url" content="https://www.click-capybara.com/google-ads-kosten.html">
+    <meta property="og:image" content="https://www.click-capybara.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Google Ads Kosten berechnen: Was darf ein Klick kosten? | Click-Capybara">
+    <meta name="twitter:description" content="Was kostet Google Ads? Deckungsbeitragsrechner: maximaler Klickpreis, Break-even-ROAS und was bei deinem Budget übrig bleibt. Kostenlos, ohne Anmeldung.">
+    <meta name="twitter:image" content="https://www.click-capybara.com/assets/og-image.png">
+    <meta name="theme-color" content="#12110d">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_capybara_outine_bold.ico">
+
+    <!-- Self-hosted fonts (no request to Google) -->
+    <link rel="preload" as="font" type="font/woff" href="/vendor/fonts/space-grotesk-latin.woff" crossorigin="">
+    <link rel="preload" as="font" type="font/woff" href="/vendor/fonts/jetbrains-mono-latin.woff" crossorigin="">
+
+    <!-- Site styles (inlined by build.js) -->
+    <style>/* Click-Capybara – site styles (redesign "Bühne").
+   Layout of the page sections lives as inline styles in _templates/*.html (taken 1:1 from the approved design);
+   this file holds fonts, shared components, states, animations and small-screen rules. */
+@font-face{font-family:'Space Grotesk';src:url('/vendor/fonts/space-grotesk-latin.woff') format('woff');font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:'JetBrains Mono';src:url('/vendor/fonts/jetbrains-mono-latin.woff') format('woff');font-weight:400 500;font-style:normal;font-display:swap}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#12110d;color:#f4f0e6;font-family:'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%}
+[hidden]{display:none !important}
+:focus-visible{outline:3px solid #fcba01;outline-offset:3px}
+.contact :focus-visible{outline-color:#12110d}
+.contact-card :focus-visible{outline-color:#fcba01}
+.skip-link{position:absolute;left:-9999px;top:0;background:#fcba01;color:#12110d;padding:12px 16px;font-weight:700;z-index:100}
+.skip-link:focus{left:8px;top:8px}
+.page{background:#12110d;color:#f4f0e6;overflow:hidden}
+
+/* ---------- design (from the approved drafts) ---------- */
+body{margin:0}
+a{color:#f4f0e6}a:hover{color:#fcba01}
+.c-logo{background:none;border:0;padding:0;cursor:pointer;display:flex;align-items:center;gap:10px;font:700 20px 'Space Grotesk',system-ui,sans-serif;color:#f4f0e6;min-height:44px}
+.c-caret{display:inline-block;width:10px;height:20px;background:#fcba01}
+.c-card{transition:transform .25s cubic-bezier(.2,.8,.2,1), border-color .25s}
+.c-card:hover{transform:translateY(-6px);border-color:#fcba01;color:#f4f0e6}
+.c-card .c-num{transition:color .25s}
+.c-card:hover .c-num{color:#fcba01}
+.c-card .c-go{transition:transform .25s}
+.c-card:hover .c-go{transform:translateX(6px)}
+.c-video{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.c-video:hover{transform:rotate(0deg)}
+.c-cta{transition:transform .15s}
+.c-cta:hover{transform:scale(1.04);color:#12110d}
+.c-mark{background:linear-gradient(#fcba01,#fcba01) no-repeat 0 50% / 100% .94em;color:#12110d;padding:0 .12em}
+.c-cta-dark{transition:transform .15s}
+.c-cta-dark:hover{transform:scale(1.04);color:#f4f0e6}
+a.c-dark:hover{color:#12110d}
+.x-nav{display:flex;flex-wrap:wrap;align-items:center;gap:24px;font-size:15px;font-weight:500}
+.x-burger{display:none;background:none;border:2px solid #f4f0e6;border-radius:12px;width:48px;height:48px;align-items:center;justify-content:center;cursor:pointer;color:#f4f0e6;padding:0}
+@media (max-width:1240px){
+.x-burger{display:flex}
+.site-header .x-nav{display:none;flex-direction:column;align-items:stretch;gap:0;width:100%;order:3;margin-left:0;padding:4px 0 20px;font-size:20px}
+.site-header .x-nav.open{display:flex}
+.site-header .x-nav a.nl{padding:16px 0 !important;border-bottom:1px solid #3a352b}
+.site-header .x-nav a.nl[aria-current="page"]{border-bottom-color:#3a352b;color:#fcba01}
+.x-nav .btn-cta{margin-top:24px;text-align:center;padding:16px 20px;font-size:17px}
+.site-header .hdr-tools{order:2;margin-left:auto;gap:10px}
+.lang{font-size:14px}
+.lang a{padding:12px 6px}
+}
+@media (max-width:600px){
+section,header,footer{padding-left:20px !important;padding-right:20px !important}
+main > section:first-of-type{padding-top:20px !important}
+}
+
+.c-load{visibility:hidden}
+.c-type{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;width:30ch}
+@media (prefers-reduced-motion: no-preference){
+.c-caret{animation:cBlink 1s steps(1) infinite}
+.c-track{animation:cMarquee 32s linear infinite}
+.play .c-load{animation:cLoad 5.4s cubic-bezier(.7,0,.2,1) both}
+.play .c-rise{animation:cRise .55s cubic-bezier(.7,0,.2,1) 2.9s both}
+.play .c-word{animation:cUp .5s cubic-bezier(.2,.8,.2,1) 3.35s both, cPress .3s ease 4.3s}
+.play .c-cur{animation:cCur .5s cubic-bezier(.3,.8,.3,1) 3.8s both}
+.play .c-type{animation:cType 1.5s steps(30) .3s both}
+.play .c-result{animation:cUp .4s ease 2s both}
+.play .c-up{animation:cUp .8s cubic-bezier(.2,.8,.2,1) both}
+.play .c-mark{animation:cMark .6s cubic-bezier(.6,0,.2,1) 6s both}
+}
+@keyframes cBlink{50%{opacity:0} }
+@keyframes cMarquee{to{transform:translateX(-50%)} }
+@keyframes cLoad{0%,87%{visibility:visible;transform:translateY(0)} 100%{visibility:hidden;transform:translateY(-100%)} }
+@keyframes cRise{from{transform:translateY(100%)} to{transform:translateY(0)} }
+@keyframes cPress{50%{transform:scale(.93)} }
+@keyframes cCur{from{opacity:0;transform:translate(160px,150px)} to{opacity:1;transform:translate(0,0)} }
+@keyframes cType{from{width:0} to{width:30ch} }
+@keyframes cUp{from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+@keyframes cMark{from{background-size:0% 100%;color:#f4f0e6} to{background-size:100% 100%;color:#12110d} }
+.l5-caret{display:inline-block;width:10px;height:20px;background:#fcba01}
+.l5-tab{cursor:pointer;border:0;text-align:left;padding:18px 24px;border-radius:18px;display:flex;flex-direction:column;gap:8px;min-height:44px;transition:background .2s,color .2s,transform .2s}
+.l5-tab:hover{transform:translateX(6px)}
+.l5-cta{transition:transform .15s}
+.l5-cta:hover{transform:scale(1.04);color:#12110d}
+@media (prefers-reduced-motion: no-preference){
+.l5-caret{animation:l5Blink 1s steps(1) infinite}
+.l5-panel{animation:l5In .35s cubic-bezier(.2,.8,.2,1)}
+}
+@keyframes l5Blink{50%{opacity:0} }
+@keyframes l5In{from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none} }
+.p-caret{display:inline-block;width:10px;height:20px;background:#fcba01}
+.p-cta{transition:transform .15s}
+.p-cta:hover{transform:scale(1.04);color:#12110d}
+.p-cta-dark{transition:transform .15s}
+.p-cta-dark:hover{transform:scale(1.04);color:#f4f0e6}
+a.p-dark:hover{color:#12110d}
+.p-mark{background:linear-gradient(#fcba01,#fcba01) no-repeat 0 50% / 100% .94em;color:#12110d;padding:0 .12em}
+.p-row{transition:background .2s}
+.p-row:hover{background:#1a1812}
+.p-pk{flex:1;cursor:pointer;border:0;border-radius:14px;min-height:48px;font:700 20px 'Space Grotesk',system-ui,sans-serif;transition:background .2s,color .2s}
+.p-pk:disabled{cursor:not-allowed}
+@media (prefers-reduced-motion: no-preference){
+.p-caret{animation:pBlink 1s steps(1) infinite}
+.p-track{animation:pMarquee 32s linear infinite}
+.p-up{animation:pUp .8s cubic-bezier(.2,.8,.2,1) both}
+.p-mark{animation:pMark .6s cubic-bezier(.6,0,.2,1) .9s both}
+}
+@keyframes pBlink{50%{opacity:0} }
+@keyframes pMarquee{to{transform:translateX(-50%)} }
+@keyframes pUp{from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+@keyframes pMark{from{background-size:0% .94em;color:#f4f0e6} to{background-size:100% .94em;color:#12110d} }
+.pr-tab{cursor:pointer;border:0;border-radius:999px;padding:12px 22px;min-height:44px;font:700 17px 'Space Grotesk',system-ui,sans-serif;transition:background .2s,color .2s}
+@media (prefers-reduced-motion: no-preference){ .pr-panel{animation:pUp .35s cubic-bezier(.2,.8,.2,1)} }
+
+/* ---------- header / navigation ---------- */
+.site-header{max-width:1200px;margin:0 auto;padding:18px 32px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
+.x-nav{order:2;margin-left:auto}
+.hdr-tools{order:3;display:flex;align-items:center;gap:20px}
+.site-header .nav-cta{display:none}
+.site-logo{display:flex;align-items:center;gap:10px;font:700 20px 'Space Grotesk',system-ui,sans-serif;text-decoration:none;min-height:44px;color:#f4f0e6}
+.site-logo:hover{color:#f4f0e6}
+.site-logo img{display:block}
+.caret{display:inline-block;width:10px;height:20px;background:#fcba01;flex:none}
+@keyframes caretBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@media (prefers-reduced-motion: no-preference){.caret{animation:caretBlink 1s steps(1) infinite}}
+.x-nav a.nl{text-decoration:none;padding:12px 0 8px;border-bottom:2px solid transparent}
+.x-nav a.nl[aria-current="page"]{border-bottom-color:#fcba01}
+.lang{display:inline-flex;align-items:center;font:400 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293;white-space:nowrap}
+.lang a{color:#a8a293;text-decoration:none;padding:12px 2px}
+.lang a.font-bold{color:#f4f0e6;font-weight:500}
+.btn-cta{display:inline-block;background:#fcba01;color:#12110d;padding:12px 20px;border-radius:999px;font:700 15px 'Space Grotesk',system-ui,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .15s}
+.btn-cta:hover{transform:scale(1.04);color:#12110d}
+.btn-block{display:block;width:100%;padding:17px 28px;font-size:17px;min-height:52px}
+.btn-block:hover{transform:scale(1.02)}
+
+/* ---------- tabs / toggles ---------- */
+.l5-tab{background:#1e1c16;color:#f4f0e6}
+.l5-tab[aria-pressed="true"]{background:#fcba01;color:#12110d}
+.pr-tab{background:transparent;color:#f4f0e6}
+.pr-tab[aria-pressed="true"]{background:#fcba01;color:#12110d}
+.p-pk{background:#1e1c16;color:#f4f0e6}
+.p-pk[aria-pressed="true"]{background:#fcba01;color:#12110d}
+.p-pk:disabled{opacity:.35}
+.tab-panel{width:100%;display:flex}
+#ads-calc input[type="range"]{margin:0}
+
+/* ---------- hero video ---------- */
+.vid-sound{position:absolute;right:12px;bottom:12px;background:rgba(18,17,13,.85);color:#f4f0e6;border:1px solid #fcba01;border-radius:999px;padding:10px 16px;min-height:44px;font:500 14px 'Space Grotesk',system-ui,sans-serif;cursor:pointer}
+.vid-sound[aria-pressed="true"]{background:#fcba01;color:#12110d}
+
+/* ---------- intro: covers the viewport, not the whole document ---------- */
+.c-load{position:fixed !important;inset:0;z-index:60 !important;padding:0 24px !important;justify-content:center}
+.c-rise{padding:0 24px !important;align-items:center !important}
+
+/* ---------- contact band ---------- */
+.contact{background:#fcba01;color:#12110d}
+.contact-inner{max-width:1200px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:48px;align-items:start}
+.contact-copy{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.contact h2{margin:0;font:700 clamp(36px,5vw,64px)/1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.035em}
+.contact-lead{margin:0;max-width:460px;font-size:18px;line-height:1.55}
+.contact-checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;font-size:18px;font-weight:500}
+.contact-checks li{display:flex;gap:14px;align-items:flex-start}
+.contact-checks svg{flex:none}
+.contact-direct{display:flex;flex-direction:column;gap:6px;margin-top:8px;font-size:16px}
+.contact-direct a{color:#12110d;font-weight:700;font-size:20px;padding:10px 0}
+.contact-direct a:hover{color:#12110d}
+.contact-note{font-size:15px}
+.contact-card{position:relative;background:#12110d;color:#f4f0e6;border-radius:28px;padding:clamp(24px,4vw,40px);overflow:hidden}
+#contact-form{display:flex;flex-direction:column;gap:18px;transition:opacity .4s}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font:500 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.field input,.field select,.field textarea{width:100%;box-sizing:border-box;background:#1e1c16;border:1px solid #4a4538;color:#f4f0e6;border-radius:12px;padding:14px 16px;font:400 16px 'Space Grotesk',system-ui,sans-serif}
+.field select{min-height:50px}
+.field textarea{resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:#8f897b}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#fcba01;outline:none}
+.form-note{margin:0;font-size:14px;line-height:1.5;color:#a8a293}
+.form-note a{color:#a8a293}
+#form-success{position:absolute;inset:0;background:#12110d;border-radius:28px;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:16px;align-items:flex-start;justify-content:center;opacity:0;pointer-events:none;transition:opacity .5s}
+#form-success h3{margin:0;font:700 34px/1.1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em}
+#form-success p{margin:0;font-size:17px;line-height:1.55;color:#d6d1c4}
+#form-success a{color:#fcba01;font-weight:500;padding:12px 0}
+.cc-form-error{color:#ff9d8a !important}
+
+/* ---------- reviews (switched off in index.html until real reviews exist) ---------- */
+.reviews{max-width:1200px;margin:0 auto;padding:0 32px 96px}
+.reviews-inner{border-top:1px solid #4a4538;border-bottom:1px solid #4a4538;padding:32px 0;display:flex;flex-wrap:wrap;gap:28px 56px;align-items:flex-start}
+.reviews-head{flex:0 1 230px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.5;color:#d6d1c4}
+.reviews-head h2{margin:0;font:500 14px 'JetBrains Mono',ui-monospace,monospace;color:#fcba01}
+.reviews blockquote{flex:1 1 300px;margin:0;display:flex;flex-direction:column;gap:12px}
+.reviews blockquote p{margin:0;font-size:18px;line-height:1.5}
+.reviews blockquote footer{font:400 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+
+/* ---------- footer ---------- */
+.site-footer{max-width:1200px;margin:0 auto;padding:32px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:14px;color:#a8a293}
+.site-footer-brand{display:flex;align-items:center;gap:10px}
+.site-footer-links{display:flex;flex-wrap:wrap;gap:8px 24px}
+.site-footer a{color:#a8a293;padding:6px 0}
+.site-footer a:hover{color:#fcba01}
+
+/* ---------- legal pages (Impressum, Datenschutz) ---------- */
+.legal{max-width:820px;margin:0 auto;padding:48px 32px 96px;font-size:17px;line-height:1.65;color:#d6d1c4}
+.legal section,.legal .container,.legal div{padding-left:0 !important;padding-right:0 !important}
+.legal h1{margin:0 0 8px;font:700 clamp(40px,6vw,72px)/1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.04em;color:#f4f0e6}
+.legal h2{margin:40px 0 12px;font:700 24px/1.2 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em;color:#f4f0e6}
+.legal h3{margin:28px 0 8px;font:700 19px/1.3 'Space Grotesk',system-ui,sans-serif;color:#f4f0e6}
+.legal p{margin:0 0 14px}
+.legal ul,.legal ol{margin:0 0 14px;padding-left:22px}
+.legal li{margin-bottom:6px}
+.legal a{color:#fcba01;overflow-wrap:anywhere}
+.legal strong{color:#f4f0e6}
+.legal table{border-collapse:collapse;width:100%;margin:0 0 14px}
+.legal th,.legal td{border-bottom:1px solid #4a4538;padding:10px 12px 10px 0;text-align:left;vertical-align:top}
+
+/* ---------- tools & scripts page ---------- */
+.ts-k{font:500 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.ts-s{font:400 12px/1.4 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.ts-card{display:flex;flex-direction:column;gap:16px;background:#1a1812;border:1px solid #4a4538;border-radius:20px;padding:24px;min-width:0}
+.ts-scroll{overflow-x:auto}
+.ts-table{width:100%;border-collapse:collapse;font:400 13px 'JetBrains Mono',ui-monospace,monospace;white-space:nowrap}
+.ts-table th{text-align:left;color:#a8a293;font-weight:500;padding:8px 12px 8px 0;border-bottom:1px solid #4a4538}
+.ts-table td{padding:10px 12px 10px 0;border-bottom:1px solid #2e2a21}
+.ts-table .ok{color:#7ddc9f}.ts-table .warn{color:#fcba01}.ts-table .err{color:#e8824a}
+.ts-calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:32px 48px;border:2px solid #fcba01;border-radius:24px;padding:clamp(20px,3vw,36px)}
+.ts-calc-col{display:flex;flex-direction:column;gap:18px;min-width:0}
+.ts-calc-wide{grid-column:1/-1;display:flex;flex-direction:column;gap:14px;border-top:1px solid #4a4538;padding-top:24px;min-width:0}
+.ts-slider{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:baseline}
+.ts-slider input{grid-column:1/-1;width:100%;accent-color:#fcba01;height:28px;margin:0}
+.ts-out{font:700 22px 'Space Grotesk',system-ui,sans-serif}
+.ts-note{margin:4px 0 0;font-size:15px;line-height:1.55;color:#d6d1c4}
+.ts-note strong{color:#f4f0e6}
+.ts-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ts-metrics-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ts-metric{display:flex;flex-direction:column;gap:6px;background:#1a1812;border-radius:14px;padding:14px 16px;min-width:0}
+.calc-metric-val{margin:0;font:700 24px/1.1 'Space Grotesk',system-ui,sans-serif;overflow-wrap:anywhere}
+.calc-ok{color:#7ddc9f}.calc-warn{color:#fcba01}.calc-err{color:#e8824a}
+.ts-legend{display:flex;flex-wrap:wrap;gap:8px 18px;font:400 12px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.ts-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
+.ts-code{margin:0;padding:20px;overflow-x:auto;font:400 13px/1.7 'JetBrains Mono',ui-monospace,monospace;color:#d6d1c4}
+.ts-code .c{color:#8a8473}.ts-code .k{color:#fcba01}.ts-code .f{color:#7ddc9f}.ts-code .s{color:#e8c98a}
+@media (max-width:480px){.ts-metrics-3{grid-template-columns:1fr}.calc-metric-val{font-size:21px}}
+
+/* ---------- small screens: header (kept last so it wins over the base rules) ---------- */
+@media (max-width:1240px){
+.site-header .hdr-cta{display:none}
+.site-header .nav-cta{display:block}
+.site-header{gap:8px 12px}
+.site-header .lang{font-size:14px}
+.site-header .lang a{padding:12px 6px}
+}
+@media (max-width:600px){
+.site-header{padding-top:12px;padding-bottom:12px}
+.site-logo{font-size:clamp(16px,4.7vw,20px);gap:8px}
+.site-logo img{width:32px;height:32px}
+.x-burger{width:44px;height:44px}
+}
+@media (max-width:400px){
+.site-header{padding-left:16px !important;padding-right:16px !important}
+.site-header .hdr-tools{gap:6px}
+.site-header .lang a{padding:12px 3px}
+.site-logo .caret{width:8px}
+}
+@media (max-width:340px){
+.site-logo{font-size:15px}
+.site-logo .caret{display:none}
+}
+
+/* tab panels: leave room above when scrolled to after a tap */
+[data-panel]{scroll-margin-top:16px}
+
+/* cookie banner waits until the start animation has finished (class set by the inline script on the home page) */
+html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !important}
+
+/* ---------- google ads cost page: contribution-margin calculator ---------- */
+.db-calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:36px 56px;border:3px solid #fcba01;border-radius:28px;padding:clamp(20px,3.2vw,40px)}
+.db-col{display:flex;flex-direction:column;gap:16px;min-width:0}
+.db-mode{display:flex;gap:8px}
+.db-mode .p-pk{flex:1}
+.db-field{display:flex;flex-direction:column;gap:6px}
+.db-label{font-size:16px;color:#d6d1c4}
+.db-input{display:flex;align-items:center;background:#1a1812;border:1px solid #4a4538;border-radius:14px;padding:0 16px}
+.db-input:focus-within{border-color:#fcba01}
+.db-input input{flex:1;min-width:0;background:none;border:0;outline:0;color:#f4f0e6;font:700 24px 'Space Grotesk',system-ui,sans-serif;padding:12px 0;min-height:52px;-moz-appearance:textfield;appearance:textfield}
+.db-input input::-webkit-outer-spin-button,.db-input input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.db-unit{font:500 16px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293;padding-left:10px}
+.db-check{display:flex;gap:12px;align-items:center;min-height:44px;font-size:16px;cursor:pointer}
+.db-check input{width:22px;height:22px;accent-color:#fcba01;flex:none}
+.db-verdict{margin:0;font:700 clamp(20px,2.2vw,26px)/1.25 'Space Grotesk',system-ui,sans-serif;letter-spacing:-0.01em;min-height:2.5em}
+.db-rows{display:flex;flex-direction:column}
+.db-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 0;border-top:1px solid #4a4538}
+.db-row[hidden]{display:none}
+.db-rl{display:flex;flex-direction:column;gap:3px;font-size:16px;color:#d6d1c4}
+.db-rv{font:500 18px 'Space Grotesk',system-ui,sans-serif;text-align:right;white-space:nowrap}
+.db-row-big{border-top:2px solid #fcba01}
+.db-row-big .db-rv{font-weight:700;font-size:26px}
+.db-ok{color:#7ddc9f}.db-warn{color:#fcba01}.db-err{color:#e8824a}
+.db-faqs{border-top:2px solid #f4f0e6}
+.db-faq{border-bottom:1px solid #4a4538}
+.db-faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:22px 0;font:700 clamp(19px,2.2vw,24px)/1.25 'Space Grotesk',system-ui,sans-serif}
+.db-faq summary::-webkit-details-marker{display:none}
+.db-faq summary::after{content:'+';font:400 28px 'JetBrains Mono',ui-monospace,monospace;color:#fcba01;flex:none}
+.db-faq[open] summary::after{content:'−'}
+.db-faq p{margin:0 0 24px;max-width:720px;font-size:17px;line-height:1.6;color:#d6d1c4}
+</style>
+
+    <!-- Cookie banner -->
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="/vendor/silktide/silktide-consent-manager.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/vendor/silktide/silktide-consent-manager.css"></noscript>
+    <script src="/vendor/silktide/silktide-consent-manager.js" defer=""></script>
+    <script>window.addEventListener('load', function () {
+
+    silktideCookieBannerManager.updateCookieBannerConfig({
+        background: { showBackground: true },
+        cookieIcon: { position: "bottomLeft" },
+        cookieTypes: [
+            { id: "necessary", name: "Notwendig",
+              description: "<p>Diese Cookies sind für die Funktion der Website nötig und lassen sich nicht abschalten.</p>",
+              required: true, onAccept: function() {} },
+            { id: "analytics", name: "Statistik",
+              description: "<p>Diese Cookies helfen mir zu verstehen, wie Besucher die Website nutzen.</p>",
+              required: false,
+              onAccept: function() { gtag('consent','update',{analytics_storage:'granted'}); dataLayer.push({event:'consent_accepted_analytics'}); },
+              onReject: function() { gtag('consent','update',{analytics_storage:'denied'}); } },
+            { id: "advertising", name: "Werbung",
+              description: "<p>Diese Cookies werden genutzt, um Anzeigen zu messen und zu verbessern.</p>",
+              required: false,
+              onAccept: function() { gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'}); dataLayer.push({event:'consent_accepted_advertising'}); },
+              onReject: function() { gtag('consent','update',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'}); } }
+        ],
+        text: {
+            banner: {
+                description: "<p>Ich nutze Cookies, um die Website zu verbessern und Zugriffe auszuwerten. <a href=\"/privacy.html\">Datenschutz.</a></p>",
+                acceptAllButtonText: "Alle akzeptieren",
+                rejectNonEssentialButtonText: "Nur notwendige",
+                preferencesButtonText: "Einstellungen"
+            },
+            preferences: { title: "Cookie-Einstellungen" }
+        },
+        position: { banner: "center" }
+    });
+    
+});</script>
+
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Gibt es bei Google Ads ein Mindestbudget?","acceptedAnswer":{"@type":"Answer","text":"Nein. Du legst ein Tagesbudget fest und kannst es jederzeit ändern oder pausieren. Ob ein Budget reicht, hängt davon ab, wie viele Klicks du dir zu deinem Klickpreis leisten kannst."}},{"@type":"Question","name":"Zahle ich pro Klick oder pro Einblendung?","acceptedAnswer":{"@type":"Answer","text":"In Suchkampagnen zahlst du in der Regel pro Klick. Dass deine Anzeige erscheint, kostet allein noch nichts."}},{"@type":"Question","name":"Was kostet die Betreuung zusätzlich?","acceptedAnswer":{"@type":"Answer","text":"Paket S mit 5 Stunden kostet 395 € im Monat, Paket M mit 10 Stunden 790 €, Paket L ab 950 €. Das sind Angebotspreise bis 01.03.2027. Dein Werbebudget zahlst du direkt an Google."}},{"@type":"Question","name":"Was ist ein guter ROAS?","acceptedAnswer":{"@type":"Answer","text":"Einer, der über deinem Break-even-ROAS liegt. Ein Shop mit hoher Marge verdient schon bei 200 Prozent, einer mit kleiner Marge braucht 600 Prozent und mehr. Deshalb rechnet dieser Rechner mit deinem Deckungsbeitrag."}}]}
+    </script>
+</head>
+<body>
+<div style="background: #12110d; color: #f4f0e6; font-family: 'Space Grotesk', system-ui, sans-serif; overflow: hidden">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK2WCGQH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+    <a class="site-logo" href="/" aria-label="Click-Capybara, zur Startseite">
+        <img src="/assets/clickcapybara_outline_bold.svg" width="36" height="36" alt="">
+        <span>Click-Capybara</span><span class="caret" aria-hidden="true"></span>
+    </a>
+    <div class="hdr-tools">
+        <span class="lang"><a id="lang-de" href="https://www.click-capybara.com/google-ads-kosten.html" hreflang="de" class="font-bold text-ink-900">DE</a><span aria-hidden="true">/</span><a id="lang-en" href="https://www.click-capybara.com/en/google-ads-kosten.html" hreflang="en" class="font-medium text-gray-400">EN</a></span>
+        <a class="btn-cta hdr-cta" href="#contact">Kostenlos einschätzen lassen</a>
+        <button class="x-burger" id="nav-toggle" type="button" aria-label="Menü öffnen oder schließen" aria-expanded="false" aria-controls="site-nav">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+        </button>
+    </div>
+    <nav id="site-nav" class="x-nav" aria-label="Hauptnavigation">
+        <a class="nl" href="/google-ads.html">Google Ads</a>
+        <a class="nl" href="/local-hero-kit.html">Local Hero Kit</a>
+        <a class="nl" href="/automatisierung.html">Automatisierung</a>
+        <a class="nl" href="/free-script.html">Tools &amp; Scripts</a>
+        <a class="nl" href="/preise.html">Preise</a>
+        <a class="btn-cta nav-cta" href="#contact">Kostenlos einschätzen lassen</a>
+    </nav>
+</header>
+
+<main id="main">
+<section style="max-width: 1200px; margin: 0 auto; padding: 64px 32px 56px">
+<div style="display: flex; flex-direction: column; gap: 24px; align-items: flex-start; max-width: 860px">
+<h1 class="p-up" style="margin: 0; display: flex; flex-direction: column; gap: 24px">
+<span style="font: 400 15px/1.5 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Google Ads Kosten berechnen</span>
+<span style="font: 700 clamp(44px, 6vw, 88px)/0.98 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.04em">Was darf ein Klick <span class="p-mark">kosten?</span></span>
+</h1>
+<p class="p-up" style="animation-delay: .15s; margin: 0; max-width: 620px; font-size: 19px; line-height: 1.55; color: #d6d1c4">Google Ads kostet so viel, wie du pro Klick zahlst. Ob sich das rechnet, entscheidet dein Deckungsbeitrag. Trag deine Zahlen ein und sieh, ab welchem Klickpreis du draufzahlst.</p>
+</div>
+</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
+<div id="db-calc" class="db-calc">
+<div class="db-col">
+<span class="ts-k" style="color: #fcba01">Deine Angaben</span>
+<div role="group" aria-label="Geschäftsmodell wählen" class="db-mode">
+<button class="p-pk" type="button" data-db-mode="shop" aria-pressed="true">Shop</button>
+<button class="p-pk" type="button" data-db-mode="lead" aria-pressed="false">Dienstleistung</button>
+</div>
+<label class="db-field"><span class="db-label">Auftragswert, netto</span><span class="db-input"><input id="db-price" type="number" inputmode="decimal" min="0" step="any" value="120"><span class="db-unit">€</span></span></label>
+<label class="db-field"><span class="db-label">Variable Kosten pro Auftrag</span><span class="db-input"><input id="db-var" type="number" inputmode="decimal" min="0" step="any" value="70"><span class="db-unit">€</span></span><span class="ts-s">Ware, Material, Versand, Zahlungsgebühren</span></label>
+<label class="db-field"><span class="db-label">Conversion-Rate</span><span class="db-input"><input id="db-cr" type="number" inputmode="decimal" min="0" step="any" value="2"><span class="db-unit">%</span></span></label>
+<label class="db-field" data-db-only="lead" hidden=""><span class="db-label">Abschlussquote</span><span class="db-input"><input id="db-close" type="number" inputmode="decimal" min="0" step="any" value="30"><span class="db-unit">%</span></span><span class="ts-s">Wie viele Anfragen werden zu Aufträgen?</span></label>
+<label class="db-field"><span class="db-label">Durchschnittlicher Klickpreis</span><span class="db-input"><input id="db-cpc" type="number" inputmode="decimal" min="0" step="any" value="0.80"><span class="db-unit">€</span></span><span class="ts-s">Der Wert aus deinem Account</span></label>
+<label class="db-field"><span class="db-label">Werbebudget im Monat</span><span class="db-input"><input id="db-budget" type="number" inputmode="decimal" min="0" step="50" value="1000"><span class="db-unit">€</span></span></label>
+<label class="db-check"><input type="checkbox" id="db-fee"><span>Betreuung durch mich einrechnen</span></label>
+<span class="ts-s">Die Startwerte sind Beispiele. Ersetze sie durch deine eigenen Zahlen.</span>
+</div>
+<div class="db-col db-result">
+<span class="ts-k" style="color: #fcba01">Deine Rechnung</span>
+<p class="db-verdict" data-db="verdict" aria-live="polite"></p>
+<div class="db-rows">
+<div class="db-row"><span class="db-rl">Deckungsbeitrag pro Auftrag</span><span class="db-rv" data-db="db"></span></div>
+<div class="db-row"><span class="db-rl">Maximale Werbekosten pro Auftrag<span class="ts-s">Bis hierhin zahlst du nicht drauf</span></span><span class="db-rv" data-db="maxCpa"></span></div>
+<div class="db-row db-row-big"><span class="db-rl">Maximaler Klickpreis</span><span class="db-rv" data-db="maxCpc"></span></div>
+<div class="db-row"><span class="db-rl">Break-even-ROAS<span class="ts-s">Umsatz je Euro Werbung, ab dem es sich trägt</span></span><span class="db-rv" data-db="roas"></span></div>
+</div>
+<span class="ts-k" style="color: #fcba01; margin-top: 10px">Bei deinem Budget</span>
+<div class="db-rows">
+<div class="db-row"><span class="db-rl">Klicks im Monat</span><span class="db-rv" data-db="clicks"></span></div>
+<div class="db-row"><span class="db-rl">Aufträge im Monat</span><span class="db-rv" data-db="orders"></span></div>
+<div class="db-row"><span class="db-rl">Werbekosten pro Auftrag</span><span class="db-rv" data-db="cpa"></span></div>
+<div class="db-row"><span class="db-rl">Umsatz</span><span class="db-rv" data-db="revenue"></span></div>
+<div class="db-row"><span class="db-rl">Deckungsbeitrag gesamt</span><span class="db-rv" data-db="dbTotal"></span></div>
+<div class="db-row"><span class="db-rl">Werbebudget, direkt an Google</span><span class="db-rv" data-db="adCost"></span></div>
+<div class="db-row" data-db-feerow="" hidden=""><span class="db-rl"><span data-db="feeLabel"></span></span><span class="db-rv" data-db="feeCost"></span></div>
+<div class="db-row db-row-big"><span class="db-rl">Bleibt im Monat übrig</span><span class="db-rv" data-db="profit"></span></div>
+</div>
+<a class="p-cta" id="db-cta" href="#contact" style="display: inline-block; align-self: flex-start; background: #fcba01; color: #12110d; padding: 17px 28px; border-radius: 999px; font-weight: 700; font-size: 17px; text-decoration: none; margin-top: 8px">Mit diesen Zahlen anfragen</a>
+<span class="ts-s">Richtwert, keine Zusage. Deine Zahlen bleiben in deinem Browser, bis du sie abschickst.</span>
+</div>
+</div>
+<p style="margin: 20px 0 0; font: 400 14px/1.5 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Alle Preise zzgl. gesetzlicher Umsatzsteuer, soweit sie anfällt.</p>
+</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">So rechnet der Rechner</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Drei Formeln, mehr steckt nicht dahinter.</p>
+</div><div style="border-top: 2px solid #f4f0e6; display: flex; flex-direction: column">
+<div class="p-row" style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 30px 0; border-bottom: 1px solid #4a4538">
+<span style="flex: 0 0 48px; font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01; padding-top: 8px">01</span>
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font: 700 clamp(22px, 2.6vw, 30px)/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Deckungsbeitrag</h3>
+<span style="font: 400 14px/1.5 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Auftragswert − variable Kosten</span>
+</div>
+<p style="flex: 1 1 340px; margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4; padding-top: 6px">Was von einem Auftrag übrig bleibt, bevor Werbung und Fixkosten bezahlt sind. Mehr als diesen Betrag darf ein Auftrag an Werbung nicht kosten.</p>
+</div>
+<div class="p-row" style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 30px 0; border-bottom: 1px solid #4a4538">
+<span style="flex: 0 0 48px; font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01; padding-top: 8px">02</span>
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font: 700 clamp(22px, 2.6vw, 30px)/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Maximaler Klickpreis</h3>
+<span style="font: 400 14px/1.5 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Deckungsbeitrag × Conversion-Rate</span>
+</div>
+<p style="flex: 1 1 340px; margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4; padding-top: 6px">Führen 2 von 100 Klicks zu einem Auftrag, darf ein Klick höchstens 2 Prozent des Deckungsbeitrags kosten. Bei Dienstleistungen kommt die Abschlussquote dazu.</p>
+</div>
+<div class="p-row" style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 30px 0; border-bottom: 1px solid #4a4538">
+<span style="flex: 0 0 48px; font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01; padding-top: 8px">03</span>
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font: 700 clamp(22px, 2.6vw, 30px)/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Break-even-ROAS</h3>
+<span style="font: 400 14px/1.5 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Auftragswert ÷ Deckungsbeitrag</span>
+</div>
+<p style="flex: 1 1 340px; margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4; padding-top: 6px">So viel Umsatz muss jeder Werbe-Euro bringen, damit du bei null herauskommst. Alles darüber ist Gewinn vor Fixkosten.</p>
+</div>
+</div>
+</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Wovon die Kosten abhängen</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Google gibt kein Mindestbudget vor. Diese drei Größen bestimmen, was du zahlst.</p>
+</div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 32px 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
+<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Der Markt</span>
+<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Klickpreis</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Jede Suche ist eine Auktion. Je mehr Mitbewerber auf denselben Suchbegriff bieten, desto teurer der Klick. Gute Anzeigen und passende Zielseiten senken den Preis.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
+<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Deine Website</span>
+<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Conversion-Rate</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Wie viele Besucher kaufen oder anfragen. Verdoppelt sich die Rate, darf der Klick doppelt so viel kosten. Oft ist das der größte Hebel.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
+<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Dein Geschäft</span>
+<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Deckungsbeitrag</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Was pro Auftrag übrig bleibt. Wer nur auf den Umsatz schaut, bezahlt schnell mehr für einen Auftrag, als er daran verdient.</p>
+</div>
+</div>
+</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Häufige Fragen</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Kurz beantwortet.</p>
+</div><div class="db-faqs">
+<details class="db-faq"><summary>Gibt es bei Google Ads ein Mindestbudget?</summary><p>Nein. Du legst ein Tagesbudget fest und kannst es jederzeit ändern oder pausieren. Ob ein Budget reicht, hängt davon ab, wie viele Klicks du dir zu deinem Klickpreis leisten kannst.</p></details>
+<details class="db-faq"><summary>Zahle ich pro Klick oder pro Einblendung?</summary><p>In Suchkampagnen zahlst du in der Regel pro Klick. Dass deine Anzeige erscheint, kostet allein noch nichts.</p></details>
+<details class="db-faq"><summary>Was kostet die Betreuung zusätzlich?</summary><p>Paket S mit 5 Stunden kostet 395 € im Monat, Paket M mit 10 Stunden 790 €, Paket L ab 950 €. Das sind Angebotspreise bis 01.03.2027. Dein Werbebudget zahlst du direkt an Google.</p></details>
+<details class="db-faq"><summary>Was ist ein guter ROAS?</summary><p>Einer, der über deinem Break-even-ROAS liegt. Ein Shop mit hoher Marge verdient schon bei 200 Prozent, einer mit kleiner Marge braucht 600 Prozent und mehr. Deshalb rechnet dieser Rechner mit deinem Deckungsbeitrag.</p></details>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; margin-top: 28px"><a href="/google-ads.html" style="font-weight: 500; font-size: 16px; color: #fcba01; padding: 12px 0">Google Ads Betreuung ansehen →</a><a href="/preise.html#google-ads" style="font-weight: 500; font-size: 16px; color: #fcba01; padding: 12px 0">Alle Preise ansehen →</a></div>
+</section>
+<section id="contact" class="contact">
+    <div class="contact-inner">
+        <div class="contact-copy">
+            <h2>Rechnet es sich bei dir? Ich schaue drauf. Kostenlos.</h2>
+            <p class="contact-lead">Schick mir deine Zahlen aus dem Rechner. Ich sage dir, wo ich ansetzen würde und ob Google Ads für dich der richtige Kanal ist.</p>
+            <ul class="contact-checks">
+                <li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Antwort von Max persönlich</span></li>
+                <li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Einschätzung statt Verkaufspräsentation</span></li>
+                <li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Antwort innerhalb von 2 Werktagen</span></li>
+            </ul>
+            <div class="contact-direct">
+                <span>Oder direkt schreiben:</span>
+                <a href="mailto:hello@click-capybara.com">hello@click-capybara.com</a>
+                <span class="contact-note">Kein Spam. Keine unerwünschten Anrufe. Nur eine Antwort von mir, Max.</span>
+            </div>
+        </div>
+        <div class="contact-card">
+            <form id="contact-form" data-source="Google Ads Kosten (DE)">
+                <!-- spam trap: real visitors never see or fill this field -->
+                <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+                    <label for="cf-contact_url">Dieses Feld bitte leer lassen</label>
+                    <input type="text" name="contact_url" id="cf-contact_url" tabindex="-1" autocomplete="off">
+                </div>
+                <div class="field"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" required="" placeholder="Dein Name" autocomplete="name"></div>
+                <div class="field"><label for="cf-email">E-Mail</label><input id="cf-email" name="email" type="email" required="" placeholder="du@firma.de" autocomplete="email"></div>
+                <div class="field"><label for="cf-service">Wobei kann ich helfen?</label>
+                    <select id="cf-service" name="service">
+                        <option selected="">Google Ads</option>
+                        <option>Local Hero Kit</option>
+                        <option>Automatisierung</option>
+                        <option>Ehrliche zweite Meinung</option>
+                        <option>Allgemeine Frage</option>
+                    </select>
+                </div>
+                <div class="field"><label for="cf-website">Website / Google Ads Account (optional)</label><input id="cf-website" name="website" type="text" placeholder="www.deineseite.de"></div>
+                <div class="field"><label for="cf-challenge">Sonst noch etwas? (optional)</label><textarea id="cf-challenge" name="challenge" rows="3" placeholder="z. B. zu hohe Kosten pro Anfrage, unklare Reports"></textarea></div>
+                <button type="submit" class="btn-cta btn-block">Nachricht senden</button>
+                <p class="form-note">Kostenlos und unverbindlich. Deine Angaben nutze ich nur, um dir zu antworten. <a href="/privacy.html">Datenschutz</a></p>
+            </form>
+            <div id="form-success" role="status">
+                <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7ddc9f" stroke-width="2.5"><path d="M4 12.5l5 5L20 6.5"></path></svg>
+                <h3>Nachricht erhalten.</h3>
+                <p>Du hörst innerhalb von 2 Werktagen von mir, direkt von Max.</p>
+                <a href="/nonogrid.html">Bis ich antworte: eine Runde Nonogrid spielen →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+<footer class="site-footer">
+    <span class="site-footer-brand"><img src="/assets/clickcapybara_outline_bold.svg" width="22" height="22" alt="">© 2026 Click-Capybara · Google Ads, Websites und Automatisierung aus Düsseldorf</span>
+    <span class="site-footer-links">
+        <a href="/preise.html">Preise</a>
+        <a href="/google-ads-kosten.html">Google Ads Kosten</a>
+        <a href="/free-script.html">Tools &amp; Scripts</a>
+        <a href="/privacy.html">Datenschutz</a>
+        <a href="/impressum.html">Impressum</a>
+    </span>
+</footer>
+<script src="/js/site.js" defer=""></script>
+
+
+</div>
+
+
+    <script>
+    (function () {
+      var target = document.querySelector('#contact');
+      if (!target) return;
+      var loaded = false;
+      function loadForm() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.src = '/js/contact-form.js';
+        document.body.appendChild(s);
+      }
+      new IntersectionObserver(function (entries, obs) {
+        if (entries[0].isIntersecting) { loadForm(); obs.disconnect(); }
+      }, { rootMargin: '400px' }).observe(target);
+    })();
+    </script></body></html>

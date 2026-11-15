@@ -139,4 +139,94 @@
             });
         }
     }
+    // ── Contribution-margin calculator (Google Ads cost page) ──
+    var dbc = $('#db-calc');
+    if (dbc) {
+        var EN2 = document.documentElement.lang === 'en';
+        var loc = EN2 ? 'en-GB' : 'de-DE';
+        var money = function (n) {
+            var d = Math.abs(n) < 100 ? 2 : 0;
+            var s = Math.abs(n).toLocaleString(loc, { minimumFractionDigits: d, maximumFractionDigits: d });
+            return (n < 0 ? '−' : '') + (EN2 ? '€' + s : s + ' €');
+        };
+        var num = function (n, d) { return n.toLocaleString(loc, { minimumFractionDigits: d, maximumFractionDigits: d }); };
+        var val = function (id) { var v = parseFloat(String($('#' + id).value).replace(',', '.')); return isFinite(v) && v > 0 ? v : 0; };
+        var EXAMPLES = { shop: { price: 120, 'var': 70, cr: 2, close: 30, cpc: 0.8, budget: 1000 }, lead: { price: 1500, 'var': 600, cr: 4, close: 30, cpc: 2.5, budget: 1000 } };
+        var FEES = [{ max: 1000, name: EN2 ? 'Package S' : 'Paket S', fee: 395, from: false }, { max: 2000, name: EN2 ? 'Package M' : 'Paket M', fee: 790, from: false }, { max: Infinity, name: EN2 ? 'Package L' : 'Paket L', fee: 950, from: true }];
+        var TXT = EN2 ? {
+            noMargin: 'Your contribution margin is zero or negative. Advertising will not fix that.',
+            noData: 'Enter a conversion rate and a click price to see the result.',
+            good: function (d) { return 'Your click price is ' + d + ' below the maximum. That works out.'; },
+            even: 'Your click price is right at the maximum. You break even.',
+            bad: function (d) { return 'Your click price is ' + d + ' above the maximum. Each order costs more than it brings in.'; },
+            feeBad: 'The ads pay for themselves, but not for the management fee at this budget.',
+            fee: function (n, from) { return 'Management, ' + n + (from ? ' (from)' : ''); },
+            summary: function (o) { return 'From the calculator (' + o.mode + '): order value ' + o.price + ', variable costs ' + o.vc + ', conversion rate ' + o.cr + ' %' + o.close + ', click price ' + o.cpc + ', monthly budget ' + o.budget + '. Max. click price ' + o.maxCpc + ', break-even ROAS ' + o.roas + '.'; },
+            modes: { shop: 'shop', lead: 'service' }, close: function (v) { return ', close rate ' + v + ' %'; }
+        } : {
+            noMargin: 'Dein Deckungsbeitrag ist null oder negativ. Daran ändert Werbung nichts.',
+            noData: 'Trag Conversion-Rate und Klickpreis ein, um das Ergebnis zu sehen.',
+            good: function (d) { return 'Dein Klickpreis liegt ' + d + ' unter dem Maximum. Das rechnet sich.'; },
+            even: 'Dein Klickpreis liegt genau am Maximum. Du kommst bei null heraus.',
+            bad: function (d) { return 'Dein Klickpreis liegt ' + d + ' über dem Maximum. Jeder Auftrag kostet mehr, als er einbringt.'; },
+            feeBad: 'Die Anzeigen tragen sich, die Betreuung bei diesem Budget aber noch nicht.',
+            fee: function (n, from) { return 'Betreuung, ' + n + (from ? ' (ab)' : ''); },
+            summary: function (o) { return 'Aus dem Rechner (' + o.mode + '): Auftragswert ' + o.price + ', variable Kosten ' + o.vc + ', Conversion-Rate ' + o.cr + ' %' + o.close + ', Klickpreis ' + o.cpc + ', Budget im Monat ' + o.budget + '. Max. Klickpreis ' + o.maxCpc + ', Break-even-ROAS ' + o.roas + '.'; },
+            modes: { shop: 'Shop', lead: 'Dienstleistung' }, close: function (v) { return ', Abschlussquote ' + v + ' %'; }
+        };
+        var mode = 'shop', touched = false, last = null;
+        var put = function (k, v) { $$('[data-db="' + k + '"]', dbc).forEach(function (n) { n.textContent = v; }); };
+        var fill = function (m) { var e = EXAMPLES[m]; $('#db-price').value = e.price; $('#db-var').value = e['var']; $('#db-cr').value = e.cr; $('#db-close').value = e.close; $('#db-cpc').value = e.cpc; $('#db-budget').value = e.budget; };
+        function calcDb() {
+            var price = val('db-price'), vc = val('db-var'), cr = val('db-cr') / 100, close = mode === 'lead' ? val('db-close') / 100 : 1;
+            var cpc = val('db-cpc'), budget = val('db-budget'), withFee = $('#db-fee').checked;
+            var db = price - vc, rate = cr * close, maxCpc = db * rate;
+            var tier = FEES.filter(function (f) { return budget <= f.max; })[0], fee = withFee ? tier.fee : 0;
+            var clicks = cpc > 0 ? budget / cpc : 0, orders = clicks * rate;
+            var revenue = orders * price, dbTotal = orders * db, profit = dbTotal - budget - fee;
+            var ok = db > 0 && rate > 0 && cpc > 0;
+            put('db', money(db));
+            put('maxCpa', db > 0 ? money(db) : '—');
+            put('maxCpc', db > 0 && rate > 0 ? money(maxCpc) : '—');
+            var roas = db > 0 ? num(price / db * 100, 0) + ' %' : '—';
+            put('roas', roas);
+            put('clicks', ok ? num(Math.round(clicks), 0) : '—');
+            put('orders', ok ? num(orders, 1) : '—');
+            put('cpa', ok && orders > 0 ? money(budget / orders) : '—');
+            put('revenue', ok ? money(revenue) : '—');
+            put('dbTotal', ok ? money(dbTotal) : '—');
+            put('adCost', '−' + money(budget).replace('−', ''));
+            $('[data-db-feerow]', dbc).hidden = !withFee;
+            put('feeLabel', TXT.fee(tier.name, tier.from)); put('feeCost', '−' + money(fee));
+            put('profit', ok ? money(profit) : '—');
+            var v = $('[data-db="verdict"]', dbc), pr = $('[data-db="profit"]', dbc), cls = 'db-verdict';
+            pr.className = 'db-rv' + (ok ? (profit >= 0 ? ' db-ok' : ' db-err') : '');
+            if (db <= 0) { v.textContent = TXT.noMargin; cls += ' db-err'; }
+            else if (!ok) { v.textContent = TXT.noData; }
+            else if (Math.abs(cpc - maxCpc) < 0.005) { v.textContent = TXT.even; cls += ' db-warn'; }
+            else if (cpc < maxCpc) { if (withFee && profit < 0) { v.textContent = TXT.feeBad; cls += ' db-warn'; } else { v.textContent = TXT.good(money(maxCpc - cpc)); cls += ' db-ok'; } }
+            else { v.textContent = TXT.bad(money(cpc - maxCpc)); cls += ' db-err'; }
+            v.className = cls;
+            last = { mode: TXT.modes[mode], price: money(price), vc: money(vc), cr: num(cr * 100, 1), close: mode === 'lead' ? TXT.close(num(close * 100, 0)) : '', cpc: money(cpc), budget: money(budget), maxCpc: db > 0 && rate > 0 ? money(maxCpc) : '—', roas: roas };
+        }
+        $$('input', dbc).forEach(function (i) { i.addEventListener('input', function () { if (i.type === 'number') touched = true; calcDb(); }); });
+        $$('[data-db-mode]', dbc).forEach(function (b) {
+            b.addEventListener('click', function () {
+                mode = b.dataset.dbMode;
+                $$('[data-db-mode]', dbc).forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+                $$('[data-db-only]', dbc).forEach(function (n) { n.hidden = n.dataset.dbOnly !== mode; });
+                var crLabel = $('#db-cr').closest('.db-field');
+                if (crLabel) $('.db-label', crLabel).textContent = mode === 'lead' ? (EN2 ? 'Enquiries per 100 clicks' : 'Anfragen je 100 Klicks') : (EN2 ? 'Conversion rate' : 'Conversion-Rate');
+                if (!touched) fill(mode);
+                calcDb();
+            });
+        });
+        // "Ask with these numbers": copy the figures into the contact form, unless the visitor already wrote something
+        var dbCta = $('#db-cta');
+        if (dbCta) dbCta.addEventListener('click', function () {
+            var ta = $('#contact-form [name="challenge"]');
+            if (ta && last && (!ta.value.trim() || ta.dataset.fromCalc)) { ta.value = TXT.summary(last); ta.dataset.fromCalc = '1'; }
+        });
+        calcDb();
+    }
 })();
