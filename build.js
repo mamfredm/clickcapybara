@@ -139,7 +139,7 @@ const PAGES = [
     jsonld: null,
   },
   {
-    tpl: 'free-script.html', slug: 'free-script.html', formSource: null,
+    tpl: 'free-script.html', slug: 'free-script.html', formSource: 'Tools & Scripts', v2: true,
     seo: {
       de: {
         title: 'AI Max NegativeIQ — kostenloses Google Ads Script mit KI',
@@ -273,6 +273,7 @@ function render(page, lang) {
 
   // 1b. redesigned pages: English texts
   if (page.v2 && lang === 'en') translateV2($, page);
+  if (page.v2) $('[data-notr]').removeAttr('data-notr');
   // English hero video and poster
   if (lang === 'en') $('#hero-video').attr('src', '/assets/hero-en.mp4').attr('poster', '/assets/hero-poster-en.jpg');
 
