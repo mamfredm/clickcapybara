@@ -330,6 +330,37 @@ a.p-dark:hover{color:#12110d}
 
 /* cookie banner waits until the start animation has finished (class set by the inline script on the home page) */
 html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !important}
+
+/* ---------- google ads cost page: contribution-margin calculator ---------- */
+.db-calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:36px 56px;border:3px solid #fcba01;border-radius:28px;padding:clamp(20px,3.2vw,40px)}
+.db-col{display:flex;flex-direction:column;gap:16px;min-width:0}
+.db-mode{display:flex;gap:8px}
+.db-mode .p-pk{flex:1}
+.db-field{display:flex;flex-direction:column;gap:6px}
+.db-label{font-size:16px;color:#d6d1c4}
+.db-input{display:flex;align-items:center;background:#1a1812;border:1px solid #4a4538;border-radius:14px;padding:0 16px}
+.db-input:focus-within{border-color:#fcba01}
+.db-input input{flex:1;min-width:0;background:none;border:0;outline:0;color:#f4f0e6;font:700 24px 'Space Grotesk',system-ui,sans-serif;padding:12px 0;min-height:52px;-moz-appearance:textfield;appearance:textfield}
+.db-input input::-webkit-outer-spin-button,.db-input input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.db-unit{font:500 16px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293;padding-left:10px}
+.db-check{display:flex;gap:12px;align-items:center;min-height:44px;font-size:16px;cursor:pointer}
+.db-check input{width:22px;height:22px;accent-color:#fcba01;flex:none}
+.db-verdict{margin:0;font:700 clamp(20px,2.2vw,26px)/1.25 'Space Grotesk',system-ui,sans-serif;letter-spacing:-0.01em;min-height:2.5em}
+.db-rows{display:flex;flex-direction:column}
+.db-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 0;border-top:1px solid #4a4538}
+.db-row[hidden]{display:none}
+.db-rl{display:flex;flex-direction:column;gap:3px;font-size:16px;color:#d6d1c4}
+.db-rv{font:500 18px 'Space Grotesk',system-ui,sans-serif;text-align:right;white-space:nowrap}
+.db-row-big{border-top:2px solid #fcba01}
+.db-row-big .db-rv{font-weight:700;font-size:26px}
+.db-ok{color:#7ddc9f}.db-warn{color:#fcba01}.db-err{color:#e8824a}
+.db-faqs{border-top:2px solid #f4f0e6}
+.db-faq{border-bottom:1px solid #4a4538}
+.db-faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:22px 0;font:700 clamp(19px,2.2vw,24px)/1.25 'Space Grotesk',system-ui,sans-serif}
+.db-faq summary::-webkit-details-marker{display:none}
+.db-faq summary::after{content:'+';font:400 28px 'JetBrains Mono',ui-monospace,monospace;color:#fcba01;flex:none}
+.db-faq[open] summary::after{content:'−'}
+.db-faq p{margin:0 0 24px;max-width:720px;font-size:17px;line-height:1.6;color:#d6d1c4}
 </style>
 
     <!-- Cookie banner -->
@@ -543,6 +574,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
     <span class="site-footer-brand"><img src="/assets/clickcapybara_outline_bold.svg" width="22" height="22" alt="">© 2026 Click-Capybara · Google Ads, Websites und Automatisierung aus Düsseldorf</span>
     <span class="site-footer-links">
         <a href="/preise.html">Preise</a>
+        <a href="/google-ads-kosten.html">Google Ads Kosten</a>
         <a href="/free-script.html">Tools &amp; Scripts</a>
         <a href="/privacy.html">Datenschutz</a>
         <a href="/impressum.html">Impressum</a>
