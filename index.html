@@ -98,7 +98,7 @@ a{color:#f4f0e6}a:hover{color:#fcba01}
 a.c-dark:hover{color:#12110d}
 .x-nav{display:flex;flex-wrap:wrap;align-items:center;gap:24px;font-size:15px;font-weight:500}
 .x-burger{display:none;background:none;border:2px solid #f4f0e6;border-radius:12px;width:48px;height:48px;align-items:center;justify-content:center;cursor:pointer;color:#f4f0e6;padding:0}
-@media (max-width:900px){
+@media (max-width:1240px){
 .x-burger{display:flex}
 .site-header .x-nav{display:none;flex-direction:column;align-items:stretch;gap:0;width:100%;order:3;margin-left:0;padding:4px 0 20px;font-size:20px}
 .site-header .x-nav.open{display:flex}
@@ -175,7 +175,8 @@ a.p-dark:hover{color:#12110d}
 /* ---------- header / navigation ---------- */
 .site-header{max-width:1200px;margin:0 auto;padding:18px 32px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
 .x-nav{order:2;margin-left:auto}
-.hdr-tools{order:3;display:flex;align-items:center}
+.hdr-tools{order:3;display:flex;align-items:center;gap:20px}
+.site-header .nav-cta{display:none}
 .site-logo{display:flex;align-items:center;gap:10px;font:700 20px 'Space Grotesk',system-ui,sans-serif;text-decoration:none;min-height:44px;color:#f4f0e6}
 .site-logo:hover{color:#f4f0e6}
 .site-logo img{display:block}
@@ -300,7 +301,9 @@ a.p-dark:hover{color:#12110d}
 @media (max-width:480px){.ts-metrics-3{grid-template-columns:1fr}.calc-metric-val{font-size:21px}}
 
 /* ---------- small screens: header (kept last so it wins over the base rules) ---------- */
-@media (max-width:900px){
+@media (max-width:1240px){
+.site-header .hdr-cta{display:none}
+.site-header .nav-cta{display:block}
 .site-header{gap:8px 12px}
 .site-header .lang{font-size:14px}
 .site-header .lang a{padding:12px 6px}
@@ -321,6 +324,9 @@ a.p-dark:hover{color:#12110d}
 .site-logo{font-size:15px}
 .site-logo .caret{display:none}
 }
+
+/* tab panels: leave room above when scrolled to after a tap */
+[data-panel]{scroll-margin-top:16px}
 </style>
 
     <!-- Cookie banner -->
@@ -378,10 +384,12 @@ a.p-dark:hover{color:#12110d}
 </div>
 <div class="c-result" style="font: 500 15px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01; text-align: center">Sichtbar bei Google, auf Maps und in der KI-Suche.</div>
 <div class="c-rise" style="position: absolute; inset: 0; background: #fcba01; display: flex; justify-content: center; align-items: flex-start; padding: 270px 24px 0">
-<div style="position: relative; display: flex; flex-direction: column; align-items: center; gap: 28px">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 28px">
 <img class="c-up-logo" src="/assets/clickcapybara_outline_bold.svg" width="96" height="96" alt="" style="filter: brightness(0)">
+<div style="position: relative">
 <div class="c-word" style="font: 700 clamp(32px, 8vw, 88px)/1 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.04em; background: #12110d; color: #f4f0e6; border-radius: 999px; padding: 0.38em 0.7em 0.44em; white-space: nowrap">Click-Capybara</div>
-<svg class="c-cur" width="46" height="46" viewBox="0 0 24 24" style="position: absolute; left: 64%; top: 58%"><path d="M4 2l15 8.5-6.5 1.6L9.5 19z" fill="#fcba01" stroke="#12110d" stroke-width="1.2" stroke-linejoin="round"></path></svg>
+<svg class="c-cur" width="46" height="46" viewBox="0 0 24 24" style="position: absolute; left: 62%; top: 52%"><path d="M4 2l15 8.5-6.5 1.6L9.5 19z" fill="#fcba01" stroke="#12110d" stroke-width="1.2" stroke-linejoin="round"></path></svg>
+</div>
 </div>
 </div>
 </div>
@@ -395,6 +403,7 @@ a.p-dark:hover{color:#12110d}
     </a>
     <div class="hdr-tools">
         <span class="lang"><a id="lang-de" href="https://www.click-capybara.com/" hreflang="de" class="font-bold text-ink-900">DE</a><span aria-hidden="true">/</span><a id="lang-en" href="https://www.click-capybara.com/en/" hreflang="en" class="font-medium text-gray-400">EN</a></span>
+        <a class="btn-cta hdr-cta" href="#contact">Kostenlos einschätzen lassen</a>
         <button class="x-burger" id="nav-toggle" type="button" aria-label="Menü öffnen oder schließen" aria-expanded="false" aria-controls="site-nav">
             <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
         </button>
@@ -405,7 +414,7 @@ a.p-dark:hover{color:#12110d}
         <a class="nl" href="/automatisierung.html">Automatisierung</a>
         <a class="nl" href="/free-script.html">Tools &amp; Scripts</a>
         <a class="nl" href="/preise.html">Preise</a>
-        <a class="btn-cta" href="#contact">Kostenlos einschätzen lassen</a>
+        <a class="btn-cta nav-cta" href="#contact">Kostenlos einschätzen lassen</a>
     </nav>
 </header>
 

@@ -98,7 +98,7 @@ a{color:#f4f0e6}a:hover{color:#fcba01}
 a.c-dark:hover{color:#12110d}
 .x-nav{display:flex;flex-wrap:wrap;align-items:center;gap:24px;font-size:15px;font-weight:500}
 .x-burger{display:none;background:none;border:2px solid #f4f0e6;border-radius:12px;width:48px;height:48px;align-items:center;justify-content:center;cursor:pointer;color:#f4f0e6;padding:0}
-@media (max-width:900px){
+@media (max-width:1240px){
 .x-burger{display:flex}
 .site-header .x-nav{display:none;flex-direction:column;align-items:stretch;gap:0;width:100%;order:3;margin-left:0;padding:4px 0 20px;font-size:20px}
 .site-header .x-nav.open{display:flex}
@@ -175,7 +175,8 @@ a.p-dark:hover{color:#12110d}
 /* ---------- header / navigation ---------- */
 .site-header{max-width:1200px;margin:0 auto;padding:18px 32px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
 .x-nav{order:2;margin-left:auto}
-.hdr-tools{order:3;display:flex;align-items:center}
+.hdr-tools{order:3;display:flex;align-items:center;gap:20px}
+.site-header .nav-cta{display:none}
 .site-logo{display:flex;align-items:center;gap:10px;font:700 20px 'Space Grotesk',system-ui,sans-serif;text-decoration:none;min-height:44px;color:#f4f0e6}
 .site-logo:hover{color:#f4f0e6}
 .site-logo img{display:block}
@@ -300,7 +301,9 @@ a.p-dark:hover{color:#12110d}
 @media (max-width:480px){.ts-metrics-3{grid-template-columns:1fr}.calc-metric-val{font-size:21px}}
 
 /* ---------- small screens: header (kept last so it wins over the base rules) ---------- */
-@media (max-width:900px){
+@media (max-width:1240px){
+.site-header .hdr-cta{display:none}
+.site-header .nav-cta{display:block}
 .site-header{gap:8px 12px}
 .site-header .lang{font-size:14px}
 .site-header .lang a{padding:12px 6px}
@@ -321,6 +324,9 @@ a.p-dark:hover{color:#12110d}
 .site-logo{font-size:15px}
 .site-logo .caret{display:none}
 }
+
+/* tab panels: leave room above when scrolled to after a tap */
+[data-panel]{scroll-margin-top:16px}
 </style>
 
     <!-- Cookie banner -->
@@ -377,6 +383,7 @@ a.p-dark:hover{color:#12110d}
     </a>
     <div class="hdr-tools">
         <span class="lang"><a id="lang-de" href="https://www.click-capybara.com/automatisierung.html" hreflang="de" class="font-medium text-gray-400">DE</a><span aria-hidden="true">/</span><a id="lang-en" href="https://www.click-capybara.com/en/automatisierung.html" hreflang="en" class="font-bold text-ink-900">EN</a></span>
+        <a class="btn-cta hdr-cta" href="#contact">Get a free assessment</a>
         <button class="x-burger" id="nav-toggle" type="button" aria-label="Open or close the menu" aria-expanded="false" aria-controls="site-nav">
             <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
         </button>
@@ -387,7 +394,7 @@ a.p-dark:hover{color:#12110d}
         <a class="nl" href="/en/automatisierung.html" aria-current="page">Automation</a>
         <a class="nl" href="/en/free-script.html">Tools &amp; Scripts</a>
         <a class="nl" href="/en/preise.html">Pricing</a>
-        <a class="btn-cta" href="#contact">Get a free assessment</a>
+        <a class="btn-cta nav-cta" href="#contact">Get a free assessment</a>
     </nav>
 </header>
 
