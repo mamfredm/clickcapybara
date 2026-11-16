@@ -139,6 +139,26 @@ const PAGES = [
     jsonld: null,
   },
   {
+    tpl: 'fallbeispiel-onlineshop.html', slug: 'fallbeispiel-onlineshop.html', formSource: 'Fallbeispiel Onlineshop', v2: true,
+    seo: {
+      de: {
+        title: 'Fallbeispiel Google Ads: Onlineshop, 12 Monate, alle Zahlen | Click-Capybara',
+        desc: 'Ein Onlineshop nach der Übernahme: 198 statt 75 Bestellungen, 810 % ROAS bei doppeltem Budget. Mit den schlechten Monaten und einem FAQ, das ROAS, Conversion und Deckungsbeitrag einfach erklärt.',
+      },
+      en: {
+        title: 'Google Ads Case Study: Online Shop, 12 Months, All the Numbers | Click-Capybara',
+        desc: 'An online shop after the takeover: 198 orders instead of 75, 810% ROAS at double the budget. Including the bad months and an FAQ that explains ROAS, conversions and contribution margin in plain words.',
+      },
+    },
+    jsonld: (lang) => ({
+      '@context': 'https://schema.org', '@type': 'Article',
+      headline: lang === 'de' ? 'Fallbeispiel Google Ads: Onlineshop, zwölf Monate, alle Zahlen' : 'Google Ads case study: online shop, twelve months, all the numbers',
+      datePublished: '2026-11-16', dateModified: '2026-11-16', inLanguage: lang,
+      author: { '@type': 'Person', name: 'Max Müller', url: 'https://www.click-capybara.com/' },
+      publisher: { '@type': 'Organization', name: 'Click-Capybara', url: 'https://www.click-capybara.com/' },
+    }),
+  },
+  {
     tpl: 'google-ads-kosten.html', slug: 'google-ads-kosten.html', formSource: 'Google Ads Kosten', v2: true,
     seo: {
       de: {
@@ -224,6 +244,7 @@ function translateV2($, page) {
   const norm = (s) => s.replace(/\s+/g, ' ').trim();
   const lookup = (raw) => {
     const s = norm(raw);
+    if (s && dict[s] !== undefined) return dict[s];
     if (/^(\+ )?[\d.]+ €$/.test(s)) return s.replace(/([\d.]+) €/, (m, n) => '€' + n.replace(/\./g, ','));
     if (!s || !/[A-Za-zÄÖÜäöüß]/.test(s) || keep.has(s) || /^\{\{legal\.\w+\}\}$/.test(s)) return null;
     if (dict[s] !== undefined) return dict[s];
@@ -361,7 +382,7 @@ function render(page, lang) {
     $('a[href]').each((_, a) => {
       const el = $(a);
       const href = el.attr('href');
-      const m = href && href.match(/^\/((?:google-ads-kosten|google-ads|local-hero-kit|automatisierung|preise|free-script|privacy|impressum|nonogrid)\.html)?(#.*)?$/);
+      const m = href && href.match(/^\/((?:fallbeispiel-onlineshop|google-ads-kosten|google-ads|local-hero-kit|automatisierung|preise|free-script|privacy|impressum|nonogrid)\.html)?(#.*)?$/);
       if (m) el.attr('href', '/en/' + (m[1] || '') + (m[2] || ''));
     });
   }

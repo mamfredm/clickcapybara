@@ -1,0 +1,665 @@
+<!DOCTYPE html><html lang="en"><head>
+    <!-- Consent default (before GTM) -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
+        });
+    </script>
+
+    <!-- Restore prior consent choices -->
+    <script>
+        (function() {
+            if (localStorage.getItem('silktideCookieChoice_analytics') === 'true') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
+            }
+            if (localStorage.getItem('silktideCookieChoice_advertising') === 'true') {
+                gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+            }
+        })();
+    </script>
+
+    <!-- GTM -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WK2WCGQH');</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ads Case Study: Online Shop, 12 Months, All the Numbers | Click-Capybara</title>
+    <meta name="description" content="An online shop after the takeover: 198 orders instead of 75, 810% ROAS at double the budget. Including the bad months and an FAQ that explains ROAS, conversions and contribution margin in plain words.">
+    <link rel="canonical" href="https://www.click-capybara.com/en/fallbeispiel-onlineshop.html">
+    <link rel="alternate" hreflang="de" href="https://www.click-capybara.com/fallbeispiel-onlineshop.html">
+    <link rel="alternate" hreflang="en" href="https://www.click-capybara.com/en/fallbeispiel-onlineshop.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.click-capybara.com/fallbeispiel-onlineshop.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Click-Capybara">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Google Ads Case Study: Online Shop, 12 Months, All the Numbers | Click-Capybara">
+    <meta property="og:description" content="An online shop after the takeover: 198 orders instead of 75, 810% ROAS at double the budget. Including the bad months and an FAQ that explains ROAS, conversions and contribution margin in plain words.">
+    <meta property="og:url" content="https://www.click-capybara.com/en/fallbeispiel-onlineshop.html">
+    <meta property="og:image" content="https://www.click-capybara.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Google Ads Case Study: Online Shop, 12 Months, All the Numbers | Click-Capybara">
+    <meta name="twitter:description" content="An online shop after the takeover: 198 orders instead of 75, 810% ROAS at double the budget. Including the bad months and an FAQ that explains ROAS, conversions and contribution margin in plain words.">
+    <meta name="twitter:image" content="https://www.click-capybara.com/assets/og-image.png">
+    <meta name="theme-color" content="#12110d">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon_capybara_outine_bold.ico">
+
+    <!-- Self-hosted fonts (no request to Google) -->
+    <link rel="preload" as="font" type="font/woff" href="/vendor/fonts/space-grotesk-latin.woff" crossorigin="">
+    <link rel="preload" as="font" type="font/woff" href="/vendor/fonts/jetbrains-mono-latin.woff" crossorigin="">
+
+    <!-- Site styles (inlined by build.js) -->
+    <style>/* Click-Capybara – site styles (redesign "Bühne").
+   Layout of the page sections lives as inline styles in _templates/*.html (taken 1:1 from the approved design);
+   this file holds fonts, shared components, states, animations and small-screen rules. */
+@font-face{font-family:'Space Grotesk';src:url('/vendor/fonts/space-grotesk-latin.woff') format('woff');font-weight:300 700;font-style:normal;font-display:swap}
+@font-face{font-family:'JetBrains Mono';src:url('/vendor/fonts/jetbrains-mono-latin.woff') format('woff');font-weight:400 500;font-style:normal;font-display:swap}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:#12110d;color:#f4f0e6;font-family:'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%}
+[hidden]{display:none !important}
+:focus-visible{outline:3px solid #fcba01;outline-offset:3px}
+.contact :focus-visible{outline-color:#12110d}
+.contact-card :focus-visible{outline-color:#fcba01}
+.skip-link{position:absolute;left:-9999px;top:0;background:#fcba01;color:#12110d;padding:12px 16px;font-weight:700;z-index:100}
+.skip-link:focus{left:8px;top:8px}
+.page{background:#12110d;color:#f4f0e6;overflow:hidden}
+
+/* ---------- design (from the approved drafts) ---------- */
+body{margin:0}
+a{color:#f4f0e6}a:hover{color:#fcba01}
+.c-logo{background:none;border:0;padding:0;cursor:pointer;display:flex;align-items:center;gap:10px;font:700 20px 'Space Grotesk',system-ui,sans-serif;color:#f4f0e6;min-height:44px}
+.c-caret{display:inline-block;width:10px;height:20px;background:#fcba01}
+.c-card{transition:transform .25s cubic-bezier(.2,.8,.2,1), border-color .25s}
+.c-card:hover{transform:translateY(-6px);border-color:#fcba01;color:#f4f0e6}
+.c-card .c-num{transition:color .25s}
+.c-card:hover .c-num{color:#fcba01}
+.c-card .c-go{transition:transform .25s}
+.c-card:hover .c-go{transform:translateX(6px)}
+.c-video{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.c-video:hover{transform:rotate(0deg)}
+.c-cta{transition:transform .15s}
+.c-cta:hover{transform:scale(1.04);color:#12110d}
+.c-mark{background:linear-gradient(#fcba01,#fcba01) no-repeat 0 50% / 100% .94em;color:#12110d;padding:0 .12em}
+.c-cta-dark{transition:transform .15s}
+.c-cta-dark:hover{transform:scale(1.04);color:#f4f0e6}
+a.c-dark:hover{color:#12110d}
+.x-nav{display:flex;flex-wrap:wrap;align-items:center;gap:24px;font-size:15px;font-weight:500}
+.x-burger{display:none;background:none;border:2px solid #f4f0e6;border-radius:12px;width:48px;height:48px;align-items:center;justify-content:center;cursor:pointer;color:#f4f0e6;padding:0}
+@media (max-width:1240px){
+.x-burger{display:flex}
+.site-header .x-nav{display:none;flex-direction:column;align-items:stretch;gap:0;width:100%;order:3;margin-left:0;padding:4px 0 20px;font-size:20px}
+.site-header .x-nav.open{display:flex}
+.site-header .x-nav a.nl{padding:16px 0 !important;border-bottom:1px solid #3a352b}
+.site-header .x-nav a.nl[aria-current="page"]{border-bottom-color:#3a352b;color:#fcba01}
+.x-nav .btn-cta{margin-top:24px;text-align:center;padding:16px 20px;font-size:17px}
+.site-header .hdr-tools{order:2;margin-left:auto;gap:10px}
+.lang{font-size:14px}
+.lang a{padding:12px 6px}
+}
+@media (max-width:600px){
+section,header,footer{padding-left:20px !important;padding-right:20px !important}
+main > section:first-of-type{padding-top:20px !important}
+}
+
+.c-load{visibility:hidden}
+.c-type{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;width:30ch}
+@media (prefers-reduced-motion: no-preference){
+.c-caret{animation:cBlink 1s steps(1) infinite}
+.c-track{animation:cMarquee 32s linear infinite}
+.play .c-load{animation:cLoad 5.4s cubic-bezier(.7,0,.2,1) both}
+.play .c-rise{animation:cRise .55s cubic-bezier(.7,0,.2,1) 2.9s both}
+.play .c-word{animation:cUp .5s cubic-bezier(.2,.8,.2,1) 3.35s both, cPress .3s ease 4.3s}
+.play .c-cur{animation:cCur .5s cubic-bezier(.3,.8,.3,1) 3.8s both}
+.play .c-type{animation:cType 1.5s steps(30) .3s both}
+.play .c-result{animation:cUp .4s ease 2s both}
+.play .c-up{animation:cUp .8s cubic-bezier(.2,.8,.2,1) both}
+.play .c-mark{animation:cMark .6s cubic-bezier(.6,0,.2,1) 6s both}
+}
+@keyframes cBlink{50%{opacity:0} }
+@keyframes cMarquee{to{transform:translateX(-50%)} }
+@keyframes cLoad{0%,87%{visibility:visible;transform:translateY(0)} 100%{visibility:hidden;transform:translateY(-100%)} }
+@keyframes cRise{from{transform:translateY(100%)} to{transform:translateY(0)} }
+@keyframes cPress{50%{transform:scale(.93)} }
+@keyframes cCur{from{opacity:0;transform:translate(160px,150px)} to{opacity:1;transform:translate(0,0)} }
+@keyframes cType{from{width:0} to{width:30ch} }
+@keyframes cUp{from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+@keyframes cMark{from{background-size:0% 100%;color:#f4f0e6} to{background-size:100% 100%;color:#12110d} }
+.l5-caret{display:inline-block;width:10px;height:20px;background:#fcba01}
+.l5-tab{cursor:pointer;border:0;text-align:left;padding:18px 24px;border-radius:18px;display:flex;flex-direction:column;gap:8px;min-height:44px;transition:background .2s,color .2s,transform .2s}
+.l5-tab:hover{transform:translateX(6px)}
+.l5-cta{transition:transform .15s}
+.l5-cta:hover{transform:scale(1.04);color:#12110d}
+@media (prefers-reduced-motion: no-preference){
+.l5-caret{animation:l5Blink 1s steps(1) infinite}
+.l5-panel{animation:l5In .35s cubic-bezier(.2,.8,.2,1)}
+}
+@keyframes l5Blink{50%{opacity:0} }
+@keyframes l5In{from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none} }
+.p-caret{display:inline-block;width:10px;height:20px;background:#fcba01}
+.p-cta{transition:transform .15s}
+.p-cta:hover{transform:scale(1.04);color:#12110d}
+.p-cta-dark{transition:transform .15s}
+.p-cta-dark:hover{transform:scale(1.04);color:#f4f0e6}
+a.p-dark:hover{color:#12110d}
+.p-mark{background:linear-gradient(#fcba01,#fcba01) no-repeat 0 50% / 100% .94em;color:#12110d;padding:0 .12em}
+.p-row{transition:background .2s}
+.p-row:hover{background:#1a1812}
+.p-pk{flex:1;cursor:pointer;border:0;border-radius:14px;min-height:48px;font:700 20px 'Space Grotesk',system-ui,sans-serif;transition:background .2s,color .2s}
+.p-pk:disabled{cursor:not-allowed}
+@media (prefers-reduced-motion: no-preference){
+.p-caret{animation:pBlink 1s steps(1) infinite}
+.p-track{animation:pMarquee 32s linear infinite}
+.p-up{animation:pUp .8s cubic-bezier(.2,.8,.2,1) both}
+.p-mark{animation:pMark .6s cubic-bezier(.6,0,.2,1) .9s both}
+}
+@keyframes pBlink{50%{opacity:0} }
+@keyframes pMarquee{to{transform:translateX(-50%)} }
+@keyframes pUp{from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+@keyframes pMark{from{background-size:0% .94em;color:#f4f0e6} to{background-size:100% .94em;color:#12110d} }
+.pr-tab{cursor:pointer;border:0;border-radius:999px;padding:12px 22px;min-height:44px;font:700 17px 'Space Grotesk',system-ui,sans-serif;transition:background .2s,color .2s}
+@media (prefers-reduced-motion: no-preference){ .pr-panel{animation:pUp .35s cubic-bezier(.2,.8,.2,1)} }
+
+/* ---------- header / navigation ---------- */
+.site-header{max-width:1200px;margin:0 auto;padding:18px 32px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
+.x-nav{order:2;margin-left:auto}
+.hdr-tools{order:3;display:flex;align-items:center;gap:20px}
+.site-header .nav-cta{display:none}
+.site-logo{display:flex;align-items:center;gap:10px;font:700 20px 'Space Grotesk',system-ui,sans-serif;text-decoration:none;min-height:44px;color:#f4f0e6}
+.site-logo:hover{color:#f4f0e6}
+.site-logo img{display:block}
+.caret{display:inline-block;width:10px;height:20px;background:#fcba01;flex:none}
+@keyframes caretBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@media (prefers-reduced-motion: no-preference){.caret{animation:caretBlink 1s steps(1) infinite}}
+.x-nav a.nl{text-decoration:none;padding:12px 0 8px;border-bottom:2px solid transparent}
+.x-nav a.nl[aria-current="page"]{border-bottom-color:#fcba01}
+.lang{display:inline-flex;align-items:center;font:400 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293;white-space:nowrap}
+.lang a{color:#a8a293;text-decoration:none;padding:12px 2px}
+.lang a.font-bold{color:#f4f0e6;font-weight:500}
+.btn-cta{display:inline-block;background:#fcba01;color:#12110d;padding:12px 20px;border-radius:999px;font:700 15px 'Space Grotesk',system-ui,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .15s}
+.btn-cta:hover{transform:scale(1.04);color:#12110d}
+.btn-block{display:block;width:100%;padding:17px 28px;font-size:17px;min-height:52px}
+.btn-block:hover{transform:scale(1.02)}
+
+/* ---------- tabs / toggles ---------- */
+.l5-tab{background:#1e1c16;color:#f4f0e6}
+.l5-tab[aria-pressed="true"]{background:#fcba01;color:#12110d}
+.pr-tab{background:transparent;color:#f4f0e6}
+.pr-tab[aria-pressed="true"]{background:#fcba01;color:#12110d}
+.p-pk{background:#1e1c16;color:#f4f0e6}
+.p-pk[aria-pressed="true"]{background:#fcba01;color:#12110d}
+.p-pk:disabled{opacity:.35}
+.tab-panel{width:100%;display:flex}
+#ads-calc input[type="range"]{margin:0}
+
+/* ---------- hero video ---------- */
+.vid-sound{position:absolute;right:12px;bottom:12px;background:rgba(18,17,13,.85);color:#f4f0e6;border:1px solid #fcba01;border-radius:999px;padding:10px 16px;min-height:44px;font:500 14px 'Space Grotesk',system-ui,sans-serif;cursor:pointer}
+.vid-sound[aria-pressed="true"]{background:#fcba01;color:#12110d}
+
+/* ---------- intro: covers the viewport, not the whole document ---------- */
+.c-load{position:fixed !important;inset:0;z-index:60 !important;padding:0 24px !important;justify-content:center}
+.c-rise{padding:0 24px !important;align-items:center !important}
+
+/* ---------- contact band ---------- */
+.contact{background:#fcba01;color:#12110d}
+.contact-inner{max-width:1200px;margin:0 auto;padding:88px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:48px;align-items:start}
+.contact-copy{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.contact h2{margin:0;font:700 clamp(36px,5vw,64px)/1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.035em}
+.contact-lead{margin:0;max-width:460px;font-size:18px;line-height:1.55}
+.contact-checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;font-size:18px;font-weight:500}
+.contact-checks li{display:flex;gap:14px;align-items:flex-start}
+.contact-checks svg{flex:none}
+.contact-direct{display:flex;flex-direction:column;gap:6px;margin-top:8px;font-size:16px}
+.contact-direct a{color:#12110d;font-weight:700;font-size:20px;padding:10px 0}
+.contact-direct a:hover{color:#12110d}
+.contact-note{font-size:15px}
+.contact-card{position:relative;background:#12110d;color:#f4f0e6;border-radius:28px;padding:clamp(24px,4vw,40px);overflow:hidden}
+#contact-form{display:flex;flex-direction:column;gap:18px;transition:opacity .4s}
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{font:500 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.field input,.field select,.field textarea{width:100%;box-sizing:border-box;background:#1e1c16;border:1px solid #4a4538;color:#f4f0e6;border-radius:12px;padding:14px 16px;font:400 16px 'Space Grotesk',system-ui,sans-serif}
+.field select{min-height:50px}
+.field textarea{resize:vertical}
+.field input::placeholder,.field textarea::placeholder{color:#8f897b}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#fcba01;outline:none}
+.form-note{margin:0;font-size:14px;line-height:1.5;color:#a8a293}
+.form-note a{color:#a8a293}
+#form-success{position:absolute;inset:0;background:#12110d;border-radius:28px;padding:clamp(24px,4vw,40px);display:flex;flex-direction:column;gap:16px;align-items:flex-start;justify-content:center;opacity:0;pointer-events:none;transition:opacity .5s}
+#form-success h3{margin:0;font:700 34px/1.1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em}
+#form-success p{margin:0;font-size:17px;line-height:1.55;color:#d6d1c4}
+#form-success a{color:#fcba01;font-weight:500;padding:12px 0}
+.cc-form-error{color:#ff9d8a !important}
+
+/* ---------- reviews (switched off in index.html until real reviews exist) ---------- */
+.reviews{max-width:1200px;margin:0 auto;padding:0 32px 96px}
+.reviews-inner{border-top:1px solid #4a4538;border-bottom:1px solid #4a4538;padding:32px 0;display:flex;flex-wrap:wrap;gap:28px 56px;align-items:flex-start}
+.reviews-head{flex:0 1 230px;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.5;color:#d6d1c4}
+.reviews-head h2{margin:0;font:500 14px 'JetBrains Mono',ui-monospace,monospace;color:#fcba01}
+.reviews blockquote{flex:1 1 300px;margin:0;display:flex;flex-direction:column;gap:12px}
+.reviews blockquote p{margin:0;font-size:18px;line-height:1.5}
+.reviews blockquote footer{font:400 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+
+/* ---------- footer ---------- */
+.site-footer{max-width:1200px;margin:0 auto;padding:32px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:14px;color:#a8a293}
+.site-footer-brand{display:flex;align-items:center;gap:10px}
+.site-footer-links{display:flex;flex-wrap:wrap;gap:8px 24px}
+.site-footer a{color:#a8a293;padding:6px 0}
+.site-footer a:hover{color:#fcba01}
+
+/* ---------- legal pages (Impressum, Datenschutz) ---------- */
+.legal{max-width:820px;margin:0 auto;padding:48px 32px 96px;font-size:17px;line-height:1.65;color:#d6d1c4}
+.legal section,.legal .container,.legal div{padding-left:0 !important;padding-right:0 !important}
+.legal h1{margin:0 0 8px;font:700 clamp(40px,6vw,72px)/1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.04em;color:#f4f0e6}
+.legal h2{margin:40px 0 12px;font:700 24px/1.2 'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em;color:#f4f0e6}
+.legal h3{margin:28px 0 8px;font:700 19px/1.3 'Space Grotesk',system-ui,sans-serif;color:#f4f0e6}
+.legal p{margin:0 0 14px}
+.legal ul,.legal ol{margin:0 0 14px;padding-left:22px}
+.legal li{margin-bottom:6px}
+.legal a{color:#fcba01;overflow-wrap:anywhere}
+.legal strong{color:#f4f0e6}
+.legal table{border-collapse:collapse;width:100%;margin:0 0 14px}
+.legal th,.legal td{border-bottom:1px solid #4a4538;padding:10px 12px 10px 0;text-align:left;vertical-align:top}
+
+/* ---------- tools & scripts page ---------- */
+.ts-k{font:500 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.ts-s{font:400 12px/1.4 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.ts-card{display:flex;flex-direction:column;gap:16px;background:#1a1812;border:1px solid #4a4538;border-radius:20px;padding:24px;min-width:0}
+.ts-scroll{overflow-x:auto}
+.ts-table{width:100%;border-collapse:collapse;font:400 13px 'JetBrains Mono',ui-monospace,monospace;white-space:nowrap}
+.ts-table th{text-align:left;color:#a8a293;font-weight:500;padding:8px 12px 8px 0;border-bottom:1px solid #4a4538}
+.ts-table td{padding:10px 12px 10px 0;border-bottom:1px solid #2e2a21}
+.ts-table .ok{color:#7ddc9f}.ts-table .warn{color:#fcba01}.ts-table .err{color:#e8824a}
+.ts-calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:32px 48px;border:2px solid #fcba01;border-radius:24px;padding:clamp(20px,3vw,36px)}
+.ts-calc-col{display:flex;flex-direction:column;gap:18px;min-width:0}
+.ts-calc-wide{grid-column:1/-1;display:flex;flex-direction:column;gap:14px;border-top:1px solid #4a4538;padding-top:24px;min-width:0}
+.ts-slider{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:baseline}
+.ts-slider input{grid-column:1/-1;width:100%;accent-color:#fcba01;height:28px;margin:0}
+.ts-out{font:700 22px 'Space Grotesk',system-ui,sans-serif}
+.ts-note{margin:4px 0 0;font-size:15px;line-height:1.55;color:#d6d1c4}
+.ts-note strong{color:#f4f0e6}
+.ts-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ts-metrics-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ts-metric{display:flex;flex-direction:column;gap:6px;background:#1a1812;border-radius:14px;padding:14px 16px;min-width:0}
+.calc-metric-val{margin:0;font:700 24px/1.1 'Space Grotesk',system-ui,sans-serif;overflow-wrap:anywhere}
+.calc-ok{color:#7ddc9f}.calc-warn{color:#fcba01}.calc-err{color:#e8824a}
+.ts-legend{display:flex;flex-wrap:wrap;gap:8px 18px;font:400 12px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.ts-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px}
+.ts-code{margin:0;padding:20px;overflow-x:auto;font:400 13px/1.7 'JetBrains Mono',ui-monospace,monospace;color:#d6d1c4}
+.ts-code .c{color:#8a8473}.ts-code .k{color:#fcba01}.ts-code .f{color:#7ddc9f}.ts-code .s{color:#e8c98a}
+@media (max-width:480px){.ts-metrics-3{grid-template-columns:1fr}.calc-metric-val{font-size:21px}}
+
+/* ---------- small screens: header (kept last so it wins over the base rules) ---------- */
+@media (max-width:1240px){
+.site-header .hdr-cta{display:none}
+.site-header .nav-cta{display:block}
+.site-header{gap:8px 12px}
+.site-header .lang{font-size:14px}
+.site-header .lang a{padding:12px 6px}
+}
+@media (max-width:600px){
+.site-header{padding-top:12px;padding-bottom:12px}
+.site-logo{font-size:clamp(16px,4.7vw,20px);gap:8px}
+.site-logo img{width:32px;height:32px}
+.x-burger{width:44px;height:44px}
+}
+@media (max-width:400px){
+.site-header{padding-left:16px !important;padding-right:16px !important}
+.site-header .hdr-tools{gap:6px}
+.site-header .lang a{padding:12px 3px}
+.site-logo .caret{width:8px}
+}
+@media (max-width:340px){
+.site-logo{font-size:15px}
+.site-logo .caret{display:none}
+}
+
+/* tab panels: leave room above when scrolled to after a tap */
+[data-panel]{scroll-margin-top:16px}
+
+/* cookie banner waits until the start animation has finished (class set by the inline script on the home page) */
+html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !important}
+
+/* ---------- google ads cost page: contribution-margin calculator ---------- */
+.db-calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:36px 56px;border:3px solid #fcba01;border-radius:28px;padding:clamp(20px,3.2vw,40px)}
+.db-col{display:flex;flex-direction:column;gap:16px;min-width:0}
+.db-mode{display:flex;gap:8px}
+.db-mode .p-pk{flex:1}
+.db-field{display:flex;flex-direction:column;gap:6px}
+.db-label{font-size:16px;color:#d6d1c4}
+.db-input{display:flex;align-items:center;background:#1a1812;border:1px solid #4a4538;border-radius:14px;padding:0 16px}
+.db-input:focus-within{border-color:#fcba01}
+.db-input input{flex:1;min-width:0;background:none;border:0;outline:0;color:#f4f0e6;font:700 24px 'Space Grotesk',system-ui,sans-serif;padding:12px 0;min-height:52px;-moz-appearance:textfield;appearance:textfield}
+.db-input input::-webkit-outer-spin-button,.db-input input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.db-unit{font:500 16px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293;padding-left:10px}
+.db-check{display:flex;gap:12px;align-items:center;min-height:44px;font-size:16px;cursor:pointer}
+.db-check input{width:22px;height:22px;accent-color:#fcba01;flex:none}
+.db-verdict{margin:0;font:700 clamp(20px,2.2vw,26px)/1.25 'Space Grotesk',system-ui,sans-serif;letter-spacing:-0.01em;min-height:2.5em}
+.db-rows{display:flex;flex-direction:column}
+.db-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:13px 0;border-top:1px solid #4a4538}
+.db-row[hidden]{display:none}
+.db-rl{display:flex;flex-direction:column;gap:3px;font-size:16px;color:#d6d1c4}
+.db-rv{font:500 18px 'Space Grotesk',system-ui,sans-serif;text-align:right;white-space:nowrap}
+.db-row-big{border-top:2px solid #fcba01}
+.db-row-big .db-rv{font-weight:700;font-size:26px}
+.db-ok{color:#7ddc9f}.db-warn{color:#fcba01}.db-err{color:#e8824a}
+.db-faqs{border-top:2px solid #f4f0e6}
+.db-faq{border-bottom:1px solid #4a4538}
+.db-faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:22px 0;font:700 clamp(19px,2.2vw,24px)/1.25 'Space Grotesk',system-ui,sans-serif}
+.db-faq summary::-webkit-details-marker{display:none}
+.db-faq summary::after{content:'+';font:400 28px 'JetBrains Mono',ui-monospace,monospace;color:#fcba01;flex:none}
+.db-faq[open] summary::after{content:'−'}
+.db-faq p{margin:0 0 24px;max-width:720px;font-size:17px;line-height:1.6;color:#d6d1c4}
+
+/* cookie banner without the provider's logo and credit link (MIT-licensed; the notice in the vendored file stays) */
+#silktide-banner a.silktide-logo{display:none !important}
+#silktide-modal footer a[href*="silktide.com"]{display:none !important}
+
+/* ---------- case study ---------- */
+.cs-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cs-scroll{overflow-x:auto;border-top:2px solid #f4f0e6}
+.cs-table{width:100%;border-collapse:collapse;min-width:520px}
+.cs-table th,.cs-table td{text-align:right;padding:18px 0 18px 20px;border-bottom:1px solid #4a4538;white-space:nowrap}
+.cs-table thead th{font:500 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.cs-table tbody th{text-align:left;padding-left:0;font:400 17px 'Space Grotesk',system-ui,sans-serif;color:#d6d1c4}
+.cs-table td{font:700 clamp(18px,2.2vw,24px) 'Space Grotesk',system-ui,sans-serif}
+.cs-table td:nth-child(2){color:#a8a293;font-weight:500}
+.cs-table td.ok{color:#7ddc9f}.cs-table td.warn{color:#fcba01}
+.cs-notes{display:flex;flex-direction:column;gap:8px;margin-top:20px;max-width:760px}
+.cs-notes p{margin:0;font:400 14px/1.6 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.cs-notes a{color:#fcba01}
+.cs-chart{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:clamp(4px,1.2vw,14px);height:280px;align-items:end;border-bottom:1px solid #4a4538;padding-top:28px}
+.cs-m{display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;min-width:0}
+.cs-bars{flex:1;width:100%;display:flex;align-items:flex-end;justify-content:center;gap:3px}
+.cs-b{position:relative;flex:1;max-width:26px;border-radius:5px 5px 0 0}
+.cs-prev{background:#4a4538}.cs-cur{background:#fcba01}
+.cs-cur i{position:absolute;left:50%;bottom:100%;transform:translate(-50%,-4px);font:500 12px 'JetBrains Mono',ui-monospace,monospace;font-style:normal;color:#f4f0e6}
+.cs-ml{font:400 12px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293;padding-bottom:8px}
+.cs-legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;font:400 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.cs-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:7px}
+.cs-call{background:#fcba01;color:#12110d;border-radius:28px;padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.cs-call-big{margin:0;font:700 clamp(32px,4.6vw,60px)/1.02 'Space Grotesk',system-ui,sans-serif;letter-spacing:-0.03em}
+.cs-call-text{margin:0;max-width:680px;font-size:18px;line-height:1.55}
+.cs-call-btn{display:inline-block;background:#12110d;color:#f4f0e6;padding:16px 26px;border-radius:999px;font-weight:700;font-size:17px;text-decoration:none;margin-top:6px}
+.cs-faq-link{display:inline-block;margin:-10px 0 24px;color:#fcba01;font-weight:500;padding:8px 0}
+.cs-teaser{display:flex;flex-direction:column;gap:18px;border:2px solid #fcba01;border-radius:28px;padding:clamp(24px,3.4vw,44px);text-decoration:none;color:#f4f0e6;transition:background .2s}
+.cs-teaser:hover{background:#1a1812}
+.cs-teaser-k{font:500 14px 'JetBrains Mono',ui-monospace,monospace;color:#fcba01}
+.cs-teaser-h{font:700 clamp(30px,4vw,52px)/1.05 'Space Grotesk',system-ui,sans-serif;letter-spacing:-0.03em}
+.cs-teaser-nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:18px 32px;border-top:1px solid #4a4538;padding-top:20px}
+.cs-teaser-nums span{display:flex;flex-direction:column;gap:4px}
+.cs-teaser-nums b{font:700 clamp(24px,2.8vw,34px) 'Space Grotesk',system-ui,sans-serif}
+.cs-teaser-nums i{font:400 13px 'JetBrains Mono',ui-monospace,monospace;font-style:normal;color:#a8a293}
+.cs-teaser-go{font-weight:500;color:#fcba01;text-decoration:underline;text-underline-offset:4px}
+@media (max-width:600px){.cs-chart{height:220px}.cs-cur i{font-size:10px}.cs-ml{font-size:10px}}
+@media (max-width:600px){
+.cs-table{min-width:0}
+.cs-table th,.cs-table td{padding:14px 0 14px 10px}
+.cs-table tbody th{white-space:normal;font-size:15px;line-height:1.3}
+.cs-table td{font-size:15px}
+.cs-table thead th{font-size:11px}
+}
+</style>
+
+    <!-- Cookie banner -->
+    <link rel="stylesheet" id="silktide-consent-manager-css" href="/vendor/silktide/silktide-consent-manager.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/vendor/silktide/silktide-consent-manager.css"></noscript>
+    <script src="/vendor/silktide/silktide-consent-manager.js" defer=""></script>
+    <script>window.addEventListener('load', function () {
+
+    silktideCookieBannerManager.updateCookieBannerConfig({
+        background: { showBackground: true },
+        cookieIcon: { position: "bottomLeft" },
+        cookieTypes: [
+            { id: "necessary", name: "Necessary",
+              description: "<p>These cookies are needed for the website to work and cannot be switched off.</p>",
+              required: true, onAccept: function() {} },
+            { id: "analytics", name: "Analytics",
+              description: "<p>These cookies help me understand how visitors use the website.</p>",
+              required: false,
+              onAccept: function() { gtag('consent','update',{analytics_storage:'granted'}); dataLayer.push({event:'consent_accepted_analytics'}); },
+              onReject: function() { gtag('consent','update',{analytics_storage:'denied'}); } },
+            { id: "advertising", name: "Advertising",
+              description: "<p>These cookies are used to measure and improve ads.</p>",
+              required: false,
+              onAccept: function() { gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted'}); dataLayer.push({event:'consent_accepted_advertising'}); },
+              onReject: function() { gtag('consent','update',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'}); } }
+        ],
+        text: {
+            banner: {
+                description: "<p>I use cookies to improve the website and analyse visits. <a href=\"/en/privacy.html\">Privacy policy.</a></p>",
+                acceptAllButtonText: "Accept all",
+                rejectNonEssentialButtonText: "Necessary only",
+                preferencesButtonText: "Settings"
+            },
+            preferences: { title: "Cookie settings", description: "<p>You decide which cookies you allow. Your choice applies to the whole website and can be changed at any time.</p>" }
+        },
+        position: { banner: "center" }
+    });
+    
+});</script>
+
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Google Ads case study: online shop, twelve months, all the numbers","datePublished":"2026-11-16","dateModified":"2026-11-16","inLanguage":"en","author":{"@type":"Person","name":"Max Müller","url":"https://www.click-capybara.com/"},"publisher":{"@type":"Organization","name":"Click-Capybara","url":"https://www.click-capybara.com/"}}
+    </script>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a conversion?","acceptedAnswer":{"@type":"Answer","text":"An action that counts for your business. Here it is an order in the shop. In the case study: 198 orders in twelve months, 75 in the year before."}},{"@type":"Question","name":"What does ROAS mean?","acceptedAnswer":{"@type":"Answer","text":"How much revenue one euro of advertising brings in. In the case study: 810%, so €8.10 in revenue per euro of ad spend. That is revenue, not profit."}},{"@type":"Question","name":"Is an ROAS of 810% good?","acceptedAnswer":{"@type":"Answer","text":"That depends on your margin. In the case study, advertising cost 12.3% of revenue. It pays for itself as soon as the shop keeps more than that before advertising."}},{"@type":"Question","name":"What is a contribution margin, and why is there none here?","acceptedAnswer":{"@type":"Answer","text":"What is left of an order after goods, shipping and fees are paid. The shop did not know its own at the takeover. We are building it product by product right now instead of guessing a number."}},{"@type":"Question","name":"What does an order cost?","acceptedAnswer":{"@type":"Answer","text":"Ad spend divided by orders. In the case study: €53.64 instead of €72.51 in the year before."}},{"@type":"Question","name":"Why has ROAS not gone up although things are going better?","acceptedAnswer":{"@type":"Answer","text":"Because the budget is almost twice as high. The first customers are the cheapest, each additional one costs a little more. Holding the return at double the spend is the result. On top of that, two exceptional days in the year before pull the old figure up."}},{"@type":"Question","name":"What is consent, and why are orders missing from the data?","acceptedAnswer":{"@type":"Answer","text":"Consent is the visitors' agreement to being measured. Without it, people keep ordering, but the orders are not counted. In the case study this was the case for several months because the shop theme and the cookie banner did not work together."}},{"@type":"Question","name":"Why do the months vary so much?","acceptedAnswer":{"@type":"Answer","text":"Because of season and stock. December brought 62 orders, months without stock far fewer. Ads can only sell what is in stock."}},{"@type":"Question","name":"What are impressions?","acceptedAnswer":{"@type":"Answer","text":"How often an ad was shown. In the case study around 591,000 times, 59% more than the year before. An ad appearing does not cost anything by itself."}},{"@type":"Question","name":"Can I apply these numbers to my business?","acceptedAnswer":{"@type":"Answer","text":"No. Order value, margin and competition are different for you. It is better to check it with your own numbers."}}]}
+    </script>
+</head>
+<body>
+<div style="background: #12110d; color: #f4f0e6; font-family: 'Space Grotesk', system-ui, sans-serif; overflow: hidden">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WK2WCGQH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+    <a class="site-logo" href="/en/" aria-label="Click-Capybara, back to the home page">
+        <img src="/assets/clickcapybara_outline_bold.svg" width="36" height="36" alt="">
+        <span>Click-Capybara</span><span class="caret" aria-hidden="true"></span>
+    </a>
+    <div class="hdr-tools">
+        <span class="lang"><a id="lang-de" href="https://www.click-capybara.com/fallbeispiel-onlineshop.html" hreflang="de" class="font-medium text-gray-400">DE</a><span aria-hidden="true">/</span><a id="lang-en" href="https://www.click-capybara.com/en/fallbeispiel-onlineshop.html" hreflang="en" class="font-bold text-ink-900">EN</a></span>
+        <a class="btn-cta hdr-cta" href="#contact">Get a free assessment</a>
+        <button class="x-burger" id="nav-toggle" type="button" aria-label="Open or close the menu" aria-expanded="false" aria-controls="site-nav">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+        </button>
+    </div>
+    <nav id="site-nav" class="x-nav" aria-label="Main navigation">
+        <a class="nl" href="/en/google-ads.html">Google Ads</a>
+        <a class="nl" href="/en/local-hero-kit.html">Local Hero Kit</a>
+        <a class="nl" href="/en/automatisierung.html">Automation</a>
+        <a class="nl" href="/en/free-script.html">Tools &amp; Scripts</a>
+        <a class="nl" href="/en/preise.html">Pricing</a>
+        <a class="btn-cta nav-cta" href="#contact">Get a free assessment</a>
+    </nav>
+</header>
+
+<main id="main">
+<section style="max-width: 1200px; margin: 0 auto; padding: 64px 32px 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 64px; align-items: end">
+<div style="display: flex; flex-direction: column; gap: 28px; align-items: flex-start">
+<h1 class="p-up" style="margin: 0; display: flex; flex-direction: column; gap: 24px">
+<span style="font: 400 15px/1.5 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Google Ads case study: online shop</span>
+<span style="font: 700 clamp(44px, 6vw, 88px)/0.98 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.04em">Double the budget, same <span class="p-mark">return.</span></span>
+</h1>
+<p class="p-up" style="animation-delay: .15s; margin: 0; max-width: 560px; font-size: 19px; line-height: 1.55; color: #d6d1c4">An online shop whose Google Ads account I took over on 1 November 2025. Twelve months, all the numbers, including the uncomfortable ones. Anonymised and with the client's approval.</p>
+<div class="p-up" style="animation-delay: .3s; display: flex; flex-wrap: wrap; align-items: center; gap: 28px">
+<a class="p-cta" href="/en/google-ads-kosten.html" style="display: inline-block; background: #fcba01; color: #12110d; padding: 17px 28px; border-radius: 999px; font-weight: 700; font-size: 17px; text-decoration: none">Check it with your numbers</a>
+<a href="#rechnung" style="font-weight: 500; font-size: 16px; padding: 12px 0">To the calculation <span aria-hidden="true">↓</span></a>
+</div>
+</div>
+<div class="p-up" style="animation-delay: .25s; display: flex; flex-direction: column; border-bottom: 1px solid #4a4538">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid #4a4538"><span style="font: 400 14px 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Orders</span><span style="font: 700 22px 'Space Grotesk', system-ui, sans-serif; text-align: right">198 instead of 75</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid #4a4538"><span style="font: 400 14px 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Revenue from ads</span><span style="font: 700 22px 'Space Grotesk', system-ui, sans-serif; text-align: right">€86,057</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid #4a4538"><span style="font: 400 14px 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Ad spend</span><span style="font: 700 22px 'Space Grotesk', system-ui, sans-serif; text-align: right">€10,620</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid #4a4538"><span style="font: 400 14px 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Cost per order</span><span style="font: 700 22px 'Space Grotesk', system-ui, sans-serif; text-align: right">€53.64 instead of €72.51</span></div>
+</div>
+</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
+<div id="rechnung"></div><div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">The calculation</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">16 Nov 2025 to 15 Nov 2026, compared with the twelve months before.</p>
+</div>
+<div class="cs-scroll"><table class="cs-table">
+<thead><tr><th scope="col"><span class="cs-sr">Metric</span></th><th scope="col">Year before</th><th scope="col">With me</th><th scope="col">Change</th></tr></thead>
+<tbody>
+<tr><th scope="row">Ad spend</th><td>€5,438</td><td>€10,620</td><td class="">+ 95 %</td></tr>
+<tr><th scope="row">Orders</th><td>75</td><td>198</td><td class="ok">× 2.6</td></tr>
+<tr><th scope="row">Revenue from ads</th><td>€46,703</td><td>€86,057</td><td class="ok">+ 84 %</td></tr>
+<tr><th scope="row">Cost per order</th><td>€72.51</td><td>€53.64</td><td class="ok">− 26 %</td></tr>
+<tr><th scope="row">ROAS</th><td>859 %</td><td>810 %</td><td class="warn">− 49 points</td></tr>
+<tr><th scope="row">Days with an order</th><td>42</td><td>117</td><td class="ok">× 2.8</td></tr>
+</tbody></table></div>
+<div class="cs-notes">
+<p>Revenue is the order value measured in Google Ads, including VAT. Ad spend is net. If revenue is also taken net (assuming 19% VAT), ROAS is around 680%.</p>
+<p>My fee is not included in the costs. <a href="/en/preise.html#google-ads">What management costs is listed here.</a></p>
+</div>
+</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Month by month</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Orders from ads. The curve is not smooth, and there are reasons for that.</p>
+</div>
+<div class="cs-chart" role="img" aria-label="Bar chart: orders per month, year before and current year"><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 35.5%"></span><span class="cs-b cs-cur" style="height: 1.6%"><i>1</i></span></div><span class="cs-ml">Nov</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 11.3%"></span><span class="cs-b cs-cur" style="height: 100.0%"><i>62</i></span></div><span class="cs-ml">Dec</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 6.5%"></span><span class="cs-b cs-cur" style="height: 38.7%"><i>24</i></span></div><span class="cs-ml">Jan</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 8.1%"></span><span class="cs-b cs-cur" style="height: 37.1%"><i>23</i></span></div><span class="cs-ml">Feb</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 8.1%"></span><span class="cs-b cs-cur" style="height: 21.0%"><i>13</i></span></div><span class="cs-ml">Mar</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 6.5%"></span><span class="cs-b cs-cur" style="height: 17.7%"><i>11</i></span></div><span class="cs-ml">Apr</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 9.7%"></span><span class="cs-b cs-cur" style="height: 3.2%"><i>2</i></span></div><span class="cs-ml">May</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 1.6%"></span><span class="cs-b cs-cur" style="height: 8.1%"><i>5</i></span></div><span class="cs-ml">Jun</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 3.2%"></span><span class="cs-b cs-cur" style="height: 24.2%"><i>15</i></span></div><span class="cs-ml">Jul</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 1.6%"></span><span class="cs-b cs-cur" style="height: 9.7%"><i>6</i></span></div><span class="cs-ml">Aug</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 4.8%"></span><span class="cs-b cs-cur" style="height: 14.5%"><i>9</i></span></div><span class="cs-ml">Sep</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 19.4%"></span><span class="cs-b cs-cur" style="height: 29.0%"><i>18</i></span></div><span class="cs-ml">Oct</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 4.8%"></span><span class="cs-b cs-cur" style="height: 14.5%"><i>9</i></span></div><span class="cs-ml">Nov</span></div></div>
+<div class="cs-legend"><span><i style="background:#fcba01"></i>With me</span><span><i style="background:#4a4538"></i>Year before</span><span>The first and last month are half months.</span></div>
+</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">What got in the way</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Three things you would not find in a glossy case study.</p>
+</div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 32px 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
+<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Measurement</span>
+<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Months without proper consent</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">For several months the shop theme and the cookie banner did not work together. People kept ordering during that time, but some of the orders were not counted. The real numbers are therefore more likely higher.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
+<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Stock</span>
+<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Periods without stock</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Time and again there was so little stock that the shop could not deliver. Ads can only sell what is in stock.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
+<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Year before</span>
+<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Two exceptional days</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Two days of the year before account for more than €22,000 in order value in the data, almost half of the whole year. Without them the old ROAS would be around 450%. I left them in anyway.</p>
+</div>
+</div>
+</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
+<div class="cs-call">
+<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #12110d">What 810% ROAS means</span>
+<p class="cs-call-big">The ads cost 12.3% of revenue.</p>
+<p class="cs-call-text">The campaign pays for itself as soon as the shop keeps more than that before advertising. The shop did not know its contribution margin at the takeover. We are now building it product by product instead of guessing a number.</p>
+<a href="/en/google-ads-kosten.html" class="cs-call-btn">Check it with your own numbers →</a>
+</div>
+</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">The terms, explained simply</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Every answer uses the same calculation. You need no prior knowledge.</p>
+</div><div class="db-faqs">
+<details class="db-faq"><summary>What is a conversion?</summary><p>An action that counts for your business. Here it is an order in the shop. In the case study: 198 orders in twelve months, 75 in the year before.</p></details>
+<details class="db-faq"><summary>What does ROAS mean?</summary><p>How much revenue one euro of advertising brings in. In the case study: 810%, so €8.10 in revenue per euro of ad spend. That is revenue, not profit.</p></details>
+<details class="db-faq"><summary>Is an ROAS of 810% good?</summary><p>That depends on your margin. In the case study, advertising cost 12.3% of revenue. It pays for itself as soon as the shop keeps more than that before advertising.</p><a class="cs-faq-link" href="/en/google-ads-kosten.html">To the contribution-margin calculator →</a></details>
+<details class="db-faq"><summary>What is a contribution margin, and why is there none here?</summary><p>What is left of an order after goods, shipping and fees are paid. The shop did not know its own at the takeover. We are building it product by product right now instead of guessing a number.</p><a class="cs-faq-link" href="/en/google-ads-kosten.html">To the contribution-margin calculator →</a></details>
+<details class="db-faq"><summary>What does an order cost?</summary><p>Ad spend divided by orders. In the case study: €53.64 instead of €72.51 in the year before.</p></details>
+<details class="db-faq"><summary>Why has ROAS not gone up although things are going better?</summary><p>Because the budget is almost twice as high. The first customers are the cheapest, each additional one costs a little more. Holding the return at double the spend is the result. On top of that, two exceptional days in the year before pull the old figure up.</p></details>
+<details class="db-faq"><summary>What is consent, and why are orders missing from the data?</summary><p>Consent is the visitors' agreement to being measured. Without it, people keep ordering, but the orders are not counted. In the case study this was the case for several months because the shop theme and the cookie banner did not work together.</p></details>
+<details class="db-faq"><summary>Why do the months vary so much?</summary><p>Because of season and stock. December brought 62 orders, months without stock far fewer. Ads can only sell what is in stock.</p></details>
+<details class="db-faq"><summary>What are impressions?</summary><p>How often an ad was shown. In the case study around 591,000 times, 59% more than the year before. An ad appearing does not cost anything by itself.</p></details>
+<details class="db-faq"><summary>Can I apply these numbers to my business?</summary><p>No. Order value, margin and competition are different for you. It is better to check it with your own numbers.</p><a class="cs-faq-link" href="/en/google-ads-kosten.html">To the contribution-margin calculator →</a></details>
+</div>
+</section>
+<section id="contact" class="contact">
+    <div class="contact-inner">
+        <div class="contact-copy">
+            <h2>What would your calculation look like? I'll take a look. Free.</h2>
+            <p class="contact-lead">Send me your account or your numbers. You'll get an honest assessment of what is possible and what isn't.</p>
+            <ul class="contact-checks">
+                <li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>A reply from Max in person</span></li>
+                <li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>An assessment, not a sales pitch</span></li>
+                <li><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>A reply within 2 working days</span></li>
+            </ul>
+            <div class="contact-direct">
+                <span>Or write to me directly:</span>
+                <a href="mailto:hello@click-capybara.com">hello@click-capybara.com</a>
+                <span class="contact-note">No spam. No unwanted calls. Just a reply from me, Max.</span>
+            </div>
+        </div>
+        <div class="contact-card">
+            <form id="contact-form" data-source="Fallbeispiel Onlineshop (EN)">
+                <!-- spam trap: real visitors never see or fill this field -->
+                <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+                    <label for="cf-contact_url">Please leave this field empty</label>
+                    <input type="text" name="contact_url" id="cf-contact_url" tabindex="-1" autocomplete="off">
+                </div>
+                <div class="field"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" required="" placeholder="Your name" autocomplete="name"></div>
+                <div class="field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" required="" placeholder="you@company.com" autocomplete="email"></div>
+                <div class="field"><label for="cf-service">What can I help with?</label>
+                    <select id="cf-service" name="service">
+                        <option selected="">Google Ads</option>
+                        <option>Local Hero Kit</option>
+                        <option>Automation</option>
+                        <option>Honest second opinion</option>
+                        <option>General question</option>
+                    </select>
+                </div>
+                <div class="field"><label for="cf-website">Website / Google Ads Account (optional)</label><input id="cf-website" name="website" type="text" placeholder="www.yoursite.com"></div>
+                <div class="field"><label for="cf-challenge">Anything else? (optional)</label><textarea id="cf-challenge" name="challenge" rows="3" placeholder="e.g. cost per lead too high, unclear reports"></textarea></div>
+                <button type="submit" class="btn-cta btn-block">Send message</button>
+                <p class="form-note">Free and without obligation. I only use your details to reply to you. <a href="/en/privacy.html">Privacy</a></p>
+            </form>
+            <div id="form-success" role="status">
+                <svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7ddc9f" stroke-width="2.5"><path d="M4 12.5l5 5L20 6.5"></path></svg>
+                <h3>Message received.</h3>
+                <p>You'll hear from me within 2 working days, directly from Max.</p>
+                <a href="/en/nonogrid.html">Until I reply: play a round of Nonogrid →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+<footer class="site-footer">
+    <span class="site-footer-brand"><img src="/assets/clickcapybara_outline_bold.svg" width="22" height="22" alt="">© 2026 Click-Capybara · Google Ads, websites and automation from Düsseldorf</span>
+    <span class="site-footer-links">
+        <a href="/en/preise.html">Pricing</a>
+        <a href="/en/google-ads-kosten.html">Google Ads cost</a>
+        <a href="/en/free-script.html">Tools &amp; Scripts</a>
+        <a href="/en/privacy.html">Privacy</a>
+        <a href="/en/impressum.html">Legal notice</a>
+    </span>
+</footer>
+<script src="/js/site.js" defer=""></script>
+
+
+</div>
+
+
+    <script>
+    (function () {
+      var target = document.querySelector('#contact');
+      if (!target) return;
+      var loaded = false;
+      function loadForm() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.src = '/js/contact-form.js';
+        document.body.appendChild(s);
+      }
+      new IntersectionObserver(function (entries, obs) {
+        if (entries[0].isIntersecting) { loadForm(); obs.disconnect(); }
+      }, { rootMargin: '400px' }).observe(target);
+    })();
+    </script></body></html>
