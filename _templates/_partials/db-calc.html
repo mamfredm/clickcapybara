@@ -1,0 +1,41 @@
+<div id="db-calc" class="db-calc">
+<div class="db-col">
+<span class="ts-k" style="color: #fcba01">Deine Angaben</span>
+<div role="group" aria-label="Geschäftsmodell wählen" class="db-mode">
+<button class="p-pk" type="button" data-db-mode="shop" aria-pressed="true">Shop</button>
+<button class="p-pk" type="button" data-db-mode="lead" aria-pressed="false">Dienstleistung</button>
+</div>
+<label class="db-field"><span class="db-label">Auftragswert, netto</span><span class="db-input"><input id="db-price" type="number" inputmode="decimal" min="0" step="any" value="120"><span class="db-unit">€</span></span></label>
+<label class="db-field"><span class="db-label">Variable Kosten pro Auftrag</span><span class="db-input"><input id="db-var" type="number" inputmode="decimal" min="0" step="any" value="70"><span class="db-unit">€</span></span><span class="ts-s">Ware, Material, Versand, Zahlungsgebühren</span></label>
+<label class="db-field"><span class="db-label">Conversion-Rate</span><span class="db-input"><input id="db-cr" type="number" inputmode="decimal" min="0" step="any" value="2"><span class="db-unit">%</span></span></label>
+<label class="db-field" data-db-only="lead" hidden><span class="db-label">Abschlussquote</span><span class="db-input"><input id="db-close" type="number" inputmode="decimal" min="0" step="any" value="30"><span class="db-unit">%</span></span><span class="ts-s">Wie viele Anfragen werden zu Aufträgen?</span></label>
+<label class="db-field"><span class="db-label">Durchschnittlicher Klickpreis</span><span class="db-input"><input id="db-cpc" type="number" inputmode="decimal" min="0" step="any" value="0.70"><span class="db-unit">€</span></span><span class="ts-s">Der Wert aus deinem Account</span></label>
+<label class="db-field"><span class="db-label">Werbebudget im Monat</span><span class="db-input"><input id="db-budget" type="number" inputmode="decimal" min="0" step="50" value="1000"><span class="db-unit">€</span></span></label>
+<label class="db-check"><input type="checkbox" id="db-fee"><span>Betreuung durch mich einrechnen</span></label>
+<span class="ts-s">Die Startwerte sind Beispiele. Ersetze sie durch deine eigenen Zahlen.</span>
+</div>
+<div class="db-col db-result">
+<span class="ts-k" style="color: #fcba01">Deine Rechnung</span>
+<p class="db-verdict" data-db="verdict" aria-live="polite"></p>
+<div class="db-rows">
+<div class="db-row"><span class="db-rl">Deckungsbeitrag pro Auftrag</span><span class="db-rv" data-db="db"></span></div>
+<div class="db-row"><span class="db-rl">Maximale Werbekosten pro Auftrag<span class="ts-s">Bis hierhin zahlst du nicht drauf</span></span><span class="db-rv" data-db="maxCpa"></span></div>
+<div class="db-row db-row-big"><span class="db-rl">Maximaler Klickpreis</span><span class="db-rv" data-db="maxCpc"></span></div>
+<div class="db-row"><span class="db-rl">Break-even-ROAS<span class="ts-s">Umsatz je Euro Werbung, ab dem es sich trägt</span></span><span class="db-rv" data-db="roas"></span></div>
+</div>
+<span class="ts-k" style="color: #fcba01; margin-top: 10px">Bei deinem Budget</span>
+<div class="db-rows">
+<div class="db-row"><span class="db-rl">Klicks im Monat</span><span class="db-rv" data-db="clicks"></span></div>
+<div class="db-row"><span class="db-rl">Aufträge im Monat</span><span class="db-rv" data-db="orders"></span></div>
+<div class="db-row"><span class="db-rl">Werbekosten pro Auftrag</span><span class="db-rv" data-db="cpa"></span></div>
+<div class="db-row"><span class="db-rl">Umsatz</span><span class="db-rv" data-db="revenue"></span></div>
+<div class="db-row"><span class="db-rl">Deckungsbeitrag gesamt</span><span class="db-rv" data-db="dbTotal"></span></div>
+<div class="db-row"><span class="db-rl">Werbebudget, direkt an Google</span><span class="db-rv" data-db="adCost"></span></div>
+<div class="db-row" data-db-feerow hidden><span class="db-rl"><span data-db="feeLabel"></span></span><span class="db-rv" data-db="feeCost"></span></div>
+<div class="db-row db-row-big"><span class="db-rl">Bleibt im Monat übrig</span><span class="db-rv" data-db="profit"></span></div>
+</div>
+<a class="p-cta" id="db-cta" href="#contact" style="display: inline-block; align-self: flex-start; background: #fcba01; color: #12110d; padding: 17px 28px; border-radius: 999px; font-weight: 700; font-size: 17px; text-decoration: none; margin-top: 8px">Mit diesen Zahlen anfragen</a>
+<span class="ts-s">Richtwert, keine Zusage. Deine Zahlen bleiben in deinem Browser, bis du sie abschickst.</span>
+</div>
+</div>
+<p style="margin: 20px 0 0; font: 400 14px/1.5 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Alle Preise zzgl. gesetzlicher Umsatzsteuer, soweit sie anfällt.</p>

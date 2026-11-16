@@ -541,28 +541,53 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 <span style="padding-right: 48px">Search &nbsp;/&nbsp; Shopping &nbsp;/&nbsp; Display &nbsp;/&nbsp; Demand Gen &nbsp;/&nbsp; Performance Max &nbsp;/&nbsp; Scripts &nbsp;/&nbsp; Audits &nbsp;/</span>
 </div>
 </div>
-<section style="max-width: 1200px; margin: 0 auto; padding: 104px 32px 96px">
+<section style="max-width: 1200px; margin: 0 auto; padding: 104px 32px 56px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
-<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Kommt dir das bekannt vor?</h2>
-<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Wenn dir eins davon bekannt vorkommt, lohnt sich ein Blick von außen.</p>
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Rechnet sich das für dich?</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Trag deine Zahlen ein. Der Rechner zeigt, ab welchem Klickpreis du draufzahlst.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 32px 40px">
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Problem 01</span>
-<h3 style="margin: 0; font: 700 30px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">„Das kostet mich jede Woche Stunden.“</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Zu viel Handarbeit im Account, die sich automatisieren ließe.</p>
+<div id="db-calc" class="db-calc">
+<div class="db-col">
+<span class="ts-k" style="color: #fcba01">Deine Angaben</span>
+<div role="group" aria-label="Geschäftsmodell wählen" class="db-mode">
+<button class="p-pk" type="button" data-db-mode="shop" aria-pressed="true">Shop</button>
+<button class="p-pk" type="button" data-db-mode="lead" aria-pressed="false">Dienstleistung</button>
 </div>
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Problem 02</span>
-<h3 style="margin: 0; font: 700 30px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">„Ich verstehe die Reports nicht.“</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Zahlen ohne Aussage. Am Ende weiß niemand, was funktioniert hat.</p>
+<label class="db-field"><span class="db-label">Auftragswert, netto</span><span class="db-input"><input id="db-price" type="number" inputmode="decimal" min="0" step="any" value="120"><span class="db-unit">€</span></span></label>
+<label class="db-field"><span class="db-label">Variable Kosten pro Auftrag</span><span class="db-input"><input id="db-var" type="number" inputmode="decimal" min="0" step="any" value="70"><span class="db-unit">€</span></span><span class="ts-s">Ware, Material, Versand, Zahlungsgebühren</span></label>
+<label class="db-field"><span class="db-label">Conversion-Rate</span><span class="db-input"><input id="db-cr" type="number" inputmode="decimal" min="0" step="any" value="2"><span class="db-unit">%</span></span></label>
+<label class="db-field" data-db-only="lead" hidden=""><span class="db-label">Abschlussquote</span><span class="db-input"><input id="db-close" type="number" inputmode="decimal" min="0" step="any" value="30"><span class="db-unit">%</span></span><span class="ts-s">Wie viele Anfragen werden zu Aufträgen?</span></label>
+<label class="db-field"><span class="db-label">Durchschnittlicher Klickpreis</span><span class="db-input"><input id="db-cpc" type="number" inputmode="decimal" min="0" step="any" value="0.70"><span class="db-unit">€</span></span><span class="ts-s">Der Wert aus deinem Account</span></label>
+<label class="db-field"><span class="db-label">Werbebudget im Monat</span><span class="db-input"><input id="db-budget" type="number" inputmode="decimal" min="0" step="50" value="1000"><span class="db-unit">€</span></span></label>
+<label class="db-check"><input type="checkbox" id="db-fee"><span>Betreuung durch mich einrechnen</span></label>
+<span class="ts-s">Die Startwerte sind Beispiele. Ersetze sie durch deine eigenen Zahlen.</span>
 </div>
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Problem 03</span>
-<h3 style="margin: 0; font: 700 30px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">„Wir reden mehr, als wir umsetzen.“</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Zu viele Abstimmungstermine, zu wenig Bewegung im Konto.</p>
+<div class="db-col db-result">
+<span class="ts-k" style="color: #fcba01">Deine Rechnung</span>
+<p class="db-verdict" data-db="verdict" aria-live="polite"></p>
+<div class="db-rows">
+<div class="db-row"><span class="db-rl">Deckungsbeitrag pro Auftrag</span><span class="db-rv" data-db="db"></span></div>
+<div class="db-row"><span class="db-rl">Maximale Werbekosten pro Auftrag<span class="ts-s">Bis hierhin zahlst du nicht drauf</span></span><span class="db-rv" data-db="maxCpa"></span></div>
+<div class="db-row db-row-big"><span class="db-rl">Maximaler Klickpreis</span><span class="db-rv" data-db="maxCpc"></span></div>
+<div class="db-row"><span class="db-rl">Break-even-ROAS<span class="ts-s">Umsatz je Euro Werbung, ab dem es sich trägt</span></span><span class="db-rv" data-db="roas"></span></div>
+</div>
+<span class="ts-k" style="color: #fcba01; margin-top: 10px">Bei deinem Budget</span>
+<div class="db-rows">
+<div class="db-row"><span class="db-rl">Klicks im Monat</span><span class="db-rv" data-db="clicks"></span></div>
+<div class="db-row"><span class="db-rl">Aufträge im Monat</span><span class="db-rv" data-db="orders"></span></div>
+<div class="db-row"><span class="db-rl">Werbekosten pro Auftrag</span><span class="db-rv" data-db="cpa"></span></div>
+<div class="db-row"><span class="db-rl">Umsatz</span><span class="db-rv" data-db="revenue"></span></div>
+<div class="db-row"><span class="db-rl">Deckungsbeitrag gesamt</span><span class="db-rv" data-db="dbTotal"></span></div>
+<div class="db-row"><span class="db-rl">Werbebudget, direkt an Google</span><span class="db-rv" data-db="adCost"></span></div>
+<div class="db-row" data-db-feerow="" hidden=""><span class="db-rl"><span data-db="feeLabel"></span></span><span class="db-rv" data-db="feeCost"></span></div>
+<div class="db-row db-row-big"><span class="db-rl">Bleibt im Monat übrig</span><span class="db-rv" data-db="profit"></span></div>
+</div>
+<a class="p-cta" id="db-cta" href="#contact" style="display: inline-block; align-self: flex-start; background: #fcba01; color: #12110d; padding: 17px 28px; border-radius: 999px; font-weight: 700; font-size: 17px; text-decoration: none; margin-top: 8px">Mit diesen Zahlen anfragen</a>
+<span class="ts-s">Richtwert, keine Zusage. Deine Zahlen bleiben in deinem Browser, bis du sie abschickst.</span>
 </div>
 </div>
+<p style="margin: 20px 0 0; font: 400 14px/1.5 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Alle Preise zzgl. gesetzlicher Umsatzsteuer, soweit sie anfällt.</p>
+
 </section>
 <section class="cs-teaser-wrap" style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
 <a class="cs-teaser" href="/fallbeispiel-onlineshop.html">
@@ -626,29 +651,6 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 </section>
 <section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
-<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Branchenübergreifend, mit drei Schwerpunkten</h2>
-<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Bereiche, die ich besonders gut kenne.</p>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 32px 40px">
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Schwerpunkt</span>
-<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Lead-Generierung</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Anfragen, die zum Angebot passen, statt möglichst vieler Formulare.</p>
-</div>
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Schwerpunkt</span>
-<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">E-Commerce</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Shopping und Performance Max für Shops, bei denen die Marge zählt.</p>
-</div>
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Schwerpunkt</span>
-<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Branding-Kampagnen</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Bekannt werden, bevor jemand nach dir sucht.</p>
-</div>
-</div>
-</section>
-<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
 <h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Was das kostet</h2>
 <p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Keine Prozente vom Werbebudget, keine langen Verträge.</p>
 </div>
@@ -693,29 +695,6 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 </div>
 </div>
 <p style="margin: 20px 0 0; font: 400 14px/1.5 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Alle Preise zzgl. gesetzlicher Umsatzsteuer, soweit sie anfällt.</p>
-</section>
-<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 104px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
-<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">So arbeite ich</h2>
-<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Drei Schritte, ohne Pitch-Deck.</p>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 32px 40px">
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">01</span>
-<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Analyse &amp; Verstehen</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Ich schaue mir Account, Tracking und Ziele an, bevor ich etwas anfasse.</p>
-</div>
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">02</span>
-<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Aufbauen &amp; Starten</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Struktur, Keywords, Anzeigen und Gebote werden aufgesetzt oder umgebaut.</p>
-</div>
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">03</span>
-<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Optimieren &amp; Reporten</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Wöchentliche Optimierung und ein monatlicher Bericht, den man versteht.</p>
-</div>
-</div>
 </section>
 <section id="contact" class="contact">
     <div class="contact-inner">

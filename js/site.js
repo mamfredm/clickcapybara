@@ -229,4 +229,41 @@
         });
         calcDb();
     }
+    // ── Small comparison calculators (Local Hero Kit, automation) ──
+    $$('[data-mini-calc]').forEach(function (box) {
+        var en = document.documentElement.lang === 'en', loc = en ? 'en-GB' : 'de-DE';
+        var eur = function (n) { var s = Math.round(Math.abs(n)).toLocaleString(loc); return (n < 0 ? '−' : '') + (en ? '€' + s : s + ' €'); };
+        var put = function (k, v) { $$('[data-mc="' + k + '"]', box).forEach(function (n) { n.textContent = v; }); };
+        var verdict = function (text, cls) { var v = $('[data-mc="verdict"]', box); v.textContent = text; v.className = 'db-verdict ' + cls; };
+        var run;
+        if (box.dataset.miniCalc === 'lhk') {
+            var KIT = 1150, RUN = 2;
+            run = function () {
+                var m = parseFloat($('#lhk-monthly').value), y = parseInt($('#lhk-years').value, 10), months = y * 12;
+                var yrs = y + (en ? (y === 1 ? ' year' : ' years') : (y === 1 ? ' Jahr' : ' Jahre'));
+                $('#lhk-monthly-out').textContent = eur(m);
+                $('#lhk-years-out').textContent = yrs;
+                var abo = m * months, kit = KIT + RUN * months, diff = abo - kit, even = m > RUN ? Math.floor(KIT / (m - RUN)) + 1 : null;
+                put('abo', eur(abo)); put('kit', eur(kit)); put('diff', eur(Math.abs(diff)));
+                put('even', even ? (en ? 'month ' + even : 'Monat ' + even) : '—');
+                if (diff > 0) verdict(en ? 'After ' + yrs + ' the kit has saved you ' + eur(diff) + '.' : 'Nach ' + y + (y === 1 ? ' Jahr' : ' Jahren') + ' hast du mit dem Kit ' + eur(diff) + ' gespart.', 'db-ok');
+                else verdict(en ? 'After ' + yrs + ' the site builder is still ' + eur(-diff) + ' cheaper.' + (even ? ' That turns from month ' + even + '.' : '') : 'Nach ' + y + (y === 1 ? ' Jahr' : ' Jahren') + ' ist der Baukasten noch ' + eur(-diff) + ' günstiger.' + (even ? ' Ab Monat ' + even + ' dreht sich das.' : ''), 'db-warn');
+            };
+        } else {
+            var PRICE = 490;
+            run = function () {
+                var h = parseFloat($('#auto-hours').value), r = parseFloat($('#auto-rate').value);
+                $('#auto-hours-out').textContent = h.toLocaleString(loc) + (en ? (h === 1 ? ' hour' : ' hours') : (h === 1 ? ' Stunde' : ' Stunden'));
+                $('#auto-rate-out').textContent = eur(r);
+                var hoursYear = h * 52, manual = hoursYear * r, weeks = Math.ceil(PRICE / (h * r));
+                var wk = weeks + (en ? (weeks === 1 ? ' week' : ' weeks') : (weeks === 1 ? ' Woche' : ' Wochen'));
+                put('hours', hoursYear.toLocaleString(loc)); put('manual', eur(manual));
+                put('price', (en ? 'from ' : 'ab ') + eur(PRICE)); put('weeks', wk);
+                if (weeks <= 26) verdict(en ? 'This task costs you ' + eur(manual) + ' a year. A workflow pays for itself after about ' + wk + '.' : 'Diese Aufgabe kostet dich ' + eur(manual) + ' im Jahr. Ein Ablauf hat sich nach rund ' + (weeks === 1 ? '1 Woche' : weeks + ' Wochen') + ' bezahlt.', 'db-ok');
+                else verdict(en ? 'This task costs you ' + eur(manual) + ' a year. A workflow takes ' + wk + ' to pay for itself. Automating it is probably not worth it.' : 'Diese Aufgabe kostet dich ' + eur(manual) + ' im Jahr. Ein Ablauf braucht ' + weeks + ' Wochen, bis er sich bezahlt hat. Automatisieren lohnt sich hier eher nicht.', 'db-warn');
+            };
+        }
+        $$('input', box).forEach(function (i) { i.addEventListener('input', run); });
+        run();
+    });
 })();

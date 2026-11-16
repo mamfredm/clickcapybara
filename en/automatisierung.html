@@ -537,6 +537,32 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 </div>
 <p style="margin: 28px 0 0; max-width: 620px; font-size: 16px; line-height: 1.55; color: #d6d1c4">The principle is always the same: something happens, a workflow takes over, and the result lands where you need it.</p>
 </section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 64px 32px 96px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">What does the manual work cost you?</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Set how much time a recurring task eats up and see when a workflow pays for itself.</p>
+</div>
+<div id="auto-calc" class="db-calc" data-mini-calc="auto">
+<div class="db-col">
+<span class="ts-k" style="color: #fcba01">Your numbers</span>
+<label class="ts-slider"><span class="db-label">Time for the task per week</span><span id="auto-hours-out" class="ts-out">2 hours</span><input id="auto-hours" type="range" min="0.5" max="20" step="0.5" value="2"></label>
+<label class="ts-slider"><span class="db-label">What an hour is worth to you</span><span id="auto-rate-out" class="ts-out">€50</span><input id="auto-rate" type="range" min="20" max="150" step="5" value="50"></label>
+<span class="ts-s">Use what you would otherwise earn in that hour, or what an employee's hour costs.</span>
+</div>
+<div class="db-col db-result">
+<span class="ts-k" style="color: #fcba01">Your result</span>
+<p class="db-verdict" data-mc="verdict" aria-live="polite"></p>
+<div class="db-rows">
+<div class="db-row"><span class="db-rl">Hours per year</span><span class="db-rv" data-mc="hours"></span></div>
+<div class="db-row"><span class="db-rl">Manual work per year</span><span class="db-rv" data-mc="manual"></span></div>
+<div class="db-row"><span class="db-rl">One workflow, handed over ready to use<span class="ts-s">one-off, until 1 March 2027, then from €590</span></span><span class="db-rv" data-mc="price"></span></div>
+<div class="db-row db-row-big"><span class="db-rl">Pays for itself after</span><span class="db-rv" data-mc="weeks"></span></div>
+</div>
+<span class="ts-s">You pay hosting and AI costs directly to the provider.</span>
+<a href="/en/free-script.html" style="font-weight: 500; font-size: 16px; color: #fcba01; padding: 12px 0; align-self: flex-start">An example that is already running: see the script →</a>
+</div>
+</div>
+</section>
 <section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
 <div id="inhalt" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
 <h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Five examples, one per area</h2>
@@ -623,21 +649,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 </div>
 </div>
 </section>
-<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
-<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">An example that is already running</h2>
-<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">So you can see how I build.</p>
-</div>
-<div style="border: 3px solid #fcba01; border-radius: 28px; padding: 40px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between">
-<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 14px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Hands-on / free and open source</span>
-<h3 style="margin: 0; font: 700 32px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">AI Max NegativeIQ</h3>
-<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #d6d1c4">A Google Ads script of mine: pulls search terms from the account, classifies them with AI, protects converting terms and suggests negative keywords.</p>
-</div>
-<a href="/en/free-script.html" style="font-weight: 500; font-size: 17px; color: #fcba01; padding: 12px 0">See the script →</a>
-</div>
-</section>
-<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 104px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
 <h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">What it costs</h2>
 <p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Two options, both without a subscription.</p>
@@ -650,29 +662,6 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 </div>
 </div>
 <p style="margin: 20px 0 0; font: 400 14px/1.5 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">All prices plus statutory VAT where applicable.</p>
-</section>
-<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 104px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
-<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">How it works</h2>
-<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Three steps to the finished workflow.</p>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 32px 40px">
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">01</span>
-<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Understand the process</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">We go through what happens by hand today and which parts are a pain.</p>
-</div>
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">02</span>
-<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Build &amp; test</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">I set up the workflow and test it with real cases.</p>
-</div>
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">03</span>
-<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Hand over</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">You get documentation and can adjust the workflow yourself.</p>
-</div>
-</div>
 </section>
 <section id="contact" class="contact">
     <div class="contact-inner">

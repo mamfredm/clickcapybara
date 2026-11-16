@@ -526,6 +526,31 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 </div>
 </div>
 <section style="max-width: 1200px; margin: 0 auto; padding: 104px 32px 96px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Baukasten-Abo oder einmal bauen?</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Stell ein, was dich ein Baukasten im Monat kostet, und sieh, ab wann sich das Kit rechnet.</p>
+</div>
+<div id="lhk-calc" class="db-calc" data-mini-calc="lhk">
+<div class="db-col">
+<span class="ts-k" style="color: #fcba01">Deine Angaben</span>
+<label class="ts-slider"><span class="db-label">Baukasten-Abo im Monat</span><span id="lhk-monthly-out" class="ts-out">40 €</span><input id="lhk-monthly" type="range" min="10" max="80" step="1" value="40"></label>
+<span class="ts-s">Üblich sind 16 bis 29 € für den Baukasten, mit Online-Buchung und Geschäfts-E-Mail 30 bis 55 €.</span>
+<label class="ts-slider"><span class="db-label">Betrachteter Zeitraum</span><span id="lhk-years-out" class="ts-out">3 Jahre</span><input id="lhk-years" type="range" min="1" max="6" step="1" value="3"></label>
+</div>
+<div class="db-col db-result">
+<span class="ts-k" style="color: #fcba01">Deine Rechnung</span>
+<p class="db-verdict" data-mc="verdict" aria-live="polite"></p>
+<div class="db-rows">
+<div class="db-row"><span class="db-rl">Baukasten-Abo im Zeitraum</span><span class="db-rv" data-mc="abo"></span></div>
+<div class="db-row"><span class="db-rl">Local Hero Kit im Zeitraum<span class="ts-s">1.150 € einmalig plus Domain und E-Mail ab 2 € im Monat</span></span><span class="db-rv" data-mc="kit"></span></div>
+<div class="db-row db-row-big"><span class="db-rl">Unterschied</span><span class="db-rv" data-mc="diff"></span></div>
+<div class="db-row"><span class="db-rl">Das Kit ist günstiger ab</span><span class="db-rv" data-mc="even"></span></div>
+</div>
+<span class="ts-s">Im Kit stecken außerdem das Google-Unternehmensprofil und die Sichtbarkeit in der KI-Suche. Die bringt ein Baukasten nicht mit.</span>
+</div>
+</div>
+</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
 <div id="inhalt" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
 <h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Das Paket</h2>
 <p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Drei Bausteine, die zusammen dafür sorgen, dass man dich findet.</p>
@@ -573,53 +598,6 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 </section>
 <section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
-<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Was das wirklich kostet</h2>
-<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Einmal rechnen, dann vergleichen.</p>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 24px">
-<div style="border: 1px solid #4a4538; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 16px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Der übliche Weg</span>
-<h3 style="margin: 0; font: 700 28px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Baukasten im Abo</h3>
-<div style="display: flex; flex-direction: column; font-size: 17px">
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #4a4538"><span style="color: #d6d1c4">Baukasten</span><span>16–29 € im Monat</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #4a4538"><span style="color: #d6d1c4">Online-Buchung</span><span>+ 10–20 € im Monat</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #4a4538; border-bottom: 1px solid #4a4538"><span style="color: #d6d1c4">Mit Geschäfts-E-Mail</span><span>30–55 € im Monat</span></div>
-</div>
-</div>
-<div style="background: #fcba01; color: #12110d; border-radius: 24px; padding: 36px; display: flex; flex-direction: column; gap: 16px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace">Der Click-Capybara-Weg</span>
-<h3 style="margin: 0; font: 700 28px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Einmal bauen, behalten</h3>
-<div style="display: flex; flex-direction: column; font-size: 17px; font-weight: 500">
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #12110d"><span>Local Hero Kit, einmalig</span><span>1.150 €</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #12110d"><span>Angebot bis 01.03.2027, danach</span><span>1.500 €</span></div>
-<div style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #12110d; border-bottom: 1px solid #12110d"><span>Domain und E-Mail</span><span>ab 2 € im Monat</span></div>
-</div>
-</div>
-</div>
-<p style="margin: 20px 0 0; font: 400 14px/1.5 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Alle Preise zzgl. gesetzlicher Umsatzsteuer, soweit sie anfällt.</p>
-<div style="display: flex; margin-top: 8px"><a href="/preise.html#local-hero-kit" style="font-weight: 500; font-size: 16px; color: #fcba01; padding: 12px 0; align-self: flex-start">Alle Preise ansehen →</a>
-</div>
-</section>
-<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
-<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Mehr Reichweite, wenn du sie brauchst</h2>
-<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Kein Muss. Die Website funktioniert auch ohne Anzeigen.</p>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 32px 40px">
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Dazu buchbar</span>
-<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Google Ads</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Betreue ich selbst. Paket S mit 5 Stunden ab 395 € im Monat (bis 01.03.2027, danach 500 €).</p>
-</div>
-<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
-<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">Dazu buchbar</span>
-<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Meta Ads</h3>
-<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Instagram und Facebook über freiberufliche Spezialist:innen, die ich vermittle.</p>
-</div>
-</div>
-</section>
-<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 104px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
 <h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">So läuft's ab</h2>
 <p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Drei Schritte bis zur fertigen Seite.</p>
 </div>
@@ -640,6 +618,19 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Mit der Live-Stellung ist alles erledigt: Die Seite ist online, dein Profil steht, Anfragen landen direkt bei dir.</p>
 </div>
 </div>
+</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 104px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Was es kostet</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Einmal bezahlt. Was laufend anfällt, zahlst du direkt beim Anbieter.</p>
+</div><div class="db-rows" style="border-bottom: 1px solid #4a4538">
+<div class="db-row db-row-big"><span class="db-rl">Local Hero Kit, einmalig<span class="ts-s">bis 01.03.2027, danach 1.500 €</span></span><span class="db-rv">1.150 €</span></div>
+<div class="db-row"><span class="db-rl">Domain und E-Mail<span class="ts-s">Zahlst du direkt beim Anbieter. Kein Abo bei mir.</span></span><span class="db-rv">ab 2 € im Monat</span></div>
+<div class="db-row"><span class="db-rl">Dazu buchbar: Google Ads, Paket S<span class="ts-s">5 Stunden Betreuung im Monat, bis 1.000 € Werbebudget.</span></span><span class="db-rv">ab 395 € im Monat</span></div>
+<div class="db-row"><span class="db-rl">Dazu buchbar: Meta Ads<span class="ts-s">Instagram und Facebook über freiberufliche Spezialist:innen, die ich vermittle.</span></span><span class="db-rv">auf Anfrage</span></div>
+</div>
+<p style="margin: 20px 0 0; font: 400 14px/1.5 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Alle Preise zzgl. gesetzlicher Umsatzsteuer, soweit sie anfällt.</p>
+<a href="/preise.html#local-hero-kit" style="display: inline-block; margin-top: 8px; font-weight: 500; font-size: 16px; color: #fcba01; padding: 12px 0">Alle Preise ansehen →</a>
 </section>
 <section id="contact" class="contact">
     <div class="contact-inner">
