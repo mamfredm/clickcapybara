@@ -143,11 +143,11 @@ const PAGES = [
     seo: {
       de: {
         title: 'Fallbeispiel Google Ads: Onlineshop, 12 Monate, alle Zahlen | Click-Capybara',
-        desc: 'Ein Onlineshop nach der Übernahme: 198 statt 75 Bestellungen, 810 % ROAS bei doppeltem Budget. Mit den schlechten Monaten und einem FAQ, das ROAS, Conversion und Deckungsbeitrag einfach erklärt.',
+        desc: 'Ein Onlineshop nach der Übernahme: 198 statt 55 Bestellungen, ROAS von 450 % auf 810 % bei doppeltem Budget. Mit einem FAQ, das ROAS, Conversion und Deckungsbeitrag einfach erklärt.',
       },
       en: {
         title: 'Google Ads Case Study: Online Shop, 12 Months, All the Numbers | Click-Capybara',
-        desc: 'An online shop after the takeover: 198 orders instead of 75, 810% ROAS at double the budget. Including the bad months and an FAQ that explains ROAS, conversions and contribution margin in plain words.',
+        desc: 'An online shop after the takeover: 198 orders instead of 55, ROAS up from 450% to 810% at double the budget. With an FAQ that explains ROAS, conversions and contribution margin in plain words.',
       },
     },
     jsonld: (lang) => ({
