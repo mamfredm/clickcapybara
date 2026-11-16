@@ -439,6 +439,20 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 .ptag-line{height:2px;background:#12110d;opacity:.25;margin:14px 0 10px}
 .ptag-b{font:700 18px/1.3 'Space Grotesk',system-ui,sans-serif}
 @media (max-width:600px){.ptag{transform:rotate(-2deg);padding:28px 24px 24px 56px}}
+
+/* case study: before/after comparison */
+.cs-cmps{border-top:2px solid #f4f0e6;display:flex;flex-direction:column}
+.cs-cmp{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:14px 40px;align-items:center;padding:26px 0;border-bottom:1px solid #4a4538}
+.cs-cmp-l{display:flex;flex-direction:column;gap:6px;font:700 clamp(20px,2.2vw,26px)/1.15 'Space Grotesk',system-ui,sans-serif;letter-spacing:-0.02em}
+.cs-cmp-l .ts-s{font-size:14px;color:#fcba01}
+.cs-cmp-bars{display:flex;flex-direction:column;gap:10px;min-width:0}
+.cs-cmp-row{display:grid;grid-template-columns:64px minmax(0,1fr) 96px;gap:12px;align-items:center}
+.cs-cmp-k{font:400 12px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.cs-cmp-track{display:block;height:22px;background:#1a1812;border-radius:6px;overflow:hidden}
+.cs-cmp-bar{display:block;height:100%;border-radius:6px}
+.cs-cmp-v{font:500 16px 'Space Grotesk',system-ui,sans-serif;text-align:right;color:#a8a293;white-space:nowrap}
+.cs-cmp-strong{font-weight:700;color:#f4f0e6;font-size:18px}
+@media (max-width:700px){.cs-cmp{grid-template-columns:1fr}.cs-cmp-row{grid-template-columns:56px minmax(0,1fr) 84px;gap:8px}}
 </style>
 
     <!-- Cookie banner -->
@@ -557,19 +571,31 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 </section>
 <section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
-<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Orders, added up</h2>
-<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Each month is added on top. That way you see the trend without one strong month distorting the picture.</p>
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Before and after</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">The budget almost doubled. Orders and revenue grew considerably more.</p>
+</div><div class="cs-cmps">
+<div class="cs-cmp">
+<span class="cs-cmp-l">Ad spend<span class="ts-s">+ 95 %</span></span>
+<div class="cs-cmp-bars">
+<div class="cs-cmp-row"><span class="cs-cmp-k">Year before</span><span class="cs-cmp-track"><span class="cs-cmp-bar cs-prev" style="width: 51.2%"></span></span><span class="cs-cmp-v">€5,438</span></div>
+<div class="cs-cmp-row"><span class="cs-cmp-k">With me</span><span class="cs-cmp-track"><span class="cs-cmp-bar cs-cur" style="width: 100.0%"></span></span><span class="cs-cmp-v cs-cmp-strong">€10,620</span></div>
 </div>
-<div class="cs-linewrap"><svg class="cs-line" viewBox="0 0 1000 340" role="img" aria-label="Line chart: orders added up over twelve months. Year before 55, after the takeover 198.">
-<line x1="44" x2="930" y1="300.0" y2="300.0" stroke="#2e2a21"></line><text x="34" y="304.0" text-anchor="end" class="cs-ax">0</text><line x1="44" x2="930" y1="231.0" y2="231.0" stroke="#2e2a21"></line><text x="34" y="235.0" text-anchor="end" class="cs-ax">50</text><line x1="44" x2="930" y1="162.0" y2="162.0" stroke="#2e2a21"></line><text x="34" y="166.0" text-anchor="end" class="cs-ax">100</text><line x1="44" x2="930" y1="93.0" y2="93.0" stroke="#2e2a21"></line><text x="34" y="97.0" text-anchor="end" class="cs-ax">150</text><line x1="44" x2="930" y1="24.0" y2="24.0" stroke="#2e2a21"></line><text x="34" y="28.0" text-anchor="end" class="cs-ax">200</text><text x="44.0" y="328" text-anchor="middle" class="cs-ax cs-mon">Nov</text><text x="117.8" y="328" text-anchor="middle" class="cs-ax cs-mon">Dec</text><text x="191.7" y="328" text-anchor="middle" class="cs-ax cs-mon">Jan</text><text x="265.5" y="328" text-anchor="middle" class="cs-ax cs-mon">Feb</text><text x="339.3" y="328" text-anchor="middle" class="cs-ax cs-mon">Mar</text><text x="413.2" y="328" text-anchor="middle" class="cs-ax cs-mon">Apr</text><text x="487.0" y="328" text-anchor="middle" class="cs-ax cs-mon">May</text><text x="560.8" y="328" text-anchor="middle" class="cs-ax cs-mon">Jun</text><text x="634.7" y="328" text-anchor="middle" class="cs-ax cs-mon">Jul</text><text x="708.5" y="328" text-anchor="middle" class="cs-ax cs-mon">Aug</text><text x="782.3" y="328" text-anchor="middle" class="cs-ax cs-mon">Sep</text><text x="856.2" y="328" text-anchor="middle" class="cs-ax cs-mon">Oct</text><text x="930.0" y="328" text-anchor="middle" class="cs-ax cs-mon">Nov</text>
-<polygon points="44.0,300.0 44.0,298.6 117.8,213.1 191.7,179.9 265.5,148.2 339.3,130.3 413.2,115.1 487.0,112.3 560.8,105.4 634.7,84.7 708.5,76.4 782.3,64.0 856.2,39.2 930.0,26.8 930.0,300.0" fill="#fcba01" opacity="0.10"></polygon>
-<polyline points="44.0,295.9 117.8,286.2 191.7,280.7 265.5,273.8 339.3,266.9 413.2,261.4 487.0,253.1 560.8,251.7 634.7,248.9 708.5,247.6 782.3,243.4 856.2,228.2 930.0,224.1" fill="none" stroke="#8a8473" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"></polyline>
-<polyline points="44.0,298.6 117.8,213.1 191.7,179.9 265.5,148.2 339.3,130.3 413.2,115.1 487.0,112.3 560.8,105.4 634.7,84.7 708.5,76.4 782.3,64.0 856.2,39.2 930.0,26.8" fill="none" stroke="#fcba01" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></polyline>
-<circle cx="930.0" cy="26.8" r="6" fill="#fcba01"></circle><circle cx="930.0" cy="224.1" r="5" fill="#8a8473"></circle>
-<text x="944.0" y="33.8" class="cs-end" fill="#fcba01">198</text>
-<text x="944.0" y="231.1" class="cs-end" fill="#a8a293">55</text>
-</svg></div>
-<div class="cs-legend"><span><i style="background:#fcba01"></i>After the takeover</span><span><i style="background:#8a8473"></i>Year before</span><span>The strongest month was December with the Christmas trade.</span></div>
+</div>
+<div class="cs-cmp">
+<span class="cs-cmp-l">Orders<span class="ts-s">× 3.6</span></span>
+<div class="cs-cmp-bars">
+<div class="cs-cmp-row"><span class="cs-cmp-k">Year before</span><span class="cs-cmp-track"><span class="cs-cmp-bar cs-prev" style="width: 27.8%"></span></span><span class="cs-cmp-v">55</span></div>
+<div class="cs-cmp-row"><span class="cs-cmp-k">With me</span><span class="cs-cmp-track"><span class="cs-cmp-bar cs-cur" style="width: 100.0%"></span></span><span class="cs-cmp-v cs-cmp-strong">198</span></div>
+</div>
+</div>
+<div class="cs-cmp">
+<span class="cs-cmp-l">Revenue from ads<span class="ts-s">× 3.5</span></span>
+<div class="cs-cmp-bars">
+<div class="cs-cmp-row"><span class="cs-cmp-k">Year before</span><span class="cs-cmp-track"><span class="cs-cmp-bar cs-prev" style="width: 28.5%"></span></span><span class="cs-cmp-v">€24,492</span></div>
+<div class="cs-cmp-row"><span class="cs-cmp-k">With me</span><span class="cs-cmp-track"><span class="cs-cmp-bar cs-cur" style="width: 100.0%"></span></span><span class="cs-cmp-v cs-cmp-strong">€86,057</span></div>
+</div>
+</div>
+</div>
 </section>
 <section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
