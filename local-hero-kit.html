@@ -455,16 +455,37 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 @media (max-width:700px){.cs-cmp{grid-template-columns:1fr}.cs-cmp-row{grid-template-columns:56px minmax(0,1fr) 84px;gap:8px}}
 
 /* ---------- comparison: site builder vs kit ---------- */
-.vs{border-top:2px solid #f4f0e6;display:flex;flex-direction:column}
-.vs-row{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1fr);gap:8px 32px;padding:20px 0;border-bottom:1px solid #4a4538;align-items:start}
-.vs-head{padding:14px 0}
+.vs-score{display:flex;flex-wrap:wrap;gap:10px 14px;margin-bottom:22px}
+.vs-score span{border-radius:999px;padding:10px 18px;font:500 15px 'Space Grotesk',system-ui,sans-serif}
+.vs-score b{font-weight:700;font-size:18px}
+.vs-score-k{background:#fcba01;color:#12110d}
+.vs-score-b{border:1px solid #4a4538;color:#a8a293}
+.vs{display:flex;flex-direction:column}
+.vs-row{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1fr) minmax(0,1.1fr);gap:0 28px;border-bottom:1px solid #4a4538;align-items:stretch}
+.vs-row:last-child{border-bottom:0}
+.vs-l{padding:22px 0;font:700 19px/1.25 'Space Grotesk',system-ui,sans-serif}
+.vs-c{padding:22px 0;display:flex;flex-direction:column;gap:6px;font-size:16px;line-height:1.45;color:#8a8473}
+.vs-k{padding:22px 24px;background:#1a1812;border-left:2px solid #fcba01;border-right:2px solid #fcba01}
+.vs-head{border-bottom:0}
+.vs-head .vs-l,.vs-head .vs-c{padding-top:16px;padding-bottom:16px}
 .vs-head .vs-c{font:500 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
-.vs-l{font:700 19px/1.25 'Space Grotesk',system-ui,sans-serif}
-.vs-c{display:flex;flex-direction:column;gap:6px;align-items:flex-start;font-size:16px;line-height:1.5;color:#a8a293}
-.vs-on{color:#f4f0e6}
-.vs-tag{display:none;font:500 12px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
-.vs-win{font:500 12px 'JetBrains Mono',ui-monospace,monospace;color:#12110d;background:#fcba01;border-radius:999px;padding:3px 10px}
-@media (max-width:760px){.vs-head{display:none}.vs-row{grid-template-columns:1fr 1fr;gap:10px 16px}.vs-l{grid-column:1/-1}.vs-tag{display:block}.vs-c{font-size:15px}}
+.vs-head .vs-k{border-top:2px solid #fcba01;border-radius:18px 18px 0 0;font:700 20px 'Space Grotesk',system-ui,sans-serif;color:#fcba01}
+.vs-row:last-child .vs-k{border-bottom:2px solid #fcba01;border-radius:0 0 18px 18px}
+.vs-t{display:flex;gap:12px;align-items:flex-start}
+.vs-chk{flex:none;margin-top:1px}
+.vs-on{color:#f4f0e6;font-weight:600;font-size:17px}
+.vs-tag{display:none;font:500 12px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293;font-weight:400}
+@media (max-width:760px){
+.vs-head{display:none}
+.vs-row{grid-template-columns:1fr 1fr;gap:0 12px;padding:18px 0 0;border-bottom:0}
+.vs-l{grid-column:1/-1;padding:0 0 10px}
+.vs-tag{display:block}
+.vs-c{padding:12px 0 18px;font-size:14px}
+.vs-on{font-size:15px}
+.vs-k,.vs-row:last-child .vs-k{padding:12px 14px 18px;border:2px solid #fcba01;border-radius:14px}
+.vs-t{gap:8px}
+.vs-chk{width:18px;height:18px}
+}
 </style>
 
     <!-- Cookie banner -->
@@ -569,19 +590,20 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 <section style="max-width: 1200px; margin: 0 auto; padding: 104px 32px 96px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
 <h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Baukasten oder bauen lassen?</h2>
-<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Der ehrliche Vergleich. In drei Punkten hat der Baukasten die Nase vorn, und das steht auch hier.</p>
-</div><div class="vs">
-<div class="vs-row vs-head"><span class="vs-l"></span><span class="vs-c">Baukasten</span><span class="vs-c">Local Hero Kit</span></div>
-<div class="vs-row"><span class="vs-l">Wer baut die Seite?</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span>Du selbst, in deiner eigenen Zeit</span></span><span class="vs-c vs-on"><span class="vs-tag">Local Hero Kit</span><span>Ich, nach einem kurzen Gespräch mit dir</span><span class="vs-win">Vorteil</span></span></div>
-<div class="vs-row"><span class="vs-l">Bis sie online ist</span><span class="vs-c vs-on"><span class="vs-tag">Baukasten</span><span>Sofort startklar, sobald du Zeit dafür hast</span><span class="vs-win">Vorteil</span></span><span class="vs-c"><span class="vs-tag">Local Hero Kit</span><span>Tage bis Wochen, je nachdem, wie schnell Fotos und Inhalte da sind</span></span></div>
-<div class="vs-row"><span class="vs-l">Kosten im ersten Jahr</span><span class="vs-c vs-on"><span class="vs-tag">Baukasten</span><span>Meist 190 bis 660 €</span><span class="vs-win">Vorteil</span></span><span class="vs-c"><span class="vs-tag">Local Hero Kit</span><span>1.150 € einmalig, dazu ab 24 € für Domain und E-Mail</span></span></div>
-<div class="vs-row"><span class="vs-l">Kosten ab dem zweiten Jahr</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span>Weiter 190 bis 660 € im Jahr</span></span><span class="vs-c vs-on"><span class="vs-tag">Local Hero Kit</span><span>Ab 24 € im Jahr</span><span class="vs-win">Vorteil</span></span></div>
-<div class="vs-row"><span class="vs-l">Wem gehört die Seite?</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span>Sie ist gemietet. Ein Umzug heißt meist: neu bauen</span></span><span class="vs-c vs-on"><span class="vs-tag">Local Hero Kit</span><span>Dir. Sie lässt sich zu jedem Anbieter mitnehmen</span><span class="vs-win">Vorteil</span></span></div>
-<div class="vs-row"><span class="vs-l">Tracking und Consent</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span>Je nach Anbieter und Tarif eingeschränkt</span></span><span class="vs-c vs-on"><span class="vs-tag">Local Hero Kit</span><span>Frei einstellbar und vorbereitet für spätere Anzeigen</span><span class="vs-win">Vorteil</span></span></div>
-<div class="vs-row"><span class="vs-l">Ladezeit</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span>Die Skripte des Baukastens laden immer mit</span></span><span class="vs-c vs-on"><span class="vs-tag">Local Hero Kit</span><span>Es lädt nur, was die Seite wirklich braucht</span><span class="vs-win">Vorteil</span></span></div>
-<div class="vs-row"><span class="vs-l">Daten für Google und KI-Suche</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span>Meist nur Grundangaben</span></span><span class="vs-c vs-on"><span class="vs-tag">Local Hero Kit</span><span>Strukturierte Daten, passend zu deinem Unternehmen</span><span class="vs-win">Vorteil</span></span></div>
-<div class="vs-row"><span class="vs-l">Google-Unternehmensprofil</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span>Richtest du selbst ein</span></span><span class="vs-c vs-on"><span class="vs-tag">Local Hero Kit</span><span>Eingerichtet und optimiert übergeben</span><span class="vs-win">Vorteil</span></span></div>
-<div class="vs-row"><span class="vs-l">Später selbst etwas ändern</span><span class="vs-c vs-on"><span class="vs-tag">Baukasten</span><span>Einfach, per Klick im Editor</span><span class="vs-win">Vorteil</span></span><span class="vs-c"><span class="vs-tag">Local Hero Kit</span><span>Weniger bequem. Auf Wunsch übernehme ich es</span></span></div>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Der ehrliche Vergleich. In zwei Punkten hat der Baukasten die Nase vorn, und das steht auch hier.</p>
+</div><div class="vs-score"><span class="vs-score-k"><b>7</b> Vorteile für das Local Hero Kit</span><span class="vs-score-b"><b>2</b> für den Baukasten</span></div>
+<div class="vs">
+<div class="vs-row vs-head"><span class="vs-l"></span><span class="vs-c">Baukasten</span><span class="vs-c vs-k">Local Hero Kit</span></div>
+<div class="vs-row"><span class="vs-l">Wer baut die Seite?</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span class="vs-t"><span>Du selbst, in deiner eigenen Zeit</span></span></span><span class="vs-c vs-k vs-on"><span class="vs-tag">Local Hero Kit</span><span class="vs-t"><svg class="vs-chk" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fcba01"></circle><path d="M6.5 12.5l3.6 3.6 7.4-8" fill="none" stroke="#12110d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Ich. Du brauchst nur ein kurzes Gespräch</span></span></span></div>
+<div class="vs-row"><span class="vs-l">Wem gehört die Seite?</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span class="vs-t"><span>Sie ist gemietet. Ein Umzug heißt meist: neu bauen</span></span></span><span class="vs-c vs-k vs-on"><span class="vs-tag">Local Hero Kit</span><span class="vs-t"><svg class="vs-chk" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fcba01"></circle><path d="M6.5 12.5l3.6 3.6 7.4-8" fill="none" stroke="#12110d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Dir. Sie lässt sich zu jedem Anbieter mitnehmen</span></span></span></div>
+<div class="vs-row"><span class="vs-l">Kosten ab dem zweiten Jahr</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span class="vs-t"><span>Weiter 190 bis 660 € im Jahr</span></span></span><span class="vs-c vs-k vs-on"><span class="vs-tag">Local Hero Kit</span><span class="vs-t"><svg class="vs-chk" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fcba01"></circle><path d="M6.5 12.5l3.6 3.6 7.4-8" fill="none" stroke="#12110d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Ab 24 € im Jahr</span></span></span></div>
+<div class="vs-row"><span class="vs-l">Tracking und Consent</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span class="vs-t"><span>Je nach Anbieter und Tarif eingeschränkt</span></span></span><span class="vs-c vs-k vs-on"><span class="vs-tag">Local Hero Kit</span><span class="vs-t"><svg class="vs-chk" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fcba01"></circle><path d="M6.5 12.5l3.6 3.6 7.4-8" fill="none" stroke="#12110d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Frei einstellbar und vorbereitet für spätere Anzeigen</span></span></span></div>
+<div class="vs-row"><span class="vs-l">Ladezeit</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span class="vs-t"><span>Die Skripte des Baukastens laden immer mit</span></span></span><span class="vs-c vs-k vs-on"><span class="vs-tag">Local Hero Kit</span><span class="vs-t"><svg class="vs-chk" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fcba01"></circle><path d="M6.5 12.5l3.6 3.6 7.4-8" fill="none" stroke="#12110d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Es lädt nur, was die Seite wirklich braucht</span></span></span></div>
+<div class="vs-row"><span class="vs-l">Daten für Google und KI-Suche</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span class="vs-t"><span>Meist nur Grundangaben</span></span></span><span class="vs-c vs-k vs-on"><span class="vs-tag">Local Hero Kit</span><span class="vs-t"><svg class="vs-chk" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fcba01"></circle><path d="M6.5 12.5l3.6 3.6 7.4-8" fill="none" stroke="#12110d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Strukturierte Daten, passend zu deinem Unternehmen</span></span></span></div>
+<div class="vs-row"><span class="vs-l">Google-Unternehmensprofil</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span class="vs-t"><span>Richtest du selbst ein</span></span></span><span class="vs-c vs-k vs-on"><span class="vs-tag">Local Hero Kit</span><span class="vs-t"><svg class="vs-chk" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fcba01"></circle><path d="M6.5 12.5l3.6 3.6 7.4-8" fill="none" stroke="#12110d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Eingerichtet und optimiert übergeben</span></span></span></div>
+<div class="vs-row"><span class="vs-l">Bis sie online ist</span><span class="vs-c"><span class="vs-tag">Baukasten</span><span class="vs-t"><span>Sobald du sie selbst fertig gebaut hast</span></span></span><span class="vs-c vs-k"><span class="vs-tag">Local Hero Kit</span><span class="vs-t"><span>Eine kleine Seite ist schon in einer Woche einsatzbereit, je nach Umfang</span></span></span></div>
+<div class="vs-row"><span class="vs-l">Kosten im ersten Jahr</span><span class="vs-c vs-on"><span class="vs-tag">Baukasten</span><span class="vs-t"><svg class="vs-chk" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fcba01"></circle><path d="M6.5 12.5l3.6 3.6 7.4-8" fill="none" stroke="#12110d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Meist 190 bis 660 €</span></span></span><span class="vs-c vs-k"><span class="vs-tag">Local Hero Kit</span><span class="vs-t"><span>1.150 € einmalig, dazu ab 24 € für Domain und E-Mail</span></span></span></div>
+<div class="vs-row"><span class="vs-l">Später selbst etwas ändern</span><span class="vs-c vs-on"><span class="vs-tag">Baukasten</span><span class="vs-t"><svg class="vs-chk" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#fcba01"></circle><path d="M6.5 12.5l3.6 3.6 7.4-8" fill="none" stroke="#12110d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>Einfach, per Klick im Editor</span></span></span><span class="vs-c vs-k"><span class="vs-tag">Local Hero Kit</span><span class="vs-t"><span>Weniger bequem. Auf Wunsch übernehme ich es</span></span></span></div>
 </div>
 <p style="margin: 20px 0 0; max-width: 760px; font: 400 14px/1.6 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Baukästen unterscheiden sich je nach Anbieter und Tarif. Die Spalte beschreibt den üblichen Fall, nicht jeden einzelnen. Preise: 16 bis 55 € im Monat.</p>
 </section>
