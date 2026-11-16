@@ -323,6 +323,8 @@ function render(page, lang) {
   // 1b. redesigned pages: English texts
   if (page.v2 && lang === 'en') translateV2($, page);
   if (page.v2) $('[data-notr]').removeAttr('data-notr');
+  // Start page: the start animation uses the mono font, so load it early there (other pages only preload the headline font)
+  if (page.tpl === 'index.html') $('link[rel="preload"][href="/vendor/fonts/space-grotesk-latin.woff"]').after('\n    <link rel="preload" as="font" type="font/woff" href="/vendor/fonts/jetbrains-mono-latin.woff" crossorigin>');
   // English hero video and poster
   if (lang === 'en') $('#hero-video').attr('data-src', '/assets/hero-en.mp4').attr('poster', '/assets/hero-poster-en.jpg');
 
