@@ -240,12 +240,17 @@
             var KIT = 1150, RUN = 2;
             run = function () {
                 var m = parseFloat($('#lhk-monthly').value), y = parseInt($('#lhk-years').value, 10), months = y * 12;
+                var hrs = parseFloat($('#lhk-hours').value), rate = parseFloat($('#lhk-rate').value), time = hrs * rate;
                 var yrs = y + (en ? (y === 1 ? ' year' : ' years') : (y === 1 ? ' Jahr' : ' Jahre'));
                 $('#lhk-monthly-out').textContent = eur(m);
                 $('#lhk-years-out').textContent = yrs;
-                var abo = m * months, kit = KIT + RUN * months, diff = abo - kit, even = m > RUN ? Math.floor(KIT / (m - RUN)) + 1 : null;
-                put('abo', eur(abo)); put('kit', eur(kit)); put('diff', eur(Math.abs(diff)));
-                put('even', even ? (en ? 'month ' + even : 'Monat ' + even) : '—');
+                $('#lhk-hours-out').textContent = hrs + (en ? (hrs === 1 ? ' hour' : ' hours') : (hrs === 1 ? ' Stunde' : ' Stunden'));
+                $('#lhk-rate-out').textContent = eur(rate);
+                var abo = m * months, kit = KIT + RUN * months, diff = abo + time - kit;
+                // first month in which subscription plus own time has cost more than the kit
+                var even = time >= KIT ? 1 : (m > RUN ? Math.floor((KIT - time) / (m - RUN)) + 1 : null);
+                put('abo', eur(abo)); put('time', eur(time)); put('kit', eur(kit)); put('diff', eur(Math.abs(diff)));
+                put('even', even === 1 ? (en ? 'the first month' : 'dem ersten Monat') : (even ? (en ? 'month ' + even : 'Monat ' + even) : '—'));
                 if (diff > 0) verdict(en ? 'After ' + yrs + ' the kit has saved you ' + eur(diff) + '.' : 'Nach ' + y + (y === 1 ? ' Jahr' : ' Jahren') + ' hast du mit dem Kit ' + eur(diff) + ' gespart.', 'db-ok');
                 else verdict(en ? 'After ' + yrs + ' the site builder is still ' + eur(-diff) + ' cheaper.' + (even ? ' That turns from month ' + even + '.' : '') : 'Nach ' + y + (y === 1 ? ' Jahr' : ' Jahren') + ' ist der Baukasten noch ' + eur(-diff) + ' günstiger.' + (even ? ' Ab Monat ' + even + ' dreht sich das.' : ''), 'db-warn');
             };

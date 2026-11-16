@@ -453,6 +453,18 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 .cs-cmp-v{font:500 16px 'Space Grotesk',system-ui,sans-serif;text-align:right;color:#a8a293;white-space:nowrap}
 .cs-cmp-strong{font-weight:700;color:#f4f0e6;font-size:18px}
 @media (max-width:700px){.cs-cmp{grid-template-columns:1fr}.cs-cmp-row{grid-template-columns:56px minmax(0,1fr) 84px;gap:8px}}
+
+/* ---------- comparison: site builder vs kit ---------- */
+.vs{border-top:2px solid #f4f0e6;display:flex;flex-direction:column}
+.vs-row{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr) minmax(0,1fr);gap:8px 32px;padding:20px 0;border-bottom:1px solid #4a4538;align-items:start}
+.vs-head{padding:14px 0}
+.vs-head .vs-c{font:500 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.vs-l{font:700 19px/1.25 'Space Grotesk',system-ui,sans-serif}
+.vs-c{display:flex;flex-direction:column;gap:6px;align-items:flex-start;font-size:16px;line-height:1.5;color:#a8a293}
+.vs-on{color:#f4f0e6}
+.vs-tag{display:none;font:500 12px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.vs-win{font:500 12px 'JetBrains Mono',ui-monospace,monospace;color:#12110d;background:#fcba01;border-radius:999px;padding:3px 10px}
+@media (max-width:760px){.vs-head{display:none}.vs-row{grid-template-columns:1fr 1fr;gap:10px 16px}.vs-l{grid-column:1/-1}.vs-tag{display:block}.vs-c{font-size:15px}}
 </style>
 
     <!-- Cookie banner -->
