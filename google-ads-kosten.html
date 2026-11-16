@@ -365,6 +365,51 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 /* cookie banner without the provider's logo and credit link (MIT-licensed; the notice in the vendored file stays) */
 #silktide-banner a.silktide-logo{display:none !important}
 #silktide-modal footer a[href*="silktide.com"]{display:none !important}
+
+/* ---------- case study ---------- */
+.cs-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cs-scroll{overflow-x:auto;border-top:2px solid #f4f0e6}
+.cs-table{width:100%;border-collapse:collapse;min-width:520px}
+.cs-table th,.cs-table td{text-align:right;padding:18px 0 18px 20px;border-bottom:1px solid #4a4538;white-space:nowrap}
+.cs-table thead th{font:500 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.cs-table tbody th{text-align:left;padding-left:0;font:400 17px 'Space Grotesk',system-ui,sans-serif;color:#d6d1c4}
+.cs-table td{font:700 clamp(18px,2.2vw,24px) 'Space Grotesk',system-ui,sans-serif}
+.cs-table td:nth-child(2){color:#a8a293;font-weight:500}
+.cs-table td.ok{color:#7ddc9f}.cs-table td.warn{color:#fcba01}
+.cs-notes{display:flex;flex-direction:column;gap:8px;margin-top:20px;max-width:760px}
+.cs-notes p{margin:0;font:400 14px/1.6 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.cs-notes a{color:#fcba01}
+.cs-chart{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:clamp(4px,1.2vw,14px);height:280px;align-items:end;border-bottom:1px solid #4a4538;padding-top:28px}
+.cs-m{display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;min-width:0}
+.cs-bars{flex:1;width:100%;display:flex;align-items:flex-end;justify-content:center;gap:3px}
+.cs-b{position:relative;flex:1;max-width:26px;border-radius:5px 5px 0 0}
+.cs-prev{background:#4a4538}.cs-cur{background:#fcba01}
+.cs-cur i{position:absolute;left:50%;bottom:100%;transform:translate(-50%,-4px);font:500 12px 'JetBrains Mono',ui-monospace,monospace;font-style:normal;color:#f4f0e6}
+.cs-ml{font:400 12px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293;padding-bottom:8px}
+.cs-legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;font:400 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.cs-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:7px}
+.cs-call{background:#fcba01;color:#12110d;border-radius:28px;padding:clamp(28px,4vw,56px);display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.cs-call-big{margin:0;font:700 clamp(32px,4.6vw,60px)/1.02 'Space Grotesk',system-ui,sans-serif;letter-spacing:-0.03em}
+.cs-call-text{margin:0;max-width:680px;font-size:18px;line-height:1.55}
+.cs-call-btn{display:inline-block;background:#12110d;color:#f4f0e6;padding:16px 26px;border-radius:999px;font-weight:700;font-size:17px;text-decoration:none;margin-top:6px}
+.cs-faq-link{display:inline-block;margin:-10px 0 24px;color:#fcba01;font-weight:500;padding:8px 0}
+.cs-teaser{display:flex;flex-direction:column;gap:18px;border:2px solid #fcba01;border-radius:28px;padding:clamp(24px,3.4vw,44px);text-decoration:none;color:#f4f0e6;transition:background .2s}
+.cs-teaser:hover{background:#1a1812}
+.cs-teaser-k{font:500 14px 'JetBrains Mono',ui-monospace,monospace;color:#fcba01}
+.cs-teaser-h{font:700 clamp(30px,4vw,52px)/1.05 'Space Grotesk',system-ui,sans-serif;letter-spacing:-0.03em}
+.cs-teaser-nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:18px 32px;border-top:1px solid #4a4538;padding-top:20px}
+.cs-teaser-nums span{display:flex;flex-direction:column;gap:4px}
+.cs-teaser-nums b{font:700 clamp(24px,2.8vw,34px) 'Space Grotesk',system-ui,sans-serif}
+.cs-teaser-nums i{font:400 13px 'JetBrains Mono',ui-monospace,monospace;font-style:normal;color:#a8a293}
+.cs-teaser-go{font-weight:500;color:#fcba01;text-decoration:underline;text-underline-offset:4px}
+@media (max-width:600px){.cs-chart{height:220px}.cs-cur i{font-size:10px}.cs-ml{font-size:10px}}
+@media (max-width:600px){
+.cs-table{min-width:0}
+.cs-table th,.cs-table td{padding:14px 0 14px 10px}
+.cs-table tbody th{white-space:normal;font-size:15px;line-height:1.3}
+.cs-table td{font-size:15px}
+.cs-table thead th{font-size:11px}
+}
 </style>
 
     <!-- Cookie banner -->
@@ -552,7 +597,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 <details class="db-faq"><summary>Was kostet die Betreuung zusätzlich?</summary><p>Paket S mit 5 Stunden kostet 395 € im Monat, Paket M mit 10 Stunden 790 €, Paket L ab 950 €. Das sind Angebotspreise bis 01.03.2027. Dein Werbebudget zahlst du direkt an Google.</p></details>
 <details class="db-faq"><summary>Was ist ein guter ROAS?</summary><p>Einer, der über deinem Break-even-ROAS liegt. Ein Shop mit hoher Marge verdient schon bei 200 Prozent, einer mit kleiner Marge braucht 600 Prozent und mehr. Deshalb rechnet dieser Rechner mit deinem Deckungsbeitrag.</p></details>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; margin-top: 28px"><a href="/google-ads.html" style="font-weight: 500; font-size: 16px; color: #fcba01; padding: 12px 0">Google Ads Betreuung ansehen →</a><a href="/preise.html#google-ads" style="font-weight: 500; font-size: 16px; color: #fcba01; padding: 12px 0">Alle Preise ansehen →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 32px; margin-top: 28px"><a href="/fallbeispiel-onlineshop.html" style="font-weight: 500; font-size: 16px; color: #fcba01; padding: 12px 0">Fallbeispiel: ein Onlineshop, ein Jahr →</a><a href="/google-ads.html" style="font-weight: 500; font-size: 16px; color: #fcba01; padding: 12px 0">Google Ads Betreuung ansehen →</a><a href="/preise.html#google-ads" style="font-weight: 500; font-size: 16px; color: #fcba01; padding: 12px 0">Alle Preise ansehen →</a></div>
 </section>
 <section id="contact" class="contact">
     <div class="contact-inner">
@@ -609,6 +654,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
     <span class="site-footer-links">
         <a href="/preise.html">Preise</a>
         <a href="/google-ads-kosten.html">Google Ads Kosten</a>
+        <a href="/fallbeispiel-onlineshop.html">Fallbeispiel</a>
         <a href="/free-script.html">Tools &amp; Scripts</a>
         <a href="/privacy.html">Datenschutz</a>
         <a href="/impressum.html">Impressum</a>
