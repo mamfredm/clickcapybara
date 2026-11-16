@@ -128,11 +128,18 @@
     // ── Hero video: starts muted; the button switches sound on and off ──
     var video = $('#hero-video'), soundBtn = $('#video-sound');
     if (video) {
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { video.removeAttribute('autoplay'); video.pause(); video.controls = true; }
+        // The video file is only fetched after the page has loaded, so it does not compete with text and fonts on phones.
+        var calmVideo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var startVideo = function () {
+            if (!video.getAttribute('src') && video.dataset.src) { video.preload = 'auto'; video.src = video.dataset.src; }
+            if (calmVideo) { video.controls = true; return; }
+            var p = video.play(); if (p && p.catch) p.catch(function () {});
+        };
+        if (document.readyState === 'complete') setTimeout(startVideo, 300); else window.addEventListener('load', function () { setTimeout(startVideo, 300); });
         if (soundBtn) {
             soundBtn.addEventListener('click', function () {
                 video.muted = !video.muted;
-                if (!video.muted) { video.currentTime = 0; video.play(); }
+                if (!video.muted) { if (!video.getAttribute('src')) startVideo(); video.currentTime = 0; var pp = video.play(); if (pp && pp.catch) pp.catch(function () {}); }
                 soundBtn.setAttribute('aria-pressed', video.muted ? 'false' : 'true');
                 var en = document.documentElement.lang === 'en';
                 soundBtn.textContent = video.muted ? (en ? 'Sound on' : 'Ton an') : (en ? 'Sound off' : 'Ton aus');

@@ -28,10 +28,14 @@
     </script>
 
     <!-- GTM -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <!-- loaded after the page has rendered, so it does not slow down the first view on phones -->
+    <script>(function(w,d,s,l,i){var go=function(){if(w.__gtmLoaded)return;w.__gtmLoaded=1;w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);};
+    var later=function(){(w.requestIdleCallback||function(cb){setTimeout(cb,1)})(go,{timeout:2000});};
+    if(d.readyState==='complete')later();else w.addEventListener('load',later);
+    ['pointerdown','keydown','scroll'].forEach(function(e){w.addEventListener(e,go,{once:true,passive:true});});
     })(window,document,'script','dataLayer','GTM-WK2WCGQH');</script>
 
     <meta charset="UTF-8">
@@ -58,7 +62,6 @@
 
     <!-- Self-hosted fonts (no request to Google) -->
     <link rel="preload" as="font" type="font/woff" href="/vendor/fonts/space-grotesk-latin.woff" crossorigin="">
-    <link rel="preload" as="font" type="font/woff" href="/vendor/fonts/jetbrains-mono-latin.woff" crossorigin="">
 
     <!-- Site styles (inlined by build.js) -->
     <style>/* Click-Capybara – site styles (redesign "Bühne").
@@ -167,7 +170,7 @@ a.p-dark:hover{color:#12110d}
 }
 @keyframes pBlink{50%{opacity:0} }
 @keyframes pMarquee{to{transform:translateX(-50%)} }
-@keyframes pUp{from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+@keyframes pUp{from{transform:translateY(18px)} to{transform:none} }
 @keyframes pMark{from{background-size:0% .94em;color:#f4f0e6} to{background-size:100% .94em;color:#12110d} }
 .pr-tab{cursor:pointer;border:0;border-radius:999px;padding:12px 22px;min-height:44px;font:700 17px 'Space Grotesk',system-ui,sans-serif;transition:background .2s,color .2s}
 @media (prefers-reduced-motion: no-preference){ .pr-panel{animation:pUp .35s cubic-bezier(.2,.8,.2,1)} }
@@ -593,7 +596,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 </div>
 <div id="ueber" class="c-up" style="animation-delay: 5.25s; display: flex; flex-direction: column; gap: 18px; align-items: center">
 <div class="c-video" style="position: relative; transform: rotate(-2deg); width: 100%; max-width: 460px; aspect-ratio: 4 / 5; border: 3px solid #fcba01; border-radius: 24px; background: #1e1c16; overflow: hidden; box-sizing: border-box">
-<video id="hero-video" src="/assets/hero.mp4" poster="/assets/hero-poster.jpg" autoplay="" muted="" loop="" playsinline="" preload="metadata" aria-label="Kurzes Video: Ein Capybara arbeitet an acht verschiedenen Orten am Laptop, dazu der Satz: Wer sucht, soll dich finden." style="display: block; width: 100%; height: 100%; object-fit: cover"></video>
+<video id="hero-video" data-src="/assets/hero.mp4" poster="/assets/hero-poster.jpg" muted="" loop="" playsinline="" preload="none" aria-label="Kurzes Video: Ein Capybara arbeitet an acht verschiedenen Orten am Laptop, dazu der Satz: Wer sucht, soll dich finden." style="display: block; width: 100%; height: 100%; object-fit: cover"></video>
 <button id="video-sound" class="vid-sound" type="button" aria-pressed="false">Ton an</button>
 </div>
 <div style="font: 400 14px 'JetBrains Mono', ui-monospace, monospace; color: #a8a293; text-align: center">8+ Jahre Erfahrung / über 15 Mio. € Werbebudget verwaltet</div>

@@ -324,7 +324,7 @@ function render(page, lang) {
   if (page.v2 && lang === 'en') translateV2($, page);
   if (page.v2) $('[data-notr]').removeAttr('data-notr');
   // English hero video and poster
-  if (lang === 'en') $('#hero-video').attr('src', '/assets/hero-en.mp4').attr('poster', '/assets/hero-poster-en.jpg');
+  if (lang === 'en') $('#hero-video').attr('data-src', '/assets/hero-en.mp4').attr('poster', '/assets/hero-poster-en.jpg');
 
   // 2. html lang + head SEO
   $('html').attr('lang', lang);
