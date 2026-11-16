@@ -104,7 +104,7 @@ a.p-dark:hover{color:#12110d}
 }
 @keyframes pBlink{50%{opacity:0} }
 @keyframes pMarquee{to{transform:translateX(-50%)} }
-@keyframes pUp{from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }
+@keyframes pUp{from{transform:translateY(18px)} to{transform:none} }
 @keyframes pMark{from{background-size:0% .94em;color:#f4f0e6} to{background-size:100% .94em;color:#12110d} }
 .pr-tab{cursor:pointer;border:0;border-radius:999px;padding:12px 22px;min-height:44px;font:700 17px 'Space Grotesk',system-ui,sans-serif;transition:background .2s,color .2s}
 @media (prefers-reduced-motion: no-preference){ .pr-panel{animation:pUp .35s cubic-bezier(.2,.8,.2,1)} }

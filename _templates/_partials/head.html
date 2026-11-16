@@ -27,10 +27,14 @@
     </script>
 
     <!-- GTM -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <!-- loaded after the page has rendered, so it does not slow down the first view on phones -->
+    <script>(function(w,d,s,l,i){var go=function(){if(w.__gtmLoaded)return;w.__gtmLoaded=1;w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);};
+    var later=function(){(w.requestIdleCallback||function(cb){setTimeout(cb,1)})(go,{timeout:2000});};
+    if(d.readyState==='complete')later();else w.addEventListener('load',later);
+    ['pointerdown','keydown','scroll'].forEach(function(e){w.addEventListener(e,go,{once:true,passive:true});});
     })(window,document,'script','dataLayer','GTM-WK2WCGQH');</script>
 
     <meta charset="UTF-8">
@@ -42,7 +46,6 @@
 
     <!-- Self-hosted fonts (no request to Google) -->
     <link rel="preload" as="font" type="font/woff" href="/vendor/fonts/space-grotesk-latin.woff" crossorigin>
-    <link rel="preload" as="font" type="font/woff" href="/vendor/fonts/jetbrains-mono-latin.woff" crossorigin>
 
     <!-- Site styles (inlined by build.js) -->
     <link rel="stylesheet" href="/css/site.css">
