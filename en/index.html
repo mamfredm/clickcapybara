@@ -410,6 +410,24 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 .cs-table td{font-size:15px}
 .cs-table thead th{font-size:11px}
 }
+
+.cs-linewrap{border-top:2px solid #f4f0e6;padding-top:20px}
+.cs-line{width:100%;height:auto;display:block}
+.cs-ax{font:400 12px 'JetBrains Mono',ui-monospace,monospace;fill:#a8a293}
+.cs-end{font:700 22px 'Space Grotesk',system-ui,sans-serif}
+@media (max-width:600px){.cs-ax{font-size:20px}.cs-end{font-size:30px}.cs-mon:nth-of-type(even){display:none}}
+
+/* ---------- tools hub ---------- */
+.th-list{border-top:2px solid #f4f0e6;display:flex;flex-direction:column}
+.th-card{display:grid;grid-template-columns:48px minmax(0,1.1fr) minmax(0,1.3fr) auto;gap:12px 36px;align-items:center;padding:30px 12px 30px 0;border-bottom:1px solid #4a4538;text-decoration:none;color:#f4f0e6;transition:background .2s,padding .2s}
+.th-card:hover{background:#1a1812;padding-left:16px}
+.th-n{font:500 14px 'JetBrains Mono',ui-monospace,monospace;color:#fcba01}
+.th-main{display:flex;flex-direction:column;gap:8px}
+.th-kind{font:400 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.th-title{font:700 clamp(22px,2.6vw,32px)/1.12 'Space Grotesk',system-ui,sans-serif;letter-spacing:-0.02em}
+.th-text{font-size:16px;line-height:1.55;color:#d6d1c4}
+.th-go{font-weight:700;color:#12110d;background:#fcba01;border-radius:999px;padding:12px 20px;white-space:nowrap;font-size:15px}
+@media (max-width:900px){.th-card{grid-template-columns:32px minmax(0,1fr);padding-right:0}.th-text,.th-go{grid-column:2}.th-go{justify-self:start}.th-card:hover{padding-left:0;background:none}}
 </style>
 
     <!-- Cookie banner -->
@@ -495,7 +513,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
         <a class="nl" href="/en/google-ads.html">Google Ads</a>
         <a class="nl" href="/en/local-hero-kit.html">Local Hero Kit</a>
         <a class="nl" href="/en/automatisierung.html">Automation</a>
-        <a class="nl" href="/en/free-script.html">Tools &amp; Scripts</a>
+        <a class="nl" href="/en/tools.html">Tools &amp; Scripts</a>
         <a class="nl" href="/en/preise.html">Pricing</a>
         <a class="btn-cta nav-cta" href="#contact">Get a free assessment</a>
     </nav>
@@ -697,7 +715,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
         <a href="/en/preise.html">Pricing</a>
         <a href="/en/google-ads-kosten.html">Google Ads cost</a>
         <a href="/en/fallbeispiel-onlineshop.html">Case study</a>
-        <a href="/en/free-script.html">Tools &amp; Scripts</a>
+        <a href="/en/tools.html">Tools &amp; Scripts</a>
         <a href="/en/privacy.html">Privacy</a>
         <a href="/en/impressum.html">Legal notice</a>
     </span>

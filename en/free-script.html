@@ -410,6 +410,24 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 .cs-table td{font-size:15px}
 .cs-table thead th{font-size:11px}
 }
+
+.cs-linewrap{border-top:2px solid #f4f0e6;padding-top:20px}
+.cs-line{width:100%;height:auto;display:block}
+.cs-ax{font:400 12px 'JetBrains Mono',ui-monospace,monospace;fill:#a8a293}
+.cs-end{font:700 22px 'Space Grotesk',system-ui,sans-serif}
+@media (max-width:600px){.cs-ax{font-size:20px}.cs-end{font-size:30px}.cs-mon:nth-of-type(even){display:none}}
+
+/* ---------- tools hub ---------- */
+.th-list{border-top:2px solid #f4f0e6;display:flex;flex-direction:column}
+.th-card{display:grid;grid-template-columns:48px minmax(0,1.1fr) minmax(0,1.3fr) auto;gap:12px 36px;align-items:center;padding:30px 12px 30px 0;border-bottom:1px solid #4a4538;text-decoration:none;color:#f4f0e6;transition:background .2s,padding .2s}
+.th-card:hover{background:#1a1812;padding-left:16px}
+.th-n{font:500 14px 'JetBrains Mono',ui-monospace,monospace;color:#fcba01}
+.th-main{display:flex;flex-direction:column;gap:8px}
+.th-kind{font:400 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.th-title{font:700 clamp(22px,2.6vw,32px)/1.12 'Space Grotesk',system-ui,sans-serif;letter-spacing:-0.02em}
+.th-text{font-size:16px;line-height:1.55;color:#d6d1c4}
+.th-go{font-weight:700;color:#12110d;background:#fcba01;border-radius:999px;padding:12px 20px;white-space:nowrap;font-size:15px}
+@media (max-width:900px){.th-card{grid-template-columns:32px minmax(0,1fr);padding-right:0}.th-text,.th-go{grid-column:2}.th-go{justify-self:start}.th-card:hover{padding-left:0;background:none}}
 </style>
 
     <!-- Cookie banner -->
@@ -472,7 +490,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
         <a class="nl" href="/en/google-ads.html">Google Ads</a>
         <a class="nl" href="/en/local-hero-kit.html">Local Hero Kit</a>
         <a class="nl" href="/en/automatisierung.html">Automation</a>
-        <a class="nl" href="/en/free-script.html" aria-current="page">Tools &amp; Scripts</a>
+        <a class="nl" href="/en/tools.html">Tools &amp; Scripts</a>
         <a class="nl" href="/en/preise.html">Pricing</a>
         <a class="btn-cta nav-cta" href="#contact">Get a free assessment</a>
     </nav>
@@ -495,7 +513,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid #4a4538"><span style="font: 400 14px 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Cost</span><span style="font: 700 22px 'Space Grotesk', system-ui, sans-serif; text-align: right">€0, for good</span></div>
 <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid #4a4538"><span style="font: 400 14px 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Licence</span><span style="font: 700 22px 'Space Grotesk', system-ui, sans-serif; text-align: right">Open Source</span></div>
 <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid #4a4538"><span style="font: 400 14px 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Runs in</span><span style="font: 700 22px 'Space Grotesk', system-ui, sans-serif; text-align: right">Google Ads + Sheets</span></div>
-<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid #4a4538"><span style="font: 400 14px 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">Your data</span><span style="font: 700 22px 'Space Grotesk', system-ui, sans-serif; text-align: right">no external servers</span></div>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding: 18px 0; border-top: 1px solid #4a4538"><span style="font: 400 14px 'JetBrains Mono', ui-monospace, monospace; color: #a8a293">AI</span><span style="font: 700 22px 'Space Grotesk', system-ui, sans-serif; text-align: right">local or cloud</span></div>
 </div>
 </section>
 <section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
@@ -544,6 +562,28 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 <span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">03 / Google Sheet</span>
 <h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">The template</h3>
 <p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">Four tabs: SearchTerms is your working surface, Config is the only thing you adjust per account, Negative_Export holds the validated negatives, and Expansion_Ideas collects terms worth building campaigns around.</p>
+</div>
+</div>
+</section>
+<section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Local AI or cloud AI</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">You choose where your search terms are analysed.</p>
+</div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 32px 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
+<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">The quick way</span>
+<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Cloud AI</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">You enter the API key of an AI provider and can start right away. The search terms are sent to that provider for analysis. The cost is usually a few cents per run.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
+<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">The private way</span>
+<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Local AI</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">The model runs on your own hardware. The search terms never leave your premises. You need a machine that can run a language model, and a little more setup.</p>
+</div>
+<div style="display: flex; flex-direction: column; gap: 14px; border-top: 2px solid #fcba01; padding-top: 22px">
+<span style="font: 500 14px 'JetBrains Mono', ui-monospace, monospace; color: #fcba01">In both cases</span>
+<h3 style="margin: 0; font: 700 26px/1.15 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.02em">Your account stays yours</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #d6d1c4">The script runs in your Google Ads account and your Google Sheet. There is no server of mine in between, and I do not see your data.</p>
 </div>
 </div>
 </section>
@@ -662,7 +702,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 <h3 style="margin: 0; font: 700 clamp(28px, 3.4vw, 42px)/1.08 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Free. Open source. No email required.</h3>
 <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #d6d1c4; max-width: 440px">If it saves you budget, I'd appreciate a star on GitHub. It helps others find the script.</p>
 <a class="p-cta" id="github-cta-bottom" href="https://github.com/mamfredm/AI-Max-NegativeIQ" target="_blank" rel="noopener" style="display: inline-block; background: #fcba01; color: #12110d; padding: 17px 28px; border-radius: 999px; font-weight: 700; font-size: 17px; text-decoration: none">View on GitHub</a>
-<div style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7ddc9f" stroke-width="2.5" style="flex: none"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>No data leaves your account</span></div>
+<div style="display: flex; gap: 12px; align-items: flex-start"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7ddc9f" stroke-width="2.5" style="flex: none"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>You decide where the AI runs</span></div>
 </div>
 </div>
 </section>
@@ -708,7 +748,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
             </div>
         </div>
         <div class="contact-card">
-            <form id="contact-form" data-source="Tools &amp; Scripts (EN)">
+            <form id="contact-form" data-source="AI Max NegativeIQ (EN)">
                 <!-- spam trap: real visitors never see or fill this field -->
                 <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
                     <label for="cf-contact_url">Please leave this field empty</label>
@@ -747,7 +787,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
         <a href="/en/preise.html">Pricing</a>
         <a href="/en/google-ads-kosten.html">Google Ads cost</a>
         <a href="/en/fallbeispiel-onlineshop.html">Case study</a>
-        <a href="/en/free-script.html">Tools &amp; Scripts</a>
+        <a href="/en/tools.html">Tools &amp; Scripts</a>
         <a href="/en/privacy.html">Privacy</a>
         <a href="/en/impressum.html">Legal notice</a>
     </span>

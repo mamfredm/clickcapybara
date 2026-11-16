@@ -410,6 +410,24 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 .cs-table td{font-size:15px}
 .cs-table thead th{font-size:11px}
 }
+
+.cs-linewrap{border-top:2px solid #f4f0e6;padding-top:20px}
+.cs-line{width:100%;height:auto;display:block}
+.cs-ax{font:400 12px 'JetBrains Mono',ui-monospace,monospace;fill:#a8a293}
+.cs-end{font:700 22px 'Space Grotesk',system-ui,sans-serif}
+@media (max-width:600px){.cs-ax{font-size:20px}.cs-end{font-size:30px}.cs-mon:nth-of-type(even){display:none}}
+
+/* ---------- tools hub ---------- */
+.th-list{border-top:2px solid #f4f0e6;display:flex;flex-direction:column}
+.th-card{display:grid;grid-template-columns:48px minmax(0,1.1fr) minmax(0,1.3fr) auto;gap:12px 36px;align-items:center;padding:30px 12px 30px 0;border-bottom:1px solid #4a4538;text-decoration:none;color:#f4f0e6;transition:background .2s,padding .2s}
+.th-card:hover{background:#1a1812;padding-left:16px}
+.th-n{font:500 14px 'JetBrains Mono',ui-monospace,monospace;color:#fcba01}
+.th-main{display:flex;flex-direction:column;gap:8px}
+.th-kind{font:400 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
+.th-title{font:700 clamp(22px,2.6vw,32px)/1.12 'Space Grotesk',system-ui,sans-serif;letter-spacing:-0.02em}
+.th-text{font-size:16px;line-height:1.55;color:#d6d1c4}
+.th-go{font-weight:700;color:#12110d;background:#fcba01;border-radius:999px;padding:12px 20px;white-space:nowrap;font-size:15px}
+@media (max-width:900px){.th-card{grid-template-columns:32px minmax(0,1fr);padding-right:0}.th-text,.th-go{grid-column:2}.th-go{justify-self:start}.th-card:hover{padding-left:0;background:none}}
 </style>
 
     <!-- Cookie banner -->
@@ -479,7 +497,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
         <a class="nl" href="/google-ads.html">Google Ads</a>
         <a class="nl" href="/local-hero-kit.html">Local Hero Kit</a>
         <a class="nl" href="/automatisierung.html">Automatisierung</a>
-        <a class="nl" href="/free-script.html">Tools &amp; Scripts</a>
+        <a class="nl" href="/tools.html">Tools &amp; Scripts</a>
         <a class="nl" href="/preise.html">Preise</a>
         <a class="btn-cta nav-cta" href="#contact">Kostenlos einschätzen lassen</a>
     </nav>
@@ -528,11 +546,19 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 </section>
 <section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
-<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Monat für Monat</h2>
-<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Bestellungen aus Anzeigen. Die Kurve ist nicht glatt, und das hat Gründe.</p>
+<h2 style="margin: 0; max-width: 720px; font: 700 clamp(32px, 4vw, 54px)/1.05 'Space Grotesk', system-ui, sans-serif; letter-spacing: -0.03em">Bestellungen, aufsummiert</h2>
+<p style="margin: 0; max-width: 340px; font-size: 16px; line-height: 1.5; color: #d6d1c4">Jeder Monat kommt obendrauf. So siehst du den Verlauf, ohne dass ein starker Monat das Bild verzerrt.</p>
 </div>
-<div class="cs-chart" role="img" aria-label="Balkendiagramm: Bestellungen pro Monat, Vorjahr und aktuelles Jahr"><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 4.8%"></span><span class="cs-b cs-cur" style="height: 1.6%"><i>1</i></span></div><span class="cs-ml">Nov</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 11.3%"></span><span class="cs-b cs-cur" style="height: 100.0%"><i>62</i></span></div><span class="cs-ml">Dez</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 6.5%"></span><span class="cs-b cs-cur" style="height: 38.7%"><i>24</i></span></div><span class="cs-ml">Jan</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 8.1%"></span><span class="cs-b cs-cur" style="height: 37.1%"><i>23</i></span></div><span class="cs-ml">Feb</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 8.1%"></span><span class="cs-b cs-cur" style="height: 21.0%"><i>13</i></span></div><span class="cs-ml">Mär</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 6.5%"></span><span class="cs-b cs-cur" style="height: 17.7%"><i>11</i></span></div><span class="cs-ml">Apr</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 9.7%"></span><span class="cs-b cs-cur" style="height: 3.2%"><i>2</i></span></div><span class="cs-ml">Mai</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 1.6%"></span><span class="cs-b cs-cur" style="height: 8.1%"><i>5</i></span></div><span class="cs-ml">Jun</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 3.2%"></span><span class="cs-b cs-cur" style="height: 24.2%"><i>15</i></span></div><span class="cs-ml">Jul</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 1.6%"></span><span class="cs-b cs-cur" style="height: 9.7%"><i>6</i></span></div><span class="cs-ml">Aug</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 4.8%"></span><span class="cs-b cs-cur" style="height: 14.5%"><i>9</i></span></div><span class="cs-ml">Sep</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 17.7%"></span><span class="cs-b cs-cur" style="height: 29.0%"><i>18</i></span></div><span class="cs-ml">Okt</span></div><div class="cs-m"><div class="cs-bars"><span class="cs-b cs-prev" style="height: 4.8%"></span><span class="cs-b cs-cur" style="height: 14.5%"><i>9</i></span></div><span class="cs-ml">Nov</span></div></div>
-<div class="cs-legend"><span><i style="background:#fcba01"></i>Mit mir</span><span><i style="background:#4a4538"></i>Vorjahr</span><span>Erster und letzter Monat sind halbe Monate.</span></div>
+<div class="cs-linewrap"><svg class="cs-line" viewBox="0 0 1000 340" role="img" aria-label="Liniendiagramm: Bestellungen aufsummiert über zwölf Monate. Vorjahr 55, nach der Übernahme 198.">
+<line x1="44" x2="930" y1="300.0" y2="300.0" stroke="#2e2a21"></line><text x="34" y="304.0" text-anchor="end" class="cs-ax">0</text><line x1="44" x2="930" y1="231.0" y2="231.0" stroke="#2e2a21"></line><text x="34" y="235.0" text-anchor="end" class="cs-ax">50</text><line x1="44" x2="930" y1="162.0" y2="162.0" stroke="#2e2a21"></line><text x="34" y="166.0" text-anchor="end" class="cs-ax">100</text><line x1="44" x2="930" y1="93.0" y2="93.0" stroke="#2e2a21"></line><text x="34" y="97.0" text-anchor="end" class="cs-ax">150</text><line x1="44" x2="930" y1="24.0" y2="24.0" stroke="#2e2a21"></line><text x="34" y="28.0" text-anchor="end" class="cs-ax">200</text><text x="44.0" y="328" text-anchor="middle" class="cs-ax cs-mon">Nov</text><text x="117.8" y="328" text-anchor="middle" class="cs-ax cs-mon">Dez</text><text x="191.7" y="328" text-anchor="middle" class="cs-ax cs-mon">Jan</text><text x="265.5" y="328" text-anchor="middle" class="cs-ax cs-mon">Feb</text><text x="339.3" y="328" text-anchor="middle" class="cs-ax cs-mon">Mär</text><text x="413.2" y="328" text-anchor="middle" class="cs-ax cs-mon">Apr</text><text x="487.0" y="328" text-anchor="middle" class="cs-ax cs-mon">Mai</text><text x="560.8" y="328" text-anchor="middle" class="cs-ax cs-mon">Jun</text><text x="634.7" y="328" text-anchor="middle" class="cs-ax cs-mon">Jul</text><text x="708.5" y="328" text-anchor="middle" class="cs-ax cs-mon">Aug</text><text x="782.3" y="328" text-anchor="middle" class="cs-ax cs-mon">Sep</text><text x="856.2" y="328" text-anchor="middle" class="cs-ax cs-mon">Okt</text><text x="930.0" y="328" text-anchor="middle" class="cs-ax cs-mon">Nov</text>
+<polygon points="44.0,300.0 44.0,298.6 117.8,213.1 191.7,179.9 265.5,148.2 339.3,130.3 413.2,115.1 487.0,112.3 560.8,105.4 634.7,84.7 708.5,76.4 782.3,64.0 856.2,39.2 930.0,26.8 930.0,300.0" fill="#fcba01" opacity="0.10"></polygon>
+<polyline points="44.0,295.9 117.8,286.2 191.7,280.7 265.5,273.8 339.3,266.9 413.2,261.4 487.0,253.1 560.8,251.7 634.7,248.9 708.5,247.6 782.3,243.4 856.2,228.2 930.0,224.1" fill="none" stroke="#8a8473" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"></polyline>
+<polyline points="44.0,298.6 117.8,213.1 191.7,179.9 265.5,148.2 339.3,130.3 413.2,115.1 487.0,112.3 560.8,105.4 634.7,84.7 708.5,76.4 782.3,64.0 856.2,39.2 930.0,26.8" fill="none" stroke="#fcba01" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"></polyline>
+<circle cx="930.0" cy="26.8" r="6" fill="#fcba01"></circle><circle cx="930.0" cy="224.1" r="5" fill="#8a8473"></circle>
+<text x="944.0" y="33.8" class="cs-end" fill="#fcba01">198</text>
+<text x="944.0" y="231.1" class="cs-end" fill="#a8a293">55</text>
+</svg></div>
+<div class="cs-legend"><span><i style="background:#fcba01"></i>Nach der Übernahme</span><span><i style="background:#8a8473"></i>Vorjahr</span><span>Stärkster Monat war der Dezember mit dem Weihnachtsgeschäft.</span></div>
 </section>
 <section style="max-width: 1200px; margin: 0 auto; padding: 0 32px 96px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px">
@@ -637,7 +663,7 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
         <a href="/preise.html">Preise</a>
         <a href="/google-ads-kosten.html">Google Ads Kosten</a>
         <a href="/fallbeispiel-onlineshop.html">Fallbeispiel</a>
-        <a href="/free-script.html">Tools &amp; Scripts</a>
+        <a href="/tools.html">Tools &amp; Scripts</a>
         <a href="/privacy.html">Datenschutz</a>
         <a href="/impressum.html">Impressum</a>
     </span>

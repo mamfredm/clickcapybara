@@ -173,7 +173,21 @@ const PAGES = [
     jsonld: null, // FAQ schema is generated from the page's own questions
   },
   {
-    tpl: 'free-script.html', slug: 'free-script.html', formSource: 'Tools & Scripts', v2: true,
+    tpl: 'tools.html', slug: 'tools.html', formSource: 'Tools & Scripts', v2: true,
+    seo: {
+      de: {
+        title: 'Kostenlose Google Ads Tools: Rechner, Script und Fallbeispiel | Click-Capybara',
+        desc: 'Erst rechnen, dann reden: Deckungsbeitragsrechner, Betreuungsrechner, ein kostenloses Google Ads Script mit KI und ein Fallbeispiel mit echten Zahlen. Ohne Anmeldung.',
+      },
+      en: {
+        title: 'Free Google Ads Tools: Calculators, Script and Case Study | Click-Capybara',
+        desc: 'Do the maths first, then talk: contribution-margin calculator, management calculator, a free AI-powered Google Ads script and a case study with real numbers. No sign-up.',
+      },
+    },
+    jsonld: null,
+  },
+  {
+    tpl: 'free-script.html', slug: 'free-script.html', formSource: 'AI Max NegativeIQ', v2: true,
     seo: {
       de: {
         title: 'AI Max NegativeIQ — kostenloses Google Ads Script mit KI',
@@ -382,7 +396,7 @@ function render(page, lang) {
     $('a[href]').each((_, a) => {
       const el = $(a);
       const href = el.attr('href');
-      const m = href && href.match(/^\/((?:fallbeispiel-onlineshop|google-ads-kosten|google-ads|local-hero-kit|automatisierung|preise|free-script|privacy|impressum|nonogrid)\.html)?(#.*)?$/);
+      const m = href && href.match(/^\/((?:fallbeispiel-onlineshop|google-ads-kosten|google-ads|local-hero-kit|automatisierung|preise|tools|free-script|privacy|impressum|nonogrid)\.html)?(#.*)?$/);
       if (m) el.attr('href', '/en/' + (m[1] || '') + (m[2] || ''));
     });
   }
