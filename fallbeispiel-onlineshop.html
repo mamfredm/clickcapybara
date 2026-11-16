@@ -428,6 +428,17 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 .th-text{font-size:16px;line-height:1.55;color:#d6d1c4}
 .th-go{font-weight:700;color:#12110d;background:#fcba01;border-radius:999px;padding:12px 20px;white-space:nowrap;font-size:15px}
 @media (max-width:900px){.th-card{grid-template-columns:32px minmax(0,1fr);padding-right:0}.th-text,.th-go{grid-column:2}.th-go{justify-self:start}.th-card:hover{padding-left:0;background:none}}
+
+/* ---------- price tag (Google Ads hero) ---------- */
+.ptag-wrap{display:flex;justify-content:center;align-items:flex-end;padding:8px 0 4px}
+.ptag{position:relative;display:flex;flex-direction:column;gap:4px;background:#fcba01;color:#12110d;border-radius:22px;padding:34px 34px 30px 64px;max-width:380px;width:100%;transform:rotate(-3deg);box-shadow:10px 12px 0 #2e2a21;clip-path:polygon(34px 0,100% 0,100% 100%,34px 100%,0 50%)}
+.ptag-hole{position:absolute;left:30px;top:50%;width:16px;height:16px;margin-top:-8px;border-radius:50%;background:#12110d}
+.ptag-k{font:500 14px 'JetBrains Mono',ui-monospace,monospace}
+.ptag-v{font:700 clamp(44px,5vw,64px)/1 'Space Grotesk',system-ui,sans-serif;letter-spacing:-0.04em}
+.ptag-u{font:500 15px 'JetBrains Mono',ui-monospace,monospace}
+.ptag-line{height:2px;background:#12110d;opacity:.25;margin:14px 0 10px}
+.ptag-b{font:700 18px/1.3 'Space Grotesk',system-ui,sans-serif}
+@media (max-width:600px){.ptag{transform:rotate(-2deg);padding:28px 24px 24px 56px}}
 </style>
 
     <!-- Cookie banner -->
