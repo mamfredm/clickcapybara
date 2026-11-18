@@ -227,7 +227,9 @@ const PAGES = [
 ];
 
 // ─── helpers ────────────────────────────────────────────────────────────────
-const urlFor = (slug, lang) => BASE + (lang === 'de' ? '/' : '/en/') + slug;
+// URL path without ".html" (Cloudflare Pages serves /preise from preise.html and redirects /preise.html → /preise)
+const pathOf = (slug) => slug.replace(/\.html$/, '');
+const urlFor = (slug, lang) => BASE + (lang === 'de' ? '/' : '/en/') + pathOf(slug);
 
 function mergedDict(page, lang) {
   const base = translations[lang] || {};
@@ -398,7 +400,7 @@ function render(page, lang) {
     $('a[href]').each((_, a) => {
       const el = $(a);
       const href = el.attr('href');
-      const m = href && href.match(/^\/((?:fallbeispiel-onlineshop|google-ads-kosten|google-ads|local-hero-kit|automatisierung|preise|tools|free-script|privacy|impressum|nonogrid)\.html)?(#.*)?$/);
+      const m = href && href.match(/^\/((?:fallbeispiel-onlineshop|google-ads-kosten|google-ads|local-hero-kit|automatisierung|preise|tools|free-script|privacy|impressum|nonogrid))?(#.*)?$/);
       if (m) el.attr('href', '/en/' + (m[1] || '') + (m[2] || ''));
     });
   }
@@ -432,7 +434,7 @@ function render(page, lang) {
     const siteCss = fs.readFileSync(path.join(DIST, 'css', 'site.css'), 'utf8');
     $('link[href="/css/site.css"]').replaceWith(`<style>${siteCss}</style>`);
     $('#site-nav a.nl').each((_, a) => {
-      if ($(a).attr('href') === (lang === 'en' ? '/en/' : '/') + page.slug) $(a).attr('aria-current', 'page');
+      if ($(a).attr('href') === (lang === 'en' ? '/en/' : '/') + pathOf(page.slug)) $(a).attr('aria-current', 'page');
     });
     if (!$('#contact').length) $('a[href="#contact"]').attr('href', (lang === 'en' ? '/en/' : '/') + '#contact');
   }

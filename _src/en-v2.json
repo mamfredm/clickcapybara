@@ -844,7 +844,7 @@
   "<p>Diese Cookies helfen mir zu verstehen, wie Besucher die Website nutzen.</p>": "<p>These cookies help me understand how visitors use the website.</p>",
   "name: \"Werbung\"": "name: \"Advertising\"",
   "<p>Diese Cookies werden genutzt, um Anzeigen zu messen und zu verbessern.</p>": "<p>These cookies are used to measure and improve ads.</p>",
-  "<p>Ich nutze Cookies, um die Website zu verbessern und Zugriffe auszuwerten. <a href=\\\"/privacy.html\\\">Datenschutz.</a></p>": "<p>I use cookies to improve the website and analyse visits. <a href=\\\"/en/privacy.html\\\">Privacy policy.</a></p>",
+  "<p>Ich nutze Cookies, um die Website zu verbessern und Zugriffe auszuwerten. <a href=\\\"/privacy\\\">Datenschutz.</a></p>": "<p>I use cookies to improve the website and analyse visits. <a href=\\\"/en/privacy\\\">Privacy policy.</a></p>",
   "acceptAllButtonText: \"Alle akzeptieren\"": "acceptAllButtonText: \"Accept all\"",
   "rejectNonEssentialButtonText: \"Nur notwendige\"": "rejectNonEssentialButtonText: \"Necessary only\"",
   "preferencesButtonText: \"Einstellungen\"": "preferencesButtonText: \"Settings\"",

@@ -3,16 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Nonogrid — Nonogramm-Rätsel kostenlos spielen | Click-Capybara</title>
 <meta name="description" content="Kostenlose Nonogramm-Rätsel (Picross) im Browser: über 50 Rätsel, tägliche Challenge, eigener Rätsel-Editor. Ohne Anmeldung, ohne Tracking.">
-    <link rel="canonical" href="https://www.click-capybara.com/nonogrid.html">
-    <link rel="alternate" hreflang="de" href="https://www.click-capybara.com/nonogrid.html">
-    <link rel="alternate" hreflang="en" href="https://www.click-capybara.com/en/nonogrid.html">
-    <link rel="alternate" hreflang="x-default" href="https://www.click-capybara.com/nonogrid.html">
+    <link rel="canonical" href="https://www.click-capybara.com/nonogrid">
+    <link rel="alternate" hreflang="de" href="https://www.click-capybara.com/nonogrid">
+    <link rel="alternate" hreflang="en" href="https://www.click-capybara.com/en/nonogrid">
+    <link rel="alternate" hreflang="x-default" href="https://www.click-capybara.com/nonogrid">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Click-Capybara">
     <meta property="og:locale" content="de_DE">
     <meta property="og:title" content="Nonogrid — Nonogramm-Rätsel kostenlos spielen | Click-Capybara">
     <meta property="og:description" content="Kostenlose Nonogramm-Rätsel (Picross) im Browser: über 50 Rätsel, tägliche Challenge, eigener Rätsel-Editor. Ohne Anmeldung, ohne Tracking.">
-    <meta property="og:url" content="https://www.click-capybara.com/nonogrid.html">
+    <meta property="og:url" content="https://www.click-capybara.com/nonogrid">
     <meta property="og:image" content="https://www.click-capybara.com/assets/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Nonogrid — Nonogramm-Rätsel kostenlos spielen | Click-Capybara">
@@ -367,7 +367,7 @@ noscript{display:block;padding:24px;text-align:center}
 </style>
 </head>
 <body>
-<div id="app"><div class="nojs"><p>Nonogrid braucht JavaScript.</p><p><a href="/">Zur Website</a> · <a href="/impressum.html">Impressum</a> · <a href="/privacy.html">Datenschutz</a></p></div></div>
+<div id="app"><div class="nojs"><p>Nonogrid braucht JavaScript.</p><p><a href="/">Zur Website</a> · <a href="/impressum">Impressum</a> · <a href="/privacy">Datenschutz</a></p></div></div>
 <script>
 (function(){
 'use strict';
@@ -971,8 +971,8 @@ function streaks(){
 /* ===== Rendering ===== */
 function legalMenu(){
   const a=(href,icon,label)=>'<a class="menu-item" role="menuitem" href="'+href+'">'+ic(icon,'i16')+'<span>'+label+'</span></a>';
-  return a(HOME,'arrowleft',T('Back to the website','Zur Website'))+a(HOME+'impressum.html','shield',T('Legal notice','Impressum'))+a(HOME+'privacy.html','shield',T('Privacy','Datenschutz'))+
-    a(LANG==='de'?'/en/nonogrid.html':'/nonogrid.html','globe',LANG==='de'?'English':'Deutsch');
+  return a(HOME,'arrowleft',T('Back to the website','Zur Website'))+a(HOME+'impressum','shield',T('Legal notice','Impressum'))+a(HOME+'privacy','shield',T('Privacy','Datenschutz'))+
+    a(LANG==='de'?'/en/nonogrid':'/nonogrid','globe',LANG==='de'?'English':'Deutsch');
 }
 function navHTML(){
   const st=streaks().current;
@@ -1149,7 +1149,7 @@ function settingsModal(){
    '<div><h3 class="sh">'+ic('keyboard','i14')+'<span>'+T('Keyboard Shortcuts','Tastenkürzel')+'</span></h3><div class="keys">'+
     [[T('Move Cursor:','Cursor bewegen:'),T('Arrows / WASD','Pfeiltasten / WASD')],[T('Fill Cell:','Feld füllen:'),T('Space / Z','Leertaste / Z')],[T('Flag (X):','Kreuz (X):'),'X / C'],[T('Undo / Redo:','Zurück / Vor:'),T('U / Ctrl+Z','U / Strg+Z')]].map(k=>'<div><span>'+k[0]+'</span><b class="mono">'+k[1]+'</b></div>').join('')+
    '</div></div>'+
-   '<div class="legal-row"><a href="'+HOME+'impressum.html">'+T('Legal notice','Impressum')+'</a><a href="'+HOME+'privacy.html">'+T('Privacy','Datenschutz')+'</a></div></div>','');
+   '<div class="legal-row"><a href="'+HOME+'impressum">'+T('Legal notice','Impressum')+'</a><a href="'+HOME+'privacy">'+T('Privacy','Datenschutz')+'</a></div></div>','');
 }
 
 function studioModal(){
@@ -1314,8 +1314,8 @@ function render(){
   ['.mbody','.pgrid','.ptabs'].forEach(s=>{const e=$app.querySelector(s);if(e)sc[s]=e.scrollTop+','+e.scrollLeft;});
   $app.innerHTML=navHTML()+mainHTML()+
    '<footer class="foot"><span class="fx">Nonogrid by Click-Capybara</span><span class="fx kbd-hint" aria-hidden="true">·</span><span class="fx kbd-hint">'+T('Keyboard: Z = Fill, X = Flag, Arrows = Move','Tastatur: Z = Füllen, X = Kreuz, Pfeile = Bewegen')+'</span><span class="fx" aria-hidden="true">·</span>'+
-     '<a href="'+HOME+'">'+T('Back to the website','Zur Website')+'</a><span aria-hidden="true">·</span><a href="'+HOME+'impressum.html">'+T('Legal notice','Impressum')+'</a><span aria-hidden="true">·</span><a href="'+HOME+'privacy.html">'+T('Privacy','Datenschutz')+'</a><span aria-hidden="true">·</span>'+
-     '<a href="'+(LANG==='de'?'/en/nonogrid.html':'/nonogrid.html')+'" hreflang="'+(LANG==='de'?'en':'de')+'" lang="'+(LANG==='de'?'en':'de')+'">'+(LANG==='de'?'English':'Deutsch')+'</a></footer>'+
+     '<a href="'+HOME+'">'+T('Back to the website','Zur Website')+'</a><span aria-hidden="true">·</span><a href="'+HOME+'impressum">'+T('Legal notice','Impressum')+'</a><span aria-hidden="true">·</span><a href="'+HOME+'privacy">'+T('Privacy','Datenschutz')+'</a><span aria-hidden="true">·</span>'+
+     '<a href="'+(LANG==='de'?'/en/nonogrid':'/nonogrid')+'" hreflang="'+(LANG==='de'?'en':'de')+'" lang="'+(LANG==='de'?'en':'de')+'">'+(LANG==='de'?'English':'Deutsch')+'</a></footer>'+
    (S.show.win?winModal():'')+(S.show.packs?packsModal():'')+(S.show.stats?statsModal():'')+(S.show.studio?studioModal():'')+(S.show.settings?settingsModal():'')+(S.show.help?helpModal():'');
   fit();
   paintCells();
