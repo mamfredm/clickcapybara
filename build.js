@@ -226,6 +226,10 @@ const PAGES = [
   },
 ];
 
+// SEO texts and structured data for the redesigned pages live in _src/seo.js
+const seoV2 = require('./_src/seo.js');
+for (const p of PAGES) if (seoV2.SEO[p.tpl]) p.seo = seoV2.SEO[p.tpl];
+
 // ─── helpers ────────────────────────────────────────────────────────────────
 // URL path without ".html" (Cloudflare Pages serves /preise from preise.html and redirects /preise.html → /preise)
 const pathOf = (slug) => slug.replace(/\.html$/, '');
@@ -363,13 +367,15 @@ function render(page, lang) {
   metaDesc.after('\n' + headExtra);
 
   // 3. structured data (replace only generic Person schema on index; keep page-own schemas)
-  if (page.jsonld) {
+  const v2Schemas = page.v2 ? seoV2.schemas(page, lang, urlFor) : [];
+  if (v2Schemas.length || page.jsonld) {
     $('script[type="application/ld+json"]').each((_, s) => {
       const txt = $(s).html() || '';
       if (txt.includes('"Person"') && txt.includes('"jobTitle"')) $(s).remove();
     });
-    $('head').append(`\n    <script type="application/ld+json">\n    ${JSON.stringify(page.jsonld(lang))}\n    </script>\n`);
   }
+  const ldList = v2Schemas.length ? v2Schemas : (page.jsonld ? [page.jsonld(lang)] : []);
+  for (const ld of ldList) $('head').append(`\n    <script type="application/ld+json">\n    ${JSON.stringify(ld)}\n    </script>\n`);
 
   // 3b. FAQ schema from the questions on the page (already in the page's language)
   const faqs = $('details.db-faq').map((_, d) => ({
