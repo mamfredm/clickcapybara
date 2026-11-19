@@ -190,12 +190,18 @@ a.p-dark:hover{color:#12110d}
 .reviews blockquote footer{font:400 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
 
 /* ---------- footer ---------- */
-.site-footer{max-width:1200px;margin:0 auto;padding:32px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:14px;color:#a8a293}
-.site-footer-brand{display:flex;align-items:center;gap:10px}
-.site-footer-links{display:flex;flex-wrap:wrap;gap:8px 24px}
-.site-footer a{color:#a8a293;padding:6px 0}
-.site-footer a:hover{color:#fcba01}
+.site-footer{max-width:1200px;margin:0 auto;padding:48px 24px 40px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;font-size:14px;color:#a8a293}
+.site-footer-brand{display:flex;align-items:center;gap:10px;color:#f4efe2;font-weight:600;font-size:16px;margin-bottom:12px}
+.site-footer-links,.site-footer-legal{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0 22px}
+.site-footer-links a{color:#f4efe2;font-size:15px;padding:10px 0}
+.site-footer-legal a,.site-footer-cc{color:#a8a293;padding:10px 0}
+.site-footer-cc{background:none;border:0;font:inherit;text-decoration:underline;cursor:pointer}
+.site-footer a:hover,.site-footer-cc:hover{color:#fcba01}
 .site-footer a.site-footer-li{display:inline-flex;align-items:center;gap:7px}
+.site-footer-copy{margin:14px 0 0;font-size:13px;color:#8a8473}
+/* the round cookie button stays only for visitors who have not accepted everything; the footer then keeps room for it */
+html.cc-all #silktide-cookie-icon{display:none !important}
+@media (max-width:899px){html:not(.cc-all) .site-footer{padding-bottom:104px}}
 
 /* ---------- legal pages (Impressum, Datenschutz) ---------- */
 .legal{max-width:820px;margin:0 auto;padding:48px 32px 96px;font-size:17px;line-height:1.65;color:#d6d1c4}

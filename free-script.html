@@ -256,12 +256,18 @@ a.p-dark:hover{color:#12110d}
 .reviews blockquote footer{font:400 13px 'JetBrains Mono',ui-monospace,monospace;color:#a8a293}
 
 /* ---------- footer ---------- */
-.site-footer{max-width:1200px;margin:0 auto;padding:32px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:14px;color:#a8a293}
-.site-footer-brand{display:flex;align-items:center;gap:10px}
-.site-footer-links{display:flex;flex-wrap:wrap;gap:8px 24px}
-.site-footer a{color:#a8a293;padding:6px 0}
-.site-footer a:hover{color:#fcba01}
+.site-footer{max-width:1200px;margin:0 auto;padding:48px 24px 40px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;font-size:14px;color:#a8a293}
+.site-footer-brand{display:flex;align-items:center;gap:10px;color:#f4efe2;font-weight:600;font-size:16px;margin-bottom:12px}
+.site-footer-links,.site-footer-legal{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0 22px}
+.site-footer-links a{color:#f4efe2;font-size:15px;padding:10px 0}
+.site-footer-legal a,.site-footer-cc{color:#a8a293;padding:10px 0}
+.site-footer-cc{background:none;border:0;font:inherit;text-decoration:underline;cursor:pointer}
+.site-footer a:hover,.site-footer-cc:hover{color:#fcba01}
 .site-footer a.site-footer-li{display:inline-flex;align-items:center;gap:7px}
+.site-footer-copy{margin:14px 0 0;font-size:13px;color:#8a8473}
+/* the round cookie button stays only for visitors who have not accepted everything; the footer then keeps room for it */
+html.cc-all #silktide-cookie-icon{display:none !important}
+@media (max-width:899px){html:not(.cc-all) .site-footer{padding-bottom:104px}}
 
 /* ---------- legal pages (Impressum, Datenschutz) ---------- */
 .legal{max-width:820px;margin:0 auto;padding:48px 32px 96px;font-size:17px;line-height:1.65;color:#d6d1c4}
@@ -499,7 +505,11 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
     <script src="/vendor/silktide/silktide-consent-manager.js?v=89cb87468e" defer=""></script>
     <script>window.addEventListener('load', function () {
 
+    /* hide the round cookie button when statistics and advertising are both accepted; the footer link stays */
+    function ccSync(){ try{ var ok=['analytics','advertising'].every(function(t){return localStorage.getItem('silktideCookieChoice_'+t)==='true'}); document.documentElement.classList.toggle('cc-all',ok);}catch(e){} }
+    ccSync();
     silktideCookieBannerManager.updateCookieBannerConfig({
+        onAcceptAll: ccSync, onRejectAll: ccSync, onPreferencesClose: function(){ setTimeout(ccSync,0); },
         background: { showBackground: true },
         cookieIcon: { position: "bottomLeft" },
         cookieTypes: [
@@ -849,16 +859,20 @@ html.cc-intro #silktide-wrapper,html.cc-intro #silktide-backdrop{display:none !i
 
 </main>
 <footer class="site-footer">
-    <span class="site-footer-brand"><img src="/assets/clickcapybara_outline_bold.svg" width="22" height="22" alt="">© 2026 Click-Capybara · Google Ads, Websites und Automatisierung aus Düsseldorf</span>
-    <span class="site-footer-links">
+    <div class="site-footer-brand"><img src="/assets/clickcapybara_outline_bold.svg" width="22" height="22" alt="">Click-Capybara</div>
+    <nav class="site-footer-links" aria-label="Footer">
         <a href="/preise">Preise</a>
         <a href="/google-ads-kosten">Google Ads Kosten</a>
         <a href="/fallbeispiel-onlineshop">Fallbeispiel</a>
         <a href="/tools">Tools &amp; Scripts</a>
+    </nav>
+    <div class="site-footer-legal">
         <a href="/privacy">Datenschutz</a>
         <a href="/impressum">Impressum</a>
+        <button type="button" class="site-footer-cc" onclick="var i=document.getElementById('silktide-cookie-icon');if(i)i.click()">Cookie-Einstellungen</button>
         <a class="site-footer-li" href="https://www.linkedin.com/in/click-capybara/" target="_blank" rel="noopener me" aria-label="Click-Capybara auf LinkedIn"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"></path></svg>LinkedIn</a>
-    </span>
+    </div>
+    <p class="site-footer-copy">© 2026 · Google Ads, Websites und Automatisierung aus Düsseldorf</p>
 </footer>
 <script src="/js/site.js?v=604e508e25" defer=""></script>
 
