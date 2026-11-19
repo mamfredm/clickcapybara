@@ -54,7 +54,11 @@
     <link rel="stylesheet" id="silktide-consent-manager-css" href="/vendor/silktide/silktide-consent-manager.css">
     <script src="/vendor/silktide/silktide-consent-manager.js"></script>
     <script>
+    /* hide the round cookie button when statistics and advertising are both accepted; the footer link stays */
+    function ccSync(){ try{ var ok=['analytics','advertising'].every(function(t){return localStorage.getItem('silktideCookieChoice_'+t)==='true'}); document.documentElement.classList.toggle('cc-all',ok);}catch(e){} }
+    ccSync();
     silktideCookieBannerManager.updateCookieBannerConfig({
+        onAcceptAll: ccSync, onRejectAll: ccSync, onPreferencesClose: function(){ setTimeout(ccSync,0); },
         background: { showBackground: true },
         cookieIcon: { position: "bottomLeft" },
         cookieTypes: [
