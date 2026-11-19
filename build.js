@@ -534,10 +534,23 @@ function fillLegal(out) {
 // ─── build ──────────────────────────────────────────────────────────────────
 fs.mkdirSync(path.join(DIST, 'en'), { recursive: true });
 
+// Cache busting: scripts and styles get ?v=<content hash>, so browsers may keep them for a year
+// (see _headers) and still fetch the new file as soon as its content changes.
+const crypto = require('crypto');
+const hashCache = {};
+function versionAssets(html) {
+  return html.replace(/(["'])(\/(?:js|vendor\/silktide)\/[\w.\-\/]+\.(?:js|css))(\1)/g, (m, q1, file, q2) => {
+    const fp = path.join(DIST, file);
+    if (!fs.existsSync(fp)) return m;
+    if (!hashCache[file]) hashCache[file] = crypto.createHash('sha1').update(fs.readFileSync(fp)).digest('hex').slice(0, 10);
+    return q1 + file + '?v=' + hashCache[file] + q2;
+  });
+}
+
 for (const page of PAGES) {
   const outName = outNameOf(page);
-  fs.writeFileSync(path.join(DIST, outName), render(page, 'de'));
-  fs.writeFileSync(path.join(DIST, 'en', outName), render(page, 'en'));
+  fs.writeFileSync(path.join(DIST, outName), versionAssets(render(page, 'de')));
+  fs.writeFileSync(path.join(DIST, 'en', outName), versionAssets(render(page, 'en')));
   console.log(`built /${outName} + /en/${outName}`);
 }
 

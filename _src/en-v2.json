@@ -774,7 +774,8 @@
   "Eine kleine Seite ist schon in einer Woche einsatzbereit, je nach Umfang": "A small site is ready to go in as little as a week, depending on scope",
   "Der ehrliche Vergleich. In zwei Punkten hat der Baukasten die Nase vorn, und das steht auch hier.": "The honest comparison. In two points the site builder is ahead, and that is stated here too.",
   "Vorteile für das Local Hero Kit": "advantages for the Local Hero Kit",
-  "für den Baukasten": "for the site builder"
+  "für den Baukasten": "for the site builder",
+  "Click-Capybara auf LinkedIn": "Click-Capybara on LinkedIn"
  },
  "keep": [
   "Click-Capybara",
@@ -835,7 +836,8 @@
   "C",
   "D",
   "E",
-  "F"
+  "F",
+  "LinkedIn"
  ],
  "script": {
   "name: \"Notwendig\"": "name: \"Necessary\"",

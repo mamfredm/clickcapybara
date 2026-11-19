@@ -195,6 +195,7 @@ a.p-dark:hover{color:#12110d}
 .site-footer-links{display:flex;flex-wrap:wrap;gap:8px 24px}
 .site-footer a{color:#a8a293;padding:6px 0}
 .site-footer a:hover{color:#fcba01}
+.site-footer a.site-footer-li{display:inline-flex;align-items:center;gap:7px}
 
 /* ---------- legal pages (Impressum, Datenschutz) ---------- */
 .legal{max-width:820px;margin:0 auto;padding:48px 32px 96px;font-size:17px;line-height:1.65;color:#d6d1c4}
