@@ -217,6 +217,16 @@ const PAGES = [
     jsonld: null,
   },
   {
+    // Error page: Cloudflare Pages serves 404.html (and /en/404.html under /en/) with status 404
+    // for every unknown address. noindex: no canonical, no hreflang, no schema, not in the sitemap.
+    tpl: '404.html', slug: '404.html', formSource: null, v2: true, noindex: true,
+    seo: {
+      de: { title: 'Seite nicht gefunden — Click-Capybara', desc: 'Diese Seite gibt es nicht (mehr).' },
+      en: { title: 'Page not found — Click-Capybara', desc: 'This page does not exist (anymore).' },
+    },
+    jsonld: null,
+  },
+  {
     tpl: 'nonogrid.html', slug: 'nonogrid.html', formSource: null, standalone: true,
     seo: {
       de: { title: 'Nonogrid — Nonogramm-Rätsel kostenlos spielen | Click-Capybara', desc: 'Kostenlose Nonogramm-Rätsel (Picross) im Browser: über 50 Rätsel, tägliche Challenge, eigener Rätsel-Editor. Ohne Anmeldung, ohne Tracking.' },
@@ -364,10 +374,12 @@ function render(page, lang) {
     `<meta name="twitter:description" content="${seo.desc}">`,
     `<meta name="twitter:image" content="${OG_IMAGE}">`,
   ].map((l) => '    ' + l).join('\n');
-  metaDesc.after('\n' + headExtra);
+  // Error page: it appears under every unknown address, so it must not claim a URL of its own
+  if (page.noindex) metaDesc.after('\n    <meta name="robots" content="noindex">');
+  else metaDesc.after('\n' + headExtra);
 
   // 3. structured data (replace only generic Person schema on index; keep page-own schemas)
-  const v2Schemas = page.v2 ? seoV2.schemas(page, lang, urlFor) : [];
+  const v2Schemas = page.v2 && !page.noindex ? seoV2.schemas(page, lang, urlFor) : [];
   if (v2Schemas.length || page.jsonld) {
     $('script[type="application/ld+json"]').each((_, s) => {
       const txt = $(s).html() || '';
@@ -386,8 +398,9 @@ function render(page, lang) {
   if (faqs.length) $('head').append(`\n    <script type="application/ld+json">\n    ${JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs })}\n    </script>\n`);
 
   // 4. language toggle links + active state
-  const deUrl = urlFor(page.slug, 'de');
-  const enUrl = enFileExists(page) ? urlFor(page.slug, 'en') : BASE + '/en/';
+  // (the error page switches language to the home page of the other language)
+  const deUrl = page.noindex ? BASE + '/' : urlFor(page.slug, 'de');
+  const enUrl = page.noindex ? BASE + '/en/' : enFileExists(page) ? urlFor(page.slug, 'en') : BASE + '/en/';
   for (const [id, l] of [['lang-en', 'en'], ['lang-de', 'de'], ['mobile-lang-en', 'en'], ['mobile-lang-de', 'de']]) {
     const el = $('#' + id);
     if (!el.length) continue;
@@ -558,6 +571,7 @@ for (const page of PAGES) {
 const today = new Date().toISOString().slice(0, 10);
 const urls = [];
 for (const page of PAGES) {
+  if (page.noindex) continue;
   const hasEn = enFileExists(page);
   for (const lang of hasEn ? ['de', 'en'] : ['de']) {
     urls.push(`  <url>
