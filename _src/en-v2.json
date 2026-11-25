@@ -1,6 +1,13 @@
 {
  "_about": "English texts for the redesigned pages. Key = German text exactly as it appears in the template (whitespace collapsed), value = English. build.js warns about German texts that have no entry here.",
  "text": {
+  "Fehler 404": "Error 404",
+  "Diese Seite gibt es": "This page does",
+  "nicht.": "not exist.",
+  "Vielleicht ein Tippfehler im Link, oder die Seite ist umgezogen. Hier geht es weiter:": "Maybe the link has a typo, or the page has moved. Here is where to go next:",
+  "Zur Startseite": "Back to the home page",
+  "Leistungen": "Services",
+  "Du suchst etwas Bestimmtes? Schreib mir:": "Looking for something specific? Write to me:",
   "wie werde ich online gefunden?": "how can people find me online?",
   "Sichtbar bei Google, auf Maps und in der KI-Suche.": "Visible on Google, on Maps and in AI search.",
   "Zum Inhalt springen": "Skip to content",
